@@ -1,0 +1,28 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    font-family: theme('fontFamily.sans');
+  }
+
+  body {
+    color: #1F2937; /* Charcoal */
+    background-color: #E8F2F1; /* Mist */
+  }
+
+  h1, h2 {
+    font-family: theme('fontFamily.heading');
+    font-weight: 700; /* 700 for main headlines */
+    line-height: 1.1; /* tighter headings */
+    color: #0F2A43; /* Primary */
+  }
+
+  h3, h4, h5, h6 {
+    font-family: theme('fontFamily.heading');
+    font-weight: 600; /* secondary headings */
+    line-height: 1.15;
+    color: #0F2A43;
+  }
+}

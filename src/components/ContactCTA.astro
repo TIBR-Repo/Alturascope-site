@@ -1,0 +1,24 @@
+---
+const {
+  heading = "Ready to discuss your as-built survey?",
+  subheading = "We cover projects anywhere in the US and Canada.",
+  buttonText = "Contact Us",
+  email = "hello@alturascope.com",
+} = Astro.props;
+---
+<section class="mt-16 rounded-xl bg-[#0F2A43] p-8 text-white">
+  <div class="max-w-3xl">
+    <h2 class="text-2xl font-semibold">{heading}</h2>
+    <p class="mt-2 opacity-90">{subheading}</p>
+    <div class="mt-6">
+      <a
+        href={`mailto:${email}`}
+        class="inline-block rounded-lg bg-[#B48A3C] px-6 py-3 font-medium text-white shadow transition-colors hover:bg-[#9E7935] focus:outline-none focus:ring-2 focus:ring-[#9E7935]"
+      >
+        {buttonText}
+      </a>
+    </div>
+  </div>
+</section>
+
+

@@ -1,0 +1,73 @@
+---
+import "../styles/global.css";
+const { title = "Alturoscope", region = "na" } = Astro.props;
+---
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>{title}</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&family=Space+Grotesk:wght@600;700&display=swap" rel="stylesheet">
+  </head>
+  <body class="bg-[#E8F2F1]">
+    <div class="sticky top-0 z-50 w-full">
+      {region === "na" && (
+        <div class="bg-slate-900 text-[11px] text-slate-100 px-4 py-2 text-center">
+          Serving U.S. &amp; Canada.
+          <span class="ml-1">Looking for coverage in the United Kingdom?</span>
+          <a href="/uk" class="ml-1 underline underline-offset-2">Visit Alturascope UK</a>
+        </div>
+      )}
+      {region === "uk" && (
+        <div class="bg-slate-900 text-[11px] text-slate-100 px-4 py-2 text-center">
+          You’re viewing <span class="font-semibold">Alturascope UK</span>.
+          <span class="ml-1">For U.S. &amp; Canada,</span>
+          <a href="/" class="ml-1 underline underline-offset-2">visit Alturascope North America</a>.
+        </div>
+      )}
+      <header class="bg-white">
+        <div class="mx-auto max-w-7xl px-4 py-4 flex items-center justify-between">
+          <a href={region === "uk" ? "/uk" : "/"} class="flex items-center gap-2 pr-1 overflow-visible">
+            <img src="/Untitled%20design%20alturascope%20cropped%20logo.png" alt="Alturoscope logo" class="h-10 md:h-12 w-auto flex-shrink-0 mr-1" />
+          </a>
+          <nav class="flex items-center gap-6 text-sm font-medium">
+            <a href={region === "uk" ? "/uk" : "/"} class="text-primary hover:text-accent transition-colors">Home</a>
+            <a href={region === "uk" ? "/uk/about" : "/about"} class="text-primary hover:text-accent transition-colors">About</a>
+            <a href={region === "uk" ? "/uk/services" : "/services"} class="text-primary hover:text-accent transition-colors">Services</a>
+            {region === "na" && (
+              <a href="/why-as-built-surveys-matter" class="text-primary hover:text-accent transition-colors">
+                Why As-Builts Matter
+              </a>
+            )}
+            {region === "uk" && (
+              <a href="/uk/why-as-built-surveys-matter" class="text-primary hover:text-accent transition-colors">
+                Why As-Builts Matter
+              </a>
+            )}
+            <a href={region === "uk" ? "/uk/pricing" : "/pricing"} class="text-primary hover:text-accent transition-colors">Pricing</a>
+            <a href={region === "uk" ? "/uk/contact" : "/contact"} class="text-primary hover:text-accent transition-colors">Contact</a>
+            <a href={region === "uk" ? "/uk/faq" : "/faq"} class="text-primary hover:text-accent transition-colors">FAQ</a>
+            {region === "na" && (
+              <a href="/uk" class="text-primary hover:text-accent transition-colors">Alturascope UK</a>
+            )}
+            {region === "uk" && (
+              <a href="/" class="text-primary hover:text-accent transition-colors">Alturascope North America</a>
+            )}
+          </nav>
+        </div>
+      </header>
+    </div>
+
+    <main class="mx-auto max-w-7xl px-4 py-10">
+      <slot />
+    </main>
+
+    <footer class="mt-12 border-t border-slate-200 bg-white/70">
+      <div class="mx-auto max-w-7xl px-4 py-8 text-sm text-slate-600">
+        <p>© {new Date().getFullYear()} Alturascope. All rights reserved.</p>
+      </div>
+    </footer>
+  </body>
+</html>
