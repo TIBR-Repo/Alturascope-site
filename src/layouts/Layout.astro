@@ -27,12 +27,14 @@ const { title = "Alturoscope", region = "na" } = Astro.props;
           <a href="/" class="ml-1 underline underline-offset-2">visit Alturascope North America</a>.
         </div>
       )}
-      <header class="bg-white">
-        <div class="mx-auto max-w-7xl px-4 py-4 flex items-center justify-between">
+      <header class="bg-white border-b border-slate-200/60">
+        <div class="mx-auto max-w-7xl px-4 py-3 flex items-center justify-between">
           <a href={region === "uk" ? "/uk" : "/"} class="flex items-center gap-2 pr-1 overflow-visible">
             <img src="/Untitled%20design%20alturascope%20cropped%20logo.png" alt="Alturoscope logo" class="h-10 md:h-12 w-auto flex-shrink-0 mr-1" />
           </a>
-          <nav class="flex items-center gap-6 text-sm font-medium">
+
+          <!-- Desktop navigation -->
+          <nav class="hidden md:flex items-center gap-6 text-sm font-medium">
             <a href={region === "uk" ? "/uk" : "/"} class="text-primary hover:text-accent transition-colors">Home</a>
             <a href={region === "uk" ? "/uk/about" : "/about"} class="text-primary hover:text-accent transition-colors">About</a>
             <a href={region === "uk" ? "/uk/services" : "/services"} class="text-primary hover:text-accent transition-colors">Services</a>
@@ -56,7 +58,54 @@ const { title = "Alturoscope", region = "na" } = Astro.props;
               <a href="/" class="text-primary hover:text-accent transition-colors">Alturascope North America</a>
             )}
           </nav>
+
+          <!-- Mobile menu button -->
+          <button
+            id="mobile-nav-toggle"
+            type="button"
+            class="inline-flex items-center justify-center rounded-full border border-slate-300 p-2 text-slate-700 hover:bg-slate-100 focus:outline-none focus:ring-2 focus:ring-accent focus:ring-offset-2 md:hidden"
+            aria-label="Toggle navigation menu"
+            aria-expanded="false"
+          >
+            <span class="sr-only">Open navigation</span>
+            <span class="flex flex-col gap-1.5">
+              <span class="block h-0.5 w-5 rounded-full bg-slate-800"></span>
+              <span class="block h-0.5 w-5 rounded-full bg-slate-800"></span>
+              <span class="block h-0.5 w-5 rounded-full bg-slate-800"></span>
+            </span>
+          </button>
         </div>
+
+        <!-- Mobile navigation -->
+        <nav
+          id="mobile-nav"
+          class="md:hidden hidden border-t border-slate-200 bg-white/95 shadow-sm"
+        >
+          <div class="mx-auto max-w-7xl px-4 py-3 flex flex-col gap-1 text-sm font-medium">
+            <a href={region === "uk" ? "/uk" : "/"} class="py-2 text-primary hover:text-accent transition-colors">Home</a>
+            <a href={region === "uk" ? "/uk/about" : "/about"} class="py-2 text-primary hover:text-accent transition-colors">About</a>
+            <a href={region === "uk" ? "/uk/services" : "/services"} class="py-2 text-primary hover:text-accent transition-colors">Services</a>
+            {region === "na" && (
+              <a href="/why-as-built-surveys-matter" class="py-2 text-primary hover:text-accent transition-colors">
+                Why As-Builts Matter
+              </a>
+            )}
+            {region === "uk" && (
+              <a href="/uk/why-as-built-surveys-matter" class="py-2 text-primary hover:text-accent transition-colors">
+                Why As-Builts Matter
+              </a>
+            )}
+            <a href={region === "uk" ? "/uk/pricing" : "/pricing"} class="py-2 text-primary hover:text-accent transition-colors">Pricing</a>
+            <a href={region === "uk" ? "/uk/contact" : "/contact"} class="py-2 text-primary hover:text-accent transition-colors">Contact</a>
+            <a href={region === "uk" ? "/uk/faq" : "/faq"} class="py-2 text-primary hover:text-accent transition-colors">FAQ</a>
+            {region === "na" && (
+              <a href="/uk" class="py-2 text-primary hover:text-accent transition-colors">Alturascope UK</a>
+            )}
+            {region === "uk" && (
+              <a href="/" class="py-2 text-primary hover:text-accent transition-colors">Alturascope North America</a>
+            )}
+          </div>
+        </nav>
       </header>
     </div>
 
@@ -69,5 +118,23 @@ const { title = "Alturoscope", region = "na" } = Astro.props;
         <p>© {new Date().getFullYear()} Alturascope. All rights reserved.</p>
       </div>
     </footer>
+    <script>
+      if (typeof window !== "undefined") {
+        window.addEventListener("DOMContentLoaded", () => {
+          const toggle = document.getElementById("mobile-nav-toggle");
+          const menu = document.getElementById("mobile-nav");
+
+          if (!toggle || !menu) {
+            return;
+          }
+
+          toggle.addEventListener("click", () => {
+            const isOpen = !menu.classList.contains("hidden");
+            menu.classList.toggle("hidden", isOpen);
+            toggle.setAttribute("aria-expanded", String(!isOpen));
+          });
+        });
+      }
+    </script>
   </body>
 </html>
