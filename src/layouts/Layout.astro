@@ -10,41 +10,67 @@ const { title = "Alturoscope", region = "na" } = Astro.props;
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&family=Space+Grotesk:wght@600;700&display=swap" rel="stylesheet">
+    <style>
+      /* Mobile menu animation */
+      #mobile-nav {
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.3s ease-out, opacity 0.2s ease-out;
+        opacity: 0;
+      }
+      #mobile-nav.open {
+        max-height: 500px;
+        opacity: 1;
+      }
+      /* Hamburger animation */
+      .hamburger-line {
+        transition: transform 0.3s ease, opacity 0.2s ease;
+      }
+      .hamburger-open .hamburger-line:nth-child(1) {
+        transform: translateY(6px) rotate(45deg);
+      }
+      .hamburger-open .hamburger-line:nth-child(2) {
+        opacity: 0;
+      }
+      .hamburger-open .hamburger-line:nth-child(3) {
+        transform: translateY(-6px) rotate(-45deg);
+      }
+    </style>
   </head>
   <body class="bg-[#E8F2F1]">
     <div class="sticky top-0 z-50 w-full">
       {region === "na" && (
         <div class="bg-slate-900 text-[11px] text-slate-100 px-4 py-2 text-center">
           Serving U.S. &amp; Canada.
-          <span class="ml-1">Looking for coverage in the United Kingdom?</span>
+          <span class="ml-1 hidden sm:inline">Looking for coverage in the United Kingdom?</span>
           <a href="/uk" class="ml-1 underline underline-offset-2">Visit Alturascope UK</a>
         </div>
       )}
       {region === "uk" && (
         <div class="bg-slate-900 text-[11px] text-slate-100 px-4 py-2 text-center">
-          You’re viewing <span class="font-semibold">Alturascope UK</span>.
-          <span class="ml-1">For U.S. &amp; Canada,</span>
+          You're viewing <span class="font-semibold">Alturascope UK</span>.
+          <span class="ml-1 hidden sm:inline">For U.S. &amp; Canada,</span>
           <a href="/" class="ml-1 underline underline-offset-2">visit Alturascope North America</a>.
         </div>
       )}
       <header class="bg-white border-b border-slate-200/60">
         <div class="mx-auto max-w-7xl px-4 py-3 flex items-center justify-between">
           <a href={region === "uk" ? "/uk" : "/"} class="flex items-center gap-2 pr-1 overflow-visible">
-            <img src="/Untitled%20design%20alturascope%20cropped%20logo.png" alt="Alturoscope logo" class="h-10 md:h-12 w-auto flex-shrink-0 mr-1" />
+            <img src="/Untitled%20design%20alturascope%20cropped%20logo.png" alt="Alturoscope logo" class="h-10 lg:h-12 w-auto flex-shrink-0 mr-1" />
           </a>
 
-          <!-- Desktop navigation -->
-          <nav class="hidden md:flex items-center gap-6 text-sm font-medium">
+          <!-- Desktop navigation - only show on lg screens and up -->
+          <nav class="hidden lg:flex items-center gap-5 text-sm font-medium">
             <a href={region === "uk" ? "/uk" : "/"} class="text-primary hover:text-accent transition-colors">Home</a>
             <a href={region === "uk" ? "/uk/about" : "/about"} class="text-primary hover:text-accent transition-colors">About</a>
             <a href={region === "uk" ? "/uk/services" : "/services"} class="text-primary hover:text-accent transition-colors">Services</a>
             {region === "na" && (
-              <a href="/why-as-built-surveys-matter" class="text-primary hover:text-accent transition-colors">
+              <a href="/why-as-built-surveys-matter" class="text-primary hover:text-accent transition-colors whitespace-nowrap">
                 Why As-Builts Matter
               </a>
             )}
             {region === "uk" && (
-              <a href="/uk/why-as-built-surveys-matter" class="text-primary hover:text-accent transition-colors">
+              <a href="/uk/why-as-built-surveys-matter" class="text-primary hover:text-accent transition-colors whitespace-nowrap">
                 Why As-Builts Matter
               </a>
             )}
@@ -52,58 +78,66 @@ const { title = "Alturoscope", region = "na" } = Astro.props;
             <a href={region === "uk" ? "/uk/contact" : "/contact"} class="text-primary hover:text-accent transition-colors">Contact</a>
             <a href={region === "uk" ? "/uk/faq" : "/faq"} class="text-primary hover:text-accent transition-colors">FAQ</a>
             {region === "na" && (
-              <a href="/uk" class="text-primary hover:text-accent transition-colors">Alturascope UK</a>
+              <a href="/uk" class="text-primary hover:text-accent transition-colors whitespace-nowrap">Alturascope UK</a>
             )}
             {region === "uk" && (
-              <a href="/" class="text-primary hover:text-accent transition-colors">Alturascope North America</a>
+              <a href="/" class="text-primary hover:text-accent transition-colors whitespace-nowrap">Alturascope NA</a>
             )}
           </nav>
 
-          <!-- Mobile menu button -->
+          <!-- Mobile menu button - show on screens smaller than lg -->
           <button
             id="mobile-nav-toggle"
             type="button"
-            class="inline-flex items-center justify-center rounded-full border border-slate-300 p-2 text-slate-700 hover:bg-slate-100 focus:outline-none focus:ring-2 focus:ring-accent focus:ring-offset-2 md:hidden"
+            class="inline-flex items-center justify-center rounded-full border border-slate-300 w-11 h-11 text-slate-700 hover:bg-slate-100 focus:outline-none focus:ring-2 focus:ring-accent focus:ring-offset-2 lg:hidden"
             aria-label="Toggle navigation menu"
             aria-expanded="false"
           >
             <span class="sr-only">Open navigation</span>
-            <span class="flex flex-col gap-1.5">
-              <span class="block h-0.5 w-5 rounded-full bg-slate-800"></span>
-              <span class="block h-0.5 w-5 rounded-full bg-slate-800"></span>
-              <span class="block h-0.5 w-5 rounded-full bg-slate-800"></span>
+            <span class="flex flex-col gap-1.5 w-5">
+              <span class="hamburger-line block h-0.5 w-full rounded-full bg-slate-800 origin-center"></span>
+              <span class="hamburger-line block h-0.5 w-full rounded-full bg-slate-800 origin-center"></span>
+              <span class="hamburger-line block h-0.5 w-full rounded-full bg-slate-800 origin-center"></span>
             </span>
           </button>
         </div>
 
-        <!-- Mobile navigation -->
+        <!-- Mobile navigation - slides down smoothly -->
         <nav
           id="mobile-nav"
-          class="md:hidden hidden border-t border-slate-200 bg-white/95 shadow-sm"
+          class="lg:hidden border-t border-slate-200 bg-white shadow-lg"
         >
-          <div class="mx-auto max-w-7xl px-4 py-3 flex flex-col gap-1 text-sm font-medium">
-            <a href={region === "uk" ? "/uk" : "/"} class="py-2 text-primary hover:text-accent transition-colors">Home</a>
-            <a href={region === "uk" ? "/uk/about" : "/about"} class="py-2 text-primary hover:text-accent transition-colors">About</a>
-            <a href={region === "uk" ? "/uk/services" : "/services"} class="py-2 text-primary hover:text-accent transition-colors">Services</a>
+          <div class="mx-auto max-w-7xl px-4 py-4 flex flex-col text-base font-medium">
+            <a href={region === "uk" ? "/uk" : "/"} class="py-3 px-2 text-primary hover:text-accent hover:bg-slate-50 rounded-lg transition-colors border-b border-slate-100">Home</a>
+            <a href={region === "uk" ? "/uk/about" : "/about"} class="py-3 px-2 text-primary hover:text-accent hover:bg-slate-50 rounded-lg transition-colors border-b border-slate-100">About</a>
+            <a href={region === "uk" ? "/uk/services" : "/services"} class="py-3 px-2 text-primary hover:text-accent hover:bg-slate-50 rounded-lg transition-colors border-b border-slate-100">Services</a>
             {region === "na" && (
-              <a href="/why-as-built-surveys-matter" class="py-2 text-primary hover:text-accent transition-colors">
+              <a href="/why-as-built-surveys-matter" class="py-3 px-2 text-primary hover:text-accent hover:bg-slate-50 rounded-lg transition-colors border-b border-slate-100">
                 Why As-Builts Matter
               </a>
             )}
             {region === "uk" && (
-              <a href="/uk/why-as-built-surveys-matter" class="py-2 text-primary hover:text-accent transition-colors">
+              <a href="/uk/why-as-built-surveys-matter" class="py-3 px-2 text-primary hover:text-accent hover:bg-slate-50 rounded-lg transition-colors border-b border-slate-100">
                 Why As-Builts Matter
               </a>
             )}
-            <a href={region === "uk" ? "/uk/pricing" : "/pricing"} class="py-2 text-primary hover:text-accent transition-colors">Pricing</a>
-            <a href={region === "uk" ? "/uk/contact" : "/contact"} class="py-2 text-primary hover:text-accent transition-colors">Contact</a>
-            <a href={region === "uk" ? "/uk/faq" : "/faq"} class="py-2 text-primary hover:text-accent transition-colors">FAQ</a>
-            {region === "na" && (
-              <a href="/uk" class="py-2 text-primary hover:text-accent transition-colors">Alturascope UK</a>
-            )}
-            {region === "uk" && (
-              <a href="/" class="py-2 text-primary hover:text-accent transition-colors">Alturascope North America</a>
-            )}
+            <a href={region === "uk" ? "/uk/pricing" : "/pricing"} class="py-3 px-2 text-primary hover:text-accent hover:bg-slate-50 rounded-lg transition-colors border-b border-slate-100">Pricing</a>
+            <a href={region === "uk" ? "/uk/contact" : "/contact"} class="py-3 px-2 text-primary hover:text-accent hover:bg-slate-50 rounded-lg transition-colors border-b border-slate-100">Contact</a>
+            <a href={region === "uk" ? "/uk/faq" : "/faq"} class="py-3 px-2 text-primary hover:text-accent hover:bg-slate-50 rounded-lg transition-colors border-b border-slate-100">FAQ</a>
+            <div class="pt-3 mt-2">
+              {region === "na" && (
+                <a href="/uk" class="flex items-center justify-center py-3 px-4 bg-slate-100 text-primary hover:bg-slate-200 rounded-lg transition-colors text-sm">
+                  <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                  Switch to Alturascope UK
+                </a>
+              )}
+              {region === "uk" && (
+                <a href="/" class="flex items-center justify-center py-3 px-4 bg-slate-100 text-primary hover:bg-slate-200 rounded-lg transition-colors text-sm">
+                  <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                  Switch to Alturascope North America
+                </a>
+              )}
+            </div>
           </div>
         </nav>
       </header>
@@ -129,9 +163,28 @@ const { title = "Alturoscope", region = "na" } = Astro.props;
           }
 
           toggle.addEventListener("click", () => {
-            const isOpen = !menu.classList.contains("hidden");
-            menu.classList.toggle("hidden", isOpen);
+            const isOpen = menu.classList.contains("open");
+            menu.classList.toggle("open", !isOpen);
+            toggle.classList.toggle("hamburger-open", !isOpen);
             toggle.setAttribute("aria-expanded", String(!isOpen));
+          });
+
+          // Close menu when clicking outside
+          document.addEventListener("click", (e) => {
+            if (!toggle.contains(e.target) && !menu.contains(e.target)) {
+              menu.classList.remove("open");
+              toggle.classList.remove("hamburger-open");
+              toggle.setAttribute("aria-expanded", "false");
+            }
+          });
+
+          // Close menu when pressing Escape
+          document.addEventListener("keydown", (e) => {
+            if (e.key === "Escape" && menu.classList.contains("open")) {
+              menu.classList.remove("open");
+              toggle.classList.remove("hamburger-open");
+              toggle.setAttribute("aria-expanded", "false");
+            }
           });
         });
       }
