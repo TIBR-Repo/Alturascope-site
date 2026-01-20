@@ -1,0 +1,8 @@
+<svg width="420" height="90" viewBox="0 0 420 90" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <circle cx="44" cy="48" r="22" fill="#B9BDC2"></circle>
+  <circle cx="44" cy="48" r="14" fill="#0F2A43"></circle>
+  <circle cx="44" cy="48" r="6" fill="#B48A3C"></circle>
+  <text x="80" y="62" font-family="Inter, Arial, sans-serif" font-size="50" font-weight="700" fill="#0F2A43" letter-spacing="1.8">
+    Alturascope
+  </text>
+</svg>
