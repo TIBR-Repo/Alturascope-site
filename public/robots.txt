@@ -1,0 +1,6 @@
+# robots.txt for alturascope.com
+User-agent: *
+Allow: /
+
+# Sitemap location
+Sitemap: https://alturascope.com/sitemap.xml
