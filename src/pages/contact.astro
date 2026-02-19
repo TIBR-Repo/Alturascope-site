@@ -27,7 +27,11 @@ const schema = JSON.stringify({
         Share the address or location, the approximate size of the space, and what you're trying to decide. We'll come back within one business day with a clear scope recommendation and an all-in quote — travel included.
       </p>
 
-      <form class="mt-12 space-y-6" method="POST" action="/api/contact">
+      <form class="mt-12 space-y-6" method="POST" action="https://api.web3forms.com/submit">
+        <input type="hidden" name="access_key" value="8c6ab3a1-43b4-4110-8b1b-4a8bb804b90c" />
+        <input type="hidden" name="subject" value="New project enquiry from Alturascope.com" />
+        <input type="hidden" name="from_name" value="Alturascope Website" />
+        <input type="checkbox" name="botcheck" class="hidden" style="display:none" />
         <div>
           <label for="name" class="block text-sm font-medium text-navy mb-1.5">Name <span class="text-gold">*</span></label>
           <input type="text" id="name" name="name" required class="w-full px-4 py-3 border border-border bg-white text-navy focus:border-gold focus:outline-none transition-colors" />

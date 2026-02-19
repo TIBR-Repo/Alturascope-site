@@ -116,6 +116,9 @@ const breadcrumbSchema = JSON.stringify({
             Alturascope was built on a foundation of construction and conservation work that goes considerably beyond a standard survey background. Our principal has worked in construction and the built environment for nearly two decades — including hands-on work in some of Britain's most significant historic properties, close collaboration with leading architects and conservation specialists, and survey work across almost every state in the US and every Canadian province.
           </p>
           <p>
+            We work with survey-grade LiDAR, photogrammetry, and specialist inspection platforms — selecting the appropriate instrument for each environment rather than applying a single tool to every brief.
+          </p>
+          <p>
             That background shapes how we approach every project. We know what a building is trying to tell you. We know what gets missed. And we know that the most valuable documentation is the kind that's still useful five years after the visit.
           </p>
         </div>
@@ -132,7 +135,11 @@ const breadcrumbSchema = JSON.stringify({
           We don't run specialist work through a standard quote form. If you have a project that requires specific expertise, discretion, or capability — describe it to us. We'll tell you whether we're the right people for it.
         </p>
 
-        <form action="/contact" method="GET" class="space-y-6">
+        <form action="https://api.web3forms.com/submit" method="POST" class="space-y-6">
+          <input type="hidden" name="access_key" value="8c6ab3a1-43b4-4110-8b1b-4a8bb804b90c" />
+          <input type="hidden" name="subject" value="Specialist project enquiry from Alturascope.com" />
+          <input type="hidden" name="from_name" value="Alturascope Website" />
+          <input type="checkbox" name="botcheck" class="hidden" style="display:none" />
           <div>
             <label for="name" class="block text-sm font-medium text-navy mb-1">Name</label>
             <input type="text" id="name" name="name" required class="w-full px-4 py-3 border border-border bg-white text-navy focus:border-gold focus:outline-none transition-colors" />

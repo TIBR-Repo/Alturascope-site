@@ -130,6 +130,9 @@ const schema = JSON.stringify({
                 Every visit produces the same deliverable architecture: a navigable digital twin, a narrated video walkthrough, a detailed conditions report, and a platform your team can return to at any point. Built around the decision you're trying to make, not a generic survey checklist.
               </p>
               <p>
+                Where the project demands survey-grade accuracy — heritage structures, complex M&E environments, or facilities where dimensional precision is non-negotiable — we capture using professional LiDAR and photogrammetry instruments that produce millimetre-accurate point cloud data. The Matterport twin is built on top of that foundation, not instead of it.
+              </p>
+              <p>
                 We operate across the United States, Canada, and the United Kingdom under a single-vendor model. One brief. One standard. Consistent deliverables regardless of location.
               </p>
             </div>
@@ -170,8 +173,8 @@ const schema = JSON.stringify({
         <div class="mt-16 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
           <div>
             <svg class="w-8 h-8 text-gold mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M21 7.5l-9-5.25L3 7.5m18 0l-9 5.25m9-5.25v9l-9 5.25M3 7.5l9 5.25M3 7.5v9l9 5.25m0-9v9" /></svg>
-            <h3 class="text-offwhite font-medium mb-2">Matterport Digital Twin</h3>
-            <p class="text-offwhite/65 text-[0.9rem] leading-relaxed">A navigable, dimensionally accurate model of the space. Accessible by your entire team, anywhere.</p>
+            <h3 class="text-offwhite font-medium mb-2">Navigable Digital Twin</h3>
+            <p class="text-offwhite/65 text-[0.9rem] leading-relaxed">A navigable, accessible model of the space built from our site capture. Your team can explore every room and every surface without returning to site.</p>
           </div>
           <div>
             <svg class="w-8 h-8 text-gold mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M15.75 10.5l4.72-4.72a.75.75 0 011.28.53v11.38a.75.75 0 01-1.28.53l-4.72-4.72M4.5 18.75h9a2.25 2.25 0 002.25-2.25v-9a2.25 2.25 0 00-2.25-2.25h-9A2.25 2.25 0 002.25 7.5v9a2.25 2.25 0 002.25 2.25z" /></svg>
@@ -265,32 +268,12 @@ const schema = JSON.stringify({
           </div>
 
           <div>
-            <!-- REPLACE: Commission clean SVG showing US, Canada, UK landmass outlines in navy with gold highlight. -->
-            <svg viewBox="0 0 800 500" class="w-full" aria-label="Coverage map showing United States, Canada, and United Kingdom">
-              <rect width="800" height="500" fill="#F7F5F1" rx="4" />
-              <!-- Simplified North America -->
-              <g fill="#0B1F3A" opacity="0.15">
-                <ellipse cx="300" cy="150" rx="200" ry="100" />
-                <ellipse cx="280" cy="280" rx="160" ry="90" />
-              </g>
-              <g fill="#0B1F3A" opacity="0.3">
-                <ellipse cx="300" cy="150" rx="180" ry="85" />
-                <ellipse cx="280" cy="270" rx="140" ry="75" />
-              </g>
-              <!-- US outline approximation -->
-              <path d="M120,230 Q200,200 350,210 Q420,215 430,260 Q440,310 380,330 Q300,350 200,340 Q130,335 110,290 Z" fill="#0B1F3A" opacity="0.6" />
-              <!-- Canada outline approximation -->
-              <path d="M100,180 Q200,100 350,110 Q430,115 440,160 Q450,200 400,220 Q300,230 180,225 Q110,220 100,200 Z" fill="#0B1F3A" opacity="0.45" />
-              <!-- UK outline approximation -->
-              <path d="M620,140 Q630,110 640,100 Q650,95 655,110 Q660,140 655,170 Q650,190 640,195 Q630,190 625,170 Z" fill="#0B1F3A" opacity="0.6" />
-              <!-- Gold accent dots for key locations -->
-              <circle cx="280" cy="270" r="4" fill="#C9A84C" />
-              <circle cx="350" cy="250" r="4" fill="#C9A84C" />
-              <circle cx="200" cy="280" r="4" fill="#C9A84C" />
-              <circle cx="640" cy="150" r="4" fill="#C9A84C" />
-              <text x="300" y="380" text-anchor="middle" fill="#0B1F3A" font-size="13" font-family="DM Sans" font-weight="300" opacity="0.5">UNITED STATES &amp; CANADA</text>
-              <text x="640" y="230" text-anchor="middle" fill="#0B1F3A" font-size="12" font-family="DM Sans" font-weight="300" opacity="0.5">UNITED KINGDOM</text>
-            </svg>
+            <img
+              src="/coverage-map.png"
+              alt="Coverage map showing Alturascope operations across the United States, Canada, and United Kingdom"
+              class="w-full"
+              loading="lazy"
+            />
           </div>
         </div>
       </div>
