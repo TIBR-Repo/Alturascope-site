@@ -1,0 +1,145 @@
+---
+import Layout from "../../layouts/Layout.astro";
+
+const schema = JSON.stringify({
+  "@context": "https://schema.org",
+  "@type": "ProfessionalService",
+  "name": "Alturascope",
+  "description": "Reality capture, 3D documentation, and conditions surveys for construction teams and specialist clients across the US, Canada, and the UK.",
+  "url": "https://alturascope.com",
+  "areaServed": ["United States", "Canada", "United Kingdom"],
+  "serviceType": "Reality Capture and Site Documentation"
+});
+---
+<Layout
+  title="Site Documentation & Reality Capture Services | Alturascope"
+  description="Construction documentation, conditions surveys, equipment schedules, and specialist reality capture across the US, Canada, and UK. Consistent deliverables every time."
+  canonical="https://alturascope.com/services"
+  schema={schema}
+  fullWidth={true}
+>
+  <div data-hero-page>
+
+    <!-- Hero -->
+    <section class="relative h-[60vh] min-h-[400px] flex items-center justify-center">
+      <!-- REPLACE: Dark atmospheric commercial or industrial interior, different from homepage hero. -->
+      <div class="absolute inset-0 bg-navy">
+        <img
+          src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=1920&q=80"
+          alt="Atmospheric commercial interior space showing structural elements and building services"
+          class="w-full h-full object-cover opacity-35"
+        />
+        <div class="absolute inset-0 bg-[rgba(11,31,58,0.72)]"></div>
+      </div>
+      <div class="relative z-10 text-center px-6">
+        <h1 class="text-[2.4rem] md:text-[3.2rem] font-light text-offwhite leading-tight">
+          What we do. And how we do it.
+        </h1>
+      </div>
+    </section>
+
+    <!-- Core Service -->
+    <section class="bg-white section-padding">
+      <div class="max-w-[900px] mx-auto px-6">
+        <p class="label text-gold mb-4">Core Service</p>
+        <h2 class="text-[2rem] font-light text-navy leading-tight">
+          Site documentation for construction teams and project managers.
+        </h2>
+        <div class="mt-6 space-y-4 text-midgrey leading-body">
+          <p>
+            Our standard visit covers everything a project team needs to make decisions on a space — from pre-lease diligence to pre-construction capture to renovation documentation. We align on your brief before we arrive, follow a disciplined capture route on site, and deliver a structured package within three to five business days.
+          </p>
+          <p>
+            The deliverable is always the same architecture: digital twin, narrated walkthrough, conditions report, equipment schedule where relevant, labeled photo storyboard, and ScopeWalk platform access. Consistent enough to compare across sites. Detailed enough to brief your consultants directly.
+          </p>
+        </div>
+        <a href="/services/construction-documentation" class="inline-block mt-8 text-navy font-medium hover:opacity-80 transition-opacity">
+          Full detail on construction and commercial documentation &rarr;
+        </a>
+      </div>
+    </section>
+
+    <!-- Rollout Programmes -->
+    <section class="bg-offwhite section-padding">
+      <div class="max-w-[900px] mx-auto px-6">
+        <p class="label text-gold mb-4">Rollout Programmes</p>
+        <h2 class="text-[2rem] font-light text-navy leading-tight">
+          The same standard. Across every site in your programme.
+        </h2>
+        <div class="mt-6 space-y-4 text-midgrey leading-body">
+          <p>
+            For operators running rollout programmes — retail, healthcare, hospitality, franchise — consistency is the deliverable. Every site produces the same structured package through ScopeWalk, in the same format, accessible in the same place. Your design team briefs from the same information on site one as they do on site fifty.
+          </p>
+          <p>
+            We coordinate access and travel nationally, with programme pricing that includes travel costs rather than adding them per visit.
+          </p>
+        </div>
+        <a href="/services/multi-site-rollout-documentation" class="inline-block mt-8 text-navy font-medium hover:opacity-80 transition-opacity">
+          Multi-site and rollout documentation &rarr;
+        </a>
+      </div>
+    </section>
+
+    <!-- Specialist Work -->
+    <section class="bg-white section-padding">
+      <div class="max-w-[900px] mx-auto px-6">
+        <p class="label text-gold mb-4">Specialist Work</p>
+        <h2 class="text-[2rem] font-light text-navy leading-tight">
+          Some projects require a different kind of attention.
+        </h2>
+        <div class="mt-6 space-y-4 text-midgrey leading-body">
+          <p>
+            Beyond our core commercial work, we take on projects where the brief is specific, the environment is significant, or the standard approach won't do. We've documented spaces that required specialist access techniques, precision equipment, and a level of discretion that most survey operators aren't equipped to offer.
+          </p>
+          <p>
+            If your project is unusual — in its location, its complexity, or what it requires of the people doing the work — we'd like to hear about it.
+          </p>
+        </div>
+        <a href="/services/specialist-projects" class="inline-block mt-8 text-navy font-medium hover:opacity-80 transition-opacity">
+          Tell us about your project &rarr;
+        </a>
+      </div>
+    </section>
+
+    <!-- The Process -->
+    <section class="bg-offwhite section-padding">
+      <div class="max-w-[1200px] mx-auto px-6">
+        <h2 class="text-[2rem] font-light text-navy text-center mb-16">
+          How it works.
+        </h2>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10">
+          <div>
+            <p class="text-gold text-[2rem] font-light mb-3">01</p>
+            <h3 class="text-navy font-medium mb-3">Clarify the brief</h3>
+            <p class="text-midgrey text-[0.9rem] leading-relaxed">
+              We align on what you're deciding, what your team needs to see, and what the deliverable needs to do before anyone travels anywhere.
+            </p>
+          </div>
+          <div>
+            <p class="text-gold text-[2rem] font-light mb-3">02</p>
+            <h3 class="text-navy font-medium mb-3">Coordinate access</h3>
+            <p class="text-midgrey text-[0.9rem] leading-relaxed">
+              We handle building management, security coordination, and travel logistics. National travel model means no surprises on costs.
+            </p>
+          </div>
+          <div>
+            <p class="text-gold text-[2rem] font-light mb-3">03</p>
+            <h3 class="text-navy font-medium mb-3">Capture the site</h3>
+            <p class="text-midgrey text-[0.9rem] leading-relaxed">
+              On site we follow a disciplined route documented through ScopeWalk in real time — structure, services, equipment, conditions, access. Nothing missed.
+            </p>
+          </div>
+          <div>
+            <p class="text-gold text-[2rem] font-light mb-3">04</p>
+            <h3 class="text-navy font-medium mb-3">Deliver and access</h3>
+            <p class="text-midgrey text-[0.9rem] leading-relaxed">
+              Digital twin, report, walkthrough, and schedule delivered within three to five business days and permanently accessible through ScopeWalk.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </div>
+</Layout>

@@ -1,0 +1,247 @@
+---
+import Layout from "../../layouts/Layout.astro";
+
+const schema = JSON.stringify({
+  "@context": "https://schema.org",
+  "@type": "ProfessionalService",
+  "name": "Alturascope UK",
+  "description": "Precision 3D documentation for Grade I and Grade II listed buildings, historic structures, and heritage conservation projects across the UK.",
+  "url": "https://alturascope.com/uk",
+  "areaServed": ["United Kingdom", "England", "Scotland", "Wales", "Northern Ireland"],
+  "serviceType": "Heritage Building Documentation"
+});
+
+const breadcrumbSchema = JSON.stringify({
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://alturascope.com" },
+    { "@type": "ListItem", "position": 2, "name": "Alturascope UK", "item": "https://alturascope.com/uk" },
+    { "@type": "ListItem", "position": 3, "name": "Heritage Building Documentation UK", "item": "https://alturascope.com/uk/heritage-building-documentation" }
+  ]
+});
+
+const faqSchema = JSON.stringify({
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "What listed building grades do you work with?",
+      "acceptedAnswer": { "@type": "Answer", "text": "We work with Grade I, Grade II*, and Grade II listed buildings in England, Category A, B, and C listed buildings in Scotland, and equivalent designations in Wales and Northern Ireland. The documentation approach is tailored to the sensitivity and significance of the building — the more significant the fabric, the more careful the capture methodology." }
+    },
+    {
+      "@type": "Question",
+      "name": "Is the documentation accepted by English Heritage, Historic Scotland, and Cadw?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Our documentation is designed to meet the requirements of English Heritage, Historic Environment Scotland, Cadw, and the Historic Environment Division in Northern Ireland. We understand the documentation standards these bodies require and produce records that support listed building consent applications, grant submissions, conservation management plans, and heritage impact assessments." }
+    },
+    {
+      "@type": "Question",
+      "name": "Can you document confined spaces and above-ceiling voids in listed buildings without damage?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Yes. We use remote inspection platforms and specialist access techniques to document inaccessible spaces within listed buildings — roof voids, undercrofts, structural cavities, and hidden historic fabric. No scaffolding is required and no disruption to the building fabric occurs. This non-invasive approach is essential for working in listed environments where the fabric is protected." }
+    },
+    {
+      "@type": "Question",
+      "name": "What is the difference between your heritage documentation and a standard building survey?",
+      "acceptedAnswer": { "@type": "Answer", "text": "A standard building survey documents the visible condition of a property. Our heritage documentation goes further: we capture the building fabric with an understanding of historic materials and construction methods, document inaccessible spaces within the structure, produce Matterport digital twins that conservation architects can navigate remotely, and deliver conditions reports that prioritise findings in the context of the building's significance. The deliverable is designed for people who understand buildings — not just as a record of what was visible on the day." }
+    },
+    {
+      "@type": "Question",
+      "name": "Do you cover the whole of the UK?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Yes. Our UK operation covers England, Scotland, Wales, and Northern Ireland. Travel costs are included in project pricing. Whether your listed building is in central London, the Scottish Highlands, rural Wales, or anywhere else in the UK, you receive the same standard of documentation at the same pricing structure." }
+    }
+  ]
+});
+---
+<Layout
+  title="Listed Building & Heritage Survey UK | 3D Documentation | Alturascope"
+  description="Precision 3D documentation for Grade I and II listed buildings, historic structures, and heritage conservation projects across England, Scotland, Wales, and Northern Ireland."
+  canonical="https://alturascope.com/uk/heritage-building-documentation"
+  schema={schema}
+  breadcrumbSchema={breadcrumbSchema}
+  faqSchema={faqSchema}
+  fullWidth={true}
+>
+  <div data-hero-page>
+
+    <!-- Hero -->
+    <section class="relative h-[60vh] min-h-[400px] flex items-center justify-center">
+      <!-- REPLACE: Dramatic UK heritage interior — stone, timber, vaulted ceiling, listed building character. -->
+      <div class="absolute inset-0 bg-navy">
+        <img
+          src="https://images.unsplash.com/photo-1558618666-fcd25c85f82e?w=1920&q=80"
+          alt="Grade I listed building interior with dramatic stone vaulting and heritage architectural detail"
+          class="w-full h-full object-cover opacity-30"
+        />
+        <div class="absolute inset-0 bg-[rgba(11,31,58,0.75)]"></div>
+      </div>
+      <div class="relative z-10 text-center px-6 max-w-[800px] mx-auto">
+        <h1 class="text-[2.4rem] md:text-[3.2rem] font-light text-offwhite leading-tight">
+          Listed building and heritage survey across the UK.
+        </h1>
+      </div>
+    </section>
+
+    <!-- Opening -->
+    <section class="bg-white section-padding">
+      <div class="max-w-[900px] mx-auto px-6">
+        <p class="label text-gold mb-4">Heritage Documentation UK</p>
+        <div class="space-y-4 text-midgrey leading-body text-[1.05rem]">
+          <p>
+            Listed buildings require documentation that understands what it's recording. Irregular geometry, fragile fabric, restricted access, and the irreplaceability of what's being captured — these require a different approach from standard survey work. Alturascope provides precision reality capture for listed and historic buildings across England, Scotland, Wales, and Northern Ireland.
+          </p>
+          <p>
+            Our principal's background includes hands-on construction and conservation work on some of Britain's most significant historic properties. That experience shapes every heritage survey we deliver — understanding materials, understanding what matters to conservation architects, and producing records that heritage bodies, planners, and preservation specialists can rely on.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- What we document -->
+    <section class="bg-offwhite section-padding">
+      <div class="max-w-[900px] mx-auto px-6">
+        <h2 class="text-[2rem] font-light text-navy leading-tight">What we document.</h2>
+        <div class="mt-6 space-y-4 text-midgrey leading-body">
+          <p>
+            Accessible interiors and inaccessible spaces — roof voids, undercrofts, structural cavities, and hidden historic fabric. Above and below visible surfaces. Exterior envelope where accessible. Conditions and materials as found. We document the building as it exists, with an understanding of the fabric, the construction methods, and the constraints of working in protected environments.
+          </p>
+          <p>
+            For listed buildings, the documentation of what can't normally be seen is often the most valuable element — roof structures, concealed historic fabric, services runs within the building envelope, and the condition of areas that haven't been inspected for years.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- What you receive -->
+    <section class="bg-white section-padding">
+      <div class="max-w-[900px] mx-auto px-6">
+        <h2 class="text-[2rem] font-light text-navy leading-tight">What you receive.</h2>
+        <p class="mt-6 text-midgrey leading-body">
+          Matterport digital twin, point cloud data where survey-grade accuracy is required, narrated conditions walkthrough, materials and conditions report, above-ceiling documentation, labeled photo storyboard, and ScopeWalk access. Formatted so conservation architects, heritage consultants, and local authority heritage officers can work from it directly.
+        </p>
+      </div>
+    </section>
+
+    <!-- Who this is for -->
+    <section class="bg-offwhite section-padding">
+      <div class="max-w-[900px] mx-auto px-6">
+        <h2 class="text-[2rem] font-light text-navy leading-tight">Who this is for.</h2>
+        <p class="mt-6 text-midgrey leading-body">
+          Conservation architects, heritage architects, English Heritage, Historic Environment Scotland, Cadw, local authority heritage officers, preservation trusts, private owners of listed buildings, and estate managers. Whether you're planning sensitive restoration, supporting a listed building consent application, or creating a complete record of the building as it stands.
+        </p>
+      </div>
+    </section>
+
+    <!-- Process -->
+    <section class="bg-white section-padding">
+      <div class="max-w-[1200px] mx-auto px-6">
+        <h2 class="text-[2rem] font-light text-navy text-center mb-16">How it works.</h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10">
+          <div>
+            <p class="text-gold text-[2rem] font-light mb-3">01</p>
+            <h3 class="text-navy font-medium mb-3">Clarify the brief</h3>
+            <p class="text-midgrey text-[0.9rem] leading-relaxed">
+              We align on what the documentation needs to achieve — conservation planning, consent application, estate record — and scope accordingly.
+            </p>
+          </div>
+          <div>
+            <p class="text-gold text-[2rem] font-light mb-3">02</p>
+            <h3 class="text-navy font-medium mb-3">Coordinate access</h3>
+            <p class="text-midgrey text-[0.9rem] leading-relaxed">
+              We handle all logistics including any requirements specific to listed building access, keyholders, and heritage authority coordination.
+            </p>
+          </div>
+          <div>
+            <p class="text-gold text-[2rem] font-light mb-3">03</p>
+            <h3 class="text-navy font-medium mb-3">Capture with care</h3>
+            <p class="text-midgrey text-[0.9rem] leading-relaxed">
+              On site we follow a methodical capture route appropriate to the building's sensitivity — structure, fabric, conditions, inaccessible spaces.
+            </p>
+          </div>
+          <div>
+            <p class="text-gold text-[2rem] font-light mb-3">04</p>
+            <h3 class="text-navy font-medium mb-3">Deliver and access</h3>
+            <p class="text-midgrey text-[0.9rem] leading-relaxed">
+              Complete deliverable package permanently accessible through ScopeWalk, formatted for conservation professionals.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="bg-offwhite section-padding">
+      <div class="max-w-[900px] mx-auto px-6">
+        <h2 class="text-[2rem] font-light text-navy mb-12">Frequently asked questions.</h2>
+
+        <div class="space-y-8">
+          <details class="group border-b border-border pb-6">
+            <summary class="cursor-pointer text-navy font-medium text-lg flex items-center justify-between">
+              What listed building grades do you work with?
+              <span class="text-gold text-xl transition-transform group-open:rotate-45">+</span>
+            </summary>
+            <p class="mt-4 text-midgrey leading-body">
+              We work with Grade I, Grade II*, and Grade II listed buildings in England, Category A, B, and C listed buildings in Scotland, and equivalent designations in Wales and Northern Ireland. The documentation approach is tailored to the sensitivity and significance of the building — the more significant the fabric, the more careful the capture methodology.
+            </p>
+          </details>
+
+          <details class="group border-b border-border pb-6">
+            <summary class="cursor-pointer text-navy font-medium text-lg flex items-center justify-between">
+              Is the documentation accepted by English Heritage, Historic Scotland, and Cadw?
+              <span class="text-gold text-xl transition-transform group-open:rotate-45">+</span>
+            </summary>
+            <p class="mt-4 text-midgrey leading-body">
+              Our documentation is designed to meet the requirements of English Heritage, Historic Environment Scotland, Cadw, and the Historic Environment Division in Northern Ireland. We understand the documentation standards these bodies require and produce records that support listed building consent applications, grant submissions, conservation management plans, and heritage impact assessments.
+            </p>
+          </details>
+
+          <details class="group border-b border-border pb-6">
+            <summary class="cursor-pointer text-navy font-medium text-lg flex items-center justify-between">
+              Can you document confined spaces and above-ceiling voids in listed buildings without damage?
+              <span class="text-gold text-xl transition-transform group-open:rotate-45">+</span>
+            </summary>
+            <p class="mt-4 text-midgrey leading-body">
+              Yes. We use remote inspection platforms and specialist access techniques to document inaccessible spaces within listed buildings — roof voids, undercrofts, structural cavities, and hidden historic fabric. No scaffolding is required and no disruption to the building fabric occurs. This non-invasive approach is essential for working in listed environments where the fabric is protected.
+            </p>
+          </details>
+
+          <details class="group border-b border-border pb-6">
+            <summary class="cursor-pointer text-navy font-medium text-lg flex items-center justify-between">
+              What is the difference between your heritage documentation and a standard building survey?
+              <span class="text-gold text-xl transition-transform group-open:rotate-45">+</span>
+            </summary>
+            <p class="mt-4 text-midgrey leading-body">
+              A standard building survey documents the visible condition of a property. Our heritage documentation goes further: we capture the building fabric with an understanding of historic materials and construction methods, document inaccessible spaces within the structure, produce Matterport digital twins that conservation architects can navigate remotely, and deliver conditions reports that prioritise findings in the context of the building's significance.
+            </p>
+          </details>
+
+          <details class="group border-b border-border pb-6">
+            <summary class="cursor-pointer text-navy font-medium text-lg flex items-center justify-between">
+              Do you cover the whole of the UK?
+              <span class="text-gold text-xl transition-transform group-open:rotate-45">+</span>
+            </summary>
+            <p class="mt-4 text-midgrey leading-body">
+              Yes. Our UK operation covers England, Scotland, Wales, and Northern Ireland. Travel costs are included in project pricing. Whether your listed building is in central London, the Scottish Highlands, rural Wales, or anywhere else in the UK, you receive the same standard of documentation at the same pricing structure.
+            </p>
+          </details>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="bg-white section-padding">
+      <div class="max-w-[700px] mx-auto px-6 text-center">
+        <h2 class="text-[2rem] font-light text-navy">Tell us about your heritage project.</h2>
+        <p class="mt-4 text-midgrey leading-body">
+          Describe the building, the listed status, and what the documentation needs to achieve. We'll come back with a clear scope and an all-in quote.
+        </p>
+        <a href="/contact" class="btn-primary mt-8">Start a Project</a>
+        <div class="mt-8 flex flex-wrap justify-center gap-6 text-sm">
+          <a href="/uk" class="text-navy font-medium hover:opacity-80 transition-opacity">Alturascope UK &rarr;</a>
+          <a href="/services" class="text-navy font-medium hover:opacity-80 transition-opacity">All services &rarr;</a>
+        </div>
+      </div>
+    </section>
+
+  </div>
+</Layout>

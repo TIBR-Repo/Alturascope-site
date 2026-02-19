@@ -1,0 +1,354 @@
+---
+import Layout from "../../layouts/Layout.astro";
+
+const schema = JSON.stringify({
+  "@context": "https://schema.org",
+  "@type": "ProfessionalService",
+  "name": "Alturascope",
+  "description": "Reality capture, 3D documentation, and conditions surveys for construction teams and specialist clients across the US, Canada, and the UK.",
+  "url": "https://alturascope.com",
+  "areaServed": ["United States", "Canada", "United Kingdom"],
+  "serviceType": "Reality Capture and Site Documentation"
+});
+
+const breadcrumbSchema = JSON.stringify({
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://alturascope.com" },
+    { "@type": "ListItem", "position": 2, "name": "Services", "item": "https://alturascope.com/services" },
+    { "@type": "ListItem", "position": 3, "name": "Construction Documentation", "item": "https://alturascope.com/services/construction-documentation" }
+  ]
+});
+
+const faqSchema = JSON.stringify({
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "What does a commercial site documentation visit include?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Every standard commercial visit produces a complete deliverable package: a Matterport digital twin, a narrated video walkthrough, a conditions report with findings prioritised into P1, P2, and P3, an equipment and asset schedule where relevant, a labeled photo storyboard, and ScopeWalk platform access. The visit is scoped around your brief — what your team needs to decide — and the deliverables are structured so your consultants and contractors can work directly from them without needing to return to site." }
+    },
+    {
+      "@type": "Question",
+      "name": "How long does a site visit take?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Most standard commercial visits take between four and eight hours on site, depending on the size and complexity of the space. Larger facilities or multi-floor buildings may require a full day or, in some cases, two days. We scope the visit duration during the brief and confirm it before we arrive, so there are no surprises for the building management or your team. The capture process is non-disruptive and can work around active operations where needed." }
+    },
+    {
+      "@type": "Question",
+      "name": "How quickly do we receive the deliverables?",
+      "acceptedAnswer": { "@type": "Answer", "text": "The standard turnaround is three to five business days from the date of the site visit. All deliverables — the digital twin, the conditions report, the equipment schedule, the narrated walkthrough, and the labeled photo storyboard — are delivered simultaneously through your ScopeWalk portal. For time-critical projects, expedited delivery is available by arrangement. Once delivered, all materials are permanently accessible through ScopeWalk." }
+    },
+    {
+      "@type": "Question",
+      "name": "What is above-ceiling capture and when is it needed?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Above-ceiling capture involves opening ceiling tiles to document the void space above — services runs, structural elements, existing penetrations, conditions, and connections. This is essential for fit-out and renovation projects where the design depends on what's above the visible ceiling. Most standard surveys stop at ceiling height, which means the most expensive surprises during construction are the ones nobody documented. We include above-ceiling capture as part of our standard commercial visit." }
+    },
+    {
+      "@type": "Question",
+      "name": "What is an equipment schedule and who is it for?",
+      "acceptedAnswer": { "@type": "Answer", "text": "An equipment schedule is a complete inventory of all installed equipment — documented by location, make, model, condition, and services connections. For commercial kitchens, plant rooms, and specialist facilities, this gives your procurement team, designers, and contractors the information they need to specify replacements, plan fit-outs, or manage assets without a return visit. The schedule is formatted for practical use, not as a raw data dump." }
+    },
+    {
+      "@type": "Question",
+      "name": "Do you cover all US states and Canadian provinces?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Yes. Alturascope operates across all fifty US states and every Canadian province under a national travel model. Travel costs are included in all project pricing — they are not added as a separate line item. For projects in the United Kingdom, our dedicated UK operation covers England, Scotland, Wales, and Northern Ireland. Whether you have one site or fifty, you brief us once and receive the same standard of work regardless of where the building is." }
+    },
+    {
+      "@type": "Question",
+      "name": "What is ScopeWalk?",
+      "acceptedAnswer": { "@type": "Answer", "text": "ScopeWalk is Alturascope's proprietary delivery and access platform. Every deliverable — digital twin, conditions report, equipment schedule, narrated walkthrough, labeled photo storyboard — is structured and labeled within the same portal. Your team can access any project at any time. For multi-site programmes, you can compare any two properties side by side. ScopeWalk is not an add-on — it is how every Alturascope project is delivered." }
+    },
+    {
+      "@type": "Question",
+      "name": "How is Alturascope different from a standard Matterport scan?",
+      "acceptedAnswer": { "@type": "Answer", "text": "A standard Matterport scan produces a navigable 3D model of the visible space — which is useful but incomplete for construction and project decision-making. Alturascope builds a complete documentation package around the scan: above-ceiling capture, a structured conditions report, an equipment schedule, a narrated walkthrough, and a labeled photo storyboard. Everything is delivered through ScopeWalk with consistent structure and labeling. The difference is between a scan and a complete project record." }
+    },
+    {
+      "@type": "Question",
+      "name": "How do you handle multi-site rollout programmes?",
+      "acceptedAnswer": { "@type": "Answer", "text": "For rollout programmes, we establish the deliverable standard once — during the initial brief — and apply it consistently across every site in the programme. Every location produces the same package in the same format through ScopeWalk. We coordinate access, travel, and scheduling nationally, with programme pricing that includes travel rather than adding it per visit. Your team learns the format once and uses it across the entire programme." }
+    },
+    {
+      "@type": "Question",
+      "name": "Can you run visits across multiple states simultaneously?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Yes. For programmes running across multiple states or provinces, we can mobilise across locations in parallel rather than sequentially. This compresses pre-construction timelines significantly for operators who need multiple sites documented within a tight window. We coordinate all logistics centrally and deliver all sites through a single ScopeWalk programme portal." }
+    }
+  ]
+});
+---
+<Layout
+  title="Commercial As-Built Surveys & Construction Documentation | US & Canada | Alturascope"
+  description="Matterport digital twins, conditions reports, equipment schedules, and above-ceiling capture for GCs, developers, and project managers. Nationwide US and Canada."
+  canonical="https://alturascope.com/services/construction-documentation"
+  schema={schema}
+  breadcrumbSchema={breadcrumbSchema}
+  faqSchema={faqSchema}
+  fullWidth={true}
+>
+  <div data-hero-page>
+
+    <!-- Hero -->
+    <section class="relative h-[60vh] min-h-[400px] flex items-center justify-center">
+      <!-- REPLACE: Atmospheric commercial construction or renovation space. Empty, dramatic, shows scale. -->
+      <div class="absolute inset-0 bg-navy">
+        <img
+          src="https://images.unsplash.com/photo-1581094794329-c8112a89af12?w=1920&q=80"
+          alt="Commercial construction site interior with exposed structure and atmospheric lighting"
+          class="w-full h-full object-cover opacity-35"
+        />
+        <div class="absolute inset-0 bg-[rgba(11,31,58,0.72)]"></div>
+      </div>
+      <div class="relative z-10 text-center px-6 max-w-[800px] mx-auto">
+        <h1 class="text-[2.4rem] md:text-[3.2rem] font-light text-offwhite leading-tight">
+          Construction and commercial site documentation.
+        </h1>
+      </div>
+    </section>
+
+    <!-- What this service covers -->
+    <section class="bg-white section-padding">
+      <div class="max-w-[900px] mx-auto px-6">
+        <p class="label text-gold mb-4">The Service</p>
+        <h2 class="text-[2rem] font-light text-navy leading-tight">
+          Everything your team needs. In one visit.
+        </h2>
+        <div class="mt-6 space-y-4 text-midgrey leading-body">
+          <p>
+            Our standard commercial visit is built around a simple principle: your team should be able to make any decision about the space from the deliverable package alone, without a return visit. That means capturing structure, services, equipment, access, and conditions — not just taking photographs.
+          </p>
+          <p>
+            We align on the brief before we arrive. On site, we follow a disciplined capture route using our ScopeWalk system in real time, ensuring nothing is missed and every element is labeled consistently. The deliverable package arrives within three to five business days and is permanently accessible through your ScopeWalk portal.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Above-Ceiling Capture -->
+    <section class="bg-offwhite section-padding">
+      <div class="max-w-[900px] mx-auto px-6">
+        <p class="label text-gold mb-4">Above-Ceiling Capture</p>
+        <h2 class="text-[2rem] font-light text-navy leading-tight">
+          What&rsquo;s hiding above the tiles.
+        </h2>
+        <div class="mt-6 space-y-4 text-midgrey leading-body">
+          <p>
+            Most conditions surveys stop at ceiling height. The decisions that go wrong are usually made because nobody documented what was above it. We open ceiling tiles, document the void — services runs, structural elements, existing penetrations, conditions — and close them again. What we find becomes part of the conditions report and the labeled photo record.
+          </p>
+          <p>
+            For fit-out and renovation projects, above-ceiling documentation is the difference between a design that works and one that meets an expensive surprise on site.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Equipment Schedules -->
+    <section class="bg-white section-padding">
+      <div class="max-w-[900px] mx-auto px-6">
+        <p class="label text-gold mb-4">Equipment Schedules</p>
+        <h2 class="text-[2rem] font-light text-navy leading-tight">
+          Every piece of equipment. Documented properly.
+        </h2>
+        <div class="mt-6 space-y-4 text-midgrey leading-body">
+          <p>
+            For commercial kitchens, plant rooms, hospitality back-of-house, and specialist facilities, we produce a complete equipment and asset schedule: every item documented by location, make, model, condition, and services connections. Formatted for your procurement team, your designers, or your client — not as a raw data dump.
+          </p>
+          <p>
+            Combined with the Matterport digital twin and the conditions report, the equipment schedule gives your team a complete picture of the existing installation without needing to return to site.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Multi-Site & Rollout -->
+    <section class="bg-offwhite section-padding">
+      <div class="max-w-[900px] mx-auto px-6">
+        <p class="label text-gold mb-4">Rollout Programmes</p>
+        <h2 class="text-[2rem] font-light text-navy leading-tight">
+          Multi-site and rollout programmes.
+        </h2>
+        <div class="mt-6 space-y-4 text-midgrey leading-body">
+          <p>
+            For operators running rollout programmes — retail, healthcare, hospitality, franchise — the documentation challenge isn't just accuracy. It's consistency. A conditions survey in a different format, with different labeling and different standards, creates work for your design and procurement teams rather than removing it.
+          </p>
+          <p>
+            Our ScopeWalk platform was built with programme work in mind. Every site produces the same deliverable architecture, accessible through the same portal, in the same format. Your team learns it once and uses it across the entire programme.
+          </p>
+          <p>
+            We coordinate access, travel, and scheduling nationally. Travel costs are included in programme pricing. For programmes running across multiple states or provinces simultaneously, we can mobilise across locations in parallel to compress your pre-construction timeline.
+          </p>
+          <p>
+            We work with several active multi-site rollout programmes across the US and Canada. If you're planning a programme — or inheriting one that needs better documentation — we'd like to hear about it.
+          </p>
+        </div>
+        <a href="/services/multi-site-rollout-documentation" class="inline-block mt-8 text-navy font-medium hover:opacity-80 transition-opacity">
+          Full detail on rollout and multi-site programmes &rarr;
+        </a>
+      </div>
+    </section>
+
+    <!-- ScopeWalk Platform -->
+    <section class="bg-navy section-padding">
+      <div class="max-w-[900px] mx-auto px-6">
+        <p class="label text-gold mb-4">ScopeWalk&trade;</p>
+        <h2 class="text-[2rem] font-light text-offwhite leading-tight">
+          Not a folder of files. A usable project record.
+        </h2>
+        <div class="mt-6 space-y-4 text-offwhite/70 leading-body">
+          <p>
+            ScopeWalk is our proprietary delivery and access platform. Every deliverable — digital twin, report, photo storyboard, equipment schedule — is structured and labeled within the same portal. Your team can access any project at any time. For multi-site programmes, you can compare any two properties side by side.
+          </p>
+          <p>
+            It's not an add-on. It's how every Alturascope project is delivered.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Coverage -->
+    <section class="bg-white section-padding">
+      <div class="max-w-[900px] mx-auto px-6">
+        <p class="text-midgrey leading-body">
+          We operate across all fifty US states and every Canadian province. Travel is included in all project pricing. For UK projects, <a href="/uk" class="text-navy font-medium hover:opacity-80 transition-opacity">visit Alturascope UK</a>.
+        </p>
+      </div>
+    </section>
+
+    <!-- Trade & Partner Enquiries -->
+    <section class="bg-offwhite section-padding">
+      <div class="max-w-[900px] mx-auto px-6">
+        <p class="label text-gold mb-4">Trade &amp; Partner Enquiries</p>
+        <div class="mt-2 space-y-4 text-midgrey leading-body">
+          <p>
+            We work with a number of design-build firms, fit-out contractors, and project management consultancies as their documentation partner — providing consistent pre-construction and as-built surveys across their client programmes. If you're looking for a reliable documentation sub-vendor for your pipeline, we'd like to hear from you.
+          </p>
+        </div>
+        <a href="/contact" class="inline-block mt-8 text-navy font-medium hover:opacity-80 transition-opacity">
+          Partner enquiries &rarr;
+        </a>
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="bg-white section-padding">
+      <div class="max-w-[900px] mx-auto px-6">
+        <h2 class="text-[2rem] font-light text-navy mb-12">Frequently asked questions.</h2>
+
+        <div class="space-y-8">
+          <details class="group border-b border-border pb-6">
+            <summary class="cursor-pointer text-navy font-medium text-lg flex items-center justify-between">
+              What does a commercial site documentation visit include?
+              <span class="text-gold text-xl transition-transform group-open:rotate-45">+</span>
+            </summary>
+            <p class="mt-4 text-midgrey leading-body">
+              Every standard commercial visit produces a complete deliverable package: a Matterport digital twin, a narrated video walkthrough, a conditions report with findings prioritised into P1, P2, and P3, an equipment and asset schedule where relevant, a labeled photo storyboard, and ScopeWalk platform access. The visit is scoped around your brief — what your team needs to decide — and the deliverables are structured so your consultants and contractors can work directly from them without needing to return to site.
+            </p>
+          </details>
+
+          <details class="group border-b border-border pb-6">
+            <summary class="cursor-pointer text-navy font-medium text-lg flex items-center justify-between">
+              How long does a site visit take?
+              <span class="text-gold text-xl transition-transform group-open:rotate-45">+</span>
+            </summary>
+            <p class="mt-4 text-midgrey leading-body">
+              Most standard commercial visits take between four and eight hours on site, depending on the size and complexity of the space. Larger facilities or multi-floor buildings may require a full day or, in some cases, two days. We scope the visit duration during the brief and confirm it before we arrive, so there are no surprises for the building management or your team. The capture process is non-disruptive and can work around active operations where needed.
+            </p>
+          </details>
+
+          <details class="group border-b border-border pb-6">
+            <summary class="cursor-pointer text-navy font-medium text-lg flex items-center justify-between">
+              How quickly do we receive the deliverables?
+              <span class="text-gold text-xl transition-transform group-open:rotate-45">+</span>
+            </summary>
+            <p class="mt-4 text-midgrey leading-body">
+              The standard turnaround is three to five business days from the date of the site visit. All deliverables — the digital twin, the conditions report, the equipment schedule, the narrated walkthrough, and the labeled photo storyboard — are delivered simultaneously through your ScopeWalk portal. For time-critical projects, expedited delivery is available by arrangement. Once delivered, all materials are permanently accessible through ScopeWalk.
+            </p>
+          </details>
+
+          <details class="group border-b border-border pb-6">
+            <summary class="cursor-pointer text-navy font-medium text-lg flex items-center justify-between">
+              What is above-ceiling capture and when is it needed?
+              <span class="text-gold text-xl transition-transform group-open:rotate-45">+</span>
+            </summary>
+            <p class="mt-4 text-midgrey leading-body">
+              Above-ceiling capture involves opening ceiling tiles to document the void space above — services runs, structural elements, existing penetrations, conditions, and connections. This is essential for fit-out and renovation projects where the design depends on what's above the visible ceiling. Most standard surveys stop at ceiling height, which means the most expensive surprises during construction are the ones nobody documented. We include above-ceiling capture as part of our standard commercial visit.
+            </p>
+          </details>
+
+          <details class="group border-b border-border pb-6">
+            <summary class="cursor-pointer text-navy font-medium text-lg flex items-center justify-between">
+              What is an equipment schedule and who is it for?
+              <span class="text-gold text-xl transition-transform group-open:rotate-45">+</span>
+            </summary>
+            <p class="mt-4 text-midgrey leading-body">
+              An equipment schedule is a complete inventory of all installed equipment — documented by location, make, model, condition, and services connections. For commercial kitchens, plant rooms, and specialist facilities, this gives your procurement team, designers, and contractors the information they need to specify replacements, plan fit-outs, or manage assets without a return visit. The schedule is formatted for practical use, not as a raw data dump.
+            </p>
+          </details>
+
+          <details class="group border-b border-border pb-6">
+            <summary class="cursor-pointer text-navy font-medium text-lg flex items-center justify-between">
+              Do you cover all US states and Canadian provinces?
+              <span class="text-gold text-xl transition-transform group-open:rotate-45">+</span>
+            </summary>
+            <p class="mt-4 text-midgrey leading-body">
+              Yes. Alturascope operates across all fifty US states and every Canadian province under a national travel model. Travel costs are included in all project pricing — they are not added as a separate line item. For projects in the United Kingdom, our dedicated UK operation covers England, Scotland, Wales, and Northern Ireland. Whether you have one site or fifty, you brief us once and receive the same standard of work regardless of where the building is.
+            </p>
+          </details>
+
+          <details class="group border-b border-border pb-6">
+            <summary class="cursor-pointer text-navy font-medium text-lg flex items-center justify-between">
+              What is ScopeWalk?
+              <span class="text-gold text-xl transition-transform group-open:rotate-45">+</span>
+            </summary>
+            <p class="mt-4 text-midgrey leading-body">
+              ScopeWalk is Alturascope's proprietary delivery and access platform. Every deliverable — digital twin, conditions report, equipment schedule, narrated walkthrough, labeled photo storyboard — is structured and labeled within the same portal. Your team can access any project at any time. For multi-site programmes, you can compare any two properties side by side. ScopeWalk is not an add-on — it is how every Alturascope project is delivered.
+            </p>
+          </details>
+
+          <details class="group border-b border-border pb-6">
+            <summary class="cursor-pointer text-navy font-medium text-lg flex items-center justify-between">
+              How is Alturascope different from a standard Matterport scan?
+              <span class="text-gold text-xl transition-transform group-open:rotate-45">+</span>
+            </summary>
+            <p class="mt-4 text-midgrey leading-body">
+              A standard Matterport scan produces a navigable 3D model of the visible space — which is useful but incomplete for construction and project decision-making. Alturascope builds a complete documentation package around the scan: above-ceiling capture, a structured conditions report, an equipment schedule, a narrated walkthrough, and a labeled photo storyboard. Everything is delivered through ScopeWalk with consistent structure and labeling. The difference is between a scan and a complete project record.
+            </p>
+          </details>
+
+          <details class="group border-b border-border pb-6">
+            <summary class="cursor-pointer text-navy font-medium text-lg flex items-center justify-between">
+              How do you handle multi-site rollout programmes?
+              <span class="text-gold text-xl transition-transform group-open:rotate-45">+</span>
+            </summary>
+            <p class="mt-4 text-midgrey leading-body">
+              For rollout programmes, we establish the deliverable standard once — during the initial brief — and apply it consistently across every site in the programme. Every location produces the same package in the same format through ScopeWalk. We coordinate access, travel, and scheduling nationally, with programme pricing that includes travel rather than adding it per visit. Your team learns the format once and uses it across the entire programme.
+            </p>
+          </details>
+
+          <details class="group border-b border-border pb-6">
+            <summary class="cursor-pointer text-navy font-medium text-lg flex items-center justify-between">
+              Can you run visits across multiple states simultaneously?
+              <span class="text-gold text-xl transition-transform group-open:rotate-45">+</span>
+            </summary>
+            <p class="mt-4 text-midgrey leading-body">
+              Yes. For programmes running across multiple states or provinces, we can mobilise across locations in parallel rather than sequentially. This compresses pre-construction timelines significantly for operators who need multiple sites documented within a tight window. We coordinate all logistics centrally and deliver all sites through a single ScopeWalk programme portal.
+            </p>
+          </details>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="bg-offwhite section-padding">
+      <div class="max-w-[700px] mx-auto px-6 text-center">
+        <h2 class="text-[2rem] font-light text-navy">Ready to start?</h2>
+        <p class="mt-4 text-midgrey leading-body">
+          Tell us about the site, the approximate size, and what your team is trying to decide. We'll come back with a clear scope and an all-in quote.
+        </p>
+        <a href="/contact" class="btn-primary mt-8">Start a Project</a>
+      </div>
+    </section>
+
+  </div>
+</Layout>

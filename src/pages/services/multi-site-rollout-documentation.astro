@@ -1,0 +1,260 @@
+---
+import Layout from "../../layouts/Layout.astro";
+
+const schema = JSON.stringify({
+  "@context": "https://schema.org",
+  "@type": "ProfessionalService",
+  "name": "Alturascope",
+  "description": "Reality capture, 3D documentation, and conditions surveys for construction teams and specialist clients across the US, Canada, and the UK.",
+  "url": "https://alturascope.com",
+  "areaServed": ["United States", "Canada", "United Kingdom"],
+  "serviceType": "Reality Capture and Site Documentation"
+});
+
+const breadcrumbSchema = JSON.stringify({
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://alturascope.com" },
+    { "@type": "ListItem", "position": 2, "name": "Services", "item": "https://alturascope.com/services" },
+    { "@type": "ListItem", "position": 3, "name": "Multi-Site Rollout Documentation", "item": "https://alturascope.com/services/multi-site-rollout-documentation" }
+  ]
+});
+
+const faqSchema = JSON.stringify({
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "How do you maintain consistency across multiple sites?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Consistency is built into our process. During the initial programme brief, we establish the deliverable standard — capture scope, labeling conventions, report structure, and ScopeWalk configuration — and apply it identically to every subsequent site visit. Every site produces the same deliverable architecture in the same format through the same portal. Your team learns it once and uses it across the entire programme without translating between different survey formats." }
+    },
+    {
+      "@type": "Question",
+      "name": "Can you run multiple site visits in parallel across different states?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Yes. For programmes with compressed timelines, we can mobilise across multiple states or provinces simultaneously rather than visiting locations sequentially. This is particularly valuable for operators who need multiple sites documented within a tight pre-construction window. All logistics are coordinated centrally and every site delivers through the same ScopeWalk programme portal." }
+    },
+    {
+      "@type": "Question",
+      "name": "How is programme pricing structured?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Programme pricing is structured on a per-site basis with travel included — there are no separate travel charges added per visit. The per-site rate reflects the scope established during the programme brief. For larger programmes, pricing improves with volume. We provide a clear schedule of rates before the first visit so your team can budget the entire programme with confidence." }
+    },
+    {
+      "@type": "Question",
+      "name": "What is ScopeWalk and how does it work for multi-site programmes?",
+      "acceptedAnswer": { "@type": "Answer", "text": "ScopeWalk is our proprietary delivery platform. For multi-site programmes, it functions as a programme-level portal: every site in the rollout is accessible through a single interface, with consistent structure and labeling across all locations. Your team can compare any two properties side by side, track programme progress, and brief consultants directly from the portal. It is not a shared folder — it is a structured programme record." }
+    },
+    {
+      "@type": "Question",
+      "name": "Do you work with design-build firms and fit-out contractors as a sub-vendor?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Yes. We work with a number of design-build firms, fit-out contractors, and project management consultancies as their documentation sub-vendor — providing consistent pre-construction and as-built surveys across their client programmes. If you need a reliable documentation partner for your project pipeline, we'd like to hear about it." }
+    },
+    {
+      "@type": "Question",
+      "name": "What size of programme do you work with?",
+      "acceptedAnswer": { "@type": "Answer", "text": "We work with programmes ranging from five sites to over fifty. The deliverable standard and the ScopeWalk platform work identically regardless of programme size. What changes with scale is the coordination — scheduling, parallel mobilisation, and programme-level reporting. We scope the logistics to fit the programme, not the other way around." }
+    }
+  ]
+});
+---
+<Layout
+  title="Multi-Site Rollout Documentation & Programme Surveys | Alturascope"
+  description="Consistent reality capture and conditions surveys for retail, healthcare, and commercial rollout programmes across the US and Canada. One vendor, one standard, any location."
+  canonical="https://alturascope.com/services/multi-site-rollout-documentation"
+  schema={schema}
+  breadcrumbSchema={breadcrumbSchema}
+  faqSchema={faqSchema}
+  fullWidth={true}
+>
+  <div data-hero-page>
+
+    <!-- Hero -->
+    <section class="relative h-[60vh] min-h-[400px] flex items-center justify-center">
+      <!-- REPLACE: Atmospheric commercial interior or repeat-format space suggesting multi-site scale. -->
+      <div class="absolute inset-0 bg-navy">
+        <img
+          src="https://images.unsplash.com/photo-1497366811353-6870744d04b2?w=1920&q=80"
+          alt="Commercial interior space representing multi-site documentation scale"
+          class="w-full h-full object-cover opacity-35"
+        />
+        <div class="absolute inset-0 bg-[rgba(11,31,58,0.72)]"></div>
+      </div>
+      <div class="relative z-10 text-center px-6 max-w-[800px] mx-auto">
+        <h1 class="text-[2.4rem] md:text-[3.2rem] font-light text-offwhite leading-tight">
+          Multi-site rollout documentation.
+        </h1>
+      </div>
+    </section>
+
+    <!-- Opening -->
+    <section class="bg-white section-padding">
+      <div class="max-w-[900px] mx-auto px-6">
+        <p class="label text-gold mb-4">Rollout Programmes</p>
+        <p class="text-midgrey leading-body text-[1.05rem]">
+          Rollout programmes live or die on consistency. When you're opening or renovating twenty locations across twelve states, the last thing you need is a different survey format, a different deliverable structure, or a different standard of work at each one. Alturascope was built for exactly this. One brief, one standard, consistent deliverables — regardless of where the building is.
+        </p>
+      </div>
+    </section>
+
+    <!-- What rollout clients receive -->
+    <section class="bg-offwhite section-padding">
+      <div class="max-w-[900px] mx-auto px-6">
+        <h2 class="text-[2rem] font-light text-navy leading-tight">
+          Same deliverable. Every site. Every time.
+        </h2>
+        <div class="mt-6 space-y-4 text-midgrey leading-body">
+          <p>
+            Every site in a rollout programme produces the same package through our ScopeWalk platform: a Matterport digital twin, a structured conditions report, an equipment and fixture schedule, above-ceiling documentation where required, and a labeled photo storyboard. Your design team briefs from the same format on site one as they do on site fifty. Your procurement team has consistent equipment data across the entire portfolio. Your project manager can compare any two sites side by side without translating between different survey formats.
+          </p>
+          <p>
+            We coordinate access, travel, and scheduling nationally — travel costs are included in programme pricing, not added per visit. For programmes running across multiple states or provinces simultaneously, we can mobilise across locations in parallel rather than sequentially, compressing your pre-construction timeline.
+          </p>
+          <p>
+            ScopeWalk gives your programme team a single portal for every site in the rollout — searchable, comparable, and permanently accessible. Not a shared folder. A structured programme record.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Who this is for -->
+    <section class="bg-white section-padding">
+      <div class="max-w-[900px] mx-auto px-6">
+        <h2 class="text-[2rem] font-light text-navy leading-tight">
+          Built for programme operators.
+        </h2>
+        <div class="mt-6 space-y-4 text-midgrey leading-body">
+          <p>
+            We work with PE-backed operators running acquisition and renovation programmes, franchise groups documenting new locations before fit-out, healthcare networks expanding into new markets, and retail operators standardising their estate documentation. We also work with design-build firms and fit-out contractors who need a consistent documentation sub-vendor across their client programmes.
+          </p>
+          <p>
+            If you have more than one site and need the documentation to be consistent across all of them — this is what we do.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- The Process -->
+    <section class="bg-offwhite section-padding">
+      <div class="max-w-[1200px] mx-auto px-6">
+        <h2 class="text-[2rem] font-light text-navy text-center mb-16">The process.</h2>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10">
+          <div>
+            <p class="text-gold text-[2rem] font-light mb-3">01</p>
+            <h3 class="text-navy font-medium mb-3">Brief once</h3>
+            <p class="text-midgrey text-[0.9rem] leading-relaxed">
+              We align on the deliverable standard for the programme before the first site visit. That standard applies to every subsequent visit without re-briefing.
+            </p>
+          </div>
+          <div>
+            <p class="text-gold text-[2rem] font-light mb-3">02</p>
+            <h3 class="text-navy font-medium mb-3">We handle logistics</h3>
+            <p class="text-midgrey text-[0.9rem] leading-relaxed">
+              Access coordination, travel, and scheduling across multiple locations — managed centrally. Travel costs included in programme pricing.
+            </p>
+          </div>
+          <div>
+            <p class="text-gold text-[2rem] font-light mb-3">03</p>
+            <h3 class="text-navy font-medium mb-3">Consistent capture</h3>
+            <p class="text-midgrey text-[0.9rem] leading-relaxed">
+              Every site follows the same disciplined route through ScopeWalk. Same structure. Same labeling. Same level of detail.
+            </p>
+          </div>
+          <div>
+            <p class="text-gold text-[2rem] font-light mb-3">04</p>
+            <h3 class="text-navy font-medium mb-3">Programme-level access</h3>
+            <p class="text-midgrey text-[0.9rem] leading-relaxed">
+              All sites in a single ScopeWalk portal. Compare any two locations. Brief consultants directly. Track programme progress.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="bg-white section-padding">
+      <div class="max-w-[900px] mx-auto px-6">
+        <h2 class="text-[2rem] font-light text-navy mb-12">Frequently asked questions.</h2>
+
+        <div class="space-y-8">
+          <details class="group border-b border-border pb-6">
+            <summary class="cursor-pointer text-navy font-medium text-lg flex items-center justify-between">
+              How do you maintain consistency across multiple sites?
+              <span class="text-gold text-xl transition-transform group-open:rotate-45">+</span>
+            </summary>
+            <p class="mt-4 text-midgrey leading-body">
+              Consistency is built into our process. During the initial programme brief, we establish the deliverable standard — capture scope, labeling conventions, report structure, and ScopeWalk configuration — and apply it identically to every subsequent site visit. Every site produces the same deliverable architecture in the same format through the same portal. Your team learns it once and uses it across the entire programme without translating between different survey formats.
+            </p>
+          </details>
+
+          <details class="group border-b border-border pb-6">
+            <summary class="cursor-pointer text-navy font-medium text-lg flex items-center justify-between">
+              Can you run multiple site visits in parallel across different states?
+              <span class="text-gold text-xl transition-transform group-open:rotate-45">+</span>
+            </summary>
+            <p class="mt-4 text-midgrey leading-body">
+              Yes. For programmes with compressed timelines, we can mobilise across multiple states or provinces simultaneously rather than visiting locations sequentially. This is particularly valuable for operators who need multiple sites documented within a tight pre-construction window. All logistics are coordinated centrally and every site delivers through the same ScopeWalk programme portal.
+            </p>
+          </details>
+
+          <details class="group border-b border-border pb-6">
+            <summary class="cursor-pointer text-navy font-medium text-lg flex items-center justify-between">
+              How is programme pricing structured?
+              <span class="text-gold text-xl transition-transform group-open:rotate-45">+</span>
+            </summary>
+            <p class="mt-4 text-midgrey leading-body">
+              Programme pricing is structured on a per-site basis with travel included — there are no separate travel charges added per visit. The per-site rate reflects the scope established during the programme brief. For larger programmes, pricing improves with volume. We provide a clear schedule of rates before the first visit so your team can budget the entire programme with confidence.
+            </p>
+          </details>
+
+          <details class="group border-b border-border pb-6">
+            <summary class="cursor-pointer text-navy font-medium text-lg flex items-center justify-between">
+              What is ScopeWalk and how does it work for multi-site programmes?
+              <span class="text-gold text-xl transition-transform group-open:rotate-45">+</span>
+            </summary>
+            <p class="mt-4 text-midgrey leading-body">
+              ScopeWalk is our proprietary delivery platform. For multi-site programmes, it functions as a programme-level portal: every site in the rollout is accessible through a single interface, with consistent structure and labeling across all locations. Your team can compare any two properties side by side, track programme progress, and brief consultants directly from the portal. It is not a shared folder — it is a structured programme record.
+            </p>
+          </details>
+
+          <details class="group border-b border-border pb-6">
+            <summary class="cursor-pointer text-navy font-medium text-lg flex items-center justify-between">
+              Do you work with design-build firms and fit-out contractors as a sub-vendor?
+              <span class="text-gold text-xl transition-transform group-open:rotate-45">+</span>
+            </summary>
+            <p class="mt-4 text-midgrey leading-body">
+              Yes. We work with a number of design-build firms, fit-out contractors, and project management consultancies as their documentation sub-vendor — providing consistent pre-construction and as-built surveys across their client programmes. If you need a reliable documentation partner for your project pipeline, we'd like to hear about it.
+            </p>
+          </details>
+
+          <details class="group border-b border-border pb-6">
+            <summary class="cursor-pointer text-navy font-medium text-lg flex items-center justify-between">
+              What size of programme do you work with?
+              <span class="text-gold text-xl transition-transform group-open:rotate-45">+</span>
+            </summary>
+            <p class="mt-4 text-midgrey leading-body">
+              We work with programmes ranging from five sites to over fifty. The deliverable standard and the ScopeWalk platform work identically regardless of programme size. What changes with scale is the coordination — scheduling, parallel mobilisation, and programme-level reporting. We scope the logistics to fit the programme, not the other way around.
+            </p>
+          </details>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="bg-offwhite section-padding">
+      <div class="max-w-[700px] mx-auto px-6 text-center">
+        <h2 class="text-[2rem] font-light text-navy">Tell us about your programme.</h2>
+        <p class="mt-4 text-midgrey leading-body">
+          Whether you're planning a new rollout or inheriting a programme that needs better documentation, we'd like to hear about it.
+        </p>
+        <a href="/contact" class="btn-primary mt-8">Start a Conversation</a>
+        <div class="mt-8 flex flex-wrap justify-center gap-6 text-sm">
+          <a href="/services/construction-documentation" class="text-navy font-medium hover:opacity-80 transition-opacity">Our standard construction documentation &rarr;</a>
+          <a href="/services" class="text-navy font-medium hover:opacity-80 transition-opacity">Full service overview &rarr;</a>
+        </div>
+      </div>
+    </section>
+
+  </div>
+</Layout>

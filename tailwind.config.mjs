@@ -6,22 +6,26 @@ export default {
   theme: {
     extend: {
       fontFamily: {
-        sans: ['Inter', 'ui-sans-serif', 'system-ui', 'Segoe UI', 'Helvetica', 'Arial', 'Apple Color Emoji', 'Segoe UI Emoji'],
-        heading: ['"Space Grotesk"', 'Inter', 'ui-sans-serif', 'system-ui'],
+        sans: ['"DM Sans"', 'ui-sans-serif', 'system-ui', '-apple-system', 'sans-serif'],
       },
       colors: {
-        brand: {
-          teal: '#0F2A43', // Primary (legacy key 'teal')
-          light: '#B9BDC2', // Support
-          coral: '#B48A3C', // Accent
+        navy: {
+          DEFAULT: '#0B1F3A',
+          light: '#162D4E',
         },
-        primary: '#0F2A43',
-        support: '#B9BDC2',
-        accent: '#B48A3C',
+        gold: '#C9A84C',
+        offwhite: '#F7F5F1',
+        midgrey: '#6B7280',
+        border: '#E5E0D8',
+      },
+      letterSpacing: {
+        label: '0.15em',
+        nav: '0.05em',
+      },
+      lineHeight: {
+        body: '1.7',
       },
     },
   },
   plugins: [],
 };
-
-

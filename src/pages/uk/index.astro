@@ -1,334 +1,184 @@
 ---
 import Layout from "../../layouts/Layout.astro";
+
+const schema = JSON.stringify({
+  "@context": "https://schema.org",
+  "@type": "ProfessionalService",
+  "name": "Alturascope UK",
+  "description": "Reality capture, 3D documentation, and conditions surveys for construction teams and specialist clients across England, Scotland, Wales, and Northern Ireland.",
+  "url": "https://alturascope.com/uk",
+  "areaServed": ["United Kingdom", "England", "Scotland", "Wales", "Northern Ireland"],
+  "serviceType": "Reality Capture and Site Documentation"
+});
 ---
-<Layout region="uk" title="Alturascope UK">
-  <section class="bg-[#E7F1F2] pt-10 pb-16 lg:pt-12 lg:pb-20">
-    <div class="mx-auto flex max-w-6xl flex-col gap-10 px-4 sm:px-6 lg:flex-row lg:items-center lg:px-8">
-      <!-- Left: text -->
-      <div class="max-w-2xl">
-        <p class="text-lg font-semibold uppercase tracking-[0.25em] text-slate-600">
-          Decision-ready site reality
-        </p>
-        <h1 class="mt-3 text-4xl font-semibold tracking-tight text-slate-900 sm:text-5xl lg:text-6xl leading-tight">
-          As-Built Surveys Across the United Kingdom
+<Layout
+  title="Site Documentation & Reality Capture UK | Alturascope"
+  description="Matterport digital twins, conditions surveys, and heritage documentation across England, Scotland, Wales, and Northern Ireland. Consistent deliverables, every site."
+  canonical="https://alturascope.com/uk"
+  schema={schema}
+  fullWidth={true}
+>
+  <div data-hero-page>
+
+    <!-- Hero -->
+    <section class="relative min-h-screen flex items-center justify-center">
+      <!-- REPLACE: Dramatic UK heritage or commercial interior — atmospheric, significant, British character. -->
+      <div class="absolute inset-0 bg-navy">
+        <img
+          src="https://images.unsplash.com/photo-1513635269975-59663e0ac1ad?w=1920&q=80"
+          alt="Atmospheric British architectural interior with heritage character and dramatic lighting"
+          class="w-full h-full object-cover opacity-35"
+        />
+        <div class="absolute inset-0 bg-[rgba(11,31,58,0.72)]"></div>
+      </div>
+
+      <div class="relative z-10 text-center max-w-[760px] mx-auto px-6">
+        <p class="label text-gold mb-6">Reality Capture &middot; Site Documentation &middot; UK</p>
+        <h1 class="text-[2.4rem] md:text-[3.6rem] font-light text-offwhite leading-[1.1]">
+          Precision site documentation across the United Kingdom.
         </h1>
-        <p class="mt-4 text-base sm:text-lg text-slate-700 leading-relaxed">
-          We capture real-world conditions and turn them into a digital twin and detailed report
-          you can trust for renovations, tenant improvements, and due diligence—typically
-          delivered within a few business days of site access.
+        <p class="mt-6 text-[1.15rem] text-offwhite/80 font-normal leading-relaxed max-w-[620px] mx-auto">
+          Matterport digital twins, structured conditions reports, and specialist documentation for construction teams, architects, and estate owners across England, Scotland, Wales, and Northern Ireland.
         </p>
-        <p class="mt-2 text-xs text-slate-500">
-          All site data is captured and structured using our internal ScopeWalk™ platform.
-        </p>
-        <div class="mt-6 flex flex-wrap gap-3">
-          <a
-            href="/uk/contact"
-            class="inline-flex items-center justify-center rounded-full bg-[#B48A3C] px-6 py-3 text-base font-medium text-white shadow-sm hover:bg-[#9b7532]"
-          >
-            Book a site visit
-          </a>
-          <a
-            href="/uk/pricing"
-            class="inline-flex items-center justify-center rounded-full border border-slate-300 px-6 py-3 text-base font-medium text-slate-800 hover:bg-white"
-          >
-            View pricing
-          </a>
+        <div class="mt-10 flex flex-wrap items-center justify-center gap-4">
+          <a href="#uk-services" class="btn-primary">See Our Services</a>
+          <a href="/contact" class="btn-secondary-light">Tell Us About Your Project</a>
         </div>
       </div>
-      <!-- Right: key points + visual -->
-      <div class="flex-1">
-        <div class="rounded-2xl border border-slate-200 bg-white/90 p-5 shadow-sm backdrop-blur transition-colors hover:border-accent hover:shadow-md hover:shadow-accent/20">
-          <h2 class="text-sm font-semibold text-slate-900">
-            Every visit includes
-          </h2>
-          <ul class="mt-3 space-y-2 text-sm text-slate-700">
-            <li class="flex gap-2">
-              <span class="mt-1 h-1.5 w-1.5 rounded-full bg-[#0F2A43]"></span>
-              <span>Digital twin or 360° walkthrough + labeled photo storyboard.</span>
-            </li>
-            <li class="flex gap-2">
-              <span class="mt-1 h-1.5 w-1.5 rounded-full bg-[#0F2A43]"></span>
-              <span>Detailed conditions report with fixture counts and high-level MEP overview.</span>
-            </li>
-            <li class="flex gap-2">
-              <span class="mt-1 h-1.5 w-1.5 rounded-full bg-[#0F2A43]"></span>
-              <span>Nationwide U.K. coverage with predictable, all-in pricing.</span>
-            </li>
-          </ul>
-        </div>
-        <div class="mt-4 grid gap-4 sm:grid-cols-2">
-          <div class="grid gap-4">
-            <div class="overflow-hidden rounded-2xl border border-slate-200 bg-slate-900/5">
-              <img
-                src="/images/digital%20twin.png"
-                onerror="this.onerror=null; this.src='/Images/digital%20twin.png';"
-                alt="Digital twin walkthrough view"
-                loading="lazy"
-                class="w-full h-auto block"
-              >
-            </div>
-            <div class="overflow-hidden rounded-2xl border border-slate-200 bg-slate-900/5">
-              <img
-                src="/Images/SING0677.JPG"
-                onerror="this.onerror=null; this.src='/images/SING0677.JPG';"
-                alt="Site photo SING0677"
-                loading="lazy"
-                class="w-full h-auto block"
-              >
-            </div>
-          </div>
-          <div class="overflow-hidden rounded-2xl border border-slate-200 bg-slate-900/5">
-            <img
-              src="/images/report%20image.png"
-              onerror="this.onerror=null; this.src='/Images/report%20image.png';"
-              alt="Sample conditions report image"
-              loading="lazy"
-              class="w-full h-auto block"
-            >
-          </div>
+
+      <div class="absolute bottom-12 left-1/2 -translate-x-1/2 flex flex-col items-center gap-4">
+        <div class="w-[60px] h-[1px] bg-gold"></div>
+        <svg class="w-5 h-5 text-white animate-pulse" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M19 14l-7 7m0 0l-7-7m7 7V3" />
+        </svg>
+      </div>
+    </section>
+
+    <!-- Coverage -->
+    <section class="bg-offwhite py-12">
+      <div class="max-w-[900px] mx-auto px-6 text-center">
+        <p class="text-midgrey text-[0.9rem]">
+          Covering <span class="text-navy font-medium">England</span>, <span class="text-navy font-medium">Scotland</span>, <span class="text-navy font-medium">Wales</span>, and <span class="text-navy font-medium">Northern Ireland</span>.
+        </p>
+      </div>
+    </section>
+
+    <!-- Services -->
+    <section id="uk-services" class="bg-white section-padding">
+      <div class="max-w-[900px] mx-auto px-6">
+        <p class="label text-gold mb-4">UK Services</p>
+        <h2 class="text-[2rem] font-light text-navy leading-tight">
+          The same standard. Delivered in the UK.
+        </h2>
+        <div class="mt-6 space-y-4 text-midgrey leading-body">
+          <p>
+            Our UK operation delivers to exactly the same standard as our North American work. The deliverable architecture is identical: Matterport digital twin, narrated video walkthrough, conditions report, equipment schedule where relevant, labeled photo storyboard, and ScopeWalk platform access.
+          </p>
+          <p>
+            The difference is context. In the UK, we bring particular strength to heritage and listed building documentation, estate work, and projects where the fabric is sensitive and the documentation needs to serve conservation as well as commercial requirements.
+          </p>
         </div>
       </div>
-    </div>
-    <!-- Dark strip -->
-    <div class="mt-10 bg-[#0F2A43]">
-      <div class="mx-auto flex max-w-6xl flex-col gap-4 px-4 py-6 text-sm text-slate-100 sm:flex-row sm:items-center sm:justify-between sm:px-6 lg:px-8">
-        <div>
-          <p class="font-semibold">
-            Built for construction & renovation/fit out companies, Landlords, Tenants, Brokers, and PE-backed roll-outs.
+    </section>
+
+    <!-- Heritage Focus -->
+    <section class="bg-offwhite section-padding">
+      <div class="max-w-[900px] mx-auto px-6">
+        <p class="label text-gold mb-4">Heritage &amp; Listed Buildings</p>
+        <h2 class="text-[2rem] font-light text-navy leading-tight">
+          Documentation that understands the building.
+        </h2>
+        <div class="mt-6 space-y-4 text-midgrey leading-body">
+          <p>
+            Our principal's background includes hands-on construction and conservation work on some of Britain's most significant historic properties. That experience shapes how we approach heritage documentation in the UK — understanding materials, understanding what matters to conservation architects, and producing records that heritage bodies can actually use.
           </p>
-          <p class="mt-1 text-xs text-slate-200/80">
-            Independent and vendor-neutral—no construction to sell, just clear site reality.
+          <p>
+            We work with Grade I and Grade II listed buildings, scheduled monuments, conservation areas, and significant private estates. The documentation is designed to serve English Heritage, Historic Scotland, Cadw, and equivalent bodies alongside your architect and project team.
           </p>
         </div>
-        <a
-          href="/uk/services"
-          class="inline-flex items-center justify-center rounded-full border border-slate-100/40 px-5 py-2 text-xs font-medium text-slate-50 hover:bg-slate-50 hover:text-[#0F2A43]"
-        >
-          See how we work
+        <a href="/uk/heritage-building-documentation" class="inline-block mt-8 text-navy font-medium hover:opacity-80 transition-opacity">
+          Listed building and heritage documentation UK &rarr;
         </a>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- HOW IT WORKS -->
-  <section class="py-12 lg:py-16">
-    <div class="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
-      <div class="max-w-3xl">
-        <h2 class="text-base font-bold uppercase tracking-wide text-slate-800">
-          How it works
+    <!-- Deliverables -->
+    <section class="bg-navy section-padding">
+      <div class="max-w-[1200px] mx-auto px-6">
+        <p class="label text-gold text-center mb-4">What You Receive</p>
+        <h2 class="text-[2rem] font-light text-offwhite text-center">
+          The same structure. Every site. Every time.
         </h2>
-        <p class="mt-2 text-lg font-semibold tracking-tight text-slate-900">
-          A simple, repeatable process on every site.
+        <p class="mt-4 text-offwhite/70 text-center max-w-[580px] mx-auto">
+          Identical deliverables to our North American operation. Your UK project team receives the same standard of work as any site in the US or Canada.
         </p>
-      </div>
-      <ol class="mt-6 grid gap-4 md:grid-cols-4">
-        <li class="rounded-2xl border border-slate-200 bg-white p-4 text-sm text-slate-700 shadow-sm transition-colors hover:border-accent hover:shadow-md hover:shadow-accent/20">
-          <p class="text-xs font-semibold uppercase tracking-wide text-slate-500">Step 1</p>
-          <p class="mt-1 font-medium text-slate-900">Clarify the decision</p>
-          <p class="mt-1 text-xs leading-relaxed">
-            We align on what you’re deciding&mdash;renew vs. relocate, fund vs. defer, re-use vs. rebuild&mdash;and
-            what your team needs to see.
-          </p>
-        </li>
-        <li class="rounded-2xl border border-slate-200 bg-white p-4 text-sm text-slate-700 shadow-sm transition-colors hover:border-accent hover:shadow-md hover:shadow-accent/20">
-          <p class="text-xs font-semibold uppercase tracking-wide text-slate-500">Step 2</p>
-          <p class="mt-1 font-medium text-slate-900">Lock access &amp; dates</p>
-          <p class="mt-1 text-xs leading-relaxed">
-            We coordinate with building management, security, and your stakeholders, then book travel as needed.
-          </p>
-        </li>
-        <li class="rounded-2xl border border-slate-200 bg-white p-4 text-sm text-slate-700 shadow-sm transition-colors hover:border-accent hover:shadow-md hover:shadow-accent/20">
-          <p class="text-xs font-semibold uppercase tracking-wide text-slate-500">Step 3</p>
-          <p class="mt-1 font-medium text-slate-900">Capture the reality</p>
-          <p class="mt-1 text-xs leading-relaxed">
-            On site we follow a disciplined route to document structure, services, access, and any conditions
-            that affect design, cost, or schedule. On-site visuals, notes, measurements, and observations are captured in real time using our internal ScopeWalk™ system, ensuring consistent structure and clarity across every visit.
-          </p>
-        </li>
-        <li class="rounded-2xl border border-slate-200 bg-white p-4 text-sm text-slate-700 shadow-sm transition-colors hover:border-accent hover:shadow-md hover:shadow-accent/20">
-          <p class="text-xs font-semibold uppercase tracking-wide text-slate-500">Step 4</p>
-          <p class="mt-1 font-medium text-slate-900">Deliver decision-ready outputs</p>
-          <p class="mt-1 text-xs leading-relaxed">
-            You receive a digital twin, labeled photos, and a detailed report with fixture counts, a high-level
-            mechanical overview, and prioritised recommendations.
-          </p>
-        </li>
-      </ol>
-    </div>
-  </section>
 
-  <!-- WHAT YOU RECEIVE EVERY VISIT -->
-  <section class="py-12 lg:py-16 bg-slate-50">
-    <div class="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
-      <div class="max-w-3xl">
-        <h2 class="text-base font-bold uppercase tracking-wide text-slate-800">
-          Deliverables
-        </h2>
-        <p class="mt-2 text-lg font-semibold tracking-tight text-slate-900">
-          What you receive on every visit.
-        </p>
-        <p class="mt-2 text-sm text-slate-600">
-          Same structure, every time&mdash;so your team can line sites up side-by-side and move quickly.
-        </p>
-      </div>
-      <div class="mt-6 grid gap-6 md:grid-cols-2">
-        <article class="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm transition-colors hover:border-accent hover:shadow-md hover:shadow-accent/20">
-          <h3 class="text-sm font-semibold uppercase tracking-wide text-slate-700">
-            Visuals
-          </h3>
-          <ul class="mt-3 list-disc space-y-1 pl-5 text-sm text-slate-700">
-            <li>Digital twin or 360° walkthrough of the space</li>
-            <li>Labeled photo storyboard by area and topic</li>
-            <li>Context shots of access, loading, parking, neighbours</li>
-            <li>Optional drone stills &amp; clips where allowed</li>
-          </ul>
-        </article>
-        <article class="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm transition-colors hover:border-accent hover:shadow-md hover:shadow-accent/20">
-          <h3 class="text-sm font-semibold uppercase tracking-wide text-slate-700">
-            Documentation
-          </h3>
-          <ul class="mt-3 list-disc space-y-1 pl-5 text-sm text-slate-700">
-            <li>Fixture &amp; services counts (lights, diffusers, sprinklers, doors, WCs, key equipment)</li>
-            <li>Detailed written conditions report with a high-level mechanical / services overview</li>
-            <li>Upsides and concerns clearly highlighted</li>
-            <li>Recommendations prioritised into P1 / P2 / P3 so you know what to act on first</li>
-          </ul>
-        </article>
-      </div>
-    </div>
-  </section>
-
-  <!-- WHO WE WORK WITH & WHERE -->
-  <section class="py-12 lg:py-16">
-    <div class="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
-      <div class="grid gap-8 md:grid-cols-[minmax(0,1.3fr)_minmax(0,1.7fr)]">
-        <article>
-          <h2 class="text-base font-bold uppercase tracking-wide text-slate-800">
-            Who we work with
-          </h2>
-          <p class="mt-2 text-lg font-semibold tracking-tight text-slate-900">
-            Built for teams making decisions on space at scale.
-          </p>
-          <div class="mt-4 flex flex-wrap gap-2 text-xs font-medium text-slate-800">
-            <span class="rounded-full bg-slate-100 px-3 py-1">Landlords &amp; asset managers</span>
-            <span class="rounded-full bg-slate-100 px-3 py-1">Tenants &amp; workplace teams</span>
-            <span class="rounded-full bg-slate-100 px-3 py-1">Brokers &amp; project managers</span>
-            <span class="rounded-full bg-slate-100 px-3 py-1">Private equity &amp; lenders</span>
-            <span class="rounded-full bg-slate-100 px-3 py-1">Design-build &amp; GC partners</span>
+        <div class="mt-16 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
+          <div>
+            <svg class="w-8 h-8 text-gold mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M21 7.5l-9-5.25L3 7.5m18 0l-9 5.25m9-5.25v9l-9 5.25M3 7.5l9 5.25M3 7.5v9l9 5.25m0-9v9" /></svg>
+            <h3 class="text-offwhite font-medium mb-2">Matterport Digital Twin</h3>
+            <p class="text-offwhite/65 text-[0.9rem] leading-relaxed">A navigable, dimensionally accurate model accessible by your entire team.</p>
           </div>
-          <p class="mt-4 text-xs text-slate-500">
-            Typical use cases include pre-lease diligence, renew-vs-relocate analysis, rollout
-            programmes, independent progress verification, and lender / investor updates.
-          </p>
-        </article>
-        <article class="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm transition-colors hover:border-accent hover:shadow-md hover:shadow-accent/20">
-          <h2 class="text-base font-bold uppercase tracking-wide text-slate-800">
-            Where we operate
-          </h2>
-          <p class="mt-2 text-sm text-slate-700">
-            Alturascope UK currently covers <span class="font-medium">the United Kingdom</span>.
-          </p>
-          <ul class="mt-3 list-disc space-y-1 pl-5 text-sm text-slate-700">
-            <li>Major metros and regional markets across England, Scotland, Wales, and Northern Ireland</li>
-            <li>Office, flex, industrial, retail, and healthcare / clinic spaces</li>
-            <li>One-off sites or multi-region portfolios</li>
-          </ul>
-          <p class="mt-3 text-xs text-slate-500">
-            Looking for coverage in the U.S. &amp; Canada?
-            <a href="/" class="font-medium text-[#0F2A43] underline underline-offset-2">
-              Visit Alturascope North America
-            </a>
-            for NA-specific services and pricing.
-          </p>
-        </article>
+          <div>
+            <svg class="w-8 h-8 text-gold mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M15.75 10.5l4.72-4.72a.75.75 0 011.28.53v11.38a.75.75 0 01-1.28.53l-4.72-4.72M4.5 18.75h9a2.25 2.25 0 002.25-2.25v-9a2.25 2.25 0 00-2.25-2.25h-9A2.25 2.25 0 002.25 7.5v9a2.25 2.25 0 002.25 2.25z" /></svg>
+            <h3 class="text-offwhite font-medium mb-2">Narrated Video Walkthrough</h3>
+            <p class="text-offwhite/65 text-[0.9rem] leading-relaxed">Structured tour with spoken commentary on conditions and context.</p>
+          </div>
+          <div>
+            <svg class="w-8 h-8 text-gold mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M19.5 14.25v-2.625a3.375 3.375 0 00-3.375-3.375h-1.5A1.125 1.125 0 0113.5 7.125v-1.5a3.375 3.375 0 00-3.375-3.375H8.25m0 12.75h7.5m-7.5 3H12M10.5 2.25H5.625c-.621 0-1.125.504-1.125 1.125v17.25c0 .621.504 1.125 1.125 1.125h12.75c.621 0 1.125-.504 1.125-1.125V11.25a9 9 0 00-9-9z" /></svg>
+            <h3 class="text-offwhite font-medium mb-2">Conditions Report</h3>
+            <p class="text-offwhite/65 text-[0.9rem] leading-relaxed">Written assessment with P1, P2, and P3 prioritised findings.</p>
+          </div>
+          <div>
+            <svg class="w-8 h-8 text-gold mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M3.75 6A2.25 2.25 0 016 3.75h2.25A2.25 2.25 0 0110.5 6v2.25a2.25 2.25 0 01-2.25 2.25H6a2.25 2.25 0 01-2.25-2.25V6zM3.75 15.75A2.25 2.25 0 016 13.5h2.25a2.25 2.25 0 012.25 2.25V18a2.25 2.25 0 01-2.25 2.25H6A2.25 2.25 0 013.75 18v-2.25zM13.5 6a2.25 2.25 0 012.25-2.25H18A2.25 2.25 0 0120.25 6v2.25A2.25 2.25 0 0118 10.5h-2.25a2.25 2.25 0 01-2.25-2.25V6zM13.5 15.75a2.25 2.25 0 012.25-2.25H18a2.25 2.25 0 012.25 2.25V18A2.25 2.25 0 0118 20.25h-2.25A2.25 2.25 0 0113.5 18v-2.25z" /></svg>
+            <h3 class="text-offwhite font-medium mb-2">Equipment &amp; Asset Schedule</h3>
+            <p class="text-offwhite/65 text-[0.9rem] leading-relaxed">Complete inventory formatted for your procurement or fitout team.</p>
+          </div>
+          <div>
+            <svg class="w-8 h-8 text-gold mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M2.25 15.75l5.159-5.159a2.25 2.25 0 013.182 0l5.159 5.159m-1.5-1.5l1.409-1.409a2.25 2.25 0 013.182 0l2.909 2.909M3.75 21h16.5A2.25 2.25 0 0022.5 18.75V5.25A2.25 2.25 0 0020.25 3H3.75A2.25 2.25 0 001.5 5.25v13.5A2.25 2.25 0 003.75 21z" /></svg>
+            <h3 class="text-offwhite font-medium mb-2">Labeled Photo Storyboard</h3>
+            <p class="text-offwhite/65 text-[0.9rem] leading-relaxed">Every area documented with consistent labeling through ScopeWalk.</p>
+          </div>
+          <div>
+            <svg class="w-8 h-8 text-gold mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 17.25v1.007a3 3 0 01-.879 2.122L7.5 21h9l-.621-.621A3 3 0 0115 18.257V17.25m6-12V15a2.25 2.25 0 01-2.25 2.25H5.25A2.25 2.25 0 013 15V5.25m18 0A2.25 2.25 0 0018.75 3H5.25A2.25 2.25 0 003 5.25m18 0V12a2.25 2.25 0 01-2.25 2.25H5.25A2.25 2.25 0 013 12V5.25" /></svg>
+            <h3 class="text-offwhite font-medium mb-2">ScopeWalk Platform Access</h3>
+            <p class="text-offwhite/65 text-[0.9rem] leading-relaxed">All deliverables structured in our proprietary portal.</p>
+          </div>
+        </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- MINI USE CASES -->
-  <section class="py-12 lg:py-16 bg-slate-50">
-    <div class="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
-      <div class="flex flex-col gap-4 sm:flex-row sm:items-end sm:justify-between">
-        <div>
-          <h2 class="text-sm font-semibold uppercase tracking-wide text-slate-500">
-            Example engagements
-          </h2>
-          <p class="mt-2 text-lg font-semibold tracking-tight text-slate-900">
-            Where Alturascope fits into real projects.
-          </p>
-        </div>
+    <!-- ScopeWalk -->
+    <section class="bg-navy-light section-padding">
+      <div class="max-w-[800px] mx-auto px-6 text-center">
+        <p class="label text-gold mb-4">ScopeWalk&trade;</p>
+        <h2 class="text-[2rem] font-light text-offwhite">
+          Every deliverable. One place. Permanently accessible.
+        </h2>
+        <p class="mt-6 text-offwhite/70 leading-body">
+          ScopeWalk is Alturascope's proprietary project portal. Not a file transfer link that expires — a structured, permanent record of every site we document. Your team can return to any project, any time, and find the same organised, labeled deliverables in the same place.
+        </p>
       </div>
-      <div class="mt-6 grid gap-6 md:grid-cols-3">
-        <article class="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm transition-colors hover:border-accent hover:shadow-md hover:shadow-accent/20">
-          <p class="text-xs font-semibold uppercase tracking-wide text-slate-500">
-            Renew vs. relocate
-          </p>
-          <h3 class="mt-2 text-sm font-semibold text-slate-900">
-            Office landlord with expiring lease
-          </h3>
-          <p class="mt-2 text-sm text-slate-700">
-            We documented an existing tenant space and two alternatives, highlighting base-build gaps,
-            services constraints, and quick-win upgrades so the asset team could structure a renewal
-            that made financial sense.
-          </p>
-        </article>
-        <article class="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm transition-colors hover:border-accent hover:shadow-md hover:shadow-accent/20">
-          <p class="text-xs font-semibold uppercase tracking-wide text-slate-500">
-            Roll-out readiness
-          </p>
-          <h3 class="mt-2 text-sm font-semibold text-slate-900">
-            Behavioural health &amp; clinic expansion
-          </h3>
-          <p class="mt-2 text-sm text-slate-700">
-            For a UK-wide clinic group, we captured new locations before lease and construction,
-            checking bathroom counts, access, and services to support programme and lender
-            requirements.
-          </p>
-        </article>
-        <article class="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm transition-colors hover:border-accent hover:shadow-md hover:shadow-accent/20">
-          <p class="text-xs font-semibold uppercase tracking-wide text-slate-500">
-            Lender &amp; investor support
-          </p>
-          <h3 class="mt-2 text-sm font-semibold text-slate-900">
-            Independent progress verification
-          </h3>
-          <p class="mt-2 text-sm text-slate-700">
-            We provided fixed-route progress photography, a digital twin, and exceptions log so a
-            lender could track risk on a renovation draw schedule without flying their own team in.
-          </p>
-        </article>
-      </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- FINAL CTA STRIP -->
-  <section class="py-12">
-    <div class="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
-      <div class="rounded-2xl border border-slate-200 bg-slate-50 px-6 py-8 sm:flex sm:items-center sm:justify-between">
-        <div>
-          <h2 class="text-lg font-semibold text-slate-900">
-            Ready to move a site forward?
-          </h2>
-          <p class="mt-2 text-sm text-slate-600">
-            Share the address, approximate size, and what you’re deciding. We’ll confirm the scope,
-            recommend the right visit type, and send a simple, all-in quote.
-          </p>
+    <!-- CTA -->
+    <section class="bg-offwhite section-padding">
+      <div class="max-w-[700px] mx-auto px-6 text-center">
+        <h2 class="text-[2rem] font-light text-navy">
+          Tell us about your UK project.
+        </h2>
+        <p class="mt-4 text-midgrey leading-body">
+          Share the address or location, the approximate size, and what you're trying to decide. We'll come back within one business day with a clear scope recommendation and an all-in quote.
+        </p>
+        <div class="mt-10 flex flex-wrap items-center justify-center gap-4">
+          <a href="/contact" class="btn-primary">Start a Project</a>
+          <a href="/work" class="btn-secondary">See Our Work</a>
         </div>
-        <div class="mt-4 flex flex-wrap gap-3 sm:mt-0 sm:justify-end">
-          <a
-            href="/uk/contact"
-            class="inline-flex items-center justify-center rounded-full bg-[#0F2A43] px-5 py-2.5 text-sm font-medium text-white shadow-sm hover:bg-slate-900"
-          >
-            Book a site visit
-          </a>
-          <a
-            href="/uk/pricing"
-            class="inline-flex items-center justify-center rounded-full border border-slate-300 px-5 py-2.5 text-sm font-medium text-slate-800 hover:bg-white"
-          >
-            View pricing
-          </a>
-        </div>
+        <p class="mt-8 text-sm text-midgrey">
+          Looking for US or Canadian coverage? <a href="/" class="text-navy font-medium hover:opacity-80">Visit Alturascope North America &rarr;</a>
+        </p>
       </div>
-    </div>
-  </section>
+    </section>
+
+  </div>
 </Layout>

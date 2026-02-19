@@ -1,0 +1,249 @@
+---
+import Layout from "../layouts/Layout.astro";
+
+interface FaqItem {
+  question: string;
+  answer: string;
+}
+
+interface Props {
+  title: string;
+  description: string;
+  canonical: string;
+  h1: string;
+  heroImage: string;
+  heroAlt: string;
+  heroPlaceholder: string;
+  openingLabel: string;
+  openingBody: string;
+  whatWeDocumentBody: string;
+  whatYouReceiveBody: string;
+  whoThisIsForBody: string;
+  faqs: FaqItem[];
+  internalLinks: { text: string; href: string }[];
+  matterportUrl?: string;
+}
+
+const {
+  title,
+  description,
+  canonical,
+  h1,
+  heroImage,
+  heroAlt,
+  heroPlaceholder,
+  openingLabel,
+  openingBody,
+  whatWeDocumentBody,
+  whatYouReceiveBody,
+  whoThisIsForBody,
+  faqs,
+  internalLinks,
+  matterportUrl,
+} = Astro.props;
+
+const slug = canonical.replace("https://alturascope.com", "");
+const pageName = h1.replace(/\.$/, "");
+
+const schema = JSON.stringify({
+  "@context": "https://schema.org",
+  "@type": "ProfessionalService",
+  "name": "Alturascope",
+  "description": "Reality capture, 3D documentation, and conditions surveys for construction teams and specialist clients across the US, Canada, and the UK.",
+  "url": "https://alturascope.com",
+  "areaServed": ["United States", "Canada", "United Kingdom"],
+  "serviceType": "Reality Capture and Site Documentation"
+});
+
+const breadcrumbSchema = JSON.stringify({
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://alturascope.com" },
+    { "@type": "ListItem", "position": 2, "name": "Services", "item": "https://alturascope.com/services" },
+    { "@type": "ListItem", "position": 3, "name": pageName, "item": canonical }
+  ]
+});
+
+const faqSchema = JSON.stringify({
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": faqs.map((faq) => ({
+    "@type": "Question",
+    "name": faq.question,
+    "acceptedAnswer": { "@type": "Answer", "text": faq.answer }
+  }))
+});
+---
+<Layout
+  title={title}
+  description={description}
+  canonical={canonical}
+  schema={schema}
+  breadcrumbSchema={breadcrumbSchema}
+  faqSchema={faqSchema}
+  fullWidth={true}
+>
+  <div data-hero-page>
+
+    <!-- Hero -->
+    <section class="relative h-[60vh] min-h-[400px] flex items-center justify-center">
+      <!-- REPLACE: {heroPlaceholder} -->
+      <div class="absolute inset-0 bg-navy">
+        <img
+          src={heroImage}
+          alt={heroAlt}
+          class="w-full h-full object-cover opacity-30"
+        />
+        <div class="absolute inset-0 bg-[rgba(11,31,58,0.72)]"></div>
+      </div>
+      <div class="relative z-10 text-center px-6 max-w-[800px] mx-auto">
+        <h1 class="text-[2.4rem] md:text-[3.2rem] font-light text-offwhite leading-tight">
+          {h1}
+        </h1>
+      </div>
+    </section>
+
+    <!-- Opening -->
+    <section class="bg-white section-padding">
+      <div class="max-w-[900px] mx-auto px-6">
+        <p class="label text-gold mb-4">{openingLabel}</p>
+        <p class="text-midgrey leading-body text-[1.05rem]" set:html={openingBody} />
+      </div>
+    </section>
+
+    <!-- What we document -->
+    <section class="bg-offwhite section-padding">
+      <div class="max-w-[900px] mx-auto px-6">
+        <h2 class="text-[2rem] font-light text-navy leading-tight">What we document.</h2>
+        <p class="mt-6 text-midgrey leading-body" set:html={whatWeDocumentBody} />
+      </div>
+    </section>
+
+    <!-- What you receive -->
+    <section class="bg-white section-padding">
+      <div class="max-w-[900px] mx-auto px-6">
+        <h2 class="text-[2rem] font-light text-navy leading-tight">What you receive.</h2>
+        <p class="mt-6 text-midgrey leading-body" set:html={whatYouReceiveBody} />
+      </div>
+    </section>
+
+    <!-- Who this is for -->
+    <section class="bg-offwhite section-padding">
+      <div class="max-w-[900px] mx-auto px-6">
+        <h2 class="text-[2rem] font-light text-navy leading-tight">Who this is for.</h2>
+        <p class="mt-6 text-midgrey leading-body" set:html={whoThisIsForBody} />
+      </div>
+    </section>
+
+    <!-- How it works -->
+    <section class="bg-white section-padding">
+      <div class="max-w-[1200px] mx-auto px-6">
+        <h2 class="text-[2rem] font-light text-navy text-center mb-16">How it works.</h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10">
+          <div>
+            <p class="text-gold text-[2rem] font-light mb-3">01</p>
+            <h3 class="text-navy font-medium mb-3">Clarify the brief</h3>
+            <p class="text-midgrey text-[0.9rem] leading-relaxed">
+              We align on what you need documented, what decisions the deliverable needs to support, and any access or sensitivity requirements.
+            </p>
+          </div>
+          <div>
+            <p class="text-gold text-[2rem] font-light mb-3">02</p>
+            <h3 class="text-navy font-medium mb-3">Coordinate access</h3>
+            <p class="text-midgrey text-[0.9rem] leading-relaxed">
+              We handle all logistics — building access, security, travel, and scheduling. Travel costs are included in project pricing.
+            </p>
+          </div>
+          <div>
+            <p class="text-gold text-[2rem] font-light mb-3">03</p>
+            <h3 class="text-navy font-medium mb-3">Capture the site</h3>
+            <p class="text-midgrey text-[0.9rem] leading-relaxed">
+              On site we follow a disciplined capture route through ScopeWalk — structure, services, equipment, conditions. Nothing missed.
+            </p>
+          </div>
+          <div>
+            <p class="text-gold text-[2rem] font-light mb-3">04</p>
+            <h3 class="text-navy font-medium mb-3">Deliver and access</h3>
+            <p class="text-midgrey text-[0.9rem] leading-relaxed">
+              Complete deliverable package within three to five business days, permanently accessible through your ScopeWalk portal.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Matterport embed -->
+    {matterportUrl && (
+      <section class="bg-navy py-20">
+        <div class="max-w-[1100px] mx-auto px-6">
+          <div class="relative w-full" style="aspect-ratio: 16/9;">
+            <iframe
+              data-src={matterportUrl}
+              width="100%"
+              height="100%"
+              style="aspect-ratio: 16/9; border: none; position: absolute; inset: 0;"
+              allowfullscreen
+              allow="xr-spatial-tracking"
+              title="Matterport digital twin demonstration"
+            ></iframe>
+          </div>
+        </div>
+      </section>
+    )}
+
+    <!-- FAQ -->
+    <section class="bg-offwhite section-padding">
+      <div class="max-w-[900px] mx-auto px-6">
+        <h2 class="text-[2rem] font-light text-navy mb-12">Frequently asked questions.</h2>
+        <div class="space-y-8">
+          {faqs.map((faq) => (
+            <details class="group border-b border-border pb-6">
+              <summary class="cursor-pointer text-navy font-medium text-lg flex items-center justify-between">
+                {faq.question}
+                <span class="text-gold text-xl transition-transform group-open:rotate-45">+</span>
+              </summary>
+              <p class="mt-4 text-midgrey leading-body">{faq.answer}</p>
+            </details>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="bg-white section-padding">
+      <div class="max-w-[700px] mx-auto px-6 text-center">
+        <h2 class="text-[2rem] font-light text-navy">Tell us about your project.</h2>
+        <p class="mt-4 text-midgrey leading-body">
+          Share the details of what you need documented. We'll come back with a clear scope and an all-in quote.
+        </p>
+        <a href="/contact" class="btn-primary mt-8">Start a Project</a>
+        <div class="mt-8 flex flex-wrap justify-center gap-6 text-sm">
+          {internalLinks.map((link) => (
+            <a href={link.href} class="text-navy font-medium hover:opacity-80 transition-opacity">{link.text} &rarr;</a>
+          ))}
+        </div>
+      </div>
+    </section>
+
+  </div>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      const iframes = document.querySelectorAll("iframe[data-src]");
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            const iframe = entry.target as HTMLIFrameElement;
+            if (iframe.dataset.src) {
+              iframe.src = iframe.dataset.src;
+              delete iframe.dataset.src;
+            }
+            observer.unobserve(iframe);
+          }
+        });
+      }, { rootMargin: "200px" });
+      iframes.forEach((iframe) => observer.observe(iframe));
+    });
+  </script>
+</Layout>

@@ -5,24 +5,62 @@
 @layer base {
   html {
     font-family: theme('fontFamily.sans');
+    scroll-behavior: smooth;
   }
 
   body {
-    color: #1F2937; /* Charcoal */
-    background-color: #E8F2F1; /* Mist */
+    color: #0B1F3A;
+    background-color: #FFFFFF;
+    line-height: 1.7;
   }
 
-  h1, h2 {
-    font-family: theme('fontFamily.heading');
-    font-weight: 700; /* 700 for main headlines */
-    line-height: 1.1; /* tighter headings */
-    color: #0F2A43; /* Primary */
-  }
-
-  h3, h4, h5, h6 {
-    font-family: theme('fontFamily.heading');
-    font-weight: 600; /* secondary headings */
+  h1, h2, h3, h4, h5, h6 {
+    font-family: theme('fontFamily.sans');
+    color: #0B1F3A;
     line-height: 1.15;
-    color: #0F2A43;
+  }
+}
+
+@layer components {
+  .label {
+    @apply text-gold uppercase tracking-label text-xs font-medium;
+    font-size: 0.75rem;
+    letter-spacing: 0.15em;
+  }
+
+  .btn-primary {
+    @apply bg-gold text-navy font-medium px-8 py-3.5 inline-block transition-opacity;
+    border-radius: 0;
+  }
+  .btn-primary:hover {
+    @apply opacity-90;
+  }
+
+  .btn-secondary {
+    @apply border border-navy text-navy font-medium px-8 py-3.5 inline-block bg-transparent transition-opacity;
+    border-radius: 0;
+  }
+  .btn-secondary:hover {
+    @apply opacity-85;
+  }
+
+  .btn-secondary-light {
+    @apply border border-white/40 text-white font-medium px-8 py-3.5 inline-block bg-transparent transition-opacity;
+    border-radius: 0;
+  }
+  .btn-secondary-light:hover {
+    @apply opacity-85;
+  }
+
+  .section-padding {
+    @apply py-20 md:py-[120px];
+  }
+
+  .card {
+    @apply bg-white border border-border shadow-[0_2px_12px_rgba(0,0,0,0.06)] transition-colors;
+    border-radius: 4px;
+  }
+  .card:hover {
+    @apply border-gold;
   }
 }

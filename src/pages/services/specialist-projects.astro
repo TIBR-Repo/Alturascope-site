@@ -1,0 +1,165 @@
+---
+import Layout from "../../layouts/Layout.astro";
+
+const schema = JSON.stringify({
+  "@context": "https://schema.org",
+  "@type": "ProfessionalService",
+  "name": "Alturascope",
+  "description": "Reality capture, 3D documentation, and conditions surveys for construction teams and specialist clients across the US, Canada, and the UK.",
+  "url": "https://alturascope.com",
+  "areaServed": ["United States", "Canada", "United Kingdom"],
+  "serviceType": "Reality Capture and Site Documentation"
+});
+
+const breadcrumbSchema = JSON.stringify({
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://alturascope.com" },
+    { "@type": "ListItem", "position": 2, "name": "Services", "item": "https://alturascope.com/services" },
+    { "@type": "ListItem", "position": 3, "name": "Specialist Projects", "item": "https://alturascope.com/services/specialist-projects" }
+  ]
+});
+---
+<Layout
+  title="Specialist & Private Project Documentation | Alturascope"
+  description="Reality capture and documentation for projects that require specialist access, precision equipment, and a level of discretion that standard survey operators don't offer."
+  canonical="https://alturascope.com/services/specialist-projects"
+  schema={schema}
+  breadcrumbSchema={breadcrumbSchema}
+  fullWidth={true}
+>
+  <div data-hero-page>
+
+    <!-- Hero -->
+    <section class="relative min-h-screen flex items-center justify-center">
+      <!-- REPLACE: Significant heritage interior, private estate space, or dramatically atmospheric architectural photograph. Must read as extraordinary, not commercial. -->
+      <div class="absolute inset-0 bg-navy">
+        <img
+          src="https://images.unsplash.com/photo-1558618666-fcd25c85f82e?w=1920&q=80"
+          alt="Dramatic heritage building interior with vaulted stone corridors and atmospheric natural light"
+          class="w-full h-full object-cover opacity-30"
+        />
+        <div class="absolute inset-0 bg-[rgba(11,31,58,0.78)]"></div>
+      </div>
+      <div class="relative z-10 text-center px-6 max-w-[760px] mx-auto">
+        <h1 class="text-[2.4rem] md:text-[3rem] font-light text-offwhite leading-tight">
+          Specialist and private project documentation.
+        </h1>
+      </div>
+    </section>
+
+    <!-- Letter section -->
+    <section class="bg-white section-padding">
+      <div class="max-w-[760px] mx-auto px-6">
+        <p class="label text-gold mb-8">Specialist Work</p>
+        <div class="space-y-5 text-midgrey leading-body text-[1.05rem]" style="font-style: italic;">
+          <p>
+            Some of the most interesting work we do doesn't fit a standard brief.
+          </p>
+          <p>
+            Over the years — across construction, conservation, and documentation work — we have worked in spaces that required something beyond a standard visit. Buildings where the history of the fabric mattered as much as its current condition. Facilities where precision was non-negotiable and discretion was assumed. Environments where getting it wrong wasn't an option.
+          </p>
+          <p>
+            We bring the same rigour to these projects that we bring to every commercial site visit: a clear brief, disciplined capture, and structured deliverables. The difference is the equipment we deploy, the access techniques we use, and the understanding we bring of what these environments actually require.
+          </p>
+          <p>
+            If your project is sensitive, significant, or simply unusual — we'd like to hear about it.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Capabilities -->
+    <section class="bg-offwhite section-padding">
+      <div class="max-w-[760px] mx-auto px-6">
+        <p class="label text-gold mb-4">Capabilities</p>
+        <h2 class="text-[1.8rem] font-light text-navy leading-tight mb-10">
+          Precision documentation for environments that demand it.
+        </h2>
+
+        <div class="space-y-10">
+          <div>
+            <p class="text-navy font-medium mb-2">Inaccessible and confined spaces.</p>
+            <p class="text-midgrey leading-body">
+              We document areas that conventional survey cannot reach — roof voids, structural cavities, undercroft spaces, mechanical galleries, and confined access environments — using remote inspection platforms where human access isn't practical or safe. No scaffolding. No disruption to the building fabric.
+            </p>
+          </div>
+          <div>
+            <p class="text-navy font-medium mb-2">Historic and heritage environments.</p>
+            <p class="text-midgrey leading-body">
+              We work in buildings where the fabric is irreplaceable and where documentation requires both technical precision and an understanding of what matters. This means understanding materials, understanding the constraints of working in sensitive environments, and producing a record that conservation architects and preservation specialists can actually use.
+            </p>
+          </div>
+          <div>
+            <p class="text-navy font-medium mb-2">Specialist facilities.</p>
+            <p class="text-midgrey leading-body">
+              Some buildings have requirements — access protocols, operational sensitivities, documentation standards — that most survey operators haven't encountered. We have, and we work accordingly.
+            </p>
+          </div>
+          <div>
+            <p class="text-navy font-medium mb-2">Large and complex sites.</p>
+            <p class="text-midgrey leading-body">
+              For sites where a single-pass survey isn't sufficient — large private estates, multi-building facilities, sites with significant exterior and interior documentation requirements — we scope the work properly before we arrive and deploy accordingly.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Background -->
+    <section class="bg-white section-padding">
+      <div class="max-w-[760px] mx-auto px-6">
+        <p class="label text-gold mb-8">Our Background</p>
+        <div class="space-y-5 text-midgrey leading-body text-[1.05rem]" style="font-style: italic;">
+          <p>
+            Alturascope was built on a foundation of construction and conservation work that goes considerably beyond a standard survey background. Our principal has worked in construction and the built environment for nearly two decades — including hands-on work in some of Britain's most significant historic properties, close collaboration with leading architects and conservation specialists, and survey work across almost every state in the US and every Canadian province.
+          </p>
+          <p>
+            That background shapes how we approach every project. We know what a building is trying to tell you. We know what gets missed. And we know that the most valuable documentation is the kind that's still useful five years after the visit.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact -->
+    <section class="bg-offwhite section-padding">
+      <div class="max-w-[600px] mx-auto px-6">
+        <h2 class="text-[1.8rem] font-light text-navy mb-4">
+          Tell us about the project.
+        </h2>
+        <p class="text-midgrey leading-body mb-8">
+          We don't run specialist work through a standard quote form. If you have a project that requires specific expertise, discretion, or capability — describe it to us. We'll tell you whether we're the right people for it.
+        </p>
+
+        <form action="/contact" method="GET" class="space-y-6">
+          <div>
+            <label for="name" class="block text-sm font-medium text-navy mb-1">Name</label>
+            <input type="text" id="name" name="name" required class="w-full px-4 py-3 border border-border bg-white text-navy focus:border-gold focus:outline-none transition-colors" />
+          </div>
+          <div>
+            <label for="email" class="block text-sm font-medium text-navy mb-1">Email</label>
+            <input type="email" id="email" name="email" required class="w-full px-4 py-3 border border-border bg-white text-navy focus:border-gold focus:outline-none transition-colors" />
+          </div>
+          <div>
+            <label for="project" class="block text-sm font-medium text-navy mb-1">Brief project description</label>
+            <textarea id="project" name="project" rows="4" class="w-full px-4 py-3 border border-border bg-white text-navy focus:border-gold focus:outline-none transition-colors resize-y"></textarea>
+          </div>
+          <div class="hidden" aria-hidden="true">
+            <input type="text" name="website" tabindex="-1" autocomplete="off" />
+          </div>
+          <button type="submit" class="btn-primary">Send</button>
+        </form>
+      </div>
+    </section>
+
+    <!-- Internal Links -->
+    <section class="bg-white py-12">
+      <div class="max-w-[900px] mx-auto px-6 flex flex-wrap gap-6 text-sm">
+        <a href="/services" class="text-navy font-medium hover:opacity-80 transition-opacity">All services &rarr;</a>
+        <a href="/services/heritage-building-documentation" class="text-navy font-medium hover:opacity-80 transition-opacity">Heritage building documentation &rarr;</a>
+      </div>
+    </section>
+
+  </div>
+</Layout>
