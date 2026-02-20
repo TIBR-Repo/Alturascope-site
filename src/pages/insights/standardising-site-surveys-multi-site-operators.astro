@@ -1,0 +1,309 @@
+---
+import Layout from "../../layouts/Layout.astro";
+
+const schema = JSON.stringify({
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "How Multi-Site Operators Are Standardising Site Surveys Across North America and the UK",
+  "author": { "@type": "Organization", "name": "Alturascope" },
+  "publisher": { "@type": "Organization", "name": "Alturascope", "url": "https://alturascope.com" },
+  "datePublished": "2026-02-20",
+  "description": "QSR chains, franchise groups, and retail operators running multi-site programmes need consistent site data across every location. Here's how the best-run programmes are doing it.",
+  "mainEntityOfPage": "https://alturascope.com/insights/standardising-site-surveys-multi-site-operators"
+});
+
+const breadcrumbSchema = JSON.stringify({
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://alturascope.com" },
+    { "@type": "ListItem", "position": 2, "name": "Insights", "item": "https://alturascope.com/insights" },
+    { "@type": "ListItem", "position": 3, "name": "Standardising Site Surveys for Multi-Site Operators", "item": "https://alturascope.com/insights/standardising-site-surveys-multi-site-operators" }
+  ]
+});
+
+const faqSchema = JSON.stringify({
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "How do you maintain consistent documentation standards across different countries?",
+      "acceptedAnswer": { "@type": "Answer", "text": "We use the same deliverable framework and the same operator methodology at every site regardless of location — whether that's a QSR rollout across US states and Canadian provinces, or a retail programme spanning North America and the UK. One brief, one format, one point of contact." }
+    },
+    {
+      "@type": "Question",
+      "name": "How quickly can you mobilise across multiple locations?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Once briefed, we can typically mobilise to any location in North America or the UK within a standard lead time. For active rollout programmes, we coordinate scheduling across multiple sites simultaneously. Contact us and we'll give you a realistic mobilisation timeline based on your locations." }
+    },
+    {
+      "@type": "Question",
+      "name": "What if we already have partial documentation from early sites in the programme?",
+      "acceptedAnswer": { "@type": "Answer", "text": "We can pick up from wherever the programme is. If the first five sites were documented inconsistently and you want everything standardised from site six onwards — or if you want to go back and re-document the earlier sites to a consistent standard — we'll scope that for you." }
+    },
+    {
+      "@type": "Question",
+      "name": "Is there a minimum number of sites to make this worthwhile?",
+      "acceptedAnswer": { "@type": "Answer", "text": "There's no formal minimum. The efficiency gains from a single-vendor approach become most apparent from around five or more locations, but the value of consistent documentation exists even for smaller programmes. If you're unsure whether it makes sense for your project, tell us about it and we'll give you an honest answer." }
+    }
+  ]
+});
+---
+<Layout
+  title="How Multi-Site Operators Standardise Site Surveys Across North America and the UK"
+  description="QSR chains, franchise groups, and retail operators running multi-site programmes need consistent site data across every location. Here's how the best-run programmes are doing it."
+  canonical="https://alturascope.com/insights/standardising-site-surveys-multi-site-operators"
+  schema={schema}
+  breadcrumbSchema={breadcrumbSchema}
+  faqSchema={faqSchema}
+  fullWidth={true}
+>
+  <div data-hero-page>
+
+    <!-- Hero -->
+    <section class="relative h-[45vh] max-h-[450px] min-h-[300px] flex items-center justify-center">
+      <div class="absolute inset-0 bg-navy">
+        <img
+          src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=1920&q=80"
+          alt="Modern commercial buildings viewed from below against sky"
+          class="w-full h-full object-cover opacity-25"
+        />
+        <div class="absolute inset-0 bg-[rgba(11,31,58,0.82)]"></div>
+      </div>
+      <div class="relative z-10 text-center px-6 max-w-[760px] mx-auto">
+        <p class="label text-gold mb-4">INSIGHTS</p>
+        <h1 class="text-[1.8rem] md:text-[2.6rem] font-light text-offwhite leading-tight">
+          How Multi-Site Operators Are Standardising Site Surveys Across North America and the UK
+        </h1>
+      </div>
+    </section>
+
+    <!-- Article Body -->
+    <article class="bg-white section-padding">
+      <div class="max-w-[760px] mx-auto px-6">
+
+        <!-- Introduction -->
+        <div class="space-y-6 text-midgrey leading-body text-[1.05rem]">
+          <p>
+            Running a multi-site programme across North America or the UK is a coordination challenge at every level. You're managing different buildings in different cities &mdash; each with its own quirks, conditions, and layout &mdash; while trying to deliver consistent outcomes on time and on budget.
+          </p>
+          <p>
+            Most operators have procurement, design standards, and contractor relationships well established. What trips them up is site data &mdash; specifically, the inconsistency of it.
+          </p>
+          <p>
+            When site documentation varies from location to location, the downstream consequences are felt across the entire programme: decisions get re-litigated at each site, programme velocity drops, and the knowledge your team built at location five is nowhere to be found by location twenty.
+          </p>
+          <p>
+            This post is about how well-run multi-site operators are solving that problem before it starts.
+          </p>
+        </div>
+
+        <!-- The Multi-Site Documentation Problem -->
+        <h2 class="text-[1.6rem] font-light text-navy mt-16 mb-6">The Multi-Site Documentation Problem</h2>
+        <div class="space-y-6 text-midgrey leading-body text-[1.05rem]">
+          <p>
+            When you're rolling out ten, twenty, or fifty locations, you need the same quality of site information from every property. In practice, what most operators actually receive looks something like this:
+          </p>
+        </div>
+
+        <div class="mt-8 bg-offwhite rounded p-8 space-y-4 text-midgrey leading-body text-[1.05rem]">
+          <p>Photos of varying quality taken on different phones by different people.</p>
+          <p>Measurements done using different methods with different tools, carrying different margins of error.</p>
+          <p>Conditions notes that don't follow a consistent structure.</p>
+          <p>No way to compare one site against another without physically returning to the building.</p>
+          <p>And no permanent record that survives the project handover when team members change.</p>
+        </div>
+
+        <div class="space-y-6 text-midgrey leading-body text-[1.05rem] mt-8">
+          <p>
+            The result: every site effectively starts from a different baseline. Standardised decisions get made differently at each location. And the further into the programme you get, the harder it becomes to manage consistently.
+          </p>
+        </div>
+
+        <!-- What Standardised Site Documentation Looks Like -->
+        <h2 class="text-[1.6rem] font-light text-navy mt-16 mb-6">What Standardised Site Documentation Looks Like</h2>
+        <div class="space-y-6 text-midgrey leading-body text-[1.05rem]">
+          <p>
+            The operators running the smoothest multi-site programmes share one characteristic: they treat site documentation as a standard programme deliverable, not an afterthought that gets sorted out location by location.
+          </p>
+          <p>
+            That means every site in the programme produces the same structured package:
+          </p>
+        </div>
+
+        <div class="mt-8 space-y-6">
+          <div class="border-l-2 border-gold pl-6">
+            <h3 class="text-navy font-medium">Navigable Digital Twin</h3>
+            <p class="mt-1 text-midgrey text-[0.95rem] leading-relaxed">A dimensionally accurate, explorable 3D model of the space. Every team member &mdash; designer, project manager, procurement lead, contractor &mdash; can access and navigate the same model from anywhere, without a return site visit to verify a dimension or re-photograph a detail.</p>
+          </div>
+          <div class="border-l-2 border-gold pl-6">
+            <h3 class="text-navy font-medium">Conditions Report (P1 / P2 / P3 Priority)</h3>
+            <p class="mt-1 text-midgrey text-[0.95rem] leading-relaxed">Written assessment of existing conditions, prioritised so the right issues get attention before they become programme risks. Consistent format across every site.</p>
+          </div>
+          <div class="border-l-2 border-gold pl-6">
+            <h3 class="text-navy font-medium">Equipment and Asset Schedule</h3>
+            <p class="mt-1 text-midgrey text-[0.95rem] leading-relaxed">Fixture counts, equipment makes and models, services connections &mdash; formatted for procurement and fit-out teams. The same format. Every location.</p>
+          </div>
+          <div class="border-l-2 border-gold pl-6">
+            <h3 class="text-navy font-medium">Labelled Photo Storyboard</h3>
+            <p class="mt-1 text-midgrey text-[0.95rem] leading-relaxed">Area-by-area documentation with consistent labelling. Your team can compare back-of-house at location 12 against location 31 using the same structure.</p>
+          </div>
+          <div class="border-l-2 border-gold pl-6">
+            <h3 class="text-navy font-medium">Narrated Video Walkthrough</h3>
+            <p class="mt-1 text-midgrey text-[0.95rem] leading-relaxed">Spoken commentary on conditions and concerns, useful for briefing consultants who haven't visited the site and for onboarding new team members mid-programme.</p>
+          </div>
+        </div>
+
+        <!-- The Single-Vendor Advantage -->
+        <h2 class="text-[1.6rem] font-light text-navy mt-16 mb-6">The Single-Vendor Advantage</h2>
+        <div class="space-y-6 text-midgrey leading-body text-[1.05rem]">
+          <p>
+            Multi-site programmes that run well are almost always managed under a single-vendor model for site documentation. The reasons are straightforward:
+          </p>
+        </div>
+
+        <div class="mt-8 space-y-6">
+          <div class="flex gap-4">
+            <span class="text-gold font-light text-xl mt-0.5">&bull;</span>
+            <div>
+              <span class="text-navy font-medium">One brief</span>
+              <span class="text-midgrey text-[1.05rem]"> &mdash; you define your documentation standard once. Not once per region, not once per contractor relationship &mdash; once.</span>
+            </div>
+          </div>
+          <div class="flex gap-4">
+            <span class="text-gold font-light text-xl mt-0.5">&bull;</span>
+            <div>
+              <span class="text-navy font-medium">One format</span>
+              <span class="text-midgrey text-[1.05rem]"> &mdash; deliverables look identical across every location, so your team doesn't have to re-orient every time they open a new site file.</span>
+            </div>
+          </div>
+          <div class="flex gap-4">
+            <span class="text-gold font-light text-xl mt-0.5">&bull;</span>
+            <div>
+              <span class="text-navy font-medium">One point of contact</span>
+              <span class="text-midgrey text-[1.05rem]"> &mdash; programme oversight without managing multiple regional suppliers across different markets and time zones.</span>
+            </div>
+          </div>
+          <div class="flex gap-4">
+            <span class="text-gold font-light text-xl mt-0.5">&bull;</span>
+            <div>
+              <span class="text-navy font-medium">Consistent quality control</span>
+              <span class="text-midgrey text-[1.05rem]"> &mdash; the same operator standard applied at every site, whether that's in Alberta, Arizona, or Aberdeen.</span>
+            </div>
+          </div>
+        </div>
+
+        <p class="mt-8 text-midgrey leading-body text-[1.05rem]">
+          For operators with locations spread across US states, Canadian provinces, and the UK, a model where travel costs are included in project pricing &mdash; rather than quoted separately per site &mdash; simplifies programme budgeting significantly and removes a common source of invoice surprises.
+        </p>
+
+        <!-- The ScopeWalk Advantage -->
+        <h2 class="text-[1.6rem] font-light text-navy mt-16 mb-6">The ScopeWalk Advantage for Multi-Site Programmes</h2>
+        <div class="space-y-6 text-midgrey leading-body text-[1.05rem]">
+          <p>
+            Structured documentation only delivers its full value when it's permanently accessible and comparable across sites &mdash; not buried in email chains or expiring file transfer links.
+          </p>
+          <p>
+            That's what the ScopeWalk platform is built for. Every deliverable from every site in the programme is structured and stored in a single portal. Your team can compare properties side by side, track programme progress across all locations, brief consultants directly from the platform, and return to any site record at any point &mdash; during the active programme or years later when the next project begins.
+          </p>
+          <p>
+            For rollout programmes, this eliminates the knowledge loss that comes with project handovers and team changes. The site record doesn't live in someone's inbox. It lives in the platform, permanently.
+          </p>
+        </div>
+
+        <!-- Who This Is For -->
+        <h2 class="text-[1.6rem] font-light text-navy mt-16 mb-6">Who This Is For</h2>
+        <div class="text-midgrey leading-body text-[1.05rem]">
+          <p>This approach delivers the most value for:</p>
+        </div>
+
+        <div class="space-y-4 mt-8 pl-6 border-l-2 border-gold text-midgrey leading-body text-[1.05rem]">
+          <p><span class="text-navy font-medium">Quick service restaurant chains and franchise operators</span> running store rollouts, relocations, or renovations across multiple markets in North America and the UK</p>
+          <p><span class="text-navy font-medium">PE-backed retail and hospitality operators</span> managing capital expenditure programmes across large distributed portfolios</p>
+          <p><span class="text-navy font-medium">Healthcare networks</span> documenting facilities for fit-out, compliance, or long-term asset management</p>
+          <p><span class="text-navy font-medium">Developers and asset managers</span> running multi-site due diligence, pre-acquisition surveys, or pre-lease documentation programmes</p>
+        </div>
+
+        <!-- FAQ -->
+        <h2 class="text-[1.6rem] font-light text-navy mt-16 mb-8">Frequently Asked Questions</h2>
+
+        <div class="space-y-8">
+          <div>
+            <h3 class="text-navy font-medium text-[1.05rem]">How do you maintain consistent documentation standards across different countries?</h3>
+            <p class="mt-3 text-midgrey leading-body text-[1.05rem]">
+              We use the same deliverable framework and the same operator methodology at every site regardless of location &mdash; whether that's a QSR rollout across US states and Canadian provinces, or a retail programme spanning North America and the UK. One brief, one format, one point of contact.
+            </p>
+          </div>
+
+          <div>
+            <h3 class="text-navy font-medium text-[1.05rem]">How quickly can you mobilise across multiple locations?</h3>
+            <p class="mt-3 text-midgrey leading-body text-[1.05rem]">
+              Once briefed, we can typically mobilise to any location in North America or the UK within a standard lead time. For active rollout programmes, we coordinate scheduling across multiple sites simultaneously. <a href="/contact" class="text-navy underline hover:opacity-80 transition-opacity">Contact us</a> and we'll give you a realistic mobilisation timeline based on your locations.
+            </p>
+          </div>
+
+          <div>
+            <h3 class="text-navy font-medium text-[1.05rem]">What if we already have partial documentation from early sites in the programme?</h3>
+            <p class="mt-3 text-midgrey leading-body text-[1.05rem]">
+              We can pick up from wherever the programme is. If the first five sites were documented inconsistently and you want everything standardised from site six onwards &mdash; or if you want to go back and re-document the earlier sites to a consistent standard &mdash; we'll scope that for you.
+            </p>
+          </div>
+
+          <div>
+            <h3 class="text-navy font-medium text-[1.05rem]">Is there a minimum number of sites to make this worthwhile?</h3>
+            <p class="mt-3 text-midgrey leading-body text-[1.05rem]">
+              There's no formal minimum. The efficiency gains from a single-vendor approach become most apparent from around five or more locations, but the value of consistent documentation exists even for smaller programmes. If you're unsure whether it makes sense for your project, <a href="/contact" class="text-navy underline hover:opacity-80 transition-opacity">tell us about it</a> and we'll give you an honest answer.
+            </p>
+          </div>
+        </div>
+
+        <!-- Getting Started -->
+        <div class="mt-16 pt-16 border-t border-border">
+          <h2 class="text-[1.6rem] font-light text-navy mb-6">Getting Started</h2>
+          <div class="space-y-6 text-midgrey leading-body text-[1.05rem]">
+            <p>
+              The best time to standardise your site documentation approach is before the next programme begins &mdash; not after you've already received inconsistent data from the first five locations and are trying to reconcile it.
+            </p>
+            <p>
+              A national and international documentation partner can be briefed once and mobilised across any location in North America or the UK within a standard lead time. All-in pricing. Consistent deliverables. A permanent record from the first site to the last.
+            </p>
+            <p>
+              Running a multi-site programme? <a href="/contact" class="text-navy font-medium hover:opacity-80 transition-opacity">Tell us about it.</a> We'll respond within one business day with a scope recommendation and all-in pricing across your locations.
+            </p>
+          </div>
+        </div>
+
+        <!-- Footer note -->
+        <p class="mt-12 text-[0.85rem] text-midgrey/60 italic">
+          Alturascope operates across all 50 US states, every Canadian province, and the United Kingdom under a single-vendor model. One brief. One standard. Every site.
+        </p>
+
+        <!-- Internal Links -->
+        <div class="mt-12 pt-8 border-t border-border flex flex-wrap gap-6 text-sm">
+          <a href="/" class="text-navy font-medium hover:opacity-80 transition-opacity">Home &rarr;</a>
+          <a href="/work" class="text-navy font-medium hover:opacity-80 transition-opacity">The Standard &rarr;</a>
+          <a href="/services/multi-site-rollout-documentation" class="text-navy font-medium hover:opacity-80 transition-opacity">Multi-site rollout documentation &rarr;</a>
+          <a href="/services/construction-documentation" class="text-navy font-medium hover:opacity-80 transition-opacity">Construction documentation &rarr;</a>
+          <a href="/insights/what-is-a-matterport-digital-twin" class="text-navy font-medium hover:opacity-80 transition-opacity">What is a Matterport digital twin? &rarr;</a>
+          <a href="/insights/why-poor-site-documentation-costs-construction-projects" class="text-navy font-medium hover:opacity-80 transition-opacity">Why poor site documentation costs more &rarr;</a>
+          <a href="/insights" class="text-navy font-medium hover:opacity-80 transition-opacity">All insights &rarr;</a>
+        </div>
+
+      </div>
+    </article>
+
+    <!-- CTA -->
+    <section class="bg-navy py-20">
+      <div class="max-w-[600px] mx-auto px-6 text-center">
+        <h2 class="text-[1.8rem] font-light text-offwhite leading-snug">
+          Running a multi-site programme?
+        </h2>
+        <p class="mt-4 text-offwhite/70 leading-body">
+          Tell us about your locations and we'll come back within one business day with a scope recommendation and all-in pricing &mdash; travel included.
+        </p>
+        <a href="/contact" class="btn-primary mt-8">Start a Project</a>
+      </div>
+    </section>
+
+  </div>
+</Layout>
