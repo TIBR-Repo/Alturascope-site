@@ -1,0 +1,314 @@
+---
+import Layout from "../../layouts/Layout.astro";
+
+const schema = JSON.stringify({
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "Why Poor Site Documentation Is Costing Your Construction Project More Than You Think",
+  "author": { "@type": "Organization", "name": "Alturascope" },
+  "publisher": { "@type": "Organization", "name": "Alturascope", "url": "https://alturascope.com" },
+  "datePublished": "2026-02-20",
+  "description": "Scope surprises, return site visits, and costly rework almost always trace back to one cause: incomplete site documentation. Here's what it's actually costing — and what better looks like.",
+  "mainEntityOfPage": "https://alturascope.com/insights/why-poor-site-documentation-costs-construction-projects"
+});
+
+const breadcrumbSchema = JSON.stringify({
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://alturascope.com" },
+    { "@type": "ListItem", "position": 2, "name": "Insights", "item": "https://alturascope.com/insights" },
+    { "@type": "ListItem", "position": 3, "name": "Why Poor Site Documentation Costs More Than You Think", "item": "https://alturascope.com/insights/why-poor-site-documentation-costs-construction-projects" }
+  ]
+});
+
+const faqSchema = JSON.stringify({
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "What's the difference between a measured building survey and a digital twin?",
+      "acceptedAnswer": { "@type": "Answer", "text": "A measured building survey traditionally produces 2D drawings — floor plans, elevations, sections — from accurate spatial measurement. A digital twin goes further, creating a fully navigable 3D model of the space that any team member can explore remotely. At Alturascope, we combine both: the spatial accuracy of professional scanning with structured documentation that informs real decisions." }
+    },
+    {
+      "@type": "Question",
+      "name": "Is this relevant for smaller fit-out projects, or just large programmes?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Both. On smaller projects, the cost of a single undocumented condition is proportionally more damaging to the budget. On large multi-site programmes, the efficiency gains from consistent documentation compound across every location. The ROI case exists at both ends." }
+    },
+    {
+      "@type": "Question",
+      "name": "Do you work with UK-based contractors and developers?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Yes. Alturascope operates across the UK as well as all 50 US states and every Canadian province. If you're running a programme with sites across multiple countries, we can document them all within a single consistent framework." }
+    }
+  ]
+});
+---
+<Layout
+  title="Why Poor Site Documentation Costs Construction Projects More Than You Think"
+  description="Scope surprises, return site visits, and costly rework almost always trace back to one cause: incomplete site documentation. Here's what it's actually costing — and what better looks like."
+  canonical="https://alturascope.com/insights/why-poor-site-documentation-costs-construction-projects"
+  schema={schema}
+  breadcrumbSchema={breadcrumbSchema}
+  faqSchema={faqSchema}
+  fullWidth={true}
+>
+  <div data-hero-page>
+
+    <!-- Hero -->
+    <section class="relative h-[45vh] max-h-[450px] min-h-[300px] flex items-center justify-center">
+      <div class="absolute inset-0 bg-navy">
+        <img
+          src="https://images.unsplash.com/photo-1541888946425-d81bb19240f5?w=1920&q=80"
+          alt="Commercial construction site with scaffolding and exposed structural elements"
+          class="w-full h-full object-cover opacity-25"
+        />
+        <div class="absolute inset-0 bg-[rgba(11,31,58,0.82)]"></div>
+      </div>
+      <div class="relative z-10 text-center px-6 max-w-[760px] mx-auto">
+        <p class="label text-gold mb-4">INSIGHTS</p>
+        <h1 class="text-[1.8rem] md:text-[2.6rem] font-light text-offwhite leading-tight">
+          Why Poor Site Documentation Is Costing Your Construction Project More Than You Think
+        </h1>
+      </div>
+    </section>
+
+    <!-- Article Body -->
+    <article class="bg-white section-padding">
+      <div class="max-w-[760px] mx-auto px-6">
+
+        <!-- Introduction -->
+        <div class="space-y-6 text-midgrey leading-body text-[1.05rem]">
+          <p>
+            Ask any project manager where their last cost overrun came from. Nine times out of ten, the answer is some version of: "We didn't know what was there until we got on site."
+          </p>
+          <p>
+            Poor site documentation doesn't feel like a risk until it becomes a problem. By then, you're already dealing with a change order, a delayed programme, or a contractor standing idle while someone scrambles to make a decision that should have been made weeks earlier.
+          </p>
+          <p>
+            This post breaks down what inadequate site documentation actually costs &mdash; and what a better approach looks like.
+          </p>
+        </div>
+
+        <!-- The Hidden Cost -->
+        <h2 class="text-[1.6rem] font-light text-navy mt-16 mb-6">The Hidden Cost of "We'll Figure It Out On Site"</h2>
+        <div class="space-y-6 text-midgrey leading-body text-[1.05rem]">
+          <p>
+            Construction and fit-out budgets are built on assumptions. When those assumptions are wrong, someone pays for it &mdash; usually the project owner or the main contractor absorbing the pressure from below.
+          </p>
+          <p>
+            Here are the most common and expensive documentation failures:
+          </p>
+        </div>
+
+        <div class="space-y-10 mt-8">
+          <div>
+            <h3 class="text-navy font-medium text-[1.1rem]">Scope Creep From Undocumented Existing Conditions</h3>
+            <p class="mt-3 text-midgrey leading-body text-[1.05rem]">
+              When existing conditions aren't properly recorded before design or procurement begins, scopes get built on guesses. Hidden structural elements, undocumented MEP routes, non-standard ceiling heights &mdash; these surface during construction and become immediate change orders.
+            </p>
+            <p class="mt-4 text-midgrey leading-body text-[1.05rem]">
+              A single undocumented condition can trigger a cascade: redesign, re-procurement, schedule extension, contractor delay claims. What could have been identified in a half-day site survey becomes a five-figure problem.
+            </p>
+          </div>
+
+          <div>
+            <h3 class="text-navy font-medium text-[1.1rem]">Repeat Site Visits</h3>
+            <p class="mt-3 text-midgrey leading-body text-[1.05rem]">
+              Without adequate documentation, consultants and contractors make return trips to verify what should have been captured the first time. Every repeat visit carries a direct cost &mdash; travel, time, consultant fees &mdash; and an indirect cost in programme delay.
+            </p>
+            <p class="mt-4 text-midgrey leading-body text-[1.05rem]">
+              For multi-site programmes across the UK, North America, or both, this multiplies fast.
+            </p>
+          </div>
+
+          <div>
+            <h3 class="text-navy font-medium text-[1.1rem]">Design Errors From Inaccurate Measurements</h3>
+            <p class="mt-3 text-midgrey leading-body text-[1.05rem]">
+              Drawings built on manually measured or assumed dimensions carry error into every downstream decision. Inaccuracies in key structural or services dimensions &mdash; the kind that don't show up in a tape measure walkthrough &mdash; become costly corrections during fit-out, when trades are already on site and the clock is running.
+            </p>
+          </div>
+
+          <div>
+            <h3 class="text-navy font-medium text-[1.1rem]">Slow Decision-Making</h3>
+            <p class="mt-3 text-midgrey leading-body text-[1.05rem]">
+              When site information isn't structured and accessible, decisions stall. Emails requesting photos. Calls to clarify dimensions. Another site visit pencilled in for next week. Every delay has a carrying cost, and on a commercial fit-out programme, those costs compound quickly.
+            </p>
+          </div>
+
+          <div>
+            <h3 class="text-navy font-medium text-[1.1rem]">No Baseline for Future Work</h3>
+            <p class="mt-3 text-midgrey leading-body text-[1.05rem]">
+              Most commercial properties will be worked on more than once. Without a documented baseline &mdash; a proper measured record of conditions at a point in time &mdash; every subsequent project starts from scratch. Re-measuring, re-surveying, re-discovering what a previous team already found and never recorded properly.
+            </p>
+            <p class="mt-4 text-midgrey leading-body text-[1.05rem]">
+              For asset managers and landlords managing UK commercial portfolios, this is an avoidable and recurring cost.
+            </p>
+          </div>
+        </div>
+
+        <!-- What Professional Site Documentation Looks Like -->
+        <h2 class="text-[1.6rem] font-light text-navy mt-16 mb-6">What Professional Site Documentation Actually Looks Like</h2>
+        <div class="space-y-6 text-midgrey leading-body text-[1.05rem]">
+          <p>
+            The standard has changed. A proper site documentation package isn't a folder of photos and a hand-drawn floor plan sketch.
+          </p>
+          <p>
+            For construction, fit-out, and pre-acquisition work, it should include:
+          </p>
+        </div>
+
+        <div class="mt-8 space-y-6">
+          <div class="border-l-2 border-gold pl-6">
+            <h3 class="text-navy font-medium">A navigable digital twin</h3>
+            <p class="mt-1 text-midgrey text-[0.95rem] leading-relaxed">A dimensionally accurate, explorable 3D model of the space that your entire team can access remotely, from any location</p>
+          </div>
+          <div class="border-l-2 border-gold pl-6">
+            <h3 class="text-navy font-medium">A conditions report</h3>
+            <p class="mt-1 text-midgrey text-[0.95rem] leading-relaxed">Written findings prioritised P1, P2, P3 so your team knows immediately what requires action and what can wait</p>
+          </div>
+          <div class="border-l-2 border-gold pl-6">
+            <h3 class="text-navy font-medium">An equipment and asset schedule</h3>
+            <p class="mt-1 text-midgrey text-[0.95rem] leading-relaxed">Fixture counts, makes, models, services connections, quantities</p>
+          </div>
+          <div class="border-l-2 border-gold pl-6">
+            <h3 class="text-navy font-medium">A labelled photo storyboard</h3>
+            <p class="mt-1 text-midgrey text-[0.95rem] leading-relaxed">Consistent area-by-area documentation with context, structured for use by GCs, designers, and consultants</p>
+          </div>
+          <div class="border-l-2 border-gold pl-6">
+            <h3 class="text-navy font-medium">A narrated video walkthrough</h3>
+            <p class="mt-1 text-midgrey text-[0.95rem] leading-relaxed">Spoken commentary on conditions, anomalies, and items requiring attention</p>
+          </div>
+        </div>
+
+        <p class="mt-8 text-midgrey leading-body text-[1.05rem]">
+          All of it structured. All of it permanently accessible. All of it usable by every consultant, contractor, and decision-maker on the project &mdash; without another site visit.
+        </p>
+
+        <!-- The ROI Case -->
+        <h2 class="text-[1.6rem] font-light text-navy mt-16 mb-6">The ROI Case for Proper Site Documentation</h2>
+        <div class="space-y-6 text-midgrey leading-body text-[1.05rem]">
+          <p>
+            The question isn't whether professional site documentation costs money. It does. The question is what it costs relative to what it prevents.
+          </p>
+          <p>
+            Consider the numbers honestly:
+          </p>
+        </div>
+
+        <div class="mt-8 bg-offwhite rounded p-8 space-y-6">
+          <div class="flex gap-4">
+            <span class="text-gold text-xl font-light mt-0.5">&pound;</span>
+            <p class="text-midgrey leading-body text-[1.05rem]">
+              A single change order from an undocumented condition routinely runs from <span class="text-navy font-medium">&pound;4,000 to &pound;40,000 or more</span>, depending on programme stage.
+            </p>
+          </div>
+          <div class="flex gap-4">
+            <span class="text-gold text-xl font-light mt-0.5">&pound;</span>
+            <p class="text-midgrey leading-body text-[1.05rem]">
+              One return site visit for a UK or North American multi-site programme costs <span class="text-navy font-medium">&pound;1,200 to &pound;4,000 per location</span> once travel, time, and fees are accounted for.
+            </p>
+          </div>
+          <div class="flex gap-4">
+            <span class="text-gold text-xl font-light mt-0.5">&pound;</span>
+            <p class="text-midgrey leading-body text-[1.05rem]">
+              A week of programme delay on a commercial fit-out &mdash; trades idling, lease clock ticking &mdash; can cost <span class="text-navy font-medium">tens of thousands in carrying costs</span> alone.
+            </p>
+          </div>
+        </div>
+
+        <p class="mt-8 text-midgrey leading-body text-[1.05rem]">
+          Professional site documentation, delivered as a complete structured package, typically costs a fraction of any one of these. And it significantly reduces the risk of all of them.
+        </p>
+
+        <!-- Who Should Be Investing -->
+        <h2 class="text-[1.6rem] font-light text-navy mt-16 mb-6">Who Should Be Investing in This</h2>
+        <div class="text-midgrey leading-body text-[1.05rem]">
+          <p>If you're managing any of the following, proper site documentation should be a standard line item in your project budget:</p>
+        </div>
+
+        <div class="space-y-4 mt-8 pl-6 border-l-2 border-gold text-midgrey leading-body text-[1.05rem]">
+          <p><span class="text-navy font-medium">Commercial renovation and fit-out</span> &mdash; particularly in existing buildings where conditions are unknown or drawings are out of date</p>
+          <p><span class="text-navy font-medium">Pre-acquisition due diligence</span> &mdash; for developers and asset managers assessing UK or North American properties before purchase or lease-up</p>
+          <p><span class="text-navy font-medium">Multi-site rollout programmes</span> &mdash; where consistency of documentation across locations is critical to managing the programme efficiently</p>
+          <p><span class="text-navy font-medium">Healthcare, industrial, and MEP-intensive environments</span> &mdash; where undocumented services above ceiling create the highest downstream risk</p>
+        </div>
+
+        <!-- FAQ -->
+        <h2 class="text-[1.6rem] font-light text-navy mt-16 mb-8">Frequently Asked Questions</h2>
+
+        <div class="space-y-8">
+          <div>
+            <h3 class="text-navy font-medium text-[1.05rem]">What's the difference between a measured building survey and a digital twin?</h3>
+            <p class="mt-3 text-midgrey leading-body text-[1.05rem]">
+              A measured building survey traditionally produces 2D drawings &mdash; floor plans, elevations, sections &mdash; from accurate spatial measurement. A digital twin goes further, creating a fully navigable 3D model of the space that any team member can explore remotely. At Alturascope, we combine both: the spatial accuracy of professional scanning with structured documentation that informs real decisions.
+            </p>
+          </div>
+
+          <div>
+            <h3 class="text-navy font-medium text-[1.05rem]">Is this relevant for smaller fit-out projects, or just large programmes?</h3>
+            <p class="mt-3 text-midgrey leading-body text-[1.05rem]">
+              Both. On smaller projects, the cost of a single undocumented condition is proportionally more damaging to the budget. On large multi-site programmes, the efficiency gains from consistent documentation compound across every location. The ROI case exists at both ends.
+            </p>
+          </div>
+
+          <div>
+            <h3 class="text-navy font-medium text-[1.05rem]">Do you work with UK-based contractors and developers?</h3>
+            <p class="mt-3 text-midgrey leading-body text-[1.05rem]">
+              Yes. Alturascope operates across the UK as well as all 50 US states and every Canadian province. If you're running a programme with sites across multiple countries, we can document them all within a single consistent framework.
+            </p>
+          </div>
+        </div>
+
+        <!-- Bottom Line -->
+        <div class="mt-16 pt-16 border-t border-border">
+          <h2 class="text-[1.6rem] font-light text-navy mb-6">The Bottom Line</h2>
+          <div class="space-y-6 text-midgrey leading-body text-[1.05rem]">
+            <p>
+              The cost of not documenting a site properly is almost always higher than the cost of doing it right. The problem is timing &mdash; the cost appears later, buried in a change order, a delayed programme, or a frustrated project team trying to work from information that was never properly captured.
+            </p>
+            <p>
+              Proper site documentation at the start of a project is the single highest-leverage investment you can make before work begins.
+            </p>
+            <p>
+              Want to know what a proper documentation package looks like for your next project?
+            </p>
+            <p>
+              <a href="/contact" class="text-navy font-medium hover:opacity-80 transition-opacity">Talk to Alturascope.</a> We'll respond within one business day with a clear scope recommendation and an all-in quote &mdash; travel included.
+            </p>
+          </div>
+        </div>
+
+        <!-- Footer note -->
+        <p class="mt-12 text-[0.85rem] text-midgrey/60 italic">
+          Alturascope delivers professional site documentation and digital twin surveys across all 50 US states, every Canadian province, and the United Kingdom.
+        </p>
+
+        <!-- Internal Links -->
+        <div class="mt-12 pt-8 border-t border-border flex flex-wrap gap-6 text-sm">
+          <a href="/" class="text-navy font-medium hover:opacity-80 transition-opacity">Home &rarr;</a>
+          <a href="/work" class="text-navy font-medium hover:opacity-80 transition-opacity">The Standard &rarr;</a>
+          <a href="/services/construction-documentation" class="text-navy font-medium hover:opacity-80 transition-opacity">Construction documentation &rarr;</a>
+          <a href="/services/multi-site-rollout-documentation" class="text-navy font-medium hover:opacity-80 transition-opacity">Multi-site rollout documentation &rarr;</a>
+          <a href="/insights/what-is-a-matterport-digital-twin" class="text-navy font-medium hover:opacity-80 transition-opacity">What is a Matterport digital twin? &rarr;</a>
+          <a href="/insights" class="text-navy font-medium hover:opacity-80 transition-opacity">All insights &rarr;</a>
+        </div>
+
+      </div>
+    </article>
+
+    <!-- CTA -->
+    <section class="bg-navy py-20">
+      <div class="max-w-[600px] mx-auto px-6 text-center">
+        <h2 class="text-[1.8rem] font-light text-offwhite leading-snug">
+          Ready to document your next project properly?
+        </h2>
+        <p class="mt-4 text-offwhite/70 leading-body">
+          Share the location, the approximate size, and what decision you're trying to make. We'll confirm scope and send an all-in quote within one business day.
+        </p>
+        <a href="/contact" class="btn-primary mt-8">Start a Project</a>
+      </div>
+    </section>
+
+  </div>
+</Layout>
