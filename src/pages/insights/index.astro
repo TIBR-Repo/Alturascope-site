@@ -1,0 +1,74 @@
+---
+import Layout from "../../layouts/Layout.astro";
+
+const schema = JSON.stringify({
+  "@context": "https://schema.org",
+  "@type": "ProfessionalService",
+  "name": "Alturascope",
+  "description": "Reality capture, 3D documentation, and conditions surveys for construction teams and specialist clients across the US, Canada, and the UK.",
+  "url": "https://alturascope.com",
+  "areaServed": ["United States", "Canada", "United Kingdom"],
+  "serviceType": "Reality Capture and Site Documentation"
+});
+
+const posts = [
+  {
+    title: "What Is a Matterport Digital Twin — And Why Construction Teams Are Using Them",
+    description: "Matterport digital twins give construction and fitout teams accurate, navigable site models before a single decision is made. Here's what they are, how they work, and what a professional survey actually delivers.",
+    href: "/insights/what-is-a-matterport-digital-twin",
+    date: "February 2026",
+    category: "SITE DOCUMENTATION"
+  }
+];
+---
+<Layout
+  title="Construction Insights & Industry Guides | Alturascope"
+  description="Practical guides on site documentation, reality capture, Matterport, LiDAR, and how to reduce project risk with better pre-construction intelligence."
+  canonical="https://alturascope.com/insights"
+  schema={schema}
+  fullWidth={true}
+>
+  <div data-hero-page>
+
+    <!-- Hero -->
+    <section class="relative h-[40vh] max-h-[400px] min-h-[280px] flex items-center justify-center">
+      <div class="absolute inset-0 bg-navy">
+        <div class="absolute inset-0 bg-[rgba(11,31,58,0.90)]"></div>
+      </div>
+      <div class="relative z-10 text-center px-6">
+        <h1 class="text-[2.4rem] md:text-[3rem] font-light text-offwhite leading-tight">
+          Insights.
+        </h1>
+        <p class="mt-4 text-offwhite/60 max-w-[520px] mx-auto leading-body">
+          Practical perspectives on site documentation, reality capture, and the decisions these tools help project teams make.
+        </p>
+      </div>
+    </section>
+
+    <!-- Posts -->
+    <section class="bg-white section-padding">
+      <div class="max-w-[900px] mx-auto px-6">
+        <div class="space-y-12">
+          {posts.map((post) => (
+            <a href={post.href} class="block group">
+              <div class="border border-border rounded p-8 transition-all duration-300 hover:border-gold hover:shadow-md">
+                <div class="flex items-center gap-4 mb-4">
+                  <span class="label text-gold text-[0.7rem]">{post.category}</span>
+                  <span class="text-midgrey/50 text-[0.8rem]">{post.date}</span>
+                </div>
+                <h2 class="text-[1.4rem] font-light text-navy leading-snug group-hover:opacity-80 transition-opacity">
+                  {post.title}
+                </h2>
+                <p class="mt-3 text-midgrey text-[0.95rem] leading-relaxed">
+                  {post.description}
+                </p>
+                <span class="inline-block mt-4 text-navy text-sm font-medium">Read article &rarr;</span>
+              </div>
+            </a>
+          ))}
+        </div>
+      </div>
+    </section>
+
+  </div>
+</Layout>

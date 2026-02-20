@@ -1,0 +1,300 @@
+---
+import Layout from "../../layouts/Layout.astro";
+
+const schema = JSON.stringify({
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "What Is a Matterport Digital Twin — And Why Construction Teams Are Using Them",
+  "author": { "@type": "Organization", "name": "Alturascope" },
+  "publisher": { "@type": "Organization", "name": "Alturascope", "url": "https://alturascope.com" },
+  "datePublished": "2026-02-20",
+  "description": "Matterport digital twins give construction and fitout teams accurate, navigable site models before a single decision is made. Here's what they are, how they work, and what a professional survey actually delivers.",
+  "mainEntityOfPage": "https://alturascope.com/insights/what-is-a-matterport-digital-twin"
+});
+
+const breadcrumbSchema = JSON.stringify({
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://alturascope.com" },
+    { "@type": "ListItem", "position": 2, "name": "Insights", "item": "https://alturascope.com/insights" },
+    { "@type": "ListItem", "position": 3, "name": "What Is a Matterport Digital Twin", "item": "https://alturascope.com/insights/what-is-a-matterport-digital-twin" }
+  ]
+});
+
+const faqSchema = JSON.stringify({
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "How accurate is a Matterport digital twin?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Matterport Pro3 scans are accurate to within a few centimetres for spatial navigation and general measurement. For projects requiring survey-grade point cloud data for CAD or Revit modelling, AlturaScope can advise on the right capture approach based on your specific deliverable requirements." }
+    },
+    {
+      "@type": "Question",
+      "name": "How long does a site survey take?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Most commercial sites are captured in a single day. Larger or more complex facilities may require two visits. You'll receive a clear timeline and scope recommendation before we mobilise." }
+    },
+    {
+      "@type": "Question",
+      "name": "Can the digital twin be shared with the whole project team?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Yes. Matterport models are cloud-hosted and shareable via link — no software installation required. Every stakeholder gets access from day one." }
+    },
+    {
+      "@type": "Question",
+      "name": "What does a Matterport survey cost?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Pricing is based on site size, location, and the deliverables required. AlturaScope provides all-in quotes with travel included — no surprises on the invoice." }
+    }
+  ]
+});
+---
+<Layout
+  title="What Is a Matterport Digital Twin? A Guide for Construction & Fitout Teams"
+  description="Matterport digital twins give construction and fitout teams accurate, navigable site models before a single decision is made. Here's what they are, how they work, and what a professional survey actually delivers."
+  canonical="https://alturascope.com/insights/what-is-a-matterport-digital-twin"
+  schema={schema}
+  breadcrumbSchema={breadcrumbSchema}
+  faqSchema={faqSchema}
+  fullWidth={true}
+>
+  <div data-hero-page>
+
+    <!-- Hero -->
+    <section class="relative h-[45vh] max-h-[450px] min-h-[300px] flex items-center justify-center">
+      <div class="absolute inset-0 bg-navy">
+        <img
+          src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=1920&q=80"
+          alt="Commercial construction site interior with structural framework and atmospheric lighting"
+          class="w-full h-full object-cover opacity-25"
+        />
+        <div class="absolute inset-0 bg-[rgba(11,31,58,0.82)]"></div>
+      </div>
+      <div class="relative z-10 text-center px-6 max-w-[760px] mx-auto">
+        <p class="label text-gold mb-4">INSIGHTS</p>
+        <h1 class="text-[1.8rem] md:text-[2.6rem] font-light text-offwhite leading-tight">
+          What Is a Matterport Digital Twin &mdash; And Why Construction Teams Are Using Them
+        </h1>
+      </div>
+    </section>
+
+    <!-- Article Body -->
+    <article class="bg-white section-padding">
+      <div class="max-w-[760px] mx-auto px-6">
+
+        <!-- Introduction -->
+        <div class="space-y-6 text-midgrey leading-body text-[1.05rem]">
+          <p>
+            Before your team sets foot on a job site, you're already making decisions &mdash; about scope, budget, design, sequencing, and procurement. Most of those decisions are made from incomplete information: floor plans that don't reflect what's actually there, photos that miss what matters, and site walkthroughs that no one properly documented.
+          </p>
+          <p>
+            That gap between assumption and reality is where projects get expensive.
+          </p>
+          <p>
+            A Matterport digital twin closes that gap. But the model itself is only part of the story.
+          </p>
+        </div>
+
+        <!-- What Is a Matterport Digital Twin? -->
+        <h2 class="text-[1.6rem] font-light text-navy mt-16 mb-6">What Is a Matterport Digital Twin?</h2>
+        <div class="space-y-6 text-midgrey leading-body text-[1.05rem]">
+          <p>
+            A Matterport digital twin is a dimensionally accurate, fully navigable 3D model of a physical space &mdash; captured on site using professional-grade LiDAR and imaging technology.
+          </p>
+          <p>
+            Unlike a photograph or a video walkthrough, a digital twin lets your entire team explore the space interactively. Walk through every room. Measure any wall, ceiling height, or corridor width. Inspect equipment layouts. Review above-ceiling conditions. All without returning to site.
+          </p>
+          <p>
+            It's called a "twin" because it's a precise spatial replica of the physical space at a specific point in time &mdash; a documented baseline that every decision can be anchored to.
+          </p>
+        </div>
+
+        <!-- How Is a Matterport Digital Twin Created? -->
+        <h2 class="text-[1.6rem] font-light text-navy mt-16 mb-6">How Is a Matterport Digital Twin Created?</h2>
+        <div class="space-y-6 text-midgrey leading-body text-[1.05rem]">
+          <p>The capture process combines:</p>
+          <div class="space-y-4 pl-6 border-l-2 border-gold">
+            <p><span class="text-navy font-medium">LiDAR scanning</span> &mdash; laser-based measurement that produces highly accurate spatial data and point cloud outputs</p>
+            <p><span class="text-navy font-medium">Photogrammetry</span> &mdash; structured image capture that maps surfaces, textures, and conditions in detail</p>
+            <p><span class="text-navy font-medium">Matterport Pro3 processing</span> &mdash; which stitches all data into a navigable, shareable model accessible by any team member from any location</p>
+          </div>
+          <p>
+            A trained operator moves through the space systematically, capturing overlapping scan positions to ensure complete coverage. The result is a full spatial record, typically delivered within days of the site visit.
+          </p>
+        </div>
+
+        <!-- Why Construction Teams Use Digital Twins -->
+        <h2 class="text-[1.6rem] font-light text-navy mt-16 mb-6">Why Construction Teams Use Digital Twins</h2>
+
+        <div class="space-y-10 mt-8">
+          <div>
+            <h3 class="text-navy font-medium text-[1.1rem]">Fewer Return Site Visits</h3>
+            <p class="mt-3 text-midgrey leading-body text-[1.05rem]">
+              Every return visit costs time and money &mdash; travel, scheduling, coordination. A digital twin means your architect, MEP consultant, and project manager can all review the same space remotely, without burning another site day.
+            </p>
+          </div>
+
+          <div>
+            <h3 class="text-navy font-medium text-[1.1rem]">No Scope Surprises</h3>
+            <p class="mt-3 text-midgrey leading-body text-[1.05rem]">
+              Most cost overruns in renovation and fitout work trace back to the same cause: conditions that weren't properly documented before the project started. A digital twin captures what's actually there &mdash; not what the drawings say should be there.
+            </p>
+          </div>
+
+          <div>
+            <h3 class="text-navy font-medium text-[1.1rem]">Faster Pre-Construction Decision-Making</h3>
+            <p class="mt-3 text-midgrey leading-body text-[1.05rem]">
+              Design teams move faster when they have accurate spatial data to work from. A digital twin eliminates the back-and-forth that comes from assumptions, approximations, and conflicting recollections of what was seen on a rushed site visit.
+            </p>
+          </div>
+
+          <div>
+            <h3 class="text-navy font-medium text-[1.1rem]">A Permanent Project Record</h3>
+            <p class="mt-3 text-midgrey leading-body text-[1.05rem]">
+              Once captured, the model is permanently accessible. For asset managers, developers, and facility teams, this means every future project &mdash; a lease renewal, a fitout, an equipment replacement &mdash; starts from a documented baseline rather than a blank slate.
+            </p>
+          </div>
+
+          <div>
+            <h3 class="text-navy font-medium text-[1.1rem]">Consistent Multi-Site Comparison</h3>
+            <p class="mt-3 text-midgrey leading-body text-[1.05rem]">
+              For operators managing programmes across multiple locations, digital twins allow site-to-site comparison in a standardised format. One documentation structure. Every location. No guessing.
+            </p>
+          </div>
+        </div>
+
+        <!-- Who Benefits Most -->
+        <h2 class="text-[1.6rem] font-light text-navy mt-16 mb-6">Who Benefits Most From Digital Twin Surveys?</h2>
+        <div class="space-y-4 text-midgrey leading-body text-[1.05rem] pl-6 border-l-2 border-gold">
+          <p><span class="text-navy font-medium">General contractors and design-build teams</span> running pre-construction surveys before fitout or renovation</p>
+          <p><span class="text-navy font-medium">Developers and asset managers</span> assessing properties before acquisition, lease-up, or capital planning</p>
+          <p><span class="text-navy font-medium">QSR and retail operators</span> managing rollout programmes across distributed locations</p>
+          <p><span class="text-navy font-medium">Healthcare, industrial, and facilities teams</span> where MEP documentation and above-ceiling conditions are critical to project accuracy</p>
+        </div>
+
+        <!-- What a Professional Site Survey Actually Delivers -->
+        <h2 class="text-[1.6rem] font-light text-navy mt-16 mb-6">What a Professional Site Survey Actually Delivers</h2>
+        <div class="space-y-6 text-midgrey leading-body text-[1.05rem]">
+          <p>
+            This is where it's worth being direct: a Matterport scan is a tool, not a deliverable.
+          </p>
+          <p>
+            What matters is what you do with it.
+          </p>
+          <p>
+            At Alturascope, every site visit produces a structured documentation package &mdash; not just a 3D model:
+          </p>
+        </div>
+
+        <div class="mt-8 space-y-6">
+          <div class="border-l-2 border-gold pl-6">
+            <h3 class="text-navy font-medium">Navigable digital twin</h3>
+            <p class="mt-1 text-midgrey text-[0.95rem] leading-relaxed">Explorable by any team member, from anywhere, at any time</p>
+          </div>
+          <div class="border-l-2 border-gold pl-6">
+            <h3 class="text-navy font-medium">Narrated video walkthrough</h3>
+            <p class="mt-1 text-midgrey text-[0.95rem] leading-relaxed">With spoken commentary on conditions, anomalies, and items requiring attention</p>
+          </div>
+          <div class="border-l-2 border-gold pl-6">
+            <h3 class="text-navy font-medium">Conditions report</h3>
+            <p class="mt-1 text-midgrey text-[0.95rem] leading-relaxed">Findings categorised P1, P2, P3 by urgency and impact</p>
+          </div>
+          <div class="border-l-2 border-gold pl-6">
+            <h3 class="text-navy font-medium">Equipment and asset schedule</h3>
+            <p class="mt-1 text-midgrey text-[0.95rem] leading-relaxed">Make, model, fixture counts, services connections, quantities</p>
+          </div>
+          <div class="border-l-2 border-gold pl-6">
+            <h3 class="text-navy font-medium">Labelled photo storyboard</h3>
+            <p class="mt-1 text-midgrey text-[0.95rem] leading-relaxed">Consistent area-by-area documentation in a format GCs and design teams can actually use</p>
+          </div>
+          <div class="border-l-2 border-gold pl-6">
+            <h3 class="text-navy font-medium">ScopeWalk platform access</h3>
+            <p class="mt-1 text-midgrey text-[0.95rem] leading-relaxed">All deliverables structured, searchable, and permanently accessible in one place</p>
+          </div>
+        </div>
+
+        <p class="mt-8 text-midgrey leading-body text-[1.05rem]">
+          The digital twin is how your team navigates the space. The documentation package is what actually informs the project.
+        </p>
+
+        <!-- FAQ -->
+        <h2 class="text-[1.6rem] font-light text-navy mt-16 mb-8">Frequently Asked Questions</h2>
+
+        <div class="space-y-8">
+          <div>
+            <h3 class="text-navy font-medium text-[1.05rem]">How accurate is a Matterport digital twin?</h3>
+            <p class="mt-3 text-midgrey leading-body text-[1.05rem]">
+              Matterport Pro3 scans are accurate to within a few centimetres for spatial navigation and general measurement. For projects requiring survey-grade point cloud data for CAD or Revit modelling, Alturascope can advise on the right capture approach based on your specific deliverable requirements.
+            </p>
+          </div>
+
+          <div>
+            <h3 class="text-navy font-medium text-[1.05rem]">How long does a site survey take?</h3>
+            <p class="mt-3 text-midgrey leading-body text-[1.05rem]">
+              Most commercial sites are captured in a single day. Larger or more complex facilities may require two visits. You'll receive a clear timeline and scope recommendation before we mobilise.
+            </p>
+          </div>
+
+          <div>
+            <h3 class="text-navy font-medium text-[1.05rem]">Can the digital twin be shared with the whole project team?</h3>
+            <p class="mt-3 text-midgrey leading-body text-[1.05rem]">
+              Yes. Matterport models are cloud-hosted and shareable via link &mdash; no software installation required. Every stakeholder gets access from day one.
+            </p>
+          </div>
+
+          <div>
+            <h3 class="text-navy font-medium text-[1.05rem]">What does a Matterport survey cost?</h3>
+            <p class="mt-3 text-midgrey leading-body text-[1.05rem]">
+              Pricing is based on site size, location, and the deliverables required. Alturascope provides all-in quotes with travel included &mdash; no surprises on the invoice.
+            </p>
+          </div>
+        </div>
+
+        <!-- Bottom Line -->
+        <div class="mt-16 pt-16 border-t border-border">
+          <h2 class="text-[1.6rem] font-light text-navy mb-6">The Bottom Line</h2>
+          <div class="space-y-6 text-midgrey leading-body text-[1.05rem]">
+            <p>
+              If your team is making project decisions without an accurate site record, you're working with incomplete information. The cost of a professional survey is a fraction of what a single undocumented condition costs on site.
+            </p>
+            <p>
+              Ready to document your next project properly?
+            </p>
+            <p>
+              <a href="/contact" class="text-navy font-medium hover:opacity-80 transition-opacity">Get in touch with Alturascope</a> and we'll come back within one business day with a clear scope recommendation and an all-in quote &mdash; travel included.
+            </p>
+          </div>
+        </div>
+
+        <!-- Footer note -->
+        <p class="mt-12 text-[0.85rem] text-midgrey/60 italic">
+          Alturascope delivers professional site documentation and digital twin surveys across all 50 US states, every Canadian province, and the United Kingdom.
+        </p>
+
+        <!-- Internal Links -->
+        <div class="mt-12 pt-8 border-t border-border flex flex-wrap gap-6 text-sm">
+          <a href="/" class="text-navy font-medium hover:opacity-80 transition-opacity">Home &rarr;</a>
+          <a href="/work" class="text-navy font-medium hover:opacity-80 transition-opacity">The Standard &rarr;</a>
+          <a href="/services/construction-documentation" class="text-navy font-medium hover:opacity-80 transition-opacity">Construction documentation &rarr;</a>
+          <a href="/services/multi-site-rollout-documentation" class="text-navy font-medium hover:opacity-80 transition-opacity">Multi-site rollout documentation &rarr;</a>
+          <a href="/insights" class="text-navy font-medium hover:opacity-80 transition-opacity">All insights &rarr;</a>
+        </div>
+
+      </div>
+    </article>
+
+    <!-- CTA -->
+    <section class="bg-navy py-20">
+      <div class="max-w-[600px] mx-auto px-6 text-center">
+        <h2 class="text-[1.8rem] font-light text-offwhite leading-snug">
+          Ready to document your next project?
+        </h2>
+        <p class="mt-4 text-offwhite/70 leading-body">
+          Share the location, the approximate size, and what you're trying to decide. We'll confirm scope and send an all-in quote within one business day.
+        </p>
+        <a href="/contact" class="btn-primary mt-8">Start a Project</a>
+      </div>
+    </section>
+
+  </div>
+</Layout>
