@@ -10,110 +10,307 @@ const schema = JSON.stringify({
   "areaServed": ["United States", "Canada", "United Kingdom"],
   "serviceType": "Reality Capture and Site Documentation"
 });
-
-const workItems = [
-  {
-    image: "/commercial-kitchen-work.jpg",
-    alt: "Commercial kitchen with stainless steel cooking equipment, fryers, and service line documented for equipment survey",
-    type: "COMMERCIAL KITCHEN DOCUMENTATION",
-    location: "Multi-site programme, US",
-    placeholder: "Commercial kitchen or restaurant fit-out. Dramatic, professional."
-  },
-  {
-    image: "/above-ceiling-survey.jpg",
-    alt: "Above-ceiling capture showing exposed ductwork, services runs, and structural steel in commercial facility",
-    type: "ABOVE-CEILING SURVEY",
-    location: "Healthcare facility, Central US",
-    placeholder: "Above-ceiling capture — MEP services visible, industrial atmosphere."
-  },
-  {
-    image: "/heritage-building-work.jpg",
-    alt: "Heritage industrial building with brick facade and original steel-framed windows on cobblestone street",
-    type: "HERITAGE BUILDING DOCUMENTATION",
-    location: "Private estate, UK",
-    placeholder: "Heritage building interior — stone, timber, significant architectural detail."
-  },
-  {
-    image: "/pre-construction-survey.jpg",
-    alt: "Commercial space with exposed ceiling structure and office area documented for pre-construction survey",
-    type: "PRE-CONSTRUCTION SURVEY",
-    location: "Commercial fit-out, Canada",
-    placeholder: "Large commercial space — empty, atmospheric, dramatic ceiling height."
-  },
-  {
-    image: "/aerial-documentation.jpg",
-    alt: "Aerial drone documentation of commercial building rooftop showing MEP plant and building services",
-    type: "AERIAL DOCUMENTATION",
-    location: "Multi-building estate, Southeast US",
-    placeholder: "Exterior aerial or drone photography of significant building or site."
-  },
-  {
-    image: "/scopewalk-platform.png",
-    alt: "ScopeWalk platform login screen showing architect-grade site capture interface and survey features",
-    type: "SCOPEWALK™ PLATFORM",
-    location: "Programme portal, active rollout",
-    placeholder: "ScopeWalk platform screenshot in browser device frame."
-  }
-];
 ---
 <Layout
-  title="Project Work & Case Studies | Alturascope"
-  description="Reality capture and site documentation projects across the US, Canada, and UK — commercial fit-outs, QSR rollouts, specialist environments, and everything in between."
+  title="The Standard | What Every Alturascope Visit Produces"
+  description="A detailed look at what Alturascope delivers — the instruments, the process, and the structured deliverables your team accesses through ScopeWalk."
   canonical="https://alturascope.com/work"
   schema={schema}
   fullWidth={true}
 >
   <div data-hero-page>
 
-    <!-- Hero -->
-    <section class="relative h-[50vh] min-h-[350px] flex items-center justify-center">
+    <!-- SECTION 1: Hero -->
+    <section class="relative h-[50vh] max-h-[500px] min-h-[350px] flex items-center justify-center">
+      <!-- REPLACE: Hero background — atmospheric commercial or technical space. Plant room, significant interior, professional environment. Dark, empty, precise. -->
       <div class="absolute inset-0 bg-navy">
         <img
           src="https://images.unsplash.com/photo-1497366216548-37526070297c?w=1920&q=80"
-          alt="Atmospheric architectural interior showcasing site documentation work"
+          alt="Atmospheric commercial interior with precision documentation environment"
           class="w-full h-full object-cover opacity-30"
         />
-        <div class="absolute inset-0 bg-[rgba(11,31,58,0.72)]"></div>
+        <div class="absolute inset-0 bg-[rgba(11,31,58,0.80)]"></div>
       </div>
-      <div class="relative z-10 text-center px-6">
-        <h1 class="text-[2.4rem] md:text-[3.2rem] font-light text-offwhite leading-tight">
-          Selected work.
+      <div class="relative z-10 text-center px-6 max-w-[700px] mx-auto">
+        <p class="label text-gold mb-6">HOW WE WORK</p>
+        <h1 class="text-[2.2rem] md:text-[3.2rem] font-light text-offwhite leading-tight">
+          This is what you receive.
         </h1>
+        <p class="mt-6 text-offwhite/75 text-[1.1rem] leading-relaxed max-w-[620px] mx-auto">
+          Every Alturascope visit follows the same disciplined process and produces the same structured deliverable architecture. This page documents exactly what that means &mdash; from the instruments we use on site to what arrives in your ScopeWalk portal.
+        </p>
       </div>
     </section>
 
-    <!-- Grid -->
+    <!-- SECTION 2: The Brief -->
     <section class="bg-white section-padding">
+      <div class="max-w-[800px] mx-auto px-6">
+        <p class="label text-gold mb-4">BEFORE WE ARRIVE</p>
+        <h2 class="text-[2rem] font-light text-navy leading-snug">
+          Every visit starts with a conversation, not a booking form.
+        </h2>
+        <div class="mt-8 space-y-6 text-midgrey leading-body">
+          <p>
+            We don't dispatch a scanner to a postcode. Before anyone travels anywhere, we spend time understanding what you're trying to decide &mdash; because the decision shapes everything: what we capture, which instruments we bring, how we structure the report, and what your team actually needs from the deliverable.
+          </p>
+          <p>
+            A pre-construction survey ahead of a hospitality fit-out has different requirements from a heritage building condition assessment or a pre-lease diligence visit for an acquisition. The instruments differ. The focus differs. The deliverable emphasis differs. Getting that alignment right before we arrive is what makes the deliverable useful rather than generic.
+          </p>
+          <p>
+            Typically this takes one short conversation &mdash; twenty minutes, no obligation. We confirm scope, recommend the visit type, and send a clear all-in quote that includes travel.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 3: On Site — The Instruments -->
+    <section class="bg-offwhite section-padding">
       <div class="max-w-[1200px] mx-auto px-6">
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-          {workItems.map((item) => (
-            <div class="group">
-              <!-- REPLACE: {item.placeholder} -->
-              <div class="overflow-hidden">
-                <img
-                  src={item.image}
-                  alt={item.alt}
-                  class="w-full aspect-[4/3] object-cover transition-transform duration-500 group-hover:scale-[1.02]"
-                  loading="lazy"
-                />
-              </div>
-              <div class="mt-4">
-                <p class="text-[0.85rem] font-medium uppercase tracking-[0.08em] text-navy">{item.type}</p>
-                <p class="text-[0.85rem] text-midgrey mt-0.5">{item.location}</p>
-              </div>
-            </div>
-          ))}
+        <div class="text-center max-w-[700px] mx-auto mb-16">
+          <p class="label text-gold mb-4">ON SITE</p>
+          <h2 class="text-[2rem] font-light text-navy leading-snug">
+            The right instrument for the environment. Not the other way around.
+          </h2>
+          <p class="mt-6 text-midgrey leading-body max-w-[680px] mx-auto">
+            The quality of a site documentation deliverable is determined by what was captured on site, and how. We select instruments based on what the environment and the brief actually require &mdash; survey-grade where precision is non-negotiable, accessible formats where usability matters most, specialist platforms where conventional access isn't possible.
+          </p>
         </div>
 
-        <div class="mt-20 text-center">
-          <a href="/contact" class="btn-primary">Start a project</a>
-          <div class="mt-8 flex flex-wrap justify-center gap-6 text-sm">
-            <a href="/" class="text-navy font-medium hover:opacity-80 transition-opacity">Home &rarr;</a>
-            <a href="/services" class="text-navy font-medium hover:opacity-80 transition-opacity">Our services &rarr;</a>
-            <a href="/services/construction-documentation" class="text-navy font-medium hover:opacity-80 transition-opacity">Construction documentation &rarr;</a>
-            <a href="/about" class="text-navy font-medium hover:opacity-80 transition-opacity">About Alturascope &rarr;</a>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+          <!-- Card 1: Spatial Capture -->
+          <div class="bg-white border border-border rounded p-8 border-t-[3px] border-t-gold">
+            <p class="text-[0.85rem] font-medium uppercase tracking-[0.08em] text-navy mb-4">SPATIAL CAPTURE & NAVIGABLE TWIN</p>
+            <div class="text-midgrey text-[0.9rem] leading-relaxed space-y-4">
+              <p>
+                Every visit produces a navigable digital model of the space &mdash; every room, every surface, every access point, explorable by your entire team without returning to site. For standard commercial documentation this is the accessible client layer: the thing your project manager walks through on a laptop before the first design meeting.
+              </p>
+              <p>
+                Where survey-grade dimensional accuracy is required &mdash; heritage structures, complex M&E environments, facilities where measurements will be taken from the record &mdash; we capture using professional LiDAR instrumentation producing millimetre-accurate point cloud data. The navigable twin is built on top of that foundation. The point cloud data is available to your engineers and architects in standard formats.
+              </p>
+            </div>
+          </div>
+
+          <!-- Card 2: Above & Below -->
+          <div class="bg-white border border-border rounded p-8 border-t-[3px] border-t-gold">
+            <p class="text-[0.85rem] font-medium uppercase tracking-[0.08em] text-navy mb-4">ABOVE-CEILING & CONFINED SPACE CAPTURE</p>
+            <div class="text-midgrey text-[0.9rem] leading-relaxed space-y-4">
+              <p>
+                Most surveys stop at ceiling height. The decisions that go wrong are usually made because nobody documented what was above it &mdash; or below it.
+              </p>
+              <p>
+                We open ceiling tiles and document the void: services runs, structural elements, existing penetrations, conditions. For spaces where human access isn't practical or safe &mdash; roof voids, structural cavities, undercroft spaces, mechanical galleries, confined access environments &mdash; we deploy remote inspection platforms: caged drones capable of navigating GPS-denied confined spaces with onboard LiDAR, and compact crawl platforms for subfloor and undercroft environments. No scaffolding. No disruption to the building fabric. A complete spatial record of spaces that have never been documented.
+              </p>
+            </div>
+          </div>
+
+          <!-- Card 3: Conditions & Subsurface -->
+          <div class="bg-white border border-border rounded p-8 border-t-[3px] border-t-gold">
+            <p class="text-[0.85rem] font-medium uppercase tracking-[0.08em] text-navy mb-4">CONDITIONS, THERMAL & SUBSURFACE</p>
+            <div class="text-midgrey text-[0.9rem] leading-relaxed space-y-4">
+              <p>
+                Visible surfaces tell part of the story. We document what isn't visible using thermal imaging &mdash; identifying moisture ingress, heat loss, hidden services routes, and insulation failures that a visual survey misses entirely. For heritage structures and complex existing buildings, ground-penetrating radar allows us to document what lies beneath floor and wall surfaces: buried services, structural elements, voids, and historic fabric without intrusive investigation.
+              </p>
+              <p>
+                Acoustic imaging identifies issues invisible to any optical instrument &mdash; compressed air leaks, gas leaks, electrical discharge, and mechanical failures in plant and equipment. For commercial kitchens, aviation facilities, and industrial environments, this turns a documentation visit into a conditions intelligence visit.
+              </p>
+            </div>
+          </div>
+
+          <!-- Card 4: Aerial & Exterior -->
+          <div class="bg-white border border-border rounded p-8 border-t-[3px] border-t-gold">
+            <p class="text-[0.85rem] font-medium uppercase tracking-[0.08em] text-navy mb-4">AERIAL & EXTERIOR DOCUMENTATION</p>
+            <div class="text-midgrey text-[0.9rem] leading-relaxed space-y-4">
+              <p>
+                Exterior envelope documentation &mdash; roof condition, facade, drainage, building perimeter &mdash; is captured using drone platforms with RGB imaging, radiometric thermal, and where the brief requires it, drone LiDAR for survey-grade exterior point cloud data. For large estates, multi-building sites, and heritage properties where the exterior is as significant as the interior, aerial documentation is part of the standard visit rather than an add-on.
+              </p>
+              <p>
+                All drone operations are conducted to regulatory standards. We handle airspace coordination as part of project logistics.
+              </p>
+            </div>
           </div>
         </div>
+      </div>
+    </section>
+
+    <!-- SECTION 4: Matterport Embed -->
+    <section class="bg-navy py-20">
+      <div class="max-w-[1100px] mx-auto px-6">
+        <div class="text-center mb-10">
+          <p class="label text-gold mb-4">THE DELIVERABLE</p>
+          <h2 class="text-[1.8rem] font-light text-offwhite max-w-[600px] mx-auto leading-snug">
+            Navigate a documented space yourself.
+          </h2>
+          <p class="mt-4 text-offwhite/70 max-w-[580px] mx-auto leading-body">
+            This is what your project team accesses from day one. Every room. Every surface. Every measurement. Explorable on any device, shared with anyone on your team, permanently accessible through ScopeWalk.
+          </p>
+        </div>
+
+        <!-- REPLACE: Proprietary Alturascope scan — ideally a commercial kitchen, heritage interior, or complex multi-level space. -->
+        <div class="max-w-[1100px] mx-auto">
+          <iframe
+            loading="lazy"
+            src="https://my.matterport.com/show/?m=SxQL3iGyoDo"
+            width="100%"
+            style="aspect-ratio: 16/9; border: none;"
+            allowfullscreen
+            allow="xr-spatial-tracking"
+            title="Navigable digital twin demonstration">
+          </iframe>
+        </div>
+
+        <p class="text-gold text-[0.85rem] text-center mt-4">
+          Navigate using mouse or touch. This is a live model &mdash; not a video or a photograph.
+        </p>
+      </div>
+    </section>
+
+    <!-- SECTION 5: The Deliverable Stack -->
+    <section class="bg-white section-padding">
+      <div class="max-w-[800px] mx-auto px-6">
+        <p class="label text-gold mb-4">WHAT YOU RECEIVE</p>
+        <h2 class="text-[2rem] font-light text-navy leading-snug">
+          The same architecture. Every site. Every time.
+        </h2>
+        <p class="mt-6 text-midgrey leading-body">
+          Within three to five business days of the site visit, your ScopeWalk portal is populated with the complete deliverable package. The structure is always the same &mdash; which means your team learns it once and can work from it across every project in your programme.
+        </p>
+
+        <div class="mt-12 space-y-8">
+          <div class="border-l-2 border-gold pl-6">
+            <h3 class="text-navy font-medium">Navigable Digital Model</h3>
+            <p class="mt-2 text-midgrey text-[0.9rem] leading-relaxed">
+              The accessible spatial record of the site. Every room, every surface, every access point. Shareable with your entire team. Survey-grade point cloud data available in standard formats where specified.
+            </p>
+          </div>
+
+          <div class="border-l-2 border-gold pl-6">
+            <h3 class="text-navy font-medium">Narrated Video Walkthrough</h3>
+            <p class="mt-2 text-midgrey text-[0.9rem] leading-relaxed">
+              A structured spoken tour of the space with commentary on conditions, concerns, and context &mdash; not a raw screen recording. Produced so that a team member who wasn't on site understands exactly what was found and why it matters.
+            </p>
+          </div>
+
+          <div class="border-l-2 border-gold pl-6">
+            <h3 class="text-navy font-medium">Conditions Report</h3>
+            <p class="mt-2 text-midgrey text-[0.9rem] leading-relaxed">
+              Written assessment of the site with findings prioritised into P1 (immediate action required), P2 (programme within 12 months), and P3 (monitor). Not a description of what we saw &mdash; an analysis of what it means for your project.
+            </p>
+          </div>
+
+          <div class="border-l-2 border-gold pl-6">
+            <h3 class="text-navy font-medium">Equipment & Asset Schedule</h3>
+            <p class="mt-2 text-midgrey text-[0.9rem] leading-relaxed">
+              Every piece of installed equipment documented by location, make, model, condition, and services connections. Formatted for your procurement team, your designers, or your client. Produced from direct survey, not assumption.
+            </p>
+          </div>
+
+          <div class="border-l-2 border-gold pl-6">
+            <h3 class="text-navy font-medium">Labeled Photo Storyboard</h3>
+            <p class="mt-2 text-midgrey text-[0.9rem] leading-relaxed">
+              Every area of the site documented with consistent labeling, accessible and searchable through ScopeWalk. Referenced directly from the conditions report so findings are always traceable to their source.
+            </p>
+          </div>
+
+          <div class="border-l-2 border-gold pl-6">
+            <h3 class="text-navy font-medium">Above-Ceiling Documentation</h3>
+            <p class="mt-2 text-midgrey text-[0.9rem] leading-relaxed">
+              Where ceiling access is available, a complete record of the void: services runs, structural elements, penetrations, conditions. Integrated into the conditions report and the photo storyboard.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 6: ScopeWalk -->
+    <section class="bg-[#162D4E] section-padding">
+      <div class="max-w-[960px] mx-auto px-6 text-center">
+        <p class="label text-gold mb-4">SCOPEWALK&trade;</p>
+        <h2 class="text-[2rem] font-light text-offwhite max-w-[680px] mx-auto leading-snug">
+          Not a folder of files. A permanent, structured project record.
+        </h2>
+        <div class="mt-8 space-y-6 text-offwhite/70 leading-body max-w-[640px] mx-auto">
+          <p>
+            Every deliverable lives in ScopeWalk &mdash; our proprietary project portal. Not a WeTransfer link. Not a shared drive folder. A structured, permanently accessible record that your team can return to at any point, on any device, and find everything in the same place.
+          </p>
+          <p>
+            For multi-site and rollout programmes, ScopeWalk allows your team to compare any two properties side by side, track programme progress, and brief consultants directly from the portal. The platform was built around the reality of how project teams actually work &mdash; not around what's convenient for the survey operator.
+          </p>
+        </div>
+
+        <!-- REPLACE: Screenshot of ScopeWalk portal showing a real project with multiple rooms, labeled photos, report sections, and navigation visible. Browser device frame. -->
+        <div class="mt-12">
+          <img
+            src="/scopewalk-platform.png"
+            alt="ScopeWalk platform showing structured project portal with site documentation, labeled photos, and report navigation"
+            class="w-full rounded shadow-lg"
+            loading="lazy"
+          />
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 7: Visit Types -->
+    <section class="bg-offwhite section-padding">
+      <div class="max-w-[1200px] mx-auto px-6">
+        <div class="text-center max-w-[700px] mx-auto mb-16">
+          <p class="label text-gold mb-4">VISIT TYPES</p>
+          <h2 class="text-[2rem] font-light text-navy leading-snug">
+            Scoped to the brief. Not priced off a menu.
+          </h2>
+          <p class="mt-6 text-midgrey leading-body max-w-[660px] mx-auto">
+            Every project is scoped individually &mdash; the visit type, instrument selection, and deliverable emphasis are determined by what you're actually trying to achieve. These are the frameworks we typically work within.
+          </p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <div class="bg-white border border-border rounded p-8 border-t-[3px] border-t-gold">
+            <p class="text-[0.85rem] font-medium uppercase tracking-[0.08em] text-navy mb-4">COMMERCIAL & PRE-CONSTRUCTION</p>
+            <p class="text-midgrey text-[0.9rem] leading-relaxed">
+              Standard commercial survey for GCs, developers, project managers, and design teams. Spatial capture, conditions report, equipment schedule where relevant, above-ceiling documentation, ScopeWalk delivery. The bread and butter of what we do &mdash; executed to a standard most operators don't reach.
+            </p>
+            <a href="/services/construction-documentation" class="inline-block mt-6 text-navy text-sm font-medium hover:opacity-80 transition-opacity">Construction documentation detail &rarr;</a>
+          </div>
+
+          <div class="bg-white border border-border rounded p-8 border-t-[3px] border-t-gold">
+            <p class="text-[0.85rem] font-medium uppercase tracking-[0.08em] text-navy mb-4">ROLLOUT & MULTI-SITE PROGRAMMES</p>
+            <p class="text-midgrey text-[0.9rem] leading-relaxed">
+              For operators running documentation across multiple locations. The same deliverable architecture, the same standard, the same ScopeWalk portal structure &mdash; across every site in the programme. One brief. One vendor. Consistent output regardless of location. Travel included in programme pricing.
+            </p>
+            <a href="/services/multi-site-rollout-documentation" class="inline-block mt-6 text-navy text-sm font-medium hover:opacity-80 transition-opacity">Multi-site rollout detail &rarr;</a>
+          </div>
+
+          <div class="bg-white border border-border rounded p-8 border-t-[3px] border-t-gold">
+            <p class="text-[0.85rem] font-medium uppercase tracking-[0.08em] text-navy mb-4">SPECIALIST & PRIVATE PROJECTS</p>
+            <p class="text-midgrey text-[0.9rem] leading-relaxed">
+              Projects where the brief is specific, the environment is sensitive, or the standard approach isn't sufficient. Heritage structures. Aviation facilities. Private vessels. Significant estates. These require different instruments, different access techniques, and a different level of understanding of what the environment actually requires.
+            </p>
+            <a href="/services/specialist-projects" class="inline-block mt-6 text-navy text-sm font-medium hover:opacity-80 transition-opacity">Specialist project enquiries &rarr;</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 8: Coverage -->
+    <section class="bg-white py-20">
+      <div class="max-w-[700px] mx-auto px-6 text-center">
+        <p class="label text-gold mb-4">COVERAGE</p>
+        <p class="text-midgrey leading-body">
+          We operate across all fifty US states and every Canadian province under a national travel model &mdash; travel costs are included in project pricing. For projects in the United Kingdom, our dedicated UK operation covers England, Scotland, Wales, and Northern Ireland.
+        </p>
+        <a href="/uk" class="inline-block mt-6 text-navy font-medium hover:opacity-80 transition-opacity">Alturascope UK &rarr;</a>
+      </div>
+    </section>
+
+    <!-- SECTION 9: CTA -->
+    <section class="bg-navy section-padding">
+      <div class="max-w-[600px] mx-auto px-6 text-center">
+        <h2 class="text-[2rem] font-light text-offwhite leading-snug">
+          Tell us what you're working with.
+        </h2>
+        <p class="mt-6 text-offwhite/70 leading-body max-w-[560px] mx-auto">
+          Share the location, the approximate size, and what you're trying to decide. We'll confirm scope, recommend the right visit type, and send a clear all-in quote within one business day.
+        </p>
+        <a href="/contact" class="btn-primary mt-8">Start a Project</a>
       </div>
     </section>
 
