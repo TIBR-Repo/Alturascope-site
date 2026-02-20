@@ -4,25 +4,34 @@ import Layout from "../../layouts/Layout.astro";
 const schema = JSON.stringify({
   "@context": "https://schema.org",
   "@type": "ProfessionalService",
-  "name": "Alturascope UK",
-  "description": "Reality capture, 3D documentation, and conditions surveys for construction teams and specialist clients across England, Scotland, Wales, and Northern Ireland.",
-  "url": "https://alturascope.com/uk",
-  "areaServed": ["United Kingdom", "England", "Scotland", "Wales", "Northern Ireland"],
-  "serviceType": "Reality Capture and Site Documentation"
+  "name": "AlturaScope UK",
+  "url": "https://alturascope.com/uk/",
+  "description": "Professional site survey, digital twin, and measured building survey services across the United Kingdom.",
+  "areaServed": { "@type": "Country", "name": "United Kingdom" },
+  "serviceType": ["Site Survey", "Measured Building Survey", "Heritage Building Documentation", "Digital Twin Survey", "MEP Documentation"]
 });
+
+const ukServices = [
+  { title: "Heritage Building Survey", href: "/uk/heritage-building-survey", description: "Pre-intervention documentation for Grade I and Grade II listed buildings, scheduled monuments, conservation areas, and significant private estates. Survey-grade point cloud data and structured records for English Heritage, Historic Scotland, Cadw, and conservation architects." },
+  { title: "Pre-Construction Survey", href: "/uk/pre-construction-survey", description: "Existing conditions documentation before fit-out, refurbishment, or change of use begins. Navigable digital twin, conditions report, above-ceiling MEP capture, and asset schedule — delivered before a design decision is made." },
+  { title: "Measured Building Survey", href: "/uk/measured-building-survey", description: "Survey-grade point cloud data for architects and engineers requiring dimensional accuracy for CAD and Revit workflows. Accurate to 5–12mm across full building footprints. Exports in .e57 and .rcp format." },
+  { title: "Above-Ceiling MEP Survey", href: "/uk/above-ceiling-mep-survey", description: "Thermal imaging, 360° pole-mounted capture, and borescope inspection to document what's above the ceiling tile before fit-out begins. Non-invasive. Integrated into the full documentation package." },
+  { title: "Multi-Site Rollout Survey", href: "/uk/multi-site-rollout-survey", description: "Consistent site documentation across distributed UK retail, QSR, and hospitality programmes. One brief, one format, one point of contact — from first site to last." },
+];
 ---
 <Layout
-  title="Reality Capture & Site Documentation | UK | Alturascope"
-  description="Alturascope UK covers England, Scotland, Wales, and Northern Ireland. Matterport digital twins, LiDAR scanning, and structured conditions reports for UK construction and property teams."
-  canonical="https://alturascope.com/uk"
+  title="Site Survey & Documentation Services UK | Alturascope"
+  description="Professional site survey, digital twin, and measured building survey services across England, Scotland, Wales, and Northern Ireland. Heritage buildings, commercial fit-out, multi-site programmes."
+  canonical="https://alturascope.com/uk/"
   schema={schema}
   fullWidth={true}
+  lang="en-GB"
+  hreflang={[{ lang: "en-gb", href: "https://alturascope.com/uk/" }, { lang: "en", href: "https://alturascope.com/uk/" }]}
 >
   <div data-hero-page>
 
     <!-- Hero -->
     <section class="relative min-h-screen flex items-center justify-center">
-      <!-- REPLACE: Dramatic UK heritage or commercial interior — atmospheric, significant, British character. -->
       <div class="absolute inset-0 bg-navy">
         <img
           src="https://images.unsplash.com/photo-1513635269975-59663e0ac1ad?w=1920&q=80"
@@ -33,17 +42,20 @@ const schema = JSON.stringify({
       </div>
 
       <div class="relative z-10 text-center max-w-[760px] mx-auto px-6">
-        <p class="label text-gold mb-6">Reality Capture &middot; Site Documentation &middot; UK</p>
+        <p class="label text-gold mb-6">Reality Capture &middot; Site Documentation &middot; United Kingdom</p>
         <h1 class="text-[2.4rem] md:text-[3.6rem] font-light text-offwhite leading-[1.1]">
-          Precision site documentation across the United Kingdom.
+          Professional Site Survey and Documentation Services Across the UK
         </h1>
         <p class="mt-6 text-[1.15rem] text-offwhite/80 font-normal leading-relaxed max-w-[620px] mx-auto">
-          Matterport digital twins, structured conditions reports, and specialist documentation for construction teams, architects, and estate owners across England, Scotland, Wales, and Northern Ireland.
+          Measured building surveys, Matterport digital twins, heritage documentation, and structured conditions reports for construction teams, architects, developers, and estate owners &mdash; across England, Scotland, Wales, and Northern Ireland.
         </p>
         <div class="mt-10 flex flex-wrap items-center justify-center gap-4">
-          <a href="#uk-services" class="btn-primary">See Our Services</a>
+          <a href="#uk-services" class="btn-primary">See UK Services</a>
           <a href="/contact" class="btn-secondary-light">Tell Us About Your Project</a>
         </div>
+        <p class="mt-8 text-offwhite/50 text-sm">
+          Covering England, Scotland, Wales, and Northern Ireland &mdash; including London, Manchester, Birmingham, Edinburgh, Bristol, and Leeds.
+        </p>
       </div>
 
       <div class="absolute bottom-12 left-1/2 -translate-x-1/2 flex flex-col items-center gap-4">
@@ -54,50 +66,64 @@ const schema = JSON.stringify({
       </div>
     </section>
 
-    <!-- Coverage -->
-    <section class="bg-offwhite py-12">
-      <div class="max-w-[900px] mx-auto px-6 text-center">
-        <p class="text-midgrey text-[0.9rem]">
-          Covering <span class="text-navy font-medium">England</span>, <span class="text-navy font-medium">Scotland</span>, <span class="text-navy font-medium">Wales</span>, and <span class="text-navy font-medium">Northern Ireland</span>.
-        </p>
-      </div>
-    </section>
-
-    <!-- Services -->
+    <!-- UK Services -->
     <section id="uk-services" class="bg-white section-padding">
-      <div class="max-w-[900px] mx-auto px-6">
+      <div class="max-w-[1000px] mx-auto px-6">
         <p class="label text-gold mb-4">UK Services</p>
         <h2 class="text-[2rem] font-light text-navy leading-tight">
-          The same standard. Delivered in the UK.
+          What We Deliver in the UK
+        </h2>
+        <p class="mt-6 text-midgrey leading-body max-w-[760px]">
+          Every UK project receives the same structured documentation package as our North American work &mdash; navigable digital twin, narrated video walkthrough, written conditions report, equipment and asset schedule, labelled photo storyboard, and ScopeWalk platform access. Where survey-grade accuracy is required &mdash; and for heritage, conservation, and listed building work it usually is &mdash; we capture using professional LiDAR instrumentation producing millimetre-accurate point cloud data.
+        </p>
+
+        <div class="mt-12 grid grid-cols-1 md:grid-cols-2 gap-6">
+          {ukServices.map((service) => (
+            <a href={service.href} class="block group border border-border rounded p-8 transition-all duration-300 hover:border-gold hover:shadow-md">
+              <h3 class="text-navy font-medium text-[1.15rem] group-hover:opacity-80 transition-opacity">{service.title}</h3>
+              <p class="mt-3 text-midgrey text-[0.9rem] leading-relaxed">{service.description}</p>
+              <span class="inline-block mt-4 text-navy text-sm font-medium">Learn more &rarr;</span>
+            </a>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <!-- UK Coverage -->
+    <section class="bg-offwhite section-padding">
+      <div class="max-w-[760px] mx-auto px-6">
+        <p class="label text-gold mb-4">Coverage</p>
+        <h2 class="text-[2rem] font-light text-navy leading-tight">
+          Where We Work in the UK
         </h2>
         <div class="mt-6 space-y-4 text-midgrey leading-body">
           <p>
-            Our UK operation delivers to exactly the same standard as our North American work. The deliverable architecture is identical: navigable digital twin, narrated video walkthrough, conditions report, equipment schedule where relevant, labeled photo storyboard, and ScopeWalk platform access. Where survey-grade accuracy is required — and for heritage and listed building work, it usually is — we capture using professional LiDAR instrumentation producing millimetre-accurate point cloud data.
+            We operate across all four nations &mdash; England, Scotland, Wales, and Northern Ireland &mdash; with no location surcharge for travel within the UK. Every project is quoted all-in.
           </p>
           <p>
-            The difference is context. In the UK, we bring particular strength to heritage and listed building documentation, estate work, and projects where the fabric is sensitive and the documentation needs to serve conservation as well as commercial requirements.
+            Our UK work spans commercial and industrial property across London, Birmingham, Manchester, Leeds, Bristol, Edinburgh, Glasgow, Cardiff, and Belfast, as well as rural estates, heritage properties, and specialist sites outside the main commercial centres.
           </p>
         </div>
       </div>
     </section>
 
-    <!-- Heritage Focus -->
-    <section class="bg-offwhite section-padding">
-      <div class="max-w-[900px] mx-auto px-6">
+    <!-- Heritage Strength -->
+    <section class="bg-white section-padding">
+      <div class="max-w-[760px] mx-auto px-6">
         <p class="label text-gold mb-4">Heritage &amp; Listed Buildings</p>
         <h2 class="text-[2rem] font-light text-navy leading-tight">
-          Documentation that understands the building.
+          Particular Strength in Heritage and Listed Building Work
         </h2>
         <div class="mt-6 space-y-4 text-midgrey leading-body">
           <p>
-            Our principal's background includes hands-on construction and conservation work on some of Britain's most significant historic properties. That experience shapes how we approach heritage documentation in the UK — understanding materials, understanding what matters to conservation architects, and producing records that heritage bodies can actually use.
+            In the UK, our most distinctive capability is heritage documentation. Our principal's background includes hands-on construction and conservation experience on some of Britain's most significant historic properties &mdash; Grade I and Grade II listed buildings, scheduled monuments, and properties under the stewardship of English Heritage, Historic Scotland, and Cadw.
           </p>
           <p>
-            We work with Grade I and Grade II listed buildings, scheduled monuments, conservation areas, and significant private estates. The documentation is designed to serve English Heritage, Historic Scotland, Cadw, and equivalent bodies alongside your architect and project team.
+            We understand materials, construction methods, and what conservation architects and heritage bodies actually need from a survey record. We produce documentation that serves the planning process, not just the project team.
           </p>
         </div>
-        <a href="/uk/heritage-building-documentation" class="inline-block mt-8 text-navy font-medium hover:opacity-80 transition-opacity">
-          Listed building and heritage documentation UK &rarr;
+        <a href="/uk/heritage-building-survey" class="inline-block mt-8 text-navy font-medium hover:opacity-80 transition-opacity">
+          Heritage building survey UK &rarr;
         </a>
       </div>
     </section>
@@ -107,57 +133,41 @@ const schema = JSON.stringify({
       <div class="max-w-[1200px] mx-auto px-6">
         <p class="label text-gold text-center mb-4">What You Receive</p>
         <h2 class="text-[2rem] font-light text-offwhite text-center">
-          The same structure. Every site. Every time.
+          What Every UK Site Survey Includes
         </h2>
-        <p class="mt-4 text-offwhite/70 text-center max-w-[580px] mx-auto">
-          Identical deliverables to our North American operation. Your UK project team receives the same standard of work as any site in the US or Canada.
-        </p>
 
         <div class="mt-16 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
           <div>
             <svg class="w-8 h-8 text-gold mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M21 7.5l-9-5.25L3 7.5m18 0l-9 5.25m9-5.25v9l-9 5.25M3 7.5l9 5.25M3 7.5v9l9 5.25m0-9v9" /></svg>
             <h3 class="text-offwhite font-medium mb-2">Navigable Digital Twin</h3>
-            <p class="text-offwhite/65 text-[0.9rem] leading-relaxed">A navigable, dimensionally accurate model accessible by your entire team.</p>
+            <p class="text-offwhite/65 text-[0.9rem] leading-relaxed">Dimensionally accurate, explorable remotely by any team member.</p>
           </div>
           <div>
             <svg class="w-8 h-8 text-gold mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M15.75 10.5l4.72-4.72a.75.75 0 011.28.53v11.38a.75.75 0 01-1.28.53l-4.72-4.72M4.5 18.75h9a2.25 2.25 0 002.25-2.25v-9a2.25 2.25 0 00-2.25-2.25h-9A2.25 2.25 0 002.25 7.5v9a2.25 2.25 0 002.25 2.25z" /></svg>
             <h3 class="text-offwhite font-medium mb-2">Narrated Video Walkthrough</h3>
-            <p class="text-offwhite/65 text-[0.9rem] leading-relaxed">Structured tour with spoken commentary on conditions and context.</p>
+            <p class="text-offwhite/65 text-[0.9rem] leading-relaxed">Spoken commentary on conditions, concerns, and findings.</p>
           </div>
           <div>
             <svg class="w-8 h-8 text-gold mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M19.5 14.25v-2.625a3.375 3.375 0 00-3.375-3.375h-1.5A1.125 1.125 0 0113.5 7.125v-1.5a3.375 3.375 0 00-3.375-3.375H8.25m0 12.75h7.5m-7.5 3H12M10.5 2.25H5.625c-.621 0-1.125.504-1.125 1.125v17.25c0 .621.504 1.125 1.125 1.125h12.75c.621 0 1.125-.504 1.125-1.125V11.25a9 9 0 00-9-9z" /></svg>
             <h3 class="text-offwhite font-medium mb-2">Conditions Report</h3>
-            <p class="text-offwhite/65 text-[0.9rem] leading-relaxed">Written assessment with P1, P2, and P3 prioritised findings.</p>
+            <p class="text-offwhite/65 text-[0.9rem] leading-relaxed">Written findings prioritised P1, P2, P3.</p>
           </div>
           <div>
             <svg class="w-8 h-8 text-gold mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M3.75 6A2.25 2.25 0 016 3.75h2.25A2.25 2.25 0 0110.5 6v2.25a2.25 2.25 0 01-2.25 2.25H6a2.25 2.25 0 01-2.25-2.25V6zM3.75 15.75A2.25 2.25 0 016 13.5h2.25a2.25 2.25 0 012.25 2.25V18a2.25 2.25 0 01-2.25 2.25H6A2.25 2.25 0 013.75 18v-2.25zM13.5 6a2.25 2.25 0 012.25-2.25H18A2.25 2.25 0 0120.25 6v2.25A2.25 2.25 0 0118 10.5h-2.25a2.25 2.25 0 01-2.25-2.25V6zM13.5 15.75a2.25 2.25 0 012.25-2.25H18a2.25 2.25 0 012.25 2.25V18A2.25 2.25 0 0118 20.25h-2.25A2.25 2.25 0 0113.5 18v-2.25z" /></svg>
             <h3 class="text-offwhite font-medium mb-2">Equipment &amp; Asset Schedule</h3>
-            <p class="text-offwhite/65 text-[0.9rem] leading-relaxed">Complete inventory formatted for your procurement or fitout team.</p>
+            <p class="text-offwhite/65 text-[0.9rem] leading-relaxed">Fixture counts, makes, models, services connections.</p>
           </div>
           <div>
             <svg class="w-8 h-8 text-gold mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M2.25 15.75l5.159-5.159a2.25 2.25 0 013.182 0l5.159 5.159m-1.5-1.5l1.409-1.409a2.25 2.25 0 013.182 0l2.909 2.909M3.75 21h16.5A2.25 2.25 0 0022.5 18.75V5.25A2.25 2.25 0 0020.25 3H3.75A2.25 2.25 0 001.5 5.25v13.5A2.25 2.25 0 003.75 21z" /></svg>
-            <h3 class="text-offwhite font-medium mb-2">Labeled Photo Storyboard</h3>
-            <p class="text-offwhite/65 text-[0.9rem] leading-relaxed">Every area documented with consistent labeling through ScopeWalk.</p>
+            <h3 class="text-offwhite font-medium mb-2">Labelled Photo Storyboard</h3>
+            <p class="text-offwhite/65 text-[0.9rem] leading-relaxed">Area-by-area documentation via ScopeWalk.</p>
           </div>
           <div>
             <svg class="w-8 h-8 text-gold mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 17.25v1.007a3 3 0 01-.879 2.122L7.5 21h9l-.621-.621A3 3 0 0115 18.257V17.25m6-12V15a2.25 2.25 0 01-2.25 2.25H5.25A2.25 2.25 0 013 15V5.25m18 0A2.25 2.25 0 0018.75 3H5.25A2.25 2.25 0 003 5.25m18 0V12a2.25 2.25 0 01-2.25 2.25H5.25A2.25 2.25 0 013 12V5.25" /></svg>
             <h3 class="text-offwhite font-medium mb-2">ScopeWalk Platform Access</h3>
-            <p class="text-offwhite/65 text-[0.9rem] leading-relaxed">All deliverables structured in our proprietary portal.</p>
+            <p class="text-offwhite/65 text-[0.9rem] leading-relaxed">Permanent, structured, shareable.</p>
           </div>
         </div>
-      </div>
-    </section>
-
-    <!-- ScopeWalk -->
-    <section class="bg-navy-light section-padding">
-      <div class="max-w-[800px] mx-auto px-6 text-center">
-        <p class="label text-gold mb-4">ScopeWalk&trade;</p>
-        <h2 class="text-[2rem] font-light text-offwhite">
-          Every deliverable. One place. Permanently accessible.
-        </h2>
-        <p class="mt-6 text-offwhite/70 leading-body">
-          ScopeWalk is Alturascope's proprietary project portal. Not a file transfer link that expires — a structured, permanent record of every site we document. Your team can return to any project, any time, and find the same organised, labeled deliverables in the same place.
-        </p>
       </div>
     </section>
 
@@ -165,10 +175,10 @@ const schema = JSON.stringify({
     <section class="bg-offwhite section-padding">
       <div class="max-w-[700px] mx-auto px-6 text-center">
         <h2 class="text-[2rem] font-light text-navy">
-          Tell us about your UK project.
+          Tell Us About Your UK Project
         </h2>
         <p class="mt-4 text-midgrey leading-body">
-          Share the address or location, the approximate size, and what you're trying to decide. We'll come back within one business day with a clear scope recommendation and an all-in quote.
+          Share the address or approximate location, the size of the space, and what you're trying to decide. We'll come back within one business day with a clear scope recommendation and an all-in quote &mdash; travel included.
         </p>
         <div class="mt-10 flex flex-wrap items-center justify-center gap-4">
           <a href="/contact" class="btn-primary">Start a Project</a>
@@ -177,13 +187,12 @@ const schema = JSON.stringify({
         <p class="mt-8 text-sm text-midgrey">
           Looking for US or Canadian coverage? <a href="/" class="text-navy font-medium hover:opacity-80">Visit Alturascope North America &rarr;</a>
         </p>
-        <div class="mt-6 flex flex-wrap justify-center gap-6 text-sm">
-          <a href="/services" class="text-navy font-medium hover:opacity-80 transition-opacity">All services &rarr;</a>
-          <a href="/services/construction-documentation" class="text-navy font-medium hover:opacity-80 transition-opacity">Construction documentation &rarr;</a>
-          <a href="/about" class="text-navy font-medium hover:opacity-80 transition-opacity">About Alturascope &rarr;</a>
-        </div>
       </div>
     </section>
+
+    <p class="text-center text-[0.85rem] text-midgrey/60 italic py-8 bg-white">
+      Alturascope delivers professional site documentation across all 50 US states, every Canadian province, and the United Kingdom.
+    </p>
 
   </div>
 </Layout>

@@ -1,0 +1,337 @@
+---
+import Layout from "../../layouts/Layout.astro";
+
+const schema = JSON.stringify({
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "provider": {
+    "@type": "ProfessionalService",
+    "name": "AlturaScope"
+  },
+  "description": "Existing conditions documentation for commercial fit-out, refurbishment, and change of use across the UK. Digital twin, conditions report, above-ceiling MEP documentation, and asset schedule before a design decision is made.",
+  "areaServed": { "@type": "Country", "name": "United Kingdom" },
+  "serviceType": "Pre-Construction Survey"
+});
+
+const breadcrumbSchema = JSON.stringify({
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://alturascope.com" },
+    { "@type": "ListItem", "position": 2, "name": "UK", "item": "https://alturascope.com/uk" },
+    { "@type": "ListItem", "position": 3, "name": "Pre-Construction Survey UK", "item": "https://alturascope.com/uk/pre-construction-survey/" }
+  ]
+});
+
+const faqSchema = JSON.stringify({
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "How long does a pre-construction survey take?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Most commercial sites in a single day." }
+    },
+    {
+      "@type": "Question",
+      "name": "Is above-ceiling documentation always included?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Included as standard where relevant." }
+    },
+    {
+      "@type": "Question",
+      "name": "Can this be done before we've signed a lease?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Yes, pre-acquisition and pre-lease surveys are common." }
+    },
+    {
+      "@type": "Question",
+      "name": "What if drawings are already available for the property?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Useful context — we identify discrepancies between as-built conditions and existing drawings." }
+    },
+    {
+      "@type": "Question",
+      "name": "Do you cover the whole of the UK?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Yes, all-in with travel included." }
+    }
+  ]
+});
+---
+<Layout
+  title="Pre-Construction Survey UK — Existing Conditions Documentation | Alturascope"
+  description="Existing conditions surveys for commercial fit-out, refurbishment, and change of use across the UK. Digital twin, conditions report, above-ceiling MEP documentation, and asset schedule before a design decision is made."
+  canonical="https://alturascope.com/uk/pre-construction-survey/"
+  schema={schema}
+  breadcrumbSchema={breadcrumbSchema}
+  faqSchema={faqSchema}
+  fullWidth={true}
+  lang="en-GB"
+  hreflang={[{ lang: "en-gb", href: "https://alturascope.com/uk/pre-construction-survey/" }, { lang: "en", href: "https://alturascope.com/uk/pre-construction-survey/" }]}
+>
+  <div data-hero-page>
+
+    <!-- Hero -->
+    <section class="relative min-h-screen flex items-center justify-center">
+      <div class="absolute inset-0 bg-navy">
+        <img
+          src="https://images.unsplash.com/photo-1513635269975-59663e0ac1ad?w=1920&q=80"
+          alt="Commercial interior space before fit-out, showing existing conditions"
+          class="w-full h-full object-cover opacity-35"
+        />
+        <div class="absolute inset-0 bg-[rgba(11,31,58,0.72)]"></div>
+      </div>
+
+      <div class="relative z-10 text-center max-w-[760px] mx-auto px-6">
+        <p class="label text-gold mb-6">UK Services · Pre-Construction</p>
+        <h1 class="text-[2.4rem] md:text-[3.6rem] font-light text-offwhite leading-[1.1]">
+          Pre-Construction Survey UK — Existing Conditions Documentation Before Fit-Out Begins
+        </h1>
+        <p class="mt-6 text-[1.15rem] text-offwhite/80 font-normal leading-relaxed max-w-[620px] mx-auto">
+          A complete record of the space as it exists today &mdash; before you commit to design, before you sign the lease, before change orders become expensive surprises.
+        </p>
+        <div class="mt-10 flex flex-wrap items-center justify-center gap-4">
+          <a href="/contact" class="btn-primary">Tell Us About Your Project</a>
+          <a href="/uk/" class="btn-secondary-light">UK Services</a>
+        </div>
+      </div>
+
+      <div class="absolute bottom-12 left-1/2 -translate-x-1/2 flex flex-col items-center gap-4">
+        <div class="w-[60px] h-[1px] bg-gold"></div>
+        <svg class="w-5 h-5 text-white animate-pulse" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M19 14l-7 7m0 0l-7-7m7 7V3" />
+        </svg>
+      </div>
+    </section>
+
+    <!-- Why Most UK Fit-Out Projects Start With Incomplete Information -->
+    <section class="bg-white section-padding">
+      <div class="max-w-[760px] mx-auto px-6">
+        <h2 class="text-[2rem] font-light text-navy leading-tight">
+          Why Most UK Fit-Out Projects Start With Incomplete Information
+        </h2>
+        <div class="mt-6 space-y-4 text-midgrey leading-body">
+          <p>
+            Outdated as-built drawings. Above-ceiling surprises discovered mid-fit-out. The cost of change orders when the design assumed conditions that don't exist. These are the predictable consequences of starting a commercial fit-out, refurbishment, or change of use without a current record of what's actually there.
+          </p>
+          <p>
+            A pre-construction survey gives you that record &mdash; before the design is locked in, before the contractor is on site, and before assumptions become expensive corrections.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- What a Pre-Construction Survey Includes -->
+    <section class="bg-offwhite section-padding">
+      <div class="max-w-[760px] mx-auto px-6">
+        <h2 class="text-[2rem] font-light text-navy leading-tight mb-8">
+          What a Pre-Construction Survey Includes
+        </h2>
+
+        <div class="space-y-8">
+          <div class="pl-6 border-l-2 border-gold">
+            <h3 class="text-navy font-medium text-[1.15rem]">Navigable Digital Twin</h3>
+            <p class="mt-2 text-midgrey leading-body">
+              Dimensionally accurate, explorable remotely by any team member. Walk the space before you're on site.
+            </p>
+          </div>
+          <div class="pl-6 border-l-2 border-gold">
+            <h3 class="text-navy font-medium text-[1.15rem]">Written Conditions Report</h3>
+            <p class="mt-2 text-midgrey leading-body">
+              Findings prioritised P1, P2, P3. What matters for design decisions, what matters for cost, what matters for programme.
+            </p>
+          </div>
+          <div class="pl-6 border-l-2 border-gold">
+            <h3 class="text-navy font-medium text-[1.15rem]">Above-Ceiling MEP Documentation</h3>
+            <p class="mt-2 text-midgrey leading-body">
+              Thermal imaging, 360° pole-mounted capture, and borescope inspection. What's above the tile before you specify the ceiling.
+            </p>
+          </div>
+          <div class="pl-6 border-l-2 border-gold">
+            <h3 class="text-navy font-medium text-[1.15rem]">Equipment and Asset Schedule</h3>
+            <p class="mt-2 text-midgrey leading-body">
+              Fixture counts, makes, models, services connections. Reuse, replace, or relocate &mdash; with full visibility.
+            </p>
+          </div>
+          <div class="pl-6 border-l-2 border-gold">
+            <h3 class="text-navy font-medium text-[1.15rem]">Labelled Photo Storyboard</h3>
+            <p class="mt-2 text-midgrey leading-body">
+              Area-by-area documentation via ScopeWalk. Structured, searchable, shareable.
+            </p>
+          </div>
+          <div class="pl-6 border-l-2 border-gold">
+            <h3 class="text-navy font-medium text-[1.15rem]">Narrated Video Walkthrough</h3>
+            <p class="mt-2 text-midgrey leading-body">
+              Spoken commentary on conditions, concerns, and findings. The closest thing to walking the space with someone who's been there.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- What Happens Without a Pre-Construction Survey -->
+    <section class="bg-white section-padding">
+      <div class="max-w-[760px] mx-auto px-6">
+        <h2 class="text-[2rem] font-light text-navy leading-tight">
+          What Happens Without a Pre-Construction Survey
+        </h2>
+        <p class="mt-6 text-midgrey leading-body">
+          Three scenarios we see repeatedly:
+        </p>
+
+        <div class="mt-10 space-y-6">
+          <div class="bg-offwhite p-8 rounded">
+            <h3 class="text-navy font-medium mb-3">Partition and HVAC conflict</h3>
+            <p class="text-midgrey leading-body">
+              The design assumes a partition can go where an HVAC duct runs. No one knew until the ceiling came down. Rework, delay, and a change order that could have been avoided with a single day of documentation.
+            </p>
+          </div>
+          <div class="bg-offwhite p-8 rounded">
+            <h3 class="text-navy font-medium mb-3">Ceiling height and drainage</h3>
+            <p class="text-midgrey leading-body">
+              The lease says 3.2m floor-to-slab. The reality is 2.9m after services. The restaurant fit-out specified a dropped ceiling that won't work. Drainage runs that weren't on any drawing block the intended layout.
+            </p>
+          </div>
+          <div class="bg-offwhite p-8 rounded">
+            <h3 class="text-navy font-medium mb-3">Equipment mismatch</h3>
+            <p class="text-midgrey leading-body">
+              The design assumes reusing existing HVAC units. On site, the equipment is different, older, or in different locations. The M&E design has to be revised. The programme slips.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Who Needs a Pre-Construction Survey -->
+    <section class="bg-offwhite section-padding">
+      <div class="max-w-[760px] mx-auto px-6">
+        <h2 class="text-[2rem] font-light text-navy leading-tight mb-8">
+          Who Needs a Pre-Construction Survey
+        </h2>
+
+        <div class="space-y-6">
+          <div class="pl-6 border-l-2 border-gold">
+            <h3 class="text-navy font-medium">Commercial fit-out</h3>
+            <p class="mt-2 text-midgrey leading-body">Office, workspace, and corporate interiors.</p>
+          </div>
+          <div class="pl-6 border-l-2 border-gold">
+            <h3 class="text-navy font-medium">Restaurant, retail, and hospitality</h3>
+            <p class="mt-2 text-midgrey leading-body">Kitchens, dining areas, back-of-house, and front-of-house.</p>
+          </div>
+          <div class="pl-6 border-l-2 border-gold">
+            <h3 class="text-navy font-medium">Developers</h3>
+            <p class="mt-2 text-midgrey leading-body">Change of use, refurbishment, and repositioning.</p>
+          </div>
+          <div class="pl-6 border-l-2 border-gold">
+            <h3 class="text-navy font-medium">Healthcare and education</h3>
+            <p class="mt-2 text-midgrey leading-body">Clinical spaces, labs, classrooms, and specialist environments.</p>
+          </div>
+          <div class="pl-6 border-l-2 border-gold">
+            <h3 class="text-navy font-medium">Landlords and agents</h3>
+            <p class="mt-2 text-midgrey leading-body">Pre-letting documentation, dilapidation records, and handover packs.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="bg-white section-padding">
+      <div class="max-w-[760px] mx-auto px-6">
+        <h2 class="text-[2rem] font-light text-navy mb-12">Frequently asked questions</h2>
+
+        <div class="space-y-8">
+          <details class="group border-b border-border pb-6">
+            <summary class="cursor-pointer text-navy font-medium text-lg flex items-center justify-between">
+              How long does a pre-construction survey take?
+              <span class="text-gold text-xl transition-transform group-open:rotate-45">+</span>
+            </summary>
+            <p class="mt-4 text-midgrey leading-body">
+              Most commercial sites in a single day.
+            </p>
+          </details>
+
+          <details class="group border-b border-border pb-6">
+            <summary class="cursor-pointer text-navy font-medium text-lg flex items-center justify-between">
+              Is above-ceiling documentation always included?
+              <span class="text-gold text-xl transition-transform group-open:rotate-45">+</span>
+            </summary>
+            <p class="mt-4 text-midgrey leading-body">
+              Included as standard where relevant.
+            </p>
+          </details>
+
+          <details class="group border-b border-border pb-6">
+            <summary class="cursor-pointer text-navy font-medium text-lg flex items-center justify-between">
+              Can this be done before we've signed a lease?
+              <span class="text-gold text-xl transition-transform group-open:rotate-45">+</span>
+            </summary>
+            <p class="mt-4 text-midgrey leading-body">
+              Yes, pre-acquisition and pre-lease surveys are common.
+            </p>
+          </details>
+
+          <details class="group border-b border-border pb-6">
+            <summary class="cursor-pointer text-navy font-medium text-lg flex items-center justify-between">
+              What if drawings are already available for the property?
+              <span class="text-gold text-xl transition-transform group-open:rotate-45">+</span>
+            </summary>
+            <p class="mt-4 text-midgrey leading-body">
+              Useful context &mdash; we identify discrepancies between as-built conditions and existing drawings.
+            </p>
+          </details>
+
+          <details class="group border-b border-border pb-6">
+            <summary class="cursor-pointer text-navy font-medium text-lg flex items-center justify-between">
+              Do you cover the whole of the UK?
+              <span class="text-gold text-xl transition-transform group-open:rotate-45">+</span>
+            </summary>
+            <p class="mt-4 text-midgrey leading-body">
+              Yes, all-in with travel included.
+            </p>
+          </details>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA: Tell Us About Your Project -->
+    <section class="bg-offwhite section-padding">
+      <div class="max-w-[760px] mx-auto px-6 text-center">
+        <h2 class="text-[2rem] font-light text-navy">
+          Tell Us About Your Project
+        </h2>
+        <p class="mt-4 text-midgrey leading-body">
+          Share the address or approximate location, the size of the space, and what you're trying to decide. We'll come back within one business day with a clear scope recommendation and an all-in quote &mdash; travel included.
+        </p>
+        <a href="/contact" class="btn-primary mt-10">Tell Us About Your Project</a>
+      </div>
+    </section>
+
+    <!-- Cross-links -->
+    <section class="bg-white section-padding">
+      <div class="max-w-[760px] mx-auto px-6">
+        <p class="label text-gold mb-4">Related UK Services</p>
+        <div class="flex flex-wrap gap-6 text-midgrey">
+          <a href="/uk/above-ceiling-mep-survey" class="text-navy font-medium hover:opacity-80 transition-opacity">Above-ceiling MEP survey UK &rarr;</a>
+          <a href="/uk/measured-building-survey" class="text-navy font-medium hover:opacity-80 transition-opacity">Measured building survey UK &rarr;</a>
+          <a href="/uk/heritage-building-survey" class="text-navy font-medium hover:opacity-80 transition-opacity">Heritage building survey UK &rarr;</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer note about coverage -->
+    <p class="text-center text-[0.85rem] text-midgrey/60 italic py-8 bg-white">
+      Alturascope delivers pre-construction surveys across England, Scotland, Wales, and Northern Ireland &mdash; all-in pricing with travel included.
+    </p>
+
+    <!-- Navy CTA bar -->
+    <section class="bg-navy py-20">
+      <div class="max-w-[600px] mx-auto px-6 text-center">
+        <h2 class="text-[1.8rem] font-light text-offwhite leading-snug">
+          Ready to document your space before fit-out begins?
+        </h2>
+        <p class="mt-4 text-offwhite/70 leading-body">
+          Share the location, the approximate size, and what you're planning. We'll confirm scope and send an all-in quote within one business day.
+        </p>
+        <a href="/contact" class="btn-primary mt-8">Start a Project</a>
+      </div>
+    </section>
+
+  </div>
+</Layout>

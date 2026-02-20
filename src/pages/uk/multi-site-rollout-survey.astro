@@ -1,0 +1,343 @@
+---
+import Layout from "../../layouts/Layout.astro";
+
+const schema = JSON.stringify({
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "provider": {
+    "@type": "ProfessionalService",
+    "name": "AlturaScope"
+  },
+  "description": "Consistent site documentation across UK retail, restaurant, and hospitality rollout programmes. One brief, one format, one point of contact. All-in pricing. Every location.",
+  "areaServed": { "@type": "Country", "name": "United Kingdom" },
+  "serviceType": "Multi-Site Survey"
+});
+
+const breadcrumbSchema = JSON.stringify({
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://alturascope.com" },
+    { "@type": "ListItem", "position": 2, "name": "UK", "item": "https://alturascope.com/uk/" },
+    { "@type": "ListItem", "position": 3, "name": "Multi-Site Rollout Survey UK", "item": "https://alturascope.com/uk/multi-site-rollout-survey/" }
+  ]
+});
+
+const faqSchema = JSON.stringify({
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Is there a minimum number of locations to work with you on a rollout programme?",
+      "acceptedAnswer": { "@type": "Answer", "text": "No formal minimum, most visible from 5+." }
+    },
+    {
+      "@type": "Question",
+      "name": "How quickly can you mobilise across multiple UK locations?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Standard lead time, coordinate multiple sites." }
+    },
+    {
+      "@type": "Question",
+      "name": "What if some locations are already documented inconsistently?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Can pick up anywhere in programme." }
+    },
+    {
+      "@type": "Question",
+      "name": "Is travel included in the pricing?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Yes, all-in, no per-location additions." }
+    }
+  ]
+});
+---
+<Layout
+  title="Multi-Site Survey UK — Retail, QSR & Franchise Rollout Documentation | Alturascope"
+  description="Consistent site documentation across UK retail, restaurant, and hospitality rollout programmes. One brief, one format, one point of contact. All-in pricing. Every location."
+  canonical="https://alturascope.com/uk/multi-site-rollout-survey/"
+  schema={schema}
+  breadcrumbSchema={breadcrumbSchema}
+  faqSchema={faqSchema}
+  fullWidth={true}
+  lang="en-GB"
+  hreflang={[{ lang: "en-gb", href: "https://alturascope.com/uk/multi-site-rollout-survey/" }, { lang: "en", href: "https://alturascope.com/uk/multi-site-rollout-survey/" }]}
+>
+  <div data-hero-page>
+
+    <!-- Hero -->
+    <section class="relative min-h-screen flex items-center justify-center">
+      <div class="absolute inset-0 bg-navy">
+        <img
+          src="https://images.unsplash.com/photo-1441986300917-64674bd600d8?w=1920&q=80"
+          alt="Retail store interior, representative of multi-site rollout documentation"
+          class="w-full h-full object-cover opacity-35"
+        />
+        <div class="absolute inset-0 bg-[rgba(11,31,58,0.72)]"></div>
+      </div>
+
+      <div class="relative z-10 text-center max-w-[760px] mx-auto px-6">
+        <p class="label text-gold mb-6">UK Services · Multi-Site Programmes</p>
+        <h1 class="text-[2.4rem] md:text-[3.6rem] font-light text-offwhite leading-[1.1]">
+          Multi-Site Survey UK &mdash; Consistent Site Documentation Across Every Location
+        </h1>
+        <p class="mt-6 text-[1.15rem] text-offwhite/80 font-normal leading-relaxed max-w-[620px] mx-auto">
+          One brief, one format, one point of contact. All-in pricing. Every location.
+        </p>
+        <div class="mt-10 flex flex-wrap items-center justify-center gap-4">
+          <a href="/contact" class="btn-primary">Tell Us About Your Rollout Programme</a>
+          <a href="/uk/" class="btn-secondary-light">UK Services</a>
+        </div>
+      </div>
+
+      <div class="absolute bottom-12 left-1/2 -translate-x-1/2 flex flex-col items-center gap-4">
+        <div class="w-[60px] h-[1px] bg-gold"></div>
+        <svg class="w-5 h-5 text-white animate-pulse" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M19 14l-7 7m0 0l-7-7m7 7V3" />
+        </svg>
+      </div>
+    </section>
+
+    <!-- The Multi-Site Documentation Problem in UK Rollout Programmes -->
+    <section class="bg-white section-padding">
+      <div class="max-w-[760px] mx-auto px-6">
+        <h2 class="text-[2rem] font-light text-navy leading-tight">
+          The Multi-Site Documentation Problem in UK Rollout Programmes
+        </h2>
+        <div class="mt-6 text-midgrey leading-body">
+          <p>
+            Inconsistent photos from different surveyors. Measurements in different formats. No way to compare one location to another. No permanent record that survives staff turnover. UK retail, QSR, and hospitality rollouts run on dozens or hundreds of locations &mdash; and most start with documentation that was never designed for scale.
+          </p>
+        </div>
+
+        <div class="mt-10">
+          <div class="bg-offwhite p-8 rounded">
+            <ul class="space-y-3 text-midgrey leading-body">
+              <li class="border-l-2 border-gold pl-6">Inconsistent photos and formats across locations</li>
+              <li class="border-l-2 border-gold pl-6">Measurements that don't align between sites</li>
+              <li class="border-l-2 border-gold pl-6">No comparison baseline for design and fit-out</li>
+              <li class="border-l-2 border-gold pl-6">No permanent, structured record for the programme</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- What Standardised Site Documentation Looks Like -->
+    <section class="bg-offwhite section-padding">
+      <div class="max-w-[760px] mx-auto px-6">
+        <h2 class="text-[2rem] font-light text-navy leading-tight mb-8">
+          What Standardised Site Documentation Looks Like
+        </h2>
+
+        <div class="space-y-8">
+          <div class="pl-6 border-l-2 border-gold">
+            <h3 class="text-navy font-medium text-[1.15rem]">Navigable Digital Twin</h3>
+            <p class="mt-2 text-midgrey leading-body">
+              Dimensionally accurate, explorable remotely. Same format at every location. Compare sites side by side.
+            </p>
+          </div>
+          <div class="pl-6 border-l-2 border-gold">
+            <h3 class="text-navy font-medium text-[1.15rem]">Conditions Report (P1/P2/P3)</h3>
+            <p class="mt-2 text-midgrey leading-body">
+              Findings prioritised consistently. What matters for design, cost, and programme &mdash; at every location.
+            </p>
+          </div>
+          <div class="pl-6 border-l-2 border-gold">
+            <h3 class="text-navy font-medium text-[1.15rem]">Equipment and Asset Schedule</h3>
+            <p class="mt-2 text-midgrey leading-body">
+              Fixture counts, makes, models, services connections. Reuse, replace, or relocate &mdash; with full visibility across the programme.
+            </p>
+          </div>
+          <div class="pl-6 border-l-2 border-gold">
+            <h3 class="text-navy font-medium text-[1.15rem]">Labelled Photo Storyboard</h3>
+            <p class="mt-2 text-midgrey leading-body">
+              Area-by-area documentation via ScopeWalk. Structured, searchable, shareable. Same structure at every site.
+            </p>
+          </div>
+          <div class="pl-6 border-l-2 border-gold">
+            <h3 class="text-navy font-medium text-[1.15rem]">Narrated Video Walkthrough</h3>
+            <p class="mt-2 text-midgrey leading-body">
+              Spoken commentary on conditions, concerns, and findings. The closest thing to walking the space with someone who's been there.
+            </p>
+          </div>
+          <div class="pl-6 border-l-2 border-gold">
+            <h3 class="text-navy font-medium text-[1.15rem]">ScopeWalk Platform Access</h3>
+            <p class="mt-2 text-midgrey leading-body">
+              Permanent, structured, shareable. All deliverables accessible through one platform for your rollout team.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Why Single-Vendor Documentation Makes UK Rollouts Run Better -->
+    <section class="bg-white section-padding">
+      <div class="max-w-[760px] mx-auto px-6">
+        <h2 class="text-[2rem] font-light text-navy leading-tight mb-8">
+          Why Single-Vendor Documentation Makes UK Rollouts Run Better
+        </h2>
+
+        <ul class="space-y-4 text-midgrey leading-body">
+          <li class="flex items-start gap-3">
+            <span class="inline-block w-2 h-2 rounded-full bg-gold mt-1.5 shrink-0"></span>
+            <span><strong class="text-navy">One brief</strong> &mdash; same scope, same deliverables, every location</span>
+          </li>
+          <li class="flex items-start gap-3">
+            <span class="inline-block w-2 h-2 rounded-full bg-gold mt-1.5 shrink-0"></span>
+            <span><strong class="text-navy">One format</strong> &mdash; compare locations, no translation between surveyors</span>
+          </li>
+          <li class="flex items-start gap-3">
+            <span class="inline-block w-2 h-2 rounded-full bg-gold mt-1.5 shrink-0"></span>
+            <span><strong class="text-navy">One point of contact</strong> &mdash; programme-level coordination, not per-location handoffs</span>
+          </li>
+          <li class="flex items-start gap-3">
+            <span class="inline-block w-2 h-2 rounded-full bg-gold mt-1.5 shrink-0"></span>
+            <span><strong class="text-navy">Consistent quality control</strong> &mdash; same standards, same training, same output</span>
+          </li>
+          <li class="flex items-start gap-3">
+            <span class="inline-block w-2 h-2 rounded-full bg-gold mt-1.5 shrink-0"></span>
+            <span><strong class="text-navy">All-in pricing</strong> &mdash; no per-location additions, no travel surprises</span>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- Who Runs Multi-Site Programmes With Us -->
+    <section class="bg-offwhite section-padding">
+      <div class="max-w-[760px] mx-auto px-6">
+        <h2 class="text-[2rem] font-light text-navy leading-tight mb-8">
+          Who Runs Multi-Site Programmes With Us
+        </h2>
+
+        <div class="space-y-6">
+          <div class="pl-6 border-l-2 border-gold">
+            <h3 class="text-navy font-medium">QSR and casual dining</h3>
+            <p class="mt-2 text-midgrey leading-body">Kitchen layouts, back-of-house, front-of-house. Consistent documentation for every new site.</p>
+          </div>
+          <div class="pl-6 border-l-2 border-gold">
+            <h3 class="text-navy font-medium">Retail and fashion</h3>
+            <p class="mt-2 text-midgrey leading-body">Store fit-out, refits, and rollouts. Same brief, same format, every location.</p>
+          </div>
+          <div class="pl-6 border-l-2 border-gold">
+            <h3 class="text-navy font-medium">Hospitality and hotel</h3>
+            <p class="mt-2 text-midgrey leading-body">Room types, back-of-house, F&amp;B. Document before design, document before fit-out.</p>
+          </div>
+          <div class="pl-6 border-l-2 border-gold">
+            <h3 class="text-navy font-medium">Franchise and licence</h3>
+            <p class="mt-2 text-midgrey leading-body">Standardised site packs for franchisees. Consistent documentation for brand compliance.</p>
+          </div>
+          <div class="pl-6 border-l-2 border-gold">
+            <h3 class="text-navy font-medium">Property companies</h3>
+            <p class="mt-2 text-midgrey leading-body">Portfolio documentation, pre-letting packs, and asset management records across multiple sites.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- UK Rollouts With International Locations -->
+    <section class="bg-white section-padding">
+      <div class="max-w-[760px] mx-auto px-6">
+        <h2 class="text-[2rem] font-light text-navy leading-tight">
+          UK Rollouts With International Locations
+        </h2>
+        <div class="mt-6 space-y-4 text-midgrey leading-body">
+          <p>
+            Many UK rollout programmes include sites in North America. We deliver consistent documentation across the UK, the US, and Canada &mdash; one brief, one format, one point of contact. <a href="/services/multi-site-rollout-documentation" class="text-navy font-medium hover:opacity-80 transition-opacity underline">Learn more about our multi-site rollout documentation</a>.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="bg-offwhite section-padding">
+      <div class="max-w-[760px] mx-auto px-6">
+        <h2 class="text-[2rem] font-light text-navy mb-12">Frequently Asked Questions</h2>
+
+        <div class="space-y-8">
+          <details class="group border-b border-border pb-6">
+            <summary class="cursor-pointer text-navy font-medium text-lg flex items-center justify-between">
+              Is there a minimum number of locations to work with you on a rollout programme?
+              <span class="text-gold text-xl transition-transform group-open:rotate-45">+</span>
+            </summary>
+            <p class="mt-4 text-midgrey leading-body">
+              No formal minimum, most visible from 5+.
+            </p>
+          </details>
+
+          <details class="group border-b border-border pb-6">
+            <summary class="cursor-pointer text-navy font-medium text-lg flex items-center justify-between">
+              How quickly can you mobilise across multiple UK locations?
+              <span class="text-gold text-xl transition-transform group-open:rotate-45">+</span>
+            </summary>
+            <p class="mt-4 text-midgrey leading-body">
+              Standard lead time, coordinate multiple sites.
+            </p>
+          </details>
+
+          <details class="group border-b border-border pb-6">
+            <summary class="cursor-pointer text-navy font-medium text-lg flex items-center justify-between">
+              What if some locations are already documented inconsistently?
+              <span class="text-gold text-xl transition-transform group-open:rotate-45">+</span>
+            </summary>
+            <p class="mt-4 text-midgrey leading-body">
+              Can pick up anywhere in programme.
+            </p>
+          </details>
+
+          <details class="group border-b border-border pb-6">
+            <summary class="cursor-pointer text-navy font-medium text-lg flex items-center justify-between">
+              Is travel included in the pricing?
+              <span class="text-gold text-xl transition-transform group-open:rotate-45">+</span>
+            </summary>
+            <p class="mt-4 text-midgrey leading-body">
+              Yes, all-in, no per-location additions.
+            </p>
+          </details>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="bg-white section-padding">
+      <div class="max-w-[760px] mx-auto px-6 text-center">
+        <h2 class="text-[2rem] font-light text-navy">
+          Tell Us About Your Rollout Programme
+        </h2>
+        <p class="mt-4 text-midgrey leading-body">
+          Share the number of locations, the approximate geography, and what you need from the documentation. We'll come back within one business day with a clear scope recommendation and an all-in quote.
+        </p>
+        <a href="/contact" class="btn-primary mt-10">Get in Touch</a>
+      </div>
+    </section>
+
+    <!-- Cross-links -->
+    <section class="bg-offwhite section-padding">
+      <div class="max-w-[760px] mx-auto px-6">
+        <p class="label text-gold mb-4">Related UK Services</p>
+        <div class="flex flex-wrap gap-6 text-midgrey">
+          <a href="/uk/pre-construction-survey" class="text-navy font-medium hover:opacity-80 transition-opacity">Pre-construction survey UK &rarr;</a>
+          <a href="/uk/above-ceiling-mep-survey" class="text-navy font-medium hover:opacity-80 transition-opacity">Above-ceiling MEP survey UK &rarr;</a>
+          <a href="/uk/" class="text-navy font-medium hover:opacity-80 transition-opacity">Alturascope UK &rarr;</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer note -->
+    <p class="text-center text-[0.85rem] text-midgrey/60 italic py-8 bg-white">
+      Alturascope delivers professional site documentation across all 50 US states, every Canadian province, and the United Kingdom.
+    </p>
+
+    <!-- Navy CTA bar -->
+    <section class="bg-navy py-20">
+      <div class="max-w-[600px] mx-auto px-6 text-center">
+        <h2 class="text-[1.8rem] font-light text-offwhite leading-snug">
+          Ready to standardise your rollout documentation?
+        </h2>
+        <p class="mt-4 text-offwhite/70 leading-body">
+          Share the number of locations and what you need. We'll confirm scope and send an all-in quote within one business day.
+        </p>
+        <a href="/contact" class="btn-primary mt-8">Start a Project</a>
+      </div>
+    </section>
+
+  </div>
+</Layout>

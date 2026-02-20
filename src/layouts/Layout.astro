@@ -10,6 +10,8 @@ interface Props {
   breadcrumbSchema?: string;
   faqSchema?: string;
   fullWidth?: boolean;
+  lang?: string;
+  hreflang?: { lang: string; href: string }[];
 }
 
 const {
@@ -21,6 +23,8 @@ const {
   breadcrumbSchema,
   faqSchema,
   fullWidth = false,
+  lang = "en",
+  hreflang = [],
 } = Astro.props;
 
 const navLinks = [
@@ -30,7 +34,7 @@ const navLinks = [
   { href: "/contact", label: "Contact" },
 ];
 ---
-<html lang="en">
+<html lang={lang}>
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -48,6 +52,7 @@ const navLinks = [
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link rel="dns-prefetch" href="https://fonts.googleapis.com" />
     <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet" />
+    {hreflang.map((h) => <link rel="alternate" hreflang={h.lang} href={h.href} />)}
     {schema && <script type="application/ld+json" set:html={schema} />}
     {breadcrumbSchema && <script type="application/ld+json" set:html={breadcrumbSchema} />}
     {faqSchema && <script type="application/ld+json" set:html={faqSchema} />}
@@ -134,6 +139,8 @@ const navLinks = [
                 <a href="/insights" class="text-sm text-white/70 hover:text-white transition-colors">Insights</a>
                 <a href="/contact" class="text-sm text-white/70 hover:text-white transition-colors">Contact</a>
                 <a href="/uk" class="text-sm text-white/70 hover:text-white transition-colors">Alturascope UK</a>
+                <a href="/uk/heritage-building-survey" class="text-sm text-white/70 hover:text-white transition-colors">Heritage Survey UK</a>
+                <a href="/uk/pre-construction-survey" class="text-sm text-white/70 hover:text-white transition-colors">Pre-Construction UK</a>
               </nav>
             </div>
           </div>
