@@ -1,0 +1,272 @@
+---
+import Layout from "../../layouts/Layout.astro";
+
+const schema = JSON.stringify({
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "Beyond the Ordinary: Site Documentation for Heritage Buildings, Complex Structures, and Specialist Spaces",
+  "author": { "@type": "Organization", "name": "Alturascope" },
+  "publisher": { "@type": "Organization", "name": "Alturascope", "url": "https://alturascope.com" },
+  "datePublished": "2026-02-20",
+  "description": "Some buildings don't fit the standard survey template. Heritage properties, listed buildings, complex industrial spaces, and specialist structures need a different kind of documentation approach.",
+  "mainEntityOfPage": "https://alturascope.com/insights/site-documentation-heritage-complex-specialist-buildings"
+});
+
+const breadcrumbSchema = JSON.stringify({
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://alturascope.com" },
+    { "@type": "ListItem", "position": 2, "name": "Insights", "item": "https://alturascope.com/insights" },
+    { "@type": "ListItem", "position": 3, "name": "Heritage & Specialist Building Documentation", "item": "https://alturascope.com/insights/site-documentation-heritage-complex-specialist-buildings" }
+  ]
+});
+
+const faqSchema = JSON.stringify({
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Do you work with conservation architects and heritage consultants?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Yes. We're familiar with the documentation requirements for listed building consent and heritage impact assessment work, and we're comfortable working to a brief provided by a conservation architect or heritage consultant rather than a standard commercial scope. Get in touch and we'll discuss your project's specific requirements." }
+    },
+    {
+      "@type": "Question",
+      "name": "Can you document spaces that are difficult to access or partially obstructed?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Yes — this is where adapted methodology comes in. We use a combination of pole-mounted 360° capture, borescope and endoscope inspection, thermal imaging, and where appropriate, drone-assisted aerial capture to document spaces that aren't accessible by standard scan positioning. We'll advise on what's achievable and what the limitations are before mobilising." }
+    },
+    {
+      "@type": "Question",
+      "name": "What format does heritage documentation need to be in for planning submissions?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Requirements vary by authority and heritage designation. We'd recommend discussing this with your conservation architect before briefing the survey, as the required output format should drive the capture methodology. We can then scope the survey to meet those requirements specifically." }
+    },
+    {
+      "@type": "Question",
+      "name": "Do you work internationally for specialist projects?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Yes. For the right project — and specialist documentation work often falls into that category — we'll travel. Our standard coverage is all 50 US states, every Canadian province, and the UK, but for genuinely unusual projects we're happy to discuss international scope." }
+    }
+  ]
+});
+---
+<Layout
+  title="Site Documentation for Heritage Buildings, Listed Structures, and Specialist Spaces"
+  description="Some buildings don't fit the standard survey template. Heritage properties, listed buildings, complex industrial spaces, and specialist structures need a different kind of documentation approach."
+  canonical="https://alturascope.com/insights/site-documentation-heritage-complex-specialist-buildings"
+  schema={schema}
+  breadcrumbSchema={breadcrumbSchema}
+  faqSchema={faqSchema}
+  fullWidth={true}
+>
+  <div data-hero-page>
+
+    <!-- Hero -->
+    <section class="relative h-[45vh] max-h-[450px] min-h-[300px] flex items-center justify-center">
+      <div class="absolute inset-0 bg-navy">
+        <img
+          src="https://images.unsplash.com/photo-1558618666-fcd25c85f82e?w=1920&q=80"
+          alt="Historic stone building interior with vaulted ceiling and architectural detail"
+          class="w-full h-full object-cover opacity-25"
+        />
+        <div class="absolute inset-0 bg-[rgba(11,31,58,0.82)]"></div>
+      </div>
+      <div class="relative z-10 text-center px-6 max-w-[760px] mx-auto">
+        <p class="label text-gold mb-4">INSIGHTS</p>
+        <h1 class="text-[1.8rem] md:text-[2.6rem] font-light text-offwhite leading-tight">
+          Beyond the Ordinary: Site Documentation for Heritage Buildings, Complex Structures, and Specialist Spaces
+        </h1>
+      </div>
+    </section>
+
+    <!-- Article Body -->
+    <article class="bg-white section-padding">
+      <div class="max-w-[760px] mx-auto px-6">
+
+        <!-- Introduction -->
+        <div class="space-y-6 text-midgrey leading-body text-[1.05rem]">
+          <p>
+            Most site survey work follows a predictable pattern: commercial space, standard access, documented against a known project scope. The technology is capable, the methodology is established, and the deliverable format is consistent.
+          </p>
+          <p>
+            Then there are buildings that don't fit the template.
+          </p>
+          <p>
+            A Grade II listed industrial building being converted to mixed use, where every original fabric element must be recorded before any intervention. A Victorian warehouse with no drawings and structural conditions that bear no resemblance to what the planning drawings assume. A superyacht interior requiring complete spatial documentation for a refit specification. A private estate being surveyed for heritage asset management across buildings spanning three centuries.
+          </p>
+          <p>
+            These projects don't need a standard scanning service. They need someone with the technical capability to capture complex, constrained, and often fragile spaces &mdash; and the professional judgment to understand what the documentation actually needs to achieve.
+          </p>
+        </div>
+
+        <!-- Why Complex Buildings Require a Different Approach -->
+        <h2 class="text-[1.6rem] font-light text-navy mt-16 mb-6">Why Complex Buildings Require a Different Approach</h2>
+        <div class="space-y-6 text-midgrey leading-body text-[1.05rem]">
+          <p>
+            Standard commercial survey methodology is optimised for rectangular spaces with consistent ceiling heights, predictable access, and known documentation requirements. It works well for what it's designed for.
+          </p>
+          <p>
+            Heritage buildings, specialist structures, and complex spaces introduce variables that change everything:
+          </p>
+        </div>
+
+        <div class="mt-8 bg-offwhite rounded p-8 space-y-4 text-midgrey leading-body text-[1.05rem]">
+          <p>Irregular geometry, fragile fabric that cannot be disturbed</p>
+          <p>Restricted access requiring non-invasive capture methods</p>
+          <p>Curved and vaulted surfaces that standard scanning positions don't resolve well</p>
+          <p>Outdoor and exposed elements that require different equipment configurations</p>
+          <p>Documentation requirements driven by planning consent, heritage designation, or specialist consultant briefs rather than a standard fit-out scope</p>
+        </div>
+
+        <p class="mt-8 text-midgrey leading-body text-[1.05rem]">
+          Getting the documentation right in these contexts requires adapting methodology to the building &mdash; not fitting the building into a standard workflow.
+        </p>
+
+        <!-- The Types of Complex Spaces We Document -->
+        <h2 class="text-[1.6rem] font-light text-navy mt-16 mb-6">The Types of Complex Spaces We Document</h2>
+
+        <div class="mt-8 space-y-10">
+          <div class="border-l-2 border-gold pl-6">
+            <h3 class="text-navy font-medium text-[1.1rem]">Heritage and Listed Buildings</h3>
+            <p class="mt-3 text-midgrey leading-body text-[1.05rem]">
+              Pre-intervention documentation of listed buildings and scheduled monuments requires accuracy, care, and an understanding of what the heritage designation means for both the capture methodology and the deliverable format. Point cloud data of historic fabric &mdash; stone walls, timber frames, vaulted ceilings, original ironwork &mdash; provides the accurate spatial record that conservation architects and heritage consultants need to develop sensitive interventions.
+            </p>
+            <p class="mt-4 text-midgrey leading-body text-[1.05rem]">
+              For listed building consent applications, change-of-use proposals, and heritage impact assessments, accurate existing conditions documentation is not optional. It is what the application is built on.
+            </p>
+          </div>
+
+          <div class="border-l-2 border-gold pl-6">
+            <h3 class="text-navy font-medium text-[1.1rem]">Complex Industrial and Warehouse Spaces</h3>
+            <p class="mt-3 text-midgrey leading-body text-[1.05rem]">
+              Large-volume industrial spaces &mdash; high-bay warehouses, industrial heritage buildings, complex plant rooms &mdash; present capture challenges that standard survey workflows don't handle well. Multiple levels, constrained access, active operational environments, and structural complexity all require adapted methodology and experienced judgement about scan positioning and coverage.
+            </p>
+          </div>
+
+          <div class="border-l-2 border-gold pl-6">
+            <h3 class="text-navy font-medium text-[1.1rem]">Specialist Interior Spaces</h3>
+            <p class="mt-3 text-midgrey leading-body text-[1.05rem]">
+              Some of the most interesting documentation work involves spaces that don't fit any standard category: yacht and vessel interiors, private collections, performance spaces, unusual architectural set pieces. These often require custom equipment configurations &mdash; pole-mounted capture for inaccessible volumes, thermal imaging for services running behind original fabric, careful sequencing to capture complex geometry completely.
+            </p>
+          </div>
+
+          <div class="border-l-2 border-gold pl-6">
+            <h3 class="text-navy font-medium text-[1.1rem]">Rooftop and Exterior Envelope Documentation</h3>
+            <p class="mt-3 text-midgrey leading-body text-[1.05rem]">
+              Above the roofline is as poorly documented as above the ceiling tile &mdash; often more so. Rooftop plant, drainage, structural roof elements, and building envelope conditions are rarely captured in standard site surveys, and their absence from the documented record creates problems for future capital works planning and facilities management.
+            </p>
+            <p class="mt-4 text-midgrey leading-body text-[1.05rem]">
+              Drone-assisted capture combined with ground-level scanning provides a complete exterior envelope record &mdash; roof surfaces, fa&ccedil;ades, plant locations, drainage outlets, access routes &mdash; that asset managers and developers increasingly need for long-term capital planning.
+            </p>
+          </div>
+        </div>
+
+        <!-- What Different Contexts Require -->
+        <h2 class="text-[1.6rem] font-light text-navy mt-16 mb-6">What Different Contexts Require</h2>
+
+        <div class="mt-8 space-y-8">
+          <div>
+            <h3 class="text-navy font-medium text-[1.05rem]">Heritage documentation</h3>
+            <p class="mt-3 text-midgrey leading-body text-[1.05rem]">
+              Often requires formal measured survey output &mdash; floor plans, elevations, sections &mdash; produced to a standard compatible with planning and heritage authority submissions, alongside the navigable digital twin and point cloud data. The format and accuracy requirements should be discussed at the brief stage and scoped accordingly.
+            </p>
+          </div>
+
+          <div>
+            <h3 class="text-navy font-medium text-[1.05rem]">Specialist interior documentation</h3>
+            <p class="mt-3 text-midgrey leading-body text-[1.05rem]">
+              Often requires creativity in capture methodology &mdash; non-standard equipment, unconventional access, and a willingness to adapt on site when the building presents conditions that weren't anticipated. This is where construction experience matters most: knowing what to do when the standard approach doesn't work.
+            </p>
+          </div>
+
+          <div>
+            <h3 class="text-navy font-medium text-[1.05rem]">Rooftop and exterior envelope documentation</h3>
+            <p class="mt-3 text-midgrey leading-body text-[1.05rem]">
+              Requires coordination of ground-level and aerial capture, appropriate weather conditions, and understanding of what building professionals need to see in the output &mdash; not just what looks visually impressive from the air.
+            </p>
+          </div>
+        </div>
+
+        <!-- FAQ -->
+        <h2 class="text-[1.6rem] font-light text-navy mt-16 mb-8">Frequently Asked Questions</h2>
+
+        <div class="space-y-8">
+          <div>
+            <h3 class="text-navy font-medium text-[1.05rem]">Do you work with conservation architects and heritage consultants?</h3>
+            <p class="mt-3 text-midgrey leading-body text-[1.05rem]">
+              Yes. We're familiar with the documentation requirements for listed building consent and heritage impact assessment work, and we're comfortable working to a brief provided by a conservation architect or heritage consultant rather than a standard commercial scope. <a href="/contact" class="text-navy underline hover:opacity-80 transition-opacity">Get in touch</a> and we'll discuss your project's specific requirements.
+            </p>
+          </div>
+
+          <div>
+            <h3 class="text-navy font-medium text-[1.05rem]">Can you document spaces that are difficult to access or partially obstructed?</h3>
+            <p class="mt-3 text-midgrey leading-body text-[1.05rem]">
+              Yes &mdash; this is where adapted methodology comes in. We use a combination of pole-mounted 360&deg; capture, borescope and endoscope inspection, thermal imaging, and where appropriate, drone-assisted aerial capture to document spaces that aren't accessible by standard scan positioning. We'll advise on what's achievable and what the limitations are before mobilising.
+            </p>
+          </div>
+
+          <div>
+            <h3 class="text-navy font-medium text-[1.05rem]">What format does heritage documentation need to be in for planning submissions?</h3>
+            <p class="mt-3 text-midgrey leading-body text-[1.05rem]">
+              Requirements vary by authority and heritage designation. We'd recommend discussing this with your conservation architect before briefing the survey, as the required output format should drive the capture methodology. We can then scope the survey to meet those requirements specifically.
+            </p>
+          </div>
+
+          <div>
+            <h3 class="text-navy font-medium text-[1.05rem]">Do you work internationally for specialist projects?</h3>
+            <p class="mt-3 text-midgrey leading-body text-[1.05rem]">
+              Yes. For the right project &mdash; and specialist documentation work often falls into that category &mdash; we'll travel. Our standard coverage is all 50 US states, every Canadian province, and the UK, but for genuinely unusual projects we're happy to discuss international scope.
+            </p>
+          </div>
+        </div>
+
+        <!-- Bottom Line -->
+        <div class="mt-16 pt-16 border-t border-border">
+          <h2 class="text-[1.6rem] font-light text-navy mb-6">The Bottom Line</h2>
+          <div class="space-y-6 text-midgrey leading-body text-[1.05rem]">
+            <p>
+              Some buildings reward the effort of doing the documentation properly in ways that go well beyond the immediate project. A complete, accurate record of a heritage building, a complex industrial space, or a specialist interior has value that compounds over time &mdash; for planning, for asset management, for future works, and for the building's own history.
+            </p>
+            <p>
+              If your project involves a space that doesn't fit the standard template, we'd like to hear about it.
+            </p>
+            <p>
+              <a href="/contact" class="text-navy font-medium hover:opacity-80 transition-opacity">Tell us about your project.</a> We'll respond with an honest assessment of what's achievable and what it would take to do it properly.
+            </p>
+          </div>
+        </div>
+
+        <!-- Footer note -->
+        <p class="mt-12 text-[0.85rem] text-midgrey/60 italic">
+          Alturascope delivers specialist site documentation, heritage building surveys, and complex space capture across all 50 US states, every Canadian province, and the United Kingdom.
+        </p>
+
+        <!-- Internal Links -->
+        <div class="mt-12 pt-8 border-t border-border flex flex-wrap gap-6 text-sm">
+          <a href="/" class="text-navy font-medium hover:opacity-80 transition-opacity">Home &rarr;</a>
+          <a href="/work" class="text-navy font-medium hover:opacity-80 transition-opacity">The Standard &rarr;</a>
+          <a href="/services/heritage-building-documentation" class="text-navy font-medium hover:opacity-80 transition-opacity">Heritage building documentation &rarr;</a>
+          <a href="/services/specialist-projects" class="text-navy font-medium hover:opacity-80 transition-opacity">Specialist projects &rarr;</a>
+          <a href="/services/superyacht-documentation" class="text-navy font-medium hover:opacity-80 transition-opacity">Superyacht documentation &rarr;</a>
+          <a href="/insights/point-cloud-as-built-survey-architects-engineers" class="text-navy font-medium hover:opacity-80 transition-opacity">Point clouds &amp; as-built surveys &rarr;</a>
+          <a href="/insights/above-ceiling-mep-survey-fit-out" class="text-navy font-medium hover:opacity-80 transition-opacity">Above-ceiling MEP surveys &rarr;</a>
+          <a href="/insights" class="text-navy font-medium hover:opacity-80 transition-opacity">All insights &rarr;</a>
+        </div>
+
+      </div>
+    </article>
+
+    <!-- CTA -->
+    <section class="bg-navy py-20">
+      <div class="max-w-[600px] mx-auto px-6 text-center">
+        <h2 class="text-[1.8rem] font-light text-offwhite leading-snug">
+          Working on a building that doesn't fit the template?
+        </h2>
+        <p class="mt-4 text-offwhite/70 leading-body">
+          Tell us about the space and we'll give you an honest assessment of what's achievable and what it would take to document it properly.
+        </p>
+        <a href="/contact" class="btn-primary mt-8">Start a Project</a>
+      </div>
+    </section>
+
+  </div>
+</Layout>
