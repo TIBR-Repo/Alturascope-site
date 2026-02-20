@@ -1,0 +1,262 @@
+---
+import Layout from "../../layouts/Layout.astro";
+
+const schema = JSON.stringify({
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "What's Actually Above Your Ceiling — And Why It Matters Before Fit-Out Begins",
+  "author": { "@type": "Organization", "name": "Alturascope" },
+  "publisher": { "@type": "Organization", "name": "Alturascope", "url": "https://alturascope.com" },
+  "datePublished": "2026-02-19",
+  "description": "Hidden ductwork, undocumented pipework, and uncharted electrical runs above ceiling are responsible for some of the most expensive surprises in commercial fit-out. Here's how to find out what's there before work starts.",
+  "mainEntityOfPage": "https://alturascope.com/insights/above-ceiling-mep-survey-fit-out"
+});
+
+const breadcrumbSchema = JSON.stringify({
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://alturascope.com" },
+    { "@type": "ListItem", "position": 2, "name": "Insights", "item": "https://alturascope.com/insights" },
+    { "@type": "ListItem", "position": 3, "name": "Above-Ceiling MEP Surveys", "item": "https://alturascope.com/insights/above-ceiling-mep-survey-fit-out" }
+  ]
+});
+
+const faqSchema = JSON.stringify({
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Do you need to open up the ceiling to do this survey?",
+      "acceptedAnswer": { "@type": "Answer", "text": "In most cases, no. We work through existing access points — ceiling tile removals, light apertures, or minimal targeted access holes — using thermal imaging and pole-mounted 360° capture to document the plenum without stripping large ceiling areas. In some situations, targeted physical access is necessary to confirm specific conditions, but this is always discussed and agreed in advance." }
+    },
+    {
+      "@type": "Question",
+      "name": "What format are the deliverables in?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Above-ceiling survey findings are integrated into the full Alturascope documentation package — the navigable digital twin includes above-ceiling imagery where captured, the conditions report includes prioritised findings from the plenum, and the narrated walkthrough covers what was found and what it means for the project scope." }
+    },
+    {
+      "@type": "Question",
+      "name": "Can this be done as a standalone service or does it need to be part of a full survey?",
+      "acceptedAnswer": { "@type": "Answer", "text": "It can be scoped either way. Above-ceiling documentation is most effective as part of a complete site survey — findings are more useful when cross-referenced against the wider spatial model — but we can scope a targeted above-ceiling inspection for projects where a full survey has already been completed." }
+    }
+  ]
+});
+---
+<Layout
+  title="Above-Ceiling MEP Surveys: What's Up There Before Fit-Out Begins"
+  description="Hidden ductwork, undocumented pipework, and uncharted electrical runs above ceiling are responsible for some of the most expensive surprises in commercial fit-out. Here's how to find out what's there before work starts."
+  canonical="https://alturascope.com/insights/above-ceiling-mep-survey-fit-out"
+  schema={schema}
+  breadcrumbSchema={breadcrumbSchema}
+  faqSchema={faqSchema}
+  fullWidth={true}
+>
+  <div data-hero-page>
+
+    <!-- Hero -->
+    <section class="relative h-[45vh] max-h-[450px] min-h-[300px] flex items-center justify-center">
+      <div class="absolute inset-0 bg-navy">
+        <img
+          src="https://images.unsplash.com/photo-1504328345606-18bbc8c9d7d1?w=1920&q=80"
+          alt="Exposed MEP services and ductwork above a suspended ceiling in a commercial building"
+          class="w-full h-full object-cover opacity-25"
+        />
+        <div class="absolute inset-0 bg-[rgba(11,31,58,0.82)]"></div>
+      </div>
+      <div class="relative z-10 text-center px-6 max-w-[760px] mx-auto">
+        <p class="label text-gold mb-4">INSIGHTS</p>
+        <h1 class="text-[1.8rem] md:text-[2.6rem] font-light text-offwhite leading-tight">
+          What's Actually Above Your Ceiling &mdash; And Why It Matters Before Fit-Out Begins
+        </h1>
+      </div>
+    </section>
+
+    <!-- Article Body -->
+    <article class="bg-white section-padding">
+      <div class="max-w-[760px] mx-auto px-6">
+
+        <!-- Introduction -->
+        <div class="space-y-6 text-midgrey leading-body text-[1.05rem]">
+          <p>
+            The most expensive surprises in commercial fit-out don't come from the floor plan. They come from above the ceiling.
+          </p>
+          <p>
+            Undocumented ductwork running exactly where a partition needs to go. A drainage stack that isn't on any drawing. Electrical conduit that nobody knew existed until a contractor's core drill hit it. Sprinkler mains that weren't accounted for in the new ceiling height calculations.
+          </p>
+          <p>
+            These aren't unusual. On most commercial properties &mdash; particularly those that have been occupied, modified, and re-occupied over multiple tenancies &mdash; what's above the ceiling tile bears little resemblance to what the drawings say. And in many cases, there are no drawings at all.
+          </p>
+          <p>
+            Finding out what's actually there is not a complicated process. But it requires the right approach, the right tools, and someone who knows what they're looking at.
+          </p>
+        </div>
+
+        <!-- Why Above-Ceiling Conditions Are Undocumented -->
+        <h2 class="text-[1.6rem] font-light text-navy mt-16 mb-6">Why Above-Ceiling Conditions Are So Often Undocumented</h2>
+        <div class="space-y-6 text-midgrey leading-body text-[1.05rem]">
+          <p>
+            Commercial interiors are modified constantly &mdash; fit-outs, refurbishments, partial demises, change of use &mdash; and the mechanical, electrical, and plumbing services above the ceiling are rarely re-drawn after the fact. As-built documentation, when it exists at all, typically reflects what was installed originally. Not what was added, rerouted, or abandoned during subsequent occupancies.
+          </p>
+          <p>
+            For QSR operators, healthcare networks, and retail operators taking on existing commercial space, this creates a documentation gap that sits directly in the critical path of the fit-out programme.
+          </p>
+        </div>
+
+        <!-- How We Document -->
+        <h2 class="text-[1.6rem] font-light text-navy mt-16 mb-6">How We Document What's Above the Ceiling</h2>
+        <div class="text-midgrey leading-body text-[1.05rem]">
+          <p>
+            Professional above-ceiling documentation at Alturascope uses a combination of methods, applied based on what access and ceiling type allows:
+          </p>
+        </div>
+
+        <div class="mt-8 space-y-8">
+          <div class="border-l-2 border-gold pl-6">
+            <h3 class="text-navy font-medium">Thermal imaging</h3>
+            <p class="mt-2 text-midgrey text-[1.05rem] leading-relaxed">
+              The first pass. A FLIR thermal camera identifies heat signatures through ceiling tiles and above suspended ceilings &mdash; active HVAC, electrical runs, warm pipework, moisture intrusion. It gives a spatial map of what's likely up there before anything is physically disturbed, and it does so non-invasively.
+            </p>
+          </div>
+
+          <div class="border-l-2 border-gold pl-6">
+            <h3 class="text-navy font-medium">360&deg; capture on telescoping poles</h3>
+            <p class="mt-2 text-midgrey text-[1.05rem] leading-relaxed">
+              Allows a camera to be raised above ceiling tiles at access points &mdash; without requiring a full ceiling strip &mdash; to visually document the plenum space and capture navigable imagery that the design team can explore. This goes directly into the digital twin.
+            </p>
+          </div>
+
+          <div class="border-l-2 border-gold pl-6">
+            <h3 class="text-navy font-medium">Borescope and endoscope inspection</h3>
+            <p class="mt-2 text-midgrey text-[1.05rem] leading-relaxed">
+              Allows targeted visual confirmation through small access points &mdash; light socket apertures, existing tile cut-outs, or minimal access holes &mdash; without opening up large areas of ceiling. Where thermal imaging identifies an anomaly, a borescope confirms it.
+            </p>
+          </div>
+
+          <div class="border-l-2 border-gold pl-6">
+            <h3 class="text-navy font-medium">Narrated conditions commentary</h3>
+            <p class="mt-2 text-midgrey text-[1.05rem] leading-relaxed">
+              Accompanies every above-ceiling capture &mdash; spoken assessment of what's found, what the implications are for the fit-out scope, and what requires further investigation or specialist input.
+            </p>
+          </div>
+        </div>
+
+        <p class="mt-8 text-midgrey leading-body text-[1.05rem]">
+          The result is a documented record of what's actually in the plenum space, cross-referenced against drawings where they exist, delivered before a design decision is made.
+        </p>
+
+        <!-- What This Prevents -->
+        <h2 class="text-[1.6rem] font-light text-navy mt-16 mb-6">What This Prevents</h2>
+        <div class="space-y-6 text-midgrey leading-body text-[1.05rem]">
+          <p>
+            The value of above-ceiling documentation is most clearly understood in its absence. Here's what happens without it:
+          </p>
+        </div>
+
+        <div class="mt-8 space-y-6">
+          <div class="bg-offwhite rounded p-8">
+            <p class="text-midgrey leading-body text-[1.05rem]">
+              A partition layout is designed based on drawings. Contractor mobilises. First fix begins. Trades discover a main HVAC duct running through the proposed partition zone &mdash; undocumented, non-moveable without significant mechanical work. The partition layout is redesigned. Procurement is revised. Programme slips two weeks. A change order lands.
+            </p>
+          </div>
+
+          <div class="bg-offwhite rounded p-8">
+            <p class="text-midgrey leading-body text-[1.05rem]">
+              A new ceiling height is specified to meet the client's brief. On site, trades discover a drainage stack that limits the ceiling height in a 6-metre section of the main dining area by 200mm. The design is revised. The ceiling feature detail no longer works. The client is unhappy.
+            </p>
+          </div>
+        </div>
+
+        <p class="mt-8 text-midgrey leading-body text-[1.05rem]">
+          Both scenarios are common. Both are entirely avoidable with a half-day above-ceiling survey before design begins.
+        </p>
+
+        <!-- Who Needs This -->
+        <h2 class="text-[1.6rem] font-light text-navy mt-16 mb-6">Who Needs This</h2>
+        <div class="text-midgrey leading-body text-[1.05rem]">
+          <p>Above-ceiling MEP documentation is particularly valuable for:</p>
+        </div>
+
+        <div class="space-y-4 mt-8 pl-6 border-l-2 border-gold text-midgrey leading-body text-[1.05rem]">
+          <p><span class="text-navy font-medium">Commercial fit-out and refurbishment</span> &mdash; any project where the existing above-ceiling condition is unknown or undocumented</p>
+          <p><span class="text-navy font-medium">QSR and food service operators</span> &mdash; where HVAC, extraction, drainage, and grease trap routing all interact in a constrained plenum space</p>
+          <p><span class="text-navy font-medium">Healthcare facilities</span> &mdash; where medical gas, electrical isolation, and infection control requirements make undocumented services a compliance and programme risk</p>
+          <p><span class="text-navy font-medium">Landlords and asset managers</span> &mdash; documenting actual services condition at lease expiry or ahead of re-letting</p>
+          <p><span class="text-navy font-medium">Developers and property acquirers</span> &mdash; understanding the true services condition of a building before committing to a capex programme</p>
+        </div>
+
+        <!-- FAQ -->
+        <h2 class="text-[1.6rem] font-light text-navy mt-16 mb-8">Frequently Asked Questions</h2>
+
+        <div class="space-y-8">
+          <div>
+            <h3 class="text-navy font-medium text-[1.05rem]">Do you need to open up the ceiling to do this survey?</h3>
+            <p class="mt-3 text-midgrey leading-body text-[1.05rem]">
+              In most cases, no. We work through existing access points &mdash; ceiling tile removals, light apertures, or minimal targeted access holes &mdash; using thermal imaging and pole-mounted 360&deg; capture to document the plenum without stripping large ceiling areas. In some situations, targeted physical access is necessary to confirm specific conditions, but this is always discussed and agreed in advance.
+            </p>
+          </div>
+
+          <div>
+            <h3 class="text-navy font-medium text-[1.05rem]">What format are the deliverables in?</h3>
+            <p class="mt-3 text-midgrey leading-body text-[1.05rem]">
+              Above-ceiling survey findings are integrated into the full Alturascope documentation package &mdash; the navigable digital twin includes above-ceiling imagery where captured, the conditions report includes prioritised findings from the plenum, and the narrated walkthrough covers what was found and what it means for the project scope.
+            </p>
+          </div>
+
+          <div>
+            <h3 class="text-navy font-medium text-[1.05rem]">Can this be done as a standalone service or does it need to be part of a full survey?</h3>
+            <p class="mt-3 text-midgrey leading-body text-[1.05rem]">
+              It can be scoped either way. Above-ceiling documentation is most effective as part of a complete site survey &mdash; findings are more useful when cross-referenced against the wider spatial model &mdash; but we can scope a targeted above-ceiling inspection for projects where a full survey has already been completed.
+            </p>
+          </div>
+        </div>
+
+        <!-- Bottom Line -->
+        <div class="mt-16 pt-16 border-t border-border">
+          <h2 class="text-[1.6rem] font-light text-navy mb-6">The Bottom Line</h2>
+          <div class="space-y-6 text-midgrey leading-body text-[1.05rem]">
+            <p>
+              What's above the ceiling is often the least-documented and most consequential part of any commercial fit-out scope. Documenting it properly before design begins is not an optional extra &mdash; it's the difference between a programme that runs to plan and one that doesn't.
+            </p>
+            <p>
+              Want to know what's actually up there before your fit-out begins? <a href="/contact" class="text-navy font-medium hover:opacity-80 transition-opacity">Talk to Alturascope.</a> We'll respond within one business day with a scope and all-in quote.
+            </p>
+          </div>
+        </div>
+
+        <!-- Footer note -->
+        <p class="mt-12 text-[0.85rem] text-midgrey/60 italic">
+          Alturascope delivers professional above-ceiling MEP surveys and structured site documentation across all 50 US states, every Canadian province, and the United Kingdom.
+        </p>
+
+        <!-- Internal Links -->
+        <div class="mt-12 pt-8 border-t border-border flex flex-wrap gap-6 text-sm">
+          <a href="/" class="text-navy font-medium hover:opacity-80 transition-opacity">Home &rarr;</a>
+          <a href="/work" class="text-navy font-medium hover:opacity-80 transition-opacity">The Standard &rarr;</a>
+          <a href="/services/construction-documentation" class="text-navy font-medium hover:opacity-80 transition-opacity">Construction documentation &rarr;</a>
+          <a href="/services/commercial-kitchen-survey" class="text-navy font-medium hover:opacity-80 transition-opacity">Commercial kitchen surveys &rarr;</a>
+          <a href="/insights/what-is-a-matterport-digital-twin" class="text-navy font-medium hover:opacity-80 transition-opacity">What is a Matterport digital twin? &rarr;</a>
+          <a href="/insights/why-poor-site-documentation-costs-construction-projects" class="text-navy font-medium hover:opacity-80 transition-opacity">Why poor site documentation costs more &rarr;</a>
+          <a href="/insights/standardising-site-surveys-multi-site-operators" class="text-navy font-medium hover:opacity-80 transition-opacity">Standardising multi-site surveys &rarr;</a>
+          <a href="/insights" class="text-navy font-medium hover:opacity-80 transition-opacity">All insights &rarr;</a>
+        </div>
+
+      </div>
+    </article>
+
+    <!-- CTA -->
+    <section class="bg-navy py-20">
+      <div class="max-w-[600px] mx-auto px-6 text-center">
+        <h2 class="text-[1.8rem] font-light text-offwhite leading-snug">
+          Need to know what's above the ceiling?
+        </h2>
+        <p class="mt-4 text-offwhite/70 leading-body">
+          Share the location, the approximate size, and what you're planning. We'll confirm scope and send an all-in quote within one business day.
+        </p>
+        <a href="/contact" class="btn-primary mt-8">Start a Project</a>
+      </div>
+    </section>
+
+  </div>
+</Layout>
