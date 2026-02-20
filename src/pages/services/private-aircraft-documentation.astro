@@ -1,0 +1,445 @@
+---
+import Layout from "../../layouts/Layout.astro";
+
+const schema = JSON.stringify({
+  "@context": "https://schema.org",
+  "@type": "ProfessionalService",
+  "name": "Alturascope",
+  "description": "Structured 3D documentation, thermal imaging, and condition records for private aircraft. Pre-purchase surveys, maintenance records, and asset documentation for owners and buyers.",
+  "url": "https://alturascope.com",
+  "areaServed": ["United States", "Canada", "United Kingdom"],
+  "serviceType": "Private Aircraft Documentation"
+});
+
+const breadcrumbSchema = JSON.stringify({
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://alturascope.com" },
+    { "@type": "ListItem", "position": 2, "name": "Services", "item": "https://alturascope.com/services" },
+    { "@type": "ListItem", "position": 3, "name": "Private Aircraft Documentation", "item": "https://alturascope.com/services/private-aircraft-documentation" }
+  ]
+});
+
+const faqSchema = JSON.stringify({
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Does aircraft documentation replace a pre-purchase inspection by an A&P mechanic?",
+      "acceptedAnswer": { "@type": "Answer", "text": "No — and it's not intended to. A pre-purchase inspection by a qualified A&P mechanic or IA is an airworthiness and maintenance assessment that documentation cannot replace. What Alturascope provides is the structured physical condition record that supports that inspection: systematic photography, thermal imaging, and a 3D interior model. The two processes are complementary. The documentation gives the mechanic a reference record and gives the buyer a permanent, organised package they can share with insurers, attorneys, and lenders. It makes the inspection process more rigorous, not redundant." }
+    },
+    {
+      "@type": "Question",
+      "name": "What types of aircraft do you document?",
+      "acceptedAnswer": { "@type": "Answer", "text": "We document any private aircraft where access can be arranged: piston singles and twins, turboprops, light jets, mid-size and large-cabin business jets, and turbine helicopters. We work with the FBO, hangar operator, or owner to coordinate access and ensure the documentation visit is scheduled appropriately around the inspection process. Aircraft type affects visit duration and scope — we confirm both when scoping the project." }
+    },
+    {
+      "@type": "Question",
+      "name": "How does thermal imaging work on an aircraft and what does it find?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Thermal imaging captures heat signatures across surfaces and components, revealing anomalies that a visual inspection may not detect. In an aircraft context this includes heat anomalies in avionics bays, electrical panels, wiring runs, and engine compartment areas — potential indicators of developing electrical or mechanical issues. We document what the thermal camera records systematically and cross-reference it to location. Your A&P mechanic reviews the thermal record alongside the visual documentation and interprets the findings in the context of the airworthiness assessment." }
+    },
+    {
+      "@type": "Question",
+      "name": "Can you coordinate with the pre-purchase inspection mechanic directly?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Yes, and we encourage it. The most effective visits happen when the documentation sequence is coordinated with the inspection sequence — so that areas the mechanic wants closely photographed are captured at the right time, and thermal imaging is conducted while systems have been run to operating temperature. We're happy to liaise directly with the inspecting A&P mechanic prior to the visit to align on sequence and coverage." }
+    },
+    {
+      "@type": "Question",
+      "name": "How long does a documentation visit take?",
+      "acceptedAnswer": { "@type": "Answer", "text": "For a light piston or turboprop aircraft, typically a full day. For a light jet, a full day to a day and a half. For mid-size and large-cabin jets with complex interiors, we scope the visit in advance based on aircraft type and specific requirements. We can run the documentation visit in parallel with the pre-purchase inspection rather than sequentially — which typically adds minimal time to the overall inspection process." }
+    },
+    {
+      "@type": "Question",
+      "name": "Where do you operate?",
+      "acceptedAnswer": { "@type": "Answer", "text": "We operate across all fifty US states under a national travel model — travel costs are included in project pricing, not added as a line item. Aircraft documentation visits are typically conducted at the aircraft's home hangar, an MRO facility, or an FBO where the pre-purchase inspection is being conducted. We coordinate access logistics as part of the project." }
+    },
+    {
+      "@type": "Question",
+      "name": "What does the ScopeWalk portal include and who can access it?",
+      "acceptedAnswer": { "@type": "Answer", "text": "ScopeWalk is Alturascope's proprietary delivery and access platform. Your portal for a given aircraft is populated with the complete documentation package: navigable interior model, thermal imaging record, exterior photo survey, conditions summary, and labeled photo storyboard — all structured, labeled, and permanently accessible. You control who has access. Typical recipients include the buyer, the inspecting mechanic, the insurance broker, the aircraft attorney, and the lender. Access doesn't expire after the transaction closes — the portal becomes the baseline condition record for the asset going forward." }
+    }
+  ]
+});
+---
+<Layout
+  title="Private Aircraft Documentation & Pre-Purchase Survey | Alturascope"
+  description="Structured 3D documentation, thermal imaging, and condition records for private aircraft. Pre-purchase surveys, maintenance records, and asset documentation for owners and buyers."
+  canonical="https://alturascope.com/services/private-aircraft-documentation"
+  schema={schema}
+  breadcrumbSchema={breadcrumbSchema}
+  faqSchema={faqSchema}
+  fullWidth={true}
+>
+  <div data-hero-page>
+
+    <!-- SECTION 1: Hero -->
+    <section class="relative h-[60vh] min-h-[400px] flex items-center justify-center">
+      <!-- REPLACE: Hero background — dramatic hangar interior or private jet interior. Low light, atmospheric, no people. Significant aircraft visible. -->
+      <div class="absolute inset-0 bg-navy">
+        <img
+          src="https://images.unsplash.com/photo-1540962351504-03099e0a754b?w=1920&q=80"
+          alt="Dramatic hangar interior with private aircraft in atmospheric low light"
+          class="w-full h-full object-cover opacity-30"
+        />
+        <div class="absolute inset-0 bg-[rgba(11,31,58,0.78)]"></div>
+      </div>
+      <div class="relative z-10 text-center px-6 max-w-[760px] mx-auto">
+        <p class="label text-gold mb-6">PRIVATE AIRCRAFT DOCUMENTATION</p>
+        <h1 class="text-[2.2rem] md:text-[3rem] font-light text-offwhite leading-tight">
+          Private aircraft documentation.
+        </h1>
+        <p class="mt-6 text-offwhite/75 text-[1.1rem] leading-relaxed max-w-[620px] mx-auto">
+          Structured condition documentation, thermal imaging, and permanent asset records for private aircraft owners, buyers, and their maintenance teams.
+        </p>
+      </div>
+    </section>
+
+    <!-- SECTION 2: Opening -->
+    <section class="bg-white section-padding">
+      <div class="max-w-[800px] mx-auto px-6">
+        <p class="label text-gold mb-4">THE SERVICE</p>
+        <h2 class="text-[2rem] font-light text-navy leading-snug">
+          Pre-purchase inspection documentation for high-value aircraft.
+        </h2>
+        <div class="mt-8 space-y-6 text-midgrey leading-body">
+          <p>
+            A private aircraft pre-purchase inspection is one of the most significant due diligence exercises a buyer undertakes &mdash; and yet the physical documentation that supports it has remained surprisingly low-tech. An A&amp;P mechanic's written notes and a handful of phone photographs are the standard. For an asset worth anywhere from $500,000 to several million dollars, that standard isn't good enough.
+          </p>
+          <p>
+            Alturascope provides structured documentation that supports the pre-purchase inspection process: a systematic photographic and thermal record of the aircraft's condition, a navigable 3D model of the interior, and a complete organised package that the buyer, their mechanic, and their insurance broker can all work from. We document &mdash; your A&amp;P mechanic inspects and interprets. The two processes are complementary, and the combination produces a record that neither approach achieves alone.
+          </p>
+          <p>
+            Beyond pre-purchase, aircraft documentation serves owners maintaining long-term condition records, brokers preparing aircraft for listing, and management companies maintaining accurate asset documentation across a fleet.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 3: What We Document -->
+    <section class="bg-offwhite section-padding">
+      <div class="max-w-[1200px] mx-auto px-6">
+        <div class="text-center max-w-[700px] mx-auto mb-16">
+          <p class="label text-gold mb-4">WHAT WE DOCUMENT</p>
+          <h2 class="text-[2rem] font-light text-navy leading-snug">
+            A systematic record of the aircraft as found.
+          </h2>
+          <p class="mt-6 text-midgrey leading-body max-w-[660px] mx-auto">
+            Every documentation visit follows a disciplined capture sequence covering the aircraft from nose to tail. The sequence is aligned with the pre-purchase inspection process &mdash; so that what we produce maps directly onto what the A&amp;P mechanic is evaluating.
+          </p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+          <div class="bg-white border border-border rounded p-8 border-t-[3px] border-t-gold">
+            <p class="text-[0.85rem] font-medium uppercase tracking-[0.08em] text-navy mb-4">INTERIOR DOCUMENTATION</p>
+            <p class="text-midgrey text-[0.9rem] leading-relaxed">
+              Complete 3D documentation of the cabin, cockpit, and all accessible interior spaces. Every surface, every fitting, every piece of installed equipment &mdash; navigable by the buyer and their team from anywhere. Seat condition, panel condition, avionics installation, galley and lavatory where fitted. The navigable model allows detailed review before, during, and after the physical inspection.
+            </p>
+          </div>
+
+          <div class="bg-white border border-border rounded p-8 border-t-[3px] border-t-gold">
+            <p class="text-[0.85rem] font-medium uppercase tracking-[0.08em] text-navy mb-4">EXTERIOR &amp; STRUCTURAL SURFACES</p>
+            <p class="text-midgrey text-[0.9rem] leading-relaxed">
+              Systematic high-resolution photography of the complete exterior: fuselage, control surfaces, engine nacelles, landing gear and bays, wing surfaces, antenna installations, and any visible repairs or modifications. Documented in a consistent sequence so that findings are traceable and comparable.
+            </p>
+          </div>
+
+          <div class="bg-white border border-border rounded p-8 border-t-[3px] border-t-gold">
+            <p class="text-[0.85rem] font-medium uppercase tracking-[0.08em] text-navy mb-4">THERMAL IMAGING</p>
+            <p class="text-midgrey text-[0.9rem] leading-relaxed">
+              Thermal imaging of avionics bays, engine compartments, electrical panels, and control surface areas identifies heat anomalies that a visual inspection may not detect &mdash; anomalous hot spots in wiring, avionics, and mechanical components that carry maintenance implications. We document what the thermal camera sees. Your A&amp;P mechanic interprets what it means.
+            </p>
+          </div>
+
+          <div class="bg-white border border-border rounded p-8 border-t-[3px] border-t-gold">
+            <p class="text-[0.85rem] font-medium uppercase tracking-[0.08em] text-navy mb-4">ENGINE &amp; MECHANICAL ACCESS AREAS</p>
+            <p class="text-midgrey text-[0.9rem] leading-relaxed">
+              Detailed photographic documentation of engine bays, accessible mechanical areas, and any areas identified by the inspecting mechanic as warranting close photographic record. All documentation labeled by location and integrated into the structured deliverable.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 4: What You Receive -->
+    <section class="bg-white section-padding">
+      <div class="max-w-[800px] mx-auto px-6">
+        <p class="label text-gold mb-4">WHAT YOU RECEIVE</p>
+        <h2 class="text-[2rem] font-light text-navy leading-snug">
+          A complete, permanent asset record.
+        </h2>
+        <p class="mt-6 text-midgrey leading-body">
+          Within three business days of the documentation visit, your ScopeWalk portal is populated with the full package. Unlike a PDF report emailed once and then lost in an inbox, ScopeWalk gives everyone with legitimate access &mdash; buyer, mechanic, insurer, broker &mdash; a permanent, structured record they can return to at any point.
+        </p>
+
+        <div class="mt-12 space-y-7">
+          <div class="border-l-2 border-gold pl-6">
+            <h3 class="text-navy font-medium">Navigable 3D Interior Model</h3>
+            <p class="mt-2 text-midgrey text-[0.9rem] leading-relaxed">
+              Complete spatial documentation of the cabin and cockpit, navigable on any device. Your buyer can walk through the aircraft remotely before the inspection visit, and return to any detail afterwards.
+            </p>
+          </div>
+
+          <div class="border-l-2 border-gold pl-6">
+            <h3 class="text-navy font-medium">Thermal Imaging Record</h3>
+            <p class="mt-2 text-midgrey text-[0.9rem] leading-relaxed">
+              A complete thermal survey of all accessible avionics, electrical, and mechanical areas &mdash; documented systematically and cross-referenced to location. Provided to your A&amp;P mechanic alongside the visual record.
+            </p>
+          </div>
+
+          <div class="border-l-2 border-gold pl-6">
+            <h3 class="text-navy font-medium">Exterior Photographic Survey</h3>
+            <p class="mt-2 text-midgrey text-[0.9rem] leading-relaxed">
+              Systematic high-resolution photography of the complete exterior in consistent sequence, labeled by zone. Every surface documented. Findings from the inspection traceable directly to the photographic record.
+            </p>
+          </div>
+
+          <div class="border-l-2 border-gold pl-6">
+            <h3 class="text-navy font-medium">Conditions Summary</h3>
+            <p class="mt-2 text-midgrey text-[0.9rem] leading-relaxed">
+              A structured written summary of documented conditions by area &mdash; not a maintenance assessment, which is your mechanic's role, but a clear record of visual and thermal findings organised for easy reference.
+            </p>
+          </div>
+
+          <div class="border-l-2 border-gold pl-6">
+            <h3 class="text-navy font-medium">Labeled Photo Storyboard</h3>
+            <p class="mt-2 text-midgrey text-[0.9rem] leading-relaxed">
+              Every area of the aircraft documented with consistent labeling, accessible and searchable through ScopeWalk. Referenced from the conditions summary so findings are always traceable to their source.
+            </p>
+          </div>
+
+          <div class="border-l-2 border-gold pl-6">
+            <h3 class="text-navy font-medium">ScopeWalk Platform Access</h3>
+            <p class="mt-2 text-midgrey text-[0.9rem] leading-relaxed">
+              All deliverables structured and permanently accessible through your ScopeWalk portal. Shareable with your mechanic, your insurer, and your broker. Accessible indefinitely &mdash; not a link that expires.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 5: Who This Is For -->
+    <section class="bg-offwhite section-padding">
+      <div class="max-w-[1200px] mx-auto px-6">
+        <div class="text-center mb-16">
+          <p class="label text-gold mb-4">WHO THIS IS FOR</p>
+          <h2 class="text-[2rem] font-light text-navy leading-snug">
+            Buyers, owners, and the professionals who advise them.
+          </h2>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10">
+          <div>
+            <h3 class="text-navy font-medium mb-3">Aircraft Buyers</h3>
+            <p class="text-midgrey text-[0.9rem] leading-relaxed">
+              Commissioning documentation as part of a pre-purchase inspection gives you a structured, independent record of the aircraft's condition &mdash; not dependent on the seller's disclosure. For an asset at this price point, it is straightforward due diligence.
+            </p>
+          </div>
+
+          <div>
+            <h3 class="text-navy font-medium mb-3">Aircraft Owners</h3>
+            <p class="text-midgrey text-[0.9rem] leading-relaxed">
+              Periodic documentation visits establish a timestamped condition baseline for your aircraft &mdash; useful for insurance purposes, for tracking changes over time, and for supporting a future sale with a credible pre-existing condition record.
+            </p>
+          </div>
+
+          <div>
+            <h3 class="text-navy font-medium mb-3">Aircraft Brokers</h3>
+            <p class="text-midgrey text-[0.9rem] leading-relaxed">
+              Pre-listing documentation packages differentiate your listing and reduce buyer friction. A structured 3D interior model and thermal record tells a serious buyer that the aircraft has been presented transparently &mdash; which shortens the sales process.
+            </p>
+          </div>
+
+          <div>
+            <h3 class="text-navy font-medium mb-3">Aviation Attorneys &amp; Lenders</h3>
+            <p class="text-midgrey text-[0.9rem] leading-relaxed">
+              Transaction documentation, title searches, and pre-closing condition verification for financed acquisitions or contested ownership situations. A structured independent condition record with timestamps and systematic coverage.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 6: How It Works -->
+    <section class="bg-white section-padding">
+      <div class="max-w-[800px] mx-auto px-6">
+        <h2 class="text-[2rem] font-light text-navy mb-12">
+          The process.
+        </h2>
+
+        <div class="space-y-10">
+          <div class="flex gap-6">
+            <p class="text-gold text-[2rem] font-light shrink-0 w-12">01</p>
+            <div>
+              <h3 class="text-navy font-medium mb-2">Brief and coordinate</h3>
+              <p class="text-midgrey text-[0.9rem] leading-relaxed">
+                We align on the scope &mdash; aircraft type, inspection context, specific areas of concern &mdash; and coordinate access with the FBO, hangar operator, or owner. We work around the inspection schedule, not against it. Documentation and inspection can run in parallel.
+              </p>
+            </div>
+          </div>
+
+          <div class="flex gap-6">
+            <p class="text-gold text-[2rem] font-light shrink-0 w-12">02</p>
+            <div>
+              <h3 class="text-navy font-medium mb-2">Systematic capture</h3>
+              <p class="text-midgrey text-[0.9rem] leading-relaxed">
+                On site we follow a nose-to-tail documentation sequence: interior, exterior, thermal, mechanical access areas. Typically a full-day visit for a light to mid-size aircraft. Complex or large-cabin aircraft are scoped accordingly.
+              </p>
+            </div>
+          </div>
+
+          <div class="flex gap-6">
+            <p class="text-gold text-[2rem] font-light shrink-0 w-12">03</p>
+            <div>
+              <h3 class="text-navy font-medium mb-2">Structure and deliver</h3>
+              <p class="text-midgrey text-[0.9rem] leading-relaxed">
+                All documentation is structured, labeled, and populated into your ScopeWalk portal within three business days. Your mechanic, broker, insurer, and buyer all access from the same place.
+              </p>
+            </div>
+          </div>
+
+          <div class="flex gap-6">
+            <p class="text-gold text-[2rem] font-light shrink-0 w-12">04</p>
+            <div>
+              <h3 class="text-navy font-medium mb-2">Permanent record</h3>
+              <p class="text-midgrey text-[0.9rem] leading-relaxed">
+                ScopeWalk access is permanent. The documentation doesn't disappear after the transaction closes &mdash; it becomes the baseline condition record for the asset going forward.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 7: Matterport Embed -->
+    <section class="bg-navy py-20">
+      <div class="max-w-[1100px] mx-auto px-6">
+        <div class="text-center mb-10">
+          <p class="label text-gold mb-4">THE INTERIOR MODEL</p>
+          <h2 class="text-[1.8rem] font-light text-offwhite max-w-[600px] mx-auto leading-snug">
+            Navigate the aircraft before the inspection visit.
+          </h2>
+          <p class="mt-4 text-offwhite/70 max-w-[560px] mx-auto leading-body">
+            The navigable interior model allows your buyer to walk through the aircraft remotely &mdash; reviewing the cabin, the cockpit, every fitted detail &mdash; before they travel for the physical inspection. This is the accessible exploration layer. The thermal imaging, the exterior survey, and the conditions summary are what the documentation visit actually produces.
+          </p>
+        </div>
+
+        <!-- REPLACE: Embed a proprietary Alturascope aircraft interior scan here when one is available. In the interim, use a suitable interior Matterport showcase scan. -->
+        <div class="max-w-[1100px] mx-auto">
+          <iframe
+            loading="lazy"
+            src="https://my.matterport.com/show/?m=SxQL3iGyoDo"
+            width="100%"
+            style="aspect-ratio: 16/9; border: none;"
+            allowfullscreen
+            allow="xr-spatial-tracking"
+            title="Navigable 3D interior model demonstration">
+          </iframe>
+        </div>
+
+        <p class="text-gold text-[0.85rem] text-center mt-4">
+          Navigate using mouse or touch. Every surface. Every fitting. Every detail.
+        </p>
+      </div>
+    </section>
+
+    <!-- SECTION 8: FAQ -->
+    <section class="bg-offwhite section-padding">
+      <div class="max-w-[800px] mx-auto px-6">
+        <p class="label text-gold mb-4">FREQUENTLY ASKED QUESTIONS</p>
+        <h2 class="text-[2rem] font-light text-navy mb-12">Common questions.</h2>
+
+        <div class="space-y-8">
+          <details class="group border-b border-border pb-6">
+            <summary class="cursor-pointer text-navy font-medium text-lg flex items-center justify-between">
+              Does aircraft documentation replace a pre-purchase inspection by an A&amp;P mechanic?
+              <span class="text-gold text-xl transition-transform group-open:rotate-45">+</span>
+            </summary>
+            <p class="mt-4 text-midgrey leading-body">
+              No &mdash; and it's not intended to. A pre-purchase inspection by a qualified A&amp;P mechanic or IA is an airworthiness and maintenance assessment that documentation cannot replace. What Alturascope provides is the structured physical condition record that supports that inspection: systematic photography, thermal imaging, and a 3D interior model. The two processes are complementary. The documentation gives the mechanic a reference record and gives the buyer a permanent, organised package they can share with insurers, attorneys, and lenders. It makes the inspection process more rigorous, not redundant.
+            </p>
+          </details>
+
+          <details class="group border-b border-border pb-6">
+            <summary class="cursor-pointer text-navy font-medium text-lg flex items-center justify-between">
+              What types of aircraft do you document?
+              <span class="text-gold text-xl transition-transform group-open:rotate-45">+</span>
+            </summary>
+            <p class="mt-4 text-midgrey leading-body">
+              We document any private aircraft where access can be arranged: piston singles and twins, turboprops, light jets, mid-size and large-cabin business jets, and turbine helicopters. We work with the FBO, hangar operator, or owner to coordinate access and ensure the documentation visit is scheduled appropriately around the inspection process. Aircraft type affects visit duration and scope &mdash; we confirm both when scoping the project.
+            </p>
+          </details>
+
+          <details class="group border-b border-border pb-6">
+            <summary class="cursor-pointer text-navy font-medium text-lg flex items-center justify-between">
+              How does thermal imaging work on an aircraft and what does it find?
+              <span class="text-gold text-xl transition-transform group-open:rotate-45">+</span>
+            </summary>
+            <p class="mt-4 text-midgrey leading-body">
+              Thermal imaging captures heat signatures across surfaces and components, revealing anomalies that a visual inspection may not detect. In an aircraft context this includes heat anomalies in avionics bays, electrical panels, wiring runs, and engine compartment areas &mdash; potential indicators of developing electrical or mechanical issues. We document what the thermal camera records systematically and cross-reference it to location. Your A&amp;P mechanic reviews the thermal record alongside the visual documentation and interprets the findings in the context of the airworthiness assessment.
+            </p>
+          </details>
+
+          <details class="group border-b border-border pb-6">
+            <summary class="cursor-pointer text-navy font-medium text-lg flex items-center justify-between">
+              Can you coordinate with the pre-purchase inspection mechanic directly?
+              <span class="text-gold text-xl transition-transform group-open:rotate-45">+</span>
+            </summary>
+            <p class="mt-4 text-midgrey leading-body">
+              Yes, and we encourage it. The most effective visits happen when the documentation sequence is coordinated with the inspection sequence &mdash; so that areas the mechanic wants closely photographed are captured at the right time, and thermal imaging is conducted while systems have been run to operating temperature. We're happy to liaise directly with the inspecting A&amp;P mechanic prior to the visit to align on sequence and coverage.
+            </p>
+          </details>
+
+          <details class="group border-b border-border pb-6">
+            <summary class="cursor-pointer text-navy font-medium text-lg flex items-center justify-between">
+              How long does a documentation visit take?
+              <span class="text-gold text-xl transition-transform group-open:rotate-45">+</span>
+            </summary>
+            <p class="mt-4 text-midgrey leading-body">
+              For a light piston or turboprop aircraft, typically a full day. For a light jet, a full day to a day and a half. For mid-size and large-cabin jets with complex interiors, we scope the visit in advance based on aircraft type and specific requirements. We can run the documentation visit in parallel with the pre-purchase inspection rather than sequentially &mdash; which typically adds minimal time to the overall inspection process.
+            </p>
+          </details>
+
+          <details class="group border-b border-border pb-6">
+            <summary class="cursor-pointer text-navy font-medium text-lg flex items-center justify-between">
+              Where do you operate?
+              <span class="text-gold text-xl transition-transform group-open:rotate-45">+</span>
+            </summary>
+            <p class="mt-4 text-midgrey leading-body">
+              We operate across all fifty US states under a national travel model &mdash; travel costs are included in project pricing, not added as a line item. Aircraft documentation visits are typically conducted at the aircraft's home hangar, an MRO facility, or an FBO where the pre-purchase inspection is being conducted. We coordinate access logistics as part of the project.
+            </p>
+          </details>
+
+          <details class="group border-b border-border pb-6">
+            <summary class="cursor-pointer text-navy font-medium text-lg flex items-center justify-between">
+              What does the ScopeWalk portal include and who can access it?
+              <span class="text-gold text-xl transition-transform group-open:rotate-45">+</span>
+            </summary>
+            <p class="mt-4 text-midgrey leading-body">
+              ScopeWalk is Alturascope's proprietary delivery and access platform. Your portal for a given aircraft is populated with the complete documentation package: navigable interior model, thermal imaging record, exterior photo survey, conditions summary, and labeled photo storyboard &mdash; all structured, labeled, and permanently accessible. You control who has access. Typical recipients include the buyer, the inspecting mechanic, the insurance broker, the aircraft attorney, and the lender. Access doesn't expire after the transaction closes &mdash; the portal becomes the baseline condition record for the asset going forward.
+            </p>
+          </details>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 9: Closing CTA -->
+    <section class="bg-navy section-padding">
+      <div class="max-w-[600px] mx-auto px-6 text-center">
+        <h2 class="text-[2rem] font-light text-offwhite leading-snug">
+          Tell us about the aircraft.
+        </h2>
+        <p class="mt-6 text-offwhite/70 leading-body max-w-[560px] mx-auto">
+          Share the aircraft type, location, and the context &mdash; pre-purchase, periodic documentation, or pre-listing. We'll confirm scope and send a clear all-in quote. Travel included.
+        </p>
+        <a href="/contact" class="btn-primary mt-8">Start a Project</a>
+        <div class="mt-8 flex flex-wrap justify-center gap-6 text-sm">
+          <a href="/services/specialist-projects" class="text-offwhite/70 hover:text-white transition-colors">Specialist and private project work &rarr;</a>
+          <a href="/services/aviation-facility-survey" class="text-offwhite/70 hover:text-white transition-colors">Aviation facility documentation &rarr;</a>
+        </div>
+      </div>
+    </section>
+
+  </div>
+</Layout>
