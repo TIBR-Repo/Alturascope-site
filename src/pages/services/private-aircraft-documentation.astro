@@ -16,8 +16,8 @@ const breadcrumbSchema = JSON.stringify({
   "@type": "BreadcrumbList",
   "itemListElement": [
     { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://alturascope.com" },
-    { "@type": "ListItem", "position": 2, "name": "Services", "item": "https://alturascope.com/services" },
-    { "@type": "ListItem", "position": 3, "name": "Private Aircraft Documentation", "item": "https://alturascope.com/services/private-aircraft-documentation" }
+    { "@type": "ListItem", "position": 2, "name": "Services", "item": "https://alturascope.com/services/" },
+    { "@type": "ListItem", "position": 3, "name": "Private Aircraft Documentation", "item": "https://alturascope.com/services/private-aircraft-documentation/" }
   ]
 });
 
@@ -66,7 +66,7 @@ const faqSchema = JSON.stringify({
 <Layout
   title="Private Aircraft Documentation & Pre-Purchase Survey | Alturascope"
   description="Structured 3D documentation, thermal imaging, and condition records for private aircraft. Pre-purchase surveys, maintenance records, and asset documentation for owners and buyers."
-  canonical="https://alturascope.com/services/private-aircraft-documentation"
+  canonical="https://alturascope.com/services/private-aircraft-documentation/"
   schema={schema}
   breadcrumbSchema={breadcrumbSchema}
   faqSchema={faqSchema}

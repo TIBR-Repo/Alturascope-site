@@ -6,5 +6,6 @@ import sitemap from '@astrojs/sitemap';
 
 export default defineConfig({
   site: 'https://alturascope.com',
+  trailingSlash: 'always',
   integrations: [tailwind(), react(), sitemap()],
 });
