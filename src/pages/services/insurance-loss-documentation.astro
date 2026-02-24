@@ -1,0 +1,296 @@
+---
+import Layout from "../../layouts/Layout.astro";
+
+const schema = JSON.stringify({
+  "@context": "https://schema.org",
+  "@type": "ProfessionalService",
+  "name": "AlturaScope — Insurance Loss & Catastrophe Documentation",
+  "description": "Rapid-response reality capture, LiDAR scanning, thermal imaging, and structured damage documentation for insurance claims and catastrophe events across North America and the United Kingdom.",
+  "url": "https://alturascope.com/services/insurance-loss-documentation",
+  "areaServed": ["US", "CA", "GB"],
+  "serviceType": ["Insurance Documentation", "Catastrophe Documentation", "Reality Capture", "LiDAR Scanning", "Thermal Imaging", "Damage Documentation"],
+  "parentOrganization": {
+    "@type": "Organization",
+    "name": "AlturaScope",
+    "url": "https://alturascope.com"
+  }
+});
+
+const breadcrumbSchema = JSON.stringify({
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://alturascope.com" },
+    { "@type": "ListItem", "position": 2, "name": "Services", "item": "https://alturascope.com/services/" },
+    { "@type": "ListItem", "position": 3, "name": "Insurance Loss & Catastrophe Documentation", "item": "https://alturascope.com/services/insurance-loss-documentation" }
+  ]
+});
+
+const faqSchema = JSON.stringify({
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "How quickly can you mobilise after a loss event?",
+      "acceptedAnswer": { "@type": "Answer", "text": "We operate a national travel model across the United States, Canada, and the United Kingdom. In most cases we can be on site within 24 to 48 hours of first contact. For large-scale catastrophe events we can coordinate multi-site deployment." }
+    },
+    {
+      "@type": "Question",
+      "name": "Is this an inspection or a professional loss assessment?",
+      "acceptedAnswer": { "@type": "Answer", "text": "We provide comprehensive documentation — a complete, structured, spatially-referenced record of conditions at the time of capture. We do not provide loss adjustment opinions, engineering assessments, or cause-and-origin determinations. Our documentation is designed to give the professionals making those determinations the best possible evidence base to work from." }
+    },
+    {
+      "@type": "Question",
+      "name": "Can this documentation be used in legal proceedings?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Our deliverables provide a factual, dimensionally accurate, timestamped record of conditions. The data has been used to support claims processes and dispute resolution. We capture what exists — the interpretation and application of that data is for your professional advisors." }
+    },
+    {
+      "@type": "Question",
+      "name": "Do you work with restoration contractors?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Yes. Restoration companies use our documentation for scope development, progress tracking, and invoice substantiation. Pre-remediation and post-remediation capture provides a clear before-and-after record." }
+    },
+    {
+      "@type": "Question",
+      "name": "Can thermal imaging detect moisture behind walls?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Thermal imaging detects temperature differentials caused by evaporative cooling — a reliable indicator of concealed moisture in walls, ceilings, and floors. It identifies affected areas that are invisible to visual inspection, allowing remediation teams to target their response accurately. The thermal data we capture is georeferenced within the 3D model, so moisture locations are spatially precise rather than described in approximate terms." }
+    }
+  ]
+});
+---
+<Layout
+  title="Insurance Loss & Catastrophe Documentation | Alturascope"
+  description="Rapid-response reality capture for insurance claims, property losses, and catastrophe events. LiDAR scanning, thermal imaging, and structured damage documentation across North America and the UK."
+  canonical="https://alturascope.com/services/insurance-loss-documentation"
+  schema={schema}
+  breadcrumbSchema={breadcrumbSchema}
+  faqSchema={faqSchema}
+  fullWidth={true}
+>
+  <div data-hero-page>
+
+    <!-- Hero -->
+    <section class="relative min-h-[100vh] md:min-h-0 md:h-[60vh] flex items-center justify-center">
+      <div class="absolute inset-0 bg-navy">
+        <img
+          src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=1920&q=80"
+          srcset="
+            https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=800&q=70 800w,
+            https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=1200&q=75 1200w,
+            https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=1920&q=80 1920w
+          "
+          sizes="100vw"
+          alt="Dramatic storm damage aftermath with structural damage to a commercial property"
+          class="w-full h-full object-cover opacity-35"
+          loading="eager"
+          fetchpriority="high"
+        />
+        <div class="absolute inset-0 bg-[rgba(11,31,58,0.72)]"></div>
+      </div>
+      <div class="relative z-10 text-center px-6 pt-28 pb-16 md:pt-0 md:pb-0 max-w-[900px] mx-auto">
+        <p class="label text-gold mb-4">Specialist Sectors &middot; Insurance &amp; Catastrophe</p>
+        <h1 class="text-[1.8rem] md:text-[3.2rem] font-light text-offwhite leading-tight">
+          Insurance Loss &amp; Catastrophe Documentation
+        </h1>
+        <p class="mt-6 text-offwhite/70 leading-body max-w-[720px] mx-auto">
+          Comprehensive damage documentation when accuracy matters and time doesn't wait.
+        </p>
+        <div class="mt-8 flex flex-wrap justify-center gap-4">
+          <a href="/contact" class="btn-primary">Contact Us Now</a>
+          <a href="/services" class="btn-secondary-light">See Our Methodology</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- The Problem -->
+    <section class="bg-white section-padding">
+      <div class="max-w-[900px] mx-auto px-6">
+        <p class="label text-gold mb-4">The Problem</p>
+        <h2 class="text-[2rem] font-light text-navy leading-tight">
+          When the evidence window is closing.
+        </h2>
+        <div class="mt-6 space-y-4 text-midgrey leading-body">
+          <p>
+            After a fire, flood, storm, or structural event, the quality of documentation determines everything: the speed of the claim, the accuracy of the settlement, the defensibility of the outcome. And yet, most loss documentation is still done with a clipboard, a phone camera, and a PDF report written from memory days later.
+          </p>
+          <p>
+            The result is disputed claims, missed damage, contested scopes, and restoration invoices that can't be verified against independent evidence. Adjusters, carriers, policyholders, and restoration contractors all suffer from the same root cause — incomplete, unstructured, spatially disconnected documentation.
+          </p>
+          <p>
+            The first 48 to 72 hours after a loss event are the most critical for evidence capture. Conditions change. Moisture migrates. Temporary repairs obscure original damage. What isn't documented comprehensively and promptly becomes a matter of opinion rather than evidence.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- What We Capture -->
+    <section class="bg-offwhite section-padding">
+      <div class="max-w-[900px] mx-auto px-6">
+        <p class="label text-gold mb-4">The Deliverable</p>
+        <h2 class="text-[2rem] font-light text-navy leading-tight">
+          What we capture.
+        </h2>
+
+        <div class="mt-16">
+          <h3 class="text-[1.35rem] font-medium text-navy">Complete Spatial Record</h3>
+          <div class="mt-4 space-y-4 text-midgrey leading-body">
+            <p>
+              LiDAR point cloud of the affected property — every room, every elevation, every affected area. A permanent, millimetre-accurate, measurable 3D record of conditions as they existed at the time of capture. This isn't a photo gallery. This is a dimensionally accurate environment your adjusters, engineers, and legal teams can revisit as many times as needed.
+            </p>
+          </div>
+        </div>
+
+        <div class="mt-12">
+          <h3 class="text-[1.35rem] font-medium text-navy">Damage Documentation</h3>
+          <div class="mt-4 space-y-4 text-midgrey leading-body">
+            <p>
+              Systematic, room-by-room, system-by-system photographic documentation of all visible damage. Every observation is spatially tagged — pinned to a precise location in the 3D model so there is no ambiguity about where damage was found or how extensive it is.
+            </p>
+          </div>
+        </div>
+
+        <div class="mt-12">
+          <h3 class="text-[1.35rem] font-medium text-navy">Thermal Imaging</h3>
+          <div class="mt-4 space-y-4 text-midgrey leading-body">
+            <p>
+              Calibrated thermal capture to identify moisture migration invisible to the naked eye. Water damage extends far beyond what's visually apparent — thermal imaging reveals evaporative cooling patterns in walls, ceilings, and floors that indicate concealed moisture. All thermal observations are georeferenced within the 3D model, giving remediation teams precise locations rather than vague descriptions.
+            </p>
+          </div>
+        </div>
+
+        <div class="mt-12">
+          <h3 class="text-[1.35rem] font-medium text-navy">Structured Reporting</h3>
+          <div class="mt-4 space-y-4 text-midgrey leading-body">
+            <p>
+              All documentation is delivered through ScopeWalk as a structured, searchable dataset. Damage observations are categorised by building system — structural, envelope, mechanical, electrical, plumbing, interior finishes, contents. Each observation includes location, photographs, thermal data where relevant, and descriptive notes. The format is designed for use by adjusters, engineers, restoration contractors, and legal teams without requiring interpretation of raw scan data.
+            </p>
+          </div>
+        </div>
+
+        <div class="mt-12">
+          <h3 class="text-[1.35rem] font-medium text-navy">Pre-Loss Baseline Comparison</h3>
+          <div class="mt-4 space-y-4 text-midgrey leading-body">
+            <p>
+              Where pre-loss documentation exists — prior surveys, Matterport models, or point clouds — we can provide comparative analysis showing exactly what changed. This eliminates ambiguity about pre-existing conditions versus event damage.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- How It Works -->
+    <section class="bg-white section-padding">
+      <div class="max-w-[1200px] mx-auto px-6">
+        <h2 class="text-[2rem] font-light text-navy text-center mb-16">How it works.</h2>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-10">
+          <div>
+            <p class="text-gold text-[2rem] font-light mb-3">01</p>
+            <h3 class="text-navy font-medium mb-3">Rapid Mobilisation</h3>
+            <p class="text-midgrey text-[0.9rem] leading-relaxed">
+              Contact us and we mobilise. Our national travel model across the US, Canada, and the UK means we can reach most locations within 24 to 48 hours. Loss documentation is time-sensitive and we treat it accordingly.
+            </p>
+          </div>
+          <div>
+            <p class="text-gold text-[2rem] font-light mb-3">02</p>
+            <h3 class="text-navy font-medium mb-3">Comprehensive On-Site Capture</h3>
+            <p class="text-midgrey text-[0.9rem] leading-relaxed">
+              LiDAR scanning, thermal imaging, and systematic photographic documentation of the entire affected area. A single visit captures everything — no return trips, no missed areas, no gaps in the record.
+            </p>
+          </div>
+          <div>
+            <p class="text-gold text-[2rem] font-light mb-3">03</p>
+            <h3 class="text-navy font-medium mb-3">Processing and Delivery</h3>
+            <p class="text-midgrey text-[0.9rem] leading-relaxed">
+              Structured deliverables are typically available within 48 to 72 hours of capture. Your team receives the complete dataset via ScopeWalk — spatially referenced, categorised, and ready for use in claims processing, scope development, or litigation support.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Coverage -->
+    <section class="bg-offwhite section-padding">
+      <div class="max-w-[900px] mx-auto px-6">
+        <p class="text-midgrey leading-body">
+          We operate across all fifty US states, every Canadian province, and the United Kingdom. Travel is included in all project pricing. For UK projects, <a href="/uk" class="text-navy font-medium hover:opacity-80 transition-opacity">visit Alturascope UK</a>.
+        </p>
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="bg-white section-padding">
+      <div class="max-w-[900px] mx-auto px-6">
+        <h2 class="text-[2rem] font-light text-navy mb-12">Common questions about insurance loss documentation.</h2>
+
+        <div class="space-y-8">
+          <details class="group border-b border-border pb-6">
+            <summary class="cursor-pointer text-navy font-medium text-lg flex items-center justify-between">
+              How quickly can you mobilise after a loss event?
+              <span class="text-gold text-xl transition-transform group-open:rotate-45">+</span>
+            </summary>
+            <p class="mt-4 text-midgrey leading-body">
+              We operate a national travel model across the United States, Canada, and the United Kingdom. In most cases we can be on site within 24 to 48 hours of first contact. For large-scale catastrophe events we can coordinate multi-site deployment.
+            </p>
+          </details>
+
+          <details class="group border-b border-border pb-6">
+            <summary class="cursor-pointer text-navy font-medium text-lg flex items-center justify-between">
+              Is this an inspection or a professional loss assessment?
+              <span class="text-gold text-xl transition-transform group-open:rotate-45">+</span>
+            </summary>
+            <p class="mt-4 text-midgrey leading-body">
+              We provide comprehensive documentation — a complete, structured, spatially-referenced record of conditions at the time of capture. We do not provide loss adjustment opinions, engineering assessments, or cause-and-origin determinations. Our documentation is designed to give the professionals making those determinations the best possible evidence base to work from.
+            </p>
+          </details>
+
+          <details class="group border-b border-border pb-6">
+            <summary class="cursor-pointer text-navy font-medium text-lg flex items-center justify-between">
+              Can this documentation be used in legal proceedings?
+              <span class="text-gold text-xl transition-transform group-open:rotate-45">+</span>
+            </summary>
+            <p class="mt-4 text-midgrey leading-body">
+              Our deliverables provide a factual, dimensionally accurate, timestamped record of conditions. The data has been used to support claims processes and dispute resolution. We capture what exists — the interpretation and application of that data is for your professional advisors.
+            </p>
+          </details>
+
+          <details class="group border-b border-border pb-6">
+            <summary class="cursor-pointer text-navy font-medium text-lg flex items-center justify-between">
+              Do you work with restoration contractors?
+              <span class="text-gold text-xl transition-transform group-open:rotate-45">+</span>
+            </summary>
+            <p class="mt-4 text-midgrey leading-body">
+              Yes. Restoration companies use our documentation for scope development, progress tracking, and invoice substantiation. Pre-remediation and post-remediation capture provides a clear before-and-after record.
+            </p>
+          </details>
+
+          <details class="group border-b border-border pb-6">
+            <summary class="cursor-pointer text-navy font-medium text-lg flex items-center justify-between">
+              Can thermal imaging detect moisture behind walls?
+              <span class="text-gold text-xl transition-transform group-open:rotate-45">+</span>
+            </summary>
+            <p class="mt-4 text-midgrey leading-body">
+              Thermal imaging detects temperature differentials caused by evaporative cooling — a reliable indicator of concealed moisture in walls, ceilings, and floors. It identifies affected areas that are invisible to visual inspection, allowing remediation teams to target their response accurately. The thermal data we capture is georeferenced within the 3D model, so moisture locations are spatially precise rather than described in approximate terms.
+            </p>
+          </details>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="bg-offwhite section-padding">
+      <div class="max-w-[700px] mx-auto px-6 text-center">
+        <h2 class="text-[2rem] font-light text-navy">Need Rapid Documentation?</h2>
+        <p class="mt-4 text-midgrey leading-body">
+          Contact us with your location, the nature of the event, and your timeline. We'll confirm availability and mobilisation schedule within hours.
+        </p>
+        <a href="/contact" class="btn-primary mt-8">Contact Us Now</a>
+        <div class="mt-8 flex flex-wrap justify-center gap-6 text-sm">
+          <a href="/services/construction-documentation" class="text-navy font-medium hover:opacity-80 transition-opacity">Construction Documentation &rarr;</a>
+          <a href="/services/commercial-kitchen-survey" class="text-navy font-medium hover:opacity-80 transition-opacity">Commercial Kitchen Surveys &rarr;</a>
+          <a href="/services" class="text-navy font-medium hover:opacity-80 transition-opacity">All Services &rarr;</a>
+        </div>
+      </div>
+    </section>
+
+  </div>
+</Layout>

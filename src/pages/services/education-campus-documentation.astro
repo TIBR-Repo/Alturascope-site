@@ -1,0 +1,306 @@
+---
+import Layout from "../../layouts/Layout.astro";
+
+const schema = JSON.stringify({
+  "@context": "https://schema.org",
+  "@type": "ProfessionalService",
+  "name": "AlturaScope — Education Campus Documentation",
+  "description": "Standardised condition surveys, LiDAR scanning, and structured documentation for K-12 schools, colleges, and university campuses across North America and the United Kingdom.",
+  "url": "https://alturascope.com/services/education-campus-documentation",
+  "areaServed": ["US", "CA", "GB"],
+  "serviceType": ["Education Facility Documentation", "School Condition Survey", "Campus Documentation", "Reality Capture", "Capital Planning Documentation"],
+  "parentOrganization": {
+    "@type": "Organization",
+    "name": "AlturaScope",
+    "url": "https://alturascope.com"
+  }
+});
+
+const breadcrumbSchema = JSON.stringify({
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://alturascope.com" },
+    { "@type": "ListItem", "position": 2, "name": "Services", "item": "https://alturascope.com/services/" },
+    { "@type": "ListItem", "position": 3, "name": "Education Campus Documentation", "item": "https://alturascope.com/services/education-campus-documentation" }
+  ]
+});
+
+const faqSchema = JSON.stringify({
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Can you work in occupied school buildings?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Yes. Our capture methodology is non-contact and non-disruptive. We can work in occupied buildings during school hours or during breaks and holidays — whichever your administration prefers. We coordinate scheduling with your facilities team." }
+    },
+    {
+      "@type": "Question",
+      "name": "Does this replace a formal Facility Condition Assessment (FCA)?",
+      "acceptedAnswer": { "@type": "Answer", "text": "We provide comprehensive, structured documentation — the field data that feeds into a formal FCA process. Many FCA consultants lack efficient tools for gathering the field data they need. Our documentation provides them with a complete, standardised evidence base that accelerates their assessment work significantly. We do not provide the engineering opinions or condition ratings that constitute a formal FCA." }
+    },
+    {
+      "@type": "Question",
+      "name": "Can you cover an entire school district or university system?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Yes. Multi-site portfolio programmes are our core capability. We routinely run documentation programmes across dozens to hundreds of locations using a standardised protocol with consistent deliverables. Our national coverage model across the US, Canada, and the UK means geographic spread is not a constraint." }
+    },
+    {
+      "@type": "Question",
+      "name": "What about buildings with no existing drawings?",
+      "acceptedAnswer": { "@type": "Answer", "text": "This is common, particularly with older school buildings. Our LiDAR capture produces accurate spatial data regardless of whether drawings exist. For buildings with no documentation at all, our survey effectively creates the first accurate record of the building's geometry and systems." }
+    }
+  ]
+});
+---
+<Layout
+  title="Education Campus Documentation & Condition Surveys | Alturascope"
+  description="Standardised condition surveys, LiDAR scanning, and structured documentation for K-12 schools, colleges, and university campuses. Capital planning intelligence and portfolio-wide reporting across North America and the UK."
+  canonical="https://alturascope.com/services/education-campus-documentation"
+  schema={schema}
+  breadcrumbSchema={breadcrumbSchema}
+  faqSchema={faqSchema}
+  fullWidth={true}
+>
+  <div data-hero-page>
+
+    <!-- Hero -->
+    <section class="relative min-h-[100vh] md:min-h-0 md:h-[60vh] flex items-center justify-center">
+      <div class="absolute inset-0 bg-navy">
+        <img
+          src="https://images.unsplash.com/photo-1562774053-701939374585?w=1920&q=80"
+          srcset="
+            https://images.unsplash.com/photo-1562774053-701939374585?w=800&q=70 800w,
+            https://images.unsplash.com/photo-1562774053-701939374585?w=1200&q=75 1200w,
+            https://images.unsplash.com/photo-1562774053-701939374585?w=1920&q=80 1920w
+          "
+          sizes="100vw"
+          alt="University campus building exterior with classic architecture and educational facilities"
+          class="w-full h-full object-cover opacity-35"
+          loading="eager"
+          fetchpriority="high"
+        />
+        <div class="absolute inset-0 bg-[rgba(11,31,58,0.72)]"></div>
+      </div>
+      <div class="relative z-10 text-center px-6 pt-28 pb-16 md:pt-0 md:pb-0 max-w-[900px] mx-auto">
+        <p class="label text-gold mb-4">Specialist Sectors &middot; Education</p>
+        <h1 class="text-[1.8rem] md:text-[3.2rem] font-light text-offwhite leading-tight">
+          Education Campus Documentation
+        </h1>
+        <p class="mt-6 text-offwhite/70 leading-body max-w-[720px] mx-auto">
+          Structured condition intelligence for the buildings where deferred maintenance is measured in decades.
+        </p>
+        <div class="mt-8 flex flex-wrap justify-center gap-4">
+          <a href="/contact" class="btn-primary">Tell Us About Your Campus</a>
+          <a href="/services" class="btn-secondary-light">See Our Methodology</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- The Problem -->
+    <section class="bg-white section-padding">
+      <div class="max-w-[900px] mx-auto px-6">
+        <p class="label text-gold mb-4">The Problem</p>
+        <h2 class="text-[2rem] font-light text-navy leading-tight">
+          Capital priorities set by anecdote, not evidence.
+        </h2>
+        <div class="mt-6 space-y-4 text-midgrey leading-body">
+          <p>
+            School boards, colleges, and universities manage enormous facility portfolios — often dozens or hundreds of buildings spanning multiple decades of construction. Deferred maintenance backlogs run into the billions across North America and the UK. The buildings that educate the next generation are frequently the least well-documented assets in any public portfolio.
+          </p>
+          <p>
+            Capital allocation decisions are made every year: which roofs get replaced, which mechanical systems get upgraded, which buildings get renovated, which get decommissioned. Those decisions should be driven by consistent, objective condition data. In practice, they're driven by emergency failures, squeaky wheels, and the political influence of individual administrators.
+          </p>
+          <p>
+            The institutions that manage their facilities best are the ones that have comprehensive, standardised, current documentation of every building in the portfolio — so capital priorities are set by evidence, not anecdote.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- What We Capture -->
+    <section class="bg-offwhite section-padding">
+      <div class="max-w-[900px] mx-auto px-6">
+        <p class="label text-gold mb-4">The Deliverable</p>
+        <h2 class="text-[2rem] font-light text-navy leading-tight">
+          What we capture.
+        </h2>
+
+        <div class="mt-16">
+          <h3 class="text-[1.35rem] font-medium text-navy">Building-by-Building Condition Documentation</h3>
+          <div class="mt-4 space-y-4 text-midgrey leading-body">
+            <p>
+              Every building in the portfolio is surveyed using the same capture protocol. Structural systems, building envelope, mechanical, electrical, plumbing, fire protection, interior finishes, accessibility features, and site conditions — all documented to the same standard so comparison across buildings is meaningful.
+            </p>
+          </div>
+        </div>
+
+        <div class="mt-12">
+          <h3 class="text-[1.35rem] font-medium text-navy">Building Systems Inventory</h3>
+          <div class="mt-4 space-y-4 text-midgrey leading-body">
+            <p>
+              Major building systems documented with age, type, visible condition, and spatial location. HVAC units, boilers, chillers, electrical panels, fire alarm panels, roof-top equipment, elevators. The asset data that drives lifecycle planning and replacement scheduling.
+            </p>
+          </div>
+        </div>
+
+        <div class="mt-12">
+          <h3 class="text-[1.35rem] font-medium text-navy">Accessibility Documentation</h3>
+          <div class="mt-4 space-y-4 text-midgrey leading-body">
+            <p>
+              Entrance conditions, corridor widths, ramp slopes, restroom configurations, signage, door hardware heights, elevator presence and condition. Structured documentation that supports accessibility compliance review by qualified consultants — captured with the dimensional accuracy to be useful, not approximate.
+            </p>
+          </div>
+        </div>
+
+        <div class="mt-12">
+          <h3 class="text-[1.35rem] font-medium text-navy">Envelope and Weatherproofing</h3>
+          <div class="mt-4 space-y-4 text-midgrey leading-body">
+            <p>
+              Roof condition, window systems, exterior wall condition, foundation and below-grade waterproofing indicators. Supplemented with thermal imaging where appropriate to identify moisture intrusion and insulation failures not visible to the eye.
+            </p>
+          </div>
+        </div>
+
+        <div class="mt-12">
+          <h3 class="text-[1.35rem] font-medium text-navy">Hazardous Material Indicators</h3>
+          <div class="mt-4 space-y-4 text-midgrey leading-body">
+            <p>
+              Documentation of material ages and types consistent with potential asbestos-containing materials, lead paint vintage indicators, and other hazardous material concerns. We do not test or certify — we document the visual and age-based indicators that inform where professional testing should be directed.
+            </p>
+          </div>
+        </div>
+
+        <div class="mt-12">
+          <h3 class="text-[1.35rem] font-medium text-navy">Spatial Documentation</h3>
+          <div class="mt-4 space-y-4 text-midgrey leading-body">
+            <p>
+              LiDAR point cloud or structured dimensional capture of every building, providing accurate floor plans, ceiling heights, and room dimensions. Particularly valuable where original construction drawings no longer exist or no longer reflect reality.
+            </p>
+          </div>
+        </div>
+
+        <div class="mt-12">
+          <h3 class="text-[1.35rem] font-medium text-navy">Portfolio-Level Reporting</h3>
+          <div class="mt-4 space-y-4 text-midgrey leading-body">
+            <p>
+              All building data flows into ScopeWalk in a standardised format. Sort and compare across the portfolio by any data point: building system age, condition score, envelope status, accessibility readiness. The structured intelligence that turns a maintenance backlog into a prioritised capital plan.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- How It Works -->
+    <section class="bg-white section-padding">
+      <div class="max-w-[1200px] mx-auto px-6">
+        <h2 class="text-[2rem] font-light text-navy text-center mb-16">How it works.</h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10">
+          <div>
+            <p class="text-gold text-[2rem] font-light mb-3">01</p>
+            <h3 class="text-navy font-medium mb-3">Portfolio Scope and Protocol</h3>
+            <p class="text-midgrey text-[0.9rem] leading-relaxed">
+              We work with your facilities or capital planning team to establish the capture protocol, condition scoring methodology, and reporting requirements across the portfolio. One standard for every building.
+            </p>
+          </div>
+          <div>
+            <p class="text-gold text-[2rem] font-light mb-3">02</p>
+            <h3 class="text-navy font-medium mb-3">Coordinated Campus Capture</h3>
+            <p class="text-midgrey text-[0.9rem] leading-relaxed">
+              We deploy on a schedule coordinated with campus operations — working around academic calendars, events, and occupied spaces. Capture is non-invasive and non-disruptive to building use.
+            </p>
+          </div>
+          <div>
+            <p class="text-gold text-[2rem] font-light mb-3">03</p>
+            <h3 class="text-navy font-medium mb-3">Progressive Delivery</h3>
+            <p class="text-midgrey text-[0.9rem] leading-relaxed">
+              Completed buildings are delivered progressively through ScopeWalk as they're processed. Your team starts working with data immediately — you don't wait for the entire portfolio to be finished.
+            </p>
+          </div>
+          <div>
+            <p class="text-gold text-[2rem] font-light mb-3">04</p>
+            <h3 class="text-navy font-medium mb-3">Portfolio Intelligence</h3>
+            <p class="text-midgrey text-[0.9rem] leading-relaxed">
+              Once complete, the portfolio dataset enables evidence-based capital planning: which buildings need attention first, which systems are approaching end of life, where the highest-risk conditions exist.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Coverage -->
+    <section class="bg-offwhite section-padding">
+      <div class="max-w-[900px] mx-auto px-6">
+        <p class="text-midgrey leading-body">
+          We operate across all fifty US states, every Canadian province, and the United Kingdom. Travel is included in all project pricing. For UK projects, <a href="/uk" class="text-navy font-medium hover:opacity-80 transition-opacity">visit Alturascope UK</a>.
+        </p>
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="bg-white section-padding">
+      <div class="max-w-[900px] mx-auto px-6">
+        <h2 class="text-[2rem] font-light text-navy mb-12">Common questions about education campus documentation.</h2>
+
+        <div class="space-y-8">
+          <details class="group border-b border-border pb-6">
+            <summary class="cursor-pointer text-navy font-medium text-lg flex items-center justify-between">
+              Can you work in occupied school buildings?
+              <span class="text-gold text-xl transition-transform group-open:rotate-45">+</span>
+            </summary>
+            <p class="mt-4 text-midgrey leading-body">
+              Yes. Our capture methodology is non-contact and non-disruptive. We can work in occupied buildings during school hours or during breaks and holidays — whichever your administration prefers. We coordinate scheduling with your facilities team.
+            </p>
+          </details>
+
+          <details class="group border-b border-border pb-6">
+            <summary class="cursor-pointer text-navy font-medium text-lg flex items-center justify-between">
+              Does this replace a formal Facility Condition Assessment (FCA)?
+              <span class="text-gold text-xl transition-transform group-open:rotate-45">+</span>
+            </summary>
+            <p class="mt-4 text-midgrey leading-body">
+              We provide comprehensive, structured documentation — the field data that feeds into a formal FCA process. Many FCA consultants lack efficient tools for gathering the field data they need. Our documentation provides them with a complete, standardised evidence base that accelerates their assessment work significantly. We do not provide the engineering opinions or condition ratings that constitute a formal FCA.
+            </p>
+          </details>
+
+          <details class="group border-b border-border pb-6">
+            <summary class="cursor-pointer text-navy font-medium text-lg flex items-center justify-between">
+              Can you cover an entire school district or university system?
+              <span class="text-gold text-xl transition-transform group-open:rotate-45">+</span>
+            </summary>
+            <p class="mt-4 text-midgrey leading-body">
+              Yes. Multi-site portfolio programmes are our core capability. We routinely run documentation programmes across dozens to hundreds of locations using a standardised protocol with consistent deliverables. Our national coverage model across the US, Canada, and the UK means geographic spread is not a constraint.
+            </p>
+          </details>
+
+          <details class="group border-b border-border pb-6">
+            <summary class="cursor-pointer text-navy font-medium text-lg flex items-center justify-between">
+              What about buildings with no existing drawings?
+              <span class="text-gold text-xl transition-transform group-open:rotate-45">+</span>
+            </summary>
+            <p class="mt-4 text-midgrey leading-body">
+              This is common, particularly with older school buildings. Our LiDAR capture produces accurate spatial data regardless of whether drawings exist. For buildings with no documentation at all, our survey effectively creates the first accurate record of the building's geometry and systems.
+            </p>
+          </details>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="bg-offwhite section-padding">
+      <div class="max-w-[700px] mx-auto px-6 text-center">
+        <h2 class="text-[2rem] font-light text-navy">Tell Us About Your Campus or Portfolio</h2>
+        <p class="mt-4 text-midgrey leading-body">
+          Share the number of buildings, your geographic scope, and what you're trying to accomplish — whether it's capital planning, a bond programme, or portfolio-wide condition baselining. We respond within one business day.
+        </p>
+        <a href="/contact" class="btn-primary mt-8">Start a Project</a>
+        <div class="mt-8 flex flex-wrap justify-center gap-6 text-sm">
+          <a href="/services/multi-site-rollout-documentation" class="text-navy font-medium hover:opacity-80 transition-opacity">Multi-Site Rollout Surveys &rarr;</a>
+          <a href="/services/self-storage-portfolio-documentation" class="text-navy font-medium hover:opacity-80 transition-opacity">Self-Storage Portfolio Documentation &rarr;</a>
+          <a href="/services" class="text-navy font-medium hover:opacity-80 transition-opacity">All Services &rarr;</a>
+        </div>
+      </div>
+    </section>
+
+  </div>
+</Layout>

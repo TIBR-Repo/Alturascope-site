@@ -1,0 +1,302 @@
+---
+import Layout from "../../layouts/Layout.astro";
+
+const schema = JSON.stringify({
+  "@context": "https://schema.org",
+  "@type": "ProfessionalService",
+  "name": "AlturaScope — Data Centre Documentation",
+  "description": "Reality capture, LiDAR scanning, thermal imaging, and structured documentation services for data centres across North America and the United Kingdom.",
+  "url": "https://alturascope.com/services/data-centre-documentation",
+  "areaServed": ["US", "CA", "GB"],
+  "serviceType": ["Data Centre Documentation", "Reality Capture", "LiDAR Scanning", "Thermal Imaging", "Digital Twin"],
+  "parentOrganization": {
+    "@type": "Organization",
+    "name": "AlturaScope",
+    "url": "https://alturascope.com"
+  }
+});
+
+const breadcrumbSchema = JSON.stringify({
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://alturascope.com" },
+    { "@type": "ListItem", "position": 2, "name": "Services", "item": "https://alturascope.com/services/" },
+    { "@type": "ListItem", "position": 3, "name": "Data Centre Documentation", "item": "https://alturascope.com/services/data-centre-documentation" }
+  ]
+});
+
+const faqSchema = JSON.stringify({
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Can you work in a live data centre environment without disruption?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Yes. Our capture methodology is non-contact and non-invasive. We use LiDAR and thermal imaging — no physical interaction with any equipment, no power shutdowns, no access panel removal required. We coordinate with your operations team on scheduling and access protocols." }
+    },
+    {
+      "@type": "Question",
+      "name": "How accurate is the LiDAR data?",
+      "acceptedAnswer": { "@type": "Answer", "text": "We deliver millimetre-accurate point clouds using survey-grade LiDAR equipment. This is significantly more precise than camera-based systems like Matterport and is suitable for engineering planning, capacity modelling, and design coordination." }
+    },
+    {
+      "@type": "Question",
+      "name": "Do you provide engineering analysis or capacity recommendations?",
+      "acceptedAnswer": { "@type": "Answer", "text": "We provide comprehensive, structured documentation — the raw intelligence your engineering team or consultants need to make informed decisions. We do not provide engineering opinions, capacity assessments, or compliance certifications. Our role is to ensure the data is complete, accurate, and accessible." }
+    },
+    {
+      "@type": "Question",
+      "name": "Can the data integrate with our existing DCIM or BIM platforms?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Yes. Point cloud data is delivered in industry-standard formats. Structured asset data from ScopeWalk can be exported for integration with DCIM platforms, BIM environments, or your own internal systems." }
+    }
+  ]
+});
+---
+<Layout
+  title="Data Centre Documentation & Reality Capture | Alturascope"
+  description="Millimetre-accurate LiDAR scanning, thermal imaging, and structured asset documentation for data centres. Rack layouts, power distribution, cooling systems, and capacity mapping across North America and the UK."
+  canonical="https://alturascope.com/services/data-centre-documentation"
+  schema={schema}
+  breadcrumbSchema={breadcrumbSchema}
+  faqSchema={faqSchema}
+  fullWidth={true}
+>
+  <div data-hero-page>
+
+    <!-- Hero -->
+    <section class="relative min-h-[100vh] md:min-h-0 md:h-[60vh] flex items-center justify-center">
+      <div class="absolute inset-0 bg-navy">
+        <img
+          src="https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=1920&q=80"
+          srcset="
+            https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=800&q=70 800w,
+            https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=1200&q=75 1200w,
+            https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=1920&q=80 1920w
+          "
+          sizes="100vw"
+          alt="Data centre server room with rows of racks, structured cabling, and overhead infrastructure"
+          class="w-full h-full object-cover opacity-35"
+          loading="eager"
+          fetchpriority="high"
+        />
+        <div class="absolute inset-0 bg-[rgba(11,31,58,0.72)]"></div>
+      </div>
+      <div class="relative z-10 text-center px-6 pt-28 pb-16 md:pt-0 md:pb-0 max-w-[900px] mx-auto">
+        <p class="label text-gold mb-4">Specialist Sectors &middot; Data Centres</p>
+        <h1 class="text-[1.8rem] md:text-[3.2rem] font-light text-offwhite leading-tight">
+          Data Centre Documentation
+        </h1>
+        <p class="mt-6 text-offwhite/70 leading-body max-w-[720px] mx-auto">
+          Millimetre-accurate reality capture for the infrastructure that can't afford ambiguity.
+        </p>
+        <div class="mt-8 flex flex-wrap justify-center gap-4">
+          <a href="/contact" class="btn-primary">Tell Us About Your Facility</a>
+          <a href="/services" class="btn-secondary-light">See Our Methodology</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- The Problem -->
+    <section class="bg-white section-padding">
+      <div class="max-w-[900px] mx-auto px-6">
+        <p class="label text-gold mb-4">The Problem</p>
+        <h2 class="text-[2rem] font-light text-navy leading-tight">
+          The cost of planning from assumptions.
+        </h2>
+        <div class="mt-6 space-y-4 text-midgrey leading-body">
+          <p>
+            Data centre operators make expansion, retrofit, and capacity planning decisions worth tens of millions of dollars. Those decisions depend on knowing — precisely — what exists today: every rack position, every power run, every cooling path, every square metre of available white space.
+          </p>
+          <p>
+            Most facilities rely on outdated CAD drawings that stopped being accurate the week after commissioning. As-built documentation drifts further from reality with every cabinet move, every power rebalancing, every cooling modification. When it comes time to plan the next phase, engineering teams are working from assumptions, not data.
+          </p>
+          <p>
+            The cost of getting it wrong in a live data centre environment is measured in downtime — and downtime is measured in hundreds of thousands per hour.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- What We Capture -->
+    <section class="bg-offwhite section-padding">
+      <div class="max-w-[900px] mx-auto px-6">
+        <p class="label text-gold mb-4">The Deliverable</p>
+        <h2 class="text-[2rem] font-light text-navy leading-tight">
+          What we capture.
+        </h2>
+        <div class="mt-6 space-y-4 text-midgrey leading-body">
+          <p>
+            Every data point your engineering and planning teams need — spatially referenced, structured, and accessible through a single platform.
+          </p>
+        </div>
+
+        <div class="mt-16">
+          <h3 class="text-[1.35rem] font-medium text-navy">Spatial Documentation</h3>
+          <div class="mt-4 space-y-4 text-midgrey leading-body">
+            <p>
+              Complete LiDAR point cloud of the facility — millimetre-accurate, survey-grade. Every aisle, every row, every overhead cable pathway, every underfloor void. This isn't a Matterport walkthrough. This is a measurable, georeferenced 3D dataset your engineers can extract dimensions from, plan against, and trust.
+            </p>
+          </div>
+        </div>
+
+        <div class="mt-12">
+          <h3 class="text-[1.35rem] font-medium text-navy">Rack and Cabinet Inventory</h3>
+          <div class="mt-4 space-y-4 text-midgrey leading-body">
+            <p>
+              Structured documentation of rack positions, U-space allocation, and cabinet configurations. Photographed, tagged, and spatially located within the point cloud so your planning team can see exactly what's where without entering the white space.
+            </p>
+          </div>
+        </div>
+
+        <div class="mt-12">
+          <h3 class="text-[1.35rem] font-medium text-navy">Power Distribution Mapping</h3>
+          <div class="mt-4 space-y-4 text-midgrey leading-body">
+            <p>
+              Documentation of the power chain from utility intake through UPS, switchgear, PDUs, and busway to the rack level. Nameplate data, visible condition, and spatial location — everything an electrical engineer needs to model existing capacity and plan additional load.
+            </p>
+          </div>
+        </div>
+
+        <div class="mt-12">
+          <h3 class="text-[1.35rem] font-medium text-navy">Cooling Infrastructure</h3>
+          <div class="mt-4 space-y-4 text-midgrey leading-body">
+            <p>
+              CRAH and CRAC unit locations, capacities, and nameplate data. Hot aisle / cold aisle configurations. Containment systems. Raised floor tile layouts — perforated versus solid — mapped spatially so airflow modelling can begin from real geometry, not guesswork.
+            </p>
+          </div>
+        </div>
+
+        <div class="mt-12">
+          <h3 class="text-[1.35rem] font-medium text-navy">Thermal Imaging</h3>
+          <div class="mt-4 space-y-4 text-midgrey leading-body">
+            <p>
+              Calibrated thermal capture across the facility: hotspot identification in electrical distribution, temperature differential mapping across cooling zones, and thermal documentation of cabinet faces to identify uneven heat loads. All thermal observations are georeferenced within the 3D model — not standalone JPEGs with vague location descriptions.
+            </p>
+          </div>
+        </div>
+
+        <div class="mt-12">
+          <h3 class="text-[1.35rem] font-medium text-navy">Structured Reporting via ScopeWalk</h3>
+          <div class="mt-4 space-y-4 text-midgrey leading-body">
+            <p>
+              Every data point captured feeds into ScopeWalk, our proprietary reporting platform. Your team receives structured, searchable, spatially-referenced documentation — not a folder of files. Engineers, planners, and operations staff can access what they need without sifting through raw scan data.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- How It Works -->
+    <section class="bg-white section-padding">
+      <div class="max-w-[1200px] mx-auto px-6">
+        <h2 class="text-[2rem] font-light text-navy text-center mb-16">How it works.</h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10">
+          <div>
+            <p class="text-gold text-[2rem] font-light mb-3">01</p>
+            <h3 class="text-navy font-medium mb-3">Scope and Protocol</h3>
+            <p class="text-midgrey text-[0.9rem] leading-relaxed">
+              We work with your facilities team to define what needs capturing and any access constraints — particularly around live environments, restricted zones, and scheduling windows.
+            </p>
+          </div>
+          <div>
+            <p class="text-gold text-[2rem] font-light mb-3">02</p>
+            <h3 class="text-navy font-medium mb-3">On-Site Capture</h3>
+            <p class="text-midgrey text-[0.9rem] leading-relaxed">
+              A single site visit with LiDAR, thermal, and photographic capture. We work around live operations. No disruption to running systems. Typical facility capture is completed within one to two days depending on scale.
+            </p>
+          </div>
+          <div>
+            <p class="text-gold text-[2rem] font-light mb-3">03</p>
+            <h3 class="text-navy font-medium mb-3">Processing and Structuring</h3>
+            <p class="text-midgrey text-[0.9rem] leading-relaxed">
+              Raw capture is processed into deliverables: registered point cloud, thermal overlay, structured asset inventory, and spatial documentation — all assembled within ScopeWalk.
+            </p>
+          </div>
+          <div>
+            <p class="text-gold text-[2rem] font-light mb-3">04</p>
+            <h3 class="text-navy font-medium mb-3">Delivery</h3>
+            <p class="text-midgrey text-[0.9rem] leading-relaxed">
+              Your team receives access to the complete dataset via ScopeWalk. Point cloud data is also available for export in standard formats (E57, LAS, RCP) for integration with your existing CAD, BIM, or DCIM platforms.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Coverage -->
+    <section class="bg-offwhite section-padding">
+      <div class="max-w-[900px] mx-auto px-6">
+        <p class="text-midgrey leading-body">
+          We operate across all fifty US states, every Canadian province, and the United Kingdom. Travel is included in all project pricing. For UK projects, <a href="/uk" class="text-navy font-medium hover:opacity-80 transition-opacity">visit Alturascope UK</a>.
+        </p>
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="bg-white section-padding">
+      <div class="max-w-[900px] mx-auto px-6">
+        <h2 class="text-[2rem] font-light text-navy mb-12">Common questions about data centre documentation.</h2>
+
+        <div class="space-y-8">
+          <details class="group border-b border-border pb-6">
+            <summary class="cursor-pointer text-navy font-medium text-lg flex items-center justify-between">
+              Can you work in a live data centre environment without disruption?
+              <span class="text-gold text-xl transition-transform group-open:rotate-45">+</span>
+            </summary>
+            <p class="mt-4 text-midgrey leading-body">
+              Yes. Our capture methodology is non-contact and non-invasive. We use LiDAR and thermal imaging — no physical interaction with any equipment, no power shutdowns, no access panel removal required. We coordinate with your operations team on scheduling and access protocols.
+            </p>
+          </details>
+
+          <details class="group border-b border-border pb-6">
+            <summary class="cursor-pointer text-navy font-medium text-lg flex items-center justify-between">
+              How accurate is the LiDAR data?
+              <span class="text-gold text-xl transition-transform group-open:rotate-45">+</span>
+            </summary>
+            <p class="mt-4 text-midgrey leading-body">
+              We deliver millimetre-accurate point clouds using survey-grade LiDAR equipment. This is significantly more precise than camera-based systems like Matterport and is suitable for engineering planning, capacity modelling, and design coordination.
+            </p>
+          </details>
+
+          <details class="group border-b border-border pb-6">
+            <summary class="cursor-pointer text-navy font-medium text-lg flex items-center justify-between">
+              Do you provide engineering analysis or capacity recommendations?
+              <span class="text-gold text-xl transition-transform group-open:rotate-45">+</span>
+            </summary>
+            <p class="mt-4 text-midgrey leading-body">
+              We provide comprehensive, structured documentation — the raw intelligence your engineering team or consultants need to make informed decisions. We do not provide engineering opinions, capacity assessments, or compliance certifications. Our role is to ensure the data is complete, accurate, and accessible.
+            </p>
+          </details>
+
+          <details class="group border-b border-border pb-6">
+            <summary class="cursor-pointer text-navy font-medium text-lg flex items-center justify-between">
+              Can the data integrate with our existing DCIM or BIM platforms?
+              <span class="text-gold text-xl transition-transform group-open:rotate-45">+</span>
+            </summary>
+            <p class="mt-4 text-midgrey leading-body">
+              Yes. Point cloud data is delivered in industry-standard formats. Structured asset data from ScopeWalk can be exported for integration with DCIM platforms, BIM environments, or your own internal systems.
+            </p>
+          </details>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="bg-offwhite section-padding">
+      <div class="max-w-[700px] mx-auto px-6 text-center">
+        <h2 class="text-[2rem] font-light text-navy">Tell Us About Your Facility</h2>
+        <p class="mt-4 text-midgrey leading-body">
+          Share your facility details, scope requirements, and timeline. We respond within one business day with a scope recommendation and all-in pricing — travel included.
+        </p>
+        <a href="/contact" class="btn-primary mt-8">Start a Project</a>
+        <div class="mt-8 flex flex-wrap justify-center gap-6 text-sm">
+          <a href="/services/construction-documentation" class="text-navy font-medium hover:opacity-80 transition-opacity">Construction Documentation &rarr;</a>
+          <a href="/services/multi-site-rollout-documentation" class="text-navy font-medium hover:opacity-80 transition-opacity">Multi-Site Rollout Surveys &rarr;</a>
+          <a href="/services" class="text-navy font-medium hover:opacity-80 transition-opacity">All Services &rarr;</a>
+        </div>
+      </div>
+    </section>
+
+  </div>
+</Layout>

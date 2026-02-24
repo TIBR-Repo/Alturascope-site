@@ -1,0 +1,314 @@
+---
+import Layout from "../../layouts/Layout.astro";
+
+const schema = JSON.stringify({
+  "@context": "https://schema.org",
+  "@type": "ProfessionalService",
+  "name": "AlturaScope — Solar Farm & Renewable Energy Documentation",
+  "description": "LiDAR scanning, thermal imaging, drone capture, and structured documentation for solar farms, battery storage, and renewable energy infrastructure across North America and the United Kingdom.",
+  "url": "https://alturascope.com/services/solar-farm-documentation",
+  "areaServed": ["US", "CA", "GB"],
+  "serviceType": ["Solar Farm Documentation", "Renewable Energy Documentation", "Drone Survey", "Thermal Imaging", "LiDAR Scanning", "Reality Capture"],
+  "parentOrganization": {
+    "@type": "Organization",
+    "name": "AlturaScope",
+    "url": "https://alturascope.com"
+  }
+});
+
+const breadcrumbSchema = JSON.stringify({
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://alturascope.com" },
+    { "@type": "ListItem", "position": 2, "name": "Services", "item": "https://alturascope.com/services/" },
+    { "@type": "ListItem", "position": 3, "name": "Solar Farm & Renewable Energy Documentation", "item": "https://alturascope.com/services/solar-farm-documentation" }
+  ]
+});
+
+const faqSchema = JSON.stringify({
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "What size solar installations can you document?",
+      "acceptedAnswer": { "@type": "Answer", "text": "We document installations ranging from commercial rooftop arrays to utility-scale ground-mounted farms spanning hundreds of acres. Our drone-based capture methodology scales efficiently — larger sites require more flight time but the approach is the same." }
+    },
+    {
+      "@type": "Question",
+      "name": "Can thermal imaging identify individual failing panels?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Drone-based thermal imaging can identify panel-level and cell-level thermal anomalies — including hotspot cells, bypass diode failures, and string-level underperformance. Each anomaly is georeferenced so your maintenance team knows the exact panel location, row, and position within the array." }
+    },
+    {
+      "@type": "Question",
+      "name": "Do you provide performance analysis or engineering recommendations?",
+      "acceptedAnswer": { "@type": "Answer", "text": "We provide structured documentation: thermal anomaly maps, asset inventories, and spatial data. Performance analysis, root cause determination, and engineering recommendations are for your O&M engineers or specialist consultants. Our documentation gives them the field data they need to work efficiently and accurately." }
+    },
+    {
+      "@type": "Question",
+      "name": "Can you provide repeat capture for ongoing monitoring?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Yes. Scheduled capture cycles — annually, semi-annually, or aligned with your maintenance programme — provide comparative data over time. This enables trend analysis on panel degradation, vegetation encroachment, and infrastructure condition, all through the same structured reporting framework." }
+    },
+    {
+      "@type": "Question",
+      "name": "Do you cover battery storage facilities as well?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Yes. Battery energy storage systems are documented with the same rigour — spatial positioning, thermal monitoring, electrical infrastructure, and environmental systems. For co-located solar-plus-storage sites, everything is captured in a single deployment." }
+    }
+  ]
+});
+---
+<Layout
+  title="Solar Farm & Renewable Energy Site Documentation | Alturascope"
+  description="LiDAR scanning, thermal imaging, and structured documentation for solar farms, battery storage facilities, and renewable energy infrastructure. Pre-construction surveys, as-built verification, and operational monitoring across North America and the UK."
+  canonical="https://alturascope.com/services/solar-farm-documentation"
+  schema={schema}
+  breadcrumbSchema={breadcrumbSchema}
+  faqSchema={faqSchema}
+  fullWidth={true}
+>
+  <div data-hero-page>
+
+    <!-- Hero -->
+    <section class="relative min-h-[100vh] md:min-h-0 md:h-[60vh] flex items-center justify-center">
+      <div class="absolute inset-0 bg-navy">
+        <img
+          src="https://images.unsplash.com/photo-1509391366360-2e959784a276?w=1920&q=80"
+          srcset="
+            https://images.unsplash.com/photo-1509391366360-2e959784a276?w=800&q=70 800w,
+            https://images.unsplash.com/photo-1509391366360-2e959784a276?w=1200&q=75 1200w,
+            https://images.unsplash.com/photo-1509391366360-2e959784a276?w=1920&q=80 1920w
+          "
+          sizes="100vw"
+          alt="Aerial view of a large-scale solar farm with rows of photovoltaic panels across an open landscape"
+          class="w-full h-full object-cover opacity-35"
+          loading="eager"
+          fetchpriority="high"
+        />
+        <div class="absolute inset-0 bg-[rgba(11,31,58,0.72)]"></div>
+      </div>
+      <div class="relative z-10 text-center px-6 pt-28 pb-16 md:pt-0 md:pb-0 max-w-[900px] mx-auto">
+        <p class="label text-gold mb-4">Specialist Sectors &middot; Renewable Energy</p>
+        <h1 class="text-[1.8rem] md:text-[3.2rem] font-light text-offwhite leading-tight">
+          Solar Farm &amp; Renewable Energy Site Documentation
+        </h1>
+        <p class="mt-6 text-offwhite/70 leading-body max-w-[720px] mx-auto">
+          Structured intelligence for the assets powering the grid — from pre-construction through operations.
+        </p>
+        <div class="mt-8 flex flex-wrap justify-center gap-4">
+          <a href="/contact" class="btn-primary">Tell Us About Your Site</a>
+          <a href="/services" class="btn-secondary-light">See Our Methodology</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- The Problem -->
+    <section class="bg-white section-padding">
+      <div class="max-w-[900px] mx-auto px-6">
+        <p class="label text-gold mb-4">The Problem</p>
+        <h2 class="text-[2rem] font-light text-navy leading-tight">
+          Scale that defeats traditional documentation.
+        </h2>
+        <div class="mt-6 space-y-4 text-midgrey leading-body">
+          <p>
+            Renewable energy development moves fast. Solar farms, battery energy storage systems, and associated infrastructure are being deployed at unprecedented scale across North America and the UK. Every phase of the lifecycle — site evaluation, design, construction, commissioning, operations, and maintenance — depends on accurate documentation of what exists on and around the site.
+          </p>
+          <p>
+            Pre-construction, developers need precise topographic and spatial data to inform panel layout, grading design, and interconnection planning. During construction, owners and lenders need verified as-built documentation confirming what was actually installed matches what was designed. In operations, performance issues — underperforming panels, hotspots, inverter anomalies, vegetation encroachment — need to be identified and located precisely across sites that can span hundreds of acres.
+          </p>
+          <p>
+            The scale of these sites makes traditional documentation approaches impractical. Walking a 500-acre solar farm with a clipboard doesn't work. Drone-based LiDAR and thermal capture does.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- What We Capture -->
+    <section class="bg-offwhite section-padding">
+      <div class="max-w-[900px] mx-auto px-6">
+        <p class="label text-gold mb-4">The Deliverable</p>
+        <h2 class="text-[2rem] font-light text-navy leading-tight">
+          What we capture.
+        </h2>
+
+        <div class="mt-16">
+          <h3 class="text-[1.35rem] font-medium text-navy">Pre-Construction Site Documentation</h3>
+          <div class="mt-4 space-y-4 text-midgrey leading-body">
+            <p>
+              LiDAR-based topographic capture of the development site — existing terrain, vegetation, structures, access routes, and utility infrastructure. Georeferenced spatial data that supports site design, grading calculations, environmental review, and permitting.
+            </p>
+          </div>
+        </div>
+
+        <div class="mt-12">
+          <h3 class="text-[1.35rem] font-medium text-navy">As-Built Verification</h3>
+          <div class="mt-4 space-y-4 text-midgrey leading-body">
+            <p>
+              Post-construction documentation confirming installed infrastructure matches design intent. Panel array positions, racking systems, inverter locations, combiner boxes, electrical infrastructure, fencing, access roads, and drainage — all captured and spatially referenced for owner's acceptance and lender verification.
+            </p>
+          </div>
+        </div>
+
+        <div class="mt-12">
+          <h3 class="text-[1.35rem] font-medium text-navy">Aerial Thermal Imaging</h3>
+          <div class="mt-4 space-y-4 text-midgrey leading-body">
+            <p>
+              Drone-based thermal capture across the array identifying underperforming panels, hotspot cells, bypass diode failures, string-level anomalies, and connection issues. Every thermal observation is georeferenced — your O&amp;M team receives precise panel locations for each anomaly, not a thermal image of a generic field of panels.
+            </p>
+          </div>
+        </div>
+
+        <div class="mt-12">
+          <h3 class="text-[1.35rem] font-medium text-navy">Inverter and Electrical Infrastructure</h3>
+          <div class="mt-4 space-y-4 text-midgrey leading-body">
+            <p>
+              Ground-level documentation of inverter stations, transformers, switchgear, combiner boxes, and cable routing. Manufacturer data, nameplate specifications, and visible condition — structured and spatially located within the site model.
+            </p>
+          </div>
+        </div>
+
+        <div class="mt-12">
+          <h3 class="text-[1.35rem] font-medium text-navy">Battery Energy Storage Systems (BESS)</h3>
+          <div class="mt-4 space-y-4 text-midgrey leading-body">
+            <p>
+              For co-located or standalone battery storage: container positions, HVAC and fire suppression systems, electrical connections, and thermal documentation of operating temperatures. The documentation that supports both operational monitoring and regulatory compliance.
+            </p>
+          </div>
+        </div>
+
+        <div class="mt-12">
+          <h3 class="text-[1.35rem] font-medium text-navy">Vegetation and Encroachment Monitoring</h3>
+          <div class="mt-4 space-y-4 text-midgrey leading-body">
+            <p>
+              Aerial and ground-level documentation of vegetation conditions affecting panel performance, access, or structural loading. Repeat capture cycles provide comparative data showing progression over time.
+            </p>
+          </div>
+        </div>
+
+        <div class="mt-12">
+          <h3 class="text-[1.35rem] font-medium text-navy">Structured Reporting via ScopeWalk</h3>
+          <div class="mt-4 space-y-4 text-midgrey leading-body">
+            <p>
+              All site data is delivered through ScopeWalk in a structured, searchable, spatially-referenced format. Filter by system, zone, or anomaly type. Export for integration with SCADA, CMMS, or asset management platforms.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- How It Works -->
+    <section class="bg-white section-padding">
+      <div class="max-w-[1200px] mx-auto px-6">
+        <h2 class="text-[2rem] font-light text-navy text-center mb-16">How it works.</h2>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-10">
+          <div>
+            <p class="text-gold text-[2rem] font-light mb-3">01</p>
+            <h3 class="text-navy font-medium mb-3">Scope and Coordination</h3>
+            <p class="text-midgrey text-[0.9rem] leading-relaxed">
+              We work with your development, construction, or O&amp;M team to define capture scope, access requirements, and scheduling. For operational sites, we coordinate around maintenance windows and grid commitments.
+            </p>
+          </div>
+          <div>
+            <p class="text-gold text-[2rem] font-light mb-3">02</p>
+            <h3 class="text-navy font-medium mb-3">Site Capture</h3>
+            <p class="text-midgrey text-[0.9rem] leading-relaxed">
+              Drone-based LiDAR and thermal capture for large-area coverage, supplemented by ground-level documentation of electrical infrastructure and equipment. Site capture timelines depend on scale — from a single day for smaller arrays to multiple days for utility-scale installations.
+            </p>
+          </div>
+          <div>
+            <p class="text-gold text-[2rem] font-light mb-3">03</p>
+            <h3 class="text-navy font-medium mb-3">Processing and Delivery</h3>
+            <p class="text-midgrey text-[0.9rem] leading-relaxed">
+              Georeferenced deliverables through ScopeWalk: point clouds, orthomosaics, thermal maps, structured anomaly reporting, and asset inventories. Data is delivered in formats compatible with GIS, CAD, and SCADA platforms.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Coverage -->
+    <section class="bg-offwhite section-padding">
+      <div class="max-w-[900px] mx-auto px-6">
+        <p class="text-midgrey leading-body">
+          We operate across all fifty US states, every Canadian province, and the United Kingdom. Travel is included in all project pricing. For UK projects, <a href="/uk" class="text-navy font-medium hover:opacity-80 transition-opacity">visit Alturascope UK</a>.
+        </p>
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="bg-white section-padding">
+      <div class="max-w-[900px] mx-auto px-6">
+        <h2 class="text-[2rem] font-light text-navy mb-12">Common questions about solar farm documentation.</h2>
+
+        <div class="space-y-8">
+          <details class="group border-b border-border pb-6">
+            <summary class="cursor-pointer text-navy font-medium text-lg flex items-center justify-between">
+              What size solar installations can you document?
+              <span class="text-gold text-xl transition-transform group-open:rotate-45">+</span>
+            </summary>
+            <p class="mt-4 text-midgrey leading-body">
+              We document installations ranging from commercial rooftop arrays to utility-scale ground-mounted farms spanning hundreds of acres. Our drone-based capture methodology scales efficiently — larger sites require more flight time but the approach is the same.
+            </p>
+          </details>
+
+          <details class="group border-b border-border pb-6">
+            <summary class="cursor-pointer text-navy font-medium text-lg flex items-center justify-between">
+              Can thermal imaging identify individual failing panels?
+              <span class="text-gold text-xl transition-transform group-open:rotate-45">+</span>
+            </summary>
+            <p class="mt-4 text-midgrey leading-body">
+              Drone-based thermal imaging can identify panel-level and cell-level thermal anomalies — including hotspot cells, bypass diode failures, and string-level underperformance. Each anomaly is georeferenced so your maintenance team knows the exact panel location, row, and position within the array.
+            </p>
+          </details>
+
+          <details class="group border-b border-border pb-6">
+            <summary class="cursor-pointer text-navy font-medium text-lg flex items-center justify-between">
+              Do you provide performance analysis or engineering recommendations?
+              <span class="text-gold text-xl transition-transform group-open:rotate-45">+</span>
+            </summary>
+            <p class="mt-4 text-midgrey leading-body">
+              We provide structured documentation: thermal anomaly maps, asset inventories, and spatial data. Performance analysis, root cause determination, and engineering recommendations are for your O&amp;M engineers or specialist consultants. Our documentation gives them the field data they need to work efficiently and accurately.
+            </p>
+          </details>
+
+          <details class="group border-b border-border pb-6">
+            <summary class="cursor-pointer text-navy font-medium text-lg flex items-center justify-between">
+              Can you provide repeat capture for ongoing monitoring?
+              <span class="text-gold text-xl transition-transform group-open:rotate-45">+</span>
+            </summary>
+            <p class="mt-4 text-midgrey leading-body">
+              Yes. Scheduled capture cycles — annually, semi-annually, or aligned with your maintenance programme — provide comparative data over time. This enables trend analysis on panel degradation, vegetation encroachment, and infrastructure condition, all through the same structured reporting framework.
+            </p>
+          </details>
+
+          <details class="group border-b border-border pb-6">
+            <summary class="cursor-pointer text-navy font-medium text-lg flex items-center justify-between">
+              Do you cover battery storage facilities as well?
+              <span class="text-gold text-xl transition-transform group-open:rotate-45">+</span>
+            </summary>
+            <p class="mt-4 text-midgrey leading-body">
+              Yes. Battery energy storage systems are documented with the same rigour — spatial positioning, thermal monitoring, electrical infrastructure, and environmental systems. For co-located solar-plus-storage sites, everything is captured in a single deployment.
+            </p>
+          </details>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="bg-offwhite section-padding">
+      <div class="max-w-[700px] mx-auto px-6 text-center">
+        <h2 class="text-[2rem] font-light text-navy">Tell Us About Your Site</h2>
+        <p class="mt-4 text-midgrey leading-body">
+          Share your site location, phase (pre-construction, construction, or operational), approximate scale, and what you need documented. We respond within one business day with a scope recommendation and all-in pricing — travel included.
+        </p>
+        <a href="/contact" class="btn-primary mt-8">Start a Project</a>
+        <div class="mt-8 flex flex-wrap justify-center gap-6 text-sm">
+          <a href="/services/construction-documentation" class="text-navy font-medium hover:opacity-80 transition-opacity">Construction Documentation &rarr;</a>
+          <a href="/services/industrial-facility-documentation" class="text-navy font-medium hover:opacity-80 transition-opacity">Industrial Facility Documentation &rarr;</a>
+          <a href="/services" class="text-navy font-medium hover:opacity-80 transition-opacity">All Services &rarr;</a>
+        </div>
+      </div>
+    </section>
+
+  </div>
+</Layout>

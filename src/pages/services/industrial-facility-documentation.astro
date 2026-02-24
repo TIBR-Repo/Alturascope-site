@@ -1,0 +1,306 @@
+---
+import Layout from "../../layouts/Layout.astro";
+
+const schema = JSON.stringify({
+  "@context": "https://schema.org",
+  "@type": "ProfessionalService",
+  "name": "AlturaScope — Industrial & Manufacturing Facility Documentation",
+  "description": "LiDAR scanning, thermal imaging, and structured as-built documentation for factories, processing plants, and industrial facilities across North America and the United Kingdom.",
+  "url": "https://alturascope.com/services/industrial-facility-documentation",
+  "areaServed": ["US", "CA", "GB"],
+  "serviceType": ["Industrial Documentation", "Factory Survey", "Manufacturing Facility Documentation", "Reality Capture", "LiDAR Scanning"],
+  "parentOrganization": {
+    "@type": "Organization",
+    "name": "AlturaScope",
+    "url": "https://alturascope.com"
+  }
+});
+
+const breadcrumbSchema = JSON.stringify({
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://alturascope.com" },
+    { "@type": "ListItem", "position": 2, "name": "Services", "item": "https://alturascope.com/services/" },
+    { "@type": "ListItem", "position": 3, "name": "Industrial & Manufacturing Facility Documentation", "item": "https://alturascope.com/services/industrial-facility-documentation" }
+  ]
+});
+
+const faqSchema = JSON.stringify({
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Can you capture a facility while production is running?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Yes. Our equipment is non-contact and doesn't interfere with operations. We coordinate with your team on scheduling, safety protocols, and access to ensure capture happens without disrupting production." }
+    },
+    {
+      "@type": "Question",
+      "name": "What's the difference between this and a standard Matterport survey?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Matterport produces a visual walkthrough — useful for orientation but not dimensionally reliable for engineering work. We deliver survey-grade LiDAR point clouds with millimetre accuracy, supplemented by thermal imaging, structured asset inventories, and dimensional data. The output is designed for engineers and planners, not viewers." }
+    },
+    {
+      "@type": "Question",
+      "name": "Do you provide engineering recommendations?",
+      "acceptedAnswer": { "@type": "Answer", "text": "We provide structured documentation and spatial intelligence. Engineering analysis, capacity assessments, and design recommendations are for your engineering team or consultants to determine based on the data we provide. Our role is to ensure they have the most complete and accurate evidence base possible." }
+    },
+    {
+      "@type": "Question",
+      "name": "Can you document racking systems?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Yes. We have specific experience documenting warehouse racking — beam levels, bay dimensions, load ratings, column positions, aisle widths, and clear heights. This data supports layout optimisation, code compliance review, and reconfiguration planning." }
+    }
+  ]
+});
+---
+<Layout
+  title="Industrial & Manufacturing Facility Documentation | Alturascope"
+  description="LiDAR scanning, thermal imaging, and structured as-built documentation for factories, processing plants, and industrial facilities. Equipment inventories, power mapping, and spatial intelligence across North America and the UK."
+  canonical="https://alturascope.com/services/industrial-facility-documentation"
+  schema={schema}
+  breadcrumbSchema={breadcrumbSchema}
+  faqSchema={faqSchema}
+  fullWidth={true}
+>
+  <div data-hero-page>
+
+    <!-- Hero -->
+    <section class="relative min-h-[100vh] md:min-h-0 md:h-[60vh] flex items-center justify-center">
+      <div class="absolute inset-0 bg-navy">
+        <img
+          src="https://images.unsplash.com/photo-1565793298595-6a879b1d9492?w=1920&q=80"
+          srcset="
+            https://images.unsplash.com/photo-1565793298595-6a879b1d9492?w=800&q=70 800w,
+            https://images.unsplash.com/photo-1565793298595-6a879b1d9492?w=1200&q=75 1200w,
+            https://images.unsplash.com/photo-1565793298595-6a879b1d9492?w=1920&q=80 1920w
+          "
+          sizes="100vw"
+          alt="Industrial manufacturing facility interior with heavy equipment and overhead crane infrastructure"
+          class="w-full h-full object-cover opacity-35"
+          loading="eager"
+          fetchpriority="high"
+        />
+        <div class="absolute inset-0 bg-[rgba(11,31,58,0.72)]"></div>
+      </div>
+      <div class="relative z-10 text-center px-6 pt-28 pb-16 md:pt-0 md:pb-0 max-w-[900px] mx-auto">
+        <p class="label text-gold mb-4">Specialist Sectors &middot; Industrial</p>
+        <h1 class="text-[1.8rem] md:text-[3.2rem] font-light text-offwhite leading-tight">
+          Industrial &amp; Manufacturing Facility Documentation
+        </h1>
+        <p class="mt-6 text-offwhite/70 leading-body max-w-[720px] mx-auto">
+          Accurate as-built intelligence for facilities that never stop changing.
+        </p>
+        <div class="mt-8 flex flex-wrap justify-center gap-4">
+          <a href="/contact" class="btn-primary">Tell Us About Your Facility</a>
+          <a href="/services" class="btn-secondary-light">See Our Methodology</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- The Problem -->
+    <section class="bg-white section-padding">
+      <div class="max-w-[900px] mx-auto px-6">
+        <p class="label text-gold mb-4">The Problem</p>
+        <h2 class="text-[2rem] font-light text-navy leading-tight">
+          Nobody actually knows what's there.
+        </h2>
+        <div class="mt-6 space-y-4 text-midgrey leading-body">
+          <p>
+            Manufacturing and industrial facilities evolve constantly — production lines move, equipment gets replaced, utilities get rerouted, mezzanines go up, walls come down. The original construction drawings, if they ever existed, stopped reflecting reality within months of the facility opening.
+          </p>
+          <p>
+            When it's time to plan an expansion, reconfigure a production line, install automation, or bring in a new tenant, engineering teams face the same problem: nobody actually knows what's there. The result is expensive site visits by multiple disciplines, design clashes discovered during construction, and project timelines that slip because the existing conditions weren't properly understood at the outset.
+          </p>
+          <p>
+            The facilities that run most efficiently are the ones that know themselves best. Accurate, current, structured documentation of what exists is the foundation that every capital decision should be built on.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- What We Capture -->
+    <section class="bg-offwhite section-padding">
+      <div class="max-w-[900px] mx-auto px-6">
+        <p class="label text-gold mb-4">The Deliverable</p>
+        <h2 class="text-[2rem] font-light text-navy leading-tight">
+          What we capture.
+        </h2>
+
+        <div class="mt-16">
+          <h3 class="text-[1.35rem] font-medium text-navy">Complete Spatial Record</h3>
+          <div class="mt-4 space-y-4 text-midgrey leading-body">
+            <p>
+              Full LiDAR point cloud of the facility — production floor, mezzanines, offices, loading docks, service areas, roof level. Millimetre-accurate and survey-grade. Your engineering team gets a measurable 3D environment they can extract dimensions from, design within, and coordinate against.
+            </p>
+          </div>
+        </div>
+
+        <div class="mt-12">
+          <h3 class="text-[1.35rem] font-medium text-navy">Equipment and Asset Inventory</h3>
+          <div class="mt-4 space-y-4 text-midgrey leading-body">
+            <p>
+              Structured documentation of major equipment: manufacturer, model, serial number, nameplate data, and spatial location within the facility. Each asset is photographed, tagged, and positioned in the point cloud. This isn't a spreadsheet assembled from memory — it's a verified, spatially-referenced inventory.
+            </p>
+          </div>
+        </div>
+
+        <div class="mt-12">
+          <h3 class="text-[1.35rem] font-medium text-navy">Overhead Systems</h3>
+          <div class="mt-4 space-y-4 text-midgrey leading-body">
+            <p>
+              Crane and hoist systems — span, capacity, hook height, runway positions. Overhead utilities — compressed air, process piping, electrical distribution, exhaust and ventilation ductwork. Documented and spatially located within the 3D model so design teams know what's above the production floor, not just on it.
+            </p>
+          </div>
+        </div>
+
+        <div class="mt-12">
+          <h3 class="text-[1.35rem] font-medium text-navy">Power Distribution</h3>
+          <div class="mt-4 space-y-4 text-midgrey leading-body">
+            <p>
+              Electrical infrastructure from main switchgear through distribution panels to major loads. Nameplate data, visible condition, and spatial location — the information an electrical engineer needs to evaluate available capacity and plan additional supply.
+            </p>
+          </div>
+        </div>
+
+        <div class="mt-12">
+          <h3 class="text-[1.35rem] font-medium text-navy">Thermal Imaging</h3>
+          <div class="mt-4 space-y-4 text-midgrey leading-body">
+            <p>
+              Calibrated thermal capture of electrical distribution equipment, motor drives, bearings, and process equipment. Temperature anomalies in electrical and mechanical systems are identified and georeferenced within the 3D model — giving maintenance and engineering teams precise locations rather than vague observations.
+            </p>
+          </div>
+        </div>
+
+        <div class="mt-12">
+          <h3 class="text-[1.35rem] font-medium text-navy">Floor Loading and Clear Heights</h3>
+          <div class="mt-4 space-y-4 text-midgrey leading-body">
+            <p>
+              Critical dimensional data: floor-to-structure heights at multiple points, column grids, dock door dimensions, turning radii, aisle widths. The spatial data that drives layout planning, equipment specification, and logistics design.
+            </p>
+          </div>
+        </div>
+
+        <div class="mt-12">
+          <h3 class="text-[1.35rem] font-medium text-navy">Structured Reporting via ScopeWalk</h3>
+          <div class="mt-4 space-y-4 text-midgrey leading-body">
+            <p>
+              All documentation is delivered through ScopeWalk as a structured, searchable, spatially-referenced dataset. Filter by system type, area, or asset category. Export for integration with your CMMS, ERP, or CAD platforms.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- How It Works -->
+    <section class="bg-white section-padding">
+      <div class="max-w-[1200px] mx-auto px-6">
+        <h2 class="text-[2rem] font-light text-navy text-center mb-16">How it works.</h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10">
+          <div>
+            <p class="text-gold text-[2rem] font-light mb-3">01</p>
+            <h3 class="text-navy font-medium mb-3">Scope Definition</h3>
+            <p class="text-midgrey text-[0.9rem] leading-relaxed">
+              We work with your plant or facilities team to define the capture scope — full facility or targeted areas. We coordinate scheduling around production operations and any access or safety requirements.
+            </p>
+          </div>
+          <div>
+            <p class="text-gold text-[2rem] font-light mb-3">02</p>
+            <h3 class="text-navy font-medium mb-3">On-Site Capture</h3>
+            <p class="text-midgrey text-[0.9rem] leading-relaxed">
+              LiDAR, thermal, and photographic capture executed systematically. We work around live production. No disruption to operations. Typical industrial facility capture is completed within one to three days depending on scale and complexity.
+            </p>
+          </div>
+          <div>
+            <p class="text-gold text-[2rem] font-light mb-3">03</p>
+            <h3 class="text-navy font-medium mb-3">Processing and Structuring</h3>
+            <p class="text-midgrey text-[0.9rem] leading-relaxed">
+              Raw data is processed into deliverables: registered point cloud, thermal overlay, structured asset inventory, dimensional data, and spatial documentation within ScopeWalk.
+            </p>
+          </div>
+          <div>
+            <p class="text-gold text-[2rem] font-light mb-3">04</p>
+            <h3 class="text-navy font-medium mb-3">Delivery</h3>
+            <p class="text-midgrey text-[0.9rem] leading-relaxed">
+              Complete dataset accessible via ScopeWalk. Point cloud data available in standard formats (E57, LAS, RCP) for CAD and BIM integration.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Coverage -->
+    <section class="bg-offwhite section-padding">
+      <div class="max-w-[900px] mx-auto px-6">
+        <p class="text-midgrey leading-body">
+          We operate across all fifty US states, every Canadian province, and the United Kingdom. Travel is included in all project pricing. For UK projects, <a href="/uk" class="text-navy font-medium hover:opacity-80 transition-opacity">visit Alturascope UK</a>.
+        </p>
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="bg-white section-padding">
+      <div class="max-w-[900px] mx-auto px-6">
+        <h2 class="text-[2rem] font-light text-navy mb-12">Common questions about industrial facility documentation.</h2>
+
+        <div class="space-y-8">
+          <details class="group border-b border-border pb-6">
+            <summary class="cursor-pointer text-navy font-medium text-lg flex items-center justify-between">
+              Can you capture a facility while production is running?
+              <span class="text-gold text-xl transition-transform group-open:rotate-45">+</span>
+            </summary>
+            <p class="mt-4 text-midgrey leading-body">
+              Yes. Our equipment is non-contact and doesn't interfere with operations. We coordinate with your team on scheduling, safety protocols, and access to ensure capture happens without disrupting production.
+            </p>
+          </details>
+
+          <details class="group border-b border-border pb-6">
+            <summary class="cursor-pointer text-navy font-medium text-lg flex items-center justify-between">
+              What's the difference between this and a standard Matterport survey?
+              <span class="text-gold text-xl transition-transform group-open:rotate-45">+</span>
+            </summary>
+            <p class="mt-4 text-midgrey leading-body">
+              Matterport produces a visual walkthrough — useful for orientation but not dimensionally reliable for engineering work. We deliver survey-grade LiDAR point clouds with millimetre accuracy, supplemented by thermal imaging, structured asset inventories, and dimensional data. The output is designed for engineers and planners, not viewers.
+            </p>
+          </details>
+
+          <details class="group border-b border-border pb-6">
+            <summary class="cursor-pointer text-navy font-medium text-lg flex items-center justify-between">
+              Do you provide engineering recommendations?
+              <span class="text-gold text-xl transition-transform group-open:rotate-45">+</span>
+            </summary>
+            <p class="mt-4 text-midgrey leading-body">
+              We provide structured documentation and spatial intelligence. Engineering analysis, capacity assessments, and design recommendations are for your engineering team or consultants to determine based on the data we provide. Our role is to ensure they have the most complete and accurate evidence base possible.
+            </p>
+          </details>
+
+          <details class="group border-b border-border pb-6">
+            <summary class="cursor-pointer text-navy font-medium text-lg flex items-center justify-between">
+              Can you document racking systems?
+              <span class="text-gold text-xl transition-transform group-open:rotate-45">+</span>
+            </summary>
+            <p class="mt-4 text-midgrey leading-body">
+              Yes. We have specific experience documenting warehouse racking — beam levels, bay dimensions, load ratings, column positions, aisle widths, and clear heights. This data supports layout optimisation, code compliance review, and reconfiguration planning.
+            </p>
+          </details>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="bg-offwhite section-padding">
+      <div class="max-w-[700px] mx-auto px-6 text-center">
+        <h2 class="text-[2rem] font-light text-navy">Tell Us About Your Facility</h2>
+        <p class="mt-4 text-midgrey leading-body">
+          Share your facility details, the scope of documentation needed, and your timeline. We respond within one business day with a scope recommendation and all-in pricing — travel included.
+        </p>
+        <a href="/contact" class="btn-primary mt-8">Start a Project</a>
+        <div class="mt-8 flex flex-wrap justify-center gap-6 text-sm">
+          <a href="/services/construction-documentation" class="text-navy font-medium hover:opacity-80 transition-opacity">Construction Documentation &rarr;</a>
+          <a href="/services/data-centre-documentation" class="text-navy font-medium hover:opacity-80 transition-opacity">Data Centre Documentation &rarr;</a>
+          <a href="/services" class="text-navy font-medium hover:opacity-80 transition-opacity">All Services &rarr;</a>
+        </div>
+      </div>
+    </section>
+
+  </div>
+</Layout>

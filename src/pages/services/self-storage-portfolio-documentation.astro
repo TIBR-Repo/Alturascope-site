@@ -1,0 +1,315 @@
+---
+import Layout from "../../layouts/Layout.astro";
+
+const schema = JSON.stringify({
+  "@context": "https://schema.org",
+  "@type": "ProfessionalService",
+  "name": "AlturaScope — Self-Storage & Warehousing Portfolio Documentation",
+  "description": "Standardised condition surveys and structured documentation for self-storage and warehousing portfolios across North America and the United Kingdom.",
+  "url": "https://alturascope.com/services/self-storage-portfolio-documentation",
+  "areaServed": ["US", "CA", "GB"],
+  "serviceType": ["Self-Storage Documentation", "Portfolio Documentation", "Condition Survey", "Reality Capture", "Due Diligence Documentation"],
+  "parentOrganization": {
+    "@type": "Organization",
+    "name": "AlturaScope",
+    "url": "https://alturascope.com"
+  }
+});
+
+const breadcrumbSchema = JSON.stringify({
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://alturascope.com" },
+    { "@type": "ListItem", "position": 2, "name": "Services", "item": "https://alturascope.com/services/" },
+    { "@type": "ListItem", "position": 3, "name": "Self-Storage & Warehousing Portfolio Documentation", "item": "https://alturascope.com/services/self-storage-portfolio-documentation" }
+  ]
+});
+
+const faqSchema = JSON.stringify({
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "How many locations can you cover and how quickly?",
+      "acceptedAnswer": { "@type": "Answer", "text": "We routinely run multi-site documentation programmes across North America and the UK. Portfolio programmes of 50 to 200+ locations are executed on coordinated schedules, typically completing 2 to 4 sites per day per technician depending on facility size. We scale capacity to meet your programme timeline." }
+    },
+    {
+      "@type": "Question",
+      "name": "Is this suitable for acquisition due diligence?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Yes. Standardised condition documentation across a portfolio is exactly what due diligence teams need — consistent data that supports comparison, identifies risk, and informs capital reserve estimates. The structured format through ScopeWalk makes the data immediately useful for financial modelling and investment committee presentation." }
+    },
+    {
+      "@type": "Question",
+      "name": "Do you provide condition ratings or valuations?",
+      "acceptedAnswer": { "@type": "Answer", "text": "We provide structured observations and documented evidence using a standardised methodology. We do not provide formal condition ratings, property valuations, or engineering assessments. Our documentation is designed to give the professionals making those determinations — engineers, appraisers, capital planners — the most complete and consistent data set possible." }
+    },
+    {
+      "@type": "Question",
+      "name": "Can we use this data in our existing asset management platform?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Yes. Structured data from ScopeWalk can be exported in standard formats for integration with your asset management, CMMS, or capital planning platforms. We work with your team to ensure the data structure aligns with your existing systems." }
+    }
+  ]
+});
+---
+<Layout
+  title="Self-Storage & Warehousing Portfolio Documentation | Alturascope"
+  description="Standardised condition surveys and structured documentation for self-storage and warehousing portfolios. Due diligence capture, capital planning data, and portfolio-wide intelligence across North America and the UK."
+  canonical="https://alturascope.com/services/self-storage-portfolio-documentation"
+  schema={schema}
+  breadcrumbSchema={breadcrumbSchema}
+  faqSchema={faqSchema}
+  fullWidth={true}
+>
+  <div data-hero-page>
+
+    <!-- Hero -->
+    <section class="relative min-h-[100vh] md:min-h-0 md:h-[60vh] flex items-center justify-center">
+      <div class="absolute inset-0 bg-navy">
+        <img
+          src="https://images.unsplash.com/photo-1600518464441-9154a4dea21b?w=1920&q=80"
+          srcset="
+            https://images.unsplash.com/photo-1600518464441-9154a4dea21b?w=800&q=70 800w,
+            https://images.unsplash.com/photo-1600518464441-9154a4dea21b?w=1200&q=75 1200w,
+            https://images.unsplash.com/photo-1600518464441-9154a4dea21b?w=1920&q=80 1920w
+          "
+          sizes="100vw"
+          alt="Self-storage facility corridor with rows of climate-controlled storage units"
+          class="w-full h-full object-cover opacity-35"
+          loading="eager"
+          fetchpriority="high"
+        />
+        <div class="absolute inset-0 bg-[rgba(11,31,58,0.72)]"></div>
+      </div>
+      <div class="relative z-10 text-center px-6 pt-28 pb-16 md:pt-0 md:pb-0 max-w-[900px] mx-auto">
+        <p class="label text-gold mb-4">Specialist Sectors &middot; Self-Storage &amp; Warehousing</p>
+        <h1 class="text-[1.8rem] md:text-[3.2rem] font-light text-offwhite leading-tight">
+          Self-Storage &amp; Warehousing Portfolio Documentation
+        </h1>
+        <p class="mt-6 text-offwhite/70 leading-body max-w-[720px] mx-auto">
+          One standard. Every location. The intelligence your capital planning actually needs.
+        </p>
+        <div class="mt-8 flex flex-wrap justify-center gap-4">
+          <a href="/contact" class="btn-primary">Tell Us About Your Portfolio</a>
+          <a href="/services" class="btn-secondary-light">See Our Methodology</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- The Problem -->
+    <section class="bg-white section-padding">
+      <div class="max-w-[900px] mx-auto px-6">
+        <p class="label text-gold mb-4">The Problem</p>
+        <h2 class="text-[2rem] font-light text-navy leading-tight">
+          Inconsistent data across a growing portfolio.
+        </h2>
+        <div class="mt-6 space-y-4 text-midgrey leading-body">
+          <p>
+            The self-storage and warehousing sector is consolidating rapidly. Private equity firms and REITs are acquiring portfolios of dozens — sometimes hundreds — of facilities, often across multiple states, provinces, or regions. Each acquisition decision depends on understanding the physical condition of every asset in the portfolio.
+          </p>
+          <p>
+            The typical due diligence process sends different people to different sites with different approaches, producing inconsistent data that's almost impossible to compare across locations. Which facilities need immediate capital investment? Which roofs are approaching end of life? Which climate control systems are undersized? Which sites have deferred maintenance that wasn't disclosed? Without standardised documentation, these questions get answered with gut feel and rough estimates.
+          </p>
+          <p>
+            Post-acquisition, the same problem persists: capital planning across a portfolio requires condition data that's comparable site-to-site. If every location was surveyed differently, the data is noise, not intelligence.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- What We Capture -->
+    <section class="bg-offwhite section-padding">
+      <div class="max-w-[900px] mx-auto px-6">
+        <p class="label text-gold mb-4">The Deliverable</p>
+        <h2 class="text-[2rem] font-light text-navy leading-tight">
+          What we capture.
+        </h2>
+
+        <div class="mt-16">
+          <h3 class="text-[1.35rem] font-medium text-navy">Standardised Site Survey</h3>
+          <div class="mt-4 space-y-4 text-midgrey leading-body">
+            <p>
+              Every location in the portfolio is documented using the same capture protocol, the same equipment, and the same structured reporting format. This is the foundation that makes portfolio-level comparison meaningful. What gets measured at location one gets measured at location two hundred.
+            </p>
+          </div>
+        </div>
+
+        <div class="mt-12">
+          <h3 class="text-[1.35rem] font-medium text-navy">Building Envelope</h3>
+          <div class="mt-4 space-y-4 text-midgrey leading-body">
+            <p>
+              Roof condition, wall cladding, door and loading systems, foundation and slab condition, drainage infrastructure, parking and hardscape. Documented visually and, where applicable, with thermal imaging to identify moisture intrusion and insulation failures invisible to visual inspection.
+            </p>
+          </div>
+        </div>
+
+        <div class="mt-12">
+          <h3 class="text-[1.35rem] font-medium text-navy">Climate Control Systems</h3>
+          <div class="mt-4 space-y-4 text-midgrey leading-body">
+            <p>
+              HVAC units, dehumidification systems, and climate management infrastructure — manufacturer, model, age, capacity, visible condition. For climate-controlled storage, this is the critical infrastructure that determines unit viability and customer satisfaction.
+            </p>
+          </div>
+        </div>
+
+        <div class="mt-12">
+          <h3 class="text-[1.35rem] font-medium text-navy">Security and Access Infrastructure</h3>
+          <div class="mt-4 space-y-4 text-midgrey leading-body">
+            <p>
+              Gate systems, camera positions, lighting, access control hardware, perimeter fencing. Documented and spatially located within the site model.
+            </p>
+          </div>
+        </div>
+
+        <div class="mt-12">
+          <h3 class="text-[1.35rem] font-medium text-navy">Unit Mix and Configuration</h3>
+          <div class="mt-4 space-y-4 text-midgrey leading-body">
+            <p>
+              Unit types, sizes, and count verified against reported inventory. Drive-up versus interior, climate-controlled versus standard, specialty units. Dimensional verification where discrepancies exist between reported and actual configurations.
+            </p>
+          </div>
+        </div>
+
+        <div class="mt-12">
+          <h3 class="text-[1.35rem] font-medium text-navy">Fire Protection</h3>
+          <div class="mt-4 space-y-4 text-midgrey leading-body">
+            <p>
+              Sprinkler systems, fire alarm panels, extinguisher locations, and suppression infrastructure documented by location and visible condition. Tag and inspection dates photographed where accessible.
+            </p>
+          </div>
+        </div>
+
+        <div class="mt-12">
+          <h3 class="text-[1.35rem] font-medium text-navy">Spatial Documentation</h3>
+          <div class="mt-4 space-y-4 text-midgrey leading-body">
+            <p>
+              LiDAR point cloud or structured dimensional capture providing accurate site dimensions, building footprints, clear heights, column positions, and circulation paths. The measurable spatial data that supports layout optimisation and conversion planning.
+            </p>
+          </div>
+        </div>
+
+        <div class="mt-12">
+          <h3 class="text-[1.35rem] font-medium text-navy">Portfolio-Level Reporting</h3>
+          <div class="mt-4 space-y-4 text-midgrey leading-body">
+            <p>
+              All site data flows into ScopeWalk, structured identically across every location. Your acquisitions, operations, and capital planning teams can compare facilities side-by-side on any data point — equipment age, envelope condition, unit mix, system capacity — across the entire portfolio.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- How It Works -->
+    <section class="bg-white section-padding">
+      <div class="max-w-[1200px] mx-auto px-6">
+        <h2 class="text-[2rem] font-light text-navy text-center mb-16">How it works.</h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10">
+          <div>
+            <p class="text-gold text-[2rem] font-light mb-3">01</p>
+            <h3 class="text-navy font-medium mb-3">Portfolio Scope and Protocol</h3>
+            <p class="text-midgrey text-[0.9rem] leading-relaxed">
+              We work with your acquisitions or operations team to define the capture protocol for the portfolio. One brief, one standard, every location. We establish the data points, the condition scoring methodology, and the reporting format before the first site is visited.
+            </p>
+          </div>
+          <div>
+            <p class="text-gold text-[2rem] font-light mb-3">02</p>
+            <h3 class="text-navy font-medium mb-3">Scheduled Rollout</h3>
+            <p class="text-midgrey text-[0.9rem] leading-relaxed">
+              We deploy across the portfolio on a coordinated schedule — regional clusters to maximise efficiency. Our national travel model across the US, Canada, and the UK means geographic spread isn't a constraint. Travel is included in project pricing.
+            </p>
+          </div>
+          <div>
+            <p class="text-gold text-[2rem] font-light mb-3">03</p>
+            <h3 class="text-navy font-medium mb-3">Consistent Delivery</h3>
+            <p class="text-midgrey text-[0.9rem] leading-relaxed">
+              Every site is delivered in the same format through ScopeWalk. As sites are completed, data becomes available progressively — your team doesn't wait for the entire portfolio to finish before accessing intelligence on completed locations.
+            </p>
+          </div>
+          <div>
+            <p class="text-gold text-[2rem] font-light mb-3">04</p>
+            <h3 class="text-navy font-medium mb-3">Portfolio Dashboard</h3>
+            <p class="text-midgrey text-[0.9rem] leading-relaxed">
+              Once the programme is complete, your team has a single platform containing standardised condition data for every location. Sort by condition score, filter by system, prioritise by urgency. The capital planning decisions that used to take weeks of argument now take an afternoon with data.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Coverage -->
+    <section class="bg-offwhite section-padding">
+      <div class="max-w-[900px] mx-auto px-6">
+        <p class="text-midgrey leading-body">
+          We operate across all fifty US states, every Canadian province, and the United Kingdom. Travel is included in all project pricing. For UK projects, <a href="/uk" class="text-navy font-medium hover:opacity-80 transition-opacity">visit Alturascope UK</a>.
+        </p>
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="bg-white section-padding">
+      <div class="max-w-[900px] mx-auto px-6">
+        <h2 class="text-[2rem] font-light text-navy mb-12">Common questions about portfolio documentation.</h2>
+
+        <div class="space-y-8">
+          <details class="group border-b border-border pb-6">
+            <summary class="cursor-pointer text-navy font-medium text-lg flex items-center justify-between">
+              How many locations can you cover and how quickly?
+              <span class="text-gold text-xl transition-transform group-open:rotate-45">+</span>
+            </summary>
+            <p class="mt-4 text-midgrey leading-body">
+              We routinely run multi-site documentation programmes across North America and the UK. Portfolio programmes of 50 to 200+ locations are executed on coordinated schedules, typically completing 2 to 4 sites per day per technician depending on facility size. We scale capacity to meet your programme timeline.
+            </p>
+          </details>
+
+          <details class="group border-b border-border pb-6">
+            <summary class="cursor-pointer text-navy font-medium text-lg flex items-center justify-between">
+              Is this suitable for acquisition due diligence?
+              <span class="text-gold text-xl transition-transform group-open:rotate-45">+</span>
+            </summary>
+            <p class="mt-4 text-midgrey leading-body">
+              Yes. Standardised condition documentation across a portfolio is exactly what due diligence teams need — consistent data that supports comparison, identifies risk, and informs capital reserve estimates. The structured format through ScopeWalk makes the data immediately useful for financial modelling and investment committee presentation.
+            </p>
+          </details>
+
+          <details class="group border-b border-border pb-6">
+            <summary class="cursor-pointer text-navy font-medium text-lg flex items-center justify-between">
+              Do you provide condition ratings or valuations?
+              <span class="text-gold text-xl transition-transform group-open:rotate-45">+</span>
+            </summary>
+            <p class="mt-4 text-midgrey leading-body">
+              We provide structured observations and documented evidence using a standardised methodology. We do not provide formal condition ratings, property valuations, or engineering assessments. Our documentation is designed to give the professionals making those determinations — engineers, appraisers, capital planners — the most complete and consistent data set possible.
+            </p>
+          </details>
+
+          <details class="group border-b border-border pb-6">
+            <summary class="cursor-pointer text-navy font-medium text-lg flex items-center justify-between">
+              Can we use this data in our existing asset management platform?
+              <span class="text-gold text-xl transition-transform group-open:rotate-45">+</span>
+            </summary>
+            <p class="mt-4 text-midgrey leading-body">
+              Yes. Structured data from ScopeWalk can be exported in standard formats for integration with your asset management, CMMS, or capital planning platforms. We work with your team to ensure the data structure aligns with your existing systems.
+            </p>
+          </details>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="bg-offwhite section-padding">
+      <div class="max-w-[700px] mx-auto px-6 text-center">
+        <h2 class="text-[2rem] font-light text-navy">Tell Us About Your Portfolio</h2>
+        <p class="mt-4 text-midgrey leading-body">
+          Share the number of locations, geographic spread, your timeline, and what you need to know. We respond within one business day with a programme recommendation and portfolio pricing — all travel included.
+        </p>
+        <a href="/contact" class="btn-primary mt-8">Start a Project</a>
+        <div class="mt-8 flex flex-wrap justify-center gap-6 text-sm">
+          <a href="/services/multi-site-rollout-documentation" class="text-navy font-medium hover:opacity-80 transition-opacity">Multi-Site Rollout Surveys &rarr;</a>
+          <a href="/services/industrial-facility-documentation" class="text-navy font-medium hover:opacity-80 transition-opacity">Industrial Facility Documentation &rarr;</a>
+          <a href="/services" class="text-navy font-medium hover:opacity-80 transition-opacity">All Services &rarr;</a>
+        </div>
+      </div>
+    </section>
+
+  </div>
+</Layout>

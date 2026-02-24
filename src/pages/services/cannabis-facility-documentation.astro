@@ -1,0 +1,290 @@
+---
+import Layout from "../../layouts/Layout.astro";
+
+const schema = JSON.stringify({
+  "@context": "https://schema.org",
+  "@type": "ProfessionalService",
+  "name": "AlturaScope — Cannabis Facility Documentation",
+  "description": "Structured documentation and reality capture for licensed cannabis facilities across North America.",
+  "url": "https://alturascope.com/services/cannabis-facility-documentation",
+  "areaServed": ["US", "CA"],
+  "serviceType": ["Cannabis Facility Documentation", "Reality Capture", "Compliance Documentation", "Security Documentation"],
+  "parentOrganization": {
+    "@type": "Organization",
+    "name": "AlturaScope",
+    "url": "https://alturascope.com"
+  }
+});
+
+const breadcrumbSchema = JSON.stringify({
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://alturascope.com" },
+    { "@type": "ListItem", "position": 2, "name": "Services", "item": "https://alturascope.com/services/" },
+    { "@type": "ListItem", "position": 3, "name": "Cannabis Facility Documentation", "item": "https://alturascope.com/services/cannabis-facility-documentation" }
+  ]
+});
+
+const faqSchema = JSON.stringify({
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Do you work with licensed facilities only?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Yes. We provide documentation services to licensed cannabis cultivation, processing, and retail facilities operating in compliance with their jurisdictional regulations." }
+    },
+    {
+      "@type": "Question",
+      "name": "Is the documentation suitable for regulatory submission?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Our documentation provides accurate, structured, spatially-referenced data about your facility as it exists. It supports regulatory submissions, licence applications, and compliance reviews by giving your compliance team and consultants a verified factual basis to work from. We do not provide regulatory compliance opinions or certifications." }
+    },
+    {
+      "@type": "Question",
+      "name": "How do you handle facility security and confidentiality?",
+      "acceptedAnswer": { "@type": "Answer", "text": "We understand the sensitivity of cannabis facility documentation. All data is handled under strict confidentiality. Access to ScopeWalk deliverables is controlled by your team. We coordinate all site access through your designated contacts and follow your security protocols." }
+    },
+    {
+      "@type": "Question",
+      "name": "Can you document multiple facilities for a multi-state operator?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Yes. Our national travel model covers the United States and Canada. Multi-site programmes are coordinated on a schedule that works with your operations across all locations." }
+    }
+  ]
+});
+---
+<Layout
+  title="Cannabis Facility Documentation & Reality Capture | Alturascope"
+  description="Structured documentation and reality capture for licensed cannabis cultivation, processing, and dispensary facilities. Security mapping, environmental systems, and compliance-ready reporting across North America."
+  canonical="https://alturascope.com/services/cannabis-facility-documentation"
+  schema={schema}
+  breadcrumbSchema={breadcrumbSchema}
+  faqSchema={faqSchema}
+  fullWidth={true}
+>
+  <div data-hero-page>
+
+    <!-- Hero -->
+    <section class="relative min-h-[100vh] md:min-h-0 md:h-[60vh] flex items-center justify-center">
+      <div class="absolute inset-0 bg-navy">
+        <img
+          src="https://images.unsplash.com/photo-1589484152782-0c3f81ce8a12?w=1920&q=80"
+          srcset="
+            https://images.unsplash.com/photo-1589484152782-0c3f81ce8a12?w=800&q=70 800w,
+            https://images.unsplash.com/photo-1589484152782-0c3f81ce8a12?w=1200&q=75 1200w,
+            https://images.unsplash.com/photo-1589484152782-0c3f81ce8a12?w=1920&q=80 1920w
+          "
+          sizes="100vw"
+          alt="Indoor cannabis cultivation facility with controlled environment lighting and grow infrastructure"
+          class="w-full h-full object-cover opacity-35"
+          loading="eager"
+          fetchpriority="high"
+        />
+        <div class="absolute inset-0 bg-[rgba(11,31,58,0.72)]"></div>
+      </div>
+      <div class="relative z-10 text-center px-6 pt-28 pb-16 md:pt-0 md:pb-0 max-w-[900px] mx-auto">
+        <p class="label text-gold mb-4">Specialist Sectors &middot; Cannabis</p>
+        <h1 class="text-[1.8rem] md:text-[3.2rem] font-light text-offwhite leading-tight">
+          Cannabis Facility Documentation
+        </h1>
+        <p class="mt-6 text-offwhite/70 leading-body max-w-[720px] mx-auto">
+          Structured, compliance-ready documentation for licensed cultivation, processing, and retail operations.
+        </p>
+        <div class="mt-8 flex flex-wrap justify-center gap-4">
+          <a href="/contact" class="btn-primary">Tell Us About Your Facility</a>
+          <a href="/services" class="btn-secondary-light">See Our Methodology</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- The Problem -->
+    <section class="bg-white section-padding">
+      <div class="max-w-[900px] mx-auto px-6">
+        <p class="label text-gold mb-4">The Problem</p>
+        <h2 class="text-[2rem] font-light text-navy leading-tight">
+          When the gap between plans and reality creates compliance exposure.
+        </h2>
+        <div class="mt-6 space-y-4 text-midgrey leading-body">
+          <p>
+            Licensed cannabis operations face documentation requirements that most industries don't: security camera coverage maps, environmental control specifications, access zone delineation, spatial layouts that must match regulatory submissions exactly. Regulators expect precision. Investors require verified facility data. And the gap between what was submitted for licensing and what actually exists on the ground can create significant compliance exposure.
+          </p>
+          <p>
+            Most operators don't have accurate, current documentation of their facilities. Buildouts happen fast, modifications are made on the fly, and the as-built reality drifts from the approved plans. When an audit arrives — or an investor conducts due diligence — the scramble to produce accurate facility documentation is expensive, stressful, and often incomplete.
+          </p>
+          <p>
+            Proactive operators document their facilities accurately and keep that documentation current. It's cheaper, faster, and far less painful than the alternative.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- What We Capture -->
+    <section class="bg-offwhite section-padding">
+      <div class="max-w-[900px] mx-auto px-6">
+        <p class="label text-gold mb-4">The Deliverable</p>
+        <h2 class="text-[2rem] font-light text-navy leading-tight">
+          What we capture.
+        </h2>
+
+        <div class="mt-16">
+          <h3 class="text-[1.35rem] font-medium text-navy">Complete Spatial Documentation</h3>
+          <div class="mt-4 space-y-4 text-midgrey leading-body">
+            <p>
+              LiDAR point cloud of the entire facility — grow rooms, processing areas, vault and storage, retail floor, back of house, loading areas. Millimetre-accurate, measurable, and suitable for regulatory submission support, design coordination, and operational planning.
+            </p>
+          </div>
+        </div>
+
+        <div class="mt-12">
+          <h3 class="text-[1.35rem] font-medium text-navy">Security Infrastructure Mapping</h3>
+          <div class="mt-4 space-y-4 text-midgrey leading-body">
+            <p>
+              Camera positions, fields of view, access control hardware, alarm panel locations, perimeter security, and vault/secure storage documentation. Spatially mapped within the 3D model so your security plan reflects what actually exists, not what was drawn on a plan two years ago.
+            </p>
+          </div>
+        </div>
+
+        <div class="mt-12">
+          <h3 class="text-[1.35rem] font-medium text-navy">Environmental Control Systems</h3>
+          <div class="mt-4 space-y-4 text-midgrey leading-body">
+            <p>
+              HVAC, dehumidification, CO2 supplementation, lighting systems (type, wattage, PAR ratings where accessible), irrigation infrastructure, and air filtration. Documented with manufacturer, model, and nameplate data — the information your mechanical engineers and grow consultants need to evaluate performance and plan upgrades.
+            </p>
+          </div>
+        </div>
+
+        <div class="mt-12">
+          <h3 class="text-[1.35rem] font-medium text-navy">Zoning and Access Control Documentation</h3>
+          <div class="mt-4 space-y-4 text-midgrey leading-body">
+            <p>
+              Clear spatial documentation of regulated zones: limited access areas, restricted areas, vault rooms, quarantine zones. Dimensions, access points, and security hardware documented and mapped to support regulatory compliance verification.
+            </p>
+          </div>
+        </div>
+
+        <div class="mt-12">
+          <h3 class="text-[1.35rem] font-medium text-navy">Utility Infrastructure</h3>
+          <div class="mt-4 space-y-4 text-midgrey leading-body">
+            <p>
+              Electrical distribution — panels, capacity, circuit allocation. Water supply and drainage. Gas lines where present. The baseline utility data that supports capacity planning as operations scale.
+            </p>
+          </div>
+        </div>
+
+        <div class="mt-12">
+          <h3 class="text-[1.35rem] font-medium text-navy">Structured Reporting via ScopeWalk</h3>
+          <div class="mt-4 space-y-4 text-midgrey leading-body">
+            <p>
+              All documentation is delivered through ScopeWalk in a structured, searchable format. Your compliance team, facility managers, and consultants can access exactly the data they need without wading through raw scan files.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- How It Works -->
+    <section class="bg-white section-padding">
+      <div class="max-w-[1200px] mx-auto px-6">
+        <h2 class="text-[2rem] font-light text-navy text-center mb-16">How it works.</h2>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-10">
+          <div>
+            <p class="text-gold text-[2rem] font-light mb-3">01</p>
+            <h3 class="text-navy font-medium mb-3">Scope and Coordination</h3>
+            <p class="text-midgrey text-[0.9rem] leading-relaxed">
+              We work with your operations and compliance teams to define capture scope and coordinate access — particularly for restricted and limited-access areas. We understand the sensitivity around facility documentation in this industry and operate with discretion.
+            </p>
+          </div>
+          <div>
+            <p class="text-gold text-[2rem] font-light mb-3">02</p>
+            <h3 class="text-navy font-medium mb-3">On-Site Capture</h3>
+            <p class="text-midgrey text-[0.9rem] leading-relaxed">
+              Comprehensive LiDAR, photographic, and environmental system documentation. Executed efficiently and systematically. We work around cultivation schedules and operational requirements.
+            </p>
+          </div>
+          <div>
+            <p class="text-gold text-[2rem] font-light mb-3">03</p>
+            <h3 class="text-navy font-medium mb-3">Processing and Delivery</h3>
+            <p class="text-midgrey text-[0.9rem] leading-relaxed">
+              Structured deliverables through ScopeWalk, typically available within 5 business days of capture. Point cloud data available in standard formats for integration with architectural and engineering platforms.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Coverage -->
+    <section class="bg-offwhite section-padding">
+      <div class="max-w-[900px] mx-auto px-6">
+        <p class="text-midgrey leading-body">
+          We operate across all fifty US states and every Canadian province. Travel is included in all project pricing.
+        </p>
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="bg-white section-padding">
+      <div class="max-w-[900px] mx-auto px-6">
+        <h2 class="text-[2rem] font-light text-navy mb-12">Common questions about cannabis facility documentation.</h2>
+
+        <div class="space-y-8">
+          <details class="group border-b border-border pb-6">
+            <summary class="cursor-pointer text-navy font-medium text-lg flex items-center justify-between">
+              Do you work with licensed facilities only?
+              <span class="text-gold text-xl transition-transform group-open:rotate-45">+</span>
+            </summary>
+            <p class="mt-4 text-midgrey leading-body">
+              Yes. We provide documentation services to licensed cannabis cultivation, processing, and retail facilities operating in compliance with their jurisdictional regulations.
+            </p>
+          </details>
+
+          <details class="group border-b border-border pb-6">
+            <summary class="cursor-pointer text-navy font-medium text-lg flex items-center justify-between">
+              Is the documentation suitable for regulatory submission?
+              <span class="text-gold text-xl transition-transform group-open:rotate-45">+</span>
+            </summary>
+            <p class="mt-4 text-midgrey leading-body">
+              Our documentation provides accurate, structured, spatially-referenced data about your facility as it exists. It supports regulatory submissions, licence applications, and compliance reviews by giving your compliance team and consultants a verified factual basis to work from. We do not provide regulatory compliance opinions or certifications.
+            </p>
+          </details>
+
+          <details class="group border-b border-border pb-6">
+            <summary class="cursor-pointer text-navy font-medium text-lg flex items-center justify-between">
+              How do you handle facility security and confidentiality?
+              <span class="text-gold text-xl transition-transform group-open:rotate-45">+</span>
+            </summary>
+            <p class="mt-4 text-midgrey leading-body">
+              We understand the sensitivity of cannabis facility documentation. All data is handled under strict confidentiality. Access to ScopeWalk deliverables is controlled by your team. We coordinate all site access through your designated contacts and follow your security protocols.
+            </p>
+          </details>
+
+          <details class="group border-b border-border pb-6">
+            <summary class="cursor-pointer text-navy font-medium text-lg flex items-center justify-between">
+              Can you document multiple facilities for a multi-state operator?
+              <span class="text-gold text-xl transition-transform group-open:rotate-45">+</span>
+            </summary>
+            <p class="mt-4 text-midgrey leading-body">
+              Yes. Our national travel model covers the United States and Canada. Multi-site programmes are coordinated on a schedule that works with your operations across all locations.
+            </p>
+          </details>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="bg-offwhite section-padding">
+      <div class="max-w-[700px] mx-auto px-6 text-center">
+        <h2 class="text-[2rem] font-light text-navy">Tell Us About Your Facility</h2>
+        <p class="mt-4 text-midgrey leading-body">
+          Share your facility type, location, and documentation needs. We respond within one business day with a scope recommendation and all-in pricing.
+        </p>
+        <a href="/contact" class="btn-primary mt-8">Start a Project</a>
+        <div class="mt-8 flex flex-wrap justify-center gap-6 text-sm">
+          <a href="/services/construction-documentation" class="text-navy font-medium hover:opacity-80 transition-opacity">Construction Documentation &rarr;</a>
+          <a href="/services/industrial-facility-documentation" class="text-navy font-medium hover:opacity-80 transition-opacity">Industrial Facility Documentation &rarr;</a>
+          <a href="/services" class="text-navy font-medium hover:opacity-80 transition-opacity">All Services &rarr;</a>
+        </div>
+      </div>
+    </section>
+
+  </div>
+</Layout>
