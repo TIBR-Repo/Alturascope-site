@@ -1,0 +1,317 @@
+---
+import Layout from "../../layouts/Layout.astro";
+
+const schema = JSON.stringify({
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "name": "Site Surveys & Documentation — Central US",
+  "description": "Pre-construction site documentation across the Central US — Chicago, Dallas, Houston, Denver, Minneapolis. Equipment schedules, MEP documentation, and Matterport digital twins for renovation and rollout programmes.",
+  "provider": {
+    "@type": "ProfessionalService",
+    "name": "Alturascope",
+    "url": "https://alturascope.com",
+    "areaServed": [
+      { "@type": "Country", "name": "United States" },
+      { "@type": "Country", "name": "Canada" },
+      { "@type": "Country", "name": "United Kingdom" }
+    ]
+  },
+  "serviceType": "Pre-Construction Site Documentation — Central US",
+  "hasOfferCatalog": {
+    "@type": "OfferCatalog",
+    "name": "Site Documentation Services",
+    "itemListElement": [
+      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Navigable Digital Twin" } },
+      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Conditions Report" } },
+      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Equipment & Asset Schedule" } },
+      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "ScopeWalk Platform Access" } }
+    ]
+  }
+});
+
+const breadcrumbSchema = JSON.stringify({
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://alturascope.com" },
+    { "@type": "ListItem", "position": 2, "name": "Services", "item": "https://alturascope.com/services/" },
+    { "@type": "ListItem", "position": 3, "name": "Central US Site Surveys", "item": "https://alturascope.com/services/central-us-site-surveys/" }
+  ]
+});
+
+const faqSchema = JSON.stringify({
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Do you cover all states in the Central US?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Yes. We operate across every state in the Central US — Illinois, Texas, Colorado, Minnesota, Wisconsin, Iowa, Missouri, Kansas, Nebraska, Oklahoma, Ohio, Indiana, Michigan, and beyond. Travel is included in all project pricing. There are no per-visit travel surcharges and no local subcontractors. AlturaScope methodology, AlturaScope deliverables, every time." }
+    },
+    {
+      "@type": "Question",
+      "name": "Why is HVAC and building envelope documentation particularly important in the Central US?",
+      "acceptedAnswer": { "@type": "Answer", "text": "The Central US experiences the widest climate range of any region — extreme cold in the upper Midwest, extreme heat in Texas, and everything in between. HVAC systems work harder here than in any other region, and building envelope performance is critical to energy efficiency and occupant comfort. Our FLIR thermal imaging documents HVAC performance anomalies, identifies insulation gaps in the building envelope, and reveals hidden moisture issues that can develop where thermal cycling is severe. For renovation projects, understanding the actual condition of these systems — not just their nameplate data — prevents the change orders that arise when ageing infrastructure fails to meet design assumptions." }
+    },
+    {
+      "@type": "Question",
+      "name": "Can you support national QSR programmes headquartered in Chicago or Dallas?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Yes. Chicago and Dallas are home to many of the largest QSR and franchise operators in the country, and we work with programme teams based in these cities to document locations nationwide. We operate under a national travel model — your team briefs us once at headquarters, we calibrate the deliverable during a pilot phase, and then we execute consistently across every location in the programme regardless of state or region. All deliverables are accessible through a single ScopeWalk programme portal." }
+    },
+    {
+      "@type": "Question",
+      "name": "What types of projects do you document in the Central US?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Our Central US work includes QSR and franchise remodel programmes managed from Chicago and Dallas headquarters. Large-format retail and big-box renovation in Texas and across the Sun Belt. Industrial and warehouse conversion projects in the Midwest. Energy sector facility documentation in Houston. Healthcare facility surveys for regional health systems. Commercial renovation projects where extreme climate conditions make thorough HVAC and building envelope assessment especially valuable." }
+    }
+  ]
+});
+---
+<Layout
+  title="Site Surveys & Documentation — Central US | Alturascope"
+  description="Pre-construction site documentation across the Central US — Chicago, Dallas, Houston, Denver, Minneapolis. Equipment schedules, MEP documentation, and Matterport digital twins for renovation and rollout programmes."
+  canonical="https://alturascope.com/services/central-us-site-surveys/"
+  ogImage="https://images.unsplash.com/photo-1477959858617-67f85cf4f1df?w=1200&q=80"
+  schema={schema}
+  breadcrumbSchema={breadcrumbSchema}
+  faqSchema={faqSchema}
+  fullWidth={true}
+>
+  <div data-hero-page>
+
+    <!-- Hero -->
+    <section class="relative h-[60vh] min-h-[400px] flex items-center justify-center">
+      <div class="absolute inset-0 bg-navy">
+        <img
+          src="https://images.unsplash.com/photo-1477959858617-67f85cf4f1df?w=1920&q=80"
+          alt="Commercial urban skyline in the Central United States with office towers and construction activity visible"
+          class="w-full h-full object-cover opacity-35"
+        />
+        <div class="absolute inset-0 bg-[rgba(11,31,58,0.72)]"></div>
+      </div>
+      <div class="relative z-10 text-center px-6 max-w-[900px] mx-auto">
+        <p class="label text-gold mb-4">Regional Coverage &middot; Central US</p>
+        <h1 class="text-[2.4rem] md:text-[3.2rem] font-light text-offwhite leading-tight">
+          Site Surveys &amp; Pre-Construction Documentation — Central United States
+        </h1>
+        <p class="mt-6 text-offwhite/70 leading-body max-w-[720px] mx-auto">
+          The Central US is where many of the country's largest rollout programmes are planned — and where extreme climate conditions make thorough pre-construction documentation especially valuable. AlturaScope delivers structured site intelligence across Chicago, Dallas, Houston, Denver, Minneapolis, and every market in between.
+        </p>
+        <div class="mt-8 flex flex-wrap justify-center gap-4">
+          <a href="/contact" class="btn-primary">Start a Project</a>
+          <a href="/services" class="btn-secondary-light">How It Works</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Why Documentation Matters in the Central US -->
+    <section class="bg-white section-padding">
+      <div class="max-w-[900px] mx-auto px-6">
+        <p class="label text-gold mb-4">The Central US Market</p>
+        <h2 class="text-[2rem] font-light text-navy leading-tight">
+          Why pre-construction documentation matters here.
+        </h2>
+        <div class="mt-6 space-y-4 text-midgrey leading-body">
+          <p>
+            Chicago and Dallas are home to the headquarters of many of the largest QSR operators, franchise groups, and retail chains in the country. The decisions about national remodel programmes, portfolio-wide rebrands, and multi-site capital investments are made in these cities — and the documentation standard that supports those decisions is set here. When a programme director in Chicago briefs a 200-location QSR remodel or a VP of Construction in Dallas launches a national retail refresh, the pre-construction documentation must be consistent, structured, and complete enough to serve the entire programme.
+          </p>
+          <p>
+            The Central US also presents a distinct documentation challenge rooted in climate. The region experiences the widest temperature range of any in the country — from sub-zero winters in Minneapolis and Chicago to sustained triple-digit heat in Dallas and Houston. HVAC systems work harder here than anywhere else, and building envelope performance is critical. FLIR thermal imaging is particularly valuable in this region: it reveals HVAC performance anomalies, identifies insulation failure in the building envelope, and documents the hidden effects of severe thermal cycling on building systems and structure.
+          </p>
+          <p>
+            Beyond the metros, the Central US drives significant industrial and warehouse conversion activity across the Midwest, large-format retail and big-box renovation in Texas, and energy sector facility documentation in Houston. Each of these project types requires pre-construction documentation that goes beyond a floor plan — <a href="/insights/why-poor-site-documentation-costs-construction-projects" class="text-navy font-medium hover:opacity-80 transition-opacity">complete conditions intelligence</a> that prevents the scope surprises that generate change orders.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- What We Deliver -->
+    <section class="bg-offwhite section-padding">
+      <div class="max-w-[900px] mx-auto px-6">
+        <p class="label text-gold mb-4">The Deliverable</p>
+        <h2 class="text-[2rem] font-light text-navy leading-tight">
+          Structured site intelligence. Every project.
+        </h2>
+        <div class="mt-6 space-y-4 text-midgrey leading-body">
+          <p>
+            Every AlturaScope site visit in the Central US produces the same structured deliverable package — whether the project is a single warehouse conversion in Chicago or a 150-location franchise remodel programme managed from Dallas.
+          </p>
+        </div>
+
+        <div class="mt-10 grid grid-cols-1 md:grid-cols-2 gap-8">
+          <div>
+            <h3 class="text-[1.1rem] font-medium text-navy">Navigable Digital Twin</h3>
+            <p class="mt-2 text-midgrey leading-body text-[0.95rem]">
+              Matterport-based 3D model of the entire space. Remote access for the full project team. Measurements taken directly in the model.
+            </p>
+          </div>
+          <div>
+            <h3 class="text-[1.1rem] font-medium text-navy">Conditions Report</h3>
+            <p class="mt-2 text-midgrey leading-body text-[0.95rem]">
+              P1/P2/P3 prioritised assessment of existing conditions — structural, MEP, finishes, building envelope, code compliance, accessibility.
+            </p>
+          </div>
+          <div>
+            <h3 class="text-[1.1rem] font-medium text-navy">Equipment &amp; Asset Schedule</h3>
+            <p class="mt-2 text-midgrey leading-body text-[0.95rem]">
+              Full inventory by location, make, model, condition, and services connections. Formatted for procurement and design teams.
+            </p>
+          </div>
+          <div>
+            <h3 class="text-[1.1rem] font-medium text-navy">Thermal Imaging (FLIR)</h3>
+            <p class="mt-2 text-midgrey leading-body text-[0.95rem]">
+              HVAC performance assessment, building envelope analysis, insulation verification, and hidden services identification — critical in extreme climate zones.
+            </p>
+          </div>
+          <div>
+            <h3 class="text-[1.1rem] font-medium text-navy">Above-Ceiling MEP Documentation</h3>
+            <p class="mt-2 text-midgrey leading-body text-[0.95rem]">
+              Thermal, pole-mounted 360&deg;, and borescope capture of ceiling plenum conditions, services routing, and conflicts.
+            </p>
+          </div>
+          <div>
+            <h3 class="text-[1.1rem] font-medium text-navy">ScopeWalk Platform</h3>
+            <p class="mt-2 text-midgrey leading-body text-[0.95rem]">
+              All deliverables structured in a single portal. Permanent access. For multi-site programmes: compare locations side by side.
+            </p>
+          </div>
+        </div>
+
+        <a href="/services/pre-construction-site-intelligence" class="inline-block mt-10 text-navy font-medium hover:opacity-80 transition-opacity">
+          Full detail on the AlturaScope deliverable &rarr;
+        </a>
+      </div>
+    </section>
+
+    <!-- Markets We Serve -->
+    <section class="bg-white section-padding">
+      <div class="max-w-[900px] mx-auto px-6">
+        <p class="label text-gold mb-4">Sectors</p>
+        <h2 class="text-[2rem] font-light text-navy leading-tight">
+          Markets we serve in the Central US.
+        </h2>
+
+        <div class="mt-12">
+          <h3 class="text-[1.35rem] font-medium text-navy">QSR &amp; Restaurant</h3>
+          <div class="mt-4 space-y-4 text-midgrey leading-body">
+            <p>
+              Chicago and Dallas are the decision-making cities for many of the country's largest QSR and franchise programmes. Programme directors in these headquarters manage remodel rollouts that span dozens of states — and they need documentation that is consistent across every location. Our <a href="/services/qsr-restaurant-survey" class="text-navy font-medium hover:opacity-80 transition-opacity">QSR restaurant survey programme</a> delivers the same structured package at every restaurant, managed centrally and accessible through a single ScopeWalk portal.
+            </p>
+          </div>
+        </div>
+
+        <div class="mt-12">
+          <h3 class="text-[1.35rem] font-medium text-navy">Retail &amp; Franchise</h3>
+          <div class="mt-4 space-y-4 text-midgrey leading-body">
+            <p>
+              Large-format retail and big-box renovation programmes in Texas and across the Sun Belt. National rebrands managed from Central US headquarters. Franchise refreshes across the Midwest. Our <a href="/services/retail-rollout-documentation" class="text-navy font-medium hover:opacity-80 transition-opacity">retail rollout documentation</a> delivers consistent conditions data, equipment inventories, and thermal analysis at every store — so your design and construction teams work from reliable information regardless of the location or store format.
+            </p>
+          </div>
+        </div>
+
+        <div class="mt-12">
+          <h3 class="text-[1.35rem] font-medium text-navy">Healthcare</h3>
+          <div class="mt-4 space-y-4 text-midgrey leading-body">
+            <p>
+              Regional health systems across the Midwest and Texas run multi-facility capital programmes that require standardised documentation across hospitals, satellite clinics, and medical office buildings. Our <a href="/services/healthcare-facility-survey" class="text-navy font-medium hover:opacity-80 transition-opacity">healthcare facility survey</a> methodology documents the complex MEP infrastructure, compliance-relevant conditions, and equipment inventories that capital planning teams need to prioritise projects and allocate budget across the network.
+            </p>
+          </div>
+        </div>
+
+        <div class="mt-12">
+          <h3 class="text-[1.35rem] font-medium text-navy">Industrial, Energy &amp; Commercial</h3>
+          <div class="mt-4 space-y-4 text-midgrey leading-body">
+            <p>
+              Industrial and warehouse conversion projects across the Midwest. Energy sector facility documentation in Houston. Commercial renovation in markets where extreme climate conditions make thorough HVAC and building envelope assessment especially valuable. Our <a href="/services/construction-documentation" class="text-navy font-medium hover:opacity-80 transition-opacity">pre-construction documentation</a> delivers the complete conditions picture — structural, MEP, equipment, above-ceiling, and thermal — so the design team works from accurate information and the contractor bids from a reliable baseline.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Coverage and Logistics -->
+    <section class="bg-navy section-padding">
+      <div class="max-w-[900px] mx-auto px-6">
+        <p class="label text-gold mb-4">Logistics</p>
+        <h2 class="text-[2rem] font-light text-offwhite leading-tight">
+          No local subcontractors. No variability.
+        </h2>
+        <div class="mt-6 space-y-4 text-offwhite/70 leading-body">
+          <p>
+            AlturaScope operates under a national travel model. Every site visit in the Central US — whether it is in downtown Chicago, suburban Dallas, or rural Iowa — is conducted by AlturaScope using the same methodology, the same equipment, and the same deliverable standard. There is no local subcontractor lottery. Travel costs are included in all project pricing.
+          </p>
+          <p>
+            For multi-site programmes running across the Central US — or across the entire country — we coordinate scheduling centrally. Your team briefs us once, and we manage access, timing, and logistics directly with each location. For programmes requiring simultaneous coverage across multiple states, we mobilise in parallel to compress your pre-construction timeline.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="bg-offwhite section-padding">
+      <div class="max-w-[900px] mx-auto px-6">
+        <h2 class="text-[2rem] font-light text-navy mb-12">Common questions about Central US site surveys.</h2>
+
+        <div class="space-y-8">
+          <details class="group border-b border-border pb-6">
+            <summary class="cursor-pointer text-navy font-medium text-lg flex items-center justify-between">
+              Do you cover all states in the Central US?
+              <span class="text-gold text-xl transition-transform group-open:rotate-45">+</span>
+            </summary>
+            <p class="mt-4 text-midgrey leading-body">
+              Yes. We operate across every state in the Central US — Illinois, Texas, Colorado, Minnesota, Wisconsin, Iowa, Missouri, Kansas, Nebraska, Oklahoma, Ohio, Indiana, Michigan, and beyond. Travel is included in all project pricing. There are no per-visit travel surcharges and no local subcontractors. AlturaScope methodology, AlturaScope deliverables, every time.
+            </p>
+          </details>
+
+          <details class="group border-b border-border pb-6">
+            <summary class="cursor-pointer text-navy font-medium text-lg flex items-center justify-between">
+              Why is HVAC and building envelope documentation particularly important in the Central US?
+              <span class="text-gold text-xl transition-transform group-open:rotate-45">+</span>
+            </summary>
+            <p class="mt-4 text-midgrey leading-body">
+              The Central US experiences the widest climate range of any region — extreme cold in the upper Midwest, extreme heat in Texas, and everything in between. HVAC systems work harder here than in any other region, and building envelope performance is critical to energy efficiency and occupant comfort. Our FLIR thermal imaging documents HVAC performance anomalies, identifies insulation gaps in the building envelope, and reveals hidden moisture issues that can develop where thermal cycling is severe. For renovation projects, understanding the actual condition of these systems — not just their nameplate data — prevents the change orders that arise when ageing infrastructure fails to meet design assumptions.
+            </p>
+          </details>
+
+          <details class="group border-b border-border pb-6">
+            <summary class="cursor-pointer text-navy font-medium text-lg flex items-center justify-between">
+              Can you support national QSR programmes headquartered in Chicago or Dallas?
+              <span class="text-gold text-xl transition-transform group-open:rotate-45">+</span>
+            </summary>
+            <p class="mt-4 text-midgrey leading-body">
+              Yes. Chicago and Dallas are home to many of the largest QSR and franchise operators in the country, and we work with programme teams based in these cities to document locations nationwide. We operate under a national travel model — your team briefs us once at headquarters, we calibrate the deliverable during a pilot phase, and then we execute consistently across every location in the programme regardless of state or region. All deliverables are accessible through a single ScopeWalk programme portal.
+            </p>
+          </details>
+
+          <details class="group border-b border-border pb-6">
+            <summary class="cursor-pointer text-navy font-medium text-lg flex items-center justify-between">
+              What types of projects do you document in the Central US?
+              <span class="text-gold text-xl transition-transform group-open:rotate-45">+</span>
+            </summary>
+            <p class="mt-4 text-midgrey leading-body">
+              Our Central US work includes QSR and franchise remodel programmes managed from Chicago and Dallas headquarters. Large-format retail and big-box renovation in Texas and across the Sun Belt. Industrial and warehouse conversion projects in the Midwest. Energy sector facility documentation in Houston. Healthcare facility surveys for regional health systems. Commercial renovation projects where extreme climate conditions make thorough HVAC and building envelope assessment especially valuable.
+            </p>
+          </details>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="bg-white section-padding">
+      <div class="max-w-[700px] mx-auto px-6 text-center">
+        <h2 class="text-[2rem] font-light text-navy">Ready to start?</h2>
+        <p class="mt-4 text-midgrey leading-body">
+          Tell us about the site, the project scope, and what your team needs to decide. We will come back with a clear proposal and an all-in quote — travel included.
+        </p>
+        <a href="/contact" class="btn-primary mt-8">Start a Project</a>
+        <div class="mt-8 flex flex-wrap justify-center gap-6 text-sm">
+          <a href="/services/pre-construction-site-intelligence" class="text-navy font-medium hover:opacity-80 transition-opacity">The full AlturaScope deliverable &rarr;</a>
+          <a href="/services/qsr-restaurant-survey" class="text-navy font-medium hover:opacity-80 transition-opacity">QSR restaurant surveys &rarr;</a>
+          <a href="/services/retail-rollout-documentation" class="text-navy font-medium hover:opacity-80 transition-opacity">Retail rollout documentation &rarr;</a>
+          <a href="/services/healthcare-facility-survey" class="text-navy font-medium hover:opacity-80 transition-opacity">Healthcare facility surveys &rarr;</a>
+          <a href="/services/construction-documentation" class="text-navy font-medium hover:opacity-80 transition-opacity">Construction documentation &rarr;</a>
+        </div>
+      </div>
+    </section>
+
+  </div>
+</Layout>
