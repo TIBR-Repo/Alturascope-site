@@ -26,18 +26,29 @@ const schema = JSON.stringify({
       <div class="absolute inset-0 bg-navy">
         <img
           src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=1920&q=80"
-          alt="Dramatic commercial interior with high ceilings and atmospheric lighting"
+          srcset="
+            https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=800&q=70 800w,
+            https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=1200&q=75 1200w,
+            https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=1920&q=80 1920w
+          "
+          sizes="100vw"
+          alt="Commercial building interior documented for pre-construction site survey and renovation planning"
           class="w-full h-full object-cover opacity-40"
+          loading="eager"
+          fetchpriority="high"
         />
         <div class="absolute inset-0 bg-[rgba(11,31,58,0.72)]"></div>
       </div>
 
       <div class="relative z-10 text-center max-w-[760px] mx-auto px-6">
         <p class="label text-gold mb-6">Reality Capture &middot; Site Documentation</p>
-        <h1 class="text-[2.4rem] md:text-[4rem] font-light text-offwhite leading-[1.1]">
-          The documentation your project can&rsquo;t afford to get wrong.
+        <h1 class="text-[1.8rem] md:text-[3.6rem] font-light text-offwhite leading-[1.1]">
+          Reality Capture &amp; Site Documentation Across the US, Canada &amp; UK
         </h1>
-        <p class="mt-6 text-[1.2rem] text-offwhite/80 font-normal leading-relaxed max-w-[640px] mx-auto">
+        <h2 class="mt-4 text-[1.2rem] md:text-[1.6rem] font-light text-offwhite/90 leading-[1.3]">
+          The documentation your project can&rsquo;t afford to get wrong.
+        </h2>
+        <p class="mt-6 text-[1.05rem] md:text-[1.2rem] text-offwhite/80 font-normal leading-relaxed max-w-[640px] mx-auto">
           Alturascope delivers Matterport digital twins, structured conditions reports, and specialist documentation for construction teams and project managers across the United States, Canada, and the United Kingdom.
         </p>
         <div class="mt-10 flex flex-wrap items-center justify-center gap-4">
@@ -78,6 +89,7 @@ const schema = JSON.stringify({
               style="aspect-ratio: 16/9; border: none; position: absolute; inset: 0;"
               allowfullscreen
               allow="xr-spatial-tracking"
+              loading="lazy"
               title="Alturascope Matterport digital twin demonstration"
             ></iframe>
           </div>
@@ -94,8 +106,8 @@ const schema = JSON.stringify({
       <div class="max-w-[1100px] mx-auto px-6">
         <div class="grid grid-cols-2 md:grid-cols-4 gap-8 md:gap-4 text-center">
           <div>
-            <p class="text-[2.4rem] font-light text-navy">37</p>
-            <p class="text-[0.7rem] font-medium uppercase tracking-[0.12em] text-midgrey mt-1">US States Surveyed</p>
+            <p class="text-[2.4rem] font-light text-navy">50</p>
+            <p class="text-[0.7rem] font-medium uppercase tracking-[0.12em] text-midgrey mt-1">US States Covered</p>
           </div>
           <div>
             <p class="text-[2.4rem] font-light text-navy">All</p>
@@ -149,7 +161,7 @@ const schema = JSON.stringify({
               </div>
               <img
                 src="https://images.unsplash.com/photo-1497366216548-37526070297c?w=800&q=80"
-                alt="ScopeWalk platform interface showing structured project documentation with rooms and labeled photographs"
+                alt="ScopeWalk site documentation platform showing structured project deliverables with labelled room photographs and conditions reports"
                 class="w-full"
                 loading="lazy"
               />
@@ -223,13 +235,13 @@ const schema = JSON.stringify({
           <div>
             <h3 class="text-navy font-medium mb-3">Developers &amp; Asset Managers</h3>
             <p class="text-midgrey text-[0.9rem] leading-relaxed">
-              Pre-lease diligence, renew-versus-relocate analysis, and multi-site capex programmes. One vendor, consistent deliverables, nationwide coverage.
+              <a href="/services/construction-documentation" class="text-navy underline underline-offset-2 hover:opacity-80">Pre-lease diligence</a>, renew-versus-relocate analysis, and <a href="/services/multi-site-rollout-documentation" class="text-navy underline underline-offset-2 hover:opacity-80">multi-site capex programmes</a>. One vendor, consistent deliverables, nationwide coverage.
             </p>
           </div>
           <div>
-            <h3 class="text-navy font-medium mb-3">Rollout &amp; Multi-Site Programmes</h3>
+            <h3 class="text-navy font-medium mb-3"><a href="/services/multi-site-rollout-documentation" class="text-navy hover:opacity-80 transition-opacity">Rollout &amp; Multi-Site Programmes</a></h3>
             <p class="text-midgrey text-[0.9rem] leading-relaxed">
-              PE-backed operators, franchise groups, and healthcare networks running programmes across multiple locations. One brief, one standard, every site — managed centrally through ScopeWalk. See our <a href="/services/qsr-restaurant-survey" class="text-navy underline underline-offset-2 hover:opacity-80">QSR restaurant survey</a> and <a href="/services/retail-rollout-documentation" class="text-navy underline underline-offset-2 hover:opacity-80">retail rollout documentation</a> programmes.
+              PE-backed operators, <a href="/services/retail-rollout-documentation" class="text-navy underline underline-offset-2 hover:opacity-80">franchise groups</a>, and <a href="/services/healthcare-facility-survey" class="text-navy underline underline-offset-2 hover:opacity-80">healthcare networks</a> running programmes across multiple locations. One brief, one standard, every site — managed centrally through ScopeWalk. See our <a href="/services/qsr-restaurant-survey" class="text-navy underline underline-offset-2 hover:opacity-80">QSR restaurant survey</a> programmes.
             </p>
           </div>
           <div>
@@ -264,13 +276,16 @@ const schema = JSON.stringify({
               <p>
                 Whether you have one site or fifty, you brief us once and receive the same standard of work regardless of where the building is.
               </p>
+              <p>
+                See our regional coverage: <a href="/services/northeast-site-surveys" class="text-navy font-medium hover:opacity-80 transition-opacity">Northeast US</a>, <a href="/services/southeast-site-surveys" class="text-navy font-medium hover:opacity-80 transition-opacity">Southeast US</a>, <a href="/services/central-us-site-surveys" class="text-navy font-medium hover:opacity-80 transition-opacity">Central US</a>, and <a href="/services/west-coast-site-surveys" class="text-navy font-medium hover:opacity-80 transition-opacity">West Coast</a>.
+              </p>
             </div>
           </div>
 
           <div>
             <img
               src="/coverage-map.png"
-              alt="Coverage map showing Alturascope operations across the United States, Canada, and United Kingdom"
+              alt="Alturascope site survey coverage map showing nationwide operations across all 50 US states, Canada, and the United Kingdom"
               class="w-full"
               loading="lazy"
             />

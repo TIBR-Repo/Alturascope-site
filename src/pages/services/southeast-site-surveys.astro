@@ -83,8 +83,16 @@ const faqSchema = JSON.stringify({
       <div class="absolute inset-0 bg-navy">
         <img
           src="https://images.unsplash.com/photo-1575089776834-8be34d1e36f0?w=1920&q=80"
+          srcset="
+            https://images.unsplash.com/photo-1575089776834-8be34d1e36f0?w=800&q=70 800w,
+            https://images.unsplash.com/photo-1575089776834-8be34d1e36f0?w=1200&q=75 1200w,
+            https://images.unsplash.com/photo-1575089776834-8be34d1e36f0?w=1920&q=80 1920w
+          "
+          sizes="100vw"
           alt="Commercial construction and development activity in a Southeast United States urban environment with modern buildings"
           class="w-full h-full object-cover opacity-35"
+          loading="eager"
+          fetchpriority="high"
         />
         <div class="absolute inset-0 bg-[rgba(11,31,58,0.72)]"></div>
       </div>
