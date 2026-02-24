@@ -1,0 +1,390 @@
+---
+import Layout from "../../layouts/Layout.astro";
+
+const schema = JSON.stringify({
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "name": "Retail Rollout Site Documentation",
+  "description": "Site documentation for retail remodel, rebrand, and expansion programmes. Conditions surveys, equipment schedules, and Matterport digital twins delivered consistently across every location — nationwide.",
+  "provider": {
+    "@type": "ProfessionalService",
+    "name": "Alturascope",
+    "url": "https://alturascope.com",
+    "areaServed": [
+      { "@type": "Country", "name": "United States" },
+      { "@type": "Country", "name": "Canada" },
+      { "@type": "Country", "name": "United Kingdom" }
+    ]
+  },
+  "serviceType": "Retail Rollout Site Survey Programme",
+  "hasOfferCatalog": {
+    "@type": "OfferCatalog",
+    "name": "Site Documentation Services",
+    "itemListElement": [
+      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Navigable Digital Twin" } },
+      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Conditions Report" } },
+      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Equipment & Asset Schedule" } },
+      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "ScopeWalk Platform Access" } }
+    ]
+  }
+});
+
+const breadcrumbSchema = JSON.stringify({
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://alturascope.com" },
+    { "@type": "ListItem", "position": 2, "name": "Services", "item": "https://alturascope.com/services/" },
+    { "@type": "ListItem", "position": 3, "name": "Retail Rollout Documentation", "item": "https://alturascope.com/services/retail-rollout-documentation/" }
+  ]
+});
+
+const faqSchema = JSON.stringify({
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "How do you maintain consistency across dozens of retail locations?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Consistency is built into our methodology, not left to chance. During the programme brief, we establish the deliverable standard — capture scope, labeling conventions, report structure, and ScopeWalk configuration — and apply it identically to every subsequent site visit. Every store produces the same deliverable architecture in the same format through the same portal, regardless of location, size, or condition. Your team learns the format once and uses it across the entire programme." }
+    },
+    {
+      "@type": "Question",
+      "name": "Can you survey stores that are still trading?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Yes. We routinely survey operating retail locations. Visits are scheduled during off-peak hours or before opening to minimise disruption to trading. The capture process is non-invasive — we do not require areas to be closed, fixtures to be moved, or operations to be paused. For stores undergoing a rebrand or refresh while continuing to trade, we coordinate closely with the store manager and your programme team to work around the operation." }
+    },
+    {
+      "@type": "Question",
+      "name": "What is included in the equipment and asset schedule for a retail location?",
+      "acceptedAnswer": { "@type": "Answer", "text": "The equipment and asset schedule includes a full inventory of HVAC units, electrical panels and capacity, lighting types and fixture counts, fire suppression components, security and access control systems, POS infrastructure, signage — both interior and exterior — and stockroom racking. Each item is documented by location, make, model, condition, and visible services connections. The schedule is formatted consistently across every location so your procurement, design, and construction teams can plan across the entire portfolio." }
+    },
+    {
+      "@type": "Question",
+      "name": "How does ScopeWalk support a multi-site retail rollout?",
+      "acceptedAnswer": { "@type": "Answer", "text": "ScopeWalk is our proprietary delivery platform. For retail rollout programmes, it functions as a programme-level dashboard where every surveyed store is accessible through a single interface. All deliverables — digital twins, conditions reports, equipment schedules, narrated walkthroughs — are structured identically across every location. Your team can compare any two stores side by side, filter by region or priority, brief consultants directly from the platform, and track rollout progress across the entire programme." }
+    },
+    {
+      "@type": "Question",
+      "name": "How is programme pricing structured for retail rollouts?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Programme pricing is structured on a per-site basis with travel included — there are no separate travel charges added per visit. The per-site rate reflects the scope established during the programme brief. For larger programmes, pricing improves with volume. We provide a clear schedule of rates before the first visit so your team can budget the entire rollout with confidence. There are no surprise line items." }
+    }
+  ]
+});
+---
+<Layout
+  title="Retail Rollout Site Documentation — Multi-Site Survey Programme | Alturascope"
+  description="Site documentation for retail remodel, rebrand, and expansion programmes. Conditions surveys, equipment schedules, and Matterport digital twins delivered consistently across every location — nationwide."
+  canonical="https://alturascope.com/services/retail-rollout-documentation/"
+  ogImage="https://images.unsplash.com/photo-1604719312566-8912e9227c6a?w=1200&q=80"
+  schema={schema}
+  breadcrumbSchema={breadcrumbSchema}
+  faqSchema={faqSchema}
+  fullWidth={true}
+>
+  <div data-hero-page>
+
+    <!-- Hero -->
+    <section class="relative h-[60vh] min-h-[400px] flex items-center justify-center">
+      <div class="absolute inset-0 bg-navy">
+        <img
+          src="https://images.unsplash.com/photo-1604719312566-8912e9227c6a?w=1920&q=80"
+          alt="Modern retail store interior with display fixtures, ceiling infrastructure, and lighting visible during a pre-construction site survey"
+          class="w-full h-full object-cover opacity-35"
+        />
+        <div class="absolute inset-0 bg-[rgba(11,31,58,0.72)]"></div>
+      </div>
+      <div class="relative z-10 text-center px-6 max-w-[900px] mx-auto">
+        <p class="label text-gold mb-4">Multi-Site Programmes &middot; Retail &amp; Franchise</p>
+        <h1 class="text-[2.4rem] md:text-[3.2rem] font-light text-offwhite leading-tight">
+          Retail Rollout Site Documentation — Consistent Intelligence Across Every Location
+        </h1>
+        <p class="mt-6 text-offwhite/70 leading-body max-w-[720px] mx-auto">
+          When you are running a rebrand, refresh, or expansion across dozens of retail locations, the site survey is the first decision point — and it shapes every decision that follows. AlturaScope delivers the same structured documentation package at every store, so your design team, contractors, and consultants all work from the same baseline.
+        </p>
+        <div class="mt-8 flex flex-wrap justify-center gap-4">
+          <a href="/contact" class="btn-primary">Tell Us About Your Programme</a>
+          <a href="/services" class="btn-secondary-light">How It Works</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- The Problem -->
+    <section class="bg-white section-padding">
+      <div class="max-w-[900px] mx-auto px-6">
+        <p class="label text-gold mb-4">The Challenge</p>
+        <h2 class="text-[2rem] font-light text-navy leading-tight">
+          The hidden cost of inconsistent site information.
+        </h2>
+        <div class="mt-6 space-y-4 text-midgrey leading-body">
+          <p>
+            When every location in a retail portfolio is documented differently — different surveyors, different formats, different levels of detail — the design team spends as much time interpreting the information as using it. Floor plans arrive in one format from a surveyor in Atlanta, another format from a surveyor in Denver, and a third format from someone in New Jersey. The design team translates before they can design.
+          </p>
+          <p>
+            Floor plans alone do not capture the conditions that drive scope changes during a retail remodel or rebrand. Ceiling condition, MEP routing, structural constraints, equipment that has been added or modified since the last survey, accessibility issues, storefront glazing condition, loading dock access — these are the factors that generate change orders, and they are routinely absent from traditional as-built surveys.
+          </p>
+          <p>
+            At programme scale, the cost of inconsistency is not abstract. A 5% change order rate across 100 locations is not a rounding error — it is a budget line item that was preventable with <a href="/insights/why-poor-site-documentation-costs-construction-projects" class="text-navy font-medium hover:opacity-80 transition-opacity">complete documentation from the first visit</a>. Multiply the cost of a single return visit by the number of locations in the programme, and the case for structured, consistent site documentation makes itself.
+          </p>
+          <p>
+            The traditional approach — send a local surveyor to each location and hope for consistency — does not scale. It produces a collection of individual surveys, not a programme-level dataset. And the gaps are only discovered when the contractor is on site and the change order is already written.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- What We Deliver -->
+    <section class="bg-offwhite section-padding">
+      <div class="max-w-[900px] mx-auto px-6">
+        <p class="label text-gold mb-4">The Deliverable</p>
+        <h2 class="text-[2rem] font-light text-navy leading-tight">
+          Every store. The same standard. The same platform.
+        </h2>
+        <div class="mt-6 space-y-4 text-midgrey leading-body">
+          <p>
+            Every AlturaScope retail survey produces the same structured deliverable package — regardless of location, brand, or store format. The deliverable architecture is established once during the programme brief and applied consistently to every store in the rollout. This is what makes a <a href="/services/multi-site-rollout-documentation" class="text-navy font-medium hover:opacity-80 transition-opacity">multi-site documentation programme</a> fundamentally different from a series of individual surveys.
+          </p>
+        </div>
+
+        <!-- Navigable Digital Twin -->
+        <div class="mt-16">
+          <h3 class="text-[1.35rem] font-medium text-navy">Navigable Digital Twin</h3>
+          <div class="mt-4 space-y-4 text-midgrey leading-body">
+            <p>
+              A Matterport-based 3D model of the entire store — sales floor, stockroom, back-of-house, loading dock, and exterior where relevant. The digital twin lets the design team assess store layout, fixture positions, ceiling heights, structural grid, and column locations without travelling to site. Measurements can be taken directly in the model. Architects, fixture suppliers, and signage contractors can all work from the same spatial reference.
+            </p>
+          </div>
+        </div>
+
+        <!-- Conditions Report -->
+        <div class="mt-12">
+          <h3 class="text-[1.35rem] font-medium text-navy">Conditions Report (P1 / P2 / P3 Prioritised)</h3>
+          <div class="mt-4 space-y-4 text-midgrey leading-body">
+            <p>
+              A structured assessment of existing conditions, prioritised by urgency. P1 items require immediate attention before the remodel or rebrand proceeds. P2 items should be addressed during the works. P3 items are noted for awareness and future planning.
+            </p>
+            <p>
+              For retail locations, the report covers flooring condition and type, ceiling type and condition, storefront and glazing assessment, loading dock access and condition, back-of-house vs front-of-house separation, existing fixture infrastructure and mounting points, ADA compliance observations, fire and life safety systems, and structural observations. Formatted identically across every store so your team can compare conditions at a glance.
+            </p>
+          </div>
+        </div>
+
+        <!-- Equipment & Asset Schedule -->
+        <div class="mt-12">
+          <h3 class="text-[1.35rem] font-medium text-navy">Equipment &amp; Asset Schedule</h3>
+          <div class="mt-4 space-y-4 text-midgrey leading-body">
+            <p>
+              A complete inventory of installed systems and infrastructure, adapted for the retail environment: HVAC units, electrical panels and capacity, lighting types and fixture counts, fire suppression components, security and access control systems, POS infrastructure, signage — both interior and exterior — and stockroom racking. Each item is documented by location, make, model, condition, and visible services connections.
+            </p>
+            <p>
+              The same format at every location allows your procurement and construction teams to plan across the entire programme — identifying standardisation opportunities, specifying replacements in bulk, and building accurate budgets without chasing information store by store.
+            </p>
+          </div>
+        </div>
+
+        <!-- Thermal Imaging & MEP Documentation -->
+        <div class="mt-12">
+          <h3 class="text-[1.35rem] font-medium text-navy">Thermal Imaging &amp; MEP Documentation</h3>
+          <div class="mt-4 space-y-4 text-midgrey leading-body">
+            <p>
+              FLIR thermal capture identifies hidden services, active electrical loads, HVAC performance issues, and moisture intrusion behind walls and above ceilings — without invasive investigation. For retail locations where the ceiling plenum conceals critical MEP infrastructure, this non-invasive approach reveals conditions that floor plans and photographs cannot.
+            </p>
+            <p>
+              Above-ceiling documentation captures the services routing, structural conditions, and existing penetrations that determine whether the planned fitout is straightforward or complex. All thermal and <a href="/insights/above-ceiling-mep-survey-fit-out" class="text-navy font-medium hover:opacity-80 transition-opacity">above-ceiling MEP findings</a> are integrated into the conditions report and referenced in the digital twin.
+            </p>
+          </div>
+        </div>
+
+        <!-- Narrated Walkthrough -->
+        <div class="mt-12">
+          <h3 class="text-[1.35rem] font-medium text-navy">Narrated Walkthrough</h3>
+          <div class="mt-4 space-y-4 text-midgrey leading-body">
+            <p>
+              A spoken commentary tour of the store, tailored to the retail remodel scope. What was found, what condition the space is in, what the implications are for the planned rebrand or refresh, and what requires specialist input. The narration is delivered by someone with construction experience who understands what they are looking at and what it means for the project. Allows the design team, the brand team, and the operator to understand conditions without visiting the location.
+            </p>
+          </div>
+        </div>
+
+        <!-- ScopeWalk Programme Dashboard -->
+        <div class="mt-12">
+          <h3 class="text-[1.35rem] font-medium text-navy">ScopeWalk Programme Dashboard</h3>
+          <div class="mt-4 space-y-4 text-midgrey leading-body">
+            <p>
+              All deliverables for every store in the programme, structured and permanently accessible through a single portal. Compare any two locations side by side. Filter by region, priority, or rollout status. Brief your architect, fixture supplier, or general contractor directly from the platform. Track which stores have been surveyed, which are in progress, and which are pending. ScopeWalk is not a shared folder — it is the structured record of your entire rollout programme.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Who This Is For -->
+    <section class="bg-white section-padding">
+      <div class="max-w-[900px] mx-auto px-6">
+        <p class="label text-gold mb-4">Who This Serves</p>
+        <h2 class="text-[2rem] font-light text-navy leading-tight">
+          Built for operators running programmes at scale.
+        </h2>
+
+        <div class="mt-12">
+          <h3 class="text-[1.35rem] font-medium text-navy">PE-Backed Retail Operators</h3>
+          <div class="mt-4 space-y-4 text-midgrey leading-body">
+            <p>
+              When a private equity firm acquires a retail portfolio and mandates a portfolio-wide upgrade, the documentation standard determines how efficiently that capital is deployed. Consistent site intelligence across every location allows the design team to scope accurately, the construction manager to budget confidently, and the operator to track progress against the investment thesis.
+            </p>
+          </div>
+        </div>
+
+        <div class="mt-12">
+          <h3 class="text-[1.35rem] font-medium text-navy">Franchise Groups Executing National Rebrands</h3>
+          <div class="mt-4 space-y-4 text-midgrey leading-body">
+            <p>
+              A national rebrand requires every location to meet the new standard — but every location starts from a different baseline. Structured documentation reveals the actual scope at each store before the design is committed, preventing the change orders and schedule delays that occur when the contractor discovers undocumented conditions on site.
+            </p>
+          </div>
+        </div>
+
+        <div class="mt-12">
+          <h3 class="text-[1.35rem] font-medium text-navy">Developers Managing Multi-Tenant Retail Fitouts</h3>
+          <div class="mt-4 space-y-4 text-midgrey leading-body">
+            <p>
+              For developers coordinating fitouts across multiple retail units within a single development or across a portfolio of properties, consistent base building documentation gives every tenant and their design team the same quality of baseline information. One survey standard, one platform, one source of truth for the condition of the space.
+            </p>
+          </div>
+        </div>
+
+        <div class="mt-12">
+          <h3 class="text-[1.35rem] font-medium text-navy">Construction Managers Coordinating Multi-Site Deployment</h3>
+          <div class="mt-4 space-y-4 text-midgrey leading-body">
+            <p>
+              When the construction manager is responsible for deploying contractors across multiple retail locations, the quality of the pre-construction documentation determines the quality of the bids. <a href="/insights/standardising-site-surveys-multi-site-operators" class="text-navy font-medium hover:opacity-80 transition-opacity">Standardised site surveys</a> mean contractors bid from the same information, in the same format, with the same level of detail — reducing bid variability and preventing the scope disputes that erode programme budgets.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- National Coverage -->
+    <section class="bg-navy section-padding">
+      <div class="max-w-[900px] mx-auto px-6">
+        <p class="label text-gold mb-4">Coverage</p>
+        <h2 class="text-[2rem] font-light text-offwhite leading-tight">
+          One vendor. One standard. Nationwide.
+        </h2>
+        <div class="mt-6 space-y-4 text-offwhite/70 leading-body">
+          <p>
+            AlturaScope operates across all 50 US states and every Canadian province under a national travel model. Travel costs are included in programme pricing — there are no separate line items and no per-visit travel charges. For brands with transatlantic programmes, UK coverage is available through our dedicated <a href="/uk" class="text-offwhite font-medium hover:opacity-80 transition-opacity">UK operation</a>.
+          </p>
+          <p>
+            There is no local subcontractor variability. AlturaScope methodology, AlturaScope deliverables, AlturaScope quality standard — at every store, in every state. Programme scheduling is managed centrally. Your team briefs us once, and we coordinate access, timing, and logistics directly with each location.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Programme Scale -->
+    <section class="bg-offwhite section-padding">
+      <div class="max-w-[900px] mx-auto px-6">
+        <p class="label text-gold mb-4">Programme Delivery</p>
+        <h2 class="text-[2rem] font-light text-navy leading-tight">
+          From pilot to full rollout.
+        </h2>
+        <div class="mt-6 space-y-4 text-midgrey leading-body">
+          <p>
+            Every retail rollout programme begins with a pilot phase. We survey three to five stores to calibrate the deliverable to your team's specific requirements — format, level of detail, reporting structure, ScopeWalk configuration. Your design team, procurement team, and programme managers review the pilot deliverables and provide feedback before the full rollout begins.
+          </p>
+          <p>
+            Once the standard is set, we execute consistently across every location. Whether the programme covers 20 stores or 500, every location produces the same intelligence package. For programmes running across multiple states simultaneously, we mobilise in parallel to compress your pre-construction timeline.
+          </p>
+        </div>
+        <a href="/services/construction-documentation" class="inline-block mt-8 text-navy font-medium hover:opacity-80 transition-opacity">
+          Single-site pre-construction documentation &rarr;
+        </a>
+      </div>
+    </section>
+
+    <!-- Coverage note -->
+    <section class="bg-white section-padding">
+      <div class="max-w-[900px] mx-auto px-6">
+        <p class="text-midgrey leading-body">
+          We operate across all fifty US states and every Canadian province. Travel is included in all programme pricing. For UK projects, <a href="/uk" class="text-navy font-medium hover:opacity-80 transition-opacity">visit Alturascope UK</a>.
+        </p>
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="bg-offwhite section-padding">
+      <div class="max-w-[900px] mx-auto px-6">
+        <h2 class="text-[2rem] font-light text-navy mb-12">Common questions about retail rollout documentation.</h2>
+
+        <div class="space-y-8">
+          <details class="group border-b border-border pb-6">
+            <summary class="cursor-pointer text-navy font-medium text-lg flex items-center justify-between">
+              How do you maintain consistency across dozens of retail locations?
+              <span class="text-gold text-xl transition-transform group-open:rotate-45">+</span>
+            </summary>
+            <p class="mt-4 text-midgrey leading-body">
+              Consistency is built into our methodology, not left to chance. During the programme brief, we establish the deliverable standard — capture scope, labeling conventions, report structure, and ScopeWalk configuration — and apply it identically to every subsequent site visit. Every store produces the same deliverable architecture in the same format through the same portal, regardless of location, size, or condition. Your team learns the format once and uses it across the entire programme.
+            </p>
+          </details>
+
+          <details class="group border-b border-border pb-6">
+            <summary class="cursor-pointer text-navy font-medium text-lg flex items-center justify-between">
+              Can you survey stores that are still trading?
+              <span class="text-gold text-xl transition-transform group-open:rotate-45">+</span>
+            </summary>
+            <p class="mt-4 text-midgrey leading-body">
+              Yes. We routinely survey operating retail locations. Visits are scheduled during off-peak hours or before opening to minimise disruption to trading. The capture process is non-invasive — we do not require areas to be closed, fixtures to be moved, or operations to be paused. For stores undergoing a rebrand or refresh while continuing to trade, we coordinate closely with the store manager and your programme team to work around the operation.
+            </p>
+          </details>
+
+          <details class="group border-b border-border pb-6">
+            <summary class="cursor-pointer text-navy font-medium text-lg flex items-center justify-between">
+              What is included in the equipment and asset schedule for a retail location?
+              <span class="text-gold text-xl transition-transform group-open:rotate-45">+</span>
+            </summary>
+            <p class="mt-4 text-midgrey leading-body">
+              The equipment and asset schedule includes a full inventory of HVAC units, electrical panels and capacity, lighting types and fixture counts, fire suppression components, security and access control systems, POS infrastructure, signage — both interior and exterior — and stockroom racking. Each item is documented by location, make, model, condition, and visible services connections. The schedule is formatted consistently across every location so your procurement, design, and construction teams can plan across the entire portfolio.
+            </p>
+          </details>
+
+          <details class="group border-b border-border pb-6">
+            <summary class="cursor-pointer text-navy font-medium text-lg flex items-center justify-between">
+              How does ScopeWalk support a multi-site retail rollout?
+              <span class="text-gold text-xl transition-transform group-open:rotate-45">+</span>
+            </summary>
+            <p class="mt-4 text-midgrey leading-body">
+              ScopeWalk is our proprietary delivery platform. For retail rollout programmes, it functions as a programme-level dashboard where every surveyed store is accessible through a single interface. All deliverables — digital twins, conditions reports, equipment schedules, narrated walkthroughs — are structured identically across every location. Your team can compare any two stores side by side, filter by region or priority, brief consultants directly from the platform, and track rollout progress across the entire programme.
+            </p>
+          </details>
+
+          <details class="group border-b border-border pb-6">
+            <summary class="cursor-pointer text-navy font-medium text-lg flex items-center justify-between">
+              How is programme pricing structured for retail rollouts?
+              <span class="text-gold text-xl transition-transform group-open:rotate-45">+</span>
+            </summary>
+            <p class="mt-4 text-midgrey leading-body">
+              Programme pricing is structured on a per-site basis with travel included — there are no separate travel charges added per visit. The per-site rate reflects the scope established during the programme brief. For larger programmes, pricing improves with volume. We provide a clear schedule of rates before the first visit so your team can budget the entire rollout with confidence. There are no surprise line items.
+            </p>
+          </details>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="bg-white section-padding">
+      <div class="max-w-[700px] mx-auto px-6 text-center">
+        <h2 class="text-[2rem] font-light text-navy">Ready to brief your programme?</h2>
+        <p class="mt-4 text-midgrey leading-body">
+          Tell us about the rollout — how many locations, the store format, the rebrand or remodel scope, and the timeline. We will come back with a clear proposal, a pilot plan, and an all-in per-site price.
+        </p>
+        <a href="/contact" class="btn-primary mt-8">Tell Us About Your Programme</a>
+        <div class="mt-8 flex flex-wrap justify-center gap-6 text-sm">
+          <a href="/services/multi-site-rollout-documentation" class="text-navy font-medium hover:opacity-80 transition-opacity">Multi-site rollout programmes &rarr;</a>
+          <a href="/services/qsr-restaurant-survey" class="text-navy font-medium hover:opacity-80 transition-opacity">QSR restaurant surveys &rarr;</a>
+          <a href="/services/construction-documentation" class="text-navy font-medium hover:opacity-80 transition-opacity">Single-site documentation &rarr;</a>
+          <a href="/services" class="text-navy font-medium hover:opacity-80 transition-opacity">How it works &rarr;</a>
+        </div>
+      </div>
+    </section>
+
+  </div>
+</Layout>
