@@ -84,6 +84,23 @@
     <priority>0.7</priority>
   </url>
 
+  <!-- Insights / Blog Posts -->
+  <url>
+    <loc>https://alturascope.com/insights/thermal-imaging-commercial-property-what-it-reveals</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://alturascope.com/insights/due-diligence-documentation-portfolio-acquisitions</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://alturascope.com/insights/documenting-controlled-environments-precision-facilities</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
   <!-- New Vertical Landing Pages -->
   <url>
     <loc>https://alturascope.com/services/data-centre-documentation</loc>
