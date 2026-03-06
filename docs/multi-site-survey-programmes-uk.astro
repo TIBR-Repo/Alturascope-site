@@ -1,0 +1,289 @@
+---
+import Layout from "../../layouts/Layout.astro";
+
+const schema = JSON.stringify({
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "Multi-Site Survey Programmes in the UK: Why Nationwide Coverage Still Means Local Expertise",
+  "author": { "@type": "Organization", "name": "Alturascope" },
+  "publisher": { "@type": "Organization", "name": "Alturascope", "url": "https://alturascope.com" },
+  "datePublished": "2026-04-07",
+  "description": "UK retailers, QSR chains, and estates teams running multi-site refurbishment programmes need consistent survey data across every location. Here's why a single-source approach works better.",
+  "mainEntityOfPage": "https://alturascope.com/insights/multi-site-survey-programmes-uk/"
+});
+
+const breadcrumbSchema = JSON.stringify({
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://alturascope.com" },
+    { "@type": "ListItem", "position": 2, "name": "Insights", "item": "https://alturascope.com/insights/" },
+    { "@type": "ListItem", "position": 3, "name": "Multi-Site Survey Programmes UK", "item": "https://alturascope.com/insights/multi-site-survey-programmes-uk/" }
+  ]
+});
+
+const faqSchema = JSON.stringify({
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Do you survey across the whole of the UK?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Yes. Alturascope covers England, Scotland, Wales, and Northern Ireland. Travel is included in all project pricing. For programmes spanning multiple regions, we optimise routing to minimise cost and maximise throughput." }
+    },
+    {
+      "@type": "Question",
+      "name": "Can you work within listed building and conservation area constraints?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Yes. Our capture methodology is non-invasive and designed for sensitive environments. We have experience documenting Grade I and Grade II listed buildings, scheduled monuments, and properties within conservation areas. Our deliverables support submissions to Historic England, Historic Environment Scotland, and Cadw." }
+    },
+    {
+      "@type": "Question",
+      "name": "What deliverables do UK design teams typically need?",
+      "acceptedAnswer": { "@type": "Answer", "text": "UK design teams typically require measured floor plans and sections for RIBA Stage 1 and 2 design development, point cloud data in .e57 or .rcp format for Revit integration, a Matterport digital twin for remote site access, and a conditions report covering Building Regulations compliance, fire safety, and any listed building constraints. We deliver all of these as a standard package." }
+    },
+    {
+      "@type": "Question",
+      "name": "How does your approach differ from a traditional measured building survey?",
+      "acceptedAnswer": { "@type": "Answer", "text": "A traditional measured building survey produces 2D drawings from spatial measurement. Our approach delivers that plus a navigable digital twin, a structured conditions assessment, thermal imaging data, and above-ceiling MEP documentation. More importantly, for multi-site programmes, every location is surveyed using an identical methodology and delivered through a single platform, giving programme managers comparable data across the entire portfolio." }
+    }
+  ]
+});
+---
+<Layout
+  title="Multi-Site Survey Programmes UK: Nationwide Building Surveys | Alturascope"
+  description="UK retailers, QSR chains, and estates teams running multi-site refurbishment programmes need consistent survey data across every location. Here's why a single-source approach works better."
+  canonical="https://alturascope.com/insights/multi-site-survey-programmes-uk/"
+  schema={schema}
+  breadcrumbSchema={breadcrumbSchema}
+  faqSchema={faqSchema}
+  fullWidth={true}
+  lang="en-GB"
+  hreflang={[
+    { lang: "en-GB", href: "https://alturascope.com/insights/multi-site-survey-programmes-uk/" },
+    { lang: "en", href: "https://alturascope.com/insights/managing-multi-site-survey-programmes-at-scale/" }
+  ]}
+>
+  <div data-hero-page>
+
+    <section class="relative h-[45vh] max-h-[450px] min-h-[300px] flex items-center justify-center">
+      <div class="absolute inset-0 bg-navy">
+        <img
+          src="/Images/london2.jpg"
+          alt="UK commercial streetscape representing multi-site survey programme coverage across England, Scotland, and Wales"
+          class="w-full h-full object-cover opacity-25"
+        />
+        <div class="absolute inset-0 bg-[rgba(11,31,58,0.82)]"></div>
+      </div>
+      <div class="relative z-10 text-center px-6 max-w-[760px] mx-auto">
+        <p class="label text-gold mb-4">INSIGHTS</p>
+        <h1 class="text-[1.8rem] md:text-[2.6rem] font-light text-offwhite leading-tight">
+          Multi-Site Survey Programmes in the UK: Why Nationwide Coverage Still Means Local Expertise
+        </h1>
+      </div>
+    </section>
+
+    <article class="bg-white section-padding">
+      <div class="max-w-[760px] mx-auto px-6">
+
+        <div class="space-y-6 text-midgrey leading-body text-[1.05rem]">
+          <p>
+            If you're managing a refurbishment programme across 20, 50, or 100 UK locations, you already know the problem: every site gets surveyed by a different local firm, using a different methodology, delivering a different format. The data arrives piecemeal. Some surveys are comprehensive, some are barely adequate. Your design team spends as much time reconciling inconsistent information as they do designing.
+          </p>
+          <p>
+            The UK has excellent surveying firms. The issue isn't competence &mdash; it's consistency. When a high-street retailer, a QSR chain, or an NHS estates team needs to compare conditions across dozens of properties and make portfolio-level capital decisions, the data has to be structured identically at every location. That requires a programme approach, not a collection of individual commissions.
+          </p>
+        </div>
+
+        <h2 class="text-[1.6rem] font-light text-navy mt-16 mb-6">The Consistency Problem in UK Multi-Site Programmes</h2>
+        <div class="space-y-6 text-midgrey leading-body text-[1.05rem]">
+          <p>
+            The UK commercial property market has specific characteristics that make multi-site survey programmes more challenging than they might appear:
+          </p>
+        </div>
+
+        <div class="space-y-10 mt-8">
+          <div>
+            <h3 class="text-navy font-medium text-[1.1rem]">Building Stock Diversity</h3>
+            <p class="mt-3 text-midgrey leading-body text-[1.05rem]">
+              A UK retail or hospitality portfolio might include properties ranging from Georgian town houses to 1960s concrete-frame buildings to modern steel-clad units. Each presents different survey challenges &mdash; different structural systems, different ceiling configurations, different MEP installations. A survey methodology that works for a modern retail unit in a business park may be entirely inadequate for a Grade II listed property in a market town conservation area.
+            </p>
+          </div>
+
+          <div>
+            <h3 class="text-navy font-medium text-[1.1rem]">Regulatory Complexity</h3>
+            <p class="mt-3 text-midgrey leading-body text-[1.05rem]">
+              Building Regulations compliance requirements, fire safety documentation obligations under the Building Safety Act, EPC requirements, and conservation area planning constraints all vary by location and building type. A survey programme that doesn't capture the right regulatory data at each site creates downstream problems during the design and permitting phase. Post-Grenfell fire safety documentation requirements have made this particularly acute for multi-storey commercial properties.
+            </p>
+          </div>
+
+          <div>
+            <h3 class="text-navy font-medium text-[1.1rem]">Fragmented Survey Market</h3>
+            <p class="mt-3 text-midgrey leading-body text-[1.05rem]">
+              The UK measured building survey market is dominated by regional firms. Excellent firms, many of them &mdash; but most operate within a geographic radius. For a programme spanning London to Edinburgh, Manchester to Cardiff, the typical approach is to commission different surveyors in each region. The result is 10 different formats, 10 different levels of detail, and a programme manager trying to stitch them together into something their design team can use.
+            </p>
+          </div>
+        </div>
+
+        <h2 class="text-[1.6rem] font-light text-navy mt-16 mb-6">The Single-Source Alternative</h2>
+        <div class="space-y-6 text-midgrey leading-body text-[1.05rem]">
+          <p>
+            A <a href="/uk/multi-site-rollout-survey" class="text-navy font-medium hover:opacity-80 transition-opacity">single-source survey programme</a> applies one methodology across every location. One brief, one deliverable format, one quality standard, one platform. The programme manager deals with one point of contact instead of managing relationships with 10 regional firms.
+          </p>
+          <p>
+            This doesn't mean ignoring local knowledge. It means building a methodology that's robust enough to handle the full diversity of UK building stock while delivering consistent, comparable data. A <a href="/uk/heritage-building-survey" class="text-navy font-medium hover:opacity-80 transition-opacity">heritage building</a> in Bath gets the same quality of documentation as a modern unit in Milton Keynes &mdash; adapted for the property type but structured identically for the programme team.
+          </p>
+          <p>
+            The practical benefits are immediate:
+          </p>
+        </div>
+
+        <div class="mt-8 space-y-6">
+          <div class="border-l-2 border-gold pl-6">
+            <h3 class="text-navy font-medium">Comparable data across every location</h3>
+            <p class="mt-1 text-midgrey text-[0.95rem] leading-relaxed">Design teams can compare conditions site-to-site using identically structured reports. Programme managers can track progress across the portfolio. Capital planners can prioritise spending based on consistent condition scoring.</p>
+          </div>
+          <div class="border-l-2 border-gold pl-6">
+            <h3 class="text-navy font-medium">Single point of accountability</h3>
+            <p class="mt-1 text-midgrey text-[0.95rem] leading-relaxed">One relationship to manage, one invoice, one escalation path. If something needs clarifying at a site in Aberdeen, you're not chasing a local surveyor you've never spoken to.</p>
+          </div>
+          <div class="border-l-2 border-gold pl-6">
+            <h3 class="text-navy font-medium">All deliverables in one platform</h3>
+            <p class="mt-1 text-midgrey text-[0.95rem] leading-relaxed">Every location's documentation &mdash; digital twin, conditions report, photo storyboard, point cloud data &mdash; is accessible through a single ScopeWalk portal with permissions-based access for different team members.</p>
+          </div>
+          <div class="border-l-2 border-gold pl-6">
+            <h3 class="text-navy font-medium">Predictable programme cost</h3>
+            <p class="mt-1 text-midgrey text-[0.95rem] leading-relaxed">A fixed per-site rate agreed at programme level, with travel included. No surprise invoices, no regional price variations, no scope creep.</p>
+          </div>
+        </div>
+
+        <h2 class="text-[1.6rem] font-light text-navy mt-16 mb-6">Who This Approach Serves</h2>
+        <div class="space-y-6 text-midgrey leading-body text-[1.05rem]">
+          <p>
+            The organisations that benefit most from a single-source multi-site survey programme are those managing ongoing refurbishment, rebranding, or capital works across a dispersed UK portfolio:
+          </p>
+        </div>
+
+        <div class="space-y-4 mt-8 pl-6 border-l-2 border-gold text-midgrey leading-body text-[1.05rem]">
+          <p><span class="text-navy font-medium">QSR and restaurant chains</span> &mdash; reimage programmes, kitchen refurbishment, brand refresh across dozens of high-street and drive-through locations</p>
+          <p><span class="text-navy font-medium">Retail operators</span> &mdash; store refresh, format change, or portfolio rationalisation across multiple regions</p>
+          <p><span class="text-navy font-medium">Pub and hospitality groups</span> &mdash; managed estate refurbishment programmes where condition assessment drives capital allocation</p>
+          <p><span class="text-navy font-medium">NHS and public sector estates</span> &mdash; condition surveys across hospital trusts, school estates, or government property portfolios where standardised data supports RAAC assessments, fire safety reviews, or accessibility audits</p>
+          <p><span class="text-navy font-medium">PE-backed operators</span> &mdash; post-acquisition condition documentation for <a href="/insights/due-diligence-documentation-portfolio-acquisitions" class="text-navy font-medium hover:opacity-80 transition-opacity">portfolio due diligence</a> or capital planning across a newly acquired UK portfolio</p>
+        </div>
+
+        <h2 class="text-[1.6rem] font-light text-navy mt-16 mb-6">What UK Design Teams Actually Need</h2>
+        <div class="space-y-6 text-midgrey leading-body text-[1.05rem]">
+          <p>
+            UK design teams working at RIBA Stage 1 and 2 need existing conditions data they can trust. Our standard <a href="/uk/pre-construction-survey" class="text-navy font-medium hover:opacity-80 transition-opacity">pre-construction survey</a> delivers:
+          </p>
+        </div>
+
+        <div class="mt-8 space-y-6">
+          <div class="border-l-2 border-gold pl-6">
+            <h3 class="text-navy font-medium">Measured floor plans, sections, and elevations</h3>
+            <p class="mt-1 text-midgrey text-[0.95rem] leading-relaxed">From <a href="/uk/measured-building-survey" class="text-navy font-medium hover:opacity-80 transition-opacity">survey-grade point cloud data</a>, accurate to 5&ndash;12mm, exportable as .e57 and .rcp for Revit and AutoCAD integration</p>
+          </div>
+          <div class="border-l-2 border-gold pl-6">
+            <h3 class="text-navy font-medium">Navigable Matterport digital twin</h3>
+            <p class="mt-1 text-midgrey text-[0.95rem] leading-relaxed">The entire design team can explore the site remotely &mdash; reducing the need for multiple site visits during the design phase</p>
+          </div>
+          <div class="border-l-2 border-gold pl-6">
+            <h3 class="text-navy font-medium">Structured conditions assessment</h3>
+            <p class="mt-1 text-midgrey text-[0.95rem] leading-relaxed">Prioritised findings covering structural, MEP, fire safety, accessibility, and building fabric condition &mdash; giving the design team a clear picture of what they're designing into</p>
+          </div>
+          <div class="border-l-2 border-gold pl-6">
+            <h3 class="text-navy font-medium">Above-ceiling MEP documentation</h3>
+            <p class="mt-1 text-midgrey text-[0.95rem] leading-relaxed">360&deg; capture of existing services <a href="/uk/above-ceiling-mep-survey" class="text-navy font-medium hover:opacity-80 transition-opacity">above the ceiling grid</a>, where the most expensive surprises in commercial fit-out projects typically hide</p>
+          </div>
+          <div class="border-l-2 border-gold pl-6">
+            <h3 class="text-navy font-medium">Thermal imaging overlay</h3>
+            <p class="mt-1 text-midgrey text-[0.95rem] leading-relaxed">FLIR capture identifying moisture ingress, insulation failures, and <a href="/insights/thermal-imaging-commercial-property-what-it-reveals" class="text-navy font-medium hover:opacity-80 transition-opacity">hidden thermal anomalies</a> that affect both design decisions and EPC performance</p>
+          </div>
+        </div>
+
+        <!-- FAQ -->
+        <h2 class="text-[1.6rem] font-light text-navy mt-16 mb-8">Frequently Asked Questions</h2>
+
+        <div class="space-y-8">
+          <details class="group border-b border-border pb-6">
+            <summary class="cursor-pointer text-navy font-medium text-lg flex items-center justify-between">
+              Do you survey across the whole of the UK?
+              <span class="text-gold text-xl transition-transform group-open:rotate-45">+</span>
+            </summary>
+            <p class="mt-4 text-midgrey leading-body">
+              Yes. Alturascope covers England, Scotland, Wales, and Northern Ireland. Travel is included in all project pricing. For programmes spanning multiple regions, we optimise routing to minimise cost and maximise throughput.
+            </p>
+          </details>
+
+          <details class="group border-b border-border pb-6">
+            <summary class="cursor-pointer text-navy font-medium text-lg flex items-center justify-between">
+              Can you work within listed building and conservation area constraints?
+              <span class="text-gold text-xl transition-transform group-open:rotate-45">+</span>
+            </summary>
+            <p class="mt-4 text-midgrey leading-body">
+              Yes. Our capture methodology is non-invasive and designed for sensitive environments. We have experience documenting Grade I and Grade II listed buildings, scheduled monuments, and properties within conservation areas. Our deliverables support submissions to Historic England, Historic Environment Scotland, and Cadw.
+            </p>
+          </details>
+
+          <details class="group border-b border-border pb-6">
+            <summary class="cursor-pointer text-navy font-medium text-lg flex items-center justify-between">
+              What deliverables do UK design teams typically need?
+              <span class="text-gold text-xl transition-transform group-open:rotate-45">+</span>
+            </summary>
+            <p class="mt-4 text-midgrey leading-body">
+              UK design teams typically require measured floor plans and sections for RIBA Stage 1 and 2 design development, point cloud data in .e57 or .rcp format for Revit integration, a Matterport digital twin for remote site access, and a conditions report covering Building Regulations compliance, fire safety, and any listed building constraints. We deliver all of these as a standard package.
+            </p>
+          </details>
+
+          <details class="group border-b border-border pb-6">
+            <summary class="cursor-pointer text-navy font-medium text-lg flex items-center justify-between">
+              How does your approach differ from a traditional measured building survey?
+              <span class="text-gold text-xl transition-transform group-open:rotate-45">+</span>
+            </summary>
+            <p class="mt-4 text-midgrey leading-body">
+              A traditional measured building survey produces 2D drawings from spatial measurement. Our approach delivers that plus a navigable digital twin, a structured conditions assessment, thermal imaging data, and above-ceiling MEP documentation. More importantly, for multi-site programmes, every location is surveyed using an identical methodology and delivered through a single platform, giving programme managers comparable data across the entire portfolio.
+            </p>
+          </details>
+        </div>
+
+        <div class="mt-16 pt-16 border-t border-border">
+          <h2 class="text-[1.6rem] font-light text-navy mb-6">The Bottom Line</h2>
+          <div class="space-y-6 text-midgrey leading-body text-[1.05rem]">
+            <p>
+              UK multi-site survey programmes don't fail because of bad surveyors. They fail because of fragmented data from too many providers with too many formats. A single-source approach &mdash; one methodology, one format, one platform, one point of contact &mdash; gives programme teams the consistency they need to make portfolio-level decisions with confidence.
+            </p>
+            <p>
+              <a href="/contact" class="text-navy font-medium hover:opacity-80 transition-opacity">Talk to Alturascope</a> about your UK programme. We'll scope the methodology and return a per-site quote &mdash; travel included &mdash; within one business day.
+            </p>
+          </div>
+        </div>
+
+        <p class="mt-12 text-[0.85rem] text-midgrey/60 italic">
+          Alturascope delivers <a href="/uk/multi-site-rollout-survey" class="hover:opacity-80 transition-opacity">multi-site survey programmes</a> across England, Scotland, Wales, and Northern Ireland, as well as all 50 US states and every Canadian province.
+        </p>
+
+        <div class="mt-12 pt-8 border-t border-border flex flex-wrap gap-6 text-sm">
+          <a href="/uk/multi-site-rollout-survey" class="text-navy font-medium hover:opacity-80 transition-opacity">UK multi-site surveys &rarr;</a>
+          <a href="/uk" class="text-navy font-medium hover:opacity-80 transition-opacity">Alturascope UK &rarr;</a>
+          <a href="/uk/pre-construction-survey" class="text-navy font-medium hover:opacity-80 transition-opacity">UK pre-construction surveys &rarr;</a>
+          <a href="/insights/standardising-site-surveys-multi-site-operators" class="text-navy font-medium hover:opacity-80 transition-opacity">Standardising multi-site surveys &rarr;</a>
+          <a href="/insights" class="text-navy font-medium hover:opacity-80 transition-opacity">All insights &rarr;</a>
+        </div>
+
+      </div>
+    </article>
+
+    <section class="bg-navy py-20">
+      <div class="max-w-[600px] mx-auto px-6 text-center">
+        <h2 class="text-[1.8rem] font-light text-offwhite leading-snug">
+          Running a multi-site programme across the UK?
+        </h2>
+        <p class="mt-4 text-offwhite/70 leading-body">
+          Share the number of locations, the regions, and the programme timeline. We'll design the survey approach and quote the programme end-to-end.
+        </p>
+        <a href="/contact" class="btn-primary mt-8">Start a Project</a>
+      </div>
+    </section>
+
+  </div>
+</Layout>

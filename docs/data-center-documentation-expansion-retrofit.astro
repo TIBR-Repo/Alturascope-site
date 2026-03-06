@@ -1,0 +1,296 @@
+---
+import Layout from "../../layouts/Layout.astro";
+
+const schema = JSON.stringify({
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "Data Center Documentation: What Facilities Teams Need Before Expansion or Retrofit",
+  "author": { "@type": "Organization", "name": "Alturascope" },
+  "publisher": { "@type": "Organization", "name": "Alturascope", "url": "https://alturascope.com" },
+  "datePublished": "2026-03-24",
+  "description": "Data center expansion and retrofit projects depend on accurate existing conditions documentation. Here's what facilities teams, design engineers, and operators actually need from a site survey.",
+  "mainEntityOfPage": "https://alturascope.com/insights/data-center-documentation-expansion-retrofit/"
+});
+
+const breadcrumbSchema = JSON.stringify({
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://alturascope.com" },
+    { "@type": "ListItem", "position": 2, "name": "Insights", "item": "https://alturascope.com/insights/" },
+    { "@type": "ListItem", "position": 3, "name": "Data Center Documentation for Expansion & Retrofit", "item": "https://alturascope.com/insights/data-center-documentation-expansion-retrofit/" }
+  ]
+});
+
+const faqSchema = JSON.stringify({
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Can you survey a live data center without disrupting operations?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Yes. Our survey methodology is designed for live operational environments. Matterport and LiDAR capture is non-contact and non-invasive. Thermal imaging is conducted without disrupting airflow or power systems. We work within your security protocols, access restrictions, and operational windows." }
+    },
+    {
+      "@type": "Question",
+      "name": "What does thermal imaging reveal in a data center?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Thermal imaging in a data center identifies hotspots from failing or overloaded equipment, cooling inefficiencies including hot aisle containment breaches, power distribution anomalies at PDU and UPS level, and airflow patterns that don't match the designed cooling strategy. These findings are documented as a thermal overlay within the survey deliverable package." }
+    },
+    {
+      "@type": "Question",
+      "name": "Do you provide survey-grade point cloud data for data centers?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Yes. We capture millimetre-accurate point cloud data using LiDAR scanning, suitable for integration with Revit, AutoCAD, and BIM workflows. This is particularly important for retrofit and expansion projects where new equipment, cable tray, or cooling infrastructure needs to be designed into an existing space with tight tolerances." }
+    },
+    {
+      "@type": "Question",
+      "name": "Can you document data centers in both the US and UK?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Yes. Alturascope operates across all 50 US states, every Canadian province, and the United Kingdom. For operators with facilities in multiple countries, we deliver consistent documentation using the same methodology and deliverable format regardless of location." }
+    }
+  ]
+});
+---
+<Layout
+  title="Data Center Survey & Documentation for Expansion Projects | Alturascope"
+  description="Data center expansion and retrofit projects depend on accurate existing conditions documentation. Here's what facilities teams and design engineers actually need from a site survey."
+  canonical="https://alturascope.com/insights/data-center-documentation-expansion-retrofit/"
+  schema={schema}
+  breadcrumbSchema={breadcrumbSchema}
+  faqSchema={faqSchema}
+  fullWidth={true}
+>
+  <div data-hero-page>
+
+    <section class="relative h-[45vh] max-h-[450px] min-h-[300px] flex items-center justify-center">
+      <div class="absolute inset-0 bg-navy">
+        <img
+          src="/Images/hvac.jpg"
+          alt="Complex MEP infrastructure in commercial facility requiring detailed documentation for expansion planning"
+          class="w-full h-full object-cover opacity-25"
+        />
+        <div class="absolute inset-0 bg-[rgba(11,31,58,0.82)]"></div>
+      </div>
+      <div class="relative z-10 text-center px-6 max-w-[760px] mx-auto">
+        <p class="label text-gold mb-4">INSIGHTS</p>
+        <h1 class="text-[1.8rem] md:text-[2.6rem] font-light text-offwhite leading-tight">
+          Data Center Documentation: What Facilities Teams Need Before Expansion or Retrofit
+        </h1>
+      </div>
+    </section>
+
+    <article class="bg-white section-padding">
+      <div class="max-w-[760px] mx-auto px-6">
+
+        <div class="space-y-6 text-midgrey leading-body text-[1.05rem]">
+          <p>
+            Data center capacity is being consumed faster than it can be built. AI training workloads, cloud migration, and edge computing demand are driving expansion programmes at hyperscale operators, colocation providers, and enterprise facilities alike. Whether you're adding white space to an existing campus, retrofitting a legacy facility for higher power density, or planning a major equipment refresh, every project starts with the same requirement: accurate documentation of what's already there.
+          </p>
+          <p>
+            The problem is that data center facilities are among the most complex built environments to document. The density of MEP systems, the criticality of operational continuity, and the security constraints around access all create challenges that standard survey methodologies aren't equipped to handle.
+          </p>
+        </div>
+
+        <h2 class="text-[1.6rem] font-light text-navy mt-16 mb-6">Why Standard Surveys Fall Short in Data Centers</h2>
+        <div class="space-y-6 text-midgrey leading-body text-[1.05rem]">
+          <p>
+            A data center isn't a building that happens to contain IT equipment. It's a precision-engineered environment where power, cooling, fire suppression, and structural systems are interdependent at a level that most commercial buildings never approach. A survey that documents walls, floors, and ceiling heights but misses the power distribution architecture or the cooling airflow design is essentially useless for expansion planning.
+          </p>
+          <p>
+            The specific challenges include:
+          </p>
+        </div>
+
+        <div class="space-y-10 mt-8">
+          <div>
+            <h3 class="text-navy font-medium text-[1.1rem]">Power Distribution Architecture</h3>
+            <p class="mt-3 text-midgrey leading-body text-[1.05rem]">
+              From utility feed to PDU, the power chain in a data center is multi-layered and critical. The survey needs to document transformer locations and capacities, switchgear configuration, UPS systems (make, model, capacity, age, battery condition indicators), generator infrastructure, bus duct and cable tray routing, and PDU positions relative to rack rows. For expansion projects, the design engineer needs to know not just what exists but what capacity remains &mdash; and whether the existing infrastructure can support higher per-rack power density without upstream upgrades.
+            </p>
+          </div>
+
+          <div>
+            <h3 class="text-navy font-medium text-[1.1rem]">Cooling Infrastructure</h3>
+            <p class="mt-3 text-midgrey leading-body text-[1.05rem]">
+              The cooling design is inseparable from the revenue model. Every kilowatt of IT load requires cooling, and the efficiency of that cooling directly affects operating costs. The survey needs to capture CRAC and CRAH unit positions, capacities, and conditions, hot aisle and cold aisle containment configurations, raised floor plenum depth and tile layout, chilled water piping routes and valve positions, and any evidence of airflow bypass or recirculation. This is where <a href="/insights/thermal-imaging-commercial-property-what-it-reveals" class="text-navy font-medium hover:opacity-80 transition-opacity">thermal imaging</a> becomes critical &mdash; it reveals the actual thermal profile of the facility during operation, identifying hotspots and cooling inefficiencies that visual inspection cannot detect.
+            </p>
+          </div>
+
+          <div>
+            <h3 class="text-navy font-medium text-[1.1rem]">Cable Management and Pathway Capacity</h3>
+            <p class="mt-3 text-midgrey leading-body text-[1.05rem]">
+              Cable tray fill rates, fibre routing paths, and conduit capacity are among the most common constraints in data center expansion projects. The survey should document tray routing, approximate fill levels, pathway bottlenecks, and available capacity for additional runs. In retrofit scenarios, the existing cable infrastructure often determines what's feasible without major pathway construction.
+            </p>
+          </div>
+
+          <div>
+            <h3 class="text-navy font-medium text-[1.1rem]">Fire Suppression and Life Safety</h3>
+            <p class="mt-3 text-midgrey leading-body text-[1.05rem]">
+              Clean agent systems, VESDA detection, pre-action sprinkler zones, and EPO configurations all need to be documented accurately. Any expansion that changes the protected volume or adds openings to fire-rated boundaries triggers re-evaluation of the suppression design. Having accurate documentation of the existing system before design begins avoids costly surprises during permit review.
+            </p>
+          </div>
+        </div>
+
+        <h2 class="text-[1.6rem] font-light text-navy mt-16 mb-6">The Thermal Imaging Advantage</h2>
+        <div class="space-y-6 text-midgrey leading-body text-[1.05rem]">
+          <p>
+            A standard survey captures what a facility looks like. A survey with integrated FLIR thermal imaging captures what it's actually doing. In a data center, this distinction is the difference between documentation and intelligence.
+          </p>
+          <p>
+            Thermal capture during a <a href="/services/data-centre-documentation" class="text-navy font-medium hover:opacity-80 transition-opacity">data center survey</a> reveals:
+          </p>
+        </div>
+
+        <div class="mt-8 bg-offwhite rounded p-8 space-y-6">
+          <div class="flex gap-4">
+            <span class="text-gold text-xl font-light mt-0.5">&bull;</span>
+            <p class="text-midgrey leading-body text-[1.05rem]">
+              <span class="text-navy font-medium">Equipment hotspots</span> &mdash; individual servers, switches, or PDUs operating above normal thermal thresholds, indicating potential failure or overload conditions
+            </p>
+          </div>
+          <div class="flex gap-4">
+            <span class="text-gold text-xl font-light mt-0.5">&bull;</span>
+            <p class="text-midgrey leading-body text-[1.05rem]">
+              <span class="text-navy font-medium">Cooling containment breaches</span> &mdash; hot air recirculation through gaps in containment panels, blanking plates, or unsealed cable cutouts that reduce cooling efficiency
+            </p>
+          </div>
+          <div class="flex gap-4">
+            <span class="text-gold text-xl font-light mt-0.5">&bull;</span>
+            <p class="text-midgrey leading-body text-[1.05rem]">
+              <span class="text-navy font-medium">Power distribution anomalies</span> &mdash; thermal signatures at connections, breakers, and busbars that indicate loose connections, phase imbalance, or approaching failure
+            </p>
+          </div>
+          <div class="flex gap-4">
+            <span class="text-gold text-xl font-light mt-0.5">&bull;</span>
+            <p class="text-midgrey leading-body text-[1.05rem]">
+              <span class="text-navy font-medium">Airflow pattern validation</span> &mdash; whether the actual thermal environment matches the designed cooling strategy, or whether the facility has drifted from its intended operating profile
+            </p>
+          </div>
+        </div>
+
+        <p class="mt-8 text-midgrey leading-body text-[1.05rem]">
+          This data is delivered as a thermal overlay within the survey package, geo-referenced to the digital twin and the conditions report. For facilities teams planning expansion, it provides a layer of operational intelligence that drawings and floor plans simply can't offer. Our guide to <a href="/insights/documenting-controlled-environments-precision-facilities" class="text-navy font-medium hover:opacity-80 transition-opacity">documenting controlled environments</a> explores this approach in more detail across data centers, cannabis facilities, and other precision spaces.
+        </p>
+
+        <h2 class="text-[1.6rem] font-light text-navy mt-16 mb-6">What Design Engineers Need from the Survey</h2>
+        <div class="space-y-6 text-midgrey leading-body text-[1.05rem]">
+          <p>
+            For expansion and retrofit projects, the design team needs more than photographs and a floor plan. They need dimensionally accurate spatial data that integrates directly into their CAD and BIM workflows.
+          </p>
+          <p>
+            A professional data center survey delivers:
+          </p>
+        </div>
+
+        <div class="mt-8 space-y-6">
+          <div class="border-l-2 border-gold pl-6">
+            <h3 class="text-navy font-medium">Millimetre-accurate point cloud data</h3>
+            <p class="mt-1 text-midgrey text-[0.95rem] leading-relaxed">LiDAR scanning captures the full geometry of the space &mdash; structural elements, equipment positions, cable tray routing, raised floor configurations &mdash; exportable as .e57 or .rcp for direct integration with Revit, AutoCAD, and other design platforms</p>
+          </div>
+          <div class="border-l-2 border-gold pl-6">
+            <h3 class="text-navy font-medium">Navigable digital twin</h3>
+            <p class="mt-1 text-midgrey text-[0.95rem] leading-relaxed">A <a href="/insights/what-is-a-matterport-digital-twin" class="text-navy font-medium hover:opacity-80 transition-opacity">Matterport digital twin</a> that allows the entire project team to explore the facility remotely, reducing the need for repeated site visits during the design phase</p>
+          </div>
+          <div class="border-l-2 border-gold pl-6">
+            <h3 class="text-navy font-medium">Structured conditions report</h3>
+            <p class="mt-1 text-midgrey text-[0.95rem] leading-relaxed">A prioritised assessment of existing conditions that affect the project scope &mdash; from structural loading capacity to ceiling clearances to any equipment approaching end-of-life that should be addressed during the expansion</p>
+          </div>
+          <div class="border-l-2 border-gold pl-6">
+            <h3 class="text-navy font-medium">MEP system documentation</h3>
+            <p class="mt-1 text-midgrey text-[0.95rem] leading-relaxed">Detailed photographic and spatial documentation of all mechanical, electrical, and plumbing systems visible on site &mdash; with equipment schedules including make, model, and service connection data</p>
+          </div>
+        </div>
+
+        <h2 class="text-[1.6rem] font-light text-navy mt-16 mb-6">Security and Access Considerations</h2>
+        <div class="space-y-6 text-midgrey leading-body text-[1.05rem]">
+          <p>
+            Data center surveys require a different operational approach than standard commercial buildings. Security protocols, NDA requirements, restricted zones, and escort requirements are standard. The survey methodology needs to accommodate these constraints without compromising the quality or completeness of the documentation.
+          </p>
+          <p>
+            We work within your security framework: badged access, escorted capture where required, data handling protocols that meet your operational security requirements, and scheduling around maintenance windows when access to restricted zones is available.
+          </p>
+        </div>
+
+        <!-- FAQ -->
+        <h2 class="text-[1.6rem] font-light text-navy mt-16 mb-8">Frequently Asked Questions</h2>
+
+        <div class="space-y-8">
+          <details class="group border-b border-border pb-6">
+            <summary class="cursor-pointer text-navy font-medium text-lg flex items-center justify-between">
+              Can you survey a live data center without disrupting operations?
+              <span class="text-gold text-xl transition-transform group-open:rotate-45">+</span>
+            </summary>
+            <p class="mt-4 text-midgrey leading-body">
+              Yes. Our survey methodology is designed for live operational environments. Matterport and LiDAR capture is non-contact and non-invasive. Thermal imaging is conducted without disrupting airflow or power systems. We work within your security protocols, access restrictions, and operational windows.
+            </p>
+          </details>
+
+          <details class="group border-b border-border pb-6">
+            <summary class="cursor-pointer text-navy font-medium text-lg flex items-center justify-between">
+              What does thermal imaging reveal in a data center?
+              <span class="text-gold text-xl transition-transform group-open:rotate-45">+</span>
+            </summary>
+            <p class="mt-4 text-midgrey leading-body">
+              Thermal imaging identifies hotspots from failing or overloaded equipment, cooling inefficiencies including hot aisle containment breaches, power distribution anomalies at PDU and UPS level, and airflow patterns that don't match the designed cooling strategy. These findings are documented as a thermal overlay within the survey deliverable package.
+            </p>
+          </details>
+
+          <details class="group border-b border-border pb-6">
+            <summary class="cursor-pointer text-navy font-medium text-lg flex items-center justify-between">
+              Do you provide survey-grade point cloud data?
+              <span class="text-gold text-xl transition-transform group-open:rotate-45">+</span>
+            </summary>
+            <p class="mt-4 text-midgrey leading-body">
+              Yes. We capture millimetre-accurate point cloud data using LiDAR scanning, suitable for integration with Revit, AutoCAD, and BIM workflows. This is particularly important for retrofit and expansion projects where new equipment, cable tray, or cooling infrastructure needs to be designed into an existing space with tight tolerances.
+            </p>
+          </details>
+
+          <details class="group border-b border-border pb-6">
+            <summary class="cursor-pointer text-navy font-medium text-lg flex items-center justify-between">
+              Can you document data centers in both the US and UK?
+              <span class="text-gold text-xl transition-transform group-open:rotate-45">+</span>
+            </summary>
+            <p class="mt-4 text-midgrey leading-body">
+              Yes. Alturascope operates across all 50 US states, every Canadian province, and the United Kingdom. For operators with facilities in multiple countries, we deliver consistent documentation using the same methodology and deliverable format regardless of location.
+            </p>
+          </details>
+        </div>
+
+        <div class="mt-16 pt-16 border-t border-border">
+          <h2 class="text-[1.6rem] font-light text-navy mb-6">The Bottom Line</h2>
+          <div class="space-y-6 text-midgrey leading-body text-[1.05rem]">
+            <p>
+              Data center expansion and retrofit projects are too complex and too expensive to build on assumptions about existing conditions. A professional survey &mdash; combining spatial accuracy, thermal intelligence, and structured documentation &mdash; gives your design and facilities teams the verified baseline they need to plan with confidence.
+            </p>
+            <p>
+              <a href="/contact" class="text-navy font-medium hover:opacity-80 transition-opacity">Talk to Alturascope</a> about documenting your facility. We'll confirm methodology, timeline, and an all-in quote within one business day.
+            </p>
+          </div>
+        </div>
+
+        <p class="mt-12 text-[0.85rem] text-midgrey/60 italic">
+          Alturascope delivers <a href="/services/data-centre-documentation" class="hover:opacity-80 transition-opacity">data centre documentation</a> across all 50 US states, every Canadian province, and the United Kingdom.
+        </p>
+
+        <div class="mt-12 pt-8 border-t border-border flex flex-wrap gap-6 text-sm">
+          <a href="/services/data-centre-documentation" class="text-navy font-medium hover:opacity-80 transition-opacity">Data centre documentation &rarr;</a>
+          <a href="/insights/documenting-controlled-environments-precision-facilities" class="text-navy font-medium hover:opacity-80 transition-opacity">Controlled environments &rarr;</a>
+          <a href="/insights/thermal-imaging-commercial-property-what-it-reveals" class="text-navy font-medium hover:opacity-80 transition-opacity">Thermal imaging guide &rarr;</a>
+          <a href="/insights" class="text-navy font-medium hover:opacity-80 transition-opacity">All insights &rarr;</a>
+        </div>
+
+      </div>
+    </article>
+
+    <section class="bg-navy py-20">
+      <div class="max-w-[600px] mx-auto px-6 text-center">
+        <h2 class="text-[1.8rem] font-light text-offwhite leading-snug">
+          Planning a data center expansion or retrofit?
+        </h2>
+        <p class="mt-4 text-offwhite/70 leading-body">
+          Share the facility location, approximate size, and what the survey needs to support. We'll confirm methodology and return an all-in quote within one business day.
+        </p>
+        <a href="/contact" class="btn-primary mt-8">Start a Project</a>
+      </div>
+    </section>
+
+  </div>
+</Layout>

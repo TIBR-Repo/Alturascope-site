@@ -1,0 +1,259 @@
+---
+import Layout from "../../layouts/Layout.astro";
+
+const schema = JSON.stringify({
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "Site Survey Documentation for Self-Storage Portfolio Operators",
+  "author": { "@type": "Organization", "name": "Alturascope" },
+  "publisher": { "@type": "Organization", "name": "Alturascope", "url": "https://alturascope.com" },
+  "datePublished": "2026-03-17",
+  "description": "Self-storage acquisitions and capital planning depend on consistent site documentation across every facility. Here's what portfolio operators actually need from the field.",
+  "mainEntityOfPage": "https://alturascope.com/insights/self-storage-portfolio-site-survey-documentation/"
+});
+
+const breadcrumbSchema = JSON.stringify({
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://alturascope.com" },
+    { "@type": "ListItem", "position": 2, "name": "Insights", "item": "https://alturascope.com/insights/" },
+    { "@type": "ListItem", "position": 3, "name": "Self-Storage Portfolio Site Survey Documentation", "item": "https://alturascope.com/insights/self-storage-portfolio-site-survey-documentation/" }
+  ]
+});
+
+const faqSchema = JSON.stringify({
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "What does a self-storage facility survey include?",
+      "acceptedAnswer": { "@type": "Answer", "text": "A standard self-storage survey includes a Matterport digital twin of the facility, a structured conditions report covering roof, HVAC, security systems, unit access, drainage, and ADA compliance, a photo storyboard documenting every area, and a narrated video walkthrough. For climate-controlled facilities, we add HVAC system documentation including thermal imaging to identify performance anomalies." }
+    },
+    {
+      "@type": "Question",
+      "name": "How long does it take to survey a self-storage facility?",
+      "acceptedAnswer": { "@type": "Answer", "text": "A typical single-storey self-storage facility with 400 to 600 units can be surveyed in four to six hours. Multi-storey or climate-controlled facilities with complex HVAC systems take longer. Deliverables are returned within three to five business days." }
+    },
+    {
+      "@type": "Question",
+      "name": "Can you survey an entire portfolio at once?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Yes. We routinely survey portfolios of 10 to 50+ facilities as a single programme. All facilities are documented using the same methodology and delivered in the same format through a single ScopeWalk portal, giving your acquisition or capital planning team consistent data across every location." }
+    },
+    {
+      "@type": "Question",
+      "name": "Do you document security and access control systems?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Yes. Security infrastructure is a standard component of our self-storage survey methodology. We document gate access systems, CCTV camera positions and coverage zones, unit-level lock configurations, perimeter fencing condition, and lighting adequacy. This information supports both acquisition due diligence and capital planning." }
+    }
+  ]
+});
+---
+<Layout
+  title="Self-Storage Portfolio Surveys: Documentation for Operators & Acquirers | Alturascope"
+  description="Self-storage acquisitions and capital planning depend on consistent site documentation across every facility. Here's what portfolio operators actually need from the field."
+  canonical="https://alturascope.com/insights/self-storage-portfolio-site-survey-documentation/"
+  schema={schema}
+  breadcrumbSchema={breadcrumbSchema}
+  faqSchema={faqSchema}
+  fullWidth={true}
+>
+  <div data-hero-page>
+
+    <!-- Hero -->
+    <section class="relative h-[45vh] max-h-[450px] min-h-[300px] flex items-center justify-center">
+      <div class="absolute inset-0 bg-navy">
+        <img
+          src="/Images/construction.jpg"
+          alt="Commercial facility exterior documented during portfolio acquisition survey programme"
+          class="w-full h-full object-cover opacity-25"
+        />
+        <div class="absolute inset-0 bg-[rgba(11,31,58,0.82)]"></div>
+      </div>
+      <div class="relative z-10 text-center px-6 max-w-[760px] mx-auto">
+        <p class="label text-gold mb-4">INSIGHTS</p>
+        <h1 class="text-[1.8rem] md:text-[2.6rem] font-light text-offwhite leading-tight">
+          Site Survey Documentation for Self-Storage Portfolio Operators
+        </h1>
+      </div>
+    </section>
+
+    <!-- Article Body -->
+    <article class="bg-white section-padding">
+      <div class="max-w-[760px] mx-auto px-6">
+
+        <div class="space-y-6 text-midgrey leading-body text-[1.05rem]">
+          <p>
+            The self-storage sector is in the middle of one of the most aggressive consolidation cycles in commercial real estate. Private equity firms, REITs, and institutional investors are acquiring independent operators and regional portfolios at pace, driven by the sector's recession-resilient cash flows and favourable cap rates.
+          </p>
+          <p>
+            Every acquisition requires condition documentation. Every capital planning cycle requires reliable data about what each facility actually looks like today &mdash; not what it looked like when the last survey was done three years ago, or what the seller's marketing materials claim.
+          </p>
+          <p>
+            And here's the problem: when you're acquiring 20 facilities at once, and each one was last surveyed by a different local firm using a different methodology and a different deliverable format, the data is essentially unusable for portfolio-level decision-making.
+          </p>
+        </div>
+
+        <!-- The Portfolio Documentation Gap -->
+        <h2 class="text-[1.6rem] font-light text-navy mt-16 mb-6">The Portfolio Documentation Gap</h2>
+        <div class="space-y-6 text-midgrey leading-body text-[1.05rem]">
+          <p>
+            Self-storage facilities are deceptively simple structures. From the outside, they look like metal boxes with doors. In practice, the condition variables that affect valuation and capital planning are numerous and expensive when they surprise you after closing.
+          </p>
+          <p>
+            The acquisition team runs numbers based on rent rolls and occupancy rates. The capital planning team inherits the physical assets and discovers the reality: roofs that need replacing, climate control systems past their useful life, drainage problems that flood units during heavy rain, security infrastructure that doesn't meet the brand standard, and ADA compliance gaps that require immediate remediation.
+          </p>
+          <p>
+            These aren't unusual findings. They're standard in any portfolio of 10+ facilities that hasn't been documented consistently. The issue is that without structured, comparable data across every facility, the capital planning team can't prioritise spending intelligently. They end up in reactive mode, dealing with the most urgent problems at the loudest facilities rather than allocating capital based on a complete picture of portfolio condition.
+          </p>
+        </div>
+
+        <!-- What a Self-Storage Survey Needs to Capture -->
+        <h2 class="text-[1.6rem] font-light text-navy mt-16 mb-6">What a Self-Storage Survey Needs to Capture</h2>
+        <div class="space-y-6 text-midgrey leading-body text-[1.05rem]">
+          <p>
+            A <a href="/services/self-storage-portfolio-documentation" class="text-navy font-medium hover:opacity-80 transition-opacity">self-storage facility survey</a> is different from a standard commercial building survey. The structure is simpler, but the condition assessment is specific to the asset class. Here's what matters:
+          </p>
+        </div>
+
+        <div class="mt-8 space-y-6">
+          <div class="border-l-2 border-gold pl-6">
+            <h3 class="text-navy font-medium">Roof condition</h3>
+            <p class="mt-1 text-midgrey text-[0.95rem] leading-relaxed">The single largest capital expenditure item for any self-storage facility. Membrane condition, flashing integrity, ponding, penetration seals, drainage adequacy, and remaining useful life. <a href="/insights/thermal-imaging-commercial-property-what-it-reveals" class="text-navy font-medium hover:opacity-80 transition-opacity">Thermal imaging</a> can identify moisture intrusion that isn't visible during a visual inspection.</p>
+          </div>
+          <div class="border-l-2 border-gold pl-6">
+            <h3 class="text-navy font-medium">Climate control systems</h3>
+            <p class="mt-1 text-midgrey text-[0.95rem] leading-relaxed">For climate-controlled facilities, the HVAC system is the revenue driver. If it fails, premium-rate units can't be rented. Document every unit: make, model, age, condition, refrigerant type, and service history indicators. Thermal imaging during operation reveals performance anomalies that visual inspection misses.</p>
+          </div>
+          <div class="border-l-2 border-gold pl-6">
+            <h3 class="text-navy font-medium">Unit mix and access</h3>
+            <p class="mt-1 text-midgrey text-[0.95rem] leading-relaxed">Verify the actual unit mix against the rent roll. Door condition, lock mechanism type, corridor widths, turning radii for move-in access, and any units that have been converted, combined, or taken offline. What the rent roll says and what actually exists on site are frequently different.</p>
+          </div>
+          <div class="border-l-2 border-gold pl-6">
+            <h3 class="text-navy font-medium">Security infrastructure</h3>
+            <p class="mt-1 text-midgrey text-[0.95rem] leading-relaxed">Gate access system type and condition, CCTV camera positions and coverage zones, perimeter fencing, exterior lighting levels, and any smart-lock or remote-access technology. Security is a key differentiator for operators and a standard item in brand compliance audits.</p>
+          </div>
+          <div class="border-l-2 border-gold pl-6">
+            <h3 class="text-navy font-medium">Site and drainage</h3>
+            <p class="mt-1 text-midgrey text-[0.95rem] leading-relaxed">Pavement condition, grading adequacy, stormwater management, and any evidence of flooding or water intrusion at unit level. Drainage failures are one of the most common sources of tenant claims and insurance loss in the sector.</p>
+          </div>
+          <div class="border-l-2 border-gold pl-6">
+            <h3 class="text-navy font-medium">ADA compliance</h3>
+            <p class="mt-1 text-midgrey text-[0.95rem] leading-relaxed">Accessible route conditions, ramp slopes, door hardware, signage, and accessible unit availability. ADA non-compliance creates legal exposure that acquirers need to price into their models.</p>
+          </div>
+        </div>
+
+        <!-- Why Consistency Across the Portfolio Matters -->
+        <h2 class="text-[1.6rem] font-light text-navy mt-16 mb-6">Why Consistency Across the Portfolio Matters</h2>
+        <div class="space-y-6 text-midgrey leading-body text-[1.05rem]">
+          <p>
+            The real value of portfolio-level documentation isn't in any individual survey &mdash; it's in the ability to compare, prioritise, and plan across every facility in the portfolio using data that's structured identically.
+          </p>
+          <p>
+            When every facility has been documented using the same methodology, the same deliverable format, and the same condition scoring framework, your capital planning team can answer questions that are impossible to answer otherwise: which facilities need roof replacement in the next 24 months? Which climate control systems are approaching end-of-life? Where are the ADA compliance gaps? What's the total deferred maintenance liability across the portfolio?
+          </p>
+          <p>
+            This is the approach we take with <a href="/services/multi-site-rollout-documentation" class="text-navy font-medium hover:opacity-80 transition-opacity">multi-site documentation programmes</a> &mdash; one brief, one methodology, one platform, standardised data across every location. For <a href="/insights/due-diligence-documentation-portfolio-acquisitions" class="text-navy font-medium hover:opacity-80 transition-opacity">portfolio acquisitions</a>, this consistency is what turns raw survey data into a capital planning tool.
+          </p>
+        </div>
+
+        <!-- The Acquisition Use Case -->
+        <h2 class="text-[1.6rem] font-light text-navy mt-16 mb-6">The Acquisition Use Case</h2>
+        <div class="space-y-6 text-midgrey leading-body text-[1.05rem]">
+          <p>
+            During acquisition due diligence, the deal team needs condition data fast. They're working to a closing timeline, often evaluating 10&ndash;30 facilities simultaneously, and they need to identify material condition issues before they become post-closing surprises.
+          </p>
+          <p>
+            A standardised survey programme deployed across the entire portfolio during the due diligence window gives the deal team exactly what they need: a clear, comparable picture of condition across every facility, with findings prioritised so they know which issues are material to the deal and which are routine maintenance items that can be addressed post-closing.
+          </p>
+          <p>
+            The deliverables also serve the operations team after closing. The digital twins become the baseline documentation for every facility, the conditions reports feed directly into the first capital planning cycle, and the ScopeWalk portal becomes the permanent repository for all facility documentation going forward.
+          </p>
+        </div>
+
+        <!-- FAQ -->
+        <h2 class="text-[1.6rem] font-light text-navy mt-16 mb-8">Frequently Asked Questions</h2>
+
+        <div class="space-y-8">
+          <details class="group border-b border-border pb-6">
+            <summary class="cursor-pointer text-navy font-medium text-lg flex items-center justify-between">
+              What does a self-storage facility survey include?
+              <span class="text-gold text-xl transition-transform group-open:rotate-45">+</span>
+            </summary>
+            <p class="mt-4 text-midgrey leading-body">
+              A standard self-storage survey includes a Matterport digital twin of the facility, a structured conditions report covering roof, HVAC, security systems, unit access, drainage, and ADA compliance, a photo storyboard documenting every area, and a narrated video walkthrough. For climate-controlled facilities, we add HVAC system documentation including thermal imaging to identify performance anomalies.
+            </p>
+          </details>
+
+          <details class="group border-b border-border pb-6">
+            <summary class="cursor-pointer text-navy font-medium text-lg flex items-center justify-between">
+              How long does it take to survey a self-storage facility?
+              <span class="text-gold text-xl transition-transform group-open:rotate-45">+</span>
+            </summary>
+            <p class="mt-4 text-midgrey leading-body">
+              A typical single-storey self-storage facility with 400 to 600 units can be surveyed in four to six hours. Multi-storey or climate-controlled facilities with complex HVAC systems take longer. Deliverables are returned within three to five business days.
+            </p>
+          </details>
+
+          <details class="group border-b border-border pb-6">
+            <summary class="cursor-pointer text-navy font-medium text-lg flex items-center justify-between">
+              Can you survey an entire portfolio at once?
+              <span class="text-gold text-xl transition-transform group-open:rotate-45">+</span>
+            </summary>
+            <p class="mt-4 text-midgrey leading-body">
+              Yes. We routinely survey portfolios of 10 to 50+ facilities as a single programme. All facilities are documented using the same methodology and delivered in the same format through a single ScopeWalk portal, giving your acquisition or capital planning team consistent data across every location.
+            </p>
+          </details>
+
+          <details class="group border-b border-border pb-6">
+            <summary class="cursor-pointer text-navy font-medium text-lg flex items-center justify-between">
+              Do you document security and access control systems?
+              <span class="text-gold text-xl transition-transform group-open:rotate-45">+</span>
+            </summary>
+            <p class="mt-4 text-midgrey leading-body">
+              Yes. Security infrastructure is a standard component of our self-storage survey methodology. We document gate access systems, CCTV camera positions and coverage zones, unit-level lock configurations, perimeter fencing condition, and lighting adequacy. This information supports both acquisition due diligence and capital planning.
+            </p>
+          </details>
+        </div>
+
+        <!-- Bottom Line -->
+        <div class="mt-16 pt-16 border-t border-border">
+          <h2 class="text-[1.6rem] font-light text-navy mb-6">The Bottom Line</h2>
+          <div class="space-y-6 text-midgrey leading-body text-[1.05rem]">
+            <p>
+              Self-storage portfolio documentation isn't complicated &mdash; but it does require a methodology built for the asset class and a delivery model that scales across dozens of facilities without losing consistency. The acquirers and operators getting this right are the ones making capital allocation decisions based on verified, comparable data rather than assumptions and fragmented reports from 20 different surveyors.
+            </p>
+            <p>
+              <a href="/contact" class="text-navy font-medium hover:opacity-80 transition-opacity">Talk to Alturascope</a> about documenting your portfolio. We'll scope the methodology, confirm timelines, and quote the programme &mdash; travel included &mdash; within one business day.
+            </p>
+          </div>
+        </div>
+
+        <p class="mt-12 text-[0.85rem] text-midgrey/60 italic">
+          Alturascope delivers <a href="/services/self-storage-portfolio-documentation" class="hover:opacity-80 transition-opacity">self-storage portfolio documentation</a> and acquisition survey programmes across all 50 US states and every Canadian province.
+        </p>
+
+        <div class="mt-12 pt-8 border-t border-border flex flex-wrap gap-6 text-sm">
+          <a href="/services/self-storage-portfolio-documentation" class="text-navy font-medium hover:opacity-80 transition-opacity">Self-storage documentation &rarr;</a>
+          <a href="/services/multi-site-rollout-documentation" class="text-navy font-medium hover:opacity-80 transition-opacity">Multi-site rollout &rarr;</a>
+          <a href="/insights/due-diligence-documentation-portfolio-acquisitions" class="text-navy font-medium hover:opacity-80 transition-opacity">Due diligence documentation &rarr;</a>
+          <a href="/insights" class="text-navy font-medium hover:opacity-80 transition-opacity">All insights &rarr;</a>
+        </div>
+
+      </div>
+    </article>
+
+    <section class="bg-navy py-20">
+      <div class="max-w-[600px] mx-auto px-6 text-center">
+        <h2 class="text-[1.8rem] font-light text-offwhite leading-snug">
+          Acquiring or managing a self-storage portfolio?
+        </h2>
+        <p class="mt-4 text-offwhite/70 leading-body">
+          Tell us how many facilities, the geography, and the timeline. We'll design the survey programme and quote it end-to-end.
+        </p>
+        <a href="/contact" class="btn-primary mt-8">Start a Project</a>
+      </div>
+    </section>
+
+  </div>
+</Layout>

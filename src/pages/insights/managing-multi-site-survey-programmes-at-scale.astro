@@ -1,0 +1,265 @@
+---
+import Layout from "../../layouts/Layout.astro";
+
+const schema = JSON.stringify({
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "Managing Multi-Site Survey Programmes at Scale: Lessons from 500+ Commercial Locations",
+  "author": { "@type": "Organization", "name": "Alturascope" },
+  "publisher": { "@type": "Organization", "name": "Alturascope", "url": "https://alturascope.com" },
+  "datePublished": "2026-04-01",
+  "description": "Surveying 100+ commercial locations across North America requires more than good equipment. Here's what we've learned about logistics, quality control, and data management at programme scale.",
+  "mainEntityOfPage": "https://alturascope.com/insights/managing-multi-site-survey-programmes-at-scale/"
+});
+
+const breadcrumbSchema = JSON.stringify({
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://alturascope.com" },
+    { "@type": "ListItem", "position": 2, "name": "Insights", "item": "https://alturascope.com/insights/" },
+    { "@type": "ListItem", "position": 3, "name": "Managing Multi-Site Survey Programmes at Scale", "item": "https://alturascope.com/insights/managing-multi-site-survey-programmes-at-scale/" }
+  ]
+});
+
+const faqSchema = JSON.stringify({
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "How many locations can you survey per week?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Capacity depends on location density, geographic spread, and survey scope. For a geographically concentrated programme, we can complete 8 to 12 locations per week. For a coast-to-coast programme, routing is optimised to maximise efficiency while minimising travel cost." }
+    },
+    {
+      "@type": "Question",
+      "name": "How do you maintain quality across hundreds of surveys?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Every survey follows the same capture methodology, the same checklist, and the same deliverable structure. We use ScopeWalk as a field capture platform that enforces completeness before a survey can be marked as done. Post-capture QA reviews every deliverable package before release to the client." }
+    },
+    {
+      "@type": "Question",
+      "name": "What if a site has access restrictions or unusual operating hours?",
+      "acceptedAnswer": { "@type": "Answer", "text": "We handle all access coordination as part of the programme. This includes scheduling around operating hours, coordinating with site managers or tenant representatives, managing security requirements, and adapting to site-specific constraints. Access complications are standard at this scale and are factored into programme planning." }
+    },
+    {
+      "@type": "Question",
+      "name": "Do you cover the UK as well as North America?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Yes. Alturascope operates across all 50 US states, every Canadian province, and the United Kingdom. For programmes that span multiple countries, we apply the same methodology and deliver through the same platform, ensuring consistent data regardless of location." }
+    }
+  ]
+});
+---
+<Layout
+  title="Multi-Site Survey Programmes at Scale: 500+ Locations | Alturascope"
+  description="Surveying 100+ commercial locations across North America requires more than good equipment. Here's what we've learned about logistics, quality control, and data management at programme scale."
+  canonical="https://alturascope.com/insights/managing-multi-site-survey-programmes-at-scale/"
+  schema={schema}
+  breadcrumbSchema={breadcrumbSchema}
+  faqSchema={faqSchema}
+  fullWidth={true}
+>
+  <div data-hero-page>
+
+    <section class="relative h-[45vh] max-h-[450px] min-h-[300px] flex items-center justify-center">
+      <div class="absolute inset-0 bg-navy">
+        <img
+          src="/Images/manhattan1.jpg"
+          alt="Urban commercial district representing nationwide multi-site survey programme coverage"
+          class="w-full h-full object-cover opacity-25"
+        />
+        <div class="absolute inset-0 bg-[rgba(11,31,58,0.82)]"></div>
+      </div>
+      <div class="relative z-10 text-center px-6 max-w-[760px] mx-auto">
+        <p class="label text-gold mb-4">INSIGHTS</p>
+        <h1 class="text-[1.8rem] md:text-[2.6rem] font-light text-offwhite leading-tight">
+          Managing Multi-Site Survey Programmes at Scale: Lessons from 500+ Commercial Locations
+        </h1>
+      </div>
+    </section>
+
+    <article class="bg-white section-padding">
+      <div class="max-w-[760px] mx-auto px-6">
+
+        <div class="space-y-6 text-midgrey leading-body text-[1.05rem]">
+          <p>
+            Surveying a single commercial building is a logistics exercise. Surveying 100 buildings across 30 states is an operations problem. The equipment and methodology matter, but what separates a successful multi-site programme from a chaotic one is how you manage the logistics, maintain quality at distance, and deliver data that's actually usable at portfolio level.
+          </p>
+          <p>
+            Over the course of documenting more than 500 commercial locations across North America &mdash; primarily commercial fit-out and renovation projects for a national operator with sites spanning coast to coast &mdash; we've refined an approach that works at scale without sacrificing the quality of each individual survey.
+          </p>
+          <p>
+            Here's what we've learned.
+          </p>
+        </div>
+
+        <h2 class="text-[1.6rem] font-light text-navy mt-16 mb-6">Scoping the Programme, Not Just the Survey</h2>
+        <div class="space-y-6 text-midgrey leading-body text-[1.05rem]">
+          <p>
+            The most common mistake in a multi-site survey programme is treating each location as an independent project. When every site is scoped individually, you end up with inconsistent deliverables, unpredictable timelines, and costs that vary wildly from one location to the next.
+          </p>
+          <p>
+            The better approach is to scope at programme level. This means defining the survey methodology once: what gets captured, in what order, to what standard, and in what format. Every location in the programme gets the same treatment. The scope may flex for unusually large or complex sites, but the baseline is consistent.
+          </p>
+          <p>
+            This programme-level scoping also determines pricing. Rather than quoting each site individually &mdash; which creates administrative overhead and unpredictable costs for the client &mdash; we establish a per-site rate that accounts for the programme's geography, volume, and typical site characteristics. The client knows exactly what each survey costs before the programme begins. As we discussed in our guide to <a href="/insights/standardising-site-surveys-multi-site-operators" class="text-navy font-medium hover:opacity-80 transition-opacity">standardising surveys for multi-site operators</a>, this consistency is what makes programme-level decision-making possible.
+          </p>
+        </div>
+
+        <h2 class="text-[1.6rem] font-light text-navy mt-16 mb-6">Logistics: The Invisible Complexity</h2>
+        <div class="space-y-6 text-midgrey leading-body text-[1.05rem]">
+          <p>
+            For a national programme, the logistics are more complex than the survey itself. Each location has its own access requirements, operating hours, contact person, and site-specific quirks. Multiply that by 100 and you have a coordination challenge that needs systematic management.
+          </p>
+          <p>
+            The practical realities include:
+          </p>
+        </div>
+
+        <div class="space-y-10 mt-8">
+          <div>
+            <h3 class="text-navy font-medium text-[1.1rem]">Travel Routing</h3>
+            <p class="mt-3 text-midgrey leading-body text-[1.05rem]">
+              Surveying 15 locations in the Northeast corridor is very different from surveying 15 locations scattered across Texas, Arizona, and New Mexico. Travel routing needs to optimise for efficiency: grouping geographically proximate sites into survey runs, minimising deadhead travel between locations, and building in contingency for access delays or weather disruptions. On a 100-site programme, the difference between smart routing and ad-hoc scheduling can be tens of thousands of dollars in travel cost.
+            </p>
+          </div>
+
+          <div>
+            <h3 class="text-navy font-medium text-[1.1rem]">Access Coordination</h3>
+            <p class="mt-3 text-midgrey leading-body text-[1.05rem]">
+              Every location has a gatekeeper: a store manager, a tenant representative, a property management company, or a security team. Each one needs to be contacted, briefed, and scheduled. At programme scale, access coordination is a dedicated workstream &mdash; not something bolted onto the survey activity. We've found that the single biggest cause of programme delays isn't the survey itself but failed access: arriving at a location to find the contact is unavailable, the space isn't ready, or the access arrangement wasn't communicated to the person on site.
+            </p>
+          </div>
+
+          <div>
+            <h3 class="text-navy font-medium text-[1.1rem]">Equipment Logistics</h3>
+            <p class="mt-3 text-midgrey leading-body text-[1.05rem]">
+              Matterport cameras, LiDAR scanners, thermal imaging equipment, drones, pole-mounted cameras, and all the associated accessories need to travel with the surveyor. For air travel, TSA screening adds time. For cross-border work between the US and Canada, customs declarations add complexity. Equipment failures in the field need contingency planning &mdash; a spare camera, a backup hard drive, a Plan B for when the drone can't fly due to airspace restrictions.
+            </p>
+          </div>
+        </div>
+
+        <h2 class="text-[1.6rem] font-light text-navy mt-16 mb-6">Quality Control at Distance</h2>
+        <div class="space-y-6 text-midgrey leading-body text-[1.05rem]">
+          <p>
+            When you're 1,500 miles from the last site you surveyed, the temptation is to assume everything is fine and move on to the next location. The reality is that quality control at distance requires deliberate systems, not assumptions.
+          </p>
+          <p>
+            Our approach uses ScopeWalk as both the capture platform and the QA mechanism. Every survey follows a structured template that enforces completeness: the surveyor can't mark a location as complete until every required capture &mdash; digital twin, photo storyboard, conditions observations, equipment documentation &mdash; has been uploaded and tagged. This eliminates the most common quality failure in multi-site programmes: returning home to discover that a critical area wasn't documented because the surveyor forgot or ran out of time.
+          </p>
+          <p>
+            Post-capture, every deliverable package goes through a QA review before release to the client. This catches naming inconsistencies, missing documentation, photo quality issues, and conditions findings that need clarification. The review adds a day to the delivery timeline but eliminates the rework and back-and-forth that unreviewed deliverables inevitably create.
+          </p>
+        </div>
+
+        <h2 class="text-[1.6rem] font-light text-navy mt-16 mb-6">Data Management and Delivery</h2>
+        <div class="space-y-6 text-midgrey leading-body text-[1.05rem]">
+          <p>
+            At programme scale, the deliverable isn't a folder of files &mdash; it's a managed platform. Each location's documentation needs to be permanently accessible, searchable, and structured so that anyone on the client's team can find what they need without contacting us.
+          </p>
+          <p>
+            Through ScopeWalk, every location in a programme gets its own project space containing the digital twin, conditions report, photo storyboard, video walkthrough, and any supplementary documentation. The client's team accesses everything through a single portal with role-based permissions: project managers see the full picture, site-level contacts see only their location, and executives get the portfolio view.
+          </p>
+          <p>
+            For clients managing <a href="/services/multi-site-rollout-documentation" class="text-navy font-medium hover:opacity-80 transition-opacity">multi-site rollout programmes</a>, this platform layer is often more valuable than any individual survey. It becomes the single source of truth for site conditions across the entire portfolio &mdash; accessible from anywhere, permanently available, and structured for decision-making rather than just storage.
+          </p>
+        </div>
+
+        <h2 class="text-[1.6rem] font-light text-navy mt-16 mb-6">Edge Cases and the Unexpected</h2>
+        <div class="space-y-6 text-midgrey leading-body text-[1.05rem]">
+          <p>
+            On any programme of 100+ locations, you will encounter sites that don't fit the standard methodology. A location in a listed building with access restrictions. A site undergoing partial demolition that changes between your scheduling call and your arrival. A location where the tenant refuses access because nobody told them you were coming.
+          </p>
+          <p>
+            The operational maturity of a survey programme is measured not by how it handles the straightforward sites but by how it handles the difficult ones. Our approach builds explicit contingency into the programme schedule, maintains a rolling exception list for sites requiring special arrangements, and keeps the client informed with structured status updates so there are no surprises at the programme level.
+          </p>
+          <p>
+            After 500+ locations, we've seen most of the edge cases and have protocols for each. That operational experience is difficult to replicate and impossible to shortcut.
+          </p>
+        </div>
+
+        <!-- FAQ -->
+        <h2 class="text-[1.6rem] font-light text-navy mt-16 mb-8">Frequently Asked Questions</h2>
+
+        <div class="space-y-8">
+          <details class="group border-b border-border pb-6">
+            <summary class="cursor-pointer text-navy font-medium text-lg flex items-center justify-between">
+              How many locations can you survey per week?
+              <span class="text-gold text-xl transition-transform group-open:rotate-45">+</span>
+            </summary>
+            <p class="mt-4 text-midgrey leading-body">
+              Capacity depends on location density, geographic spread, and survey scope. For a geographically concentrated programme, we can complete 8 to 12 locations per week. For a coast-to-coast programme, routing is optimised to maximise efficiency while minimising travel cost.
+            </p>
+          </details>
+
+          <details class="group border-b border-border pb-6">
+            <summary class="cursor-pointer text-navy font-medium text-lg flex items-center justify-between">
+              How do you maintain quality across hundreds of surveys?
+              <span class="text-gold text-xl transition-transform group-open:rotate-45">+</span>
+            </summary>
+            <p class="mt-4 text-midgrey leading-body">
+              Every survey follows the same capture methodology, the same checklist, and the same deliverable structure. We use ScopeWalk as a field capture platform that enforces completeness before a survey can be marked as done. Post-capture QA reviews every deliverable package before release to the client.
+            </p>
+          </details>
+
+          <details class="group border-b border-border pb-6">
+            <summary class="cursor-pointer text-navy font-medium text-lg flex items-center justify-between">
+              What if a site has access restrictions or unusual operating hours?
+              <span class="text-gold text-xl transition-transform group-open:rotate-45">+</span>
+            </summary>
+            <p class="mt-4 text-midgrey leading-body">
+              We handle all access coordination as part of the programme. This includes scheduling around operating hours, coordinating with site managers or tenant representatives, managing security requirements, and adapting to site-specific constraints. Access complications are standard at this scale and are factored into programme planning.
+            </p>
+          </details>
+
+          <details class="group border-b border-border pb-6">
+            <summary class="cursor-pointer text-navy font-medium text-lg flex items-center justify-between">
+              Do you cover the UK as well as North America?
+              <span class="text-gold text-xl transition-transform group-open:rotate-45">+</span>
+            </summary>
+            <p class="mt-4 text-midgrey leading-body">
+              Yes. Alturascope operates across all 50 US states, every Canadian province, and the United Kingdom. For programmes that span multiple countries, we apply the same methodology and deliver through the same platform, ensuring consistent data regardless of location.
+            </p>
+          </details>
+        </div>
+
+        <div class="mt-16 pt-16 border-t border-border">
+          <h2 class="text-[1.6rem] font-light text-navy mb-6">The Bottom Line</h2>
+          <div class="space-y-6 text-midgrey leading-body text-[1.05rem]">
+            <p>
+              Multi-site survey programmes succeed or fail on operations, not equipment. The capture technology matters, but it's the logistics management, quality control systems, and data delivery platform that determine whether a 100-location programme runs smoothly or becomes an operational headache.
+            </p>
+            <p>
+              If you're planning a multi-site programme &mdash; whether it's 10 locations or 200 &mdash; <a href="/contact" class="text-navy font-medium hover:opacity-80 transition-opacity">talk to Alturascope</a>. We'll scope the methodology, design the routing, and quote the programme end-to-end. Travel included, always.
+            </p>
+          </div>
+        </div>
+
+        <p class="mt-12 text-[0.85rem] text-midgrey/60 italic">
+          Alturascope delivers <a href="/services/multi-site-rollout-documentation" class="hover:opacity-80 transition-opacity">multi-site survey programmes</a> across all 50 US states, every Canadian province, and the United Kingdom.
+        </p>
+
+        <div class="mt-12 pt-8 border-t border-border flex flex-wrap gap-6 text-sm">
+          <a href="/services/multi-site-rollout-documentation" class="text-navy font-medium hover:opacity-80 transition-opacity">Multi-site rollout documentation &rarr;</a>
+          <a href="/services/retail-rollout-documentation" class="text-navy font-medium hover:opacity-80 transition-opacity">Retail rollout documentation &rarr;</a>
+          <a href="/services/qsr-restaurant-survey" class="text-navy font-medium hover:opacity-80 transition-opacity">QSR survey services &rarr;</a>
+          <a href="/work" class="text-navy font-medium hover:opacity-80 transition-opacity">The Standard &rarr;</a>
+          <a href="/insights" class="text-navy font-medium hover:opacity-80 transition-opacity">All insights &rarr;</a>
+        </div>
+
+      </div>
+    </article>
+
+    <section class="bg-navy py-20">
+      <div class="max-w-[600px] mx-auto px-6 text-center">
+        <h2 class="text-[1.8rem] font-light text-offwhite leading-snug">
+          Planning a multi-site survey programme?
+        </h2>
+        <p class="mt-4 text-offwhite/70 leading-body">
+          Tell us how many locations, the geography, and the programme timeline. We'll design the survey methodology, optimise the routing, and quote the entire programme.
+        </p>
+        <a href="/contact" class="btn-primary mt-8">Start a Project</a>
+      </div>
+    </section>
+
+  </div>
+</Layout>

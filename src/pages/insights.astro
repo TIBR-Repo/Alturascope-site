@@ -1,0 +1,32 @@
+---
+import Layout from "../layouts/Layout.astro";
+
+const schema = JSON.stringify({
+  "@context": "https://schema.org",
+  "@type": "ProfessionalService",
+  "name": "Alturascope",
+  "description": "Reality capture, 3D documentation, and conditions surveys for construction teams and specialist clients across the US, Canada, and the UK.",
+  "url": "https://alturascope.com",
+  "areaServed": ["United States", "Canada", "United Kingdom"],
+  "serviceType": "Reality Capture and Site Documentation"
+});
+---
+<Layout
+  title="Construction Insights & Industry Guides | Alturascope"
+  description="Practical guides on site documentation, reality capture, Matterport, LiDAR, and how to reduce project risk with better pre-construction intelligence."
+  canonical="https://alturascope.com/insights"
+  schema={schema}
+  fullWidth={true}
+>
+  <section class="bg-white min-h-[60vh] flex items-center justify-center">
+    <div class="max-w-[560px] mx-auto px-6 text-center py-32">
+      <h1 class="text-[2.4rem] md:text-[3rem] font-light text-navy leading-tight">
+        Insights.
+      </h1>
+      <p class="label text-gold mt-6">Coming Soon</p>
+      <p class="mt-6 text-midgrey leading-body">
+        We're building a series of practical pieces on site documentation, reality capture, and the decisions these tools help project teams make. Check back shortly.
+      </p>
+    </div>
+  </section>
+</Layout>
