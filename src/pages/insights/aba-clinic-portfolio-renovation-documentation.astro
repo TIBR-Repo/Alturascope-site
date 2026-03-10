@@ -1,0 +1,276 @@
+---
+import Layout from "../../layouts/Layout.astro";
+
+const schema = JSON.stringify({
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "Standardising Your ABA Clinic Portfolio: How Consistent Documentation Turns 40 Acquired Clinics into a Manageable Renovation Programme",
+  "author": { "@type": "Organization", "name": "Alturascope" },
+  "publisher": { "@type": "Organization", "name": "Alturascope", "url": "https://alturascope.com" },
+  "datePublished": "2026-06-16",
+  "description": "PE-backed ABA platforms are acquiring clinics faster than they can standardise them. Consistent portfolio documentation is how operations teams turn inherited real estate into a systematic renovation programme.",
+  "mainEntityOfPage": "https://alturascope.com/insights/aba-clinic-portfolio-renovation-documentation/"
+});
+
+const breadcrumbSchema = JSON.stringify({
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://alturascope.com" },
+    { "@type": "ListItem", "position": 2, "name": "Insights", "item": "https://alturascope.com/insights/" },
+    { "@type": "ListItem", "position": 3, "name": "ABA Clinic Portfolio Documentation", "item": "https://alturascope.com/insights/aba-clinic-portfolio-renovation-documentation/" }
+  ]
+});
+
+const faqSchema = JSON.stringify({
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "How many ABA clinics can you survey and how quickly?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Throughput depends on geography and clinic size. Typical ABA clinics of 4,000 to 6,000 square feet can be fully documented in three to five hours per location. In clustered markets, two to three clinics per day is achievable. For nationwide portfolios, we coordinate routing by region to maximise efficiency. A 40-location programme can typically be completed in four to six weeks." }
+    },
+    {
+      "@type": "Question",
+      "name": "Can you survey while therapy sessions are in progress?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Yes, though coordination is important. We work with the clinic director to schedule the survey during the least disruptive window — typically early morning before sessions begin, during a lunch break, or at the end of the therapy day. The capture equipment is non-contact and the process does not require any rooms to be vacated, but some operators prefer to survey during non-clinical hours for the comfort of their clients and families." }
+    },
+    {
+      "@type": "Question",
+      "name": "What does the portfolio dashboard show for ABA clinic programmes?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Through ScopeWalk, your operations team can view every clinic in the portfolio with standardised data: facility size, room count by type, equipment age and condition, HVAC system details, acoustic conditions, exterior play area status, and conditions priorities. Sort by any data point to identify which clinics need renovation first, which equipment needs replacement, and where compliance issues exist." }
+    },
+    {
+      "@type": "Question",
+      "name": "Is this useful for acquisition due diligence as well as renovation planning?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Yes. The same documentation methodology serves both phases. Pre-acquisition, a sample survey of representative locations validates assumptions about capital requirements. Post-acquisition, the full portfolio survey provides the data for systematic renovation planning. Using the same approach for both phases means the due diligence data feeds directly into the renovation programme without reformatting or resurveying." }
+    }
+  ]
+});
+---
+<Layout
+  title="ABA Clinic Portfolio Renovation: Standardising Documentation Across Acquired Locations | Alturascope"
+  description="PE-backed ABA platforms are acquiring clinics faster than they can standardise them. Consistent portfolio documentation turns inherited real estate into a systematic renovation programme."
+  canonical="https://alturascope.com/insights/aba-clinic-portfolio-renovation-documentation/"
+  schema={schema}
+  breadcrumbSchema={breadcrumbSchema}
+  faqSchema={faqSchema}
+  fullWidth={true}
+>
+  <div data-hero-page>
+
+    <section class="relative h-[45vh] max-h-[450px] min-h-[300px] flex items-center justify-center">
+      <div class="absolute inset-0 bg-navy">
+        <img
+          src="https://images.unsplash.com/photo-1504384308090-c894fdcc538d?w=1920&q=80"
+          srcset="https://images.unsplash.com/photo-1504384308090-c894fdcc538d?w=800&q=70 800w, https://images.unsplash.com/photo-1504384308090-c894fdcc538d?w=1200&q=75 1200w, https://images.unsplash.com/photo-1504384308090-c894fdcc538d?w=1920&q=80 1920w"
+          sizes="100vw"
+          alt="Modern clinical and office environment representing multi-site healthcare portfolio management"
+          class="w-full h-full object-cover opacity-25"
+        />
+        <div class="absolute inset-0 bg-[rgba(11,31,58,0.82)]"></div>
+      </div>
+      <div class="relative z-10 text-center px-6 max-w-[760px] mx-auto">
+        <p class="label text-gold mb-4">INSIGHTS</p>
+        <h1 class="text-[1.8rem] md:text-[2.6rem] font-light text-offwhite leading-tight">
+          Standardising Your ABA Clinic Portfolio: How Consistent Documentation Turns 40 Acquired Clinics into a Manageable Renovation Programme
+        </h1>
+      </div>
+    </section>
+
+    <article class="bg-white section-padding">
+      <div class="max-w-[760px] mx-auto px-6">
+
+        <div class="space-y-6 text-midgrey leading-body text-[1.05rem]">
+          <p>
+            The PE-backed consolidation of the ABA therapy market has created a new category of operational challenge: the inherited portfolio. A platform acquires five clinics in one market, eight in another, three from a single-operator practice in a third. Each clinic was built out by a different contractor, designed by a different architect (or no architect at all), and maintained to a different standard. Some are purpose-built. Others are converted retail spaces with improvised therapy rooms. A few are genuinely well-designed. Many are not.
+          </p>
+          <p>
+            The operations team inherits this portfolio and is asked to do two things simultaneously: keep therapy running at every location and develop a plan to bring every clinic up to the platform's brand and clinical standard. The second task requires knowing, with specificity and consistency, what exists at every location &mdash; the physical conditions, the equipment, the spatial configuration, the MEP infrastructure, and the constraints that will shape the renovation scope and cost.
+          </p>
+          <p>
+            This is a portfolio documentation problem. And it is best solved systematically, not clinic by clinic.
+          </p>
+        </div>
+
+        <h2 class="text-[1.6rem] font-light text-navy mt-16 mb-6">The Inherited Clinic Problem</h2>
+        <div class="space-y-6 text-midgrey leading-body text-[1.05rem]">
+          <p>
+            Every acquired ABA clinic represents a set of unknowns. The previous operator may have had excellent records &mdash; or none at all. The build-out drawings, if they exist, may reflect what was planned but not what was built. Equipment may have been replaced, rooms reconfigured, or HVAC systems modified without any documentation. The lease file may contain a schedule of condition from five years ago that describes a space that no longer exists.
+          </p>
+          <p>
+            When the platform's design team sits down to develop a standardised renovation plan across the portfolio, they need answers to the same set of questions at every clinic:
+          </p>
+        </div>
+
+        <div class="mt-8 bg-offwhite rounded p-8 space-y-4 text-midgrey leading-body text-[1.05rem]">
+          <p>What is the actual room layout and how does it compare to the platform's clinical programme requirements?</p>
+          <p>What are the ceiling heights in gross motor and play areas &mdash; and what is the floor-to-structure height if the suspended ceiling needs to be removed?</p>
+          <p>What condition are the treatment rooms in? Do they have vision panels? Are the walls suitable for acoustic separation?</p>
+          <p>What is installed in the sensory room &mdash; and does it meet the platform's specification?</p>
+          <p>What HVAC equipment serves the space and is it independently zoned from adjacent tenants?</p>
+          <p>What are the plumbing provisions &mdash; are there child-height fixtures, and where are the waste and water lines?</p>
+          <p>What is the reception and security configuration &mdash; does it meet the platform's elopement prevention requirements?</p>
+          <p>What is the exterior situation &mdash; play area, fencing, drop-off circulation, parking?</p>
+          <p>What is the general conditions status &mdash; flooring, finishes, lighting, restrooms, staff areas?</p>
+          <p>What are the immediate P1 issues that need addressing before the next accreditation cycle?</p>
+        </div>
+
+        <div class="space-y-6 text-midgrey leading-body text-[1.05rem] mt-8">
+          <p>
+            When these questions are answered inconsistently across the portfolio &mdash; different surveyors, different formats, different levels of detail &mdash; the renovation plan becomes a clinic-by-clinic exercise rather than a programme. Capital allocation is driven by guesswork rather than data. The clinics that get renovated first are the ones whose problems are loudest, not necessarily the ones with the most urgent needs.
+          </p>
+        </div>
+
+        <h2 class="text-[1.6rem] font-light text-navy mt-16 mb-6">The Standardised Portfolio Approach</h2>
+        <div class="space-y-6 text-midgrey leading-body text-[1.05rem]">
+          <p>
+            The alternative is to document every clinic in the portfolio using the same methodology, the same capture protocol, and the same deliverable structure &mdash; then deliver it all through a single platform where the data is comparable and actionable.
+          </p>
+          <p>
+            This is the same <a href="/insights/standardising-site-surveys-multi-site-operators/" class="text-navy font-medium hover:opacity-80 transition-opacity">standardisation principle that applies to any multi-site documentation programme</a>, adapted for the specific requirements of ABA therapy environments. The capture protocol is defined once, calibrated against the platform's clinical and brand standards, and then applied identically at every location.
+          </p>
+          <p>
+            For ABA-specific portfolio documentation, the standardised deliverable at each clinic includes:
+          </p>
+        </div>
+
+        <div class="mt-8 space-y-3 text-midgrey leading-body text-[1.05rem]">
+          <p>&bull; &nbsp;A navigable Matterport digital twin of the entire clinic &mdash; reception, therapy rooms, gross motor areas, sensory rooms, BCBA offices, staff areas, mechanical spaces, exterior</p>
+          <p>&bull; &nbsp;A conditions report with P1/P2/P3 prioritisation covering interior finishes, flooring (resilient flooring condition is critical in therapy environments), ceiling systems, restrooms (child and adult), lighting (including dimming and colour-change capability where present), and building envelope</p>
+          <p>&bull; &nbsp;A room-by-room inventory documenting room type, dimensions, ceiling height, vision panel presence, acoustic treatment, and window/natural light status</p>
+          <p>&bull; &nbsp;An equipment and fixture schedule covering therapy equipment, HVAC units, electrical panels, plumbing fixtures, security hardware, and lighting systems</p>
+          <p>&bull; &nbsp;Acoustic adjacency documentation &mdash; neighbouring tenant types, shared wall assemblies, HVAC routing between units, and notes on observed noise conditions</p>
+          <p>&bull; &nbsp;Exterior documentation including play area condition and fencing, drop-off circulation, parking, signage, and ADA access</p>
+          <p>&bull; &nbsp;A narrated video walkthrough with spoken commentary on conditions, constraints, and renovation implications</p>
+          <p>&bull; &nbsp;All deliverables permanently accessible through ScopeWalk, structured identically across every clinic in the portfolio</p>
+        </div>
+
+        <h2 class="text-[1.6rem] font-light text-navy mt-16 mb-6">From Documentation to Capital Plan</h2>
+        <div class="space-y-6 text-midgrey leading-body text-[1.05rem]">
+          <p>
+            When every clinic produces the same structured data set, the capital planning conversation changes fundamentally. Instead of the operations director assembling anecdotal reports from regional managers and making subjective judgments about which clinics need attention, the portfolio data provides an objective basis for prioritisation.
+          </p>
+          <p>
+            Which clinics have P1 safety or compliance conditions that need immediate attention? Which have HVAC systems approaching end of life? Which have inadequate acoustic separation that is generating tenant complaints? Which have gross motor areas with ceiling heights that prevent the platform's standard equipment package? Which have reception configurations that do not meet current elopement prevention standards?
+          </p>
+          <p>
+            These questions can be answered across the entire portfolio from a single platform &mdash; sorted, filtered, and compared. The capital plan that emerges is evidence-based, defensible, and prioritised by actual condition rather than internal politics.
+          </p>
+          <p>
+            For PE-backed platforms reporting to investment committees, this level of portfolio intelligence is not a nice-to-have. It is the basis for credible capital reserve estimates, realistic renovation timelines, and informed decisions about which clinics to renovate, which to relocate, and which to close.
+          </p>
+        </div>
+
+        <h2 class="text-[1.6rem] font-light text-navy mt-16 mb-6">The Acquisition-to-Renovation Pipeline</h2>
+        <div class="space-y-6 text-midgrey leading-body text-[1.05rem]">
+          <p>
+            The most efficient ABA platforms are integrating site documentation into the acquisition process itself &mdash; surveying a sample of target clinics during <a href="/insights/due-diligence-documentation-portfolio-acquisitions/" class="text-navy font-medium hover:opacity-80 transition-opacity">pre-acquisition due diligence</a> to validate capital assumptions, then expanding to full portfolio documentation immediately post-close.
+          </p>
+          <p>
+            When the same documentation methodology and platform is used for both phases, the due diligence data feeds directly into the renovation programme. The design team does not start from scratch. The capital planning team does not need to reconcile two different data sets. And the operations team has a head start on understanding the portfolio they have inherited.
+          </p>
+          <p>
+            For platforms that are acquiring multiple practices per quarter, this pipeline approach turns what could be a documentation backlog into a continuous, systematic process &mdash; every new acquisition is documented to the same standard and added to the same portfolio platform.
+          </p>
+        </div>
+
+        <h2 class="text-[1.6rem] font-light text-navy mt-16 mb-6">Survey Logistics in Active Therapy Environments</h2>
+        <div class="space-y-6 text-midgrey leading-body text-[1.05rem]">
+          <p>
+            ABA clinics are active, often noisy, and filled with children and staff during therapy hours. Surveying these environments requires sensitivity to the clinical programme and coordination with the clinic director.
+          </p>
+          <p>
+            Our approach is to work with each clinic's schedule to identify the optimal survey window. Some operators prefer early morning before sessions begin. Others prefer end-of-day after the last client departs. A few are comfortable with survey work during therapy hours in non-clinical areas, with therapy rooms documented during breaks between sessions.
+          </p>
+          <p>
+            The capture equipment is silent, non-contact, and compact. No rooms need to be vacated. No equipment needs to be moved or powered down. A typical ABA clinic of 5,000 square feet can be fully documented in three to five hours &mdash; including the digital twin, conditions assessment, room inventory, equipment schedule, acoustic observations, and narrated walkthrough.
+          </p>
+          <p>
+            For <a href="/services/multi-site-rollout-documentation/" class="text-navy font-medium hover:opacity-80 transition-opacity">multi-site portfolio programmes</a>, we coordinate scheduling centrally, routing by geography to maximise throughput. A 40-clinic portfolio spread across a few states can typically be completed in four to six weeks.
+          </p>
+        </div>
+
+        <!-- FAQ Section -->
+        <div class="mt-16 pt-16 border-t border-border">
+          <h2 class="text-[1.6rem] font-light text-navy mb-8">Common Questions About ABA Clinic Portfolio Documentation</h2>
+          <div class="space-y-4">
+            <details class="group border border-border rounded overflow-hidden">
+              <summary class="flex justify-between items-center cursor-pointer px-6 py-4 text-navy font-medium text-[1.05rem] hover:bg-offwhite transition-colors">
+                How many ABA clinics can you survey and how quickly?
+                <span class="text-gold text-xl transition-transform group-open:rotate-45">+</span>
+              </summary>
+              <div class="px-6 pb-6 text-midgrey leading-body text-[1.05rem]">
+                Throughput depends on geography and clinic size. Typical ABA clinics of 4,000 to 6,000 square feet can be fully documented in three to five hours per location. In clustered markets, two to three clinics per day is achievable. For nationwide portfolios, we coordinate routing by region to maximise efficiency. A 40-location programme can typically be completed in four to six weeks.
+              </div>
+            </details>
+            <details class="group border border-border rounded overflow-hidden">
+              <summary class="flex justify-between items-center cursor-pointer px-6 py-4 text-navy font-medium text-[1.05rem] hover:bg-offwhite transition-colors">
+                Can you survey while therapy sessions are in progress?
+                <span class="text-gold text-xl transition-transform group-open:rotate-45">+</span>
+              </summary>
+              <div class="px-6 pb-6 text-midgrey leading-body text-[1.05rem]">
+                Yes, though coordination is important. We work with the clinic director to schedule the survey during the least disruptive window. The capture equipment is non-contact and the process does not require any rooms to be vacated, but some operators prefer to survey during non-clinical hours for the comfort of their clients and families.
+              </div>
+            </details>
+            <details class="group border border-border rounded overflow-hidden">
+              <summary class="flex justify-between items-center cursor-pointer px-6 py-4 text-navy font-medium text-[1.05rem] hover:bg-offwhite transition-colors">
+                What does the portfolio dashboard show for ABA clinic programmes?
+                <span class="text-gold text-xl transition-transform group-open:rotate-45">+</span>
+              </summary>
+              <div class="px-6 pb-6 text-midgrey leading-body text-[1.05rem]">
+                Through ScopeWalk, your operations team can view every clinic in the portfolio with standardised data: facility size, room count by type, equipment age and condition, HVAC system details, acoustic conditions, exterior play area status, and conditions priorities. Sort by any data point to identify which clinics need renovation first, which equipment needs replacement, and where compliance issues exist.
+              </div>
+            </details>
+            <details class="group border border-border rounded overflow-hidden">
+              <summary class="flex justify-between items-center cursor-pointer px-6 py-4 text-navy font-medium text-[1.05rem] hover:bg-offwhite transition-colors">
+                Is this useful for acquisition due diligence as well as renovation planning?
+                <span class="text-gold text-xl transition-transform group-open:rotate-45">+</span>
+              </summary>
+              <div class="px-6 pb-6 text-midgrey leading-body text-[1.05rem]">
+                Yes. The same documentation methodology serves both phases. Pre-acquisition, a sample survey of representative locations validates assumptions about capital requirements. Post-acquisition, the full portfolio survey provides the data for systematic renovation planning. Using the same approach for both means the due diligence data feeds directly into the renovation programme without reformatting or resurveying.
+              </div>
+            </details>
+          </div>
+        </div>
+
+        <div class="mt-16 pt-16 border-t border-border">
+          <h2 class="text-[1.6rem] font-light text-navy mb-6">Getting Started</h2>
+          <div class="space-y-6 text-midgrey leading-body text-[1.05rem]">
+            <p>
+              If you are managing an ABA clinic portfolio and need consistent documentation across your locations &mdash; whether for renovation planning, due diligence, or operational standardisation &mdash; <a href="/contact" class="text-navy font-medium hover:opacity-80 transition-opacity">tell us about it</a>. We have documented hundreds of ABA therapy clinics across the United States and understand this sector's specific requirements. We respond within one business day with a programme recommendation and all-in pricing.
+            </p>
+          </div>
+        </div>
+
+        <p class="mt-12 text-[0.85rem] text-midgrey/60 italic">
+          Alturascope operates across all 50 US states and every Canadian province. Travel included in all programme pricing.
+        </p>
+
+        <div class="mt-12 pt-8 border-t border-border flex flex-wrap gap-6 text-sm">
+          <a href="/services/healthcare-facility-survey" class="text-navy font-medium hover:opacity-80 transition-opacity">Healthcare facility surveys &rarr;</a>
+          <a href="/services/multi-site-rollout-documentation" class="text-navy font-medium hover:opacity-80 transition-opacity">Multi-site rollout programmes &rarr;</a>
+          <a href="/insights/aba-autism-clinic-site-survey-build-out" class="text-navy font-medium hover:opacity-80 transition-opacity">ABA clinic site surveys &rarr;</a>
+          <a href="/insights/due-diligence-documentation-portfolio-acquisitions" class="text-navy font-medium hover:opacity-80 transition-opacity">Due diligence for portfolio acquisitions &rarr;</a>
+          <a href="/insights/healthcare-multi-site-facility-survey-documentation" class="text-navy font-medium hover:opacity-80 transition-opacity">Healthcare multi-site surveys &rarr;</a>
+          <a href="/insights" class="text-navy font-medium hover:opacity-80 transition-opacity">All insights &rarr;</a>
+        </div>
+
+      </div>
+    </article>
+
+    <section class="bg-navy py-20">
+      <div class="max-w-[600px] mx-auto px-6 text-center">
+        <h2 class="text-[1.8rem] font-light text-offwhite leading-snug">
+          Managing an ABA clinic portfolio?
+        </h2>
+        <p class="mt-4 text-offwhite/70 leading-body">
+          Tell us about your locations and we will come back within one business day with a programme recommendation and all-in pricing.
+        </p>
+        <a href="/contact" class="btn-primary mt-8">Start a Project</a>
+      </div>
+    </section>
+
+  </div>
+</Layout>
