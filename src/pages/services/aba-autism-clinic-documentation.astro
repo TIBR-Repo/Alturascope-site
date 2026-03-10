@@ -1,0 +1,504 @@
+---
+import Layout from "../../layouts/Layout.astro";
+
+const schema = JSON.stringify({
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "name": "ABA & Autism Therapy Clinic Documentation",
+  "description": "Pre-lease site evaluation, build-out documentation, and portfolio-wide condition surveys for ABA and autism therapy clinic operators. Hundreds of clinics documented across the United States.",
+  "provider": {
+    "@type": "ProfessionalService",
+    "name": "Alturascope",
+    "url": "https://alturascope.com",
+    "areaServed": [
+      { "@type": "Country", "name": "United States" },
+      { "@type": "Country", "name": "Canada" }
+    ]
+  },
+  "serviceType": "ABA Clinic Site Survey and Documentation",
+  "hasOfferCatalog": {
+    "@type": "OfferCatalog",
+    "name": "ABA Clinic Documentation Services",
+    "itemListElement": [
+      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Pre-Lease Site Evaluation" } },
+      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Build-Out Documentation" } },
+      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Portfolio Condition Survey" } },
+      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Navigable Digital Twin" } },
+      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Conditions Report" } },
+      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Equipment & Asset Schedule" } },
+      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "ScopeWalk Platform Access" } }
+    ]
+  }
+});
+
+const breadcrumbSchema = JSON.stringify({
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://alturascope.com" },
+    { "@type": "ListItem", "position": 2, "name": "Services", "item": "https://alturascope.com/services/" },
+    { "@type": "ListItem", "position": 3, "name": "ABA & Autism Therapy Clinic Documentation", "item": "https://alturascope.com/services/aba-autism-clinic-documentation/" }
+  ]
+});
+
+const faqSchema = JSON.stringify({
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "What is a typical ABA clinic size and format?",
+      "acceptedAnswer": { "@type": "Answer", "text": "A typical centre-based ABA clinic is 4,000 to 6,000 square feet, with larger facilities running 10,000 to 12,000 square feet. First-floor strip mall and retail units are the most common format, offering ground-level access, drive-through drop-off potential, and exterior play area options. Office buildings on upper floors can work but present additional constraints around elevator access, exterior play space, and noise transfer to floors below." }
+    },
+    {
+      "@type": "Question",
+      "name": "Can you survey a clinic while therapy sessions are running?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Yes. We coordinate with the clinic director to identify the optimal survey window — typically early morning before sessions, during lunch breaks, or end-of-day after the last client. The capture equipment is non-contact and silent. No rooms need to be vacated and no equipment needs to be moved. Some operators prefer non-clinical hours for the comfort of families, and we accommodate that." }
+    },
+    {
+      "@type": "Question",
+      "name": "What makes your ABA clinic surveys different from a standard commercial site survey?",
+      "acceptedAnswer": { "@type": "Answer", "text": "We have documented hundreds of ABA therapy clinics across the United States. Our survey methodology is specifically calibrated for this sector: we capture ceiling heights for gross motor rooms, acoustic adjacency conditions, elopement prevention configurations, child-height plumbing provisions, sensory room lighting infrastructure, exterior play area conditions, drop-off circulation viability, and parking capacity relative to the high staff-to-client ratio. A standard commercial surveyor will measure the shell. We document everything that determines whether the space can support an ABA therapy programme." }
+    },
+    {
+      "@type": "Question",
+      "name": "Can you evaluate a space before we sign the lease?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Yes, and we strongly recommend it. A pre-lease site evaluation identifies whether a prospective space can accommodate the therapy programme's specific requirements — ceiling heights, acoustic separation, exterior access, plumbing, electrical capacity, and drop-off configuration — before you commit. This data informs tenant improvement negotiations and prevents committing to spaces that will be prohibitively expensive to build out." }
+    },
+    {
+      "@type": "Question",
+      "name": "Do you work with PE-backed ABA platforms on multi-site programmes?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Yes. Multi-site portfolio documentation for PE-backed ABA platforms is a core part of our practice. We provide standardised documentation across the entire portfolio — whether that is 10 clinics or 100 — delivered through our ScopeWalk platform so your operations, design, and capital planning teams can compare every location on the same data points. We also support pre-acquisition due diligence with representative sample surveys." }
+    },
+    {
+      "@type": "Question",
+      "name": "How many ABA clinics can you survey and how quickly?",
+      "acceptedAnswer": { "@type": "Answer", "text": "A typical ABA clinic of 4,000 to 6,000 square feet takes three to five hours to fully document. In clustered markets, we can complete two to three clinics per day. A 40-location portfolio programme can typically be completed in four to six weeks. We coordinate routing by geography to maximise throughput and operate across all 50 US states and every Canadian province." }
+    }
+  ]
+});
+---
+<Layout
+  title="ABA & Autism Therapy Clinic Documentation — Site Surveys for Operators & Developers | Alturascope"
+  description="Pre-lease evaluation, build-out documentation, and portfolio condition surveys for ABA and autism therapy clinic operators. Hundreds of clinics surveyed. Sensory rooms, acoustic separation, elopement prevention, and clinical programme requirements documented."
+  canonical="https://alturascope.com/services/aba-autism-clinic-documentation/"
+  ogImage="https://images.unsplash.com/photo-1497032628192-86f99bcd76bc?w=1200&q=80"
+  schema={schema}
+  breadcrumbSchema={breadcrumbSchema}
+  faqSchema={faqSchema}
+  fullWidth={true}
+>
+  <div data-hero-page>
+
+    <!-- Hero -->
+    <section class="relative min-h-[100vh] md:min-h-0 md:h-[60vh] flex items-center justify-center">
+      <div class="absolute inset-0 bg-navy">
+        <img
+          src="https://images.unsplash.com/photo-1497032628192-86f99bcd76bc?w=1920&q=80"
+          srcset="
+            https://images.unsplash.com/photo-1497032628192-86f99bcd76bc?w=800&q=70 800w,
+            https://images.unsplash.com/photo-1497032628192-86f99bcd76bc?w=1200&q=75 1200w,
+            https://images.unsplash.com/photo-1497032628192-86f99bcd76bc?w=1920&q=80 1920w
+          "
+          sizes="100vw"
+          alt="Bright modern therapy clinic interior with natural lighting and activity spaces for ABA autism therapy programme documentation"
+          class="w-full h-full object-cover opacity-35"
+          loading="eager"
+          fetchpriority="high"
+        />
+        <div class="absolute inset-0 bg-[rgba(11,31,58,0.72)]"></div>
+      </div>
+      <div class="relative z-10 text-center px-6 pt-28 pb-16 md:pt-0 md:pb-0 max-w-[900px] mx-auto">
+        <p class="label text-gold mb-4">Specialist Sectors &middot; ABA &amp; Autism Therapy</p>
+        <h1 class="text-[1.8rem] md:text-[3.2rem] font-light text-offwhite leading-tight">
+          ABA &amp; Autism Therapy Clinic Documentation
+        </h1>
+        <p class="mt-6 text-offwhite/70 leading-body max-w-[720px] mx-auto">
+          Hundreds of ABA clinics documented across the United States. We understand the spatial, acoustic, safety, and operational requirements that make these facilities fundamentally different from standard commercial space &mdash; and we document them accordingly.
+        </p>
+        <div class="mt-8 flex flex-wrap justify-center gap-4">
+          <a href="/contact" class="btn-primary">Tell Us About Your Programme</a>
+          <a href="/services" class="btn-secondary-light">See Our Methodology</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Why ABA Clinics Are Different -->
+    <section class="bg-white section-padding">
+      <div class="max-w-[900px] mx-auto px-6">
+        <p class="label text-gold mb-4">The Context</p>
+        <h2 class="text-[2rem] font-light text-navy leading-tight">
+          Not a standard commercial fit-out.
+        </h2>
+        <div class="mt-6 space-y-4 text-midgrey leading-body">
+          <p>
+            From the outside, an ABA therapy clinic looks like any other tenant in a strip mall or office building. From a build-out perspective, it is one of the most demanding small-format clinical environments in healthcare real estate &mdash; not because of heavy medical equipment or sterile environments, but because of a unique combination of spatial, acoustic, safety, and operational requirements that no standard commercial survey is designed to capture.
+          </p>
+          <p>
+            Centre-based ABA therapy operates at a staff-to-client ratio of at least one-to-one &mdash; and often higher during group activities. A 5,000-square-foot clinic serving 15 to 20 children simultaneously will have 15 to 25 staff on site. That ratio alone drives parking requirements, restroom counts, break room sizing, and operational planning in ways that differ fundamentally from retail, medical office, or standard commercial tenancy.
+          </p>
+          <p>
+            The therapy programme requires a specific mix of spaces: large open areas with high ceilings for gross motor activity and play equipment. Smaller individual treatment rooms for one-to-one therapy sessions. Observation rooms with vision panels or one-way mirrors. Sensory rooms with dimmable and colour-adjustable lighting. BCBA offices. Administrative areas. Parent waiting rooms with appropriate sightlines. A secure reception that prevents unsupervised exit. Staff break rooms and decompression spaces. Child-height restrooms separate from adult facilities. And, ideally, an enclosed exterior play area with direct interior access.
+          </p>
+          <p>
+            A standard site survey will measure the shell. It will not tell the development team whether the ceiling height can accommodate climbing structures, whether the HVAC can be acoustically isolated from the tenant below, whether the plumbing supports child-height fixtures where the programme needs them, or whether the site configuration allows the drive-through drop-off that families expect.
+          </p>
+          <p>
+            We know this because we have documented hundreds of these facilities. We know what works, what doesn't, and what the typical space gets wrong.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- What We Capture -->
+    <section class="bg-offwhite section-padding">
+      <div class="max-w-[900px] mx-auto px-6">
+        <p class="label text-gold mb-4">The Deliverable</p>
+        <h2 class="text-[2rem] font-light text-navy leading-tight">
+          Everything the development team needs. Nothing a standard survey provides.
+        </h2>
+        <div class="mt-6 space-y-4 text-midgrey leading-body">
+          <p>
+            Our ABA clinic documentation is built around the specific data points that determine whether a space is viable and what the build-out will cost. Every element below is captured using our standard methodology and delivered through <a href="/services#scopewalk" class="text-navy font-medium hover:opacity-80 transition-opacity">ScopeWalk</a>.
+          </p>
+        </div>
+
+        <div class="mt-16">
+          <h3 class="text-[1.35rem] font-medium text-navy">Ceiling Heights and Structural Clear Span</h3>
+          <div class="mt-4 space-y-4 text-midgrey leading-body">
+            <p>
+              Gross motor rooms and indoor play areas require ceiling heights of 12 feet or more to accommodate climbing structures, swings, trampolines, and large play equipment. A standard commercial space with an 8 or 9-foot finished ceiling cannot support this without removing the suspended ceiling &mdash; which may or may not be feasible depending on what the plenum contains.
+            </p>
+            <p>
+              We document floor-to-structure height at multiple points across the space, not just floor-to-finished-ceiling. We also document <a href="/insights/above-ceiling-mep-survey-fit-out/" class="text-navy font-medium hover:opacity-80 transition-opacity">what is above the ceiling</a> &mdash; ductwork, sprinkler mains, structural members, abandoned services from previous tenants &mdash; to determine the actual achievable clear height. This is frequently the single most consequential data point in an ABA clinic site evaluation.
+            </p>
+          </div>
+        </div>
+
+        <div class="mt-12">
+          <h3 class="text-[1.35rem] font-medium text-navy">Acoustic Conditions and Neighbour Adjacency</h3>
+          <div class="mt-4 space-y-4 text-midgrey leading-body">
+            <p>
+              Noise management is one of the most significant design constraints in ABA clinic build-outs. Gross motor rooms generate substantial sound during active therapy sessions &mdash; jumping, running, climbing, and the vocal energy of children in high-stimulus activities. This noise must be contained within the clinic and prevented from transferring to adjacent tenants.
+            </p>
+            <p>
+              We document existing wall assemblies and their likely acoustic performance. We identify and map adjacent tenants &mdash; a gym or restaurant presents a very different acoustic challenge than a law office or medical practice. For multi-storey buildings, we document floor construction (concrete versus lightweight) to assess vertical sound transfer risk. We note HVAC ductwork routing that could create flanking paths for sound between units &mdash; a particularly insidious problem when the building operates a shared building management system where duct separation is not straightforward.
+            </p>
+            <p>
+              The design team uses this data to position high-energy activity areas in external corners of the building, away from noise-sensitive neighbours. Our documentation confirms whether the geometry supports this before the floor plan is committed.
+            </p>
+          </div>
+        </div>
+
+        <div class="mt-12">
+          <h3 class="text-[1.35rem] font-medium text-navy">Safety and Elopement Prevention</h3>
+          <div class="mt-4 space-y-4 text-midgrey leading-body">
+            <p>
+              Many children in ABA therapy programmes exhibit elopement behaviours &mdash; the tendency to leave a supervised area. The clinic must provide a secure perimeter: controlled entry and exit, a reception area configured to prevent unsupervised departure, and exterior play areas with appropriate fencing and gate security.
+            </p>
+            <p>
+              We document the number and location of all exterior doors, the feasibility of configuring a secure reception vestibule with sightlines to entry and exit points, and exterior perimeter conditions including fencing potential, gate locations, and adjacency to traffic, parking areas, or other hazards. This is not an afterthought &mdash; it is a programme requirement that directly affects which spaces are suitable and which are not.
+            </p>
+          </div>
+        </div>
+
+        <div class="mt-12">
+          <h3 class="text-[1.35rem] font-medium text-navy">Natural Light</h3>
+          <div class="mt-4 space-y-4 text-midgrey leading-body">
+            <p>
+              Natural light is strongly valued in ABA therapy environments &mdash; for the well-being of both the children and the staff spending full days in the space, and for the quality of therapy activities. We document window locations, sizes, orientations, and the depth from perimeter to core. For strip mall spaces, natural light is typically limited to the storefront and any rear windows or skylights. This directly affects space planning &mdash; placing therapy and activity areas near daylight while administrative functions can occupy interior zones.
+            </p>
+          </div>
+        </div>
+
+        <div class="mt-12">
+          <h3 class="text-[1.35rem] font-medium text-navy">Drop-Off Circulation and Parking</h3>
+          <div class="mt-4 space-y-4 text-midgrey leading-body">
+            <p>
+              ABA clinics generate concentrated short-duration traffic at predictable times &mdash; morning drop-off and afternoon pick-up. A drive-through drop-off arrangement, where the parent pulls up, hands off the child to a staff member at a secure entrance, and drives away without parking, is the ideal configuration. Not every site can support this, but our survey documents whether the site circulation, curb configuration, and entrance location make it feasible.
+            </p>
+            <p>
+              Parking capacity must account for the high staff-to-client ratio &mdash; 15 to 25 staff vehicles is typical even for a modest-sized clinic, plus parent drop-off and pick-up traffic. Many strip mall locations that appear adequate for a standard retail tenant are undersized for ABA parking demands. We document total parking count, accessible spaces, drop curb locations, and pathway condition for ADA compliance.
+            </p>
+          </div>
+        </div>
+
+        <div class="mt-12">
+          <h3 class="text-[1.35rem] font-medium text-navy">Plumbing for Child-Height Fixtures</h3>
+          <div class="mt-4 space-y-4 text-midgrey leading-body">
+            <p>
+              ABA clinics serving younger children require child-height toilets and vanities in dedicated children's restrooms, separate from adult staff facilities. We document existing plumbing rough-in locations, waste line positions, and water supply points to determine whether child-height fixtures can be installed where the programme requires them &mdash; or whether significant plumbing relocation is needed. For second-generation spaces, existing plumbing from previous tenants may be reusable, but only if its location and condition are verified.
+            </p>
+          </div>
+        </div>
+
+        <div class="mt-12">
+          <h3 class="text-[1.35rem] font-medium text-navy">Sensory Rooms and Lighting</h3>
+          <div class="mt-4 space-y-4 text-midgrey leading-body">
+            <p>
+              Sensory rooms are a core programme element &mdash; dedicated spaces where children experience controlled sensory input as part of their therapy. These rooms require dimmable lighting, the ability to install colour-adjustable lighting systems, and in some cases blackout capability. We document existing electrical infrastructure, the feasibility of independent lighting circuits, and panel capacity for specialised installations. Throughout the clinic, good ambient lighting is essential. Resilient flooring is the norm in therapy areas, and we document existing floor conditions and suitability.
+            </p>
+          </div>
+        </div>
+
+        <div class="mt-12">
+          <h3 class="text-[1.35rem] font-medium text-navy">Vision Panels and Observation</h3>
+          <div class="mt-4 space-y-4 text-midgrey leading-body">
+            <p>
+              Observation is fundamental to ABA therapy. BCBAs need to observe treatment sessions without disrupting the therapeutic dynamic. This requires vision panels in treatment room doors and walls, and in some clinics, dedicated observation rooms with one-way mirrors. We document existing wall constructions and structural conditions that affect where vision panels can be installed &mdash; stud type, spacing, insulation, and finish. For spaces built from shell, we ensure the structural grid and services routing do not conflict with the observation sightlines the programme requires.
+            </p>
+          </div>
+        </div>
+
+        <div class="mt-12">
+          <h3 class="text-[1.35rem] font-medium text-navy">Exterior Play Area</h3>
+          <div class="mt-4 space-y-4 text-midgrey leading-body">
+            <p>
+              Most ABA programmes require or strongly prefer an enclosed outdoor play area with secure fencing, appropriate surfacing, shade provisions, and direct access from the clinic interior. We document the exterior space adjacent to the unit: dimensions, surface condition, fencing potential, landlord restrictions on exterior modifications, adjacency to loading areas or traffic, and drainage or grading issues. For upper-floor locations where exterior play is not possible, we note this limitation &mdash; it is often a deal-breaker.
+            </p>
+          </div>
+        </div>
+
+        <div class="mt-12">
+          <h3 class="text-[1.35rem] font-medium text-navy">Staff Environment</h3>
+          <div class="mt-4 space-y-4 text-midgrey leading-body">
+            <p>
+              ABA therapy is demanding work. Staff spend full days in a high-energy, high-noise environment providing one-to-one care. Turnover is a persistent operational challenge in the sector. Clinics that invest in staff well-being &mdash; adequately sized break rooms, quiet decompression areas, comfortable BCBA offices with natural light where possible, and clear separation between staff areas and the therapy floor &mdash; report better retention and satisfaction.
+            </p>
+            <p>
+              Our survey documents the total usable area and how the programme's clinical requirements, staff areas, reception, storage, and mechanical spaces compete for space. An accurate area analysis at the survey stage prevents the common discovery mid-design that the staff break room has been reduced to a closet because the gross motor room needed more square footage.
+            </p>
+          </div>
+        </div>
+
+        <div class="mt-12">
+          <h3 class="text-[1.35rem] font-medium text-navy">HVAC, Electrical, and Building Systems</h3>
+          <div class="mt-4 space-y-4 text-midgrey leading-body">
+            <p>
+              While ABA clinic MEP requirements are not as complex as hospital or surgical environments, they present specific challenges. HVAC must be assessed not just for capacity but for acoustic isolation &mdash; shared ductwork between tenants is one of the most common and least obvious sources of noise transfer. Where a building management system controls the HVAC centrally, independent zoning may be difficult or impossible, and this needs to be identified before the lease is signed.
+            </p>
+            <p>
+              Electrical capacity must support the therapy programme's lighting requirements &mdash; particularly dimmable and colour-adjustable systems in sensory rooms &mdash; plus the standard commercial loads. We document panel locations, capacity, and circuit allocation. <a href="/insights/thermal-imaging-commercial-property-what-it-reveals/" class="text-navy font-medium hover:opacity-80 transition-opacity">Thermal imaging</a> identifies active services above ceilings and behind walls, mapping what exists before the build-out begins.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="bg-white section-padding">
+      <div class="max-w-[900px] mx-auto px-6">
+        <p class="label text-gold mb-4">Location Intelligence</p>
+        <h2 class="text-[2rem] font-light text-navy leading-tight">
+          Where ABA clinics work &mdash; and what the real estate tells you.
+        </h2>
+        <div class="mt-6 space-y-4 text-midgrey leading-body">
+          <p>
+            The demographic served by centre-based ABA therapy is primarily families with young children &mdash; parents in their twenties to forties, typically in suburban residential corridors and more affordable urban neighbourhoods. ABA clinic real estate is not premium high-street retail. It is strip mall, retail park, and suburban office space in residential-adjacent areas where families live and where a daily commute to therapy is practical.
+          </p>
+          <p>
+            First-floor strip mall units are the most common and most effective format: ground-level access, drive-through drop-off potential, exterior play area options, and visible frontage. Office buildings work when ground-floor units with exterior access are available, but upper-floor locations present challenges &mdash; elevator access for young children, no exterior play space, and increased noise transfer risk to floors below.
+          </p>
+          <p>
+            Some operators specifically seek locations near paediatric medical offices, developmental paediatricians, or speech and occupational therapy practices &mdash; allowing families to access diagnostic, therapeutic, and medical services in proximity. Our survey notes the surrounding tenant mix and any medical or healthcare adjacency that could be an operational advantage.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section class="bg-offwhite section-padding">
+      <div class="max-w-[900px] mx-auto px-6">
+        <p class="label text-gold mb-4">How We Work</p>
+        <h2 class="text-[2rem] font-light text-navy leading-tight">
+          Three ways we support ABA clinic operators.
+        </h2>
+
+        <div class="mt-12 grid md:grid-cols-3 gap-8">
+          <div class="bg-white rounded p-8">
+            <div class="text-gold text-[2rem] font-light mb-4">01</div>
+            <h3 class="text-[1.15rem] font-medium text-navy mb-3">Pre-Lease Site Evaluation</h3>
+            <p class="text-midgrey leading-body text-[0.95rem]">
+              Before you sign, we document the prospective space against your programme's specific requirements. Ceiling heights, acoustic conditions, exterior access, plumbing, electrical capacity, parking, drop-off viability. The data that tells you whether the space works &mdash; and what it will cost if it doesn't work perfectly. Supports tenant improvement negotiations with evidence rather than estimates.
+            </p>
+          </div>
+          <div class="bg-white rounded p-8">
+            <div class="text-gold text-[2rem] font-light mb-4">02</div>
+            <h3 class="text-[1.15rem] font-medium text-navy mb-3">Build-Out Documentation</h3>
+            <p class="text-midgrey leading-body text-[0.95rem]">
+              After lease execution, we provide the complete <a href="/services/pre-construction-site-intelligence/" class="text-navy font-medium hover:opacity-80 transition-opacity">pre-construction documentation package</a>: digital twin, conditions report, above-ceiling MEP documentation, equipment schedule, and narrated walkthrough. Everything the design team and general contractor need to adapt the prototype and price the build-out from verified conditions.
+            </p>
+          </div>
+          <div class="bg-white rounded p-8">
+            <div class="text-gold text-[2rem] font-light mb-4">03</div>
+            <h3 class="text-[1.15rem] font-medium text-navy mb-3">Portfolio Condition Survey</h3>
+            <p class="text-midgrey leading-body text-[0.95rem]">
+              For PE-backed platforms managing 20, 40, or 100+ acquired clinics: standardised documentation across the entire portfolio, delivered through <a href="/services#scopewalk" class="text-navy font-medium hover:opacity-80 transition-opacity">ScopeWalk</a>. Every clinic documented to the same standard. Compare conditions, prioritise capital, plan renovations, and make evidence-based decisions about which locations to upgrade, relocate, or consolidate.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="bg-navy section-padding">
+      <div class="max-w-[900px] mx-auto px-6">
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
+          <div>
+            <div class="text-[2.4rem] md:text-[3rem] font-light text-offwhite">Hundreds</div>
+            <p class="mt-2 text-offwhite/60 text-sm">ABA Clinics Documented</p>
+          </div>
+          <div>
+            <div class="text-[2.4rem] md:text-[3rem] font-light text-offwhite">3&ndash;5hrs</div>
+            <p class="mt-2 text-offwhite/60 text-sm">Typical Clinic Survey Time</p>
+          </div>
+          <div>
+            <div class="text-[2.4rem] md:text-[3rem] font-light text-offwhite">50</div>
+            <p class="mt-2 text-offwhite/60 text-sm">US States Covered</p>
+          </div>
+          <div>
+            <div class="text-[2.4rem] md:text-[3rem] font-light text-offwhite">5 days</div>
+            <p class="mt-2 text-offwhite/60 text-sm">Standard Deliverable Turnaround</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="bg-white section-padding">
+      <div class="max-w-[900px] mx-auto px-6">
+        <p class="label text-gold mb-4">Who This Is For</p>
+        <h2 class="text-[2rem] font-light text-navy leading-tight">
+          Built for the teams building ABA programmes.
+        </h2>
+        <div class="mt-12 grid md:grid-cols-2 gap-8">
+          <div>
+            <h3 class="text-[1.15rem] font-medium text-navy mb-3">PE-Backed Platforms</h3>
+            <p class="text-midgrey leading-body">
+              Acquiring and rolling up ABA practices requires capital planning built on consistent facility data. Pre-acquisition <a href="/insights/due-diligence-documentation-portfolio-acquisitions/" class="text-navy font-medium hover:opacity-80 transition-opacity">due diligence sampling</a> validates assumptions. Post-acquisition portfolio documentation enables systematic renovation planning across every inherited clinic.
+            </p>
+          </div>
+          <div>
+            <h3 class="text-[1.15rem] font-medium text-navy mb-3">Development Directors</h3>
+            <p class="text-midgrey leading-body">
+              Opening 15 to 30 new clinics a year means evaluating dozens of prospective spaces against specific programme requirements. Pre-lease site evaluations prevent committing to spaces that cannot accommodate the therapy model without prohibitive build-out costs.
+            </p>
+          </div>
+          <div>
+            <h3 class="text-[1.15rem] font-medium text-navy mb-3">Operations Directors</h3>
+            <p class="text-midgrey leading-body">
+              Managing an existing portfolio of clinics with inconsistent build-out quality and deferred maintenance. Standardised condition documentation across every location turns reactive maintenance into planned capital allocation.
+            </p>
+          </div>
+          <div>
+            <h3 class="text-[1.15rem] font-medium text-navy mb-3">Design and Architecture Teams</h3>
+            <p class="text-midgrey leading-body">
+              Adapting a clinic prototype to dozens of different shell spaces requires accurate, consistent site data at every location. Digital twins, above-ceiling documentation, and conditions reports that arrive in the same format every time &mdash; so the design team learns the deliverable once and uses it across the entire programme.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="bg-offwhite section-padding">
+      <div class="max-w-[900px] mx-auto px-6">
+        <p class="label text-gold mb-4">FAQ</p>
+        <h2 class="text-[2rem] font-light text-navy leading-tight mb-8">
+          Common questions about ABA clinic documentation.
+        </h2>
+        <div class="space-y-4">
+          <details class="group border border-border rounded overflow-hidden bg-white">
+            <summary class="flex justify-between items-center cursor-pointer px-6 py-4 text-navy font-medium text-[1.05rem] hover:bg-offwhite transition-colors">
+              What is a typical ABA clinic size and format?
+              <span class="text-gold text-xl transition-transform group-open:rotate-45">+</span>
+            </summary>
+            <div class="px-6 pb-6 text-midgrey leading-body text-[1.05rem]">
+              A typical centre-based ABA clinic is 4,000 to 6,000 square feet, with larger facilities running 10,000 to 12,000 square feet. First-floor strip mall and retail units are the most common format, offering ground-level access, drive-through drop-off potential, and exterior play area options. Office buildings on upper floors can work but present additional constraints around elevator access, exterior play space, and noise transfer to floors below.
+            </div>
+          </details>
+          <details class="group border border-border rounded overflow-hidden bg-white">
+            <summary class="flex justify-between items-center cursor-pointer px-6 py-4 text-navy font-medium text-[1.05rem] hover:bg-offwhite transition-colors">
+              Can you survey a clinic while therapy sessions are running?
+              <span class="text-gold text-xl transition-transform group-open:rotate-45">+</span>
+            </summary>
+            <div class="px-6 pb-6 text-midgrey leading-body text-[1.05rem]">
+              Yes. We coordinate with the clinic director to identify the optimal survey window. The capture equipment is non-contact and silent. No rooms need to be vacated and no equipment needs to be moved. Some operators prefer non-clinical hours for the comfort of families, and we accommodate that.
+            </div>
+          </details>
+          <details class="group border border-border rounded overflow-hidden bg-white">
+            <summary class="flex justify-between items-center cursor-pointer px-6 py-4 text-navy font-medium text-[1.05rem] hover:bg-offwhite transition-colors">
+              What makes your ABA clinic surveys different from a standard commercial survey?
+              <span class="text-gold text-xl transition-transform group-open:rotate-45">+</span>
+            </summary>
+            <div class="px-6 pb-6 text-midgrey leading-body text-[1.05rem]">
+              We have documented hundreds of ABA therapy clinics across the United States. Our methodology captures ceiling heights for gross motor rooms, acoustic adjacency conditions, elopement prevention configurations, child-height plumbing provisions, sensory room lighting infrastructure, exterior play area conditions, drop-off circulation viability, and parking capacity relative to the high staff-to-client ratio. A standard commercial surveyor will measure the shell. We document everything that determines whether the space can support an ABA therapy programme.
+            </div>
+          </details>
+          <details class="group border border-border rounded overflow-hidden bg-white">
+            <summary class="flex justify-between items-center cursor-pointer px-6 py-4 text-navy font-medium text-[1.05rem] hover:bg-offwhite transition-colors">
+              Can you evaluate a space before we sign the lease?
+              <span class="text-gold text-xl transition-transform group-open:rotate-45">+</span>
+            </summary>
+            <div class="px-6 pb-6 text-midgrey leading-body text-[1.05rem]">
+              Yes, and we strongly recommend it. A pre-lease site evaluation identifies whether a prospective space can accommodate your programme's requirements before you commit. This data informs tenant improvement negotiations and prevents committing to spaces that will be prohibitively expensive to build out.
+            </div>
+          </details>
+          <details class="group border border-border rounded overflow-hidden bg-white">
+            <summary class="flex justify-between items-center cursor-pointer px-6 py-4 text-navy font-medium text-[1.05rem] hover:bg-offwhite transition-colors">
+              Do you work with PE-backed platforms on multi-site programmes?
+              <span class="text-gold text-xl transition-transform group-open:rotate-45">+</span>
+            </summary>
+            <div class="px-6 pb-6 text-midgrey leading-body text-[1.05rem]">
+              Yes. Multi-site portfolio documentation for PE-backed ABA platforms is a core part of our practice. We provide standardised documentation across the entire portfolio, delivered through ScopeWalk so your operations, design, and capital planning teams can compare every location on the same data points.
+            </div>
+          </details>
+          <details class="group border border-border rounded overflow-hidden bg-white">
+            <summary class="flex justify-between items-center cursor-pointer px-6 py-4 text-navy font-medium text-[1.05rem] hover:bg-offwhite transition-colors">
+              How many ABA clinics can you survey and how quickly?
+              <span class="text-gold text-xl transition-transform group-open:rotate-45">+</span>
+            </summary>
+            <div class="px-6 pb-6 text-midgrey leading-body text-[1.05rem]">
+              A typical ABA clinic takes three to five hours to fully document. In clustered markets, two to three clinics per day is achievable. A 40-location portfolio can typically be completed in four to six weeks. We operate across all 50 US states and every Canadian province with travel included in programme pricing.
+            </div>
+          </details>
+        </div>
+      </div>
+    </section>
+
+    <section class="bg-white section-padding">
+      <div class="max-w-[900px] mx-auto px-6">
+        <p class="label text-gold mb-4">Related Insights</p>
+        <h2 class="text-[2rem] font-light text-navy leading-tight mb-8">
+          Further reading.
+        </h2>
+        <div class="grid md:grid-cols-2 gap-6">
+          <a href="/insights/aba-autism-clinic-site-survey-build-out" class="block group border border-border rounded p-6 transition-all duration-300 hover:border-gold hover:shadow-md">
+            <span class="label text-gold text-[0.7rem]">ABA &amp; AUTISM THERAPY</span>
+            <h3 class="mt-2 text-[1.1rem] font-light text-navy leading-snug group-hover:opacity-80 transition-opacity">ABA Clinic Site Surveys: What Operators Need to Know Before Signing a Lease</h3>
+          </a>
+          <a href="/insights/aba-clinic-portfolio-renovation-documentation" class="block group border border-border rounded p-6 transition-all duration-300 hover:border-gold hover:shadow-md">
+            <span class="label text-gold text-[0.7rem]">ABA &amp; AUTISM THERAPY</span>
+            <h3 class="mt-2 text-[1.1rem] font-light text-navy leading-snug group-hover:opacity-80 transition-opacity">Standardising Your ABA Clinic Portfolio: From Acquisition to Renovation Programme</h3>
+          </a>
+          <a href="/insights/healthcare-multi-site-facility-survey-documentation" class="block group border border-border rounded p-6 transition-all duration-300 hover:border-gold hover:shadow-md">
+            <span class="label text-gold text-[0.7rem]">HEALTHCARE</span>
+            <h3 class="mt-2 text-[1.1rem] font-light text-navy leading-snug group-hover:opacity-80 transition-opacity">Healthcare Multi-Site Surveys: Dental, Urgent Care &amp; Medical Office Documentation</h3>
+          </a>
+          <a href="/insights/franchise-expansion-shell-survey-new-locations" class="block group border border-border rounded p-6 transition-all duration-300 hover:border-gold hover:shadow-md">
+            <span class="label text-gold text-[0.7rem]">FRANCHISE</span>
+            <h3 class="mt-2 text-[1.1rem] font-light text-navy leading-snug group-hover:opacity-80 transition-opacity">Franchise Expansion: Why Shell Surveys Save More Than They Cost</h3>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <section class="bg-navy py-20">
+      <div class="max-w-[600px] mx-auto px-6 text-center">
+        <h2 class="text-[1.8rem] font-light text-offwhite leading-snug">
+          Tell us about your ABA clinic programme.
+        </h2>
+        <p class="mt-4 text-offwhite/70 leading-body">
+          Whether you are evaluating prospective spaces, planning build-outs, or documenting an existing portfolio &mdash; we respond within one business day with a scope recommendation and all-in pricing. Travel included.
+        </p>
+        <a href="/contact" class="btn-primary mt-8">Start a Project</a>
+      </div>
+    </section>
+
+  </div>
+</Layout>
