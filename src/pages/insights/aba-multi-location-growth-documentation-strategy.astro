@@ -1,0 +1,189 @@
+---
+import Layout from "../../layouts/Layout.astro";
+
+const schema = JSON.stringify({
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "Scaling ABA Clinic Portfolios: How Consistent Site Documentation Accelerates Multi-Location Growth",
+  "author": { "@type": "Organization", "name": "Alturascope" },
+  "publisher": { "@type": "Organization", "name": "Alturascope", "url": "https://alturascope.com" },
+  "datePublished": "2026-04-22",
+  "description": "ABA operators expanding across multiple states are opening clinics faster than ever. The ones doing it successfully have standardised their site documentation — here is why that matters and what it looks like.",
+  "mainEntityOfPage": "https://alturascope.com/insights/aba-multi-location-growth-documentation-strategy/"
+});
+
+const breadcrumbSchema = JSON.stringify({
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://alturascope.com" },
+    { "@type": "ListItem", "position": 2, "name": "Insights", "item": "https://alturascope.com/insights/" },
+    { "@type": "ListItem", "position": 3, "name": "Multi-Location ABA Growth", "item": "https://alturascope.com/insights/aba-multi-location-growth-documentation-strategy/" }
+  ]
+});
+
+const faqSchema = JSON.stringify({
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "How many ABA clinics are typically opened per year during a growth phase?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Growth-stage ABA operators backed by private equity or strategic capital typically target five to fifteen new clinic openings per year. The most aggressive operators exceed twenty. Each opening requires site identification, lease negotiation, design, permitting, construction, and licensing — all of which depend on accurate site documentation from the outset." }
+    },
+    {
+      "@type": "Question",
+      "name": "What does standardised site documentation mean in a multi-location context?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Standardised site documentation means every location in the portfolio is surveyed using the same methodology, captured to the same level of detail, and delivered in the same format. This allows the real estate team, architects, and construction managers to compare sites directly, apply design standards consistently, and budget accurately across the portfolio rather than treating each location as a one-off project." }
+    },
+    {
+      "@type": "Question",
+      "name": "Can site documentation be done before a lease is signed?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Yes. Pre-lease site surveys are increasingly common in the ABA sector. With landlord permission, a survey team can capture existing conditions during the due diligence period — typically alongside the letter of intent — giving the operator verified data to inform lease negotiations, tenant improvement requests, and design feasibility before any commitment is made." }
+    },
+    {
+      "@type": "Question",
+      "name": "How does documentation support state licensing for new ABA clinics?",
+      "acceptedAnswer": { "@type": "Answer", "text": "State licensing requirements for ABA clinics vary but commonly include minimum room dimensions, egress requirements, ADA compliance, natural light provisions, and safety features. A comprehensive site survey provides the measured evidence that the planned layout meets these requirements. When licensing inspectors request documentation of physical compliance, the operator can provide verified floor plans and conditions reports rather than relying on construction drawings that may not reflect as-built conditions." }
+    }
+  ]
+});
+---
+<Layout
+  title="Scaling ABA Clinic Portfolios: Multi-Location Documentation Strategy | Alturascope"
+  description="ABA operators expanding across multiple states need standardised site documentation to open clinics faster and more consistently. Here's what that looks like in practice."
+>
+  <div slot="head">
+    <script type="application/ld+json" set:html={schema} />
+    <script type="application/ld+json" set:html={breadcrumbSchema} />
+    <script type="application/ld+json" set:html={faqSchema} />
+  </div>
+
+  <div>
+    <article class="max-w-[720px] mx-auto px-6 py-20">
+      <div class="mb-8">
+        <p class="text-sm text-midgrey uppercase tracking-wide mb-2">ABA CLINICS</p>
+        <h1 class="text-[2.2rem] md:text-[2.6rem] font-light text-navy leading-tight">
+          Scaling ABA Clinic Portfolios: How Consistent Site Documentation Accelerates Multi-Location Growth
+        </h1>
+        <p class="mt-4 text-midgrey text-[0.95rem]">April 2026</p>
+      </div>
+
+      <div class="prose prose-lg max-w-none text-darkgrey leading-body">
+
+        <p class="text-[1.15rem] leading-body text-navy/80 mb-8">
+          The ABA therapy sector is in a sustained growth cycle. Private equity investment, increasing insurance coverage mandates, and rising diagnosis rates are driving multi-location operators to open new clinics at a pace that would have been unusual a decade ago. The operators who are executing this growth most efficiently have one thing in common: they have standardised how they document every site in their portfolio.
+        </p>
+
+        <h2 class="text-[1.4rem] font-medium text-navy mt-12 mb-4">The Growth-Stage Documentation Challenge</h2>
+
+        <p>
+          Opening a single ABA clinic is a complex project. Opening five or ten or twenty in a single year is a portfolio operation — and it requires portfolio-level systems. The bottleneck is rarely capital or clinical staffing. It is the physical real estate pipeline: identifying spaces, verifying they can accommodate the clinic programme, designing the fit-out, and managing construction across multiple simultaneous projects in different markets.
+        </p>
+
+        <p>
+          When each location is documented differently — one by the architect's surveyor, another by the general contractor, a third using the landlord's old drawings — the real estate team loses the ability to compare sites, predict costs, or apply lessons from one opening to the next. Each project becomes a standalone effort, and the efficiencies that should come with scale never materialise.
+        </p>
+
+        <h2 class="text-[1.4rem] font-medium text-navy mt-12 mb-4">What Standardised Documentation Delivers</h2>
+
+        <p>
+          Standardised site documentation means every location is captured using the same methodology and delivered in the same format. Measured floor plans to the same specification. Digital twins built using the same platform. Conditions reports structured around the same checklist. Electrical and mechanical data presented in the same template.
+        </p>
+
+        <p>
+          The immediate benefit is comparability. The VP of Real Estate can look at the documentation for a prospective location in Phoenix and directly compare it to the documentation from the clinic that opened successfully in Tampa. Are the ceiling heights sufficient for sensory rooms? Is the electrical capacity comparable? Is the HVAC system the same type? These questions have definitive answers when the documentation is consistent.
+        </p>
+
+        <p>
+          The second benefit is speed. When the architect receives a survey package in a format they have seen fifteen times before, they can begin design immediately. There is no learning curve, no reformatting, no requesting additional information. The design team knows exactly what they will receive and exactly where to find every data point they need.
+        </p>
+
+        <h2 class="text-[1.4rem] font-medium text-navy mt-12 mb-4">Portfolio Intelligence Over Time</h2>
+
+        <p>
+          The most valuable benefit of standardised documentation is the portfolio intelligence it creates over time. After documenting twenty or thirty clinic locations using the same methodology, an operator has a dataset that reveals patterns. Average ceiling heights in strip-mall retail spaces. Typical electrical capacity in 5,000-square-foot units built between 2000 and 2015. Common HVAC configurations in medical-zoned commercial spaces. This data shortens the due diligence cycle because the team can quickly assess whether a prospective space falls within the parameters that have worked before.
+        </p>
+
+        <p>
+          It also improves budgeting accuracy. When you know from documented experience that a space with a certain electrical panel configuration typically requires a $15,000 upgrade to support your standard clinic layout, that number goes into the proforma immediately rather than surfacing as a change order during construction.
+        </p>
+
+        <h2 class="text-[1.4rem] font-medium text-navy mt-12 mb-4">The Single-Source Advantage</h2>
+
+        <p>
+          Multi-location operators who use a single documentation provider across their entire portfolio get one additional advantage: institutional knowledge. A survey team that has documented thirty ABA clinics understands the sector's specific requirements without being briefed on each project. They know what ceiling heights matter, which mechanical systems are deal-breakers, and what the licensing inspector will look for. Each survey gets faster and more targeted because the team is not learning the requirements from scratch.
+        </p>
+
+        <!-- FAQ Accordion -->
+        <div class="mt-16 pt-8 border-t border-border">
+          <h2 class="text-[1.4rem] font-medium text-navy mb-6">Frequently Asked Questions</h2>
+          <div class="space-y-4" id="faq-accordion">
+            <details class="group border border-border rounded-lg">
+              <summary class="flex justify-between items-center cursor-pointer p-4 text-navy font-medium">
+                How many ABA clinics are typically opened per year during a growth phase?
+                <span class="ml-2 transition-transform group-open:rotate-45">+</span>
+              </summary>
+              <div class="px-4 pb-4 text-darkgrey text-[0.95rem] leading-body">
+                Growth-stage ABA operators backed by private equity or strategic capital typically target five to fifteen new clinic openings per year. The most aggressive operators exceed twenty.
+              </div>
+            </details>
+            <details class="group border border-border rounded-lg">
+              <summary class="flex justify-between items-center cursor-pointer p-4 text-navy font-medium">
+                What does standardised site documentation mean?
+                <span class="ml-2 transition-transform group-open:rotate-45">+</span>
+              </summary>
+              <div class="px-4 pb-4 text-darkgrey text-[0.95rem] leading-body">
+                It means every location is surveyed using the same methodology, captured to the same level of detail, and delivered in the same format — allowing direct comparison across the portfolio.
+              </div>
+            </details>
+            <details class="group border border-border rounded-lg">
+              <summary class="flex justify-between items-center cursor-pointer p-4 text-navy font-medium">
+                Can documentation be done before a lease is signed?
+                <span class="ml-2 transition-transform group-open:rotate-45">+</span>
+              </summary>
+              <div class="px-4 pb-4 text-darkgrey text-[0.95rem] leading-body">
+                Yes. Pre-lease site surveys are increasingly common. With landlord permission, existing conditions can be captured during the due diligence period alongside the letter of intent.
+              </div>
+            </details>
+            <details class="group border border-border rounded-lg">
+              <summary class="flex justify-between items-center cursor-pointer p-4 text-navy font-medium">
+                How does documentation support state licensing?
+                <span class="ml-2 transition-transform group-open:rotate-45">+</span>
+              </summary>
+              <div class="px-4 pb-4 text-darkgrey text-[0.95rem] leading-body">
+                State licensing requirements commonly include minimum room dimensions, egress requirements, ADA compliance, and safety features. A comprehensive site survey provides measured evidence that the planned layout meets these requirements.
+              </div>
+            </details>
+          </div>
+        </div>
+
+        <p class="mt-12 text-[0.85rem] text-midgrey/60 italic">
+          Alturascope provides <a href="/services/aba-autism-clinic-documentation" class="hover:opacity-80 transition-opacity">portfolio-wide ABA clinic documentation</a> for operators expanding across the United States and Canada.
+        </p>
+
+        <div class="mt-12 pt-8 border-t border-border flex flex-wrap gap-6 text-sm">
+          <a href="/services/aba-autism-clinic-documentation" class="text-navy font-medium hover:opacity-80 transition-opacity">ABA clinic documentation &rarr;</a>
+          <a href="/insights/aba-clinic-lease-evaluation-site-survey" class="text-navy font-medium hover:opacity-80 transition-opacity">Pre-lease site surveys &rarr;</a>
+          <a href="/insights/aba-clinic-sensory-room-design-documentation" class="text-navy font-medium hover:opacity-80 transition-opacity">Sensory room documentation &rarr;</a>
+          <a href="/insights/standardising-site-surveys-multi-site-operators" class="text-navy font-medium hover:opacity-80 transition-opacity">Standardising multi-site surveys &rarr;</a>
+          <a href="/insights" class="text-navy font-medium hover:opacity-80 transition-opacity">All insights &rarr;</a>
+        </div>
+
+      </div>
+    </article>
+
+    <section class="bg-navy py-20">
+      <div class="max-w-[600px] mx-auto px-6 text-center">
+        <h2 class="text-[1.8rem] font-light text-offwhite leading-snug">
+          Scaling your ABA clinic portfolio?
+        </h2>
+        <p class="mt-4 text-offwhite/70 leading-body">
+          Tell us how many locations you are targeting this year and where. We will outline a documentation programme that scales with your growth and return a per-site quote within one business day.
+        </p>
+        <a href="/contact" class="btn-primary mt-8">Start a Project</a>
+      </div>
+    </section>
+
+  </div>
+</Layout>

@@ -1,0 +1,189 @@
+﻿---
+import Layout from "../../layouts/Layout.astro";
+
+const schema = JSON.stringify({
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "Fashion Retail Store Surveys: Documenting Every Location Before a Brand-Wide Refit",
+  "author": { "@type": "Organization", "name": "Alturascope" },
+  "publisher": { "@type": "Organization", "name": "Alturascope", "url": "https://alturascope.com" },
+  "datePublished": "2026-05-13",
+  "description": "Fashion brands running multi-location store refits need site-specific documentation for every store in the portfolio. Every space is different. Here is what the survey needs to capture and why generic approaches fail.",
+  "mainEntityOfPage": "https://alturascope.com/insights/fashion-retail-store-refit-survey-documentation/"
+});
+
+const breadcrumbSchema = JSON.stringify({
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://alturascope.com" },
+    { "@type": "ListItem", "position": 2, "name": "Insights", "item": "https://alturascope.com/insights/" },
+    { "@type": "ListItem", "position": 3, "name": "Fashion Retail Store Survey", "item": "https://alturascope.com/insights/fashion-retail-store-refit-survey-documentation/" }
+  ]
+});
+
+const faqSchema = JSON.stringify({
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "What does a fashion retail store survey include?",
+      "acceptedAnswer": { "@type": "Answer", "text": "A fashion retail store survey typically includes measured floor plans, ceiling heights, column and structural element positions, existing fixture and fitting locations, electrical and data outlet positions, lighting circuit mapping, façade dimensions and signage zones, stockroom and back-of-house areas, ADA compliance assessment, and a digital twin for remote review. For concession spaces within department stores, the survey also documents the host store constraints and adjacencies." }
+    },
+    {
+      "@type": "Question",
+      "name": "How long does a retail store survey take?",
+      "acceptedAnswer": { "@type": "Answer", "text": "A typical fashion retail location between 1,500 and 5,000 square feet can be surveyed in two to three hours during off-peak trading or after hours. For multi-site programmes, a single survey team can typically complete three to five stores per day in the same metropolitan area, with deliverables returned within five business days per batch." }
+    },
+    {
+      "@type": "Question",
+      "name": "Why can't we use landlord drawings for our store refit?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Landlord drawings for shopping centres and high street retail units are often outdated and do not reflect modifications made by previous tenants. Column positions may be accurate but dimensions, service locations, and ceiling configurations frequently differ from the drawings. For a brand refit where every fixture position is specified by the design team, working from inaccurate drawings produces fixtures that do not fit, signage that does not align, and lighting that does not illuminate the merchandise correctly." }
+    },
+    {
+      "@type": "Question",
+      "name": "Can you survey concession spaces within department stores?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Yes. Concession surveys require coordination with the host department store and adherence to their access protocols. The survey captures the concession footprint, perimeter conditions, ceiling and lighting above the concession zone, floor finishes and any level changes, and the interface points between the concession and the host store. These are documented as standalone deliverables that the brand's design team can work from independently." }
+    }
+  ]
+});
+---
+<Layout
+  title="Fashion Retail Store Surveys: Documenting Every Location Before a Brand-Wide Refit | Alturascope"
+  description="Fashion brands running multi-location refits need site-specific documentation for every store. Here's what surveys need to capture and why generic approaches fail at scale."
+>
+  <div slot="head">
+    <script type="application/ld+json" set:html={schema} />
+    <script type="application/ld+json" set:html={breadcrumbSchema} />
+    <script type="application/ld+json" set:html={faqSchema} />
+  </div>
+
+  <div>
+    <article class="max-w-[720px] mx-auto px-6 py-20">
+      <div class="mb-8">
+        <p class="text-sm text-midgrey uppercase tracking-wide mb-2">FASHION RETAIL</p>
+        <h1 class="text-[2.2rem] md:text-[2.6rem] font-light text-navy leading-tight">
+          Fashion Retail Store Surveys: Documenting Every Location Before a Brand-Wide Refit
+        </h1>
+        <p class="mt-4 text-midgrey text-[0.95rem]">May 2026</p>
+      </div>
+
+      <div class="prose prose-lg max-w-none text-darkgrey leading-body">
+
+        <p class="text-[1.15rem] leading-body text-navy/80 mb-8">
+          A fashion brand preparing to roll out a new store concept across fifty locations has one design and fifty different spaces to put it in. Every store has a different footprint, a different ceiling height, different column positions, and different service locations. The design concept works beautifully in the flagship rendering — but the rendering was drawn to a perfect rectangle that does not exist in any actual store. The site survey is what translates the concept from aspiration to buildable reality in every location.
+        </p>
+
+        <h2 class="text-[1.4rem] font-medium text-navy mt-12 mb-4">Why Fashion Retail Refits Are Different</h2>
+
+        <p>
+          Fashion retail is a visual business. Fixture positions are specified to the centimetre because merchandising plans depend on precise spacing. Lighting is designed to specific lux levels on specific display surfaces. Signage is fabricated to exact dimensions because the brand's visual identity requires it. A 50mm discrepancy in wall position that would be invisible in a restaurant remodel can make a fixture run too short, a graphic panel not fit, or a lighting scheme miss its target surface.
+        </p>
+
+        <p>
+          This is why fashion brands cannot rely on approximate measurements, landlord drawings, or photographs alone. The refit design needs survey-grade accuracy for every location — and it needs that data in a format that allows the design team to adapt the concept to each space's specific constraints before procurement begins.
+        </p>
+
+        <h2 class="text-[1.4rem] font-medium text-navy mt-12 mb-4">The Concession Challenge</h2>
+
+        <p>
+          Many fashion brands operate within department stores as concession or shop-in-shop spaces. These present unique survey challenges. The space is not enclosed by full-height walls — it is defined by the host store's floor grid, sometimes by partial walls or columns, and always by adjacency to other brands. The ceiling above is shared, lighting is often shared or constrained by the host store's grid, and the floor finish may be dictated by the department store rather than the brand.
+        </p>
+
+        <p>
+          Documenting a concession space requires capturing not just what is within the brand's footprint but what surrounds and constrains it. Where are the nearest columns? What is the ceiling height and grid system above? Where do electrical and data services enter the space? What are the sight lines from the main aisle? This contextual documentation is what allows the design team to maximise the brand's presence within the constraints of the host environment.
+        </p>
+
+        <h2 class="text-[1.4rem] font-medium text-navy mt-12 mb-4">Scaling Surveys Across a Store Portfolio</h2>
+
+        <p>
+          A brand with fifty locations that needs to be surveyed within a three-month window requires a programme approach, not fifty individual commissions. The survey methodology is standardised once, agreed with the brand's design team, and then applied consistently across every location. This means every store's data arrives in the same format, at the same level of detail, using the same measurement conventions — so the design team can adapt the concept to each space without reformatting data or requesting supplementary information.
+        </p>
+
+        <p>
+          For international fashion brands with locations across the United States, Canada, and the United Kingdom, a single documentation provider across all markets eliminates the variability that comes from using different surveyors in different regions. The design team receives one deliverable standard regardless of whether the store is in a Manhattan high-rise, a suburban strip mall in Texas, or a listed building on a British high street.
+        </p>
+
+        <h2 class="text-[1.4rem] font-medium text-navy mt-12 mb-4">What the Design Team Actually Needs</h2>
+
+        <p>
+          Design teams working on fashion retail refits typically require measured floor plans with column positions and structural constraints, reflected ceiling plans showing grid type, height, lighting positions, and sprinkler heads, fixture run dimensions including wall lengths, niche depths, and any feature alcoves, electrical and data outlet positions for POS systems, digital displays, and accent lighting, façade elevation with signage zone dimensions, back-of-house layout including stockroom, staff area, and delivery access, and a digital twin that allows remote review by team members who cannot visit every location.
+        </p>
+
+        <p>
+          Delivering all of this in a single, coordinated package — rather than piecing it together from multiple visits and multiple providers — is what separates a survey programme that supports the refit timeline from one that delays it.
+        </p>
+
+        <!-- FAQ Accordion -->
+        <div class="mt-16 pt-8 border-t border-border">
+          <h2 class="text-[1.4rem] font-medium text-navy mb-6">Frequently Asked Questions</h2>
+          <div class="space-y-4" id="faq-accordion">
+            <details class="group border border-border rounded-lg">
+              <summary class="flex justify-between items-center cursor-pointer p-4 text-navy font-medium">
+                What does a fashion retail store survey include?
+                <span class="ml-2 transition-transform group-open:rotate-45">+</span>
+              </summary>
+              <div class="px-4 pb-4 text-darkgrey text-[0.95rem] leading-body">
+                Measured floor plans, ceiling heights, column positions, fixture locations, electrical and data outlets, lighting circuits, façade dimensions, stockroom areas, ADA compliance, and a digital twin. Concession spaces also document host store constraints.
+              </div>
+            </details>
+            <details class="group border border-border rounded-lg">
+              <summary class="flex justify-between items-center cursor-pointer p-4 text-navy font-medium">
+                How long does a retail store survey take?
+                <span class="ml-2 transition-transform group-open:rotate-45">+</span>
+              </summary>
+              <div class="px-4 pb-4 text-darkgrey text-[0.95rem] leading-body">
+                A typical 1,500 to 5,000 square foot location takes two to three hours. For multi-site programmes, three to five stores can be completed per day in the same metro area.
+              </div>
+            </details>
+            <details class="group border border-border rounded-lg">
+              <summary class="flex justify-between items-center cursor-pointer p-4 text-navy font-medium">
+                Why can't we use landlord drawings?
+                <span class="ml-2 transition-transform group-open:rotate-45">+</span>
+              </summary>
+              <div class="px-4 pb-4 text-darkgrey text-[0.95rem] leading-body">
+                Landlord drawings are often outdated and do not reflect modifications by previous tenants. For fashion refits where fixture positions are specified to the centimetre, working from inaccurate drawings produces fixtures that do not fit and signage that does not align.
+              </div>
+            </details>
+            <details class="group border border-border rounded-lg">
+              <summary class="flex justify-between items-center cursor-pointer p-4 text-navy font-medium">
+                Can you survey concession spaces in department stores?
+                <span class="ml-2 transition-transform group-open:rotate-45">+</span>
+              </summary>
+              <div class="px-4 pb-4 text-darkgrey text-[0.95rem] leading-body">
+                Yes. The survey captures the concession footprint, perimeter conditions, ceiling and lighting, floor finishes, and interface points with the host store — documented as standalone deliverables.
+              </div>
+            </details>
+          </div>
+        </div>
+
+        <p class="mt-12 text-[0.85rem] text-midgrey/60 italic">
+          Alturascope provides <a href="/services/multi-site-rollout-documentation" class="hover:opacity-80 transition-opacity">fashion retail store survey programmes</a> across the United States, Canada, and the United Kingdom.
+        </p>
+
+        <div class="mt-12 pt-8 border-t border-border flex flex-wrap gap-6 text-sm">
+          <a href="/services/multi-site-rollout-documentation" class="text-navy font-medium hover:opacity-80 transition-opacity">Multi-site documentation &rarr;</a>
+          <a href="/insights/retail-rebrand-rollout-site-survey-documentation" class="text-navy font-medium hover:opacity-80 transition-opacity">Retail rebrand rollouts &rarr;</a>
+          <a href="/insights/vehicle-dealership-renovation-site-survey" class="text-navy font-medium hover:opacity-80 transition-opacity">Vehicle dealership surveys &rarr;</a>
+          <a href="/insights/qsr-franchise-kitchen-equipment-documentation" class="text-navy font-medium hover:opacity-80 transition-opacity">QSR kitchen documentation &rarr;</a>
+          <a href="/insights" class="text-navy font-medium hover:opacity-80 transition-opacity">All insights &rarr;</a>
+        </div>
+
+      </div>
+    </article>
+
+    <section class="bg-navy py-20">
+      <div class="max-w-[600px] mx-auto px-6 text-center">
+        <h2 class="text-[1.8rem] font-light text-offwhite leading-snug">
+          Planning a fashion retail refit programme?
+        </h2>
+        <p class="mt-4 text-offwhite/70 leading-body">
+          Tell us the number of locations, the markets, and your timeline. We will outline a survey programme and return a per-site quote within one business day.
+        </p>
+        <a href="/contact" class="btn-primary mt-8">Start a Project</a>
+      </div>
+    </section>
+
+  </div>
+</Layout>

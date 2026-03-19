@@ -1,0 +1,185 @@
+---
+import Layout from "../../layouts/Layout.astro";
+
+const schema = JSON.stringify({
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "Pre-Lease Site Surveys for ABA Clinics: What to Verify Before You Sign",
+  "author": { "@type": "Organization", "name": "Alturascope" },
+  "publisher": { "@type": "Organization", "name": "Alturascope", "url": "https://alturascope.com" },
+  "datePublished": "2026-04-15",
+  "description": "ABA clinic operators evaluating new lease spaces need more than a floor plan from the landlord. A pre-lease site survey reveals the hidden constraints that determine whether a space can actually work.",
+  "mainEntityOfPage": "https://alturascope.com/insights/aba-clinic-lease-evaluation-site-survey/"
+});
+
+const breadcrumbSchema = JSON.stringify({
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://alturascope.com" },
+    { "@type": "ListItem", "position": 2, "name": "Insights", "item": "https://alturascope.com/insights/" },
+    { "@type": "ListItem", "position": 3, "name": "ABA Clinic Pre-Lease Survey", "item": "https://alturascope.com/insights/aba-clinic-lease-evaluation-site-survey/" }
+  ]
+});
+
+const faqSchema = JSON.stringify({
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "What should an ABA clinic pre-lease site survey include?",
+      "acceptedAnswer": { "@type": "Answer", "text": "A pre-lease site survey for an ABA clinic should include verified floor plan dimensions, ceiling heights throughout (not just in one area), electrical panel capacity and distribution, HVAC system capacity and zoning potential, plumbing locations for required restrooms and hand-washing stations, ADA accessibility assessment, fire egress path analysis, acoustic conditions between potential therapy rooms, and natural light sources. The survey should also note any conditions that would require landlord modifications or lease amendments before signing." }
+    },
+    {
+      "@type": "Question",
+      "name": "Why can't I rely on the landlord's floor plan for my ABA clinic?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Landlord floor plans are typically marketing documents showing approximate dimensions and general layout. They rarely reflect as-built conditions accurately, often omit structural columns, mechanical systems, and ceiling height variations, and may not have been updated after previous tenant modifications. For an ABA clinic where room dimensions directly affect licensing compliance and therapeutic function, verified measurements are essential before committing to a lease." }
+    },
+    {
+      "@type": "Question",
+      "name": "How quickly can a pre-lease survey be completed?",
+      "acceptedAnswer": { "@type": "Answer", "text": "A typical pre-lease survey for an ABA clinic space between 3,000 and 8,000 square feet can be captured in a single site visit of two to four hours. Deliverables including measured floor plans, a digital twin, and a conditions summary are typically returned within five business days. For operators evaluating multiple potential spaces simultaneously, surveys can be scheduled across several locations in the same trip." }
+    },
+    {
+      "@type": "Question",
+      "name": "What are the most common deal-breakers found during pre-lease surveys?",
+      "acceptedAnswer": { "@type": "Answer", "text": "The most frequent issues that cause ABA operators to walk away from a space are insufficient electrical capacity to support the planned number of treatment rooms, ceiling heights too low for sensory room equipment, inadequate HVAC capacity for the occupancy density required by therapy schedules, lack of exterior windows for rooms that require natural light under state regulations, and structural columns that prevent the open floor plans needed for gross motor areas. All of these are invisible on a standard floor plan and only surface through a physical site survey." }
+    }
+  ]
+});
+---
+<Layout
+  title="Pre-Lease Site Surveys for ABA Clinics: What to Verify Before You Sign | Alturascope"
+  description="ABA clinic operators evaluating new lease spaces need verified site data before committing. Here's what a pre-lease survey reveals that a landlord floor plan cannot."
+>
+  <div slot="head">
+    <script type="application/ld+json" set:html={schema} />
+    <script type="application/ld+json" set:html={breadcrumbSchema} />
+    <script type="application/ld+json" set:html={faqSchema} />
+  </div>
+
+  <div>
+    <article class="max-w-[720px] mx-auto px-6 py-20">
+      <div class="mb-8">
+        <p class="text-sm text-midgrey uppercase tracking-wide mb-2">ABA CLINICS</p>
+        <h1 class="text-[2.2rem] md:text-[2.6rem] font-light text-navy leading-tight">
+          Pre-Lease Site Surveys for ABA Clinics: What to Verify Before You Sign
+        </h1>
+        <p class="mt-4 text-midgrey text-[0.95rem]">April 2026</p>
+      </div>
+
+      <div class="prose prose-lg max-w-none text-darkgrey leading-body">
+
+        <p class="text-[1.15rem] leading-body text-navy/80 mb-8">
+          An ABA clinic operator looking at a potential lease space sees square footage and a floor plan. What they cannot see — and what will determine whether the space actually works — is hidden behind the walls, above the ceiling, and inside the electrical panel. A pre-lease site survey turns assumptions into verified data before the lease is signed.
+        </p>
+
+        <h2 class="text-[1.4rem] font-medium text-navy mt-12 mb-4">The Landlord Floor Plan Problem</h2>
+
+        <p>
+          Every commercial lease negotiation starts with the landlord's marketing package. It includes a floor plan, usually created when the building was originally constructed or last substantially renovated. It shows walls, doors, windows, and approximate dimensions. What it does not show is what has changed since that plan was drawn.
+        </p>
+
+        <p>
+          Previous tenants may have added or removed walls, relocated plumbing, modified HVAC ductwork, or drawn down electrical capacity. The floor plan does not reflect any of this. For a standard office tenant, these discrepancies are minor inconveniences. For an ABA clinic — where room dimensions affect state licensing, electrical capacity determines how many treatment rooms can operate simultaneously, and ceiling height dictates what equipment can be installed — these discrepancies are deal-breakers discovered too late.
+        </p>
+
+        <h2 class="text-[1.4rem] font-medium text-navy mt-12 mb-4">What a Pre-Lease Survey Actually Captures</h2>
+
+        <p>
+          A pre-lease survey for an ABA clinic is not a property inspection and it is not a building condition assessment. It is a documented record of the existing physical conditions that will constrain or enable the planned clinical programme. The deliverables are designed to answer one question: can this space accommodate the clinic we need to build?
+        </p>
+
+        <p>
+          The survey captures verified dimensions of every room and corridor, floor-to-structure and floor-to-ceiling heights throughout the space (not just in the main area — ceiling heights often vary significantly in commercial buildings), electrical panel documentation including total amperage, available circuits, and distribution, HVAC system type and capacity relative to the occupancy load of a therapy clinic, plumbing stub locations and feasibility for additional restrooms and hand-washing stations, window locations and sizes relative to state requirements for natural light in treatment rooms, structural elements including columns, beams, and load-bearing walls that constrain layout options, and fire egress paths and their compliance with the planned occupancy.
+        </p>
+
+        <h2 class="text-[1.4rem] font-medium text-navy mt-12 mb-4">The Real Value: Negotiation Leverage</h2>
+
+        <p>
+          A pre-lease survey does more than confirm whether a space works. It gives the operator specific, documented evidence to negotiate tenant improvement allowances with the landlord. When you can demonstrate that the HVAC system requires a supplemental unit to support the planned occupancy, or that the electrical panel needs a sub-panel to serve the treatment wing, those costs become part of the lease negotiation rather than surprises during construction.
+        </p>
+
+        <p>
+          For multi-location ABA operators evaluating several potential sites simultaneously, pre-lease surveys across all candidate spaces create a direct, data-driven comparison. Instead of choosing a space based on square footage and rent per square foot, the decision incorporates the true cost of fit-out — the cost that only becomes visible when existing conditions are documented.
+        </p>
+
+        <h2 class="text-[1.4rem] font-medium text-navy mt-12 mb-4">Speed Matters: The Lease Timeline</h2>
+
+        <p>
+          Competitive commercial real estate markets do not wait for due diligence. Operators lose spaces because the survey took too long, or because they signed without survey data and discovered problems during construction. A focused pre-lease survey — one designed specifically for therapy clinic requirements — can be completed in a single site visit and delivered within five business days. That timeline fits within most letter-of-intent windows and gives operators the data they need to commit with confidence or walk away with clarity.
+        </p>
+
+        <!-- FAQ Accordion -->
+        <div class="mt-16 pt-8 border-t border-border">
+          <h2 class="text-[1.4rem] font-medium text-navy mb-6">Frequently Asked Questions</h2>
+          <div class="space-y-4" id="faq-accordion">
+            <details class="group border border-border rounded-lg">
+              <summary class="flex justify-between items-center cursor-pointer p-4 text-navy font-medium">
+                What should an ABA clinic pre-lease site survey include?
+                <span class="ml-2 transition-transform group-open:rotate-45">+</span>
+              </summary>
+              <div class="px-4 pb-4 text-darkgrey text-[0.95rem] leading-body">
+                A pre-lease site survey for an ABA clinic should include verified floor plan dimensions, ceiling heights throughout, electrical panel capacity and distribution, HVAC system capacity and zoning potential, plumbing locations for required restrooms and hand-washing stations, ADA accessibility assessment, fire egress path analysis, acoustic conditions between potential therapy rooms, and natural light sources.
+              </div>
+            </details>
+            <details class="group border border-border rounded-lg">
+              <summary class="flex justify-between items-center cursor-pointer p-4 text-navy font-medium">
+                Why can't I rely on the landlord's floor plan?
+                <span class="ml-2 transition-transform group-open:rotate-45">+</span>
+              </summary>
+              <div class="px-4 pb-4 text-darkgrey text-[0.95rem] leading-body">
+                Landlord floor plans are typically marketing documents showing approximate dimensions. They rarely reflect as-built conditions accurately, often omit structural columns and mechanical systems, and may not have been updated after previous tenant modifications. For an ABA clinic where room dimensions directly affect licensing compliance, verified measurements are essential.
+              </div>
+            </details>
+            <details class="group border border-border rounded-lg">
+              <summary class="flex justify-between items-center cursor-pointer p-4 text-navy font-medium">
+                How quickly can a pre-lease survey be completed?
+                <span class="ml-2 transition-transform group-open:rotate-45">+</span>
+              </summary>
+              <div class="px-4 pb-4 text-darkgrey text-[0.95rem] leading-body">
+                A typical pre-lease survey for an ABA clinic space between 3,000 and 8,000 square feet can be captured in a single site visit of two to four hours. Deliverables are typically returned within five business days.
+              </div>
+            </details>
+            <details class="group border border-border rounded-lg">
+              <summary class="flex justify-between items-center cursor-pointer p-4 text-navy font-medium">
+                What are the most common deal-breakers found during pre-lease surveys?
+                <span class="ml-2 transition-transform group-open:rotate-45">+</span>
+              </summary>
+              <div class="px-4 pb-4 text-darkgrey text-[0.95rem] leading-body">
+                The most frequent issues are insufficient electrical capacity, ceiling heights too low for sensory room equipment, inadequate HVAC for therapy occupancy density, lack of exterior windows required by state regulations, and structural columns preventing the open floor plans needed for gross motor areas.
+              </div>
+            </details>
+          </div>
+        </div>
+
+        <p class="mt-12 text-[0.85rem] text-midgrey/60 italic">
+          Alturascope provides <a href="/services/aba-autism-clinic-documentation" class="hover:opacity-80 transition-opacity">pre-lease site surveys for ABA clinics</a> across the United States and Canada.
+        </p>
+
+        <div class="mt-12 pt-8 border-t border-border flex flex-wrap gap-6 text-sm">
+          <a href="/services/aba-autism-clinic-documentation" class="text-navy font-medium hover:opacity-80 transition-opacity">ABA clinic documentation &rarr;</a>
+          <a href="/insights/aba-clinic-sensory-room-design-documentation" class="text-navy font-medium hover:opacity-80 transition-opacity">Sensory room documentation &rarr;</a>
+          <a href="/insights/aba-clinic-portfolio-renovation-documentation" class="text-navy font-medium hover:opacity-80 transition-opacity">ABA portfolio renovation &rarr;</a>
+          <a href="/insights/aba-multi-location-growth-documentation-strategy" class="text-navy font-medium hover:opacity-80 transition-opacity">Multi-location ABA growth &rarr;</a>
+          <a href="/insights" class="text-navy font-medium hover:opacity-80 transition-opacity">All insights &rarr;</a>
+        </div>
+
+      </div>
+    </article>
+
+    <section class="bg-navy py-20">
+      <div class="max-w-[600px] mx-auto px-6 text-center">
+        <h2 class="text-[1.8rem] font-light text-offwhite leading-snug">
+          Evaluating a new space for your ABA clinic?
+        </h2>
+        <p class="mt-4 text-offwhite/70 leading-body">
+          Share the address and approximate square footage. We will confirm whether a pre-lease survey is the right approach and return an all-in quote within one business day.
+        </p>
+        <a href="/contact" class="btn-primary mt-8">Start a Project</a>
+      </div>
+    </section>
+
+  </div>
+</Layout>

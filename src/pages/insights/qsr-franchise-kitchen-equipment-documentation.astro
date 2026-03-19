@@ -1,0 +1,189 @@
+---
+import Layout from "../../layouts/Layout.astro";
+
+const schema = JSON.stringify({
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "Kitchen Equipment Documentation in QSR Remodel Programmes: What the Walk-Through Misses",
+  "author": { "@type": "Organization", "name": "Alturascope" },
+  "publisher": { "@type": "Organization", "name": "Alturascope", "url": "https://alturascope.com" },
+  "datePublished": "2026-05-06",
+  "description": "QSR remodel programmes depend on accurate kitchen equipment schedules from every location. Walk-throughs and spreadsheets miss critical detail. Here is what comprehensive documentation looks like.",
+  "mainEntityOfPage": "https://alturascope.com/insights/qsr-franchise-kitchen-equipment-documentation/"
+});
+
+const breadcrumbSchema = JSON.stringify({
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://alturascope.com" },
+    { "@type": "ListItem", "position": 2, "name": "Insights", "item": "https://alturascope.com/insights/" },
+    { "@type": "ListItem", "position": 3, "name": "QSR Kitchen Equipment Documentation", "item": "https://alturascope.com/insights/qsr-franchise-kitchen-equipment-documentation/" }
+  ]
+});
+
+const faqSchema = JSON.stringify({
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Why is kitchen equipment documentation important for QSR remodels?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Kitchen equipment schedules determine the scope and cost of a QSR remodel. The design team needs to know exactly what equipment exists in each location, its age, condition, utility connections, and spatial footprint. Inaccurate or incomplete equipment data leads to incorrect scope documents, inaccurate budgets, and change orders during construction — all of which delay reopening and cost the franchisee revenue." }
+    },
+    {
+      "@type": "Question",
+      "name": "How is kitchen equipment documented during a site survey?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Each piece of equipment is photographed, identified by make, model, and serial number where visible, measured for spatial footprint, and mapped to its utility connections including electrical, gas, water, and drainage. The equipment's position is recorded relative to the overall kitchen layout. This creates a complete equipment schedule tied to measured floor plans and photographic evidence." }
+    },
+    {
+      "@type": "Question",
+      "name": "Can equipment documentation be done while the restaurant is operating?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Yes. Site surveys for QSR locations are typically conducted during off-peak hours to minimise disruption. Kitchen equipment can be documented without shutting down operations, though access to equipment backs and utility connections may require brief coordination with kitchen staff. Most surveys are completed within two to three hours per location." }
+    },
+    {
+      "@type": "Question",
+      "name": "How does this differ from a standard Matterport scan?",
+      "acceptedAnswer": { "@type": "Answer", "text": "A Matterport digital twin captures the visual appearance and general spatial layout of a kitchen. It does not identify individual pieces of equipment by make and model, record serial numbers, document utility connection types and locations, or assess condition. Equipment documentation is a structured data capture exercise that produces a usable schedule — it complements a digital twin but serves a different purpose." }
+    }
+  ]
+});
+---
+<Layout
+  title="Kitchen Equipment Documentation in QSR Remodel Programmes | Alturascope"
+  description="QSR remodel programmes depend on accurate kitchen equipment data from every location. Here's what comprehensive documentation looks like and why walk-throughs miss critical detail."
+>
+  <div slot="head">
+    <script type="application/ld+json" set:html={schema} />
+    <script type="application/ld+json" set:html={breadcrumbSchema} />
+    <script type="application/ld+json" set:html={faqSchema} />
+  </div>
+
+  <div>
+    <article class="max-w-[720px] mx-auto px-6 py-20">
+      <div class="mb-8">
+        <p class="text-sm text-midgrey uppercase tracking-wide mb-2">QSR REMODEL</p>
+        <h1 class="text-[2.2rem] md:text-[2.6rem] font-light text-navy leading-tight">
+          Kitchen Equipment Documentation in QSR Remodel Programmes: What the Walk-Through Misses
+        </h1>
+        <p class="mt-4 text-midgrey text-[0.95rem]">May 2026</p>
+      </div>
+
+      <div class="prose prose-lg max-w-none text-darkgrey leading-body">
+
+        <p class="text-[1.15rem] leading-body text-navy/80 mb-8">
+          A QSR remodel programme manager looking at 200 locations knows that the kitchen is where the scope lives. The dining room is paint, finishes, and furniture — predictable, scalable, and rarely surprising. The kitchen is equipment that varies by location, utility infrastructure that was modified by three different franchisees over fifteen years, and spatial constraints that no two stores share. Getting the kitchen wrong means getting the budget wrong, and getting the budget wrong at scale is how remodel programmes fail.
+        </p>
+
+        <h2 class="text-[1.4rem] font-medium text-navy mt-12 mb-4">The Walk-Through Problem</h2>
+
+        <p>
+          Most QSR remodel programmes begin with a walk-through. A project manager visits each location, takes photographs, fills in a spreadsheet, and notes what equipment is present. This approach works adequately for dining room scope — you can see whether the furniture needs replacing and whether the signage matches the current brand standard. It does not work for kitchens.
+        </p>
+
+        <p>
+          Kitchen equipment cannot be accurately documented from a walk-through because the critical information is not visible. The model number is on the back of the unit. The serial number is on a plate that requires crouching behind the fryer. The electrical connection is hidden behind a panel. The gas supply line enters from the wall in a location that is only visible if you pull the unit forward. A walk-through captures what is there. A survey captures what it is, how it connects, and what replacing or relocating it will actually require.
+        </p>
+
+        <h2 class="text-[1.4rem] font-medium text-navy mt-12 mb-4">What a Kitchen Equipment Survey Delivers</h2>
+
+        <p>
+          A comprehensive kitchen equipment survey produces a structured equipment schedule for each location. Every piece of equipment is documented with its make, model, and serial number; its physical dimensions and position within the kitchen layout; its utility connections — electrical (voltage, amperage, phase), gas (supply line size and location), water (hot, cold, or both), and drainage; its approximate age and visible condition; and photographic evidence of the unit, its data plate, and its connections.
+        </p>
+
+        <p>
+          This schedule is tied to measured floor plans of the kitchen, creating a single source of truth that the design team, equipment vendor, and contractor all work from. When the design calls for relocating the walk-in cooler, the team knows exactly what utilities need to move with it. When the new brand standard requires a different fryer configuration, the team knows whether the existing electrical supply can support it or whether an upgrade is required.
+        </p>
+
+        <h2 class="text-[1.4rem] font-medium text-navy mt-12 mb-4">Scale: The Multi-Site Multiplier</h2>
+
+        <p>
+          The value of structured equipment documentation compounds at scale. When every location in a 200-store remodel programme is documented using the same methodology and delivered in the same format, the programme team can sort and filter across the entire portfolio. Which locations have equipment old enough to warrant replacement? Which have electrical infrastructure that cannot support the new equipment specification? Which kitchens have enough space for the new cooking line without structural modification?
+        </p>
+
+        <p>
+          These are portfolio-level questions that cannot be answered by 200 individual walk-through spreadsheets compiled by different project managers using different formats. They require standardised, structured data — and that data starts with the site survey.
+        </p>
+
+        <h2 class="text-[1.4rem] font-medium text-navy mt-12 mb-4">The Downstream Impact on Remodel Budgets</h2>
+
+        <p>
+          QSR remodel programmes are budgeted per location, typically with a standard allowance and a variance band. When kitchen equipment data is incomplete, the standard allowance is based on assumptions about what exists in each store. Assumptions generate change orders. Change orders delay reopening. Delayed reopening costs the franchisee revenue — and strains the franchisor-franchisee relationship that the entire programme depends on.
+        </p>
+
+        <p>
+          Accurate equipment documentation before design commitment means the budget reflects what actually needs to happen, not what the programme team assumed would need to happen. It is the difference between a remodel programme that runs to budget across 200 locations and one that accumulates change orders location by location until the programme's economics no longer work.
+        </p>
+
+        <!-- FAQ Accordion -->
+        <div class="mt-16 pt-8 border-t border-border">
+          <h2 class="text-[1.4rem] font-medium text-navy mb-6">Frequently Asked Questions</h2>
+          <div class="space-y-4" id="faq-accordion">
+            <details class="group border border-border rounded-lg">
+              <summary class="flex justify-between items-center cursor-pointer p-4 text-navy font-medium">
+                Why is kitchen equipment documentation important for QSR remodels?
+                <span class="ml-2 transition-transform group-open:rotate-45">+</span>
+              </summary>
+              <div class="px-4 pb-4 text-darkgrey text-[0.95rem] leading-body">
+                Equipment schedules determine scope and cost. Inaccurate data leads to incorrect budgets and change orders during construction — delaying reopening and costing the franchisee revenue.
+              </div>
+            </details>
+            <details class="group border border-border rounded-lg">
+              <summary class="flex justify-between items-center cursor-pointer p-4 text-navy font-medium">
+                How is kitchen equipment documented?
+                <span class="ml-2 transition-transform group-open:rotate-45">+</span>
+              </summary>
+              <div class="px-4 pb-4 text-darkgrey text-[0.95rem] leading-body">
+                Each piece is photographed, identified by make, model, and serial number, measured for spatial footprint, and mapped to its utility connections. This creates a complete schedule tied to measured floor plans.
+              </div>
+            </details>
+            <details class="group border border-border rounded-lg">
+              <summary class="flex justify-between items-center cursor-pointer p-4 text-navy font-medium">
+                Can surveys be done while the restaurant operates?
+                <span class="ml-2 transition-transform group-open:rotate-45">+</span>
+              </summary>
+              <div class="px-4 pb-4 text-darkgrey text-[0.95rem] leading-body">
+                Yes. Surveys are conducted during off-peak hours. Most are completed within two to three hours per location without shutting down operations.
+              </div>
+            </details>
+            <details class="group border border-border rounded-lg">
+              <summary class="flex justify-between items-center cursor-pointer p-4 text-navy font-medium">
+                How does this differ from a standard Matterport scan?
+                <span class="ml-2 transition-transform group-open:rotate-45">+</span>
+              </summary>
+              <div class="px-4 pb-4 text-darkgrey text-[0.95rem] leading-body">
+                A Matterport twin captures visual appearance and spatial layout but does not identify equipment by make and model, record serial numbers, or document utility connections. Equipment documentation is a structured data exercise that complements a digital twin.
+              </div>
+            </details>
+          </div>
+        </div>
+
+        <p class="mt-12 text-[0.85rem] text-midgrey/60 italic">
+          Alturascope provides <a href="/services/qsr-restaurant-documentation" class="hover:opacity-80 transition-opacity">QSR remodel documentation</a> including kitchen equipment surveys across the United States and Canada.
+        </p>
+
+        <div class="mt-12 pt-8 border-t border-border flex flex-wrap gap-6 text-sm">
+          <a href="/services/qsr-restaurant-documentation" class="text-navy font-medium hover:opacity-80 transition-opacity">QSR documentation &rarr;</a>
+          <a href="/insights/qsr-reimage-pre-construction-survey-timelines" class="text-navy font-medium hover:opacity-80 transition-opacity">QSR reimage timelines &rarr;</a>
+          <a href="/insights/fashion-retail-store-refit-survey-documentation" class="text-navy font-medium hover:opacity-80 transition-opacity">Fashion retail surveys &rarr;</a>
+          <a href="/insights/vehicle-dealership-renovation-site-survey" class="text-navy font-medium hover:opacity-80 transition-opacity">Vehicle dealership surveys &rarr;</a>
+          <a href="/insights" class="text-navy font-medium hover:opacity-80 transition-opacity">All insights &rarr;</a>
+        </div>
+
+      </div>
+    </article>
+
+    <section class="bg-navy py-20">
+      <div class="max-w-[600px] mx-auto px-6 text-center">
+        <h2 class="text-[1.8rem] font-light text-offwhite leading-snug">
+          Planning a QSR remodel programme?
+        </h2>
+        <p class="mt-4 text-offwhite/70 leading-body">
+          Tell us the brand, the number of locations, and the timeline. We will outline a documentation approach and return a per-site quote within one business day.
+        </p>
+        <a href="/contact" class="btn-primary mt-8">Start a Project</a>
+      </div>
+    </section>
+
+  </div>
+</Layout>

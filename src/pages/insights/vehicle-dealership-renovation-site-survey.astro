@@ -1,0 +1,185 @@
+---
+import Layout from "../../layouts/Layout.astro";
+
+const schema = JSON.stringify({
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "Vehicle Dealership Renovation Surveys: Documenting the Facility Before the OEM Mandate Arrives",
+  "author": { "@type": "Organization", "name": "Alturascope" },
+  "publisher": { "@type": "Organization", "name": "Alturascope", "url": "https://alturascope.com" },
+  "datePublished": "2026-05-20",
+  "description": "Auto dealerships facing OEM brand standard upgrades need comprehensive facility documentation before committing to renovation scope. Here is what the survey captures and why it changes the project economics.",
+  "mainEntityOfPage": "https://alturascope.com/insights/vehicle-dealership-renovation-site-survey/"
+});
+
+const breadcrumbSchema = JSON.stringify({
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://alturascope.com" },
+    { "@type": "ListItem", "position": 2, "name": "Insights", "item": "https://alturascope.com/insights/" },
+    { "@type": "ListItem", "position": 3, "name": "Vehicle Dealership Renovation Survey", "item": "https://alturascope.com/insights/vehicle-dealership-renovation-site-survey/" }
+  ]
+});
+
+const faqSchema = JSON.stringify({
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "What does a dealership facility survey include?",
+      "acceptedAnswer": { "@type": "Answer", "text": "A dealership facility survey includes measured floor plans of the showroom, customer areas, service drive, service bays, parts department, and back-of-house spaces. It also captures structural conditions, electrical panel capacity and distribution, HVAC system documentation, site plan with exterior areas including vehicle display, customer parking, and service access, façade dimensions for signage and brand element compliance, and a digital twin for remote review by the design team and OEM representative." }
+    },
+    {
+      "@type": "Question",
+      "name": "Why do dealerships need site surveys for OEM brand compliance renovations?",
+      "acceptedAnswer": { "@type": "Answer", "text": "OEM brand standard programmes specify precise requirements for showroom dimensions, façade materials, signage positions, and customer experience zones. Meeting these standards within an existing facility requires understanding the building's constraints before committing to a renovation scope. Without verified existing conditions, the design may call for modifications that the structure cannot accommodate, resulting in scope changes, cost overruns, and delayed OEM approval." }
+    },
+    {
+      "@type": "Question",
+      "name": "Can a dealership remain open during the site survey?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Yes. Dealership surveys are conducted around business operations. Showroom and customer areas are typically surveyed during non-peak hours. Service bays can be documented between vehicle appointments. The survey team coordinates with the dealership manager to minimise disruption and typically completes the capture in a single day." }
+    },
+    {
+      "@type": "Question",
+      "name": "How does site documentation help with dealer group multi-location renovations?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Dealer groups managing OEM brand standard compliance across five, ten, or twenty rooftops benefit from consistent documentation across every facility. Standardised surveys enable direct comparison of renovation scope and cost between locations, helping the group prioritise investments and sequence projects based on actual facility conditions rather than estimates." }
+    }
+  ]
+});
+---
+<Layout
+  title="Vehicle Dealership Renovation Surveys: Pre-Construction Facility Documentation | Alturascope"
+  description="Auto dealerships facing OEM brand standard upgrades need comprehensive facility documentation before renovation. Here's what the survey captures and why it changes the project economics."
+>
+  <div slot="head">
+    <script type="application/ld+json" set:html={schema} />
+    <script type="application/ld+json" set:html={breadcrumbSchema} />
+    <script type="application/ld+json" set:html={faqSchema} />
+  </div>
+
+  <div>
+    <article class="max-w-[720px] mx-auto px-6 py-20">
+      <div class="mb-8">
+        <p class="text-sm text-midgrey uppercase tracking-wide mb-2">AUTOMOTIVE</p>
+        <h1 class="text-[2.2rem] md:text-[2.6rem] font-light text-navy leading-tight">
+          Vehicle Dealership Renovation Surveys: Documenting the Facility Before the OEM Mandate Arrives
+        </h1>
+        <p class="mt-4 text-midgrey text-[0.95rem]">May 2026</p>
+      </div>
+
+      <div class="prose prose-lg max-w-none text-darkgrey leading-body">
+
+        <p class="text-[1.15rem] leading-body text-navy/80 mb-8">
+          When an OEM announces a new brand standard facility programme, every affected dealer faces the same question: what will it actually take to bring this building into compliance? The answer lives in the existing conditions of the facility — conditions that are rarely understood in enough detail until the architect starts drawing and the contractor starts pricing. A comprehensive facility survey before that process begins changes the economics of the entire project.
+        </p>
+
+        <h2 class="text-[1.4rem] font-medium text-navy mt-12 mb-4">The OEM Brand Standard Challenge</h2>
+
+        <p>
+          Automotive manufacturers invest heavily in their retail facility standards. These programmes specify showroom dimensions, façade treatments, customer lounge configurations, service drive layouts, and signage systems. The standards are designed for new construction — clean-sheet facilities built to the specification from the ground up. But the majority of dealerships that need to comply are existing buildings, many of them twenty or thirty years old, with structural constraints, utility limitations, and site conditions that the standard was not designed around.
+        </p>
+
+        <p>
+          The gap between what the OEM standard requires and what the existing building can deliver is where renovation scope — and renovation cost — is determined. Closing that gap intelligently requires knowing exactly what you are starting with. Not approximately. Not based on the original construction drawings from 2003. Exactly.
+        </p>
+
+        <h2 class="text-[1.4rem] font-medium text-navy mt-12 mb-4">What the Survey Captures</h2>
+
+        <p>
+          A dealership facility survey documents the entire operation: the showroom including floor area, ceiling height, column grid, glass line, and lighting infrastructure; the customer experience zone including lounge, reception, and finance offices; the service drive including covered and uncovered areas, lane widths, and overhead clearances; the service department including bay count, lift positions, utility drops, and ventilation systems; the parts department including storage layout, counter area, and delivery access; the site including vehicle display areas, customer parking, service access routes, and signage positions; and the building envelope including façade materials, structural system, roof condition, and any existing brand elements that need removal or modification.
+        </p>
+
+        <p>
+          All of this is delivered as measured floor plans, a site plan, key elevations, and a digital twin — a single documentation package that the architect, contractor, and OEM facility representative can all work from.
+        </p>
+
+        <h2 class="text-[1.4rem] font-medium text-navy mt-12 mb-4">The EV Infrastructure Factor</h2>
+
+        <p>
+          The shift to electric vehicles is adding a new dimension to dealership renovations. EV charging infrastructure requires significant electrical capacity — far beyond what most existing dealerships were built to support. A facility survey that documents the current electrical service, panel capacity, and distribution gives the engineer the data needed to determine whether the existing service can support charging stations or whether a service upgrade is required. For dealer groups managing multiple rooftops, this electrical assessment across the portfolio identifies which locations can add EV infrastructure within existing capacity and which require capital-intensive utility upgrades.
+        </p>
+
+        <h2 class="text-[1.4rem] font-medium text-navy mt-12 mb-4">Dealer Groups: Portfolio-Level Documentation</h2>
+
+        <p>
+          A dealer group with fifteen rooftops receiving an OEM brand standard mandate has fifteen renovation projects to plan, budget, and sequence. When every facility is documented using the same methodology, the group can compare renovation scope across locations, identify which projects are relatively straightforward and which involve significant structural or infrastructure work, sequence projects based on actual complexity rather than assumptions, and present a credible, data-backed renovation plan to the OEM — which can strengthen the group's position in compliance negotiations.
+        </p>
+
+        <p>
+          This portfolio-level visibility is what separates a managed renovation programme from fifteen individual projects running independently with no shared intelligence.
+        </p>
+
+        <!-- FAQ Accordion -->
+        <div class="mt-16 pt-8 border-t border-border">
+          <h2 class="text-[1.4rem] font-medium text-navy mb-6">Frequently Asked Questions</h2>
+          <div class="space-y-4" id="faq-accordion">
+            <details class="group border border-border rounded-lg">
+              <summary class="flex justify-between items-center cursor-pointer p-4 text-navy font-medium">
+                What does a dealership facility survey include?
+                <span class="ml-2 transition-transform group-open:rotate-45">+</span>
+              </summary>
+              <div class="px-4 pb-4 text-darkgrey text-[0.95rem] leading-body">
+                Measured floor plans of all areas, structural conditions, electrical and HVAC documentation, site plan with exterior areas, façade dimensions for brand compliance, and a digital twin for remote review.
+              </div>
+            </details>
+            <details class="group border border-border rounded-lg">
+              <summary class="flex justify-between items-center cursor-pointer p-4 text-navy font-medium">
+                Why do dealerships need surveys for OEM compliance?
+                <span class="ml-2 transition-transform group-open:rotate-45">+</span>
+              </summary>
+              <div class="px-4 pb-4 text-darkgrey text-[0.95rem] leading-body">
+                OEM standards specify precise facility requirements designed for new construction. Existing buildings have constraints that need to be understood before committing to renovation scope to avoid cost overruns and delayed approval.
+              </div>
+            </details>
+            <details class="group border border-border rounded-lg">
+              <summary class="flex justify-between items-center cursor-pointer p-4 text-navy font-medium">
+                Can the dealership remain open during the survey?
+                <span class="ml-2 transition-transform group-open:rotate-45">+</span>
+              </summary>
+              <div class="px-4 pb-4 text-darkgrey text-[0.95rem] leading-body">
+                Yes. Surveys are conducted around business operations and typically completed in a single day with minimal disruption.
+              </div>
+            </details>
+            <details class="group border border-border rounded-lg">
+              <summary class="flex justify-between items-center cursor-pointer p-4 text-navy font-medium">
+                How does this help dealer groups with multiple locations?
+                <span class="ml-2 transition-transform group-open:rotate-45">+</span>
+              </summary>
+              <div class="px-4 pb-4 text-darkgrey text-[0.95rem] leading-body">
+                Consistent documentation across every rooftop enables direct scope and cost comparison, data-backed project sequencing, and a credible renovation plan for OEM compliance negotiations.
+              </div>
+            </details>
+          </div>
+        </div>
+
+        <p class="mt-12 text-[0.85rem] text-midgrey/60 italic">
+          Alturascope provides <a href="/services/multi-site-rollout-documentation" class="hover:opacity-80 transition-opacity">vehicle dealership facility documentation</a> for dealer groups and OEM programme teams across the United States and Canada.
+        </p>
+
+        <div class="mt-12 pt-8 border-t border-border flex flex-wrap gap-6 text-sm">
+          <a href="/services/multi-site-rollout-documentation" class="text-navy font-medium hover:opacity-80 transition-opacity">Multi-site documentation &rarr;</a>
+          <a href="/insights/fashion-retail-store-refit-survey-documentation" class="text-navy font-medium hover:opacity-80 transition-opacity">Fashion retail surveys &rarr;</a>
+          <a href="/insights/qsr-franchise-kitchen-equipment-documentation" class="text-navy font-medium hover:opacity-80 transition-opacity">QSR kitchen documentation &rarr;</a>
+          <a href="/insights/retail-rebrand-rollout-site-survey-documentation" class="text-navy font-medium hover:opacity-80 transition-opacity">Retail rebrand rollouts &rarr;</a>
+          <a href="/insights" class="text-navy font-medium hover:opacity-80 transition-opacity">All insights &rarr;</a>
+        </div>
+
+      </div>
+    </article>
+
+    <section class="bg-navy py-20">
+      <div class="max-w-[600px] mx-auto px-6 text-center">
+        <h2 class="text-[1.8rem] font-light text-offwhite leading-snug">
+          Facing an OEM facility standard renovation?
+        </h2>
+        <p class="mt-4 text-offwhite/70 leading-body">
+          Tell us the brand, the number of rooftops, and where they are. We will outline a documentation programme and return a per-facility quote within one business day.
+        </p>
+        <a href="/contact" class="btn-primary mt-8">Start a Project</a>
+      </div>
+    </section>
+
+  </div>
+</Layout>

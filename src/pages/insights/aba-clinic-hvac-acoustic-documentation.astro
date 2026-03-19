@@ -1,0 +1,185 @@
+---
+import Layout from "../../layouts/Layout.astro";
+
+const schema = JSON.stringify({
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "HVAC and Acoustic Documentation for ABA Clinics: The Hidden Infrastructure That Shapes Therapy Outcomes",
+  "author": { "@type": "Organization", "name": "Alturascope" },
+  "publisher": { "@type": "Organization", "name": "Alturascope", "url": "https://alturascope.com" },
+  "datePublished": "2026-04-29",
+  "description": "HVAC noise and acoustic bleed between therapy rooms are among the most overlooked infrastructure issues in ABA clinic fit-outs. Documenting mechanical systems and acoustic conditions before design commitment prevents costly remediation.",
+  "mainEntityOfPage": "https://alturascope.com/insights/aba-clinic-hvac-acoustic-documentation/"
+});
+
+const breadcrumbSchema = JSON.stringify({
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://alturascope.com" },
+    { "@type": "ListItem", "position": 2, "name": "Insights", "item": "https://alturascope.com/insights/" },
+    { "@type": "ListItem", "position": 3, "name": "ABA HVAC & Acoustic Documentation", "item": "https://alturascope.com/insights/aba-clinic-hvac-acoustic-documentation/" }
+  ]
+});
+
+const faqSchema = JSON.stringify({
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Why is HVAC documentation important for ABA clinics specifically?",
+      "acceptedAnswer": { "@type": "Answer", "text": "ABA therapy sessions require controlled environments with minimal auditory distraction. HVAC systems generate noise through air handlers, ductwork, and diffusers. If the mechanical system is not documented before design, the architect cannot specify acoustic mitigation measures. The result is therapy rooms where HVAC noise competes with the therapist's voice, directly undermining the controlled stimulus environment that ABA therapy depends on." }
+    },
+    {
+      "@type": "Question",
+      "name": "What acoustic issues are most common between ABA therapy rooms?",
+      "acceptedAnswer": { "@type": "Answer", "text": "The most common issue is sound transmission through shared ceiling plenums. In most commercial spaces, interior partition walls extend from the floor to the suspended ceiling grid but not to the structural deck above. Sound travels through the open plenum space above the ceiling tiles from one room to the next. For ABA therapy, where a child in one room may be working on focused attention while a child in the adjacent room is in a gross motor session, this acoustic bleed can significantly compromise therapy effectiveness." }
+    },
+    {
+      "@type": "Question",
+      "name": "Can above-ceiling documentation help identify acoustic problems?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Yes. An above-ceiling survey documents the plenum space including partition wall heights, ductwork routing, fire-stopping conditions, and structural deck height. This data reveals whether walls are full-height to the deck (providing acoustic separation) or terminate at the ceiling grid (creating an open plenum path for sound transmission). It also identifies ductwork configurations that may act as sound conduits between rooms." }
+    },
+    {
+      "@type": "Question",
+      "name": "What HVAC capacity does a typical ABA clinic require?",
+      "acceptedAnswer": { "@type": "Answer", "text": "ABA clinics typically operate at higher occupancy densities than standard offices — multiple therapist-client pairs working in individual rooms simultaneously, plus observation areas and staff spaces. The HVAC system must handle this occupancy load while maintaining appropriate temperature and air quality. A pre-construction survey documents the existing system's capacity, distribution, and condition, allowing the mechanical engineer to assess whether the system can be rezoned for clinic use or whether supplemental equipment is required." }
+    }
+  ]
+});
+---
+<Layout
+  title="HVAC and Acoustic Documentation for ABA Clinics | Alturascope"
+  description="HVAC noise and acoustic bleed between therapy rooms are among the most overlooked issues in ABA clinic fit-outs. Here's why documenting mechanical and acoustic conditions before design is essential."
+>
+  <div slot="head">
+    <script type="application/ld+json" set:html={schema} />
+    <script type="application/ld+json" set:html={breadcrumbSchema} />
+    <script type="application/ld+json" set:html={faqSchema} />
+  </div>
+
+  <div>
+    <article class="max-w-[720px] mx-auto px-6 py-20">
+      <div class="mb-8">
+        <p class="text-sm text-midgrey uppercase tracking-wide mb-2">ABA CLINICS</p>
+        <h1 class="text-[2.2rem] md:text-[2.6rem] font-light text-navy leading-tight">
+          HVAC and Acoustic Documentation for ABA Clinics: The Hidden Infrastructure That Shapes Therapy Outcomes
+        </h1>
+        <p class="mt-4 text-midgrey text-[0.95rem]">April 2026</p>
+      </div>
+
+      <div class="prose prose-lg max-w-none text-darkgrey leading-body">
+
+        <p class="text-[1.15rem] leading-body text-navy/80 mb-8">
+          A child working on receptive language identification in a therapy room should hear one voice clearly: the therapist's. When that session competes with HVAC rumble from an oversized air handler or acoustic bleed from the gross motor session next door, the controlled environment that ABA therapy depends on is compromised. These are infrastructure problems — and they are preventable with the right documentation before construction begins.
+        </p>
+
+        <h2 class="text-[1.4rem] font-medium text-navy mt-12 mb-4">The Invisible Acoustic Problem in Commercial Spaces</h2>
+
+        <p>
+          Most commercial spaces that ABA clinics lease were built for office or retail use. They were never designed to support multiple simultaneous sessions requiring acoustic isolation. The ceiling grid system — the ubiquitous suspended tile ceiling found in nearly every commercial building — creates a continuous open plenum above the occupied space. Interior walls in these buildings typically stop at the ceiling grid, not at the structural deck above.
+        </p>
+
+        <p>
+          This means sound travels freely between rooms through the open space above the ceiling. It is not a defect in the building — it is a standard construction practice that works perfectly well for offices where conversations between adjacent rooms are acceptable. For a therapy clinic where controlled auditory environments are a clinical requirement, it is a fundamental problem.
+        </p>
+
+        <h2 class="text-[1.4rem] font-medium text-navy mt-12 mb-4">What an Above-Ceiling Survey Reveals</h2>
+
+        <p>
+          An above-ceiling survey of a prospective or existing ABA clinic space documents the conditions that are invisible from the occupied room below. The survey captures the height of the structural deck above the ceiling grid, whether existing partition walls extend to the deck or terminate at the grid, the routing and size of HVAC ductwork through the plenum, the locations of fire dampers and fire-stopping, and the type and condition of ceiling tiles and grid system.
+        </p>
+
+        <p>
+          This data gives the architect and acoustic consultant the information they need to specify appropriate acoustic treatments: full-height wall extensions where needed, acoustic batt insulation in the plenum, duct lining or silencers on HVAC branches serving therapy rooms, and upgraded ceiling tile with higher sound attenuation ratings. Without this documentation, these specifications are based on assumptions — and assumptions in acoustic design produce rooms that do not perform.
+        </p>
+
+        <h2 class="text-[1.4rem] font-medium text-navy mt-12 mb-4">HVAC: Capacity, Noise, and Zoning</h2>
+
+        <p>
+          The HVAC system in a commercial space serves two roles in an ABA clinic: environmental comfort and acoustic environment. A system that adequately heats and cools the space may still be unacceptable if it generates noise levels that interfere with therapy sessions.
+        </p>
+
+        <p>
+          Documenting the existing HVAC system involves capturing the type and condition of the air handling unit, supply and return duct routing through the space, diffuser types and locations in each room, thermostat zoning (can individual rooms be controlled separately?), and the overall system capacity relative to the planned clinic occupancy. This documentation allows the mechanical engineer to design a system that serves the clinic's thermal needs while meeting the acoustic requirements of the therapy programme.
+        </p>
+
+        <h2 class="text-[1.4rem] font-medium text-navy mt-12 mb-4">The Cost of Getting It Wrong</h2>
+
+        <p>
+          Acoustic remediation after construction is dramatically more expensive than acoustic specification during design. Extending walls to the deck after the space is occupied requires moving ceiling tiles, working around installed ductwork and lighting, and often relocating sprinkler heads. Adding duct silencers after the HVAC system is commissioned may require rebalancing the entire system. These are $20,000 to $50,000 problems in a single clinic — problems that a $2,000 pre-construction survey would have identified and resolved during the design phase.
+        </p>
+
+        <!-- FAQ Accordion -->
+        <div class="mt-16 pt-8 border-t border-border">
+          <h2 class="text-[1.4rem] font-medium text-navy mb-6">Frequently Asked Questions</h2>
+          <div class="space-y-4" id="faq-accordion">
+            <details class="group border border-border rounded-lg">
+              <summary class="flex justify-between items-center cursor-pointer p-4 text-navy font-medium">
+                Why is HVAC documentation important for ABA clinics?
+                <span class="ml-2 transition-transform group-open:rotate-45">+</span>
+              </summary>
+              <div class="px-4 pb-4 text-darkgrey text-[0.95rem] leading-body">
+                ABA therapy sessions require controlled environments with minimal auditory distraction. HVAC systems generate noise that can compete with the therapist's voice, directly undermining the controlled stimulus environment that effective therapy depends on.
+              </div>
+            </details>
+            <details class="group border border-border rounded-lg">
+              <summary class="flex justify-between items-center cursor-pointer p-4 text-navy font-medium">
+                What acoustic issues are most common between therapy rooms?
+                <span class="ml-2 transition-transform group-open:rotate-45">+</span>
+              </summary>
+              <div class="px-4 pb-4 text-darkgrey text-[0.95rem] leading-body">
+                Sound transmission through shared ceiling plenums is the most common issue. Interior partition walls in commercial spaces typically stop at the ceiling grid, not the structural deck, allowing sound to travel freely between adjacent rooms.
+              </div>
+            </details>
+            <details class="group border border-border rounded-lg">
+              <summary class="flex justify-between items-center cursor-pointer p-4 text-navy font-medium">
+                Can above-ceiling documentation identify acoustic problems?
+                <span class="ml-2 transition-transform group-open:rotate-45">+</span>
+              </summary>
+              <div class="px-4 pb-4 text-darkgrey text-[0.95rem] leading-body">
+                Yes. An above-ceiling survey documents partition wall heights, ductwork routing, and structural deck height — revealing whether acoustic separation exists or whether sound can travel freely between rooms through the open plenum.
+              </div>
+            </details>
+            <details class="group border border-border rounded-lg">
+              <summary class="flex justify-between items-center cursor-pointer p-4 text-navy font-medium">
+                What HVAC capacity does an ABA clinic require?
+                <span class="ml-2 transition-transform group-open:rotate-45">+</span>
+              </summary>
+              <div class="px-4 pb-4 text-darkgrey text-[0.95rem] leading-body">
+                ABA clinics operate at higher occupancy densities than standard offices. The HVAC system must handle multiple therapist-client pairs in individual rooms plus observation and staff spaces while maintaining temperature, air quality, and acceptable noise levels.
+              </div>
+            </details>
+          </div>
+        </div>
+
+        <p class="mt-12 text-[0.85rem] text-midgrey/60 italic">
+          Alturascope provides <a href="/services/aba-autism-clinic-documentation" class="hover:opacity-80 transition-opacity">HVAC and acoustic documentation for ABA clinics</a> including above-ceiling surveys, across the United States and Canada.
+        </p>
+
+        <div class="mt-12 pt-8 border-t border-border flex flex-wrap gap-6 text-sm">
+          <a href="/services/aba-autism-clinic-documentation" class="text-navy font-medium hover:opacity-80 transition-opacity">ABA clinic documentation &rarr;</a>
+          <a href="/insights/aba-clinic-sensory-room-design-documentation" class="text-navy font-medium hover:opacity-80 transition-opacity">Sensory room documentation &rarr;</a>
+          <a href="/insights/aba-clinic-lease-evaluation-site-survey" class="text-navy font-medium hover:opacity-80 transition-opacity">Pre-lease surveys &rarr;</a>
+          <a href="/insights/above-ceiling-mep-survey-fit-out" class="text-navy font-medium hover:opacity-80 transition-opacity">Above-ceiling MEP surveys &rarr;</a>
+          <a href="/insights" class="text-navy font-medium hover:opacity-80 transition-opacity">All insights &rarr;</a>
+        </div>
+
+      </div>
+    </article>
+
+    <section class="bg-navy py-20">
+      <div class="max-w-[600px] mx-auto px-6 text-center">
+        <h2 class="text-[1.8rem] font-light text-offwhite leading-snug">
+          Need HVAC and acoustic documentation for your ABA clinic?
+        </h2>
+        <p class="mt-4 text-offwhite/70 leading-body">
+          Share the location and what you are planning. We will confirm the right survey scope and return an all-in quote within one business day.
+        </p>
+        <a href="/contact" class="btn-primary mt-8">Start a Project</a>
+      </div>
+    </section>
+
+  </div>
+</Layout>
