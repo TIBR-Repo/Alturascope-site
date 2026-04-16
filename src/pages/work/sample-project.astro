@@ -1,0 +1,918 @@
+---
+import Layout from "../../layouts/Layout.astro";
+
+const project = {
+  name: "Austin Downtown — Pre-Fit-Out Survey",
+  address: "412 E 6th Street, Austin, TX 78701",
+  client: "Pulp & Press Co.",
+  surveyDate: "March 2026",
+  surveyor: "Alturascope Central US",
+};
+
+// Rooms — ordered as they appear during a standard walkthrough
+const rooms = [
+  {
+    id: "room-foh",
+    name: "Front of House — Dining",
+    type: "Customer-facing",
+    summary:
+      "Primary dining and queue area with full-height storefront glazing to 6th Street. Existing ceiling is exposed structure painted matte black with surface-mounted track lighting. Three tenants preceded the current vacancy; legacy millwork has been removed and the slab is exposed.",
+    measurements: { width: "34' 2\"", length: "22' 6\"", ceiling: "11' 4\" AFF", area: "769 sq ft" },
+    finishes: { floor: "Sealed concrete — original slab", ceiling: "Exposed structure, matte black", walls: "Painted gypsum, 2 coats neutral" },
+    photos: [
+      { src: "/Images/site-interior-1.jpg", label: "North elevation — storefront glazing" },
+      { src: "/Images/site-inside.jpg", label: "East wall toward service counter" },
+      { src: "/Images/site-interior-2.jpg", label: "South wall — queue line" },
+      { src: "/Images/site-interior-3.jpg", label: "Ceiling — structure and track lighting" },
+      { src: "/Images/plan-1.jpg", label: "Overlay — dimensions annotated" },
+    ],
+    system: null,
+  },
+  {
+    id: "room-counter",
+    name: "Service Counter & Order Point",
+    type: "Customer-facing",
+    summary:
+      "Service counter runs the full east wall. Existing soffit conceals supply ductwork; we opened three access panels on the north face to confirm routing and duct size (see Above-Ceiling section). POS power circuits run from the panel in the Electrical/IT room through a dedicated conduit above ceiling.",
+    measurements: { width: "18' 0\"", length: "12' 6\"", ceiling: "9' 0\" AFF soffit", area: "225 sq ft" },
+    finishes: { floor: "Quarry tile, beige — reusable", ceiling: "GWB soffit, painted", walls: "FRP panel to 4' on working face" },
+    photos: [
+      { src: "/Images/site-with-studs.png", label: "Counter framing — east elevation" },
+      { src: "/Images/whatsapp-site-photo.jpg", label: "Soffit access panel #1 — ducting visible" },
+      { src: "/Images/clean-site.png", label: "Floor — quarry tile condition" },
+    ],
+    system: null,
+  },
+  {
+    id: "room-kitchen",
+    name: "Prep Kitchen — Back of House",
+    type: "Operational",
+    summary:
+      "Active prep kitchen with existing 9-foot Type I hood on the east wall. Make-up air routed through rooftop unit RTU-2 (see HVAC schedule). Grease trap is below slab at the south-east corner — location confirmed with landlord drawings and probe. Floor drains are epoxy-sealed and in good condition. Three-compartment sink on north wall is serviceable; recommended for reuse.",
+    measurements: { width: "18' 4\"", length: "24' 0\"", ceiling: "10' 2\" AFF", area: "440 sq ft" },
+    finishes: { floor: "Epoxy coating, sloped to drains", ceiling: "Vinyl-clad gypsum tile", walls: "FRP panel, full height" },
+    photos: [
+      { src: "/commercial-kitchen-work.jpg", label: "North wall — three-compartment sink" },
+      { src: "/Images/hvac.jpg", label: "Type I hood — east wall" },
+      { src: "/Images/site-interior-3.jpg", label: "West wall — prep table location" },
+      { src: "/Images/site-with-studs.png", label: "Hood exhaust rise — ceiling penetration" },
+    ],
+    system:
+      "Type I hood: 9'-0\" wide, 48\" deep canopy. Stainless, in-line Ansul R-102. Exhaust rises through ceiling to rooftop fan EF-1 (2,400 CFM nameplate). Make-up air from RTU-2. Control panel at east wall adjacent to hood; interlock confirmed functional.",
+  },
+  {
+    id: "room-walkin",
+    name: "Walk-in Cooler / Freezer",
+    type: "Operational",
+    summary:
+      "Paired walk-in units on the west wall. Cooler (8' × 10') and freezer (6' × 8') share a common vestibule. Condenser units are rooftop-mounted (see HVAC schedule). Existing panels are in serviceable condition with minor gasket wear on the cooler door — recommended replacement rather than full unit.",
+    measurements: { width: "14' 0\"", length: "10' 0\"", ceiling: "8' 6\" AFF", area: "140 sq ft" },
+    finishes: { floor: "Aluminium diamond plate over insulated slab", ceiling: "Insulated metal panel", walls: "Insulated metal panel, 4\"" },
+    photos: [
+      { src: "/Images/attic.jpg", label: "Cooler interior — shelving" },
+      { src: "/Images/site-interior-2.jpg", label: "Vestibule looking toward freezer" },
+      { src: "/Images/whatsapp-site-photo.jpg", label: "Cooler door gasket — wear visible" },
+    ],
+    system:
+      "Cooler: 8' × 10' × 8'-6\" clear. Evap coil IMP-1, rooftop condenser CU-1 (nameplate R-448A, 1.5 HP). Freezer: 6' × 8' × 8'-6\" clear. Evap coil IMP-2, rooftop condenser CU-2 (2 HP). Control panel in vestibule. Both units tested and operating at setpoint during survey.",
+  },
+  {
+    id: "room-electrical",
+    name: "Electrical & IT Room",
+    type: "Back-of-house utility",
+    summary:
+      "Combined electrical / IT closet at the south-west corner. Main service is 400A, 208Y/120V, 3-phase, 4-wire. Existing panel schedule confirms 72 poles total with approximately 35% current spare capacity — sufficient for the proposed new menu without a service upgrade. Fiber drop terminates here from the landlord IDF.",
+    measurements: { width: "6' 0\"", length: "8' 0\"", ceiling: "9' 0\" AFF", area: "48 sq ft" },
+    finishes: { floor: "Sealed concrete", ceiling: "Exposed structure", walls: "Painted CMU" },
+    photos: [
+      { src: "/Images/fire-safety.jpg", label: "Panel MP-1 — deadfront" },
+      { src: "/Images/whatsapp-site-photo.jpg", label: "Panel MP-1 — schedule label" },
+      { src: "/Images/site-interior-1.jpg", label: "IT rack — landlord fiber drop" },
+    ],
+    system:
+      "Main service: 400A, 208Y/120V, 3-ph, 4-wire. Panel MP-1: 72 poles, ~35% spare capacity. Panel LP-1 (BOH): 42 poles, ~20% spare. Surge protection present at main. No ground-fault deficiencies observed. Recommend thermal imaging at connection points prior to tenant improvement work — see Thermal Imaging section.",
+  },
+  {
+    id: "room-above-ceiling",
+    name: "Above-Ceiling Plenum",
+    type: "Concealed space",
+    summary:
+      "Concealed space above the suspended ceiling grid is fully accessible. Structure is open-web steel joist at 4' o.c. with corrugated deck above. Fire separation between tenant bay and the corridor is rated and intact. See the Above-Ceiling Survey section below for a complete inventory.",
+    measurements: { width: "—", length: "—", ceiling: "6' 2\" to deck (varies)", area: "—" },
+    finishes: { floor: "—", ceiling: "Corrugated deck", walls: "Party wall — rated gypsum, type X" },
+    photos: [
+      { src: "/above-ceiling-survey.jpg", label: "Grid D — HVAC trunk line" },
+      { src: "/Images/attic.jpg", label: "Grid B — sprinkler main" },
+      { src: "/Images/site-with-studs.png", label: "Party wall — rated assembly" },
+      { src: "/Images/hvac.jpg", label: "Grid F — electrical junction box" },
+    ],
+    system:
+      "Clear height from ceiling grid to underside of deck ranges 5'-8\" to 6'-2\" depending on joist depth. Structural deflection capacity confirmed for planned new loads (branded pendant lighting, additional signage). Full photographic record in Above-Ceiling Survey below.",
+  },
+];
+
+const aboveCeilingPhotos = [
+  { src: "/above-ceiling-survey.jpg", label: "Grid A — main supply duct, 18×12 trunk" },
+  { src: "/Images/hvac.jpg", label: "Grid B — 4\" sprinkler main, clamp hanger" },
+  { src: "/Images/attic.jpg", label: "Grid C — party wall, rated gypsum assembly" },
+  { src: "/Images/site-with-studs.png", label: "Grid D — electrical J-box, existing circuit" },
+  { src: "/Images/fire-safety.jpg", label: "Grid E — smoke detector, interconnect" },
+  { src: "/Images/whatsapp-site-photo.jpg", label: "Grid F — grease exhaust rise from hood" },
+];
+
+const equipmentReuse = [
+  { id: "EQ-01", item: "Type I hood canopy, 9'-0\"", make: "CaptiveAire", model: "5424ND-2", qty: 1, condition: "Serviceable", recommendation: "Reuse" },
+  { id: "EQ-02", item: "Ansul R-102 wet chemical system", make: "Ansul", model: "R-102", qty: 1, condition: "Due for service", recommendation: "Reuse — service before turnover" },
+  { id: "EQ-03", item: "Three-compartment sink", make: "Advance Tabco", model: "93-3-54", qty: 1, condition: "Serviceable", recommendation: "Reuse" },
+  { id: "EQ-04", item: "Hand sink, wall-mount", make: "Krowne", model: "HS-20", qty: 2, condition: "Serviceable", recommendation: "Reuse" },
+  { id: "EQ-05", item: "Walk-in cooler box, 8×10", make: "Nor-Lake", model: "KLB8X10", qty: 1, condition: "Minor gasket wear", recommendation: "Reuse — replace gaskets" },
+  { id: "EQ-06", item: "Walk-in freezer box, 6×8", make: "Nor-Lake", model: "KLF6X8", qty: 1, condition: "Serviceable", recommendation: "Reuse" },
+  { id: "EQ-07", item: "Floor drains, 2\" with trap", make: "Zurn", model: "Z415", qty: 4, condition: "Serviceable", recommendation: "Reuse" },
+  { id: "EQ-08", item: "Grease trap, under-slab", make: "Rockford", model: "G-50-SA", qty: 1, condition: "Service verified", recommendation: "Reuse" },
+  { id: "EQ-09", item: "POS counter, quartz top", make: "Site-built", model: "—", qty: 1, condition: "Obsolete layout", recommendation: "Remove" },
+  { id: "EQ-10", item: "Track lighting, FOH", make: "Juno", model: "T256", qty: 14, condition: "Functional", recommendation: "Remove — new brand package" },
+  { id: "EQ-11", item: "Quarry tile floor, FOH counter", make: "Daltile", model: "Q41", qty: "225 sf", condition: "Serviceable", recommendation: "Reuse" },
+  { id: "EQ-12", item: "Fire extinguishers, ABC", make: "Amerex", model: "B402", qty: 3, condition: "Tagged — current", recommendation: "Reuse" },
+];
+
+const hvac = [
+  { tag: "RTU-1", type: "Rooftop packaged unit", tonnage: "5 ton", age: "~8 yrs", refrigerant: "R-410A", serves: "FOH dining", condition: "Serviceable", recommendation: "Retain — service filters" },
+  { tag: "RTU-2", type: "Rooftop packaged unit with MUA", tonnage: "4 ton + 1,800 CFM MUA", age: "~6 yrs", refrigerant: "R-410A", serves: "Prep kitchen", condition: "Serviceable", recommendation: "Retain — interlock to hood confirmed" },
+  { tag: "CU-1", type: "Condensing unit, walk-in cooler", tonnage: "1.5 HP", age: "~4 yrs", refrigerant: "R-448A", serves: "Walk-in cooler", condition: "Good", recommendation: "Retain" },
+  { tag: "CU-2", type: "Condensing unit, walk-in freezer", tonnage: "2 HP", age: "~4 yrs", refrigerant: "R-448A", serves: "Walk-in freezer", condition: "Good", recommendation: "Retain" },
+  { tag: "EF-1", type: "Rooftop exhaust fan, grease duct", tonnage: "2,400 CFM", age: "~8 yrs", refrigerant: "—", serves: "Type I hood", condition: "Serviceable — clean prior to turnover", recommendation: "Retain" },
+];
+
+const thermalFindings = [
+  {
+    id: "TH-01",
+    severity: "P2 — Monitor",
+    location: "Panel MP-1, main breaker lug",
+    finding: "Elevated thermal signature at line-side lug of the 400A main breaker. 14°F above ambient compared to adjacent connections. Not a failure, but outside the baseline we'd expect for a panel of this age.",
+    photo: "/Images/fire-safety.jpg",
+    label: "MP-1 — thermal overlay, line-side lug",
+  },
+  {
+    id: "TH-02",
+    severity: "P3 — Note",
+    location: "Prep kitchen ceiling, south-east corner",
+    finding: "Small cool spot consistent with minor condensation below the insulated duct elbow at the rise to the hood exhaust. Not a leak. Recommend wrap inspection during TI works.",
+    photo: "/Images/attic.jpg",
+    label: "Ceiling — cool spot at duct elbow",
+  },
+];
+
+const drawings = [
+  { name: "Existing Conditions — Floor Plan", format: "PDF", pages: 1, size: "1.8 MB" },
+  { name: "Existing Conditions — Reflected Ceiling Plan", format: "PDF", pages: 1, size: "1.4 MB" },
+  { name: "MEP Overlay — Above-Ceiling Survey", format: "PDF", pages: 2, size: "2.6 MB" },
+  { name: "Equipment Schedule — Reuse / Remove", format: "XLSX", pages: "—", size: "48 KB" },
+  { name: "Thermal Imaging Findings", format: "PDF", pages: 3, size: "4.2 MB" },
+  { name: "Point Cloud Extract — FOH", format: "E57", pages: "—", size: "312 MB" },
+];
+
+const comments = [
+  {
+    author: "Marcus Lee",
+    role: "Project Architect",
+    team: true,
+    when: "2 days ago",
+    body: "Note for the MEP consultant — panel MP-1 has ~35% spare at 400A. The new menu load calc (attached in schedule) stays within that. Good to proceed without a service upgrade.",
+    replies: [
+      {
+        author: "Sonia Bhatt",
+        role: "MEP Lead — Contractor",
+        team: false,
+        when: "1 day ago",
+        body: "Cross-referenced with our preliminary load schedule. Agreed — no upgrade needed. We'll add the juicer station on a dedicated 20A circuit from panel LP-1.",
+      },
+    ],
+  },
+  {
+    author: "Riley Chen",
+    role: "Alturascope — Site Lead",
+    team: true,
+    when: "3 days ago",
+    body: "Heads up: the grease trap is below slab at the south-east corner of the prep kitchen — probe location marked in the E57 extract. Coordinate with the plumbing sub before demo so we don't cut a core over it.",
+    replies: [],
+  },
+  {
+    author: "Alex Rivera",
+    role: "Pulp & Press — Design",
+    team: false,
+    when: "4 days ago",
+    body: "Can we get a dimensional confirmation on the soffit at the service counter? The menu board design assumes 9'-0\" AFF and we want to double-check before we commit the fabrication order.",
+    replies: [
+      {
+        author: "Riley Chen",
+        role: "Alturascope — Site Lead",
+        team: true,
+        when: "4 days ago",
+        body: "Confirmed — 9'-0\" AFF at the soffit face, consistent across the full counter run. Point cloud extract will let your fabricator take off any additional dimensions without a return visit.",
+      },
+    ],
+  },
+];
+
+const totalPhotos = rooms.reduce((acc, r) => acc + r.photos.length, 0) + aboveCeilingPhotos.length + thermalFindings.length;
+
+const navSections = [
+  { id: "overview", label: "Overview" },
+  { id: "site-discussion", label: "Site Discussion" },
+  { id: "aerial", label: "Aerial / Drone" },
+  { id: "tour", label: "3D Tour" },
+  { id: "rooms", label: "Rooms & Spaces" },
+  { id: "above-ceiling", label: "Above-Ceiling" },
+  { id: "equipment", label: "Equipment Schedule" },
+  { id: "hvac", label: "HVAC Schedule" },
+  { id: "thermal", label: "Thermal Imaging" },
+  { id: "drawings", label: "Drawings" },
+  { id: "media", label: "External Media" },
+  { id: "comments", label: "Questions & Comments" },
+];
+---
+<Layout
+  title="Sample ScopeWalk Project — Alturascope"
+  description="Explore an interactive sample of the ScopeWalk deliverable Alturascope produces on every site visit — rooms, measurements, photographs, equipment schedules, and more."
+  canonical="https://alturascope.com/work/sample-project/"
+  robots="noindex, follow"
+  fullWidth={true}
+  minimalChrome={true}
+>
+  <div class="sw-root bg-[#FBF8F3] text-[#3A3630] min-h-screen">
+
+    <!-- Guest banner (sticky) -->
+    <div class="sticky top-0 z-40 bg-gradient-to-r from-[#EE7B1A] to-[#CC620A] text-white shadow-md">
+      <div class="max-w-[1200px] mx-auto px-4 sm:px-6 py-2.5 flex items-center justify-between gap-3">
+        <div class="flex items-center gap-2.5 min-w-0">
+          <svg class="w-4 h-4 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/>
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"/>
+          </svg>
+          <span class="text-xs sm:text-sm font-medium truncate">
+            <span class="font-semibold">Sample project</span>
+            <span class="hidden sm:inline opacity-90"> — this is an interactive demo of the ScopeWalk deliverable.</span>
+          </span>
+        </div>
+        <a href="/" class="text-xs font-semibold whitespace-nowrap hover:underline underline-offset-4">&larr; Alturascope</a>
+      </div>
+    </div>
+
+    <!-- Project header -->
+    <header id="overview" class="scroll-mt-20 max-w-[1200px] mx-auto px-4 sm:px-6 pt-6 sm:pt-10 pb-4">
+      <div class="bg-white rounded-2xl shadow-sm border border-[#E9E0CD] overflow-hidden">
+        <div class="p-5 sm:p-8">
+          <div class="flex flex-col lg:flex-row lg:items-start lg:justify-between gap-6">
+            <div class="min-w-0">
+              <p class="text-[11px] font-semibold tracking-[0.18em] uppercase text-[#CC620A] mb-2">ScopeWalk Project</p>
+              <h1 class="text-2xl sm:text-3xl lg:text-[2.1rem] font-semibold text-[#1C1A17] leading-tight">{project.name}</h1>
+              <div class="mt-3 flex items-start gap-2 text-[#504B43]">
+                <svg class="w-4 h-4 flex-shrink-0 mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/>
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/>
+                </svg>
+                <span class="text-sm">{project.address}</span>
+              </div>
+              <p class="text-sm text-[#6F6A61] mt-1">Client: <span class="text-[#3A3630] font-medium">{project.client}</span></p>
+            </div>
+
+            <!-- Quick stats -->
+            <div class="grid grid-cols-4 gap-2 sm:gap-3 lg:gap-4 lg:flex-shrink-0">
+              <div class="bg-[#F5EFE4] rounded-lg px-3 py-2.5 text-center">
+                <div class="text-base sm:text-lg font-semibold text-[#1C1A17]">{rooms.length}</div>
+                <div class="text-[10px] sm:text-[11px] font-medium uppercase tracking-wider text-[#6F6A61] mt-0.5">Rooms</div>
+              </div>
+              <div class="bg-[#F5EFE4] rounded-lg px-3 py-2.5 text-center">
+                <div class="text-base sm:text-lg font-semibold text-[#1C1A17]">{totalPhotos}</div>
+                <div class="text-[10px] sm:text-[11px] font-medium uppercase tracking-wider text-[#6F6A61] mt-0.5">Photos</div>
+              </div>
+              <div class="bg-[#F5EFE4] rounded-lg px-3 py-2.5 text-center">
+                <div class="text-base sm:text-lg font-semibold text-[#1C1A17]">1,622</div>
+                <div class="text-[10px] sm:text-[11px] font-medium uppercase tracking-wider text-[#6F6A61] mt-0.5">Sq ft</div>
+              </div>
+              <div class="bg-[#F5EFE4] rounded-lg px-3 py-2.5 text-center">
+                <div class="text-base sm:text-lg font-semibold text-[#1C1A17]">1</div>
+                <div class="text-[10px] sm:text-[11px] font-medium uppercase tracking-wider text-[#6F6A61] mt-0.5">Visit</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="mt-6 pt-5 border-t border-[#EDE5D7] flex flex-wrap items-center gap-x-5 gap-y-2 text-xs sm:text-sm text-[#6F6A61]">
+            <span><span class="text-[#504B43] font-medium">Surveyed:</span> {project.surveyDate}</span>
+            <span><span class="text-[#504B43] font-medium">By:</span> {project.surveyor}</span>
+            <span class="flex items-center gap-1.5"><span class="w-1.5 h-1.5 rounded-full bg-emerald-500"></span>Deliverable issued</span>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <!-- Main layout: sidebar + content -->
+    <div class="max-w-[1200px] mx-auto px-4 sm:px-6 pb-12">
+      <div class="lg:grid lg:grid-cols-[220px_minmax(0,1fr)] lg:gap-8">
+
+        <!-- Sticky section nav (desktop) -->
+        <aside class="hidden lg:block">
+          <nav aria-label="Sections" class="sticky top-20 pt-4">
+            <p class="text-[10px] font-semibold uppercase tracking-[0.18em] text-[#9A938A] mb-3 px-3">Jump to</p>
+            <ul class="flex flex-col gap-1 text-sm" id="sw-side-nav">
+              {navSections.map((s) => (
+                <li>
+                  <a href={`#${s.id}`} data-nav-link data-target={s.id} class="sw-nav-link block px-3 py-1.5 rounded-md text-[#504B43] hover:text-[#1C1A17] hover:bg-[#F5EFE4] transition-colors">
+                    {s.label}
+                  </a>
+                </li>
+              ))}
+            </ul>
+          </nav>
+        </aside>
+
+        <!-- Mobile section pills -->
+        <nav aria-label="Sections" class="lg:hidden -mx-4 sm:-mx-6 px-4 sm:px-6 overflow-x-auto mb-4">
+          <ul class="flex gap-2 whitespace-nowrap pb-1">
+            {navSections.map((s) => (
+              <li>
+                <a href={`#${s.id}`} class="inline-block px-3 py-1.5 rounded-full text-xs font-medium bg-white border border-[#E9E0CD] text-[#504B43] hover:border-[#EE7B1A] hover:text-[#CC620A] transition-colors">
+                  {s.label}
+                </a>
+              </li>
+            ))}
+          </ul>
+        </nav>
+
+        <!-- Content -->
+        <div class="space-y-6">
+
+          <!-- Site Discussion -->
+          <section id="site-discussion" class="scroll-mt-20 bg-white rounded-2xl shadow-sm border border-[#E9E0CD] overflow-hidden">
+            <div class="px-5 sm:px-6 py-4 border-b border-[#EDE5D7] bg-[#FFF8EC] flex items-center gap-2.5">
+              <svg class="w-5 h-5 text-amber-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg>
+              <h2 class="text-base sm:text-lg font-semibold text-[#1C1A17]">Site Discussion</h2>
+            </div>
+            <div class="p-5 sm:p-6 grid md:grid-cols-2 gap-5">
+              <div>
+                <h4 class="text-xs font-semibold uppercase tracking-wider text-[#6F6A61] mb-1.5">TI Information</h4>
+                <p class="text-sm text-[#504B43] leading-relaxed">Tenant improvement budget approved. Landlord has provided as-built drawings from 2018 with annotations from the prior tenant's 2022 lease-end survey. All drawings attached to this deliverable.</p>
+              </div>
+              <div>
+                <h4 class="text-xs font-semibold uppercase tracking-wider text-[#6F6A61] mb-1.5">Preferred Vendors</h4>
+                <p class="text-sm text-[#504B43] leading-relaxed">Landlord requests use of their roofing contractor (BuildUp Roofing) for any rooftop penetrations. Electrical and plumbing vendor selection is tenant's choice, subject to licensing verification.</p>
+              </div>
+              <div>
+                <h4 class="text-xs font-semibold uppercase tracking-wider text-[#6F6A61] mb-1.5">Building Mandates</h4>
+                <p class="text-sm text-[#504B43] leading-relaxed">After-hours work permitted 7pm–7am weekdays and all day weekends. Freight elevator access coordinated via property management with 48-hour notice. Historic district façade restrictions apply to signage — see addendum.</p>
+              </div>
+              <div>
+                <h4 class="text-xs font-semibold uppercase tracking-wider text-[#6F6A61] mb-1.5">Garbage / Debris</h4>
+                <p class="text-sm text-[#504B43] leading-relaxed">Shared dumpster in the rear service alley (accessed off Red River). Construction debris requires separate roll-off — coordinate with property management. No curbside staging permitted on 6th Street.</p>
+              </div>
+            </div>
+          </section>
+
+          <!-- Aerial -->
+          <section id="aerial" class="scroll-mt-20 bg-white rounded-2xl shadow-sm border border-[#E9E0CD] overflow-hidden">
+            <div class="px-5 sm:px-6 py-4 border-b border-[#EDE5D7] bg-[#F5EFE4] flex items-center justify-between gap-3">
+              <div class="flex items-center gap-2.5">
+                <svg class="w-5 h-5 text-[#504B43]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 10l1.5 10h15L21 10M3 10l2-7h14l2 7M3 10h18M8 14h8"/></svg>
+                <h2 class="text-base sm:text-lg font-semibold text-[#1C1A17]">Aerial / Drone</h2>
+              </div>
+              <span class="text-xs text-[#6F6A61] hidden sm:inline">Captured at 120' AGL — FAA Part 107</span>
+            </div>
+            <div class="p-3 sm:p-4">
+              <button type="button" class="sw-lightbox-trigger w-full block rounded-xl overflow-hidden relative group" data-src="/Images/drone-shot-1.jpg" data-label="Site aerial — 6th Street elevation">
+                <img src="/Images/drone-shot-1.jpg" alt="Aerial drone capture of the site showing 6th Street frontage and surrounding context" class="w-full aspect-[16/9] object-cover group-hover:opacity-95 transition-opacity" loading="lazy"/>
+                <div class="absolute inset-x-0 bottom-0 p-3 bg-gradient-to-t from-black/60 to-transparent text-white text-xs sm:text-sm text-left">
+                  <span class="font-medium">Site aerial — 6th Street elevation</span>
+                </div>
+              </button>
+              <p class="mt-3 text-xs sm:text-sm text-[#6F6A61] px-2">
+                Rooftop condition, HVAC unit locations, adjacent structures and service-alley access all captured in a single flight. A second flight captured the east elevation for landlord coordination.
+              </p>
+            </div>
+          </section>
+
+          <!-- 3D Tour -->
+          <section id="tour" class="scroll-mt-20 bg-white rounded-2xl shadow-sm border border-[#E9E0CD] overflow-hidden">
+            <div class="px-5 sm:px-6 py-4 border-b border-[#EDE5D7] bg-[#F5EFE4] flex items-center gap-2.5">
+              <svg class="w-5 h-5 text-[#504B43]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 7.5l-9-5.25L3 7.5m18 0l-9 5.25m9-5.25v9l-9 5.25M3 7.5l9 5.25M3 7.5v9l9 5.25m0-9v9"/></svg>
+              <h2 class="text-base sm:text-lg font-semibold text-[#1C1A17]">3D Tour — Matterport</h2>
+            </div>
+            <div class="p-3 sm:p-4">
+              <div class="relative w-full rounded-xl overflow-hidden bg-[#EDE5D7]" style="aspect-ratio: 16/9;">
+                <iframe
+                  data-src="https://my.matterport.com/show/?m=SxQL3iGyoDo"
+                  width="100%"
+                  height="100%"
+                  style="border: none; position: absolute; inset: 0;"
+                  allowfullscreen
+                  allow="xr-spatial-tracking"
+                  loading="lazy"
+                  title="ScopeWalk sample — navigable digital twin"
+                ></iframe>
+              </div>
+              <p class="mt-3 text-xs sm:text-sm text-[#6F6A61] px-2">
+                Navigate using mouse or touch. Every room, every surface, every measurement — accessible without returning to site.
+              </p>
+            </div>
+          </section>
+
+          <!-- Rooms & Spaces -->
+          <section id="rooms" class="scroll-mt-20 space-y-4">
+            <div class="flex items-baseline justify-between px-1 pt-2">
+              <h2 class="text-base sm:text-lg font-semibold text-[#1C1A17]">Rooms &amp; Spaces</h2>
+              <span class="text-xs text-[#6F6A61]">{rooms.length} rooms documented</span>
+            </div>
+
+            {rooms.map((room, idx) => (
+              <article id={room.id} class="scroll-mt-20 bg-white rounded-2xl shadow-sm border border-[#E9E0CD] overflow-hidden">
+                <div class="px-5 sm:px-6 py-4 border-b border-[#EDE5D7] bg-[#F5EFE4] flex items-start justify-between gap-3">
+                  <div class="min-w-0">
+                    <div class="flex items-center gap-2 text-[11px] text-[#6F6A61] font-medium uppercase tracking-wider mb-0.5">
+                      <span class="inline-flex items-center justify-center w-5 h-5 rounded-full bg-white border border-[#E9E0CD] text-[#504B43] text-[10px] font-semibold">{idx + 1}</span>
+                      <span>{room.type}</span>
+                    </div>
+                    <h3 class="text-base sm:text-lg font-semibold text-[#1C1A17]">{room.name}</h3>
+                  </div>
+                  <button type="button" class="sw-room-toggle text-xs font-medium text-[#CC620A] hover:text-[#B25508] px-2 py-1 rounded hover:bg-white/60 transition-colors flex items-center gap-1" aria-expanded="true">
+                    <span class="sw-toggle-label">Collapse</span>
+                    <svg class="w-3.5 h-3.5 sw-toggle-icon transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+                  </button>
+                </div>
+
+                <div class="sw-room-body p-5 sm:p-6 space-y-5">
+                  <div>
+                    <h4 class="text-xs font-semibold uppercase tracking-wider text-[#6F6A61] mb-1.5">Summary</h4>
+                    <p class="text-sm text-[#504B43] leading-relaxed">{room.summary}</p>
+                  </div>
+
+                  <div>
+                    <h4 class="text-xs font-semibold uppercase tracking-wider text-[#6F6A61] mb-2">Measurements</h4>
+                    <div class="grid grid-cols-2 sm:grid-cols-4 gap-2.5">
+                      <div class="bg-[#FBF8F3] border border-[#EDE5D7] rounded-lg p-3">
+                        <span class="text-[10px] uppercase tracking-wider text-[#9A938A] font-semibold block">Width</span>
+                        <span class="text-sm font-semibold text-[#1C1A17]">{room.measurements.width}</span>
+                      </div>
+                      <div class="bg-[#FBF8F3] border border-[#EDE5D7] rounded-lg p-3">
+                        <span class="text-[10px] uppercase tracking-wider text-[#9A938A] font-semibold block">Length</span>
+                        <span class="text-sm font-semibold text-[#1C1A17]">{room.measurements.length}</span>
+                      </div>
+                      <div class="bg-[#FBF8F3] border border-[#EDE5D7] rounded-lg p-3">
+                        <span class="text-[10px] uppercase tracking-wider text-[#9A938A] font-semibold block">Ceiling</span>
+                        <span class="text-sm font-semibold text-[#1C1A17]">{room.measurements.ceiling}</span>
+                      </div>
+                      <div class="bg-[#FBF8F3] border border-[#EDE5D7] rounded-lg p-3">
+                        <span class="text-[10px] uppercase tracking-wider text-[#9A938A] font-semibold block">Area</span>
+                        <span class="text-sm font-semibold text-[#1C1A17]">{room.measurements.area}</span>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div>
+                    <h4 class="text-xs font-semibold uppercase tracking-wider text-[#6F6A61] mb-2">Finishes</h4>
+                    <div class="flex flex-wrap gap-2">
+                      <span class="inline-flex items-center px-2.5 py-1 rounded-full text-xs font-medium bg-blue-50 text-blue-800 border border-blue-100">Floor: {room.finishes.floor}</span>
+                      <span class="inline-flex items-center px-2.5 py-1 rounded-full text-xs font-medium bg-purple-50 text-purple-800 border border-purple-100">Ceiling: {room.finishes.ceiling}</span>
+                      <span class="inline-flex items-center px-2.5 py-1 rounded-full text-xs font-medium bg-emerald-50 text-emerald-800 border border-emerald-100">Walls: {room.finishes.walls}</span>
+                    </div>
+                  </div>
+
+                  <div>
+                    <h4 class="text-xs font-semibold uppercase tracking-wider text-[#6F6A61] mb-2 flex items-center justify-between">
+                      <span>Photos <span class="text-[#9A938A] font-normal normal-case tracking-normal">({room.photos.length})</span></span>
+                    </h4>
+                    <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-2 sm:gap-3" data-lightbox-group={room.id}>
+                      {room.photos.map((p) => (
+                        <button type="button" class="sw-lightbox-trigger group relative aspect-square rounded-lg overflow-hidden bg-[#EDE5D7] block text-left" data-src={p.src} data-label={p.label} data-group={room.id}>
+                          <img src={p.src} alt={p.label} class="w-full h-full object-cover group-hover:scale-[1.03] transition-transform duration-300" loading="lazy"/>
+                          <div class="absolute inset-x-0 bottom-0 p-2 bg-gradient-to-t from-black/70 via-black/30 to-transparent text-white text-[11px] leading-tight font-medium">
+                            {p.label}
+                          </div>
+                          <div class="absolute top-2 right-2 w-6 h-6 rounded-full bg-white/90 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity">
+                            <svg class="w-3.5 h-3.5 text-[#1C1A17]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/></svg>
+                          </div>
+                        </button>
+                      ))}
+                    </div>
+                  </div>
+
+                  {room.system && (
+                    <div>
+                      <h4 class="text-xs font-semibold uppercase tracking-wider text-[#6F6A61] mb-1.5">System Summary</h4>
+                      <p class="text-sm text-[#504B43] leading-relaxed whitespace-pre-wrap">{room.system}</p>
+                    </div>
+                  )}
+                </div>
+              </article>
+            ))}
+          </section>
+
+          <!-- Above-Ceiling Survey -->
+          <section id="above-ceiling" class="scroll-mt-20 bg-white rounded-2xl shadow-sm border border-[#E9E0CD] overflow-hidden">
+            <div class="px-5 sm:px-6 py-4 border-b border-[#EDE5D7] bg-[#F5EFE4] flex items-center gap-2.5">
+              <svg class="w-5 h-5 text-[#504B43]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 10h16M4 14h16M4 18h16"/></svg>
+              <h2 class="text-base sm:text-lg font-semibold text-[#1C1A17]">Above-Ceiling Survey</h2>
+            </div>
+            <div class="p-5 sm:p-6 space-y-5">
+              <p class="text-sm text-[#504B43] leading-relaxed">
+                Full photographic record of the concealed space above the suspended ceiling. Each photo is located by grid reference against the existing conditions plan (see Drawings).
+              </p>
+              <div class="grid grid-cols-2 sm:grid-cols-3 gap-3" data-lightbox-group="above-ceiling">
+                {aboveCeilingPhotos.map((p) => (
+                  <button type="button" class="sw-lightbox-trigger group relative aspect-[4/3] rounded-lg overflow-hidden bg-[#EDE5D7] block text-left" data-src={p.src} data-label={p.label} data-group="above-ceiling">
+                    <img src={p.src} alt={p.label} class="w-full h-full object-cover group-hover:scale-[1.03] transition-transform duration-300" loading="lazy"/>
+                    <div class="absolute inset-x-0 bottom-0 p-2 bg-gradient-to-t from-black/70 via-black/30 to-transparent text-white text-[11px] leading-tight font-medium">{p.label}</div>
+                  </button>
+                ))}
+              </div>
+            </div>
+          </section>
+
+          <!-- Equipment Schedule -->
+          <section id="equipment" class="scroll-mt-20 bg-white rounded-2xl shadow-sm border border-[#E9E0CD] overflow-hidden">
+            <div class="px-5 sm:px-6 py-4 border-b border-[#EDE5D7] bg-[#F5EFE4] flex items-center justify-between gap-3">
+              <div class="flex items-center gap-2.5">
+                <svg class="w-5 h-5 text-[#504B43]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 17v-2m3 2v-4m3 4v-6m2 10H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg>
+                <h2 class="text-base sm:text-lg font-semibold text-[#1C1A17]">Equipment Schedule — Reuse / Remove</h2>
+              </div>
+              <span class="text-xs text-[#6F6A61] hidden sm:inline">{equipmentReuse.length} items</span>
+            </div>
+            <div class="overflow-x-auto">
+              <table class="w-full text-sm">
+                <thead class="bg-[#FBF8F3] border-b border-[#EDE5D7]">
+                  <tr class="text-left text-[10px] uppercase tracking-wider text-[#6F6A61] font-semibold">
+                    <th class="px-4 py-2.5">Tag</th>
+                    <th class="px-4 py-2.5">Item</th>
+                    <th class="px-4 py-2.5 hidden md:table-cell">Make / Model</th>
+                    <th class="px-4 py-2.5 hidden sm:table-cell">Qty</th>
+                    <th class="px-4 py-2.5 hidden md:table-cell">Condition</th>
+                    <th class="px-4 py-2.5">Recommendation</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {equipmentReuse.map((e) => (
+                    <tr class="border-b border-[#EDE5D7] last:border-b-0 hover:bg-[#FBF8F3] transition-colors">
+                      <td class="px-4 py-2.5 font-mono text-xs text-[#6F6A61]">{e.id}</td>
+                      <td class="px-4 py-2.5 text-[#3A3630] font-medium">{e.item}</td>
+                      <td class="px-4 py-2.5 text-[#504B43] hidden md:table-cell">{e.make} <span class="text-[#9A938A]">/ {e.model}</span></td>
+                      <td class="px-4 py-2.5 text-[#504B43] hidden sm:table-cell">{e.qty}</td>
+                      <td class="px-4 py-2.5 text-[#504B43] hidden md:table-cell">{e.condition}</td>
+                      <td class="px-4 py-2.5">
+                        <span class={`inline-flex items-center px-2 py-0.5 rounded-full text-xs font-medium ${
+                          e.recommendation.startsWith('Reuse') ? 'bg-emerald-50 text-emerald-800 border border-emerald-100' :
+                          e.recommendation.startsWith('Remove') ? 'bg-rose-50 text-rose-800 border border-rose-100' :
+                          'bg-amber-50 text-amber-800 border border-amber-100'
+                        }`}>{e.recommendation}</span>
+                      </td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
+          </section>
+
+          <!-- HVAC Schedule -->
+          <section id="hvac" class="scroll-mt-20 bg-white rounded-2xl shadow-sm border border-[#E9E0CD] overflow-hidden">
+            <div class="px-5 sm:px-6 py-4 border-b border-[#EDE5D7] bg-[#F5EFE4] flex items-center gap-2.5">
+              <svg class="w-5 h-5 text-[#504B43]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 10h18M3 14h18M7 6v12m10-12v12"/></svg>
+              <h2 class="text-base sm:text-lg font-semibold text-[#1C1A17]">HVAC &amp; Refrigeration Schedule</h2>
+            </div>
+            <div class="overflow-x-auto">
+              <table class="w-full text-sm">
+                <thead class="bg-[#FBF8F3] border-b border-[#EDE5D7]">
+                  <tr class="text-left text-[10px] uppercase tracking-wider text-[#6F6A61] font-semibold">
+                    <th class="px-4 py-2.5">Tag</th>
+                    <th class="px-4 py-2.5">Type</th>
+                    <th class="px-4 py-2.5 hidden md:table-cell">Capacity</th>
+                    <th class="px-4 py-2.5 hidden lg:table-cell">Serves</th>
+                    <th class="px-4 py-2.5 hidden sm:table-cell">Condition</th>
+                    <th class="px-4 py-2.5">Recommendation</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {hvac.map((h) => (
+                    <tr class="border-b border-[#EDE5D7] last:border-b-0 hover:bg-[#FBF8F3] transition-colors">
+                      <td class="px-4 py-2.5 font-mono text-xs text-[#6F6A61]">{h.tag}</td>
+                      <td class="px-4 py-2.5 text-[#3A3630] font-medium">{h.type}</td>
+                      <td class="px-4 py-2.5 text-[#504B43] hidden md:table-cell">{h.tonnage}</td>
+                      <td class="px-4 py-2.5 text-[#504B43] hidden lg:table-cell">{h.serves}</td>
+                      <td class="px-4 py-2.5 text-[#504B43] hidden sm:table-cell">{h.condition}</td>
+                      <td class="px-4 py-2.5 text-[#3A3630]">{h.recommendation}</td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
+          </section>
+
+          <!-- Thermal Imaging -->
+          <section id="thermal" class="scroll-mt-20 bg-white rounded-2xl shadow-sm border border-[#E9E0CD] overflow-hidden">
+            <div class="px-5 sm:px-6 py-4 border-b border-[#EDE5D7] bg-[#F5EFE4] flex items-center gap-2.5">
+              <svg class="w-5 h-5 text-[#504B43]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/></svg>
+              <h2 class="text-base sm:text-lg font-semibold text-[#1C1A17]">Thermal Imaging — Findings</h2>
+            </div>
+            <div class="p-5 sm:p-6 space-y-5">
+              {thermalFindings.map((f) => (
+                <div class="border border-[#EDE5D7] rounded-xl overflow-hidden flex flex-col sm:flex-row">
+                  <button type="button" class="sw-lightbox-trigger block sm:flex-shrink-0 sm:w-56 aspect-[4/3] sm:aspect-auto bg-[#EDE5D7] relative overflow-hidden" data-src={f.photo} data-label={f.label} data-group="thermal">
+                    <img src={f.photo} alt={f.label} class="w-full h-full object-cover" loading="lazy"/>
+                    <span class="absolute top-2 left-2 text-[10px] font-mono bg-black/70 text-white px-2 py-0.5 rounded">{f.id}</span>
+                  </button>
+                  <div class="p-4 sm:p-5 flex-1">
+                    <div class="flex items-center gap-2 flex-wrap mb-2">
+                      <span class={`inline-flex items-center px-2 py-0.5 rounded text-xs font-semibold ${
+                        f.severity.startsWith('P1') ? 'bg-rose-100 text-rose-800' :
+                        f.severity.startsWith('P2') ? 'bg-amber-100 text-amber-800' :
+                        'bg-slate-100 text-slate-700'
+                      }`}>{f.severity}</span>
+                      <span class="text-sm font-semibold text-[#1C1A17]">{f.location}</span>
+                    </div>
+                    <p class="text-sm text-[#504B43] leading-relaxed">{f.finding}</p>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </section>
+
+          <!-- Drawings -->
+          <section id="drawings" class="scroll-mt-20 bg-white rounded-2xl shadow-sm border border-[#E9E0CD] overflow-hidden">
+            <div class="px-5 sm:px-6 py-4 border-b border-[#EDE5D7] bg-[#F5EFE4] flex items-center gap-2.5">
+              <svg class="w-5 h-5 text-[#504B43]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19.5 14.25v-2.625a3.375 3.375 0 00-3.375-3.375h-1.5A1.125 1.125 0 0113.5 7.125v-1.5a3.375 3.375 0 00-3.375-3.375H8.25m0 12.75h7.5m-7.5 3H12M10.5 2.25H5.625c-.621 0-1.125.504-1.125 1.125v17.25c0 .621.504 1.125 1.125 1.125h12.75c.621 0 1.125-.504 1.125-1.125V11.25a9 9 0 00-9-9z"/></svg>
+              <h2 class="text-base sm:text-lg font-semibold text-[#1C1A17]">Drawings &amp; Documents</h2>
+            </div>
+            <ul class="divide-y divide-[#EDE5D7]">
+              {drawings.map((d) => (
+                <li class="flex items-center gap-4 px-5 sm:px-6 py-3.5 hover:bg-[#FBF8F3] transition-colors">
+                  <div class="w-10 h-10 rounded-lg bg-[#F5EFE4] border border-[#EDE5D7] flex items-center justify-center text-[10px] font-semibold text-[#504B43]">{d.format}</div>
+                  <div class="flex-1 min-w-0">
+                    <p class="text-sm font-medium text-[#1C1A17] truncate">{d.name}</p>
+                    <p class="text-xs text-[#6F6A61]">{d.pages !== "—" ? `${d.pages} ${d.pages === 1 ? 'page' : 'pages'} · ` : ''}{d.size}</p>
+                  </div>
+                  <button type="button" class="text-xs font-semibold text-[#6F6A61] bg-[#F5EFE4] border border-[#EDE5D7] px-3 py-1.5 rounded-md cursor-not-allowed" title="Available to project stakeholders" disabled>Preview only</button>
+                </li>
+              ))}
+            </ul>
+          </section>
+
+          <!-- External Media -->
+          <section id="media" class="scroll-mt-20 bg-white rounded-2xl shadow-sm border border-[#E9E0CD] overflow-hidden">
+            <div class="px-5 sm:px-6 py-4 border-b border-[#EDE5D7] bg-[#F5EFE4] flex items-center gap-2.5">
+              <svg class="w-5 h-5 text-[#504B43]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 10l4.553-2.276A1 1 0 0121 8.618v6.764a1 1 0 01-1.447.894L15 14M5 18h8a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z"/></svg>
+              <h2 class="text-base sm:text-lg font-semibold text-[#1C1A17]">External Media</h2>
+            </div>
+            <div class="p-5 sm:p-6 grid sm:grid-cols-2 gap-4">
+              <a href="#tour" class="flex items-center gap-3 p-4 bg-[#FBF8F3] rounded-xl border border-[#EDE5D7] hover:border-[#EE7B1A] hover:bg-[#F5EFE4] transition-colors">
+                <div class="w-10 h-10 rounded-lg bg-[#FFECD9] flex items-center justify-center">
+                  <svg class="w-5 h-5 text-[#CC620A]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9"/></svg>
+                </div>
+                <div class="min-w-0">
+                  <span class="text-sm font-semibold text-[#1C1A17] block">Matterport Digital Twin</span>
+                  <span class="text-xs text-[#6F6A61]">Embedded above &middot; navigate the full space</span>
+                </div>
+                <svg class="w-4 h-4 text-[#9A938A] ml-auto" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+              </a>
+              <div class="flex items-center gap-3 p-4 bg-[#FBF8F3] rounded-xl border border-dashed border-[#DDD1BD] opacity-80">
+                <div class="w-10 h-10 rounded-lg bg-[#EDE5D7] flex items-center justify-center">
+                  <svg class="w-5 h-5 text-[#6F6A61]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 15a4 4 0 004 4h9a5 5 0 10-.1-9.999 5.002 5.002 0 10-9.78 2.096A4.001 4.001 0 003 15z"/></svg>
+                </div>
+                <div class="min-w-0">
+                  <span class="text-sm font-semibold text-[#1C1A17] block">Above-Ceiling Fly-Through</span>
+                  <span class="text-xs text-[#6F6A61]">Cubex tour &middot; available to project team</span>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <!-- Comments -->
+          <section id="comments" class="scroll-mt-20 bg-white rounded-2xl shadow-sm border border-[#E9E0CD] overflow-hidden">
+            <div class="px-5 sm:px-6 py-4 border-b border-[#EDE5D7] bg-[#F5EFE4]">
+              <h2 class="text-base sm:text-lg font-semibold text-[#1C1A17] flex items-center gap-2.5">
+                <svg class="w-5 h-5 text-[#504B43]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"/></svg>
+                Questions &amp; Comments
+              </h2>
+              <p class="text-xs text-[#6F6A61] mt-1">Visible to all invited contractors and the project team.</p>
+            </div>
+            <div class="p-5 sm:p-6 space-y-6">
+              {comments.map((c) => (
+                <div class={`border-l-2 ${c.team ? 'border-[#EE7B1A]' : 'border-[#DDD1BD]'} pl-4`}>
+                  <div class="flex items-start justify-between gap-2 mb-1 flex-wrap">
+                    <div class="flex items-center gap-2 flex-wrap">
+                      <span class="text-sm font-semibold text-[#1C1A17]">{c.author}</span>
+                      <span class="text-xs text-[#6F6A61]">{c.role}</span>
+                      {c.team && <span class="text-[10px] uppercase tracking-wider font-semibold px-1.5 py-0.5 bg-[#FFECD9] text-[#B25508] rounded">Team</span>}
+                    </div>
+                    <span class="text-xs text-[#9A938A]">{c.when}</span>
+                  </div>
+                  <p class="text-sm text-[#504B43] leading-relaxed whitespace-pre-wrap">{c.body}</p>
+
+                  {c.replies.length > 0 && (
+                    <div class="mt-3 ml-3 space-y-3">
+                      {c.replies.map((r) => (
+                        <div class={`border-l-2 ${r.team ? 'border-[#FFBB7F]' : 'border-[#E9E0CD]'} pl-3`}>
+                          <div class="flex items-start justify-between gap-2 mb-1 flex-wrap">
+                            <div class="flex items-center gap-2 flex-wrap">
+                              <span class="text-sm font-semibold text-[#1C1A17]">{r.author}</span>
+                              <span class="text-xs text-[#6F6A61]">{r.role}</span>
+                              {r.team && <span class="text-[10px] uppercase tracking-wider font-semibold px-1.5 py-0.5 bg-[#FFECD9] text-[#B25508] rounded">Team</span>}
+                            </div>
+                            <span class="text-xs text-[#9A938A]">{r.when}</span>
+                          </div>
+                          <p class="text-sm text-[#504B43] leading-relaxed whitespace-pre-wrap">{r.body}</p>
+                        </div>
+                      ))}
+                    </div>
+                  )}
+                </div>
+              ))}
+
+              <div class="bg-[#FBF8F3] border border-dashed border-[#DDD1BD] rounded-xl p-4 text-center">
+                <p class="text-sm text-[#6F6A61]">
+                  Invited contractors and the project team can post questions and replies here.
+                  <span class="block sm:inline mt-1 sm:mt-0 sm:ml-1">
+                    <a href="/contact" class="text-[#CC620A] font-semibold hover:underline underline-offset-2">Start a project &rarr;</a>
+                  </span>
+                </p>
+              </div>
+            </div>
+          </section>
+
+          <!-- CTA -->
+          <section class="bg-[#1C1A17] rounded-2xl overflow-hidden">
+            <div class="p-6 sm:p-10 text-center">
+              <p class="text-[11px] font-semibold tracking-[0.18em] uppercase text-[#EE7B1A] mb-3">This is the deliverable</p>
+              <h2 class="text-xl sm:text-2xl lg:text-[1.8rem] font-light text-white leading-tight max-w-xl mx-auto">
+                Every Alturascope visit produces a project record that looks like this.
+              </h2>
+              <p class="mt-4 text-sm text-white/70 max-w-lg mx-auto">
+                One brief. One standard. One place your whole team returns to for the life of the project.
+              </p>
+              <div class="mt-7 flex flex-wrap items-center justify-center gap-3">
+                <a href="/contact" class="inline-block bg-[#EE7B1A] hover:bg-[#CC620A] text-white text-sm font-semibold px-6 py-3 rounded-md transition-colors">Start a project</a>
+                <a href="/work" class="inline-block border border-white/30 hover:border-white/60 text-white text-sm font-medium px-6 py-3 rounded-md transition-colors">The Standard</a>
+              </div>
+            </div>
+          </section>
+        </div>
+      </div>
+    </div>
+
+    <!-- Lightbox overlay -->
+    <div id="sw-lightbox" class="fixed inset-0 z-[70] bg-black/90 hidden items-center justify-center p-4 sm:p-8" aria-hidden="true">
+      <button id="sw-lightbox-close" type="button" class="absolute top-4 right-4 text-white/80 hover:text-white w-10 h-10 flex items-center justify-center" aria-label="Close">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M6 18L18 6M6 6l12 12"/></svg>
+      </button>
+      <button id="sw-lightbox-prev" type="button" class="absolute left-2 sm:left-6 top-1/2 -translate-y-1/2 text-white/70 hover:text-white w-10 h-10 flex items-center justify-center rounded-full bg-black/40 hover:bg-black/60" aria-label="Previous">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M15 19l-7-7 7-7"/></svg>
+      </button>
+      <button id="sw-lightbox-next" type="button" class="absolute right-2 sm:right-6 top-1/2 -translate-y-1/2 text-white/70 hover:text-white w-10 h-10 flex items-center justify-center rounded-full bg-black/40 hover:bg-black/60" aria-label="Next">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 5l7 7-7 7"/></svg>
+      </button>
+      <figure class="max-w-5xl w-full max-h-full flex flex-col items-center">
+        <img id="sw-lightbox-img" src="" alt="" class="max-w-full max-h-[80vh] object-contain rounded-lg shadow-2xl"/>
+        <figcaption id="sw-lightbox-caption" class="mt-4 text-sm text-white/80 text-center max-w-3xl"></figcaption>
+      </figure>
+    </div>
+  </div>
+
+  <style>
+    [data-nav-link].sw-nav-active {
+      background-color: #FFECD9;
+      color: #B25508;
+      font-weight: 600;
+    }
+    .sw-room-body.sw-collapsed {
+      display: none;
+    }
+    .sw-toggle-icon.sw-rotated {
+      transform: rotate(-90deg);
+    }
+    body:has(#sw-lightbox:not(.hidden)) {
+      overflow: hidden;
+    }
+  </style>
+
+  <script is:inline>
+    document.addEventListener("DOMContentLoaded", () => {
+      // Lazy-load iframes (mirrors index.astro pattern)
+      const iframes = document.querySelectorAll("iframe[data-src]");
+      if (iframes.length) {
+        const io = new IntersectionObserver((entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              const f = entry.target;
+              if (f.dataset.src) {
+                f.src = f.dataset.src;
+                delete f.dataset.src;
+              }
+              io.unobserve(f);
+            }
+          });
+        }, { rootMargin: "200px" });
+        iframes.forEach((f) => io.observe(f));
+      }
+
+      // Side-nav active-state tracking
+      const navLinks = document.querySelectorAll("[data-nav-link]");
+      const sections = Array.from(navLinks)
+        .map((l) => document.getElementById(l.dataset.target))
+        .filter(Boolean);
+
+      if (sections.length && "IntersectionObserver" in window) {
+        const activeMap = new Map();
+        const navObserver = new IntersectionObserver((entries) => {
+          entries.forEach((e) => activeMap.set(e.target.id, e.isIntersecting));
+          const firstVisible = sections.find((s) => activeMap.get(s.id));
+          if (!firstVisible) return;
+          navLinks.forEach((l) => {
+            l.classList.toggle("sw-nav-active", l.dataset.target === firstVisible.id);
+          });
+        }, { rootMargin: "-30% 0px -60% 0px", threshold: 0 });
+        sections.forEach((s) => navObserver.observe(s));
+      }
+
+      // Room collapse/expand
+      document.querySelectorAll(".sw-room-toggle").forEach((btn) => {
+        btn.addEventListener("click", () => {
+          const article = btn.closest("article");
+          if (!article) return;
+          const body = article.querySelector(".sw-room-body");
+          const label = btn.querySelector(".sw-toggle-label");
+          const icon = btn.querySelector(".sw-toggle-icon");
+          if (!body) return;
+          const collapsed = body.classList.toggle("sw-collapsed");
+          btn.setAttribute("aria-expanded", collapsed ? "false" : "true");
+          if (label) label.textContent = collapsed ? "Expand" : "Collapse";
+          if (icon) icon.classList.toggle("sw-rotated", collapsed);
+        });
+      });
+
+      // Lightbox
+      const lightbox = document.getElementById("sw-lightbox");
+      const lbImg = document.getElementById("sw-lightbox-img");
+      const lbCaption = document.getElementById("sw-lightbox-caption");
+      const lbClose = document.getElementById("sw-lightbox-close");
+      const lbPrev = document.getElementById("sw-lightbox-prev");
+      const lbNext = document.getElementById("sw-lightbox-next");
+
+      let currentGroup = [];
+      let currentIndex = 0;
+
+      function openLightbox(trigger) {
+        const group = trigger.dataset.group;
+        if (group) {
+          currentGroup = Array.from(document.querySelectorAll(`.sw-lightbox-trigger[data-group="${group}"]`));
+        } else {
+          currentGroup = [trigger];
+        }
+        currentIndex = Math.max(0, currentGroup.indexOf(trigger));
+        renderLightbox();
+        lightbox.classList.remove("hidden");
+        lightbox.classList.add("flex");
+        lightbox.setAttribute("aria-hidden", "false");
+        const multi = currentGroup.length > 1;
+        lbPrev.style.display = multi ? "" : "none";
+        lbNext.style.display = multi ? "" : "none";
+      }
+
+      function renderLightbox() {
+        const t = currentGroup[currentIndex];
+        if (!t) return;
+        lbImg.src = t.dataset.src;
+        lbImg.alt = t.dataset.label || "";
+        const pos = currentGroup.length > 1 ? ` (${currentIndex + 1} of ${currentGroup.length})` : "";
+        lbCaption.textContent = (t.dataset.label || "") + pos;
+      }
+
+      function closeLightbox() {
+        lightbox.classList.add("hidden");
+        lightbox.classList.remove("flex");
+        lightbox.setAttribute("aria-hidden", "true");
+        lbImg.src = "";
+      }
+
+      function step(delta) {
+        if (!currentGroup.length) return;
+        currentIndex = (currentIndex + delta + currentGroup.length) % currentGroup.length;
+        renderLightbox();
+      }
+
+      document.querySelectorAll(".sw-lightbox-trigger").forEach((t) => {
+        t.addEventListener("click", (e) => {
+          e.preventDefault();
+          openLightbox(t);
+        });
+      });
+
+      lbClose?.addEventListener("click", closeLightbox);
+      lbPrev?.addEventListener("click", () => step(-1));
+      lbNext?.addEventListener("click", () => step(1));
+      lightbox?.addEventListener("click", (e) => {
+        if (e.target === lightbox) closeLightbox();
+      });
+      document.addEventListener("keydown", (e) => {
+        if (lightbox.classList.contains("hidden")) return;
+        if (e.key === "Escape") closeLightbox();
+        else if (e.key === "ArrowLeft") step(-1);
+        else if (e.key === "ArrowRight") step(1);
+      });
+    });
+  </script>
+</Layout>
