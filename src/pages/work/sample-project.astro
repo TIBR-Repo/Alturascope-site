@@ -2,8 +2,7 @@
 import Layout from "../../layouts/Layout.astro";
 
 // ─── ACCESS TOKEN CHECK ───────────────────────────────────────────────────────
-const url = new URL(Astro.request.url);
-if (url.searchParams.get("key") !== "AS2026demo") {
+if (Astro.url.searchParams.get("key") !== "AS2026demo") {
   return Astro.redirect("/");
 }
 
