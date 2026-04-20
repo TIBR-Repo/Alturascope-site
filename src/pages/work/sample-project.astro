@@ -1,918 +1,911 @@
 ---
 import Layout from "../../layouts/Layout.astro";
 
-const project = {
-  name: "Austin Downtown — Pre-Fit-Out Survey",
-  address: "412 E 6th Street, Austin, TX 78701",
-  client: "Pulp & Press Co.",
-  surveyDate: "March 2026",
-  surveyor: "Alturascope Central US",
+// ─── ACCESS TOKEN CHECK ───────────────────────────────────────────────────────
+const url = new URL(Astro.request.url);
+if (url.searchParams.get("key") !== "AS2026demo") {
+  return Astro.redirect("/");
+}
+
+// ─── PROJECT META ──────────────────────────────────────────────────────────────
+
+const PROJECT = {
+  name: "Greenleaf Kitchen San Marcos",
+  client: "Greenleaf Kitchen Inc.",
+  address: "849 Sentforth Plaza, Suite 443, San Marcos, CA 92032",
+  visitDate: "April 4, 2026",
+  status: "COMPLETED",
+  route: "Clockwise — Start: Main entrance",
+  surveyor: "Andrew Harris",
+  lastUpdated: "April 7, 2026 12:25 AM",
 };
 
-// Rooms — ordered as they appear during a standard walkthrough
-const rooms = [
-  {
-    id: "room-foh",
-    name: "Front of House — Dining",
-    type: "Customer-facing",
-    summary:
-      "Primary dining and queue area with full-height storefront glazing to 6th Street. Existing ceiling is exposed structure painted matte black with surface-mounted track lighting. Three tenants preceded the current vacancy; legacy millwork has been removed and the slab is exposed.",
-    measurements: { width: "34' 2\"", length: "22' 6\"", ceiling: "11' 4\" AFF", area: "769 sq ft" },
-    finishes: { floor: "Sealed concrete — original slab", ceiling: "Exposed structure, matte black", walls: "Painted gypsum, 2 coats neutral" },
-    photos: [
-      { src: "/Images/site-interior-1.jpg", label: "North elevation — storefront glazing" },
-      { src: "/Images/site-inside.jpg", label: "East wall toward service counter" },
-      { src: "/Images/site-interior-2.jpg", label: "South wall — queue line" },
-      { src: "/Images/site-interior-3.jpg", label: "Ceiling — structure and track lighting" },
-      { src: "/Images/plan-1.jpg", label: "Overlay — dimensions annotated" },
-    ],
-    system: null,
-  },
-  {
-    id: "room-counter",
-    name: "Service Counter & Order Point",
-    type: "Customer-facing",
-    summary:
-      "Service counter runs the full east wall. Existing soffit conceals supply ductwork; we opened three access panels on the north face to confirm routing and duct size (see Above-Ceiling section). POS power circuits run from the panel in the Electrical/IT room through a dedicated conduit above ceiling.",
-    measurements: { width: "18' 0\"", length: "12' 6\"", ceiling: "9' 0\" AFF soffit", area: "225 sq ft" },
-    finishes: { floor: "Quarry tile, beige — reusable", ceiling: "GWB soffit, painted", walls: "FRP panel to 4' on working face" },
-    photos: [
-      { src: "/Images/site-with-studs.png", label: "Counter framing — east elevation" },
-      { src: "/Images/whatsapp-site-photo.jpg", label: "Soffit access panel #1 — ducting visible" },
-      { src: "/Images/clean-site.png", label: "Floor — quarry tile condition" },
-    ],
-    system: null,
-  },
-  {
-    id: "room-kitchen",
-    name: "Prep Kitchen — Back of House",
-    type: "Operational",
-    summary:
-      "Active prep kitchen with existing 9-foot Type I hood on the east wall. Make-up air routed through rooftop unit RTU-2 (see HVAC schedule). Grease trap is below slab at the south-east corner — location confirmed with landlord drawings and probe. Floor drains are epoxy-sealed and in good condition. Three-compartment sink on north wall is serviceable; recommended for reuse.",
-    measurements: { width: "18' 4\"", length: "24' 0\"", ceiling: "10' 2\" AFF", area: "440 sq ft" },
-    finishes: { floor: "Epoxy coating, sloped to drains", ceiling: "Vinyl-clad gypsum tile", walls: "FRP panel, full height" },
-    photos: [
-      { src: "/commercial-kitchen-work.jpg", label: "North wall — three-compartment sink" },
-      { src: "/Images/hvac.jpg", label: "Type I hood — east wall" },
-      { src: "/Images/site-interior-3.jpg", label: "West wall — prep table location" },
-      { src: "/Images/site-with-studs.png", label: "Hood exhaust rise — ceiling penetration" },
-    ],
-    system:
-      "Type I hood: 9'-0\" wide, 48\" deep canopy. Stainless, in-line Ansul R-102. Exhaust rises through ceiling to rooftop fan EF-1 (2,400 CFM nameplate). Make-up air from RTU-2. Control panel at east wall adjacent to hood; interlock confirmed functional.",
-  },
-  {
-    id: "room-walkin",
-    name: "Walk-in Cooler / Freezer",
-    type: "Operational",
-    summary:
-      "Paired walk-in units on the west wall. Cooler (8' × 10') and freezer (6' × 8') share a common vestibule. Condenser units are rooftop-mounted (see HVAC schedule). Existing panels are in serviceable condition with minor gasket wear on the cooler door — recommended replacement rather than full unit.",
-    measurements: { width: "14' 0\"", length: "10' 0\"", ceiling: "8' 6\" AFF", area: "140 sq ft" },
-    finishes: { floor: "Aluminium diamond plate over insulated slab", ceiling: "Insulated metal panel", walls: "Insulated metal panel, 4\"" },
-    photos: [
-      { src: "/Images/attic.jpg", label: "Cooler interior — shelving" },
-      { src: "/Images/site-interior-2.jpg", label: "Vestibule looking toward freezer" },
-      { src: "/Images/whatsapp-site-photo.jpg", label: "Cooler door gasket — wear visible" },
-    ],
-    system:
-      "Cooler: 8' × 10' × 8'-6\" clear. Evap coil IMP-1, rooftop condenser CU-1 (nameplate R-448A, 1.5 HP). Freezer: 6' × 8' × 8'-6\" clear. Evap coil IMP-2, rooftop condenser CU-2 (2 HP). Control panel in vestibule. Both units tested and operating at setpoint during survey.",
-  },
-  {
-    id: "room-electrical",
-    name: "Electrical & IT Room",
-    type: "Back-of-house utility",
-    summary:
-      "Combined electrical / IT closet at the south-west corner. Main service is 400A, 208Y/120V, 3-phase, 4-wire. Existing panel schedule confirms 72 poles total with approximately 35% current spare capacity — sufficient for the proposed new menu without a service upgrade. Fiber drop terminates here from the landlord IDF.",
-    measurements: { width: "6' 0\"", length: "8' 0\"", ceiling: "9' 0\" AFF", area: "48 sq ft" },
-    finishes: { floor: "Sealed concrete", ceiling: "Exposed structure", walls: "Painted CMU" },
-    photos: [
-      { src: "/Images/fire-safety.jpg", label: "Panel MP-1 — deadfront" },
-      { src: "/Images/whatsapp-site-photo.jpg", label: "Panel MP-1 — schedule label" },
-      { src: "/Images/site-interior-1.jpg", label: "IT rack — landlord fiber drop" },
-    ],
-    system:
-      "Main service: 400A, 208Y/120V, 3-ph, 4-wire. Panel MP-1: 72 poles, ~35% spare capacity. Panel LP-1 (BOH): 42 poles, ~20% spare. Surge protection present at main. No ground-fault deficiencies observed. Recommend thermal imaging at connection points prior to tenant improvement work — see Thermal Imaging section.",
-  },
-  {
-    id: "room-above-ceiling",
-    name: "Above-Ceiling Plenum",
-    type: "Concealed space",
-    summary:
-      "Concealed space above the suspended ceiling grid is fully accessible. Structure is open-web steel joist at 4' o.c. with corrugated deck above. Fire separation between tenant bay and the corridor is rated and intact. See the Above-Ceiling Survey section below for a complete inventory.",
-    measurements: { width: "—", length: "—", ceiling: "6' 2\" to deck (varies)", area: "—" },
-    finishes: { floor: "—", ceiling: "Corrugated deck", walls: "Party wall — rated gypsum, type X" },
-    photos: [
-      { src: "/above-ceiling-survey.jpg", label: "Grid D — HVAC trunk line" },
-      { src: "/Images/attic.jpg", label: "Grid B — sprinkler main" },
-      { src: "/Images/site-with-studs.png", label: "Party wall — rated assembly" },
-      { src: "/Images/hvac.jpg", label: "Grid F — electrical junction box" },
-    ],
-    system:
-      "Clear height from ceiling grid to underside of deck ranges 5'-8\" to 6'-2\" depending on joist depth. Structural deflection capacity confirmed for planned new loads (branded pendant lighting, additional signage). Full photographic record in Above-Ceiling Survey below.",
-  },
+// ─── ENVELOPE & DOORS ──────────────────────────────────────────────────────────
+
+const ENVELOPE = [
+  { category: "Exterior Door", attribute: "Width", value: "6 foot" },
+  { category: "Exterior Door", attribute: "Height", value: "7 foot" },
+  { category: "Interior Door", attribute: "Frame Type", value: "Alu. main entry/curt. wall. int. frames steel knockdown" },
+  { category: "Interior Door", attribute: "Wall Thickness", value: "5 inches" },
+  { category: "Glazing", attribute: "Double Glazed", value: "Yes" },
+  { category: "Curtain Wall", attribute: "Height", value: "Main entrance opening: 7'2 wide, 9'11 high" },
 ];
 
-const aboveCeilingPhotos = [
-  { src: "/above-ceiling-survey.jpg", label: "Grid A — main supply duct, 18×12 trunk" },
-  { src: "/Images/hvac.jpg", label: "Grid B — 4\" sprinkler main, clamp hanger" },
-  { src: "/Images/attic.jpg", label: "Grid C — party wall, rated gypsum assembly" },
-  { src: "/Images/site-with-studs.png", label: "Grid D — electrical J-box, existing circuit" },
-  { src: "/Images/fire-safety.jpg", label: "Grid E — smoke detector, interconnect" },
-  { src: "/Images/whatsapp-site-photo.jpg", label: "Grid F — grease exhaust rise from hood" },
-];
+// ─── SECTIONS (16 accordion sections) ──────────────────────────────────────────
 
-const equipmentReuse = [
-  { id: "EQ-01", item: "Type I hood canopy, 9'-0\"", make: "CaptiveAire", model: "5424ND-2", qty: 1, condition: "Serviceable", recommendation: "Reuse" },
-  { id: "EQ-02", item: "Ansul R-102 wet chemical system", make: "Ansul", model: "R-102", qty: 1, condition: "Due for service", recommendation: "Reuse — service before turnover" },
-  { id: "EQ-03", item: "Three-compartment sink", make: "Advance Tabco", model: "93-3-54", qty: 1, condition: "Serviceable", recommendation: "Reuse" },
-  { id: "EQ-04", item: "Hand sink, wall-mount", make: "Krowne", model: "HS-20", qty: 2, condition: "Serviceable", recommendation: "Reuse" },
-  { id: "EQ-05", item: "Walk-in cooler box, 8×10", make: "Nor-Lake", model: "KLB8X10", qty: 1, condition: "Minor gasket wear", recommendation: "Reuse — replace gaskets" },
-  { id: "EQ-06", item: "Walk-in freezer box, 6×8", make: "Nor-Lake", model: "KLF6X8", qty: 1, condition: "Serviceable", recommendation: "Reuse" },
-  { id: "EQ-07", item: "Floor drains, 2\" with trap", make: "Zurn", model: "Z415", qty: 4, condition: "Serviceable", recommendation: "Reuse" },
-  { id: "EQ-08", item: "Grease trap, under-slab", make: "Rockford", model: "G-50-SA", qty: 1, condition: "Service verified", recommendation: "Reuse" },
-  { id: "EQ-09", item: "POS counter, quartz top", make: "Site-built", model: "—", qty: 1, condition: "Obsolete layout", recommendation: "Remove" },
-  { id: "EQ-10", item: "Track lighting, FOH", make: "Juno", model: "T256", qty: 14, condition: "Functional", recommendation: "Remove — new brand package" },
-  { id: "EQ-11", item: "Quarry tile floor, FOH counter", make: "Daltile", model: "Q41", qty: "225 sf", condition: "Serviceable", recommendation: "Reuse" },
-  { id: "EQ-12", item: "Fire extinguishers, ABC", make: "Amerex", model: "B402", qty: 3, condition: "Tagged — current", recommendation: "Reuse" },
-];
-
-const hvac = [
-  { tag: "RTU-1", type: "Rooftop packaged unit", tonnage: "5 ton", age: "~8 yrs", refrigerant: "R-410A", serves: "FOH dining", condition: "Serviceable", recommendation: "Retain — service filters" },
-  { tag: "RTU-2", type: "Rooftop packaged unit with MUA", tonnage: "4 ton + 1,800 CFM MUA", age: "~6 yrs", refrigerant: "R-410A", serves: "Prep kitchen", condition: "Serviceable", recommendation: "Retain — interlock to hood confirmed" },
-  { tag: "CU-1", type: "Condensing unit, walk-in cooler", tonnage: "1.5 HP", age: "~4 yrs", refrigerant: "R-448A", serves: "Walk-in cooler", condition: "Good", recommendation: "Retain" },
-  { tag: "CU-2", type: "Condensing unit, walk-in freezer", tonnage: "2 HP", age: "~4 yrs", refrigerant: "R-448A", serves: "Walk-in freezer", condition: "Good", recommendation: "Retain" },
-  { tag: "EF-1", type: "Rooftop exhaust fan, grease duct", tonnage: "2,400 CFM", age: "~8 yrs", refrigerant: "—", serves: "Type I hood", condition: "Serviceable — clean prior to turnover", recommendation: "Retain" },
-];
-
-const thermalFindings = [
+const SECTIONS = [
   {
-    id: "TH-01",
-    severity: "P2 — Monitor",
-    location: "Panel MP-1, main breaker lug",
-    finding: "Elevated thermal signature at line-side lug of the 400A main breaker. 14°F above ambient compared to adjacent connections. Not a failure, but outside the baseline we'd expect for a panel of this age.",
-    photo: "/Images/fire-safety.jpg",
-    label: "MP-1 — thermal overlay, line-side lug",
+    id: "siteoverview",
+    name: "Site Overview",
+    dotColor: "#14b8a6",
+    summary: "Former juice/smoothie location, vacant for 6-8 months. The space presents a tale of two halves: the interior finishes are tired, worn, and will require full strip-out and refit, but the underlying mechanical and electrical infrastructure is surprisingly strong. Two near-new Trane RTUs (2022 and 2024), a recently installed Navien tankless water heater (2024), a commercial Pentair Everpure water filtration system, and a robust 400A three-phase electrical service give this space a significant head start over a typical second-generation QSR shell. The previous tenant was a juice/smoothie operation, which means the infrastructure DNA is closely aligned with the new tenant's concept: blender rinse stations, ice wells, water filtration, dedicated juicer circuits, multiple floor drains, and refrigerated display cases are already in place. The space runs 64'-5\" deep with excellent ceiling height (15'-9\" to deck), generous storefront glazing, and a ~1,320 sq ft patio opportunity on the south side. The 6'-5\" corridor connecting FOH to BOH is narrow and may constrain the layout. Key positives: near-new HVAC and water heater, strong electrical service with no tenant-level transformer needed, good grease interceptor capacity, excellent floor drain coverage, sound walk-in cooler and freezer boxes, existing water treatment, and food-service-ready infrastructure. Key concerns: both refrigeration condensers (2004) are at end of life on R-404A and need immediate replacement ($8K-$14K). Main entry doors lack crash bars (code issue). All interior finishes, ceiling, lighting, and millwork require full replacement. Overall, the fit-out will be primarily cosmetic and equipment-driven rather than infrastructure-driven, which should translate to a faster and less expensive buildout than a raw shell or a conversion from a non-food-service use.",
+    fields: [
+      { label: "Space Type", value: "QSR" },
+      { label: "Previous Tenant", value: "Juice/smoothie operation" },
+      { label: "Approximate Square Footage", value: "1,509" },
+      { label: "Current Occupancy Status", value: "Vacant – Previous Build-Out Intact" },
+    ],
+    photoCount: 0,
   },
   {
-    id: "TH-02",
-    severity: "P3 — Note",
-    location: "Prep kitchen ceiling, south-east corner",
-    finding: "Small cool spot consistent with minor condensation below the insulated duct elbow at the rise to the hood exhaust. Not a leak. Recommend wrap inspection during TI works.",
-    photo: "/Images/attic.jpg",
-    label: "Ceiling — cool spot at duct elbow",
+    id: "narrative",
+    name: "Narrative Summary",
+    dotColor: "#7c3aed",
+    isNarrative: true,
+    narrativeText: `## Site Assessment: Greenleaf Kitchen — Sentforth Plaza, San Marcos, CA
+### Unit 443 | Surveyed April 4, 2026
+
+### Overview
+
+This is a former juice/smoothie location within Sentforth Plaza, a Mediterranean-style multi-tenant strip centre in San Marcos. The unit comprises approximately 2,500-3,000 sq ft of inline retail running 64'-5" deep from the storefront to the rear wall, with a 6'-5" corridor connecting the front-of-house customer area to the back-of-house kitchen and storage. The space has been vacant for 6-8 months. Interior finishes are worn and will require full strip-out, but the underlying mechanical and electrical infrastructure is in significantly better condition than first impressions suggest — and is closely aligned with Greenleaf's operational requirements due to the previous juice/smoothie tenant.
+
+### MEP Infrastructure — Key Strengths
+
+The mechanical systems are a standout. Two Trane rooftop packaged units provide 10 tons of combined cooling across two zones: a Precedent 5-ton gas/electric unit manufactured November 2024 (essentially new) and a 5-ton heat pump manufactured September 2022, both on R-410A. A Navien tankless condensing gas water heater was installed in November 2024 and provides on-demand hot water at high efficiency. A Pentair Everpure commercial water filtration system with triple cartridges and scale inhibitor is plumbed and operational — critical for the new tenant's espresso and juice quality in San Marcos' hard water area.
+
+Electrical service is a 400A three-phase 208Y/120V supply distributed across two GE A Series II panelboards (42 spaces each). No tenant-level transformer is required — the building's centralised main switchgear handles voltage transformation. Several existing circuits are already aligned with food-service operations, including dedicated refrigeration, HVAC, and a "Wheatgrass" juicer circuit from the previous tenant.
+
+Two Thermalrite walk-in boxes (one cooler, one freezer) are structurally sound with intact insulation confirmed by thermal imaging. The boxes are worth retaining, though both rooftop condensing units are circa 2004, operating on R-404A refrigerant, and have reached end of life. Replacement of both condensers is the single largest capital item at an estimated $8,000-$14,000. Gas service is provided via two separate SDG&E meters on the building exterior. Grease interceptor capacity is ample with a large double-chamber unit serving the space.
+
+### Equipment Reuse Opportunity
+
+The previous juice/smoothie operation left behind infrastructure that directly supports the new tenant's concept: a West Star Industries triple ice well for fresh ingredient cold-holding, blender rinse sinks (one requires reconnection), two refrigerated grab-and-go display cases at the service counter, multiple floor drains throughout the kitchen, and the Pentair water filtration system. The estimated replacement value of all inheritable assets is $40,000-$55,000.
+
+### Fit-Out Considerations
+
+The space offers excellent bones. The 15'-9" floor-to-deck height provides ample room for an exposed-ceiling concept with generous plenum space for mechanical distribution. The extensive storefront glazing (~32 linear feet at nearly 10' height) will showcase the interior design and create strong street presence. A patio opportunity of approximately 1,320 sq ft exists on the south side with landlord approval, though its proximity to the dumpster enclosure will need mitigation. The central beverage dispensing tower from the previous tenant is a built-up services chase (believed non-structural) that will need demolition. The 6'-5" FOH-to-BOH corridor is narrow and may constrain the service layout. All ceiling tiles, lighting, millwork, roller blinds, PVC wall sheeting, and bathroom finishes require full replacement.
+
+### Items Requiring Attention
+
+The main entry double doors lack panic hardware (crash bars) — a code compliance issue that must be addressed before occupancy. The water service entry point was not positively identified during the survey and requires confirmation with the landlord. The legacy security panel is a decommissioned legacy system; the new tenant will need their own security installation.
+
+### Bottom Line
+
+This is a strong candidate. The capital required to address deficiencies is estimated at $12,000-$20,000, which is modest relative to the value of the inheritable mechanical and electrical assets. The fit-out will be primarily cosmetic and equipment-driven rather than infrastructure-driven, which should translate to a faster and less expensive buildout than a raw shell or a conversion from a non-food-service use. The previous tenant's juice/smoothie DNA runs through every system in this space — the new tenant is not starting from scratch here, they are building on a compatible foundation.`,
   },
-];
-
-const drawings = [
-  { name: "Existing Conditions — Floor Plan", format: "PDF", pages: 1, size: "1.8 MB" },
-  { name: "Existing Conditions — Reflected Ceiling Plan", format: "PDF", pages: 1, size: "1.4 MB" },
-  { name: "MEP Overlay — Above-Ceiling Survey", format: "PDF", pages: 2, size: "2.6 MB" },
-  { name: "Equipment Schedule — Reuse / Remove", format: "XLSX", pages: "—", size: "48 KB" },
-  { name: "Thermal Imaging Findings", format: "PDF", pages: 3, size: "4.2 MB" },
-  { name: "Point Cloud Extract — FOH", format: "E57", pages: "—", size: "312 MB" },
-];
-
-const comments = [
   {
-    author: "Marcus Lee",
-    role: "Project Architect",
-    team: true,
-    when: "2 days ago",
-    body: "Note for the MEP consultant — panel MP-1 has ~35% spare at 400A. The new menu load calc (attached in schedule) stays within that. Good to proceed without a service upgrade.",
-    replies: [
+    id: "generalcondition",
+    name: "General Condition Assessment",
+    dotColor: "#64748b",
+    summary: "Sewer gas odour throughout from dry P-traps (not a defect — run water through all fixtures to resolve). Main entry doors lack crash bars (code compliance issue). Both refrigeration condensers at end of life. One blender rinse sink disconnected. Drop ceiling requires full replacement. All lighting requires LED retrofit. BOH kitchen tiles dirty, chipped, some missing. PVC wall sheeting yellowed with multiple penetrations. Legacy Bay Alarm security panel decommissioned. Water service entry point not confirmed.",
+    fields: [
+      { label: "Ceiling Type", value: "Drop Ceiling (ACT)" },
+      { label: "Flooring Type", value: 'FOH: Grey ceramic/porcelain tile (approx 12"x12"). BOH/Kitchen: 6"x6" quarry tile throughout. Bathroom: 12"x12" ceramic tile.' },
+      { label: "ADA Compliance Notes", value: "ADA ramp present at main entrance. Single gender-neutral restroom with horizontal grab bar and accessible clearances. Path of travel through the space to be confirmed against current ADA requirements during fit-out design — the 6'-5\" corridor between FOH and BOH may need review. Main entry double doors currently lack panic hardware (crash bars) — primarily a fire/life safety code issue (IBC 1010.1.10) but also an accessibility improvement. Crash bar retrofit may be required before occupancy." },
+      { label: "Restroom Count", value: "1" },
+      { label: "Wall Condition", value: "Good", badge: "good" },
+      { label: "Ceiling Condition", value: "Poor – Stained/Damaged", badge: "bad" },
+      { label: "Overall Space Condition", value: "Fair", badge: "warn" },
+      { label: "Flooring Condition", value: "Fair", badge: "warn" },
+      { label: "Restroom Condition", value: "Fair – Needs Update", badge: "warn" },
+    ],
+    photoCount: 0,
+  },
+  {
+    id: "recommendations",
+    name: "Recommendations",
+    dotColor: "#f59e0b",
+    summary: "This space is a strong candidate for the incoming tenant. The mechanical and electrical infrastructure significantly exceeds what is typical for a second-generation QSR shell, and the previous tenant left behind directly transferable food-service assets. The fit-out will be primarily cosmetic and equipment-driven rather than infrastructure-driven. Total estimated capital for deficiencies: $12,000-$20,000. Total estimated replacement value of inheritable assets: $40,000-$55,000. The cost-to-value ratio strongly favours proceeding with this location.",
+    isRecommendations: true,
+    recGroups: [
       {
-        author: "Sonia Bhatt",
-        role: "MEP Lead — Contractor",
-        team: false,
-        when: "1 day ago",
-        body: "Cross-referenced with our preliminary load schedule. Agreed — no upgrade needed. We'll add the juicer station on a dedicated 20A circuit from panel LP-1.",
+        heading: "CRITICAL — BEFORE OCCUPANCY",
+        level: "critical",
+        items: [
+          { num: 1, title: "Crash bar retrofit on main entry double doors", category: "Code compliance / Life safety", impact: "Cannot obtain occupancy permit without panic hardware", budget: "$500-$1,000" },
+          { num: 2, title: "Refrigeration condenser replacement (2 units)", category: "Refrigeration", impact: "Both units are 22 years old on R-404A, end of life", budget: "$8,000-$14,000" },
+          { num: 3, title: "Run water through all P-traps", category: "Plumbing", impact: "Sewer gas odour throughout space from dry traps", budget: "$0 (labour only)" },
+        ],
+      },
+      {
+        heading: "HIGH — DURING FIT-OUT",
+        level: "high",
+        items: [
+          { num: 4, title: "Full ceiling removal/replacement", category: "Interior finishes", impact: "Drop ceiling tiles in very poor condition throughout", budget: "Part of fit-out scope" },
+          { num: 5, title: "Complete LED lighting retrofit", category: "Electrical", impact: "All existing halogen/fluorescent lighting is inefficient and at end of life", budget: "Part of fit-out scope" },
+          { num: 6, title: "Electrical panel circuit trace and re-labelling", category: "Electrical", impact: "Breaker directories illegible, required per NEC 408.4", budget: "$800-$1,500" },
+          { num: 7, title: "Evaporator chemical cleaning (both walk-in units)", category: "Refrigeration", impact: "Cooler evaporator heavily fouled, freezer needs defrost system verification", budget: "$400-$800" },
+          { num: 8, title: "Water filtration cartridge replacement", category: "Plumbing / Water quality", impact: "Pre-filter visibly exhausted, all cartridges overdue", budget: "$300-$500" },
+          { num: 9, title: "Reconnect or cap disconnected blender rinse sink", category: "Plumbing", impact: "Open/uncapped connection is a code issue", budget: "$100-$300" },
+          { num: 10, title: "Demolish central beverage tower and services chase", category: "Interior demolition", impact: "Central obstruction incompatible with new layout. Confirm non-structural before demolition.", budget: "Part of demo scope" },
+          { num: 11, title: "Strip-out all millwork, PVC sheeting, and roller blinds", category: "Interior demolition", impact: "All worn/damaged beyond reuse", budget: "Part of demo scope" },
+        ],
+      },
+      {
+        heading: "MEDIUM — FIRST OPERATING QUARTER",
+        level: "medium",
+        items: [
+          { num: 12, title: "Walk-in strip curtain replacement (both units)", category: "Refrigeration / Energy", impact: "Existing curtains aged and dirty", budget: "$50-$100" },
+          { num: 13, title: "Walk-in light fixture upgrade to LED (both units)", category: "Electrical / Energy", impact: "Existing halogen/fluorescent fixtures inefficient", budget: "$160-$240" },
+          { num: 14, title: "Thermal scan under full operational load", category: "Electrical / Commissioning", impact: "Baseline scan was under light load only — need verification under operating conditions", budget: "Part of commissioning scope" },
+          { num: 15, title: "Confirm water service entry point with landlord", category: "Plumbing", impact: "Entry point not identified during survey — suspected in rear utility room", budget: "$0 (landlord inquiry)" },
+          { num: 16, title: "Confirm gas meter-to-unit assignment with SDG&E", category: "Gas service", impact: "Three meters on building, specific assignment to unit not traced", budget: "$0 (utility inquiry)" },
+          { num: 17, title: "Confirm fire alarm system ownership with landlord", category: "Life safety", impact: "Determine whether building-wide system or tenant responsibility, and protocol for modifying devices if ceiling is removed", budget: "$0 (landlord inquiry)" },
+        ],
       },
     ],
   },
   {
-    author: "Riley Chen",
-    role: "Alturascope — Site Lead",
-    team: true,
-    when: "3 days ago",
-    body: "Heads up: the grease trap is below slab at the south-east corner of the prep kitchen — probe location marked in the E57 extract. Coordinate with the plumbing sub before demo so we don't cut a core over it.",
-    replies: [],
+    id: "exterior",
+    name: "Exterior & Storefront",
+    dotColor: "#0891b2",
+    summary: 'Strong location within Sentforth Plaza with excellent storefront visibility and generous glazing. Mediterranean architectural style with stone, render, clay tile, and pergola elements. Previous tenant signage has been removed and facade is ready for new branding. Three red fabric awnings over the storefront may be retained, replaced, or removed per the tenant\'s brand guidelines. Significant patio opportunity (~1,320 sq ft) on the south side with landlord approval, though proximity to the dumpster enclosure needs mitigation. Plaza pylon sign available at ~$3K+/year. Curtron Products commercial air door mounted above the rear single door (3\'-0" wide, crash bar fitted). Commercial food-service grade for insect control and temperature separation. Key action: main entry double doors require crash bar retrofit for code compliance before occupancy. All storefront roller blinds require replacement. ADA access path is compliant with ramp present.',
+    fields: [
+      { label: "ADA Access Path", value: "Compliant – Ramp Present", badge: "good" },
+      { label: "Roof Access", value: "No Access – Requires Landlord", badge: "warn" },
+      { label: "Entry Door Type", value: "Double Glass Doors" },
+      { label: "Facade Material", value: "Two-tone exterior: rough natural stone wainscot from grade to approximately 3' height, with smooth painted render/stucco above to the roofline. Current render colour is a warm yellow/gold. Stone veneer accent towers with clay tile caps at the building corners (Mediterranean architectural style). Dark brown painted steel pergola/trellis elements above the end-unit entrance. Facade is in very good condition — clean render, no cracking, stone veneer intact." },
+      { label: "Storefront Type", value: "Solid with Window Openings" },
+      { label: "Outdoor / Patio Seating Possible", value: "Yes – With Landlord Approval", badge: "good" },
+      { label: "Patio Details", value: "Landlord has confirmed outdoor/patio seating is permitted on the south side of the unit in the kerb/parking area. Available space is approximately 55' x 24' (~1,320 sq ft) — a very generous patio footprint that could comfortably seat 40-60 covers depending on furniture layout and ADA path-of-travel requirements. NOTE: This patio area is directly adjacent to the property's garbage dumpster enclosure. Odour may need to be addressed through landscaping or strategic furniture placement. Patio may require landlord approval for furniture style, barriers, and any semi-permanent structures." },
+      { label: "Available Signage Zone", value: "Significant signage opportunity. The rendered facade above the stone wainscot (starting at approximately 3' above grade) provides a large, clean surface for tenant signage across the full storefront width. Previous tenant signage has been removed and patched — ready for new installation. Three red fabric awnings currently in place over the storefront windows may be retained or replaced. Decorative wall sconces flank the storefront and could provide illuminated accent to signage. Landlord also offers space on the plaza pylon/monument sign at approximately $3,000+ per year." },
+      { label: "Roof Equipment", value: "Two Trane packaged RTUs (5-ton each): Precedent YSC060 (Nov 2024) and 4WCY4060 heat pump (Sep 2022). Two remote refrigeration condensing units on shared rack: Russell RLH075M44-D (3/4 HP, cooler, circa 2004) and HTP HLH215L44-D (~2 HP, freezer, circa 2004). All nameplates photographed and documented in detail. Roof access via ladder in the locked rear utility room adjacent to the house electrical room." },
+      { label: "Adjacent Tenants", value: "Two adjacent food-service tenants on the same side of the building. Both are food-service operators, which means shared grease infrastructure considerations have been verified (no shared liability — individual per-tenant interceptors)." },
+    ],
+    photoCount: 14,
   },
   {
-    author: "Alex Rivera",
-    role: "Pulp & Press — Design",
-    team: false,
-    when: "4 days ago",
-    body: "Can we get a dimensional confirmation on the soffit at the service counter? The menu board design assumes 9'-0\" AFF and we want to double-check before we commit the fabrication order.",
-    replies: [
-      {
-        author: "Riley Chen",
-        role: "Alturascope — Site Lead",
-        team: true,
-        when: "4 days ago",
-        body: "Confirmed — 9'-0\" AFF at the soffit face, consistent across the full counter run. Point cloud extract will let your fabricator take off any additional dimensions without a return visit.",
-      },
+    id: "electrical",
+    name: "Electrical Systems",
+    dotColor: "#eab308",
+    summary: "400A three-phase 208Y/120V service to the unit, distributed across two GE A Series II panelboards (main 400A panel and a 225A sub-panel fed from the main). Total available capacity to the unit is 400A, not additive. Provides good electrical headroom for tenant operations. Both panels are widely supported with readily available breakers. No tenant-level transformer is required — the building is served by a centralised multi-tenant main switchgear in the house electrical room at the rear exterior, which steps down utility voltage and delivers 208Y/120V 3-phase directly to the tenant panels. Thermal imaging of both panels confirmed no hot spots, overheating breakers, loose connections, or phase imbalance under current light load. A follow-up thermal scan under full operational load is recommended during commissioning. The breaker directory across both panels is largely handwritten, partially illegible, and incomplete — a full circuit trace and re-labelling per NEC 408.4 should be part of the fit-out scope (budget $800-$1,500). Several circuits are already aligned with food-service operations due to the previous juice/smoothie tenant: dedicated refrigeration circuits, HVAC circuits (3-pole for each RTU), a dedicated \"Wheatgrass\" juicer circuit, POS circuit, and the recently added tankless water heater circuit. Key gap: no dedicated 220V/30A circuit currently identified for an espresso machine. This will need to be pulled from the main panel, which has adequate spare capacity and available breaker spaces. All existing lighting is halogen/fluorescent and should be replaced with LED throughout as part of the fit-out.",
+    fields: [
+      { label: "Electrical Service Entry", value: "3-phase, 208Y/120V, 4-wire service. Power enters through two GE A Series II panelboards mounted side by side on the back-of-house wall." },
+      { label: "Main Panel Details", value: 'GE A Series II Panelboard. Catalogue: AQF3424MBX. Panel #AX9355. Rating: 400A, 208Y/120V, 3-phase, 4-wire. UL Listed Class CTL, No. HE 029054. 42 spaces (odd left, even right). 150A main breaker visible. Breaker directory mostly handwritten and partially illegible — full circuit trace required. Notable labelled circuits: Register/Warmer, Door Heat, Refer Chill, Freezer, A/C #2 (3-pole for RTU #2), POS, Hot Water Disp, Wheatgrass, A/C #1. Spaces 2/4/6 marked "DO NOT REMOVE TWIST-OUT" — possibly landlord-reserved circuits.' },
+      { label: "Sub-Panel Details", value: 'GE A Series II Panelboard. Catalogue: AQF3422MB. Rating: 225A, 208Y/120V, 3-phase, 4-wire. UL Listed Class CTL, No. HE 028568. 42 spaces. Notable labelled circuits: Exit (emergency lighting), Back Sink, two "New Recept GFCI" circuits (recent additions), T.W. #1 (Tankless Water #1 — the Navien unit, labelled in marker consistent with Nov 2024 installation).' },
+      { label: "Transformer", value: "No tenant-level transformer required. Building is served by a centralised multi-tenant main switchgear located in the house electrical room (exterior access, rear of building). Switchgear contains individual metered sections for each tenant suite. Power is delivered to the unit at 208Y/120V 3-phase at the two GE A Series II panelboards inside. Transformation from utility voltage to 208Y/120V occurs at the building service entrance level, upstream of all tenant services. Landlord lighting contactor also located in this room, controlling common area/exterior lighting." },
+      { label: "Available Electrical Capacity", value: "Adequate – Sufficient Spare Capacity", badge: "good" },
+      { label: "Dedicated Circuits Available", value: "Existing dedicated circuits identified: A/C #1 (RTU #1), A/C #2 (3-pole, RTU #2), T.W. #1 (Navien tankless water heater), Refer Chill (walk-in cooler), Freezer (walk-in freezer), Wheatgrass (dedicated 20A for juicer). Multiple 20A circuits available for general kitchen use. Isolated-ground receptacles behind drink machine station. GFI protection confirmed at bathroom sink and kitchen wall outlets." },
+      { label: "Lighting Controls", value: "Nine light switches consolidated in one location in the kitchen area, controlling the entire space. LED bulbs in three pot lights within the rear drop soffit. Halogen pot lights throughout FOH (both recessed and in soffits). Fluorescent bar lights in various locations. Back-of-house has three 2x4 panel lights (likely fluorescent T8s). Full LED retrofit recommended. Zone-controlled lighting with dimmers likely required for FOH under tenant brand standards." },
+      { label: "POS / Music System Infrastructure", value: "Existing POS circuit labelled on main panel. Isolated-ground receptacles behind drink machine station available for sensitive electronics. Three ceiling-mounted speakers in FOH (aged, need replacement — tenant will install their own audio system). Audio control wires located at rear of BOH space." },
+      { label: "Existing Lighting Type", value: "Mixed LED/Fluorescent" },
     ],
+    photoCount: 12,
+  },
+  {
+    id: "hvac",
+    name: "Mechanical Systems (HVAC)",
+    dotColor: "#ef4444",
+    summary: "Combined HVAC cooling capacity: 10 tons across two zones. For a ~2,500-3,000 sq ft food-service space in Southern California, this is generous at approximately 300 sq ft per ton, which accounts well for kitchen heat loads, customer occupancy, and the large glazed storefront with solar gain. Both RTUs are from a tier-one manufacturer (Trane), relatively new, and should serve the new tenant for 15+ years. Total replacement value of rooftop HVAC: approximately $16,000-$24,000. The R-410A refrigerant in both units is within the transition window but will remain serviceable for the life of these units.",
+    fields: [
+      { label: "RTU Count", value: "2" },
+      { label: "RTU Details", value: "RTU #1: Trane Precedent YSC060G3RLB2F. Serial: 244610222L. Manufactured November 2024 (~18 months old). 5 nominal tons cooling (60,000 BTU/h). Gas-fired heating: 80,000 BTU/h input, 64,800 BTU/h output, 81% thermal efficiency, natural gas. Electrical: 208-230/60/3, 29A MCA, 40A max overcurrent. Refrigerant: R-410A (4.8 lbs factory charge). Altitude rated 0-2,000 ft. Condition: essentially new, retain. RTU #2: Trane 4WCY4060A3000CB. Serial: 224010038L. Manufactured September 2022 (~3.5 years old). 5 nominal tons cooling (17.0 kW / ~58,000 BTU/h). Packaged heat pump with supplemental electric heat strips. Electrical: 208/230V, 28.6A MCA, 45A max fuse. Refrigerant: R-410A (10 lbs 2 oz factory charge). External static: 0.75\" W.C. Condition: good, well within useful life, retain." },
+      { label: "Gas Service to Space", value: "Yes – Active", badge: "good" },
+      { label: "Gas Meter Details", value: "Multi-tenant gas meter bank on building exterior rear wall (SDG&E). Three meters serving the three food-service tenants in the building. The meter closest to the unit (far right position) is believed to serve this unit, but specific meter-to-unit assignment was not confirmed during the visit. Meters observed: Honeywell AC-630 (~630 CFH), American Meter AC-250 (~250 CFH, MAOP 5 PSI), and a third meter (partially obscured, details not recorded). Combined gas demand: Trane Precedent RTU (~80 CFH) plus Navien tankless water heater (~150-200 CFH) = approximately 230-280 CFH peak." },
+      { label: "Thermostat Details", value: "Two Nest thermostats in back-of-house area, indicating two separate HVAC zones (likely FOH and BOH). Recent controls upgrade — Nest units are significantly newer than the building. Two-zone setup is ideal for a restaurant where the kitchen runs hotter than the dining area." },
+      { label: "Kitchen Hood Present", value: "No Hood Present", badge: "warn" },
+      { label: "RTU Capacity Adequate for Space", value: "Yes – Adequate", badge: "good" },
+      { label: "Supply Diffuser Count", value: 'FOH: 6 supply diffusers, 2 ducted return air grilles. All dirty, rusty, and need replacement. Bathroom: 1 x 12" square supply diffuser, 1 x 12" square return air grille. BOH/Kitchen: 1 diffuser, 1 speaker, possible return air in ceiling (could not confirm). Drop soffit in FOH contains integrated pot lights at 10\'-0 1/4" from floor.' },
+    ],
+    photoCount: 9,
+  },
+  {
+    id: "plumbing",
+    name: "Plumbing & Drainage",
+    dotColor: "#3b82f6",
+    summary: "Plumbing infrastructure is comprehensive and well-suited to the tenant's operations. The Navien tankless water heater (Nov 2024) is a significant asset — tenants of this type typically require tankless. The Pentair Everpure water filtration system provides the water quality needed for espresso and juice. Sanitary clean-out in front of main door provides good access. Sewer-gas odour throughout space is from dry P-traps (vacant space) — running water through all traps will resolve. One disconnected blender rinse sink needs reconnection or capping. Overall plumbing condition is good.",
+    fields: [
+      { label: "Grease Trap Details", value: "Three interceptor access points along the front of the unit. Primary interceptor is a large double-chamber unit with two steel manhole covers. Patched asphalt around one cover suggests recent maintenance. Estimated capacity: 1,500-2,000 gallons. Two additional interceptors (two covers each) serve neighbouring tenants — individual per-tenant system, not shared. No grease compliance liability from neighbours. Capacity more than adequate for a juice/coffee concept with limited cooking." },
+      { label: "Water Service Entry", value: "Water service entry point suspected to be located in the rear utility room adjacent to the electrical room (exterior access, rear of building). This room also contains the roof access ladder. Room was accessed during the survey but the scan failed and the door locked before re-entry was possible. Awaiting confirmation from property management. Water main size, backflow preventer details, and tenant shutoff valve to be documented on follow-up." },
+      { label: "Water Heater Details", value: 'Navien NPE-2 series (probable) tankless condensing gas water heater. Wall-mounted above janitor\'s sink in BOH. Installation date approximately November 2024 (wall notation "11/7/24"). Gas-fired with yellow flex line and red-handled shutoff. PVC condensing vent (95%+ thermal efficiency). Energy Star certified. Estimated capacity: 150,000-199,900 BTU/h (~3.5-5.0 GPM at 77°F rise). Exact model could not be confirmed — nameplate on rear of unit, mounted at height. Condition: essentially new. Replacement value: $3,000-$4,500 installed. More than adequate for juice bar operations without commercial dishwasher.' },
+      { label: "Sink Inventory", value: "Kitchen: One large commercial sink (rear wall, good working order). Two blender rinse sinks (one connected, one disconnected — requires reconnection or proper capping). One four-compartment commercial sink (good condition, minor surface rust). One hand-wash sink (code-required, functional). One janitor's sink (3'-0\" W x 2'-6\" D) beneath water heater. Front serving counter has one integrated sink. Bathroom: standard ceramic sink." },
+      { label: "Water Heater Reuse", value: "Reuse", badge: "good" },
+      { label: "Grease Trap Adequate for Tenant", value: "Yes", badge: "good" },
+      { label: "Floor Drain Locations", value: 'Multiple floor drains throughout the BOH kitchen area — minimum of four observed: (1) beneath walk-in cooler condensate discharge lines, (2) near the walk-in/rear storage area along the wall, (3) adjacent to structural column mid-kitchen, (4) beneath the three-compartment warewash sink. All are square enamelled cast iron grate style, approximately 8"x8". Some show rust and chipped enamel on grates but appear functional. The West Star ice well drains meltwater to an open floor drain via metal piping (not ABS). Floor drain in bathroom also present. Excellent drain coverage for food-service operations — critical for juice spill cleanup, equipment drainage, and floor wash-down. All P-traps likely dry from vacancy — run water through all drains before any plumbing inspection to restore water seals and eliminate sewer gas odour.' },
+      { label: "Existing Water Filtration", value: "Yes – System Present", badge: "good" },
+    ],
+    photoCount: 8,
+  },
+  {
+    id: "lifesafety",
+    name: "Life Safety & Fire Protection",
+    dotColor: "#dc2626",
+    summary: "Fire exit sign with integrated emergency light observed. Multiple exit routes: main double doors (need crash bars), fire exit double doors (crash bars present), end single door (crash bar present). Existing alarm panel in kitchen area appears to be a decommissioned legacy system. Fire sprinkler system present (to be confirmed from above-ceiling documentation). No kitchen fire suppression hood. Walk-in cooler/freezer doors have safety interior push-bar releases (code compliant). An assumption has been made that the fire alarm system is a building-wide system and managed by the landlord. Legacy security/intrusion system control panel in BOH — believed decommissioned since vacancy. Fire alarm notification devices on existing drop ceiling will need relocation if ceiling is removed for exposed concept.",
+    fields: [
+      { label: "Exit Signs", value: "2" },
+      { label: "Egress Paths", value: "3 fire exits: rear, side, and front. However, the front doors do not have crash bars fitted. Fire exit signage may be sufficient but with only two illuminated signs it may need updating. Egress paths currently fully clear. Care should be used in space planning to ensure this remains so." },
+      { label: "Sprinkler System", value: "None", badge: "warn" },
+      { label: "Fire Alarm System", value: "Building-Wide System" },
+      { label: "Emergency Lighting", value: "Adequate", badge: "good" },
+      { label: "Fire Extinguisher Count", value: "2. One in south west corner, 1 in kitchen area." },
+    ],
+    photoCount: 6,
+  },
+  {
+    id: "aboveceiling",
+    name: "Above-Ceiling Documentation",
+    dotColor: "#06b6d4",
+    summary: 'Full above-ceiling documentation was captured via Cupix 360° and Insta360 X5 video for detailed review. The 15\'-9 5/8" floor-to-deck height provides excellent plenum clearance of approximately 5\'-4" above the existing FOH drop ceiling. This is ample room for new mechanical distribution if the drop ceiling is removed for an exposed-ceiling concept, which is typical for this kind of tenant. The significant drop soffit at the rear of the space (7\'-11 5/16" clearance) likely conceals major ductwork runs or structural beams and may be a constraint for equipment placement.',
+    fields: [
+      { label: "Ceiling Type", value: "2x4 ACT Grid" },
+      { label: "Plenum Depth (Ceiling to Structure)", value: 'Floor-to-deck (insulation) height is 15\'-9 5/8". Drop ceiling height (FOH) is 10\'-4 15/16", giving approximately 5\'-4" of plenum space above the 2x2 drop ceiling in the front-of-house. BOH drop ceiling is at 9\'-11 7/8" (2x4 tiles), giving approximately 5\'-10" of plenum space. Significant drop soffit at rear of space with only 7\'-11 5/16" clearance, possibly concealing structural beams.' },
+      { label: "Ceiling Access", value: "Partial – Some Areas Accessible", badge: "warn" },
+      { label: "Duct Sizes (Supply / Return)", value: 'Main supply trunk off RTU: approximately 24" x 12-14" rectangular, galvanised sheet metal, insulated branch ducts running to diffusers. Duct sizes are consistent with 5-ton RTU capacity (~2,000 CFM).' },
+      { label: "Main Duct Routing", value: "Two separate HVAC zones served by two rooftop packaged units. Supply and return ductwork runs from roof curbs through ceiling to six supply diffusers and two ducted return air grilles in the front-of-house. Return air is ducted (not open plenum), which is standard for food-service occupancy." },
+      { label: "Exhaust Duct Routing", value: "No kitchen exhaust hood was present in the space (previous tenant was a juice/smoothie operation, not a cooking-intensive concept). Bathroom exhaust routing not traced during this visit. To be confirmed from above-ceiling capture." },
+      { label: "Insulation Condition", value: "Good – Intact", badge: "good" },
+      { label: "Structure Type Above Ceiling", value: "Steel Bar Joists" },
+      { label: "Plumbing Above Ceiling", value: "Refrigerant line sets (insulated suction lines) visible running from walk-in cooler and freezer up through ceiling to roof-mounted condensing units. Drain lines, supply lines, and vent stacks to be confirmed from above-ceiling capture." },
+      { label: "Clearance for New Routing", value: "Good – Plenty of Space", badge: "good" },
+      { label: "Electrical Conduit Routing", value: "Main conduit runs visible above ceiling running from electrical panels in the BOH to distribution throughout the space. Specific routing to be confirmed from above-ceiling 360° capture." },
+    ],
+    photoCount: 0,
+    hasEmbeds: true,
+  },
+  {
+    id: "hvacschedule",
+    name: "HVAC Equipment Schedule",
+    dotColor: "#f97316",
+    summary: "Two near-new Trane RTUs provide excellent HVAC coverage with 10 tons across two zones controlled by two Nest thermostats (FOH/BOH split). Both RTUs are tier-one equipment with 15+ years of remaining useful life. Combined HVAC replacement value approximately $16,000-$24,000. The refrigeration condensers are the weak link — both are 22-year-old units on R-404A. The walk-in boxes they serve are structurally sound (confirmed by thermal imaging) and worth retaining. Budget $8,000-$14,000 for condenser replacements on modern refrigerant. Evaporators inside both boxes need chemical cleaning and defrost system verification but are serviceable.",
+    isSchedule: true,
+    scheduleStats: { total: 6, reuse: 2, replace: 0, evaluate: 4 },
+    scheduleItems: [
+      { num: 1, type: "Roof", makeModel: "Trane YSC060G3RLB2F (Precedent 3-10 Tons)", serial: "244610222L", capacity: "5 Ton / 60,000 BTU cooling / 80,000 BTU gas heating", year: "2024 (Nov.)", condition: "Excellent", recommendation: "REUSE", notes: "Essentially new — 18 months old. Gas-fired forced air furnace with cooling unit. 208-230/60/3, 29A MCA, 40A max overcurrent. Heating output 64,800 BTU/h at 81% thermal efficiency. Natural gas. Factory charge 4.8 lbs R-410A. Altitude rated 0-2,000 ft. Replacement value $8,000-$12,000 installed." },
+      { num: 2, type: "Roof", makeModel: "Trane 4WCY4060A3000CB", serial: "224010038L", capacity: "5 Ton", year: "2022 (4yr)", condition: "Excellent", recommendation: "REUSE", notes: 'Packaged heat pump with supplemental electric heat strips. 208/230V, 28.6A MCA, 45A max fuse. Factory charge 10 lbs 2 oz R-410A. External static 0.75" W.C. 3.5 years old, well within useful life. Replacement value $8,000-$12,000 installed.' },
+      { num: 3, type: "Roof", makeModel: "Russell RLH075M44-D", serial: "W04J26895301001", capacity: "3/4 HP condenser", year: "2004 (22yr)", condition: "Fair", recommendation: "EVALUATE", notes: 'Approximately 22 years old — well past typical 15-18 year lifespan. R-404A refrigerant is being phased down under EPA and California CARB regulations. New equipment on R-404A prohibited in CA since Jan 2022. Serves the walk-in cooler (Thermalrite, 10\'-4" x 7\'-3 3/4" x 7\'-8 3/8"). Replacement budget: $3,500-$5,500 for new condenser on R-448A or R-449A.' },
+      { num: 4, type: "Roof", makeModel: "HTP HLH215L44-D", serial: "H04261648-0301", capacity: "~2 HP condenser", year: "2004 (22yr)", condition: "Fair", recommendation: "EVALUATE", notes: 'Approximately 22 years old. Same R-404A phase-down concerns as the cooler condenser. Larger unit with 2 condenser fans, 30A defrost heater circuit. Serves the walk-in freezer (Thermalrite, 10\'-5" x 7\'-3" x 7\'-3", insulated diamond plate floor). Replacement budget: $4,500-$8,500 for new condenser on modern refrigerant.' },
+      { num: 5, type: "Walk-In Cooler", makeModel: "Heatcraft LCA116AGOL", serial: "T1304782", capacity: "Evaporator", year: "Est. 2015", condition: "Fair", recommendation: "EVALUATE", notes: "Evaporator coil inside walk-in cooler. 11 years old — younger than the condenser it's paired with. Coil is dirty and fouled — requires chemical cleaning before recommissioning. NSF certified for food service. Retain and service." },
+      { num: 6, type: "Walk-In Freezer", makeModel: "Russell AE26-928-0001", serial: "W04J26833701001", capacity: "Evaporator", year: "Est. 2004", condition: "Fair", recommendation: "EVALUATE", notes: "Original 2004 evaporator matched to the HTP condenser. 22 years old but coil appears reasonably clean. Defrost drain line shows rust staining on wall below — heat trace should be verified during commissioning. NSF and UL certified. Retain and service — the evaporator can outlast the condenser if coils are cleaned and defrost system is functional." },
+    ],
+    photoCount: 12,
+  },
+  {
+    id: "equipmentreuse",
+    name: "Equipment Reuse Assessment",
+    dotColor: "#10b981",
+    summary: "The mechanical and electrical infrastructure at this location is in significantly better condition than the interior finishes suggest. Two near-new HVAC rooftop units (Trane Precedent 5-ton gas/electric, Nov 2024; Trane 5-ton heat pump, Sep 2022), a recently installed Navien tankless water heater (Nov 2024), a Pentair Everpure commercial water filtration system, and a robust 400A three-phase electrical service provide an excellent foundation. The two walk-in cold storage boxes (Thermalrite, cooler and freezer) are structurally sound with intact insulation confirmed by thermal imaging. However, both rooftop condensing units are circa 2004 (~22 years old) and operate on R-404A refrigerant, which is being phased down. Both condensers should be budgeted for replacement at $8,000-$14,000 total.",
+    fields: [
+      { label: "Equipment Schedule Complete", value: "Yes – All Items Tagged and Photographed", badge: "good" },
+    ],
+    photoCount: 0,
+  },
+  {
+    id: "walkin",
+    name: "Walk-In Cooler & Freezer",
+    dotColor: "#0284c7",
+    summary: "Two Thermalrite walk-in boxes in the BOH: one cooler and one freezer. Both boxes are structurally sound with intact insulation confirmed by thermal imaging. Both rooftop condensers are circa 2004 and at end of life on R-404A — recommend replacement of condensers while retaining the boxes. Evaporators need cleaning and defrost verification but are serviceable. Door gaskets intact. Interior fixtures functional.",
+    fields: [
+      { label: "Walk-In Cooler", value: 'Thermalrite, 10\'-4" W x 7\'-3 3/4" D x 7\'-8 3/8" H. Door clear width: 3\'-0". No insulated floor (standard slab — confirms cooler, not freezer). Evaporator: Heatcraft LCASJ10AA (2015), 2 x 1/20 HP fans. Condenser: Russell RLH075M44-D, 3/4 HP (circa 2004, 22 years old). Refrigerant: R-404A. Box condition: good, panels tight, confirmed by thermal imaging. Evaporator: dirty, requires chemical cleaning. Condenser: END OF LIFE — replace. Estimated condenser replacement: $3,500-$5,500.' },
+      { label: "Walk-In Freezer", value: 'Thermalrite, 10\'-5" W x 7\'-3" D x 7\'-3" H. Insulated diamond plate floor (not roll-in). Door with safety interior push-bar release, door-ajar alarm reed switches, and analogue exterior thermometer. Evaporator: Russell AE26-92B-D006 (S/N: W04J26833701001, circa 2004), 2 x 1/20 HP fans, 208/230V. Condenser (roof): HTP HLH215L44-D, ~2 HP (S/N: H04261648-0301, circa 2004). Refrigerant: R-404A. Evap temp range: -40°F to 0°F. Max defrost heater: 30A (Circuit A). Box condition: good, diamond plate floor solid, panels tight, insulation confirmed by thermal imaging. Freezer door heater element appears intact (warm spot visible on thermal). Condensate/defrost drain line runs down rear wall — rust staining suggests past overflow, heat trace should be verified. Evaporator coil reasonably clean. Condenser: 22 years old, END OF LIFE — replace. Recommendation: RETAIN box, REPLACE condenser ($4,500-$8,500).' },
+      { label: "Walk-In Cooler Reuse", value: "Evaluate – Compressor Concern", badge: "warn" },
+    ],
+    photoCount: 10,
+  },
+  {
+    id: "foodservice",
+    name: "Food Service Equipment",
+    dotColor: "#4f46e5",
+    summary: "No existing juicers, blenders, or espresso machines remain in the space. Previous juice/smoothie tenant left behind key infrastructure that directly supports the new tenant's concept: West Star Industries triple ice well (wall-mounted, NSF-certified, 3-bay stainless steel), two blender rinse sinks (one connected, one disconnected), two refrigerated grab-and-go display cases at the service counter (cosmetically intact, functionality unverified), and multiple floor drains. The electrical and plumbing roughed in at the previous blender station positions can be repurposed. No kitchen exhaust hood is present — if the new tenant's sandwich press operation requires a hood per San Marcos building department interpretation, new hood installation will be required. Ice machine is at end of life and should be replaced.",
+    fields: [
+      { label: "Existing Juicer Equipment", value: 'No existing juicers remaining in the space. Previous tenant had a dedicated "Wheatgrass" circuit on the electrical panel (space 36 in main panel), indicating a juicer station was previously in operation. This dedicated circuit could be repurposed for new juicer equipment.' },
+      { label: "Existing Blender Equipment", value: "No existing blenders remaining. However, a West Star Industries triple ice well (wall-mounted, NSF-certified, 3-bay stainless steel) is installed above the prep counter. Two blender rinse sinks are present (one connected, one disconnected). Multiple standard and isolated-ground receptacles at the service counter area. The previous tenant was a juice/smoothie operation, so the electrical and plumbing infrastructure at the blender station positions is already roughed in." },
+      { label: "Ice Machine Reuse", value: "Replace – End of Life", badge: "bad" },
+      { label: "Walk-In Cooler Reuse", value: "Evaluate – Compressor Concern", badge: "warn" },
+      { label: "Espresso Machine Infrastructure", value: "No existing espresso machine infrastructure. Dedicated 220V/30A circuit not currently identified at any bar position. New circuit may need to be pulled from the electrical panels. Water supply with filtration is available via the existing Pentair Everpure system. Drain available at the front serving counter sink." },
+      { label: "220V/30A Circuit at Bar Position", value: "No – New Circuit Required", badge: "warn" },
+      { label: "Under-Counter Refrigeration", value: "One reach-in cooler observed near the back of the kitchen. Appears more modern and in better condition than other equipment — likely a newer replacement unit. Make and model not recorded during this visit." },
+      { label: "Sandwich Press / Panini Grill", value: "No existing sandwich press or panini grill. No 220V dedicated circuit identified specifically for a press. If the tenant requires a 220V press, a new circuit will need to be pulled from the panels (ample capacity available). If 110V is sufficient, existing receptacle circuits can support it." },
+      { label: "Kitchen Fire Suppression", value: "No kitchen fire suppression hood present. Previous tenant operated without a Type I hood (juice/smoothie concept). If the new tenant's sandwich press operation requires a hood per San Marcos building department interpretation, new hood installation will be required. This is a critical item to confirm with the AHJ." },
+      { label: "Grinder Power Provision", value: "Standard 110V/15A receptacles available at various locations. Specific outlet at bar position for grinders will need to be confirmed during fit-out design. Multiple receptacle circuits available on both panels." },
+    ],
+    photoCount: 14,
+  },
+  {
+    id: "thermal",
+    name: "Thermal Imaging",
+    dotColor: "#be185d",
+    summary: "All thermal captures were taken with refrigeration equipment de-energised (space is vacant, breakers off). No anomalies or deficiencies detected. WALK-IN PANELS: Both cooler and freezer box walls showed uniform thermal signatures with no hot spots, cold spots, or anomalies at panel joints or seams. No evidence of insulation breakdown, moisture penetration into the foam core, or panel delamination. The freezer panels read approximately 2°C cooler than the cooler panels (21.2°C vs 23.1°C), consistent with the freezer's thicker insulation retaining residual coolth longer after shutdown. This differential confirms the freezer insulation is performing as designed and the foam core is intact and dry. WALK-IN DOORS & GASKETS: No thermal anomalies around door perimeters on either box, indicating intact gaskets with no significant air leakage paths. A localised warm spot on the freezer door face (23.4°C) is consistent with the integrated door heater strip — standard on freezer doors to prevent gasket freeze-up. ELECTRICAL PANELS: Main panel (400A) peak surface temperature 23.1°C; sub-panel (225A) at 21.3°C. Both approximately 4-5°C above ambient, which is completely normal for energised panelboards under light load. No hot spots indicating overheating breakers, no localised heat from loose connections, no asymmetric heating suggesting phase imbalance. LIMITATION: All refrigeration was off during the survey. A loaded thermal test under operating conditions should be performed by the refrigeration contractor during commissioning.",
+    fields: [
+      { label: "Areas Scanned", value: "Walk-in cooler exterior panels (two shots), walk-in cooler door, walk-in freezer door, both walk-in doors side by side, walk-in freezer door close-up, both electrical panels (main 400A and sub 225A) side by side." },
+      { label: "Ambient Temperature at Time of Scan", value: "Approximately 18.5-19.3°C (65-67°F) — overcast morning, San Marcos CA" },
+      { label: "Thermal Camera / Equipment Used", value: "Topdon TC001 Max" },
+    ],
+    photoCount: 8,
+  },
+  {
+    id: "restrooms",
+    name: "Restrooms",
+    dotColor: "#8b5cf6",
+    summary: "One single gender-neutral bathroom. Dimensions: 8'-9 3/4\" x 5'-2\". Ceiling: Drywall at 8'-0 1/8\". Floor: 12\" x 12\" ceramic tile. Walls: Ceramic tile to 4'-0\" height, drywall above. Fixtures: Standard ceramic toilet, standard ceramic sink, horizontal grab bar, floor drain, waste access point. One GFI receptacle adjacent to sink. Halogen strip light damaged, needs replacement. One 12\" x 12\" supply diffuser, one 12\" x 12\" return air grille. Overall condition: average. Will need refurbishment to meet tenant brand standards — likely new finishes, fixtures, lighting, and accessories.",
+    fields: [
+      { label: "Fixture Count", value: "1 WC (floor-mounted), 1 ceramic washbasin (wall-mounted), 2 horizontal handrails around toilet. 1x 4ft 2-strip halogen striplight — diffusing light cover broken and needs replacement." },
+      { label: "Restroom Ventilation", value: "Exhaust Fan – Working", badge: "good" },
+      { label: "ADA Compliant", value: "Partial – Some Issues", badge: "warn" },
+      { label: "Restroom Count", value: "1" },
+      { label: "Finishes Condition", value: "Fair – Needs Update", badge: "warn" },
+    ],
+    photoCount: 7,
+    photoLabels: ["North", "East", "South", "West", "Ceiling", "Floor", "Detail"],
   },
 ];
 
-const totalPhotos = rooms.reduce((acc, r) => acc + r.photos.length, 0) + aboveCeilingPhotos.length + thermalFindings.length;
-
-const navSections = [
-  { id: "overview", label: "Overview" },
-  { id: "site-discussion", label: "Site Discussion" },
-  { id: "aerial", label: "Aerial / Drone" },
-  { id: "tour", label: "3D Tour" },
-  { id: "rooms", label: "Rooms & Spaces" },
-  { id: "above-ceiling", label: "Above-Ceiling" },
-  { id: "equipment", label: "Equipment Schedule" },
-  { id: "hvac", label: "HVAC Schedule" },
-  { id: "thermal", label: "Thermal Imaging" },
-  { id: "drawings", label: "Drawings" },
-  { id: "media", label: "External Media" },
-  { id: "comments", label: "Questions & Comments" },
+const PHOTO_GRADIENTS = [
+  "linear-gradient(135deg, #cbd5e1 0%, #94a3b8 100%)",
+  "linear-gradient(135deg, #e5e7eb 0%, #9ca3af 100%)",
+  "linear-gradient(135deg, #fef3c7 0%, #d4a853 100%)",
+  "linear-gradient(135deg, #fed7aa 0%, #f97316 100%)",
+  "linear-gradient(135deg, #d1fae5 0%, #10b981 100%)",
+  "linear-gradient(135deg, #dbeafe 0%, #3b82f6 100%)",
+  "linear-gradient(135deg, #e0e7ff 0%, #6366f1 100%)",
+  "linear-gradient(135deg, #fce7f3 0%, #ec4899 100%)",
 ];
+
+const THERMAL_GRADIENT = "linear-gradient(135deg, #7c2d12 0%, #f97316 40%, #fbbf24 70%, #fef3c7 100%)";
+
+function gradientFor(id: string, i: number, isThermal: boolean) {
+  if (isThermal) return THERMAL_GRADIENT;
+  const idx = (i + id.charCodeAt(0)) % PHOTO_GRADIENTS.length;
+  return PHOTO_GRADIENTS[idx];
+}
+
+function badgeColors(kind: string) {
+  if (kind === "good") return { bg: "#dcfce7", color: "#166534", border: "#86efac" };
+  if (kind === "warn") return { bg: "#fef3c7", color: "#854d0e", border: "#fcd34d" };
+  if (kind === "bad")  return { bg: "#fee2e2", color: "#991b1b", border: "#fca5a5" };
+  return { bg: "#dcfce7", color: "#166534", border: "#86efac" };
+}
+
+function recColors(rec: string) {
+  if (rec === "REUSE")    return { bg: "#dcfce7", color: "#166534" };
+  if (rec === "REPLACE")  return { bg: "#fee2e2", color: "#991b1b" };
+  if (rec === "EVALUATE") return { bg: "#fef3c7", color: "#854d0e" };
+  return { bg: "#f3f4f6", color: "#374151" };
+}
+
+function recPalette(level: string) {
+  if (level === "critical") return { bg: "#fef2f2", border: "#fca5a5", head: "#991b1b" };
+  if (level === "high")     return { bg: "#fff7ed", border: "#fdba74", head: "#9a3412" };
+  if (level === "medium")   return { bg: "#fefce8", border: "#fde047", head: "#854d0e" };
+  return { bg: "#f9fafb", border: "#e5e7eb", head: "#374151" };
+}
+
+const PAGE_FONT = "-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif";
+
+const initialOpenId = "plumbing";
 ---
+
 <Layout
-  title="Sample ScopeWalk Project — Alturascope"
-  description="Explore an interactive sample of the ScopeWalk deliverable Alturascope produces on every site visit — rooms, measurements, photographs, equipment schedules, and more."
+  title="ScopeWalk Sample Project — Greenleaf Kitchen San Marcos | Alturascope"
+  description="Interactive ScopeWalk survey report for a former juice/smoothie space in San Marcos, CA. MEP, equipment reuse assessment, recommendations, and 3D capture."
   canonical="https://alturascope.com/work/sample-project/"
-  robots="noindex, follow"
+  robots="noindex, nofollow"
   fullWidth={true}
   minimalChrome={true}
 >
-  <div class="sw-root bg-[#FBF8F3] text-[#3A3630] min-h-screen">
+  <div style={`font-family: ${PAGE_FONT}; background: #f3f4f6; min-height: 100vh; color: #111827;`}>
 
-    <!-- Guest banner (sticky) -->
-    <div class="sticky top-0 z-40 bg-gradient-to-r from-[#EE7B1A] to-[#CC620A] text-white shadow-md">
-      <div class="max-w-[1200px] mx-auto px-4 sm:px-6 py-2.5 flex items-center justify-between gap-3">
-        <div class="flex items-center gap-2.5 min-w-0">
-          <svg class="w-4 h-4 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/>
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"/>
-          </svg>
-          <span class="text-xs sm:text-sm font-medium truncate">
-            <span class="font-semibold">Sample project</span>
-            <span class="hidden sm:inline opacity-90"> — this is an interactive demo of the ScopeWalk deliverable.</span>
-          </span>
+    {/* TOP NAV BAR */}
+    <header style="background: #fff; border-bottom: 1px solid #e5e7eb; padding: 12px 24px; position: sticky; top: 0; z-index: 50;">
+      <div style="display: flex; align-items: center; justify-content: space-between; max-width: 1200px; margin: 0 auto; gap: 12px; flex-wrap: wrap;">
+        <div style="display: flex; align-items: center; gap: 32px;">
+          <div style="font-size: 18px; font-weight: 800; color: #111827; letter-spacing: -0.3px;">ScopeWalk</div>
+          <nav style="display: flex; gap: 22px; font-size: 13px; color: #6b7280; font-weight: 500;">
+            <span>Dashboard</span>
+            <span>Visits</span>
+            <span>Projects</span>
+            <span>Portfolios</span>
+            <span>Teams</span>
+            <span>Templates</span>
+          </nav>
         </div>
-        <a href="/" class="text-xs font-semibold whitespace-nowrap hover:underline underline-offset-4">&larr; Alturascope</a>
-      </div>
-    </div>
-
-    <!-- Project header -->
-    <header id="overview" class="scroll-mt-20 max-w-[1200px] mx-auto px-4 sm:px-6 pt-6 sm:pt-10 pb-4">
-      <div class="bg-white rounded-2xl shadow-sm border border-[#E9E0CD] overflow-hidden">
-        <div class="p-5 sm:p-8">
-          <div class="flex flex-col lg:flex-row lg:items-start lg:justify-between gap-6">
-            <div class="min-w-0">
-              <p class="text-[11px] font-semibold tracking-[0.18em] uppercase text-[#CC620A] mb-2">ScopeWalk Project</p>
-              <h1 class="text-2xl sm:text-3xl lg:text-[2.1rem] font-semibold text-[#1C1A17] leading-tight">{project.name}</h1>
-              <div class="mt-3 flex items-start gap-2 text-[#504B43]">
-                <svg class="w-4 h-4 flex-shrink-0 mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/>
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/>
-                </svg>
-                <span class="text-sm">{project.address}</span>
-              </div>
-              <p class="text-sm text-[#6F6A61] mt-1">Client: <span class="text-[#3A3630] font-medium">{project.client}</span></p>
-            </div>
-
-            <!-- Quick stats -->
-            <div class="grid grid-cols-4 gap-2 sm:gap-3 lg:gap-4 lg:flex-shrink-0">
-              <div class="bg-[#F5EFE4] rounded-lg px-3 py-2.5 text-center">
-                <div class="text-base sm:text-lg font-semibold text-[#1C1A17]">{rooms.length}</div>
-                <div class="text-[10px] sm:text-[11px] font-medium uppercase tracking-wider text-[#6F6A61] mt-0.5">Rooms</div>
-              </div>
-              <div class="bg-[#F5EFE4] rounded-lg px-3 py-2.5 text-center">
-                <div class="text-base sm:text-lg font-semibold text-[#1C1A17]">{totalPhotos}</div>
-                <div class="text-[10px] sm:text-[11px] font-medium uppercase tracking-wider text-[#6F6A61] mt-0.5">Photos</div>
-              </div>
-              <div class="bg-[#F5EFE4] rounded-lg px-3 py-2.5 text-center">
-                <div class="text-base sm:text-lg font-semibold text-[#1C1A17]">1,622</div>
-                <div class="text-[10px] sm:text-[11px] font-medium uppercase tracking-wider text-[#6F6A61] mt-0.5">Sq ft</div>
-              </div>
-              <div class="bg-[#F5EFE4] rounded-lg px-3 py-2.5 text-center">
-                <div class="text-base sm:text-lg font-semibold text-[#1C1A17]">1</div>
-                <div class="text-[10px] sm:text-[11px] font-medium uppercase tracking-wider text-[#6F6A61] mt-0.5">Visit</div>
-              </div>
-            </div>
+        <div style="display: flex; align-items: center; gap: 10px; flex-wrap: wrap;">
+          <div style="display: flex; align-items: center; gap: 5px; background: #dcfce7; color: #166534; padding: 5px 11px; border-radius: 6px; font-size: 12px; font-weight: 600;">
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5" /></svg>
+            All synced
           </div>
-
-          <div class="mt-6 pt-5 border-t border-[#EDE5D7] flex flex-wrap items-center gap-x-5 gap-y-2 text-xs sm:text-sm text-[#6F6A61]">
-            <span><span class="text-[#504B43] font-medium">Surveyed:</span> {project.surveyDate}</span>
-            <span><span class="text-[#504B43] font-medium">By:</span> {project.surveyor}</span>
-            <span class="flex items-center gap-1.5"><span class="w-1.5 h-1.5 rounded-full bg-emerald-500"></span>Deliverable issued</span>
+          <div style="display: flex; align-items: center; gap: 5px; background: #ea580c; color: #fff; padding: 6px 12px; border-radius: 6px; font-size: 12px; font-weight: 600; cursor: pointer;">
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><rect x="3" y="4" width="18" height="18" rx="2" /><line x1="16" y1="2" x2="16" y2="6" /><line x1="8" y1="2" x2="8" y2="6" /><line x1="3" y1="10" x2="21" y2="10" /></svg>
+            Schedule Visit
           </div>
+          <div style="display: flex; align-items: center; gap: 6px; font-size: 12px; color: #374151;">
+            <span style="font-weight: 600;">Andrew Harris</span>
+            <span style="background: #f3f4f6; padding: 2px 7px; border-radius: 3px; font-size: 10px; font-weight: 600; color: #6b7280;">owner</span>
+          </div>
+          <span style="font-size: 13px; color: #6b7280; font-weight: 500;">Admin</span>
+          <div style="padding: 5px 11px; border: 1px solid #a78bfa; border-radius: 6px; color: #7c3aed; font-size: 12px; font-weight: 600; cursor: pointer;">Designer View</div>
+          <span style="font-size: 13px; color: #6b7280;">Log out</span>
         </div>
       </div>
     </header>
 
-    <!-- Main layout: sidebar + content -->
-    <div class="max-w-[1200px] mx-auto px-4 sm:px-6 pb-12">
-      <div class="lg:grid lg:grid-cols-[220px_minmax(0,1fr)] lg:gap-8">
+    {/* MAIN */}
+    <main style="max-width: 1200px; margin: 0 auto; padding: 24px;">
 
-        <!-- Sticky section nav (desktop) -->
-        <aside class="hidden lg:block">
-          <nav aria-label="Sections" class="sticky top-20 pt-4">
-            <p class="text-[10px] font-semibold uppercase tracking-[0.18em] text-[#9A938A] mb-3 px-3">Jump to</p>
-            <ul class="flex flex-col gap-1 text-sm" id="sw-side-nav">
-              {navSections.map((s) => (
-                <li>
-                  <a href={`#${s.id}`} data-nav-link data-target={s.id} class="sw-nav-link block px-3 py-1.5 rounded-md text-[#504B43] hover:text-[#1C1A17] hover:bg-[#F5EFE4] transition-colors">
-                    {s.label}
-                  </a>
-                </li>
+      {/* Report title */}
+      <div style="margin-bottom: 20px;">
+        <h1 style="font-size: 30px; font-weight: 800; color: #111827; margin: 0 0 4px; letter-spacing: -0.5px;">Survey Report</h1>
+        <div style="font-size: 14px; color: #6b7280;">{PROJECT.name}</div>
+        <div style="height: 3px; width: 100%; background: #ea580c; margin-top: 10px; border-radius: 2px;"></div>
+      </div>
+
+      {/* Project Information */}
+      <div style="background: #fff; border: 1px solid #e5e7eb; border-radius: 8px; padding: 18px; margin-bottom: 20px; display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 16px 28px;">
+        <div>
+          <div style="font-size: 10px; font-weight: 700; color: #6b7280; letter-spacing: 0.5px; margin-bottom: 3px;">PROJECT</div>
+          <div style="font-size: 13px; color: #111827; font-weight: 500;">{PROJECT.name}</div>
+        </div>
+        <div>
+          <div style="font-size: 10px; font-weight: 700; color: #6b7280; letter-spacing: 0.5px; margin-bottom: 3px;">VISIT DATE</div>
+          <div style="font-size: 13px; color: #111827; font-weight: 500;">{PROJECT.visitDate}</div>
+        </div>
+        <div>
+          <div style="font-size: 10px; font-weight: 700; color: #6b7280; letter-spacing: 0.5px; margin-bottom: 3px;">CLIENT</div>
+          <div style="font-size: 13px; color: #111827; font-weight: 500;">{PROJECT.client}</div>
+        </div>
+        <div>
+          <div style="font-size: 10px; font-weight: 700; color: #6b7280; letter-spacing: 0.5px; margin-bottom: 3px;">STATUS</div>
+          <div style="font-size: 13px; color: #111827; font-weight: 500;">
+            <span style="display: inline-block; padding: 2px 9px; border-radius: 3px; font-size: 11px; font-weight: 700; background: #dcfce7; color: #166534; letter-spacing: 0.5px;">{PROJECT.status}</span>
+          </div>
+        </div>
+        <div>
+          <div style="font-size: 10px; font-weight: 700; color: #6b7280; letter-spacing: 0.5px; margin-bottom: 3px;">ADDRESS</div>
+          <div style="font-size: 13px; color: #111827; font-weight: 500;">{PROJECT.address}</div>
+        </div>
+        <div>
+          <div style="font-size: 10px; font-weight: 700; color: #6b7280; letter-spacing: 0.5px; margin-bottom: 3px;">ROUTE & START</div>
+          <div style="font-size: 13px; color: #111827; font-weight: 500;">{PROJECT.route}</div>
+        </div>
+        <div>
+          <div style="font-size: 10px; font-weight: 700; color: #6b7280; letter-spacing: 0.5px; margin-bottom: 3px;">SURVEYOR</div>
+          <div style="font-size: 13px; color: #111827; font-weight: 500;">{PROJECT.surveyor}</div>
+        </div>
+        <div>
+          <div style="font-size: 10px; font-weight: 700; color: #6b7280; letter-spacing: 0.5px; margin-bottom: 3px;">LAST UPDATED</div>
+          <div style="font-size: 13px; color: #111827; font-weight: 500;">{PROJECT.lastUpdated}</div>
+        </div>
+      </div>
+
+      {/* Envelope & Doors */}
+      <div style="background: #fff; border: 1px solid #e5e7eb; border-radius: 8px; padding: 18px; margin-bottom: 20px;">
+        <h2 style="font-size: 16px; font-weight: 700; color: #111827; margin: 0 0 10px;">Envelope &amp; Doors</h2>
+        <div style="height: 2px; background: #ea580c; margin-bottom: 12px; width: 100%; border-radius: 1px;"></div>
+        <div style="overflow-x: auto;">
+          <table style="width: 100%; font-size: 13px; border-collapse: collapse; min-width: 480px;">
+            <thead>
+              <tr style="background: #f9fafb; border-bottom: 1px solid #e5e7eb;">
+                <th style="padding: 8px 10px; text-align: left; font-size: 11px; font-weight: 700; color: #374151; letter-spacing: 0.3px;">CATEGORY</th>
+                <th style="padding: 8px 10px; text-align: left; font-size: 11px; font-weight: 700; color: #374151; letter-spacing: 0.3px;">ATTRIBUTE</th>
+                <th style="padding: 8px 10px; text-align: left; font-size: 11px; font-weight: 700; color: #374151; letter-spacing: 0.3px;">VALUE</th>
+              </tr>
+            </thead>
+            <tbody>
+              {ENVELOPE.map((e) => (
+                <tr style="border-bottom: 1px solid #f1f5f9;">
+                  <td style="padding: 8px 10px; color: #111827; font-weight: 500;">{e.category}</td>
+                  <td style="padding: 8px 10px; color: #4b5563;">{e.attribute}</td>
+                  <td style="padding: 8px 10px; color: #111827;">{e.value}</td>
+                </tr>
               ))}
-            </ul>
-          </nav>
-        </aside>
+            </tbody>
+          </table>
+        </div>
+      </div>
 
-        <!-- Mobile section pills -->
-        <nav aria-label="Sections" class="lg:hidden -mx-4 sm:-mx-6 px-4 sm:px-6 overflow-x-auto mb-4">
-          <ul class="flex gap-2 whitespace-nowrap pb-1">
-            {navSections.map((s) => (
-              <li>
-                <a href={`#${s.id}`} class="inline-block px-3 py-1.5 rounded-full text-xs font-medium bg-white border border-[#E9E0CD] text-[#504B43] hover:border-[#EE7B1A] hover:text-[#CC620A] transition-colors">
-                  {s.label}
-                </a>
-              </li>
-            ))}
-          </ul>
-        </nav>
+      {/* Assessment title + expand/collapse */}
+      <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 14px; flex-wrap: wrap; gap: 10px;">
+        <h2 style="font-size: 18px; font-weight: 700; color: #111827; margin: 0;">New Location Fit-Out Survey Assessment</h2>
+        <div style="display: flex; gap: 6px;">
+          <button id="sw-expand-all" type="button" style="background: #fff; border: 1px solid #e5e7eb; border-radius: 4px; padding: 5px 11px; font-size: 12px; color: #374151; cursor: pointer; font-weight: 500; font-family: inherit;">Expand all</button>
+          <button id="sw-collapse-all" type="button" style="background: #fff; border: 1px solid #e5e7eb; border-radius: 4px; padding: 5px 11px; font-size: 12px; color: #374151; cursor: pointer; font-weight: 500; font-family: inherit;">Collapse all</button>
+        </div>
+      </div>
 
-        <!-- Content -->
-        <div class="space-y-6">
-
-          <!-- Site Discussion -->
-          <section id="site-discussion" class="scroll-mt-20 bg-white rounded-2xl shadow-sm border border-[#E9E0CD] overflow-hidden">
-            <div class="px-5 sm:px-6 py-4 border-b border-[#EDE5D7] bg-[#FFF8EC] flex items-center gap-2.5">
-              <svg class="w-5 h-5 text-amber-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg>
-              <h2 class="text-base sm:text-lg font-semibold text-[#1C1A17]">Site Discussion</h2>
-            </div>
-            <div class="p-5 sm:p-6 grid md:grid-cols-2 gap-5">
-              <div>
-                <h4 class="text-xs font-semibold uppercase tracking-wider text-[#6F6A61] mb-1.5">TI Information</h4>
-                <p class="text-sm text-[#504B43] leading-relaxed">Tenant improvement budget approved. Landlord has provided as-built drawings from 2018 with annotations from the prior tenant's 2022 lease-end survey. All drawings attached to this deliverable.</p>
-              </div>
-              <div>
-                <h4 class="text-xs font-semibold uppercase tracking-wider text-[#6F6A61] mb-1.5">Preferred Vendors</h4>
-                <p class="text-sm text-[#504B43] leading-relaxed">Landlord requests use of their roofing contractor (BuildUp Roofing) for any rooftop penetrations. Electrical and plumbing vendor selection is tenant's choice, subject to licensing verification.</p>
-              </div>
-              <div>
-                <h4 class="text-xs font-semibold uppercase tracking-wider text-[#6F6A61] mb-1.5">Building Mandates</h4>
-                <p class="text-sm text-[#504B43] leading-relaxed">After-hours work permitted 7pm–7am weekdays and all day weekends. Freight elevator access coordinated via property management with 48-hour notice. Historic district façade restrictions apply to signage — see addendum.</p>
-              </div>
-              <div>
-                <h4 class="text-xs font-semibold uppercase tracking-wider text-[#6F6A61] mb-1.5">Garbage / Debris</h4>
-                <p class="text-sm text-[#504B43] leading-relaxed">Shared dumpster in the rear service alley (accessed off Red River). Construction debris requires separate roll-off — coordinate with property management. No curbside staging permitted on 6th Street.</p>
-              </div>
-            </div>
-          </section>
-
-          <!-- Aerial -->
-          <section id="aerial" class="scroll-mt-20 bg-white rounded-2xl shadow-sm border border-[#E9E0CD] overflow-hidden">
-            <div class="px-5 sm:px-6 py-4 border-b border-[#EDE5D7] bg-[#F5EFE4] flex items-center justify-between gap-3">
-              <div class="flex items-center gap-2.5">
-                <svg class="w-5 h-5 text-[#504B43]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 10l1.5 10h15L21 10M3 10l2-7h14l2 7M3 10h18M8 14h8"/></svg>
-                <h2 class="text-base sm:text-lg font-semibold text-[#1C1A17]">Aerial / Drone</h2>
-              </div>
-              <span class="text-xs text-[#6F6A61] hidden sm:inline">Captured at 120' AGL — FAA Part 107</span>
-            </div>
-            <div class="p-3 sm:p-4">
-              <button type="button" class="sw-lightbox-trigger w-full block rounded-xl overflow-hidden relative group" data-src="/Images/drone-shot-1.jpg" data-label="Site aerial — 6th Street elevation">
-                <img src="/Images/drone-shot-1.jpg" alt="Aerial drone capture of the site showing 6th Street frontage and surrounding context" class="w-full aspect-[16/9] object-cover group-hover:opacity-95 transition-opacity" loading="lazy"/>
-                <div class="absolute inset-x-0 bottom-0 p-3 bg-gradient-to-t from-black/60 to-transparent text-white text-xs sm:text-sm text-left">
-                  <span class="font-medium">Site aerial — 6th Street elevation</span>
-                </div>
+      {/* Accordions */}
+      <div>
+        {SECTIONS.map((section) => {
+          const isOpen = section.id === initialOpenId;
+          return (
+            <div class="sw-acc" data-id={section.id} style="background: #fff; border: 1px solid #e5e7eb; border-radius: 8px; margin-bottom: 10px; overflow: hidden;">
+              <button class="sw-acc-toggle" type="button" data-target={section.id} style="width: 100%; padding: 14px 18px; background: #fff; border: none; cursor: pointer; display: flex; align-items: center; gap: 10px; font-family: inherit; text-align: left;">
+                <span style={`width: 8px; height: 8px; border-radius: 50%; background: ${section.dotColor}; flex-shrink: 0;`}></span>
+                <span style="font-size: 14px; font-weight: 600; color: #111827; flex: 1;">{section.name}</span>
+                <svg class="sw-acc-chev" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#9ca3af" stroke-width="2" style={`transform: ${isOpen ? "rotate(180deg)" : "rotate(0deg)"}; transition: transform 0.2s;`}>
+                  <polyline points="6 9 12 15 18 9" />
+                </svg>
               </button>
-              <p class="mt-3 text-xs sm:text-sm text-[#6F6A61] px-2">
-                Rooftop condition, HVAC unit locations, adjacent structures and service-alley access all captured in a single flight. A second flight captured the east elevation for landlord coordination.
-              </p>
-            </div>
-          </section>
 
-          <!-- 3D Tour -->
-          <section id="tour" class="scroll-mt-20 bg-white rounded-2xl shadow-sm border border-[#E9E0CD] overflow-hidden">
-            <div class="px-5 sm:px-6 py-4 border-b border-[#EDE5D7] bg-[#F5EFE4] flex items-center gap-2.5">
-              <svg class="w-5 h-5 text-[#504B43]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 7.5l-9-5.25L3 7.5m18 0l-9 5.25m9-5.25v9l-9 5.25M3 7.5l9 5.25M3 7.5v9l9 5.25m0-9v9"/></svg>
-              <h2 class="text-base sm:text-lg font-semibold text-[#1C1A17]">3D Tour — Matterport</h2>
-            </div>
-            <div class="p-3 sm:p-4">
-              <div class="relative w-full rounded-xl overflow-hidden bg-[#EDE5D7]" style="aspect-ratio: 16/9;">
-                <iframe
-                  data-src="https://my.matterport.com/show/?m=SxQL3iGyoDo"
-                  width="100%"
-                  height="100%"
-                  style="border: none; position: absolute; inset: 0;"
-                  allowfullscreen
-                  allow="xr-spatial-tracking"
-                  loading="lazy"
-                  title="ScopeWalk sample — navigable digital twin"
-                ></iframe>
-              </div>
-              <p class="mt-3 text-xs sm:text-sm text-[#6F6A61] px-2">
-                Navigate using mouse or touch. Every room, every surface, every measurement — accessible without returning to site.
-              </p>
-            </div>
-          </section>
-
-          <!-- Rooms & Spaces -->
-          <section id="rooms" class="scroll-mt-20 space-y-4">
-            <div class="flex items-baseline justify-between px-1 pt-2">
-              <h2 class="text-base sm:text-lg font-semibold text-[#1C1A17]">Rooms &amp; Spaces</h2>
-              <span class="text-xs text-[#6F6A61]">{rooms.length} rooms documented</span>
-            </div>
-
-            {rooms.map((room, idx) => (
-              <article id={room.id} class="scroll-mt-20 bg-white rounded-2xl shadow-sm border border-[#E9E0CD] overflow-hidden">
-                <div class="px-5 sm:px-6 py-4 border-b border-[#EDE5D7] bg-[#F5EFE4] flex items-start justify-between gap-3">
-                  <div class="min-w-0">
-                    <div class="flex items-center gap-2 text-[11px] text-[#6F6A61] font-medium uppercase tracking-wider mb-0.5">
-                      <span class="inline-flex items-center justify-center w-5 h-5 rounded-full bg-white border border-[#E9E0CD] text-[#504B43] text-[10px] font-semibold">{idx + 1}</span>
-                      <span>{room.type}</span>
-                    </div>
-                    <h3 class="text-base sm:text-lg font-semibold text-[#1C1A17]">{room.name}</h3>
+              <div class="sw-acc-body" style={`padding: 4px 18px 20px; border-top: 1px solid #f1f5f9; ${isOpen ? "" : "display: none;"}`}>
+                {section.summary && (
+                  <div style="margin-top: 14px; margin-bottom: 16px; background: #fff7ed; border: 1px solid #fed7aa; border-left: 3px solid #ea580c; border-radius: 4px; padding: 12px 14px;">
+                    <div style="font-size: 11px; font-weight: 700; color: #c2410c; letter-spacing: 0.5px; text-transform: uppercase; margin-bottom: 6px;">Summary</div>
+                    <p style="font-size: 13px; line-height: 1.7; color: #374151; margin: 0;">{section.summary}</p>
                   </div>
-                  <button type="button" class="sw-room-toggle text-xs font-medium text-[#CC620A] hover:text-[#B25508] px-2 py-1 rounded hover:bg-white/60 transition-colors flex items-center gap-1" aria-expanded="true">
-                    <span class="sw-toggle-label">Collapse</span>
-                    <svg class="w-3.5 h-3.5 sw-toggle-icon transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
-                  </button>
-                </div>
+                )}
 
-                <div class="sw-room-body p-5 sm:p-6 space-y-5">
-                  <div>
-                    <h4 class="text-xs font-semibold uppercase tracking-wider text-[#6F6A61] mb-1.5">Summary</h4>
-                    <p class="text-sm text-[#504B43] leading-relaxed">{room.summary}</p>
-                  </div>
-
-                  <div>
-                    <h4 class="text-xs font-semibold uppercase tracking-wider text-[#6F6A61] mb-2">Measurements</h4>
-                    <div class="grid grid-cols-2 sm:grid-cols-4 gap-2.5">
-                      <div class="bg-[#FBF8F3] border border-[#EDE5D7] rounded-lg p-3">
-                        <span class="text-[10px] uppercase tracking-wider text-[#9A938A] font-semibold block">Width</span>
-                        <span class="text-sm font-semibold text-[#1C1A17]">{room.measurements.width}</span>
-                      </div>
-                      <div class="bg-[#FBF8F3] border border-[#EDE5D7] rounded-lg p-3">
-                        <span class="text-[10px] uppercase tracking-wider text-[#9A938A] font-semibold block">Length</span>
-                        <span class="text-sm font-semibold text-[#1C1A17]">{room.measurements.length}</span>
-                      </div>
-                      <div class="bg-[#FBF8F3] border border-[#EDE5D7] rounded-lg p-3">
-                        <span class="text-[10px] uppercase tracking-wider text-[#9A938A] font-semibold block">Ceiling</span>
-                        <span class="text-sm font-semibold text-[#1C1A17]">{room.measurements.ceiling}</span>
-                      </div>
-                      <div class="bg-[#FBF8F3] border border-[#EDE5D7] rounded-lg p-3">
-                        <span class="text-[10px] uppercase tracking-wider text-[#9A938A] font-semibold block">Area</span>
-                        <span class="text-sm font-semibold text-[#1C1A17]">{room.measurements.area}</span>
-                      </div>
-                    </div>
-                  </div>
-
-                  <div>
-                    <h4 class="text-xs font-semibold uppercase tracking-wider text-[#6F6A61] mb-2">Finishes</h4>
-                    <div class="flex flex-wrap gap-2">
-                      <span class="inline-flex items-center px-2.5 py-1 rounded-full text-xs font-medium bg-blue-50 text-blue-800 border border-blue-100">Floor: {room.finishes.floor}</span>
-                      <span class="inline-flex items-center px-2.5 py-1 rounded-full text-xs font-medium bg-purple-50 text-purple-800 border border-purple-100">Ceiling: {room.finishes.ceiling}</span>
-                      <span class="inline-flex items-center px-2.5 py-1 rounded-full text-xs font-medium bg-emerald-50 text-emerald-800 border border-emerald-100">Walls: {room.finishes.walls}</span>
-                    </div>
-                  </div>
-
-                  <div>
-                    <h4 class="text-xs font-semibold uppercase tracking-wider text-[#6F6A61] mb-2 flex items-center justify-between">
-                      <span>Photos <span class="text-[#9A938A] font-normal normal-case tracking-normal">({room.photos.length})</span></span>
-                    </h4>
-                    <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-2 sm:gap-3" data-lightbox-group={room.id}>
-                      {room.photos.map((p) => (
-                        <button type="button" class="sw-lightbox-trigger group relative aspect-square rounded-lg overflow-hidden bg-[#EDE5D7] block text-left" data-src={p.src} data-label={p.label} data-group={room.id}>
-                          <img src={p.src} alt={p.label} class="w-full h-full object-cover group-hover:scale-[1.03] transition-transform duration-300" loading="lazy"/>
-                          <div class="absolute inset-x-0 bottom-0 p-2 bg-gradient-to-t from-black/70 via-black/30 to-transparent text-white text-[11px] leading-tight font-medium">
-                            {p.label}
+                {section.fields && section.fields.length > 0 && (
+                  <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 14px 28px; margin-bottom: 16px;">
+                    {section.fields.map((f) => {
+                      const c = f.badge ? badgeColors(f.badge) : null;
+                      return (
+                        <div>
+                          <div style="font-size: 12px; font-weight: 700; color: #1f2937; margin-bottom: 4px; letter-spacing: 0.2px;">{f.label}:</div>
+                          <div style="font-size: 13px; color: #4b5563; line-height: 1.6;">
+                            {c
+                              ? <span style={`display: inline-block; padding: 1px 8px; border-radius: 3px; font-size: 11px; font-weight: 600; background: ${c.bg}; color: ${c.color}; border: 1px solid ${c.border}; letter-spacing: 0.2px;`}>{f.value}</span>
+                              : f.value}
                           </div>
-                          <div class="absolute top-2 right-2 w-6 h-6 rounded-full bg-white/90 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity">
-                            <svg class="w-3.5 h-3.5 text-[#1C1A17]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/></svg>
+                        </div>
+                      );
+                    })}
+                  </div>
+                )}
+
+                {section.isSchedule && (
+                  <>
+                    <div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 10px; margin-bottom: 16px;">
+                      <div style="background: #f9fafb; border: 1px solid #e5e7eb; border-radius: 6px; padding: 12px 14px; text-align: center;">
+                        <div style="font-size: 28px; font-weight: 800; color: #1f2937;">{section.scheduleStats.total}</div>
+                        <div style="font-size: 10px; font-weight: 700; color: #6b7280; letter-spacing: 0.5px;">TOTAL ITEMS</div>
+                      </div>
+                      <div style="background: #f9fafb; border: 1px solid #e5e7eb; border-radius: 6px; padding: 12px 14px; text-align: center;">
+                        <div style="font-size: 28px; font-weight: 800; color: #166534;">{section.scheduleStats.reuse}</div>
+                        <div style="font-size: 10px; font-weight: 700; color: #6b7280; letter-spacing: 0.5px;">REUSE</div>
+                      </div>
+                      <div style="background: #f9fafb; border: 1px solid #e5e7eb; border-radius: 6px; padding: 12px 14px; text-align: center;">
+                        <div style="font-size: 28px; font-weight: 800; color: #991b1b;">{section.scheduleStats.replace}</div>
+                        <div style="font-size: 10px; font-weight: 700; color: #6b7280; letter-spacing: 0.5px;">REPLACE</div>
+                      </div>
+                      <div style="background: #f9fafb; border: 1px solid #e5e7eb; border-radius: 6px; padding: 12px 14px; text-align: center;">
+                        <div style="font-size: 28px; font-weight: 800; color: #854d0e;">{section.scheduleStats.evaluate}</div>
+                        <div style="font-size: 10px; font-weight: 700; color: #6b7280; letter-spacing: 0.5px;">EVALUATE</div>
+                      </div>
+                    </div>
+
+                    <div style="overflow-x: auto; margin-bottom: 16px;">
+                      <table style="width: 100%; font-size: 12px; border-collapse: collapse; background: #fff; min-width: 720px;">
+                        <thead>
+                          <tr style="background: #f9fafb; border-bottom: 2px solid #e5e7eb;">
+                            <th style="padding: 8px 10px; text-align: left; font-size: 11px; font-weight: 700; color: #374151; letter-spacing: 0.3px;">#</th>
+                            <th style="padding: 8px 10px; text-align: left; font-size: 11px; font-weight: 700; color: #374151; letter-spacing: 0.3px;">Type</th>
+                            <th style="padding: 8px 10px; text-align: left; font-size: 11px; font-weight: 700; color: #374151; letter-spacing: 0.3px;">Make / Model</th>
+                            <th style="padding: 8px 10px; text-align: left; font-size: 11px; font-weight: 700; color: #374151; letter-spacing: 0.3px;">Serial</th>
+                            <th style="padding: 8px 10px; text-align: left; font-size: 11px; font-weight: 700; color: #374151; letter-spacing: 0.3px;">Capacity</th>
+                            <th style="padding: 8px 10px; text-align: left; font-size: 11px; font-weight: 700; color: #374151; letter-spacing: 0.3px;">Year</th>
+                            <th style="padding: 8px 10px; text-align: left; font-size: 11px; font-weight: 700; color: #374151; letter-spacing: 0.3px;">Condition</th>
+                            <th style="padding: 8px 10px; text-align: left; font-size: 11px; font-weight: 700; color: #374151; letter-spacing: 0.3px;">Rec.</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          {section.scheduleItems.map((item) => {
+                            const r = recColors(item.recommendation);
+                            return (
+                              <tr style="border-bottom: 1px solid #f1f5f9;">
+                                <td style="padding: 8px 10px; font-weight: 600; color: #111827;">{item.num}</td>
+                                <td style="padding: 8px 10px; color: #4b5563;">{item.type}</td>
+                                <td style="padding: 8px 10px; color: #111827; font-weight: 500;">{item.makeModel}</td>
+                                <td style="padding: 8px 10px; color: #6b7280; font-family: monospace; font-size: 11px;">{item.serial}</td>
+                                <td style="padding: 8px 10px; color: #4b5563;">{item.capacity}</td>
+                                <td style="padding: 8px 10px; color: #4b5563;">{item.year}</td>
+                                <td style="padding: 8px 10px; color: #4b5563;">{item.condition}</td>
+                                <td style="padding: 8px 10px;">
+                                  <span style={`display: inline-block; padding: 2px 10px; border-radius: 3px; font-size: 10px; font-weight: 700; letter-spacing: 0.5px; background: ${r.bg}; color: ${r.color};`}>{item.recommendation}</span>
+                                </td>
+                              </tr>
+                            );
+                          })}
+                        </tbody>
+                      </table>
+                    </div>
+
+                    {section.scheduleItems.map((item) => {
+                      const r = recColors(item.recommendation);
+                      return (
+                        <div style="margin-bottom: 10px; padding: 10px 14px; background: #f9fafb; border-radius: 6px; border: 1px solid #e5e7eb;">
+                          <div style="display: flex; align-items: center; gap: 8px; margin-bottom: 4px; flex-wrap: wrap;">
+                            <span style="font-size: 12px; font-weight: 700; color: #111827;">#{item.num} — {item.makeModel}</span>
+                            <span style={`display: inline-block; padding: 2px 10px; border-radius: 3px; font-size: 10px; font-weight: 700; letter-spacing: 0.5px; background: ${r.bg}; color: ${r.color};`}>{item.recommendation}</span>
                           </div>
-                        </button>
-                      ))}
-                    </div>
-                  </div>
+                          <div style="font-size: 12px; color: #4b5563; line-height: 1.6;">{item.notes}</div>
+                        </div>
+                      );
+                    })}
+                  </>
+                )}
 
-                  {room.system && (
-                    <div>
-                      <h4 class="text-xs font-semibold uppercase tracking-wider text-[#6F6A61] mb-1.5">System Summary</h4>
-                      <p class="text-sm text-[#504B43] leading-relaxed whitespace-pre-wrap">{room.system}</p>
-                    </div>
-                  )}
-                </div>
-              </article>
-            ))}
-          </section>
-
-          <!-- Above-Ceiling Survey -->
-          <section id="above-ceiling" class="scroll-mt-20 bg-white rounded-2xl shadow-sm border border-[#E9E0CD] overflow-hidden">
-            <div class="px-5 sm:px-6 py-4 border-b border-[#EDE5D7] bg-[#F5EFE4] flex items-center gap-2.5">
-              <svg class="w-5 h-5 text-[#504B43]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 10h16M4 14h16M4 18h16"/></svg>
-              <h2 class="text-base sm:text-lg font-semibold text-[#1C1A17]">Above-Ceiling Survey</h2>
-            </div>
-            <div class="p-5 sm:p-6 space-y-5">
-              <p class="text-sm text-[#504B43] leading-relaxed">
-                Full photographic record of the concealed space above the suspended ceiling. Each photo is located by grid reference against the existing conditions plan (see Drawings).
-              </p>
-              <div class="grid grid-cols-2 sm:grid-cols-3 gap-3" data-lightbox-group="above-ceiling">
-                {aboveCeilingPhotos.map((p) => (
-                  <button type="button" class="sw-lightbox-trigger group relative aspect-[4/3] rounded-lg overflow-hidden bg-[#EDE5D7] block text-left" data-src={p.src} data-label={p.label} data-group="above-ceiling">
-                    <img src={p.src} alt={p.label} class="w-full h-full object-cover group-hover:scale-[1.03] transition-transform duration-300" loading="lazy"/>
-                    <div class="absolute inset-x-0 bottom-0 p-2 bg-gradient-to-t from-black/70 via-black/30 to-transparent text-white text-[11px] leading-tight font-medium">{p.label}</div>
-                  </button>
-                ))}
-              </div>
-            </div>
-          </section>
-
-          <!-- Equipment Schedule -->
-          <section id="equipment" class="scroll-mt-20 bg-white rounded-2xl shadow-sm border border-[#E9E0CD] overflow-hidden">
-            <div class="px-5 sm:px-6 py-4 border-b border-[#EDE5D7] bg-[#F5EFE4] flex items-center justify-between gap-3">
-              <div class="flex items-center gap-2.5">
-                <svg class="w-5 h-5 text-[#504B43]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 17v-2m3 2v-4m3 4v-6m2 10H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg>
-                <h2 class="text-base sm:text-lg font-semibold text-[#1C1A17]">Equipment Schedule — Reuse / Remove</h2>
-              </div>
-              <span class="text-xs text-[#6F6A61] hidden sm:inline">{equipmentReuse.length} items</span>
-            </div>
-            <div class="overflow-x-auto">
-              <table class="w-full text-sm">
-                <thead class="bg-[#FBF8F3] border-b border-[#EDE5D7]">
-                  <tr class="text-left text-[10px] uppercase tracking-wider text-[#6F6A61] font-semibold">
-                    <th class="px-4 py-2.5">Tag</th>
-                    <th class="px-4 py-2.5">Item</th>
-                    <th class="px-4 py-2.5 hidden md:table-cell">Make / Model</th>
-                    <th class="px-4 py-2.5 hidden sm:table-cell">Qty</th>
-                    <th class="px-4 py-2.5 hidden md:table-cell">Condition</th>
-                    <th class="px-4 py-2.5">Recommendation</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  {equipmentReuse.map((e) => (
-                    <tr class="border-b border-[#EDE5D7] last:border-b-0 hover:bg-[#FBF8F3] transition-colors">
-                      <td class="px-4 py-2.5 font-mono text-xs text-[#6F6A61]">{e.id}</td>
-                      <td class="px-4 py-2.5 text-[#3A3630] font-medium">{e.item}</td>
-                      <td class="px-4 py-2.5 text-[#504B43] hidden md:table-cell">{e.make} <span class="text-[#9A938A]">/ {e.model}</span></td>
-                      <td class="px-4 py-2.5 text-[#504B43] hidden sm:table-cell">{e.qty}</td>
-                      <td class="px-4 py-2.5 text-[#504B43] hidden md:table-cell">{e.condition}</td>
-                      <td class="px-4 py-2.5">
-                        <span class={`inline-flex items-center px-2 py-0.5 rounded-full text-xs font-medium ${
-                          e.recommendation.startsWith('Reuse') ? 'bg-emerald-50 text-emerald-800 border border-emerald-100' :
-                          e.recommendation.startsWith('Remove') ? 'bg-rose-50 text-rose-800 border border-rose-100' :
-                          'bg-amber-50 text-amber-800 border border-amber-100'
-                        }`}>{e.recommendation}</span>
-                      </td>
-                    </tr>
-                  ))}
-                </tbody>
-              </table>
-            </div>
-          </section>
-
-          <!-- HVAC Schedule -->
-          <section id="hvac" class="scroll-mt-20 bg-white rounded-2xl shadow-sm border border-[#E9E0CD] overflow-hidden">
-            <div class="px-5 sm:px-6 py-4 border-b border-[#EDE5D7] bg-[#F5EFE4] flex items-center gap-2.5">
-              <svg class="w-5 h-5 text-[#504B43]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 10h18M3 14h18M7 6v12m10-12v12"/></svg>
-              <h2 class="text-base sm:text-lg font-semibold text-[#1C1A17]">HVAC &amp; Refrigeration Schedule</h2>
-            </div>
-            <div class="overflow-x-auto">
-              <table class="w-full text-sm">
-                <thead class="bg-[#FBF8F3] border-b border-[#EDE5D7]">
-                  <tr class="text-left text-[10px] uppercase tracking-wider text-[#6F6A61] font-semibold">
-                    <th class="px-4 py-2.5">Tag</th>
-                    <th class="px-4 py-2.5">Type</th>
-                    <th class="px-4 py-2.5 hidden md:table-cell">Capacity</th>
-                    <th class="px-4 py-2.5 hidden lg:table-cell">Serves</th>
-                    <th class="px-4 py-2.5 hidden sm:table-cell">Condition</th>
-                    <th class="px-4 py-2.5">Recommendation</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  {hvac.map((h) => (
-                    <tr class="border-b border-[#EDE5D7] last:border-b-0 hover:bg-[#FBF8F3] transition-colors">
-                      <td class="px-4 py-2.5 font-mono text-xs text-[#6F6A61]">{h.tag}</td>
-                      <td class="px-4 py-2.5 text-[#3A3630] font-medium">{h.type}</td>
-                      <td class="px-4 py-2.5 text-[#504B43] hidden md:table-cell">{h.tonnage}</td>
-                      <td class="px-4 py-2.5 text-[#504B43] hidden lg:table-cell">{h.serves}</td>
-                      <td class="px-4 py-2.5 text-[#504B43] hidden sm:table-cell">{h.condition}</td>
-                      <td class="px-4 py-2.5 text-[#3A3630]">{h.recommendation}</td>
-                    </tr>
-                  ))}
-                </tbody>
-              </table>
-            </div>
-          </section>
-
-          <!-- Thermal Imaging -->
-          <section id="thermal" class="scroll-mt-20 bg-white rounded-2xl shadow-sm border border-[#E9E0CD] overflow-hidden">
-            <div class="px-5 sm:px-6 py-4 border-b border-[#EDE5D7] bg-[#F5EFE4] flex items-center gap-2.5">
-              <svg class="w-5 h-5 text-[#504B43]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/></svg>
-              <h2 class="text-base sm:text-lg font-semibold text-[#1C1A17]">Thermal Imaging — Findings</h2>
-            </div>
-            <div class="p-5 sm:p-6 space-y-5">
-              {thermalFindings.map((f) => (
-                <div class="border border-[#EDE5D7] rounded-xl overflow-hidden flex flex-col sm:flex-row">
-                  <button type="button" class="sw-lightbox-trigger block sm:flex-shrink-0 sm:w-56 aspect-[4/3] sm:aspect-auto bg-[#EDE5D7] relative overflow-hidden" data-src={f.photo} data-label={f.label} data-group="thermal">
-                    <img src={f.photo} alt={f.label} class="w-full h-full object-cover" loading="lazy"/>
-                    <span class="absolute top-2 left-2 text-[10px] font-mono bg-black/70 text-white px-2 py-0.5 rounded">{f.id}</span>
-                  </button>
-                  <div class="p-4 sm:p-5 flex-1">
-                    <div class="flex items-center gap-2 flex-wrap mb-2">
-                      <span class={`inline-flex items-center px-2 py-0.5 rounded text-xs font-semibold ${
-                        f.severity.startsWith('P1') ? 'bg-rose-100 text-rose-800' :
-                        f.severity.startsWith('P2') ? 'bg-amber-100 text-amber-800' :
-                        'bg-slate-100 text-slate-700'
-                      }`}>{f.severity}</span>
-                      <span class="text-sm font-semibold text-[#1C1A17]">{f.location}</span>
-                    </div>
-                    <p class="text-sm text-[#504B43] leading-relaxed">{f.finding}</p>
-                  </div>
-                </div>
-              ))}
-            </div>
-          </section>
-
-          <!-- Drawings -->
-          <section id="drawings" class="scroll-mt-20 bg-white rounded-2xl shadow-sm border border-[#E9E0CD] overflow-hidden">
-            <div class="px-5 sm:px-6 py-4 border-b border-[#EDE5D7] bg-[#F5EFE4] flex items-center gap-2.5">
-              <svg class="w-5 h-5 text-[#504B43]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19.5 14.25v-2.625a3.375 3.375 0 00-3.375-3.375h-1.5A1.125 1.125 0 0113.5 7.125v-1.5a3.375 3.375 0 00-3.375-3.375H8.25m0 12.75h7.5m-7.5 3H12M10.5 2.25H5.625c-.621 0-1.125.504-1.125 1.125v17.25c0 .621.504 1.125 1.125 1.125h12.75c.621 0 1.125-.504 1.125-1.125V11.25a9 9 0 00-9-9z"/></svg>
-              <h2 class="text-base sm:text-lg font-semibold text-[#1C1A17]">Drawings &amp; Documents</h2>
-            </div>
-            <ul class="divide-y divide-[#EDE5D7]">
-              {drawings.map((d) => (
-                <li class="flex items-center gap-4 px-5 sm:px-6 py-3.5 hover:bg-[#FBF8F3] transition-colors">
-                  <div class="w-10 h-10 rounded-lg bg-[#F5EFE4] border border-[#EDE5D7] flex items-center justify-center text-[10px] font-semibold text-[#504B43]">{d.format}</div>
-                  <div class="flex-1 min-w-0">
-                    <p class="text-sm font-medium text-[#1C1A17] truncate">{d.name}</p>
-                    <p class="text-xs text-[#6F6A61]">{d.pages !== "—" ? `${d.pages} ${d.pages === 1 ? 'page' : 'pages'} · ` : ''}{d.size}</p>
-                  </div>
-                  <button type="button" class="text-xs font-semibold text-[#6F6A61] bg-[#F5EFE4] border border-[#EDE5D7] px-3 py-1.5 rounded-md cursor-not-allowed" title="Available to project stakeholders" disabled>Preview only</button>
-                </li>
-              ))}
-            </ul>
-          </section>
-
-          <!-- External Media -->
-          <section id="media" class="scroll-mt-20 bg-white rounded-2xl shadow-sm border border-[#E9E0CD] overflow-hidden">
-            <div class="px-5 sm:px-6 py-4 border-b border-[#EDE5D7] bg-[#F5EFE4] flex items-center gap-2.5">
-              <svg class="w-5 h-5 text-[#504B43]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 10l4.553-2.276A1 1 0 0121 8.618v6.764a1 1 0 01-1.447.894L15 14M5 18h8a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z"/></svg>
-              <h2 class="text-base sm:text-lg font-semibold text-[#1C1A17]">External Media</h2>
-            </div>
-            <div class="p-5 sm:p-6 grid sm:grid-cols-2 gap-4">
-              <a href="#tour" class="flex items-center gap-3 p-4 bg-[#FBF8F3] rounded-xl border border-[#EDE5D7] hover:border-[#EE7B1A] hover:bg-[#F5EFE4] transition-colors">
-                <div class="w-10 h-10 rounded-lg bg-[#FFECD9] flex items-center justify-center">
-                  <svg class="w-5 h-5 text-[#CC620A]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9"/></svg>
-                </div>
-                <div class="min-w-0">
-                  <span class="text-sm font-semibold text-[#1C1A17] block">Matterport Digital Twin</span>
-                  <span class="text-xs text-[#6F6A61]">Embedded above &middot; navigate the full space</span>
-                </div>
-                <svg class="w-4 h-4 text-[#9A938A] ml-auto" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
-              </a>
-              <div class="flex items-center gap-3 p-4 bg-[#FBF8F3] rounded-xl border border-dashed border-[#DDD1BD] opacity-80">
-                <div class="w-10 h-10 rounded-lg bg-[#EDE5D7] flex items-center justify-center">
-                  <svg class="w-5 h-5 text-[#6F6A61]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 15a4 4 0 004 4h9a5 5 0 10-.1-9.999 5.002 5.002 0 10-9.78 2.096A4.001 4.001 0 003 15z"/></svg>
-                </div>
-                <div class="min-w-0">
-                  <span class="text-sm font-semibold text-[#1C1A17] block">Above-Ceiling Fly-Through</span>
-                  <span class="text-xs text-[#6F6A61]">Cubex tour &middot; available to project team</span>
-                </div>
-              </div>
-            </div>
-          </section>
-
-          <!-- Comments -->
-          <section id="comments" class="scroll-mt-20 bg-white rounded-2xl shadow-sm border border-[#E9E0CD] overflow-hidden">
-            <div class="px-5 sm:px-6 py-4 border-b border-[#EDE5D7] bg-[#F5EFE4]">
-              <h2 class="text-base sm:text-lg font-semibold text-[#1C1A17] flex items-center gap-2.5">
-                <svg class="w-5 h-5 text-[#504B43]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"/></svg>
-                Questions &amp; Comments
-              </h2>
-              <p class="text-xs text-[#6F6A61] mt-1">Visible to all invited contractors and the project team.</p>
-            </div>
-            <div class="p-5 sm:p-6 space-y-6">
-              {comments.map((c) => (
-                <div class={`border-l-2 ${c.team ? 'border-[#EE7B1A]' : 'border-[#DDD1BD]'} pl-4`}>
-                  <div class="flex items-start justify-between gap-2 mb-1 flex-wrap">
-                    <div class="flex items-center gap-2 flex-wrap">
-                      <span class="text-sm font-semibold text-[#1C1A17]">{c.author}</span>
-                      <span class="text-xs text-[#6F6A61]">{c.role}</span>
-                      {c.team && <span class="text-[10px] uppercase tracking-wider font-semibold px-1.5 py-0.5 bg-[#FFECD9] text-[#B25508] rounded">Team</span>}
-                    </div>
-                    <span class="text-xs text-[#9A938A]">{c.when}</span>
-                  </div>
-                  <p class="text-sm text-[#504B43] leading-relaxed whitespace-pre-wrap">{c.body}</p>
-
-                  {c.replies.length > 0 && (
-                    <div class="mt-3 ml-3 space-y-3">
-                      {c.replies.map((r) => (
-                        <div class={`border-l-2 ${r.team ? 'border-[#FFBB7F]' : 'border-[#E9E0CD]'} pl-3`}>
-                          <div class="flex items-start justify-between gap-2 mb-1 flex-wrap">
-                            <div class="flex items-center gap-2 flex-wrap">
-                              <span class="text-sm font-semibold text-[#1C1A17]">{r.author}</span>
-                              <span class="text-xs text-[#6F6A61]">{r.role}</span>
-                              {r.team && <span class="text-[10px] uppercase tracking-wider font-semibold px-1.5 py-0.5 bg-[#FFECD9] text-[#B25508] rounded">Team</span>}
+                {section.isRecommendations && section.recGroups.map((group) => {
+                  const p = recPalette(group.level);
+                  return (
+                    <div style="margin-bottom: 16px;">
+                      <div style={`background: ${p.bg}; border: 1px solid ${p.border}; border-radius: 6px; padding: 10px 14px; margin-bottom: 8px; font-size: 12px; font-weight: 700; color: ${p.head}; letter-spacing: 0.5px;`}>{group.heading}</div>
+                      {group.items.map((item) => (
+                        <div style={`background: #fff; border: 1px solid #e5e7eb; border-left: 3px solid ${p.border}; border-radius: 4px; padding: 10px 14px; margin-bottom: 6px;`}>
+                          <div style="display: flex; justify-content: space-between; align-items: flex-start; gap: 10px; flex-wrap: wrap;">
+                            <div style="flex: 1; min-width: 200px;">
+                              <div style="font-size: 13px; font-weight: 600; color: #111827; margin-bottom: 3px;">{item.num}. {item.title}</div>
+                              <div style="font-size: 11px; color: #6b7280; margin-bottom: 4px;">
+                                <strong style="color: #374151;">Category:</strong> {item.category} &nbsp;·&nbsp;
+                                <strong style="color: #374151;">Impact:</strong> {item.impact}
+                              </div>
                             </div>
-                            <span class="text-xs text-[#9A938A]">{r.when}</span>
+                            <div style={`font-size: 12px; font-weight: 700; color: ${p.head}; background: ${p.bg}; padding: 3px 10px; border-radius: 4px; white-space: nowrap;`}>{item.budget}</div>
                           </div>
-                          <p class="text-sm text-[#504B43] leading-relaxed whitespace-pre-wrap">{r.body}</p>
                         </div>
                       ))}
                     </div>
-                  )}
+                  );
+                })}
+
+                {section.isNarrative && (
+                  <div style="font-size: 13px; color: #374151; line-height: 1.8; font-family: Georgia, 'Times New Roman', serif; margin-top: 14px;">
+                    {section.narrativeText.split("\n\n").map((para) => {
+                      if (para.startsWith("## ")) return <h2 style="font-size: 18px; font-weight: 700; color: #111827; font-family: inherit; margin: 20px 0 6px;">{para.replace(/^## /, "")}</h2>;
+                      if (para.startsWith("### ")) return <h3 style="font-size: 14px; font-weight: 700; color: #374151; font-family: inherit; margin: 16px 0 4px; text-transform: uppercase; letter-spacing: 0.5px;">{para.replace(/^### /, "")}</h3>;
+                      return <p style="margin: 0 0 12px;">{para}</p>;
+                    })}
+                  </div>
+                )}
+
+                {section.hasEmbeds && (
+                  <div style="margin-top: 16px;">
+                    <div style="font-size: 12px; font-weight: 700; color: #374151; text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 10px;">Interactive Captures</div>
+                    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 12px;">
+                      {/* Matterport card */}
+                      <div class="sw-media" style="background: #fff; border: 1px solid #e5e7eb; border-radius: 8px; overflow: hidden; cursor: pointer; transition: all 0.15s;">
+                        <div style="height: 200px; background-image: url(/Images/demo/media-stills/matterport.png); background-size: cover; background-position: center; background-color: #6b6355; position: relative;">
+                          <div style="position: absolute; top: 8px; right: 8px; background: rgba(0,0,0,0.6); color: #fff; font-size: 10px; padding: 3px 8px; border-radius: 3px; font-weight: 600; letter-spacing: 0.3px;">INTERACTIVE</div>
+                        </div>
+                        <div style="padding: 10px 14px;">
+                          <div style="font-size: 13px; font-weight: 600; color: #1f2937; margin-bottom: 2px;">Matterport 3D Tour</div>
+                          <div style="font-size: 11px; color: #6b7280;">Walk through the entire space</div>
+                        </div>
+                      </div>
+
+                      {/* Cupix card */}
+                      <div class="sw-media" style="background: #fff; border: 1px solid #e5e7eb; border-radius: 8px; overflow: hidden; cursor: pointer; transition: all 0.15s;">
+                        <div style="height: 200px; background: linear-gradient(135deg, #ede9fe 0%, #c4b5fd 60%, #7c3aed 100%); display: flex; align-items: center; justify-content: center; position: relative;">
+                          <div style="width: 64px; height: 64px; border-radius: 50%; background: #8b5cf6; display: flex; align-items: center; justify-content: center; box-shadow: 0 4px 12px rgba(0,0,0,0.15);">
+                            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2"><circle cx="12" cy="12" r="9" /><path d="M3 12h18M12 3a15 15 0 010 18M12 3a15 15 0 000 18" /></svg>
+                          </div>
+                          <div style="position: absolute; top: 8px; right: 8px; background: rgba(0,0,0,0.6); color: #fff; font-size: 10px; padding: 3px 8px; border-radius: 3px; font-weight: 600; letter-spacing: 0.3px;">INTERACTIVE</div>
+                        </div>
+                        <div style="padding: 10px 14px;">
+                          <div style="font-size: 13px; font-weight: 600; color: #1f2937; margin-bottom: 2px;">Cupix Above-Ceiling Scan</div>
+                          <div style="font-size: 11px; color: #6b7280;">360° plenum inspection</div>
+                        </div>
+                      </div>
+
+                      {/* YouTube card */}
+                      <div class="sw-media" style="background: #fff; border: 1px solid #e5e7eb; border-radius: 8px; overflow: hidden; cursor: pointer; transition: all 0.15s;">
+                        <div style="height: 200px; background-image: url(/Images/demo/media-stills/youtube-360.png); background-size: cover; background-position: center; background-color: #d4802b; position: relative;">
+                          <div style="position: absolute; top: 8px; right: 8px; background: rgba(0,0,0,0.6); color: #fff; font-size: 10px; padding: 3px 8px; border-radius: 3px; font-weight: 600; letter-spacing: 0.3px;">INTERACTIVE</div>
+                        </div>
+                        <div style="padding: 10px 14px;">
+                          <div style="font-size: 13px; font-weight: 600; color: #1f2937; margin-bottom: 2px;">Insta360 Above-Ceiling Video</div>
+                          <div style="font-size: 11px; color: #6b7280;">360° video capture of plenum</div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                )}
+
+                {section.photoCount > 0 && (
+                  <div style="margin-top: 16px;">
+                    <div style="font-size: 12px; font-weight: 700; color: #374151; text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 10px;">Section Photos ({section.photoCount})</div>
+                    <div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(140px, 1fr)); gap: 8px;">
+                      {Array.from({ length: section.photoCount }).map((_, i) => {
+                        const isThermal = section.id === "thermal";
+                        const grad = gradientFor(section.id, i, isThermal);
+                        const label = (section.photoLabels && section.photoLabels[i]) ? section.photoLabels[i] : "Photo";
+                        return (
+                          <div style="border-radius: 4px; overflow: hidden; border: 1px solid #e5e7eb; background: #fff;">
+                            <div style={`height: 110px; background: ${grad}; display: flex; align-items: center; justify-content: center; color: rgba(255,255,255,0.7);`}>
+                              <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                                <path d="M23 19a2 2 0 01-2 2H3a2 2 0 01-2-2V8a2 2 0 012-2h4l2-3h6l2 3h4a2 2 0 012 2z" />
+                                <circle cx="12" cy="13" r="4" />
+                              </svg>
+                            </div>
+                            <div style="padding: 4px 8px; font-size: 11px; color: #64748b; text-align: center; background: #f8fafc;">{label}</div>
+                          </div>
+                        );
+                      })}
+                    </div>
+                  </div>
+                )}
+              </div>
+            </div>
+          );
+        })}
+      </div>
+
+      {/* Site Media */}
+      <div style="background: #fff; border: 1px solid #e5e7eb; border-radius: 8px; padding: 20px; margin-top: 20px;">
+        <h2 style="font-size: 16px; font-weight: 700; color: #111827; margin: 0 0 10px;">Site Media</h2>
+        <div style="height: 2px; background: #ea580c; margin-bottom: 16px; width: 100%; border-radius: 1px;"></div>
+
+        {/* Drone Photos */}
+        <div style="margin-bottom: 18px;">
+          <div style="font-size: 13px; font-weight: 700; color: #374151; margin-bottom: 8px;">Drone Photos (6)</div>
+          <div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(140px, 1fr)); gap: 8px;">
+            {Array.from({ length: 6 }).map((_, i) => {
+              const grad = PHOTO_GRADIENTS[(i + 20) % PHOTO_GRADIENTS.length];
+              return (
+                <div style="border-radius: 4px; overflow: hidden; border: 1px solid #e5e7eb; background: #fff;">
+                  <div style={`height: 110px; background: ${grad}; display: flex; align-items: center; justify-content: center; color: rgba(255,255,255,0.7);`}>
+                    <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                      <path d="M23 19a2 2 0 01-2 2H3a2 2 0 01-2-2V8a2 2 0 012-2h4l2-3h6l2 3h4a2 2 0 012 2z" />
+                      <circle cx="12" cy="13" r="4" />
+                    </svg>
+                  </div>
+                  <div style="padding: 4px 8px; font-size: 11px; color: #64748b; text-align: center; background: #f8fafc;">Drone</div>
                 </div>
-              ))}
+              );
+            })}
+          </div>
+        </div>
 
-              <div class="bg-[#FBF8F3] border border-dashed border-[#DDD1BD] rounded-xl p-4 text-center">
-                <p class="text-sm text-[#6F6A61]">
-                  Invited contractors and the project team can post questions and replies here.
-                  <span class="block sm:inline mt-1 sm:mt-0 sm:ml-1">
-                    <a href="/contact" class="text-[#CC620A] font-semibold hover:underline underline-offset-2">Start a project &rarr;</a>
-                  </span>
-                </p>
-              </div>
-            </div>
-          </section>
+        {/* General Site Photos */}
+        <div style="margin-bottom: 18px;">
+          <div style="font-size: 13px; font-weight: 700; color: #374151; margin-bottom: 8px;">General Site Photos (36)</div>
+          <div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(140px, 1fr)); gap: 8px;">
+            {Array.from({ length: 12 }).map((_, i) => {
+              const grad = PHOTO_GRADIENTS[(i + 5) % PHOTO_GRADIENTS.length];
+              return (
+                <div style="border-radius: 4px; overflow: hidden; border: 1px solid #e5e7eb; background: #fff;">
+                  <div style={`height: 110px; background: ${grad}; display: flex; align-items: center; justify-content: center; color: rgba(255,255,255,0.7);`}>
+                    <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                      <path d="M23 19a2 2 0 01-2 2H3a2 2 0 01-2-2V8a2 2 0 012-2h4l2-3h6l2 3h4a2 2 0 012 2z" />
+                      <circle cx="12" cy="13" r="4" />
+                    </svg>
+                  </div>
+                  <div style="padding: 4px 8px; font-size: 11px; color: #64748b; text-align: center; background: #f8fafc;">Site</div>
+                </div>
+              );
+            })}
+          </div>
+          <div style="font-size: 11px; color: #9ca3af; margin-top: 6px;">Showing 12 of 36</div>
+        </div>
 
-          <!-- CTA -->
-          <section class="bg-[#1C1A17] rounded-2xl overflow-hidden">
-            <div class="p-6 sm:p-10 text-center">
-              <p class="text-[11px] font-semibold tracking-[0.18em] uppercase text-[#EE7B1A] mb-3">This is the deliverable</p>
-              <h2 class="text-xl sm:text-2xl lg:text-[1.8rem] font-light text-white leading-tight max-w-xl mx-auto">
-                Every Alturascope visit produces a project record that looks like this.
-              </h2>
-              <p class="mt-4 text-sm text-white/70 max-w-lg mx-auto">
-                One brief. One standard. One place your whole team returns to for the life of the project.
-              </p>
-              <div class="mt-7 flex flex-wrap items-center justify-center gap-3">
-                <a href="/contact" class="inline-block bg-[#EE7B1A] hover:bg-[#CC620A] text-white text-sm font-semibold px-6 py-3 rounded-md transition-colors">Start a project</a>
-                <a href="/work" class="inline-block border border-white/30 hover:border-white/60 text-white text-sm font-medium px-6 py-3 rounded-md transition-colors">The Standard</a>
-              </div>
+        {/* Electrical Apparatus */}
+        <div style="margin-bottom: 18px;">
+          <div style="font-size: 13px; font-weight: 700; color: #374151; margin-bottom: 8px;">Electrical Apparatus (12)</div>
+          <div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(140px, 1fr)); gap: 8px;">
+            {Array.from({ length: 8 }).map((_, i) => {
+              const grad = PHOTO_GRADIENTS[(i + 30) % PHOTO_GRADIENTS.length];
+              return (
+                <div style="border-radius: 4px; overflow: hidden; border: 1px solid #e5e7eb; background: #fff;">
+                  <div style={`height: 110px; background: ${grad}; display: flex; align-items: center; justify-content: center; color: rgba(255,255,255,0.7);`}>
+                    <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                      <path d="M23 19a2 2 0 01-2 2H3a2 2 0 01-2-2V8a2 2 0 012-2h4l2-3h6l2 3h4a2 2 0 012 2z" />
+                      <circle cx="12" cy="13" r="4" />
+                    </svg>
+                  </div>
+                  <div style="padding: 4px 8px; font-size: 11px; color: #64748b; text-align: center; background: #f8fafc;">Panel</div>
+                </div>
+              );
+            })}
+          </div>
+        </div>
+
+        {/* Exterior Photos */}
+        <div style="margin-bottom: 20px;">
+          <div style="font-size: 13px; font-weight: 700; color: #374151; margin-bottom: 8px;">Exterior Photos (14)</div>
+          <div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(140px, 1fr)); gap: 8px;">
+            {Array.from({ length: 8 }).map((_, i) => {
+              const grad = PHOTO_GRADIENTS[(i + 15) % PHOTO_GRADIENTS.length];
+              return (
+                <div style="border-radius: 4px; overflow: hidden; border: 1px solid #e5e7eb; background: #fff;">
+                  <div style={`height: 110px; background: ${grad}; display: flex; align-items: center; justify-content: center; color: rgba(255,255,255,0.7);`}>
+                    <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                      <path d="M23 19a2 2 0 01-2 2H3a2 2 0 01-2-2V8a2 2 0 012-2h4l2-3h6l2 3h4a2 2 0 012 2z" />
+                      <circle cx="12" cy="13" r="4" />
+                    </svg>
+                  </div>
+                  <div style="padding: 4px 8px; font-size: 11px; color: #64748b; text-align: center; background: #f8fafc;">Exterior</div>
+                </div>
+              );
+            })}
+          </div>
+        </div>
+
+        {/* 3D Virtual Tour (full-width) */}
+        <div style="margin-top: 24px; margin-bottom: 18px;">
+          <div style="font-size: 14px; font-weight: 700; color: #111827; margin-bottom: 10px;">3D Virtual Tour</div>
+          <div class="sw-media" style="background: #fff; border: 1px solid #e5e7eb; border-radius: 8px; overflow: hidden; cursor: pointer;">
+            <div style="height: 240px; background-image: url(/Images/demo/media-stills/matterport.png); background-size: cover; background-position: center; background-color: #6b6355; position: relative;">
+              <div style="position: absolute; top: 8px; right: 8px; background: rgba(0,0,0,0.6); color: #fff; font-size: 10px; padding: 3px 8px; border-radius: 3px; font-weight: 600; letter-spacing: 0.3px;">INTERACTIVE</div>
             </div>
-          </section>
+            <div style="padding: 10px 14px;">
+              <div style="font-size: 13px; font-weight: 600; color: #1f2937; margin-bottom: 2px;">Matterport 3D Tour</div>
+              <div style="font-size: 11px; color: #6b7280;">Walk-through of the entire space — dollhouse, floor plan, first-person views</div>
+            </div>
+          </div>
+        </div>
+
+        {/* Cupix */}
+        <div style="margin-bottom: 18px;">
+          <div style="font-size: 14px; font-weight: 700; color: #111827; margin-bottom: 10px;">Cupix Above-Ceiling Survey</div>
+          <div style="font-size: 12px; color: #6b7280; margin-bottom: 8px;">Above-ceiling 3D capture for inspecting concealed MEP infrastructure, structural elements, and plenum conditions.</div>
+          <div class="sw-media" style="background: #fff; border: 1px solid #e5e7eb; border-radius: 8px; overflow: hidden; cursor: pointer;">
+            <div style="height: 200px; background: linear-gradient(135deg, #ede9fe 0%, #c4b5fd 60%, #6d28d9 100%); display: flex; align-items: center; justify-content: center; position: relative;">
+              <div style="width: 64px; height: 64px; border-radius: 50%; background: #8b5cf6; display: flex; align-items: center; justify-content: center; box-shadow: 0 4px 12px rgba(0,0,0,0.15);">
+                <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2"><circle cx="12" cy="12" r="9" /><path d="M3 12h18M12 3a15 15 0 010 18M12 3a15 15 0 000 18" /></svg>
+              </div>
+              <div style="position: absolute; top: 8px; right: 8px; background: rgba(0,0,0,0.6); color: #fff; font-size: 10px; padding: 3px 8px; border-radius: 3px; font-weight: 600; letter-spacing: 0.3px;">INTERACTIVE</div>
+            </div>
+            <div style="padding: 10px 14px;">
+              <div style="font-size: 13px; font-weight: 600; color: #1f2937; margin-bottom: 2px;">Cupix 3D Scan</div>
+              <div style="font-size: 11px; color: #6b7280;">Click and drag to explore above-ceiling conditions</div>
+            </div>
+          </div>
+        </div>
+
+        {/* Above-Ceiling 360° */}
+        <div>
+          <div style="font-size: 14px; font-weight: 700; color: #111827; margin-bottom: 10px;">Above-Ceiling 360° Capture</div>
+          <div style="font-size: 12px; color: #6b7280; margin-bottom: 8px;">Open this video and click/drag to explore the 360° above-ceiling capture.</div>
+          <div class="sw-media" style="background: #fff; border: 1px solid #e5e7eb; border-radius: 8px; overflow: hidden; cursor: pointer;">
+            <div style="height: 200px; background-image: url(/Images/demo/media-stills/youtube-360.png); background-size: cover; background-position: center; background-color: #d4802b; position: relative;">
+              <div style="position: absolute; top: 8px; right: 8px; background: rgba(0,0,0,0.6); color: #fff; font-size: 10px; padding: 3px 8px; border-radius: 3px; font-weight: 600; letter-spacing: 0.3px;">INTERACTIVE</div>
+            </div>
+            <div style="padding: 10px 14px;">
+              <div style="font-size: 13px; font-weight: 600; color: #1f2937; margin-bottom: 2px;">Above-Ceiling 360° Video</div>
+              <div style="font-size: 11px; color: #6b7280;">Insta360 X5 video capture — plenum &amp; MEP infrastructure</div>
+            </div>
+          </div>
         </div>
       </div>
-    </div>
 
-    <!-- Lightbox overlay -->
-    <div id="sw-lightbox" class="fixed inset-0 z-[70] bg-black/90 hidden items-center justify-center p-4 sm:p-8" aria-hidden="true">
-      <button id="sw-lightbox-close" type="button" class="absolute top-4 right-4 text-white/80 hover:text-white w-10 h-10 flex items-center justify-center" aria-label="Close">
-        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M6 18L18 6M6 6l12 12"/></svg>
-      </button>
-      <button id="sw-lightbox-prev" type="button" class="absolute left-2 sm:left-6 top-1/2 -translate-y-1/2 text-white/70 hover:text-white w-10 h-10 flex items-center justify-center rounded-full bg-black/40 hover:bg-black/60" aria-label="Previous">
-        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M15 19l-7-7 7-7"/></svg>
-      </button>
-      <button id="sw-lightbox-next" type="button" class="absolute right-2 sm:right-6 top-1/2 -translate-y-1/2 text-white/70 hover:text-white w-10 h-10 flex items-center justify-center rounded-full bg-black/40 hover:bg-black/60" aria-label="Next">
-        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 5l7 7-7 7"/></svg>
-      </button>
-      <figure class="max-w-5xl w-full max-h-full flex flex-col items-center">
-        <img id="sw-lightbox-img" src="" alt="" class="max-w-full max-h-[80vh] object-contain rounded-lg shadow-2xl"/>
-        <figcaption id="sw-lightbox-caption" class="mt-4 text-sm text-white/80 text-center max-w-3xl"></figcaption>
-      </figure>
-    </div>
+      {/* Footer */}
+      <div style="margin-top: 30px; padding-top: 20px; border-top: 1px solid #e5e7eb; display: flex; justify-content: space-between; align-items: center; font-size: 11px; color: #9ca3af; flex-wrap: wrap; gap: 10px;">
+        <div>ScopeWalk Survey Report &nbsp;·&nbsp; Generated: April 16, 2026 at 1:22 PM</div>
+        <div>Visit: {PROJECT.visitDate}</div>
+      </div>
+
+    </main>
   </div>
-
-  <style>
-    [data-nav-link].sw-nav-active {
-      background-color: #FFECD9;
-      color: #B25508;
-      font-weight: 600;
-    }
-    .sw-room-body.sw-collapsed {
-      display: none;
-    }
-    .sw-toggle-icon.sw-rotated {
-      transform: rotate(-90deg);
-    }
-    body:has(#sw-lightbox:not(.hidden)) {
-      overflow: hidden;
-    }
-  </style>
 
   <script is:inline>
     document.addEventListener("DOMContentLoaded", () => {
-      // Lazy-load iframes (mirrors index.astro pattern)
-      const iframes = document.querySelectorAll("iframe[data-src]");
-      if (iframes.length) {
-        const io = new IntersectionObserver((entries) => {
-          entries.forEach((entry) => {
-            if (entry.isIntersecting) {
-              const f = entry.target;
-              if (f.dataset.src) {
-                f.src = f.dataset.src;
-                delete f.dataset.src;
-              }
-              io.unobserve(f);
-            }
-          });
-        }, { rootMargin: "200px" });
-        iframes.forEach((f) => io.observe(f));
-      }
+      const accs = document.querySelectorAll(".sw-acc");
 
-      // Side-nav active-state tracking
-      const navLinks = document.querySelectorAll("[data-nav-link]");
-      const sections = Array.from(navLinks)
-        .map((l) => document.getElementById(l.dataset.target))
-        .filter(Boolean);
-
-      if (sections.length && "IntersectionObserver" in window) {
-        const activeMap = new Map();
-        const navObserver = new IntersectionObserver((entries) => {
-          entries.forEach((e) => activeMap.set(e.target.id, e.isIntersecting));
-          const firstVisible = sections.find((s) => activeMap.get(s.id));
-          if (!firstVisible) return;
-          navLinks.forEach((l) => {
-            l.classList.toggle("sw-nav-active", l.dataset.target === firstVisible.id);
-          });
-        }, { rootMargin: "-30% 0px -60% 0px", threshold: 0 });
-        sections.forEach((s) => navObserver.observe(s));
-      }
-
-      // Room collapse/expand
-      document.querySelectorAll(".sw-room-toggle").forEach((btn) => {
-        btn.addEventListener("click", () => {
-          const article = btn.closest("article");
-          if (!article) return;
-          const body = article.querySelector(".sw-room-body");
-          const label = btn.querySelector(".sw-toggle-label");
-          const icon = btn.querySelector(".sw-toggle-icon");
-          if (!body) return;
-          const collapsed = body.classList.toggle("sw-collapsed");
-          btn.setAttribute("aria-expanded", collapsed ? "false" : "true");
-          if (label) label.textContent = collapsed ? "Expand" : "Collapse";
-          if (icon) icon.classList.toggle("sw-rotated", collapsed);
-        });
-      });
-
-      // Lightbox
-      const lightbox = document.getElementById("sw-lightbox");
-      const lbImg = document.getElementById("sw-lightbox-img");
-      const lbCaption = document.getElementById("sw-lightbox-caption");
-      const lbClose = document.getElementById("sw-lightbox-close");
-      const lbPrev = document.getElementById("sw-lightbox-prev");
-      const lbNext = document.getElementById("sw-lightbox-next");
-
-      let currentGroup = [];
-      let currentIndex = 0;
-
-      function openLightbox(trigger) {
-        const group = trigger.dataset.group;
-        if (group) {
-          currentGroup = Array.from(document.querySelectorAll(`.sw-lightbox-trigger[data-group="${group}"]`));
+      function setOpen(acc, open) {
+        const body = acc.querySelector(".sw-acc-body");
+        const chev = acc.querySelector(".sw-acc-chev");
+        if (!body || !chev) return;
+        if (open) {
+          body.style.display = "";
+          chev.style.transform = "rotate(180deg)";
         } else {
-          currentGroup = [trigger];
+          body.style.display = "none";
+          chev.style.transform = "rotate(0deg)";
         }
-        currentIndex = Math.max(0, currentGroup.indexOf(trigger));
-        renderLightbox();
-        lightbox.classList.remove("hidden");
-        lightbox.classList.add("flex");
-        lightbox.setAttribute("aria-hidden", "false");
-        const multi = currentGroup.length > 1;
-        lbPrev.style.display = multi ? "" : "none";
-        lbNext.style.display = multi ? "" : "none";
       }
 
-      function renderLightbox() {
-        const t = currentGroup[currentIndex];
-        if (!t) return;
-        lbImg.src = t.dataset.src;
-        lbImg.alt = t.dataset.label || "";
-        const pos = currentGroup.length > 1 ? ` (${currentIndex + 1} of ${currentGroup.length})` : "";
-        lbCaption.textContent = (t.dataset.label || "") + pos;
-      }
-
-      function closeLightbox() {
-        lightbox.classList.add("hidden");
-        lightbox.classList.remove("flex");
-        lightbox.setAttribute("aria-hidden", "true");
-        lbImg.src = "";
-      }
-
-      function step(delta) {
-        if (!currentGroup.length) return;
-        currentIndex = (currentIndex + delta + currentGroup.length) % currentGroup.length;
-        renderLightbox();
-      }
-
-      document.querySelectorAll(".sw-lightbox-trigger").forEach((t) => {
-        t.addEventListener("click", (e) => {
-          e.preventDefault();
-          openLightbox(t);
+      document.querySelectorAll(".sw-acc-toggle").forEach((btn) => {
+        btn.addEventListener("click", () => {
+          const acc = btn.closest(".sw-acc");
+          if (!acc) return;
+          const body = acc.querySelector(".sw-acc-body");
+          const isOpen = body && body.style.display !== "none";
+          setOpen(acc, !isOpen);
         });
       });
 
-      lbClose?.addEventListener("click", closeLightbox);
-      lbPrev?.addEventListener("click", () => step(-1));
-      lbNext?.addEventListener("click", () => step(1));
-      lightbox?.addEventListener("click", (e) => {
-        if (e.target === lightbox) closeLightbox();
-      });
-      document.addEventListener("keydown", (e) => {
-        if (lightbox.classList.contains("hidden")) return;
-        if (e.key === "Escape") closeLightbox();
-        else if (e.key === "ArrowLeft") step(-1);
-        else if (e.key === "ArrowRight") step(1);
-      });
+      const expand = document.getElementById("sw-expand-all");
+      const collapse = document.getElementById("sw-collapse-all");
+      expand && expand.addEventListener("click", () => accs.forEach((a) => setOpen(a, true)));
+      collapse && collapse.addEventListener("click", () => accs.forEach((a) => setOpen(a, false)));
     });
   </script>
 </Layout>
