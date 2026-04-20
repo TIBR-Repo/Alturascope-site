@@ -13,6 +13,7 @@ interface Props {
   fullWidth?: boolean;
   lang?: string;
   hreflang?: { lang: string; href: string }[];
+  minimalChrome?: boolean;
 }
 
 const {
@@ -27,6 +28,7 @@ const {
   fullWidth = false,
   lang = "en",
   hreflang = [],
+  minimalChrome = false,
 } = Astro.props;
 
 const navLinks = [
@@ -67,6 +69,8 @@ const navLinks = [
     {faqSchema && <script type="application/ld+json" set:html={faqSchema} />}
   </head>
   <body>
+    {!minimalChrome && (
+    <Fragment>
     <!-- Header -->
     <header id="site-header" class="fixed top-0 left-0 right-0 z-50 transition-all duration-300">
       <div class="mx-auto max-w-[1400px] px-6 md:px-8 lg:px-12 py-5 flex items-center justify-between">
@@ -110,11 +114,22 @@ const navLinks = [
         <a href="/contact" class="btn-primary mt-4 text-base px-8 py-3.5">Start a Project</a>
       </nav>
     </div>
+    </Fragment>
+    )}
 
     <main class={fullWidth ? "" : "mx-auto max-w-[1400px] px-6 lg:px-10"}>
       <slot />
     </main>
 
+    {minimalChrome && (
+    <footer class="bg-[#F5EFE4] border-t border-[#E9E0CD]">
+      <div class="mx-auto max-w-[1100px] px-6 py-6 flex flex-col sm:flex-row items-center justify-between gap-3 text-xs text-[#6F6A61]">
+        <p>Shared via <span class="font-semibold text-[#3A3630]">ScopeWalk</span> &middot; <span>Sample project</span></p>
+        <a href="/" class="text-[#3A3630] font-medium hover:text-[#CC620A] transition-colors">&larr; Back to Alturascope</a>
+      </div>
+    </footer>
+    )}
+    {!minimalChrome && (
     <!-- Footer -->
     <footer class="bg-navy text-white/80">
       <div class="mx-auto max-w-[1400px] px-6 lg:px-10 py-20">
@@ -180,6 +195,7 @@ const navLinks = [
         </div>
       </div>
     </footer>
+    )}
 
     <script>
       document.addEventListener("DOMContentLoaded", () => {
