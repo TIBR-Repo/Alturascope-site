@@ -1,11 +1,6 @@
 ---
 import Layout from "../../layouts/Layout.astro";
 
-// ─── ACCESS TOKEN CHECK ───────────────────────────────────────────────────────
-if (Astro.url.searchParams.get("key") !== "AS2026demo") {
-  return Astro.redirect("/");
-}
-
 // ─── PROJECT META ──────────────────────────────────────────────────────────────
 
 const PROJECT = {
@@ -391,7 +386,7 @@ const initialOpenId = "plumbing";
   fullWidth={true}
   minimalChrome={true}
 >
-  <div style={`font-family: ${PAGE_FONT}; background: #f3f4f6; min-height: 100vh; color: #111827;`}>
+  <div id="sw-gated" style={`font-family: ${PAGE_FONT}; background: #f3f4f6; min-height: 100vh; color: #111827; display: none;`}>
 
     {/* TOP NAV BAR */}
     <header style="background: #fff; border-bottom: 1px solid #e5e7eb; padding: 12px 24px; position: sticky; top: 0; z-index: 50;">
@@ -906,5 +901,16 @@ const initialOpenId = "plumbing";
       expand && expand.addEventListener("click", () => accs.forEach((a) => setOpen(a, true)));
       collapse && collapse.addEventListener("click", () => accs.forEach((a) => setOpen(a, false)));
     });
+  </script>
+
+  <script is:inline>
+    (function () {
+      var params = new URLSearchParams(window.location.search);
+      if (params.get("key") === "AS2026demo") {
+        document.getElementById("sw-gated").style.display = "";
+      } else {
+        window.location.href = "/";
+      }
+    })();
   </script>
 </Layout>
