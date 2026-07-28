@@ -6,17 +6,17 @@ const schema = JSON.stringify({
   "@type": "Article",
   "headline": "What Is a Matterport Digital Twin — And Why Construction Teams Are Using Them",
   "author": { "@type": "Organization", "name": "Alturascope" },
-  "publisher": { "@type": "Organization", "name": "Alturascope", "url": "https://alturascope.com" },
+  "publisher": { "@type": "Organization", "name": "Alturascope", "url": "https://alturascope.com/" },
   "datePublished": "2025-11-15",
   "description": "Matterport digital twins give construction and fitout teams accurate, navigable site models before a single decision is made. Here's what they are, how they work, and what a professional survey actually delivers.",
-  "mainEntityOfPage": "https://alturascope.com/insights/what-is-a-matterport-digital-twin"
+  "mainEntityOfPage": "https://alturascope.com/insights/what-is-a-matterport-digital-twin/"
 });
 
 const breadcrumbSchema = JSON.stringify({
   "@context": "https://schema.org",
   "@type": "BreadcrumbList",
   "itemListElement": [
-    { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://alturascope.com" },
+    { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://alturascope.com/" },
     { "@type": "ListItem", "position": 2, "name": "Insights", "item": "https://alturascope.com/insights/" },
     { "@type": "ListItem", "position": 3, "name": "What Is a Matterport Digital Twin", "item": "https://alturascope.com/insights/what-is-a-matterport-digital-twin/" }
   ]
@@ -67,6 +67,9 @@ const faqSchema = JSON.stringify({
           src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=1920&q=80"
           alt="Commercial construction site interior with structural framework and atmospheric lighting"
           class="w-full h-full object-cover opacity-25"
+          loading="eager"
+          fetchpriority="high"
+          decoding="async"
         />
         <div class="absolute inset-0 bg-[rgba(11,31,58,0.82)]"></div>
       </div>
@@ -261,7 +264,7 @@ const faqSchema = JSON.stringify({
               Ready to document your next project properly?
             </p>
             <p>
-              <a href="/contact" class="text-navy font-medium hover:opacity-80 transition-opacity">Get in touch with Alturascope</a> and we'll come back within one business day with a clear scope recommendation and an all-in quote &mdash; travel included.
+              <a href="/contact/" class="text-navy font-medium hover:opacity-80 transition-opacity">Get in touch with Alturascope</a> and we'll come back within one business day with a clear scope recommendation and an all-in quote &mdash; travel included.
             </p>
           </div>
         </div>
@@ -274,11 +277,11 @@ const faqSchema = JSON.stringify({
         <!-- Internal Links -->
         <div class="mt-12 pt-8 border-t border-border flex flex-wrap gap-6 text-sm">
           <a href="/" class="text-navy font-medium hover:opacity-80 transition-opacity">Home &rarr;</a>
-          <a href="/work" class="text-navy font-medium hover:opacity-80 transition-opacity">The Standard &rarr;</a>
-          <a href="/services/construction-documentation" class="text-navy font-medium hover:opacity-80 transition-opacity">Construction documentation &rarr;</a>
-          <a href="/services/multi-site-rollout-documentation" class="text-navy font-medium hover:opacity-80 transition-opacity">Multi-site rollout documentation &rarr;</a>
-          <a href="/insights/why-poor-site-documentation-costs-construction-projects" class="text-navy font-medium hover:opacity-80 transition-opacity">Why poor site documentation costs more &rarr;</a>
-          <a href="/insights" class="text-navy font-medium hover:opacity-80 transition-opacity">All insights &rarr;</a>
+          <a href="/work/" class="text-navy font-medium hover:opacity-80 transition-opacity">The Standard &rarr;</a>
+          <a href="/services/construction-documentation/" class="text-navy font-medium hover:opacity-80 transition-opacity">Construction documentation &rarr;</a>
+          <a href="/services/multi-site-rollout-documentation/" class="text-navy font-medium hover:opacity-80 transition-opacity">Multi-site rollout documentation &rarr;</a>
+          <a href="/insights/why-poor-site-documentation-costs-construction-projects/" class="text-navy font-medium hover:opacity-80 transition-opacity">Why poor site documentation costs more &rarr;</a>
+          <a href="/insights/" class="text-navy font-medium hover:opacity-80 transition-opacity">All insights &rarr;</a>
         </div>
 
       </div>
@@ -293,7 +296,7 @@ const faqSchema = JSON.stringify({
         <p class="mt-4 text-offwhite/70 leading-body">
           Share the location, the approximate size, and what you're trying to decide. We'll confirm scope and send an all-in quote within one business day.
         </p>
-        <a href="/contact" class="btn-primary mt-8">Start a Project</a>
+        <a href="/contact/" class="btn-primary mt-8">Start a Project</a>
       </div>
     </section>
 

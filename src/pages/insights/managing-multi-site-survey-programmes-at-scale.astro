@@ -6,7 +6,7 @@ const schema = JSON.stringify({
   "@type": "Article",
   "headline": "Managing Multi-Site Survey Programmes at Scale: Lessons from 500+ Commercial Locations",
   "author": { "@type": "Organization", "name": "Alturascope" },
-  "publisher": { "@type": "Organization", "name": "Alturascope", "url": "https://alturascope.com" },
+  "publisher": { "@type": "Organization", "name": "Alturascope", "url": "https://alturascope.com/" },
   "datePublished": "2026-04-01",
   "description": "Surveying 100+ commercial locations across North America requires more than good equipment. Here's what we've learned about logistics, quality control, and data management at programme scale.",
   "mainEntityOfPage": "https://alturascope.com/insights/managing-multi-site-survey-programmes-at-scale/"
@@ -16,7 +16,7 @@ const breadcrumbSchema = JSON.stringify({
   "@context": "https://schema.org",
   "@type": "BreadcrumbList",
   "itemListElement": [
-    { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://alturascope.com" },
+    { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://alturascope.com/" },
     { "@type": "ListItem", "position": 2, "name": "Insights", "item": "https://alturascope.com/insights/" },
     { "@type": "ListItem", "position": 3, "name": "Managing Multi-Site Survey Programmes at Scale", "item": "https://alturascope.com/insights/managing-multi-site-survey-programmes-at-scale/" }
   ]
@@ -66,6 +66,9 @@ const faqSchema = JSON.stringify({
           src="/Images/manhattan1.jpg"
           alt="Urban commercial district representing nationwide multi-site survey programme coverage"
           class="w-full h-full object-cover opacity-25"
+          loading="eager"
+          fetchpriority="high"
+          decoding="async"
         />
         <div class="absolute inset-0 bg-[rgba(11,31,58,0.82)]"></div>
       </div>
@@ -101,7 +104,7 @@ const faqSchema = JSON.stringify({
             The better approach is to scope at programme level. This means defining the survey methodology once: what gets captured, in what order, to what standard, and in what format. Every location in the programme gets the same treatment. The scope may flex for unusually large or complex sites, but the baseline is consistent.
           </p>
           <p>
-            This programme-level scoping also determines pricing. Rather than quoting each site individually &mdash; which creates administrative overhead and unpredictable costs for the client &mdash; we establish a per-site rate that accounts for the programme's geography, volume, and typical site characteristics. The client knows exactly what each survey costs before the programme begins. As we discussed in our guide to <a href="/insights/standardising-site-surveys-multi-site-operators" class="text-navy font-medium hover:opacity-80 transition-opacity">standardising surveys for multi-site operators</a>, this consistency is what makes programme-level decision-making possible.
+            This programme-level scoping also determines pricing. Rather than quoting each site individually &mdash; which creates administrative overhead and unpredictable costs for the client &mdash; we establish a per-site rate that accounts for the programme's geography, volume, and typical site characteristics. The client knows exactly what each survey costs before the programme begins. As we discussed in our guide to <a href="/insights/standardising-site-surveys-multi-site-operators/" class="text-navy font-medium hover:opacity-80 transition-opacity">standardising surveys for multi-site operators</a>, this consistency is what makes programme-level decision-making possible.
           </p>
         </div>
 
@@ -160,7 +163,7 @@ const faqSchema = JSON.stringify({
             Through ScopeWalk, every location in a programme gets its own project space containing the digital twin, conditions report, photo storyboard, video walkthrough, and any supplementary documentation. The client's team accesses everything through a single portal with role-based permissions: project managers see the full picture, site-level contacts see only their location, and executives get the portfolio view.
           </p>
           <p>
-            For clients managing <a href="/services/multi-site-rollout-documentation" class="text-navy font-medium hover:opacity-80 transition-opacity">multi-site rollout programmes</a>, this platform layer is often more valuable than any individual survey. It becomes the single source of truth for site conditions across the entire portfolio &mdash; accessible from anywhere, permanently available, and structured for decision-making rather than just storage.
+            For clients managing <a href="/services/multi-site-rollout-documentation/" class="text-navy font-medium hover:opacity-80 transition-opacity">multi-site rollout programmes</a>, this platform layer is often more valuable than any individual survey. It becomes the single source of truth for site conditions across the entire portfolio &mdash; accessible from anywhere, permanently available, and structured for decision-making rather than just storage.
           </p>
         </div>
 
@@ -229,21 +232,21 @@ const faqSchema = JSON.stringify({
               Multi-site survey programmes succeed or fail on operations, not equipment. The capture technology matters, but it's the logistics management, quality control systems, and data delivery platform that determine whether a 100-location programme runs smoothly or becomes an operational headache.
             </p>
             <p>
-              If you're planning a multi-site programme &mdash; whether it's 10 locations or 200 &mdash; <a href="/contact" class="text-navy font-medium hover:opacity-80 transition-opacity">talk to Alturascope</a>. We'll scope the methodology, design the routing, and quote the programme end-to-end. Travel included, always.
+              If you're planning a multi-site programme &mdash; whether it's 10 locations or 200 &mdash; <a href="/contact/" class="text-navy font-medium hover:opacity-80 transition-opacity">talk to Alturascope</a>. We'll scope the methodology, design the routing, and quote the programme end-to-end. Travel included, always.
             </p>
           </div>
         </div>
 
         <p class="mt-12 text-[0.85rem] text-midgrey/60 italic">
-          Alturascope delivers <a href="/services/multi-site-rollout-documentation" class="hover:opacity-80 transition-opacity">multi-site survey programmes</a> across all 50 US states, every Canadian province, and the United Kingdom.
+          Alturascope delivers <a href="/services/multi-site-rollout-documentation/" class="hover:opacity-80 transition-opacity">multi-site survey programmes</a> across all 50 US states, every Canadian province, and the United Kingdom.
         </p>
 
         <div class="mt-12 pt-8 border-t border-border flex flex-wrap gap-6 text-sm">
-          <a href="/services/multi-site-rollout-documentation" class="text-navy font-medium hover:opacity-80 transition-opacity">Multi-site rollout documentation &rarr;</a>
-          <a href="/services/retail-rollout-documentation" class="text-navy font-medium hover:opacity-80 transition-opacity">Retail rollout documentation &rarr;</a>
-          <a href="/services/qsr-restaurant-survey" class="text-navy font-medium hover:opacity-80 transition-opacity">QSR survey services &rarr;</a>
-          <a href="/work" class="text-navy font-medium hover:opacity-80 transition-opacity">The Standard &rarr;</a>
-          <a href="/insights" class="text-navy font-medium hover:opacity-80 transition-opacity">All insights &rarr;</a>
+          <a href="/services/multi-site-rollout-documentation/" class="text-navy font-medium hover:opacity-80 transition-opacity">Multi-site rollout documentation &rarr;</a>
+          <a href="/services/retail-rollout-documentation/" class="text-navy font-medium hover:opacity-80 transition-opacity">Retail rollout documentation &rarr;</a>
+          <a href="/services/qsr-restaurant-survey/" class="text-navy font-medium hover:opacity-80 transition-opacity">QSR survey services &rarr;</a>
+          <a href="/work/" class="text-navy font-medium hover:opacity-80 transition-opacity">The Standard &rarr;</a>
+          <a href="/insights/" class="text-navy font-medium hover:opacity-80 transition-opacity">All insights &rarr;</a>
         </div>
 
       </div>
@@ -257,7 +260,7 @@ const faqSchema = JSON.stringify({
         <p class="mt-4 text-offwhite/70 leading-body">
           Tell us how many locations, the geography, and the programme timeline. We'll design the survey methodology, optimise the routing, and quote the entire programme.
         </p>
-        <a href="/contact" class="btn-primary mt-8">Start a Project</a>
+        <a href="/contact/" class="btn-primary mt-8">Start a Project</a>
       </div>
     </section>
 

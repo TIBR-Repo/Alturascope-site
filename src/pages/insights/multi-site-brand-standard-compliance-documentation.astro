@@ -6,7 +6,7 @@ const schema = JSON.stringify({
   "@type": "Article",
   "headline": "Brand Standard Compliance Documentation: How Multi-Site Operators Use Site Surveys to Close the Gap Between Guidelines and Reality",
   "author": { "@type": "Organization", "name": "Alturascope" },
-  "publisher": { "@type": "Organization", "name": "Alturascope", "url": "https://alturascope.com" },
+  "publisher": { "@type": "Organization", "name": "Alturascope", "url": "https://alturascope.com/" },
   "datePublished": "2026-05-27",
   "description": "Multi-site operators know their brand standards. They often do not know the current physical state of every location. Closing that gap — systematically, at scale — is what brand standard compliance documentation delivers.",
   "mainEntityOfPage": "https://alturascope.com/insights/multi-site-brand-standard-compliance-documentation/"
@@ -16,7 +16,7 @@ const breadcrumbSchema = JSON.stringify({
   "@context": "https://schema.org",
   "@type": "BreadcrumbList",
   "itemListElement": [
-    { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://alturascope.com" },
+    { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://alturascope.com/" },
     { "@type": "ListItem", "position": 2, "name": "Insights", "item": "https://alturascope.com/insights/" },
     { "@type": "ListItem", "position": 3, "name": "Brand Standard Compliance Documentation", "item": "https://alturascope.com/insights/multi-site-brand-standard-compliance-documentation/" }
   ]
@@ -52,13 +52,12 @@ const faqSchema = JSON.stringify({
 <Layout
   title="Brand Standard Compliance Documentation for Multi-Site Operators | Alturascope"
   description="Multi-site operators need to know the current state of every location relative to brand standards. Systematic compliance documentation closes the gap between guidelines and reality."
->
-  <div slot="head">
-    <script type="application/ld+json" set:html={schema} />
-    <script type="application/ld+json" set:html={breadcrumbSchema} />
-    <script type="application/ld+json" set:html={faqSchema} />
-  </div>
 
+  canonical="https://alturascope.com/insights/multi-site-brand-standard-compliance-documentation/"
+  schema={schema}
+  breadcrumbSchema={breadcrumbSchema}
+  faqSchema={faqSchema}
+>
   <div>
     <article class="max-w-[720px] mx-auto px-6 py-20">
       <div class="mb-8">
@@ -159,16 +158,16 @@ const faqSchema = JSON.stringify({
         </div>
 
         <p class="mt-12 text-[0.85rem] text-midgrey/60 italic">
-          Alturascope provides <a href="/services/multi-site-rollout-documentation" class="hover:opacity-80 transition-opacity">brand standard compliance documentation programmes</a> across the United States, Canada, and the United Kingdom.
+          Alturascope provides <a href="/services/multi-site-rollout-documentation/" class="hover:opacity-80 transition-opacity">brand standard compliance documentation programmes</a> across the United States, Canada, and the United Kingdom.
         </p>
 
         <div class="mt-12 pt-8 border-t border-border flex flex-wrap gap-6 text-sm">
-          <a href="/services/multi-site-rollout-documentation" class="text-navy font-medium hover:opacity-80 transition-opacity">Multi-site documentation &rarr;</a>
-          <a href="/insights/fashion-retail-store-refit-survey-documentation" class="text-navy font-medium hover:opacity-80 transition-opacity">Fashion retail surveys &rarr;</a>
-          <a href="/insights/vehicle-dealership-renovation-site-survey" class="text-navy font-medium hover:opacity-80 transition-opacity">Dealership surveys &rarr;</a>
-          <a href="/insights/qsr-franchise-kitchen-equipment-documentation" class="text-navy font-medium hover:opacity-80 transition-opacity">QSR kitchen documentation &rarr;</a>
-          <a href="/insights/standardising-site-surveys-multi-site-operators" class="text-navy font-medium hover:opacity-80 transition-opacity">Standardising multi-site surveys &rarr;</a>
-          <a href="/insights" class="text-navy font-medium hover:opacity-80 transition-opacity">All insights &rarr;</a>
+          <a href="/services/multi-site-rollout-documentation/" class="text-navy font-medium hover:opacity-80 transition-opacity">Multi-site documentation &rarr;</a>
+          <a href="/insights/fashion-retail-store-refit-survey-documentation/" class="text-navy font-medium hover:opacity-80 transition-opacity">Fashion retail surveys &rarr;</a>
+          <a href="/insights/vehicle-dealership-renovation-site-survey/" class="text-navy font-medium hover:opacity-80 transition-opacity">Dealership surveys &rarr;</a>
+          <a href="/insights/qsr-franchise-kitchen-equipment-documentation/" class="text-navy font-medium hover:opacity-80 transition-opacity">QSR kitchen documentation &rarr;</a>
+          <a href="/insights/standardising-site-surveys-multi-site-operators/" class="text-navy font-medium hover:opacity-80 transition-opacity">Standardising multi-site surveys &rarr;</a>
+          <a href="/insights/" class="text-navy font-medium hover:opacity-80 transition-opacity">All insights &rarr;</a>
         </div>
 
       </div>
@@ -182,7 +181,7 @@ const faqSchema = JSON.stringify({
         <p class="mt-4 text-offwhite/70 leading-body">
           Tell us the number of locations, the sectors, and what you need to measure against. We will outline a documentation programme and return a per-site quote within one business day.
         </p>
-        <a href="/contact" class="btn-primary mt-8">Start a Project</a>
+        <a href="/contact/" class="btn-primary mt-8">Start a Project</a>
       </div>
     </section>
 

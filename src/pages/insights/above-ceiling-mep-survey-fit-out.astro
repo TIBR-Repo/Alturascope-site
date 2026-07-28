@@ -6,17 +6,17 @@ const schema = JSON.stringify({
   "@type": "Article",
   "headline": "What's Actually Above Your Ceiling — And Why It Matters Before Fit-Out Begins",
   "author": { "@type": "Organization", "name": "Alturascope" },
-  "publisher": { "@type": "Organization", "name": "Alturascope", "url": "https://alturascope.com" },
+  "publisher": { "@type": "Organization", "name": "Alturascope", "url": "https://alturascope.com/" },
   "datePublished": "2026-02-19",
   "description": "Hidden ductwork, undocumented pipework, and uncharted electrical runs above ceiling are responsible for some of the most expensive surprises in commercial fit-out. Here's how to find out what's there before work starts.",
-  "mainEntityOfPage": "https://alturascope.com/insights/above-ceiling-mep-survey-fit-out"
+  "mainEntityOfPage": "https://alturascope.com/insights/above-ceiling-mep-survey-fit-out/"
 });
 
 const breadcrumbSchema = JSON.stringify({
   "@context": "https://schema.org",
   "@type": "BreadcrumbList",
   "itemListElement": [
-    { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://alturascope.com" },
+    { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://alturascope.com/" },
     { "@type": "ListItem", "position": 2, "name": "Insights", "item": "https://alturascope.com/insights/" },
     { "@type": "ListItem", "position": 3, "name": "Above-Ceiling MEP Surveys", "item": "https://alturascope.com/insights/above-ceiling-mep-survey-fit-out/" }
   ]
@@ -62,6 +62,9 @@ const faqSchema = JSON.stringify({
           src="https://images.unsplash.com/photo-1504328345606-18bbc8c9d7d1?w=1920&q=80"
           alt="Exposed MEP services and ductwork above a suspended ceiling in a commercial building"
           class="w-full h-full object-cover opacity-25"
+          loading="eager"
+          fetchpriority="high"
+          decoding="async"
         />
         <div class="absolute inset-0 bg-[rgba(11,31,58,0.82)]"></div>
       </div>
@@ -180,8 +183,8 @@ const faqSchema = JSON.stringify({
 
         <div class="space-y-4 mt-8 pl-6 border-l-2 border-gold text-midgrey leading-body text-[1.05rem]">
           <p><span class="text-navy font-medium">Commercial fit-out and refurbishment</span> &mdash; any project where the existing above-ceiling condition is unknown or undocumented</p>
-          <p><span class="text-navy font-medium"><a href="/services/qsr-restaurant-survey" class="text-navy hover:opacity-80 transition-opacity">QSR and food service operators</a></span> &mdash; where HVAC, extraction, drainage, and grease trap routing all interact in a constrained plenum space</p>
-          <p><span class="text-navy font-medium"><a href="/services/healthcare-facility-survey" class="text-navy hover:opacity-80 transition-opacity">Healthcare facilities</a></span> &mdash; where medical gas, electrical isolation, and infection control requirements make undocumented services a compliance and programme risk</p>
+          <p><span class="text-navy font-medium"><a href="/services/qsr-restaurant-survey/" class="text-navy hover:opacity-80 transition-opacity">QSR and food service operators</a></span> &mdash; where HVAC, extraction, drainage, and grease trap routing all interact in a constrained plenum space</p>
+          <p><span class="text-navy font-medium"><a href="/services/healthcare-facility-survey/" class="text-navy hover:opacity-80 transition-opacity">Healthcare facilities</a></span> &mdash; where medical gas, electrical isolation, and infection control requirements make undocumented services a compliance and programme risk</p>
           <p><span class="text-navy font-medium">Landlords and asset managers</span> &mdash; documenting actual services condition at lease expiry or ahead of re-letting</p>
           <p><span class="text-navy font-medium">Developers and property acquirers</span> &mdash; understanding the true services condition of a building before committing to a capex programme</p>
         </div>
@@ -220,7 +223,7 @@ const faqSchema = JSON.stringify({
               What's above the ceiling is often the least-documented and most consequential part of any commercial fit-out scope. Documenting it properly before design begins is not an optional extra &mdash; it's the difference between a programme that runs to plan and one that doesn't.
             </p>
             <p>
-              Want to know what's actually up there before your fit-out begins? <a href="/contact" class="text-navy font-medium hover:opacity-80 transition-opacity">Talk to Alturascope.</a> We'll respond within one business day with a scope and all-in quote.
+              Want to know what's actually up there before your fit-out begins? <a href="/contact/" class="text-navy font-medium hover:opacity-80 transition-opacity">Talk to Alturascope.</a> We'll respond within one business day with a scope and all-in quote.
             </p>
           </div>
         </div>
@@ -233,14 +236,14 @@ const faqSchema = JSON.stringify({
         <!-- Internal Links -->
         <div class="mt-12 pt-8 border-t border-border flex flex-wrap gap-6 text-sm">
           <a href="/" class="text-navy font-medium hover:opacity-80 transition-opacity">Home &rarr;</a>
-          <a href="/work" class="text-navy font-medium hover:opacity-80 transition-opacity">The Standard &rarr;</a>
-          <a href="/services/construction-documentation" class="text-navy font-medium hover:opacity-80 transition-opacity">Construction documentation &rarr;</a>
-          <a href="/services/commercial-kitchen-survey" class="text-navy font-medium hover:opacity-80 transition-opacity">Commercial kitchen surveys &rarr;</a>
-          <a href="/insights/what-is-a-matterport-digital-twin" class="text-navy font-medium hover:opacity-80 transition-opacity">What is a Matterport digital twin? &rarr;</a>
-          <a href="/insights/why-poor-site-documentation-costs-construction-projects" class="text-navy font-medium hover:opacity-80 transition-opacity">Why poor site documentation costs more &rarr;</a>
-          <a href="/insights/thermal-imaging-commercial-property-what-it-reveals" class="text-navy font-medium hover:opacity-80 transition-opacity">Thermal imaging in commercial property &rarr;</a>
-          <a href="/insights/standardising-site-surveys-multi-site-operators" class="text-navy font-medium hover:opacity-80 transition-opacity">Standardising multi-site surveys &rarr;</a>
-          <a href="/insights" class="text-navy font-medium hover:opacity-80 transition-opacity">All insights &rarr;</a>
+          <a href="/work/" class="text-navy font-medium hover:opacity-80 transition-opacity">The Standard &rarr;</a>
+          <a href="/services/construction-documentation/" class="text-navy font-medium hover:opacity-80 transition-opacity">Construction documentation &rarr;</a>
+          <a href="/services/commercial-kitchen-survey/" class="text-navy font-medium hover:opacity-80 transition-opacity">Commercial kitchen surveys &rarr;</a>
+          <a href="/insights/what-is-a-matterport-digital-twin/" class="text-navy font-medium hover:opacity-80 transition-opacity">What is a Matterport digital twin? &rarr;</a>
+          <a href="/insights/why-poor-site-documentation-costs-construction-projects/" class="text-navy font-medium hover:opacity-80 transition-opacity">Why poor site documentation costs more &rarr;</a>
+          <a href="/insights/thermal-imaging-commercial-property-what-it-reveals/" class="text-navy font-medium hover:opacity-80 transition-opacity">Thermal imaging in commercial property &rarr;</a>
+          <a href="/insights/standardising-site-surveys-multi-site-operators/" class="text-navy font-medium hover:opacity-80 transition-opacity">Standardising multi-site surveys &rarr;</a>
+          <a href="/insights/" class="text-navy font-medium hover:opacity-80 transition-opacity">All insights &rarr;</a>
         </div>
 
       </div>
@@ -255,7 +258,7 @@ const faqSchema = JSON.stringify({
         <p class="mt-4 text-offwhite/70 leading-body">
           Share the location, the approximate size, and what you're planning. We'll confirm scope and send an all-in quote within one business day.
         </p>
-        <a href="/contact" class="btn-primary mt-8">Start a Project</a>
+        <a href="/contact/" class="btn-primary mt-8">Start a Project</a>
       </div>
     </section>
 

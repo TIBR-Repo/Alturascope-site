@@ -17,7 +17,7 @@ const breadcrumbSchema = JSON.stringify({
   "@context": "https://schema.org",
   "@type": "BreadcrumbList",
   "itemListElement": [
-    { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://alturascope.com" },
+    { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://alturascope.com/" },
     { "@type": "ListItem", "position": 2, "name": "UK", "item": "https://alturascope.com/uk/" },
     { "@type": "ListItem", "position": 3, "name": "Above-Ceiling MEP Survey UK", "item": "https://alturascope.com/uk/above-ceiling-mep-survey/" }
   ]
@@ -70,6 +70,9 @@ const faqSchema = JSON.stringify({
           src="https://images.unsplash.com/photo-1513635269975-59663e0ac1ad?w=1920&q=80"
           alt="Commercial interior with suspended ceiling tiles removed to reveal above-ceiling MEP services during UK building survey for fit-out planning"
           class="w-full h-full object-cover opacity-35"
+          loading="eager"
+          fetchpriority="high"
+          decoding="async"
         />
         <div class="absolute inset-0 bg-[rgba(11,31,58,0.72)]"></div>
       </div>
@@ -83,7 +86,7 @@ const faqSchema = JSON.stringify({
           The most expensive surprises in commercial fit-out come from above the ceiling. Document what's there before design is committed.
         </p>
         <div class="mt-10 flex flex-wrap items-center justify-center gap-4">
-          <a href="/contact" class="btn-primary">Find Out What's Above Your Ceiling</a>
+          <a href="/contact/" class="btn-primary">Find Out What's Above Your Ceiling</a>
           <a href="/uk/" class="btn-secondary-light">UK Services</a>
         </div>
       </div>
@@ -264,7 +267,7 @@ const faqSchema = JSON.stringify({
         <p class="mt-4 text-midgrey leading-body">
           Share the address or approximate location, the size of the space, and what you're planning. We'll come back within one business day with a clear scope recommendation and an all-in quote &mdash; travel included.
         </p>
-        <a href="/contact" class="btn-primary mt-10">Contact Us</a>
+        <a href="/contact/" class="btn-primary mt-10">Contact Us</a>
       </div>
     </section>
 
@@ -273,8 +276,8 @@ const faqSchema = JSON.stringify({
       <div class="max-w-[760px] mx-auto px-6">
         <p class="label text-gold mb-4">Related UK Services</p>
         <div class="flex flex-wrap gap-6 text-midgrey">
-          <a href="/uk/pre-construction-survey" class="text-navy font-medium hover:opacity-80 transition-opacity">Pre-construction survey UK &rarr;</a>
-          <a href="/uk/measured-building-survey" class="text-navy font-medium hover:opacity-80 transition-opacity">Measured building survey UK &rarr;</a>
+          <a href="/uk/pre-construction-survey/" class="text-navy font-medium hover:opacity-80 transition-opacity">Pre-construction survey UK &rarr;</a>
+          <a href="/uk/measured-building-survey/" class="text-navy font-medium hover:opacity-80 transition-opacity">Measured building survey UK &rarr;</a>
           <a href="/uk/" class="text-navy font-medium hover:opacity-80 transition-opacity">Alturascope UK &rarr;</a>
         </div>
       </div>
@@ -294,7 +297,7 @@ const faqSchema = JSON.stringify({
         <p class="mt-4 text-offwhite/70 leading-body">
           Share the location, the approximate size, and what you're planning. We'll confirm scope and send an all-in quote within one business day.
         </p>
-        <a href="/contact" class="btn-primary mt-8">Start a Project</a>
+        <a href="/contact/" class="btn-primary mt-8">Start a Project</a>
       </div>
     </section>
 

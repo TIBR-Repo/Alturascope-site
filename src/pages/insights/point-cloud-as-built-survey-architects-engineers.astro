@@ -6,17 +6,17 @@ const schema = JSON.stringify({
   "@type": "Article",
   "headline": "Point Clouds, As-Built Surveys, and What Architects Actually Need From a Site Survey",
   "author": { "@type": "Organization", "name": "Alturascope" },
-  "publisher": { "@type": "Organization", "name": "Alturascope", "url": "https://alturascope.com" },
+  "publisher": { "@type": "Organization", "name": "Alturascope", "url": "https://alturascope.com/" },
   "datePublished": "2026-02-20",
   "description": "Not all site surveys produce data that design teams can actually use. Here's the difference between a navigable digital twin and a survey-grade point cloud — and when you need which.",
-  "mainEntityOfPage": "https://alturascope.com/insights/point-cloud-as-built-survey-architects-engineers"
+  "mainEntityOfPage": "https://alturascope.com/insights/point-cloud-as-built-survey-architects-engineers/"
 });
 
 const breadcrumbSchema = JSON.stringify({
   "@context": "https://schema.org",
   "@type": "BreadcrumbList",
   "itemListElement": [
-    { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://alturascope.com" },
+    { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://alturascope.com/" },
     { "@type": "ListItem", "position": 2, "name": "Insights", "item": "https://alturascope.com/insights/" },
     { "@type": "ListItem", "position": 3, "name": "Point Cloud & As-Built Surveys for Architects", "item": "https://alturascope.com/insights/point-cloud-as-built-survey-architects-engineers/" }
   ]
@@ -67,6 +67,9 @@ const faqSchema = JSON.stringify({
           src="https://images.unsplash.com/photo-1503387762-592deb58ef4e?w=1920&q=80"
           alt="Architectural blueprints and technical drawings on a desk with building structure visible"
           class="w-full h-full object-cover opacity-25"
+          loading="eager"
+          fetchpriority="high"
+          decoding="async"
         />
         <div class="absolute inset-0 bg-[rgba(11,31,58,0.82)]"></div>
       </div>
@@ -225,7 +228,7 @@ const faqSchema = JSON.stringify({
               If you're unsure what level of survey accuracy your next project requires, we're happy to advise based on your design scope &mdash; before you commit to anything.
             </p>
             <p>
-              Briefing a refurbishment, fit-out, or change-of-use project? <a href="/contact" class="text-navy font-medium hover:opacity-80 transition-opacity">Talk to Alturascope.</a> We'll give you an honest recommendation on survey methodology and an all-in quote within one business day.
+              Briefing a refurbishment, fit-out, or change-of-use project? <a href="/contact/" class="text-navy font-medium hover:opacity-80 transition-opacity">Talk to Alturascope.</a> We'll give you an honest recommendation on survey methodology and an all-in quote within one business day.
             </p>
           </div>
         </div>
@@ -238,12 +241,12 @@ const faqSchema = JSON.stringify({
         <!-- Internal Links -->
         <div class="mt-12 pt-8 border-t border-border flex flex-wrap gap-6 text-sm">
           <a href="/" class="text-navy font-medium hover:opacity-80 transition-opacity">Home &rarr;</a>
-          <a href="/work" class="text-navy font-medium hover:opacity-80 transition-opacity">The Standard &rarr;</a>
-          <a href="/services/construction-documentation" class="text-navy font-medium hover:opacity-80 transition-opacity">Construction documentation &rarr;</a>
-          <a href="/services/heritage-building-documentation" class="text-navy font-medium hover:opacity-80 transition-opacity">Heritage building documentation &rarr;</a>
-          <a href="/insights/what-is-a-matterport-digital-twin" class="text-navy font-medium hover:opacity-80 transition-opacity">What is a Matterport digital twin? &rarr;</a>
-          <a href="/insights/above-ceiling-mep-survey-fit-out" class="text-navy font-medium hover:opacity-80 transition-opacity">Above-ceiling MEP surveys &rarr;</a>
-          <a href="/insights" class="text-navy font-medium hover:opacity-80 transition-opacity">All insights &rarr;</a>
+          <a href="/work/" class="text-navy font-medium hover:opacity-80 transition-opacity">The Standard &rarr;</a>
+          <a href="/services/construction-documentation/" class="text-navy font-medium hover:opacity-80 transition-opacity">Construction documentation &rarr;</a>
+          <a href="/services/heritage-building-documentation/" class="text-navy font-medium hover:opacity-80 transition-opacity">Heritage building documentation &rarr;</a>
+          <a href="/insights/what-is-a-matterport-digital-twin/" class="text-navy font-medium hover:opacity-80 transition-opacity">What is a Matterport digital twin? &rarr;</a>
+          <a href="/insights/above-ceiling-mep-survey-fit-out/" class="text-navy font-medium hover:opacity-80 transition-opacity">Above-ceiling MEP surveys &rarr;</a>
+          <a href="/insights/" class="text-navy font-medium hover:opacity-80 transition-opacity">All insights &rarr;</a>
         </div>
 
       </div>
@@ -258,7 +261,7 @@ const faqSchema = JSON.stringify({
         <p class="mt-4 text-offwhite/70 leading-body">
           Tell us what you're designing and we'll recommend the right survey methodology. Honest advice and an all-in quote within one business day.
         </p>
-        <a href="/contact" class="btn-primary mt-8">Start a Project</a>
+        <a href="/contact/" class="btn-primary mt-8">Start a Project</a>
       </div>
     </section>
 

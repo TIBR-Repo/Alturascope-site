@@ -6,17 +6,17 @@ const schema = JSON.stringify({
   "@type": "Article",
   "headline": "Beyond the Ordinary: Site Documentation for Heritage Buildings, Complex Structures, and Specialist Spaces",
   "author": { "@type": "Organization", "name": "Alturascope" },
-  "publisher": { "@type": "Organization", "name": "Alturascope", "url": "https://alturascope.com" },
+  "publisher": { "@type": "Organization", "name": "Alturascope", "url": "https://alturascope.com/" },
   "datePublished": "2026-02-20",
   "description": "Some buildings don't fit the standard survey template. Heritage properties, listed buildings, complex industrial spaces, and specialist structures need a different kind of documentation approach.",
-  "mainEntityOfPage": "https://alturascope.com/insights/site-documentation-heritage-complex-specialist-buildings"
+  "mainEntityOfPage": "https://alturascope.com/insights/site-documentation-heritage-complex-specialist-buildings/"
 });
 
 const breadcrumbSchema = JSON.stringify({
   "@context": "https://schema.org",
   "@type": "BreadcrumbList",
   "itemListElement": [
-    { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://alturascope.com" },
+    { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://alturascope.com/" },
     { "@type": "ListItem", "position": 2, "name": "Insights", "item": "https://alturascope.com/insights/" },
     { "@type": "ListItem", "position": 3, "name": "Heritage & Specialist Building Documentation", "item": "https://alturascope.com/insights/site-documentation-heritage-complex-specialist-buildings/" }
   ]
@@ -67,6 +67,9 @@ const faqSchema = JSON.stringify({
           src="https://images.unsplash.com/photo-1558618666-fcd25c85f82e?w=1920&q=80"
           alt="Historic stone building interior with vaulted ceiling and architectural detail"
           class="w-full h-full object-cover opacity-25"
+          loading="eager"
+          fetchpriority="high"
+          decoding="async"
         />
         <div class="absolute inset-0 bg-[rgba(11,31,58,0.82)]"></div>
       </div>
@@ -193,7 +196,7 @@ const faqSchema = JSON.stringify({
           <div>
             <h3 class="text-navy font-medium text-[1.05rem]">Do you work with conservation architects and heritage consultants?</h3>
             <p class="mt-3 text-midgrey leading-body text-[1.05rem]">
-              Yes. We're familiar with the documentation requirements for listed building consent and heritage impact assessment work, and we're comfortable working to a brief provided by a conservation architect or heritage consultant rather than a standard commercial scope. <a href="/contact" class="text-navy underline hover:opacity-80 transition-opacity">Get in touch</a> and we'll discuss your project's specific requirements.
+              Yes. We're familiar with the documentation requirements for listed building consent and heritage impact assessment work, and we're comfortable working to a brief provided by a conservation architect or heritage consultant rather than a standard commercial scope. <a href="/contact/" class="text-navy underline hover:opacity-80 transition-opacity">Get in touch</a> and we'll discuss your project's specific requirements.
             </p>
           </div>
 
@@ -230,7 +233,7 @@ const faqSchema = JSON.stringify({
               If your project involves a space that doesn't fit the standard template, we'd like to hear about it.
             </p>
             <p>
-              <a href="/contact" class="text-navy font-medium hover:opacity-80 transition-opacity">Tell us about your project.</a> We'll respond with an honest assessment of what's achievable and what it would take to do it properly.
+              <a href="/contact/" class="text-navy font-medium hover:opacity-80 transition-opacity">Tell us about your project.</a> We'll respond with an honest assessment of what's achievable and what it would take to do it properly.
             </p>
           </div>
         </div>
@@ -243,13 +246,13 @@ const faqSchema = JSON.stringify({
         <!-- Internal Links -->
         <div class="mt-12 pt-8 border-t border-border flex flex-wrap gap-6 text-sm">
           <a href="/" class="text-navy font-medium hover:opacity-80 transition-opacity">Home &rarr;</a>
-          <a href="/work" class="text-navy font-medium hover:opacity-80 transition-opacity">The Standard &rarr;</a>
-          <a href="/services/heritage-building-documentation" class="text-navy font-medium hover:opacity-80 transition-opacity">Heritage building documentation &rarr;</a>
-          <a href="/services/specialist-projects" class="text-navy font-medium hover:opacity-80 transition-opacity">Specialist projects &rarr;</a>
-          <a href="/services/superyacht-documentation" class="text-navy font-medium hover:opacity-80 transition-opacity">Superyacht documentation &rarr;</a>
-          <a href="/insights/point-cloud-as-built-survey-architects-engineers" class="text-navy font-medium hover:opacity-80 transition-opacity">Point clouds &amp; as-built surveys &rarr;</a>
-          <a href="/insights/above-ceiling-mep-survey-fit-out" class="text-navy font-medium hover:opacity-80 transition-opacity">Above-ceiling MEP surveys &rarr;</a>
-          <a href="/insights" class="text-navy font-medium hover:opacity-80 transition-opacity">All insights &rarr;</a>
+          <a href="/work/" class="text-navy font-medium hover:opacity-80 transition-opacity">The Standard &rarr;</a>
+          <a href="/services/heritage-building-documentation/" class="text-navy font-medium hover:opacity-80 transition-opacity">Heritage building documentation &rarr;</a>
+          <a href="/services/specialist-projects/" class="text-navy font-medium hover:opacity-80 transition-opacity">Specialist projects &rarr;</a>
+          <a href="/services/superyacht-documentation/" class="text-navy font-medium hover:opacity-80 transition-opacity">Superyacht documentation &rarr;</a>
+          <a href="/insights/point-cloud-as-built-survey-architects-engineers/" class="text-navy font-medium hover:opacity-80 transition-opacity">Point clouds &amp; as-built surveys &rarr;</a>
+          <a href="/insights/above-ceiling-mep-survey-fit-out/" class="text-navy font-medium hover:opacity-80 transition-opacity">Above-ceiling MEP surveys &rarr;</a>
+          <a href="/insights/" class="text-navy font-medium hover:opacity-80 transition-opacity">All insights &rarr;</a>
         </div>
 
       </div>
@@ -264,7 +267,7 @@ const faqSchema = JSON.stringify({
         <p class="mt-4 text-offwhite/70 leading-body">
           Tell us about the space and we'll give you an honest assessment of what's achievable and what it would take to document it properly.
         </p>
-        <a href="/contact" class="btn-primary mt-8">Start a Project</a>
+        <a href="/contact/" class="btn-primary mt-8">Start a Project</a>
       </div>
     </section>
 

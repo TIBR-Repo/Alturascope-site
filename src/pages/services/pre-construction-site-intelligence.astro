@@ -9,7 +9,7 @@ const schema = JSON.stringify({
   "provider": {
     "@type": "ProfessionalService",
     "name": "Alturascope",
-    "url": "https://alturascope.com",
+    "url": "https://alturascope.com/",
     "areaServed": [
       { "@type": "Country", "name": "United States" },
       { "@type": "Country", "name": "Canada" },
@@ -33,7 +33,7 @@ const breadcrumbSchema = JSON.stringify({
   "@context": "https://schema.org",
   "@type": "BreadcrumbList",
   "itemListElement": [
-    { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://alturascope.com" },
+    { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://alturascope.com/" },
     { "@type": "ListItem", "position": 2, "name": "Services", "item": "https://alturascope.com/services/" },
     { "@type": "ListItem", "position": 3, "name": "Pre-Construction Site Intelligence", "item": "https://alturascope.com/services/pre-construction-site-intelligence/" }
   ]
@@ -119,8 +119,8 @@ const faqSchema = JSON.stringify({
           Most pre-construction surveys produce a floor plan. Ours produces a decision. The difference between knowing a room's dimensions and knowing its conditions, its services, its equipment, its constraints, and its implications for your scope — that is the difference between a survey and site intelligence.
         </p>
         <div class="mt-8 flex flex-wrap justify-center gap-4">
-          <a href="/contact" class="btn-primary">Start a Project</a>
-          <a href="/services" class="btn-secondary-light">See the Full Service</a>
+          <a href="/contact/" class="btn-primary">Start a Project</a>
+          <a href="/services/" class="btn-secondary-light">See the Full Service</a>
         </div>
       </div>
     </section>
@@ -143,7 +143,7 @@ const faqSchema = JSON.stringify({
             A pre-construction site survey should prevent surprises, not create a baseline for them. If the deliverable from your site visit does not tell your design team what is above the ceiling, what condition the MEP systems are in, what equipment is installed, and what constraints the space imposes on the proposed scope — then the survey has answered the easy questions and left the expensive ones for later.
           </p>
           <p>
-            There are excellent companies that produce as-built floor plans and CAD drawings. If that is what your project requires, they will serve you well. But if your team needs to make decisions about scope, budget, phasing, risk, or procurement before the design is committed — then you need more than dimensions. You need <a href="/insights/what-should-a-professional-site-survey-include" class="text-navy font-medium hover:opacity-80 transition-opacity">complete site intelligence</a>.
+            There are excellent companies that produce as-built floor plans and CAD drawings. If that is what your project requires, they will serve you well. But if your team needs to make decisions about scope, budget, phasing, risk, or procurement before the design is committed — then you need more than dimensions. You need <a href="/insights/what-should-a-professional-site-survey-include/" class="text-navy font-medium hover:opacity-80 transition-opacity">complete site intelligence</a>.
           </p>
         </div>
       </div>
@@ -167,7 +167,7 @@ const faqSchema = JSON.stringify({
           <h3 class="text-[1.35rem] font-medium text-navy">Navigable Digital Twin (Matterport)</h3>
           <div class="mt-4 space-y-4 text-midgrey leading-body">
             <p>
-              A dimensionally accurate 3D model of the entire space — navigable by anyone on the project team from any device. The digital twin allows architects, engineers, contractors, and clients to explore the space remotely, take measurements directly in the model, and understand spatial relationships without returning to site. For <a href="/insights/what-is-a-matterport-digital-twin" class="text-navy font-medium hover:opacity-80 transition-opacity">pre-construction planning</a>, the digital twin becomes the shared spatial reference that every team member works from.
+              A dimensionally accurate 3D model of the entire space — navigable by anyone on the project team from any device. The digital twin allows architects, engineers, contractors, and clients to explore the space remotely, take measurements directly in the model, and understand spatial relationships without returning to site. For <a href="/insights/what-is-a-matterport-digital-twin/" class="text-navy font-medium hover:opacity-80 transition-opacity">pre-construction planning</a>, the digital twin becomes the shared spatial reference that every team member works from.
             </p>
           </div>
         </div>
@@ -193,7 +193,7 @@ const faqSchema = JSON.stringify({
               A complete inventory of all installed equipment — documented by location, make, model, condition, and visible services connections. For commercial kitchens, plant rooms, healthcare facilities, retail environments, and any space with significant installed infrastructure, the equipment schedule gives procurement teams, designers, and contractors the information they need to specify replacements, plan fitouts, or manage assets without a return visit.
             </p>
             <p>
-              The schedule is formatted for practical use — not as a raw data dump. For <a href="/services/multi-site-rollout-documentation" class="text-navy font-medium hover:opacity-80 transition-opacity">multi-site programmes</a>, the consistent format across every location enables portfolio-level comparison and bulk procurement planning.
+              The schedule is formatted for practical use — not as a raw data dump. For <a href="/services/multi-site-rollout-documentation/" class="text-navy font-medium hover:opacity-80 transition-opacity">multi-site programmes</a>, the consistent format across every location enables portfolio-level comparison and bulk procurement planning.
             </p>
           </div>
         </div>
@@ -216,7 +216,7 @@ const faqSchema = JSON.stringify({
           <h3 class="text-[1.35rem] font-medium text-navy">Above-Ceiling MEP Documentation</h3>
           <div class="mt-4 space-y-4 text-midgrey leading-body">
             <p>
-              Most existing conditions surveys stop at ceiling height. The most expensive surprises during construction are the ones nobody documented — and they are almost always <a href="/insights/above-ceiling-mep-survey-fit-out" class="text-navy font-medium hover:opacity-80 transition-opacity">above the ceiling</a>. Services runs, structural elements, existing penetrations, routing conflicts, and conditions that determine whether the proposed design is feasible or requires redesign.
+              Most existing conditions surveys stop at ceiling height. The most expensive surprises during construction are the ones nobody documented — and they are almost always <a href="/insights/above-ceiling-mep-survey-fit-out/" class="text-navy font-medium hover:opacity-80 transition-opacity">above the ceiling</a>. Services runs, structural elements, existing penetrations, routing conflicts, and conditions that determine whether the proposed design is feasible or requires redesign.
             </p>
             <p>
               We document above-ceiling conditions using a combination of FLIR thermal imaging, pole-mounted 360&deg; capture through ceiling access points, and targeted borescope inspection where access is limited. Findings are integrated into the conditions report and the digital twin — giving the design team the full picture before they commit to a ceiling plan, an HVAC routing strategy, or a structural modification.
@@ -268,7 +268,7 @@ const faqSchema = JSON.stringify({
           <h3 class="text-[1.35rem] font-medium text-navy">General Contractors and Design-Build Firms</h3>
           <div class="mt-4 space-y-4 text-midgrey leading-body">
             <p>
-              Complete pre-construction documentation means accurate estimates, fewer change orders, and a design that accounts for actual site conditions — not assumed ones. For GCs bidding renovation work, the quality of the existing conditions information determines the quality of the bid. AlturaScope delivers <a href="/services/construction-documentation" class="text-navy font-medium hover:opacity-80 transition-opacity">construction documentation</a> that gives your estimating team the full picture before the number goes in.
+              Complete pre-construction documentation means accurate estimates, fewer change orders, and a design that accounts for actual site conditions — not assumed ones. For GCs bidding renovation work, the quality of the existing conditions information determines the quality of the bid. AlturaScope delivers <a href="/services/construction-documentation/" class="text-navy font-medium hover:opacity-80 transition-opacity">construction documentation</a> that gives your estimating team the full picture before the number goes in.
             </p>
           </div>
         </div>
@@ -286,7 +286,7 @@ const faqSchema = JSON.stringify({
           <h3 class="text-[1.35rem] font-medium text-navy">Multi-Site Programme Operators</h3>
           <div class="mt-4 space-y-4 text-midgrey leading-body">
             <p>
-              When the challenge is not one building but dozens — <a href="/services/qsr-restaurant-survey" class="text-navy font-medium hover:opacity-80 transition-opacity">restaurant remodel programmes</a>, <a href="/services/retail-rollout-documentation" class="text-navy font-medium hover:opacity-80 transition-opacity">retail rollouts</a>, <a href="/services/healthcare-facility-survey" class="text-navy font-medium hover:opacity-80 transition-opacity">healthcare network capital programmes</a> — the value of consistent, structured documentation scales with the programme. Every location documented to the same standard, through the same platform, in the same format.
+              When the challenge is not one building but dozens — <a href="/services/qsr-restaurant-survey/" class="text-navy font-medium hover:opacity-80 transition-opacity">restaurant remodel programmes</a>, <a href="/services/retail-rollout-documentation/" class="text-navy font-medium hover:opacity-80 transition-opacity">retail rollouts</a>, <a href="/services/healthcare-facility-survey/" class="text-navy font-medium hover:opacity-80 transition-opacity">healthcare network capital programmes</a> — the value of consistent, structured documentation scales with the programme. Every location documented to the same standard, through the same platform, in the same format.
             </p>
           </div>
         </div>
@@ -330,7 +330,7 @@ const faqSchema = JSON.stringify({
     <section class="bg-offwhite section-padding">
       <div class="max-w-[900px] mx-auto px-6">
         <p class="text-midgrey leading-body">
-          We operate across all fifty US states and every Canadian province. Travel is included in all project pricing. For UK projects, <a href="/uk" class="text-navy font-medium hover:opacity-80 transition-opacity">visit Alturascope UK</a>.
+          We operate across all fifty US states and every Canadian province. Travel is included in all project pricing. For UK projects, <a href="/uk/" class="text-navy font-medium hover:opacity-80 transition-opacity">visit Alturascope UK</a>.
         </p>
       </div>
     </section>
@@ -411,15 +411,15 @@ const faqSchema = JSON.stringify({
         <p class="mt-4 text-midgrey leading-body">
           Tell us about the site, the project scope, and what your team needs to decide. We will come back with a clear proposal and an all-in quote.
         </p>
-        <a href="/contact" class="btn-primary mt-8">Start a Project</a>
+        <a href="/contact/" class="btn-primary mt-8">Start a Project</a>
         <div class="mt-8 flex flex-wrap justify-center gap-6 text-sm">
-          <a href="/services/construction-documentation" class="text-navy font-medium hover:opacity-80 transition-opacity">Construction documentation &rarr;</a>
-          <a href="/services/multi-site-rollout-documentation" class="text-navy font-medium hover:opacity-80 transition-opacity">Multi-site programmes &rarr;</a>
-          <a href="/services/aba-autism-clinic-documentation" class="text-navy font-medium hover:opacity-80 transition-opacity">ABA clinic documentation &rarr;</a>
-          <a href="/services/qsr-restaurant-survey" class="text-navy font-medium hover:opacity-80 transition-opacity">QSR restaurant surveys &rarr;</a>
-          <a href="/services/retail-rollout-documentation" class="text-navy font-medium hover:opacity-80 transition-opacity">Retail rollout documentation &rarr;</a>
-          <a href="/services/healthcare-facility-survey" class="text-navy font-medium hover:opacity-80 transition-opacity">Healthcare facility surveys &rarr;</a>
-          <a href="/services/specialist-projects" class="text-navy font-medium hover:opacity-80 transition-opacity">Specialist projects &rarr;</a>
+          <a href="/services/construction-documentation/" class="text-navy font-medium hover:opacity-80 transition-opacity">Construction documentation &rarr;</a>
+          <a href="/services/multi-site-rollout-documentation/" class="text-navy font-medium hover:opacity-80 transition-opacity">Multi-site programmes &rarr;</a>
+          <a href="/services/aba-autism-clinic-documentation/" class="text-navy font-medium hover:opacity-80 transition-opacity">ABA clinic documentation &rarr;</a>
+          <a href="/services/qsr-restaurant-survey/" class="text-navy font-medium hover:opacity-80 transition-opacity">QSR restaurant surveys &rarr;</a>
+          <a href="/services/retail-rollout-documentation/" class="text-navy font-medium hover:opacity-80 transition-opacity">Retail rollout documentation &rarr;</a>
+          <a href="/services/healthcare-facility-survey/" class="text-navy font-medium hover:opacity-80 transition-opacity">Healthcare facility surveys &rarr;</a>
+          <a href="/services/specialist-projects/" class="text-navy font-medium hover:opacity-80 transition-opacity">Specialist projects &rarr;</a>
         </div>
       </div>
     </section>

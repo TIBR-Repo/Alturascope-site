@@ -6,7 +6,7 @@ const schema = JSON.stringify({
   "@type": "Article",
   "headline": "UK High Street Retail Refurbishment: Why Site Surveys Are the Foundation of Every Successful Multi-Site Programme",
   "author": { "@type": "Organization", "name": "Alturascope" },
-  "publisher": { "@type": "Organization", "name": "Alturascope", "url": "https://alturascope.com" },
+  "publisher": { "@type": "Organization", "name": "Alturascope", "url": "https://alturascope.com/" },
   "datePublished": "2026-05-12",
   "description": "UK retailers running multi-site refurbishment and rebrand programmes across high street, retail park, and shopping centre locations need consistent measured survey data. Here's what the best-run programmes demand from their survey partners.",
   "mainEntityOfPage": "https://alturascope.com/insights/uk-retail-high-street-refurbishment-survey/"
@@ -16,7 +16,7 @@ const breadcrumbSchema = JSON.stringify({
   "@context": "https://schema.org",
   "@type": "BreadcrumbList",
   "itemListElement": [
-    { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://alturascope.com" },
+    { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://alturascope.com/" },
     { "@type": "ListItem", "position": 2, "name": "Insights", "item": "https://alturascope.com/insights/" },
     { "@type": "ListItem", "position": 3, "name": "UK High Street Retail Refurbishment Surveys", "item": "https://alturascope.com/insights/uk-retail-high-street-refurbishment-survey/" }
   ]
@@ -71,6 +71,9 @@ const faqSchema = JSON.stringify({
           src="/Images/london2.jpg"
           alt="UK high street retail frontages showing commercial refurbishment and building survey requirements"
           class="w-full h-full object-cover opacity-25"
+          loading="eager"
+          fetchpriority="high"
+          decoding="async"
         />
         <div class="absolute inset-0 bg-[rgba(11,31,58,0.82)]"></div>
       </div>
@@ -224,7 +227,7 @@ const faqSchema = JSON.stringify({
           <h2 class="text-[1.6rem] font-light text-navy mb-6">Getting Started</h2>
           <div class="space-y-6 text-midgrey leading-body text-[1.05rem]">
             <p>
-              If you are planning a multi-site retail refurbishment programme across the UK and want consistent, comprehensive survey data from every location, <a href="/contact" class="text-navy font-medium hover:opacity-80 transition-opacity">tell us about the programme</a>. We will come back within one business day with a scope recommendation and all-in pricing across your estate.
+              If you are planning a multi-site retail refurbishment programme across the UK and want consistent, comprehensive survey data from every location, <a href="/contact/" class="text-navy font-medium hover:opacity-80 transition-opacity">tell us about the programme</a>. We will come back within one business day with a scope recommendation and all-in pricing across your estate.
             </p>
           </div>
         </div>
@@ -234,12 +237,12 @@ const faqSchema = JSON.stringify({
         </p>
 
         <div class="mt-12 pt-8 border-t border-border flex flex-wrap gap-6 text-sm">
-          <a href="/uk" class="text-navy font-medium hover:opacity-80 transition-opacity">Alturascope UK &rarr;</a>
-          <a href="/services/retail-rollout-documentation" class="text-navy font-medium hover:opacity-80 transition-opacity">Retail rollout documentation &rarr;</a>
-          <a href="/services/multi-site-rollout-documentation" class="text-navy font-medium hover:opacity-80 transition-opacity">Multi-site rollout programmes &rarr;</a>
-          <a href="/uk/heritage-building-survey" class="text-navy font-medium hover:opacity-80 transition-opacity">Heritage building survey UK &rarr;</a>
-          <a href="/insights/multi-site-survey-programmes-uk" class="text-navy font-medium hover:opacity-80 transition-opacity">Multi-site UK programmes &rarr;</a>
-          <a href="/insights" class="text-navy font-medium hover:opacity-80 transition-opacity">All insights &rarr;</a>
+          <a href="/uk/" class="text-navy font-medium hover:opacity-80 transition-opacity">Alturascope UK &rarr;</a>
+          <a href="/services/retail-rollout-documentation/" class="text-navy font-medium hover:opacity-80 transition-opacity">Retail rollout documentation &rarr;</a>
+          <a href="/services/multi-site-rollout-documentation/" class="text-navy font-medium hover:opacity-80 transition-opacity">Multi-site rollout programmes &rarr;</a>
+          <a href="/uk/heritage-building-survey/" class="text-navy font-medium hover:opacity-80 transition-opacity">Heritage building survey UK &rarr;</a>
+          <a href="/insights/multi-site-survey-programmes-uk/" class="text-navy font-medium hover:opacity-80 transition-opacity">Multi-site UK programmes &rarr;</a>
+          <a href="/insights/" class="text-navy font-medium hover:opacity-80 transition-opacity">All insights &rarr;</a>
         </div>
 
       </div>
@@ -253,7 +256,7 @@ const faqSchema = JSON.stringify({
         <p class="mt-4 text-offwhite/70 leading-body">
           Tell us about your estate and we will respond within one business day with a scope recommendation and all-in pricing across your locations.
         </p>
-        <a href="/contact" class="btn-primary mt-8">Start a Project</a>
+        <a href="/contact/" class="btn-primary mt-8">Start a Project</a>
       </div>
     </section>
 

@@ -6,17 +6,17 @@ const schema = JSON.stringify({
   "@type": "Article",
   "headline": "Why Poor Site Documentation Is Costing Your Construction Project More Than You Think",
   "author": { "@type": "Organization", "name": "Alturascope" },
-  "publisher": { "@type": "Organization", "name": "Alturascope", "url": "https://alturascope.com" },
+  "publisher": { "@type": "Organization", "name": "Alturascope", "url": "https://alturascope.com/" },
   "datePublished": "2025-12-10",
   "description": "Scope surprises, return site visits, and costly rework almost always trace back to one cause: incomplete site documentation. Here's what it's actually costing — and what better looks like.",
-  "mainEntityOfPage": "https://alturascope.com/insights/why-poor-site-documentation-costs-construction-projects"
+  "mainEntityOfPage": "https://alturascope.com/insights/why-poor-site-documentation-costs-construction-projects/"
 });
 
 const breadcrumbSchema = JSON.stringify({
   "@context": "https://schema.org",
   "@type": "BreadcrumbList",
   "itemListElement": [
-    { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://alturascope.com" },
+    { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://alturascope.com/" },
     { "@type": "ListItem", "position": 2, "name": "Insights", "item": "https://alturascope.com/insights/" },
     { "@type": "ListItem", "position": 3, "name": "Why Poor Site Documentation Costs More Than You Think", "item": "https://alturascope.com/insights/why-poor-site-documentation-costs-construction-projects/" }
   ]
@@ -62,6 +62,9 @@ const faqSchema = JSON.stringify({
           src="https://images.unsplash.com/photo-1541888946425-d81bb19240f5?w=1920&q=80"
           alt="Commercial construction site with scaffolding and exposed structural elements"
           class="w-full h-full object-cover opacity-25"
+          loading="eager"
+          fetchpriority="high"
+          decoding="async"
         />
         <div class="absolute inset-0 bg-[rgba(11,31,58,0.82)]"></div>
       </div>
@@ -229,9 +232,9 @@ const faqSchema = JSON.stringify({
 
         <div class="space-y-4 mt-8 pl-6 border-l-2 border-gold text-midgrey leading-body text-[1.05rem]">
           <p><span class="text-navy font-medium">Commercial renovation and fit-out</span> &mdash; particularly in existing buildings where conditions are unknown or drawings are out of date</p>
-          <p><span class="text-navy font-medium"><a href="/services/pre-construction-site-intelligence" class="text-navy hover:opacity-80 transition-opacity">Pre-acquisition due diligence</a></span> &mdash; for developers and asset managers assessing UK or North American properties before purchase or lease-up</p>
+          <p><span class="text-navy font-medium"><a href="/services/pre-construction-site-intelligence/" class="text-navy hover:opacity-80 transition-opacity">Pre-acquisition due diligence</a></span> &mdash; for developers and asset managers assessing UK or North American properties before purchase or lease-up</p>
           <p><span class="text-navy font-medium">Multi-site rollout programmes</span> &mdash; where consistency of documentation across locations is critical to managing the programme efficiently</p>
-          <p><span class="text-navy font-medium"><a href="/services/healthcare-facility-survey" class="text-navy hover:opacity-80 transition-opacity">Healthcare, industrial, and MEP-intensive environments</a></span> &mdash; where undocumented services above ceiling create the highest downstream risk</p>
+          <p><span class="text-navy font-medium"><a href="/services/healthcare-facility-survey/" class="text-navy hover:opacity-80 transition-opacity">Healthcare, industrial, and MEP-intensive environments</a></span> &mdash; where undocumented services above ceiling create the highest downstream risk</p>
         </div>
 
         <!-- FAQ -->
@@ -274,7 +277,7 @@ const faqSchema = JSON.stringify({
               Want to know what a proper documentation package looks like for your next project?
             </p>
             <p>
-              <a href="/contact" class="text-navy font-medium hover:opacity-80 transition-opacity">Talk to Alturascope.</a> We'll respond within one business day with a clear scope recommendation and an all-in quote &mdash; travel included.
+              <a href="/contact/" class="text-navy font-medium hover:opacity-80 transition-opacity">Talk to Alturascope.</a> We'll respond within one business day with a clear scope recommendation and an all-in quote &mdash; travel included.
             </p>
           </div>
         </div>
@@ -287,11 +290,11 @@ const faqSchema = JSON.stringify({
         <!-- Internal Links -->
         <div class="mt-12 pt-8 border-t border-border flex flex-wrap gap-6 text-sm">
           <a href="/" class="text-navy font-medium hover:opacity-80 transition-opacity">Home &rarr;</a>
-          <a href="/work" class="text-navy font-medium hover:opacity-80 transition-opacity">The Standard &rarr;</a>
-          <a href="/services/construction-documentation" class="text-navy font-medium hover:opacity-80 transition-opacity">Construction documentation &rarr;</a>
-          <a href="/services/multi-site-rollout-documentation" class="text-navy font-medium hover:opacity-80 transition-opacity">Multi-site rollout documentation &rarr;</a>
-          <a href="/insights/what-is-a-matterport-digital-twin" class="text-navy font-medium hover:opacity-80 transition-opacity">What is a Matterport digital twin? &rarr;</a>
-          <a href="/insights" class="text-navy font-medium hover:opacity-80 transition-opacity">All insights &rarr;</a>
+          <a href="/work/" class="text-navy font-medium hover:opacity-80 transition-opacity">The Standard &rarr;</a>
+          <a href="/services/construction-documentation/" class="text-navy font-medium hover:opacity-80 transition-opacity">Construction documentation &rarr;</a>
+          <a href="/services/multi-site-rollout-documentation/" class="text-navy font-medium hover:opacity-80 transition-opacity">Multi-site rollout documentation &rarr;</a>
+          <a href="/insights/what-is-a-matterport-digital-twin/" class="text-navy font-medium hover:opacity-80 transition-opacity">What is a Matterport digital twin? &rarr;</a>
+          <a href="/insights/" class="text-navy font-medium hover:opacity-80 transition-opacity">All insights &rarr;</a>
         </div>
 
       </div>
@@ -306,7 +309,7 @@ const faqSchema = JSON.stringify({
         <p class="mt-4 text-offwhite/70 leading-body">
           Share the location, the approximate size, and what decision you're trying to make. We'll confirm scope and send an all-in quote within one business day.
         </p>
-        <a href="/contact" class="btn-primary mt-8">Start a Project</a>
+        <a href="/contact/" class="btn-primary mt-8">Start a Project</a>
       </div>
     </section>
 

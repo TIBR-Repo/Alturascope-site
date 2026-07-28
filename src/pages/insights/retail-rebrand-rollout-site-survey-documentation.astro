@@ -6,7 +6,7 @@ const schema = JSON.stringify({
   "@type": "Article",
   "headline": "Retail Rebrand Rollouts: Why the Site Survey Is the First Decision That Shapes Every Decision After It",
   "author": { "@type": "Organization", "name": "Alturascope" },
-  "publisher": { "@type": "Organization", "name": "Alturascope", "url": "https://alturascope.com" },
+  "publisher": { "@type": "Organization", "name": "Alturascope", "url": "https://alturascope.com/" },
   "datePublished": "2026-04-14",
   "description": "National retail rebrand and refresh programmes depend on accurate site data from every location before design is committed. Here's what programme teams actually need from the field — and what most surveys miss.",
   "mainEntityOfPage": "https://alturascope.com/insights/retail-rebrand-rollout-site-survey-documentation/"
@@ -16,7 +16,7 @@ const breadcrumbSchema = JSON.stringify({
   "@context": "https://schema.org",
   "@type": "BreadcrumbList",
   "itemListElement": [
-    { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://alturascope.com" },
+    { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://alturascope.com/" },
     { "@type": "ListItem", "position": 2, "name": "Insights", "item": "https://alturascope.com/insights/" },
     { "@type": "ListItem", "position": 3, "name": "Retail Rebrand Rollout Site Surveys", "item": "https://alturascope.com/insights/retail-rebrand-rollout-site-survey-documentation/" }
   ]
@@ -68,6 +68,9 @@ const faqSchema = JSON.stringify({
           sizes="100vw"
           alt="Modern retail store interior during rebrand renovation showing fixture installation and store layout"
           class="w-full h-full object-cover opacity-25"
+          loading="eager"
+          fetchpriority="high"
+          decoding="async"
         />
         <div class="absolute inset-0 bg-[rgba(11,31,58,0.82)]"></div>
       </div>
@@ -272,7 +275,7 @@ const faqSchema = JSON.stringify({
               The best time to scope your survey programme is before the prototype goes to adaptation &mdash; not after the first five locations have produced inconsistent data and the design team is asking questions the documentation cannot answer.
             </p>
             <p>
-              Tell us about the programme &mdash; how many locations, the typical store format, the remodel scope, and the timeline. We will come back with a pilot plan, a per-location scope recommendation, and all-in pricing across your locations. <a href="/contact" class="text-navy font-medium hover:opacity-80 transition-opacity">Start the conversation.</a>
+              Tell us about the programme &mdash; how many locations, the typical store format, the remodel scope, and the timeline. We will come back with a pilot plan, a per-location scope recommendation, and all-in pricing across your locations. <a href="/contact/" class="text-navy font-medium hover:opacity-80 transition-opacity">Start the conversation.</a>
             </p>
           </div>
         </div>
@@ -282,15 +285,15 @@ const faqSchema = JSON.stringify({
         </p>
 
         <div class="mt-12 pt-8 border-t border-border flex flex-wrap gap-6 text-sm">
-          <a href="/services/retail-rollout-documentation" class="text-navy font-medium hover:opacity-80 transition-opacity">Retail rollout documentation &rarr;</a>
-          <a href="/services/qsr-restaurant-survey" class="text-navy font-medium hover:opacity-80 transition-opacity">QSR restaurant surveys &rarr;</a>
-          <a href="/services/multi-site-rollout-documentation" class="text-navy font-medium hover:opacity-80 transition-opacity">Multi-site rollout programmes &rarr;</a>
-          <a href="/services/pre-construction-site-intelligence" class="text-navy font-medium hover:opacity-80 transition-opacity">Pre-construction site intelligence &rarr;</a>
-          <a href="/insights/franchise-expansion-shell-survey-new-locations" class="text-navy font-medium hover:opacity-80 transition-opacity">Franchise shell surveys &rarr;</a>
-          <a href="/insights/standardising-site-surveys-multi-site-operators" class="text-navy font-medium hover:opacity-80 transition-opacity">Standardising multi-site surveys &rarr;</a>
-          <a href="/insights/fashion-retail-store-refit-survey-documentation" class="text-navy font-medium hover:opacity-80 transition-opacity">Fashion retail surveys &rarr;</a>
-          <a href="/insights/vehicle-dealership-renovation-site-survey" class="text-navy font-medium hover:opacity-80 transition-opacity">Dealership surveys &rarr;</a>
-          <a href="/insights" class="text-navy font-medium hover:opacity-80 transition-opacity">All insights &rarr;</a>
+          <a href="/services/retail-rollout-documentation/" class="text-navy font-medium hover:opacity-80 transition-opacity">Retail rollout documentation &rarr;</a>
+          <a href="/services/qsr-restaurant-survey/" class="text-navy font-medium hover:opacity-80 transition-opacity">QSR restaurant surveys &rarr;</a>
+          <a href="/services/multi-site-rollout-documentation/" class="text-navy font-medium hover:opacity-80 transition-opacity">Multi-site rollout programmes &rarr;</a>
+          <a href="/services/pre-construction-site-intelligence/" class="text-navy font-medium hover:opacity-80 transition-opacity">Pre-construction site intelligence &rarr;</a>
+          <a href="/insights/franchise-expansion-shell-survey-new-locations/" class="text-navy font-medium hover:opacity-80 transition-opacity">Franchise shell surveys &rarr;</a>
+          <a href="/insights/standardising-site-surveys-multi-site-operators/" class="text-navy font-medium hover:opacity-80 transition-opacity">Standardising multi-site surveys &rarr;</a>
+          <a href="/insights/fashion-retail-store-refit-survey-documentation/" class="text-navy font-medium hover:opacity-80 transition-opacity">Fashion retail surveys &rarr;</a>
+          <a href="/insights/vehicle-dealership-renovation-site-survey/" class="text-navy font-medium hover:opacity-80 transition-opacity">Dealership surveys &rarr;</a>
+          <a href="/insights/" class="text-navy font-medium hover:opacity-80 transition-opacity">All insights &rarr;</a>
         </div>
 
       </div>
@@ -304,7 +307,7 @@ const faqSchema = JSON.stringify({
         <p class="mt-4 text-offwhite/70 leading-body">
           Tell us about your programme and we will come back within one business day with a scope recommendation and all-in pricing &mdash; travel included.
         </p>
-        <a href="/contact" class="btn-primary mt-8">Start a Project</a>
+        <a href="/contact/" class="btn-primary mt-8">Start a Project</a>
       </div>
     </section>
 

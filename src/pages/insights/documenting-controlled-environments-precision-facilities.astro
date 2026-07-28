@@ -6,26 +6,26 @@ const schema = JSON.stringify({
   "@type": "Article",
   "headline": "Documenting Controlled Environments — Cannabis, Data Centres, and the Facilities Where Precision Isn't Optional",
   "author": { "@type": "Organization", "name": "Alturascope" },
-  "publisher": { "@type": "Organization", "name": "Alturascope", "url": "https://alturascope.com" },
+  "publisher": { "@type": "Organization", "name": "Alturascope", "url": "https://alturascope.com/" },
   "datePublished": "2026-01-28",
   "description": "Cannabis grow facilities, data centres, and cleanrooms share a common challenge: documentation must capture environmental systems, compliance infrastructure, and spatial precision that standard surveys miss entirely.",
-  "mainEntityOfPage": "https://alturascope.com/insights/documenting-controlled-environments-precision-facilities"
+  "mainEntityOfPage": "https://alturascope.com/insights/documenting-controlled-environments-precision-facilities/"
 });
 
 const breadcrumbSchema = JSON.stringify({
   "@context": "https://schema.org",
   "@type": "BreadcrumbList",
   "itemListElement": [
-    { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://alturascope.com" },
+    { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://alturascope.com/" },
     { "@type": "ListItem", "position": 2, "name": "Insights", "item": "https://alturascope.com/insights/" },
-    { "@type": "ListItem", "position": 3, "name": "Documenting Controlled Environments", "item": "https://alturascope.com/insights/documenting-controlled-environments-precision-facilities" }
+    { "@type": "ListItem", "position": 3, "name": "Documenting Controlled Environments", "item": "https://alturascope.com/insights/documenting-controlled-environments-precision-facilities/" }
   ]
 });
 ---
 <Layout
   title="Documenting Controlled Environments — Cannabis, Data Centres & Precision Facilities | Alturascope"
   description="Cannabis grow facilities, data centres, and cleanrooms share a common challenge: documentation must capture environmental systems, compliance infrastructure, and spatial precision that standard surveys miss entirely."
-  canonical="https://alturascope.com/insights/documenting-controlled-environments-precision-facilities"
+  canonical="https://alturascope.com/insights/documenting-controlled-environments-precision-facilities/"
   schema={schema}
   breadcrumbSchema={breadcrumbSchema}
   fullWidth={true}
@@ -39,6 +39,9 @@ const breadcrumbSchema = JSON.stringify({
           src="https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=1920&q=80"
           alt="Controlled environment facility with precision infrastructure and environmental monitoring systems"
           class="w-full h-full object-cover opacity-25"
+          loading="eager"
+          fetchpriority="high"
+          decoding="async"
         />
         <div class="absolute inset-0 bg-[rgba(11,31,58,0.82)]"></div>
       </div>
@@ -97,10 +100,10 @@ const breadcrumbSchema = JSON.stringify({
             When an audit arrives, this gap becomes a compliance risk. When an investor conducts due diligence, it becomes a valuation risk. And when the operator wants to expand or modify the licence, the process of producing accurate current documentation from scratch is far more expensive than keeping it current would have been.
           </p>
           <p>
-            Proactive operators document their facilities comprehensively and keep that documentation current. The capture includes the spatial layout (LiDAR for precision), the <a href="/services/cannabis-facility-documentation" class="text-navy font-medium hover:opacity-80 transition-opacity">environmental control systems</a> (HVAC, dehumidification, CO2, lighting, irrigation), the security infrastructure (cameras, access control, alarm systems), and the zoning documentation (restricted areas, limited access areas, vault rooms) &mdash; all spatially referenced and structured for compliance review.
+            Proactive operators document their facilities comprehensively and keep that documentation current. The capture includes the spatial layout (LiDAR for precision), the <a href="/services/cannabis-facility-documentation/" class="text-navy font-medium hover:opacity-80 transition-opacity">environmental control systems</a> (HVAC, dehumidification, CO2, lighting, irrigation), the security infrastructure (cameras, access control, alarm systems), and the zoning documentation (restricted areas, limited access areas, vault rooms) &mdash; all spatially referenced and structured for compliance review.
           </p>
           <p>
-            For multi-state operators running facilities in multiple jurisdictions with different regulatory requirements, <a href="/services/multi-site-rollout-documentation" class="text-navy font-medium hover:opacity-80 transition-opacity">standardised documentation across all locations</a> makes compliance management systematic rather than reactive.
+            For multi-state operators running facilities in multiple jurisdictions with different regulatory requirements, <a href="/services/multi-site-rollout-documentation/" class="text-navy font-medium hover:opacity-80 transition-opacity">standardised documentation across all locations</a> makes compliance management systematic rather than reactive.
           </p>
         </div>
 
@@ -114,7 +117,7 @@ const breadcrumbSchema = JSON.stringify({
             The documentation challenge is twofold. First, the density: there is simply more to capture per square metre than in any other building type. Rack positions, power distribution paths, cooling flows, cable tray routing, above-floor and below-floor infrastructure. Second, the pace of change: equipment moves, loads rebalance, and capacity allocations shift continuously.
           </p>
           <p>
-            <a href="/services/data-centre-documentation" class="text-navy font-medium hover:opacity-80 transition-opacity">Data centre documentation</a> at the level that engineering and planning teams actually need goes well beyond spatial capture. It includes rack and cabinet inventories, power distribution mapping from utility intake through UPS and PDUs to the rack, cooling infrastructure documentation (CRAH/CRAC units, containment systems, raised floor configurations), and <a href="/insights/thermal-imaging-commercial-property-what-it-reveals" class="text-navy font-medium hover:opacity-80 transition-opacity">thermal imaging</a> of the entire electrical distribution chain.
+            <a href="/services/data-centre-documentation/" class="text-navy font-medium hover:opacity-80 transition-opacity">Data centre documentation</a> at the level that engineering and planning teams actually need goes well beyond spatial capture. It includes rack and cabinet inventories, power distribution mapping from utility intake through UPS and PDUs to the rack, cooling infrastructure documentation (CRAH/CRAC units, containment systems, raised floor configurations), and <a href="/insights/thermal-imaging-commercial-property-what-it-reveals/" class="text-navy font-medium hover:opacity-80 transition-opacity">thermal imaging</a> of the entire electrical distribution chain.
           </p>
           <p>
             The thermal capture is particularly consequential. Electrical connections in data centre power distribution operate under continuous load. A connection that's degrading &mdash; corroding, loosening, increasing in resistance &mdash; generates localised heat that is invisible to visual inspection but clearly visible to a calibrated thermal camera. Identifying these hotspots before they fail is the difference between a planned maintenance window and an unplanned outage.
@@ -160,7 +163,7 @@ const breadcrumbSchema = JSON.stringify({
           <div class="border-l-2 border-gold pl-6">
             <h3 class="text-navy font-medium">Structured, accessible delivery</h3>
             <p class="mt-2 text-midgrey text-[1.05rem] leading-relaxed">
-              Documentation that's organised by system type, spatially referenced, and accessible to every stakeholder who needs it: operations, compliance, engineering, facilities management. Not a folder of files &mdash; a <a href="/services/pre-construction-site-intelligence" class="text-navy font-medium hover:opacity-80 transition-opacity">structured intelligence platform</a> that serves the way these teams actually work.
+              Documentation that's organised by system type, spatially referenced, and accessible to every stakeholder who needs it: operations, compliance, engineering, facilities management. Not a folder of files &mdash; a <a href="/services/pre-construction-site-intelligence/" class="text-navy font-medium hover:opacity-80 transition-opacity">structured intelligence platform</a> that serves the way these teams actually work.
             </p>
           </div>
         </div>
@@ -169,7 +172,7 @@ const breadcrumbSchema = JSON.stringify({
         <h2 class="text-[1.6rem] font-light text-navy mt-16 mb-6">The Crossover with Renewable Energy Infrastructure</h2>
         <div class="space-y-6 text-midgrey leading-body text-[1.05rem]">
           <p>
-            It's worth noting that the principles of controlled environment documentation extend beyond enclosed buildings. <a href="/services/solar-farm-documentation" class="text-navy font-medium hover:opacity-80 transition-opacity">Solar farms and battery energy storage systems</a> present similar challenges: infrastructure-dense environments where the systems ARE the asset, where thermal diagnostics reveal problems invisible to visual inspection, and where documentation needs to be spatially precise across sites that can span hundreds of acres.
+            It's worth noting that the principles of controlled environment documentation extend beyond enclosed buildings. <a href="/services/solar-farm-documentation/" class="text-navy font-medium hover:opacity-80 transition-opacity">Solar farms and battery energy storage systems</a> present similar challenges: infrastructure-dense environments where the systems ARE the asset, where thermal diagnostics reveal problems invisible to visual inspection, and where documentation needs to be spatially precise across sites that can span hundreds of acres.
           </p>
           <p>
             A battery energy storage system container has more in common with a data centre than with a warehouse. The thermal management, the electrical distribution, the fire suppression, and the environmental monitoring all require the same depth of documentation. The difference is scale and setting &mdash; not methodology.
@@ -191,17 +194,17 @@ const breadcrumbSchema = JSON.stringify({
 
         <!-- Footer note -->
         <p class="mt-12 text-[0.85rem] text-midgrey/60 italic">
-          AlturaScope documents controlled and precision environments across the United States, Canada, and the United Kingdom &mdash; from cannabis cultivation and data centres to <a href="/services/industrial-facility-documentation" class="text-navy font-medium hover:opacity-80 transition-opacity">industrial cleanrooms</a> and renewable energy infrastructure. UK-based operators can also read our guide to <a href="/insights/data-centre-survey-uk-expansion-compliance/" class="text-navy font-medium hover:opacity-80 transition-opacity">data centre surveys for UK expansion and compliance</a>. <a href="/contact" class="text-navy font-medium hover:opacity-80 transition-opacity">Tell us about your facility</a>.
+          AlturaScope documents controlled and precision environments across the United States, Canada, and the United Kingdom &mdash; from cannabis cultivation and data centres to <a href="/services/industrial-facility-documentation/" class="text-navy font-medium hover:opacity-80 transition-opacity">industrial cleanrooms</a> and renewable energy infrastructure. UK-based operators can also read our guide to <a href="/insights/data-centre-survey-uk-expansion-compliance/" class="text-navy font-medium hover:opacity-80 transition-opacity">data centre surveys for UK expansion and compliance</a>. <a href="/contact/" class="text-navy font-medium hover:opacity-80 transition-opacity">Tell us about your facility</a>.
         </p>
 
         <!-- Internal Links -->
         <div class="mt-12 pt-8 border-t border-border flex flex-wrap gap-6 text-sm">
-          <a href="/services/cannabis-facility-documentation" class="text-navy font-medium hover:opacity-80 transition-opacity">Cannabis facility documentation &rarr;</a>
-          <a href="/services/data-centre-documentation" class="text-navy font-medium hover:opacity-80 transition-opacity">Data centre documentation &rarr;</a>
-          <a href="/services/industrial-facility-documentation" class="text-navy font-medium hover:opacity-80 transition-opacity">Industrial facility documentation &rarr;</a>
-          <a href="/services/solar-farm-documentation" class="text-navy font-medium hover:opacity-80 transition-opacity">Solar farm documentation &rarr;</a>
-          <a href="/insights/thermal-imaging-commercial-property-what-it-reveals" class="text-navy font-medium hover:opacity-80 transition-opacity">Thermal imaging in commercial property &rarr;</a>
-          <a href="/insights" class="text-navy font-medium hover:opacity-80 transition-opacity">All insights &rarr;</a>
+          <a href="/services/cannabis-facility-documentation/" class="text-navy font-medium hover:opacity-80 transition-opacity">Cannabis facility documentation &rarr;</a>
+          <a href="/services/data-centre-documentation/" class="text-navy font-medium hover:opacity-80 transition-opacity">Data centre documentation &rarr;</a>
+          <a href="/services/industrial-facility-documentation/" class="text-navy font-medium hover:opacity-80 transition-opacity">Industrial facility documentation &rarr;</a>
+          <a href="/services/solar-farm-documentation/" class="text-navy font-medium hover:opacity-80 transition-opacity">Solar farm documentation &rarr;</a>
+          <a href="/insights/thermal-imaging-commercial-property-what-it-reveals/" class="text-navy font-medium hover:opacity-80 transition-opacity">Thermal imaging in commercial property &rarr;</a>
+          <a href="/insights/" class="text-navy font-medium hover:opacity-80 transition-opacity">All insights &rarr;</a>
         </div>
 
       </div>
@@ -216,7 +219,7 @@ const breadcrumbSchema = JSON.stringify({
         <p class="mt-4 text-offwhite/70 leading-body">
           Share your facility type, location, and what you need documented. We'll respond within one business day with a scope recommendation and all-in pricing.
         </p>
-        <a href="/contact" class="btn-primary mt-8">Start a Project</a>
+        <a href="/contact/" class="btn-primary mt-8">Start a Project</a>
       </div>
     </section>
 

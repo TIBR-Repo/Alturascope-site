@@ -31,11 +31,23 @@ const {
   minimalChrome = false,
 } = Astro.props;
 
+const organizationSchema = JSON.stringify({
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "@id": "https://alturascope.com/#organization",
+  "name": "Alturascope",
+  "url": "https://alturascope.com/",
+  "logo": "https://alturascope.com/logo.png",
+  "description": "Reality capture and site documentation across the US, Canada, and the UK.",
+  "sameAs": ["https://www.linkedin.com/company/111948383"],
+  "areaServed": ["United States", "Canada", "United Kingdom"],
+});
+
 const navLinks = [
-  { href: "/work", label: "The Standard" },
-  { href: "/services", label: "Services" },
-  { href: "/about", label: "About" },
-  { href: "/contact", label: "Contact" },
+  { href: "/work/", label: "The Standard" },
+  { href: "/services/", label: "Services" },
+  { href: "/about/", label: "About" },
+  { href: "/contact/", label: "Contact" },
 ];
 ---
 <html lang={lang}>
@@ -58,12 +70,21 @@ const navLinks = [
     <meta property="og:type" content="website" />
     <meta property="og:url" content={canonical} />
     <meta property="og:image" content={ogImage} />
+    <meta property="og:site_name" content="Alturascope" />
+    <meta property="og:locale" content="en_US" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={ogImage} />
+    <meta name="theme-color" content="#0B1F3A" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link rel="dns-prefetch" href="https://fonts.googleapis.com" />
     <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet" />
     {hreflang.map((h) => <link rel="alternate" hreflang={h.lang} href={h.href} />)}
+    <script type="application/ld+json" set:html={organizationSchema} />
     {schema && <script type="application/ld+json" set:html={schema} />}
     {breadcrumbSchema && <script type="application/ld+json" set:html={breadcrumbSchema} />}
     {faqSchema && <script type="application/ld+json" set:html={faqSchema} />}
@@ -87,7 +108,7 @@ const navLinks = [
               {link.label}
             </a>
           ))}
-          <a href="/contact" class="btn-primary text-sm px-6 py-3">Start a Project</a>
+          <a href="/contact/" class="btn-primary text-sm px-6 py-3">Start a Project</a>
         </nav>
 
         <button
@@ -111,7 +132,7 @@ const navLinks = [
         {navLinks.map((link) => (
           <a href={link.href} class="text-white text-2xl font-light">{link.label}</a>
         ))}
-        <a href="/contact" class="btn-primary mt-4 text-base px-8 py-3.5">Start a Project</a>
+        <a href="/contact/" class="btn-primary mt-4 text-base px-8 py-3.5">Start a Project</a>
       </nav>
     </div>
     </Fragment>
@@ -151,41 +172,41 @@ const navLinks = [
             <div>
               <h4 class="text-xs font-medium uppercase tracking-label text-white/50 mb-6">Services</h4>
               <nav class="flex flex-col gap-3">
-                <a href="/services/construction-documentation" class="text-sm text-white/70 hover:text-white transition-colors">Construction Documentation</a>
-                <a href="/services/multi-site-rollout-documentation" class="text-sm text-white/70 hover:text-white transition-colors">Multi-Site Rollout</a>
-                <a href="/services/pre-construction-site-intelligence" class="text-sm text-white/70 hover:text-white transition-colors">Pre-Construction Intelligence</a>
-                <a href="/services/specialist-projects" class="text-sm text-white/70 hover:text-white transition-colors">Specialist Projects</a>
-                <a href="/services" class="text-sm text-white/70 hover:text-white transition-colors">How It Works</a>
-                <a href="/services#scopewalk" class="text-sm text-white/70 hover:text-white transition-colors">ScopeWalk&trade;</a>
+                <a href="/services/construction-documentation/" class="text-sm text-white/70 hover:text-white transition-colors">Construction Documentation</a>
+                <a href="/services/multi-site-rollout-documentation/" class="text-sm text-white/70 hover:text-white transition-colors">Multi-Site Rollout</a>
+                <a href="/services/pre-construction-site-intelligence/" class="text-sm text-white/70 hover:text-white transition-colors">Pre-Construction Intelligence</a>
+                <a href="/services/specialist-projects/" class="text-sm text-white/70 hover:text-white transition-colors">Specialist Projects</a>
+                <a href="/services/" class="text-sm text-white/70 hover:text-white transition-colors">How It Works</a>
+                <a href="/services/#scopewalk" class="text-sm text-white/70 hover:text-white transition-colors">ScopeWalk&trade;</a>
                 <span class="block mt-3 mb-1 text-xs font-medium uppercase tracking-label text-white/40">Regions</span>
-                <a href="/services/northeast-site-surveys" class="text-sm text-white/70 hover:text-white transition-colors">Northeast US</a>
-                <a href="/services/southeast-site-surveys" class="text-sm text-white/70 hover:text-white transition-colors">Southeast US</a>
-                <a href="/services/central-us-site-surveys" class="text-sm text-white/70 hover:text-white transition-colors">Central US</a>
-                <a href="/services/west-coast-site-surveys" class="text-sm text-white/70 hover:text-white transition-colors">West Coast</a>
+                <a href="/services/northeast-site-surveys/" class="text-sm text-white/70 hover:text-white transition-colors">Northeast US</a>
+                <a href="/services/southeast-site-surveys/" class="text-sm text-white/70 hover:text-white transition-colors">Southeast US</a>
+                <a href="/services/central-us-site-surveys/" class="text-sm text-white/70 hover:text-white transition-colors">Central US</a>
+                <a href="/services/west-coast-site-surveys/" class="text-sm text-white/70 hover:text-white transition-colors">West Coast</a>
               </nav>
             </div>
             <div>
               <h4 class="text-xs font-medium uppercase tracking-label text-white/50 mb-6">Sectors</h4>
               <nav class="flex flex-col gap-3">
-                <a href="/services/aba-autism-clinic-documentation" class="text-sm text-white/70 hover:text-white transition-colors">ABA &amp; Autism Therapy</a>
-                <a href="/services/qsr-restaurant-survey" class="text-sm text-white/70 hover:text-white transition-colors">QSR &amp; Restaurant</a>
-                <a href="/services/retail-rollout-documentation" class="text-sm text-white/70 hover:text-white transition-colors">Retail &amp; Franchise</a>
-                <a href="/services/healthcare-facility-survey" class="text-sm text-white/70 hover:text-white transition-colors">Healthcare</a>
-                <a href="/services/commercial-kitchen-survey" class="text-sm text-white/70 hover:text-white transition-colors">Commercial Kitchens</a>
-                <a href="/services/aviation-facility-survey" class="text-sm text-white/70 hover:text-white transition-colors">Aviation</a>
-                <a href="/services/heritage-building-documentation" class="text-sm text-white/70 hover:text-white transition-colors">Heritage</a>
+                <a href="/services/aba-autism-clinic-documentation/" class="text-sm text-white/70 hover:text-white transition-colors">ABA &amp; Autism Therapy</a>
+                <a href="/services/qsr-restaurant-survey/" class="text-sm text-white/70 hover:text-white transition-colors">QSR &amp; Restaurant</a>
+                <a href="/services/retail-rollout-documentation/" class="text-sm text-white/70 hover:text-white transition-colors">Retail &amp; Franchise</a>
+                <a href="/services/healthcare-facility-survey/" class="text-sm text-white/70 hover:text-white transition-colors">Healthcare</a>
+                <a href="/services/commercial-kitchen-survey/" class="text-sm text-white/70 hover:text-white transition-colors">Commercial Kitchens</a>
+                <a href="/services/aviation-facility-survey/" class="text-sm text-white/70 hover:text-white transition-colors">Aviation</a>
+                <a href="/services/heritage-building-documentation/" class="text-sm text-white/70 hover:text-white transition-colors">Heritage</a>
               </nav>
             </div>
             <div>
               <h4 class="text-xs font-medium uppercase tracking-label text-white/50 mb-6">Company</h4>
               <nav class="flex flex-col gap-3">
-                <a href="/work" class="text-sm text-white/70 hover:text-white transition-colors">The Standard</a>
-                <a href="/about" class="text-sm text-white/70 hover:text-white transition-colors">About</a>
-                <a href="/insights" class="text-sm text-white/70 hover:text-white transition-colors">Insights</a>
-                <a href="/contact" class="text-sm text-white/70 hover:text-white transition-colors">Contact</a>
-                <a href="/uk" class="text-sm text-white/70 hover:text-white transition-colors">Alturascope UK</a>
-                <a href="/uk/heritage-building-survey" class="text-sm text-white/70 hover:text-white transition-colors">Heritage Survey UK</a>
-                <a href="/uk/pre-construction-survey" class="text-sm text-white/70 hover:text-white transition-colors">Pre-Construction UK</a>
+                <a href="/work/" class="text-sm text-white/70 hover:text-white transition-colors">The Standard</a>
+                <a href="/about/" class="text-sm text-white/70 hover:text-white transition-colors">About</a>
+                <a href="/insights/" class="text-sm text-white/70 hover:text-white transition-colors">Insights</a>
+                <a href="/contact/" class="text-sm text-white/70 hover:text-white transition-colors">Contact</a>
+                <a href="/uk/" class="text-sm text-white/70 hover:text-white transition-colors">Alturascope UK</a>
+                <a href="/uk/heritage-building-survey/" class="text-sm text-white/70 hover:text-white transition-colors">Heritage Survey UK</a>
+                <a href="/uk/pre-construction-survey/" class="text-sm text-white/70 hover:text-white transition-colors">Pre-Construction UK</a>
               </nav>
             </div>
           </div>
@@ -193,8 +214,8 @@ const navLinks = [
       </div>
       <div class="border-t border-navy-light">
         <div class="mx-auto max-w-[1400px] px-6 lg:px-10 py-6 flex justify-end gap-6">
-          <a href="/privacy" class="text-[0.8rem] text-white/50 hover:text-white/70 transition-colors">Privacy Policy</a>
-          <a href="/terms" class="text-[0.8rem] text-white/50 hover:text-white/70 transition-colors">Terms</a>
+          <a href="/privacy/" class="text-[0.8rem] text-white/50 hover:text-white/70 transition-colors">Privacy Policy</a>
+          <a href="/terms/" class="text-[0.8rem] text-white/50 hover:text-white/70 transition-colors">Terms</a>
         </div>
       </div>
     </footer>

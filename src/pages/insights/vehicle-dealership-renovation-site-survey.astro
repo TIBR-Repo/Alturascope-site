@@ -6,7 +6,7 @@ const schema = JSON.stringify({
   "@type": "Article",
   "headline": "Vehicle Dealership Renovation Surveys: Documenting the Facility Before the OEM Mandate Arrives",
   "author": { "@type": "Organization", "name": "Alturascope" },
-  "publisher": { "@type": "Organization", "name": "Alturascope", "url": "https://alturascope.com" },
+  "publisher": { "@type": "Organization", "name": "Alturascope", "url": "https://alturascope.com/" },
   "datePublished": "2026-05-20",
   "description": "Auto dealerships facing OEM brand standard upgrades need comprehensive facility documentation before committing to renovation scope. Here is what the survey captures and why it changes the project economics.",
   "mainEntityOfPage": "https://alturascope.com/insights/vehicle-dealership-renovation-site-survey/"
@@ -16,7 +16,7 @@ const breadcrumbSchema = JSON.stringify({
   "@context": "https://schema.org",
   "@type": "BreadcrumbList",
   "itemListElement": [
-    { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://alturascope.com" },
+    { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://alturascope.com/" },
     { "@type": "ListItem", "position": 2, "name": "Insights", "item": "https://alturascope.com/insights/" },
     { "@type": "ListItem", "position": 3, "name": "Vehicle Dealership Renovation Survey", "item": "https://alturascope.com/insights/vehicle-dealership-renovation-site-survey/" }
   ]
@@ -52,13 +52,12 @@ const faqSchema = JSON.stringify({
 <Layout
   title="Vehicle Dealership Renovation Surveys: Pre-Construction Facility Documentation | Alturascope"
   description="Auto dealerships facing OEM brand standard upgrades need comprehensive facility documentation before renovation. Here's what the survey captures and why it changes the project economics."
->
-  <div slot="head">
-    <script type="application/ld+json" set:html={schema} />
-    <script type="application/ld+json" set:html={breadcrumbSchema} />
-    <script type="application/ld+json" set:html={faqSchema} />
-  </div>
 
+  canonical="https://alturascope.com/insights/vehicle-dealership-renovation-site-survey/"
+  schema={schema}
+  breadcrumbSchema={breadcrumbSchema}
+  faqSchema={faqSchema}
+>
   <div>
     <article class="max-w-[720px] mx-auto px-6 py-20">
       <div class="mb-8">
@@ -155,15 +154,15 @@ const faqSchema = JSON.stringify({
         </div>
 
         <p class="mt-12 text-[0.85rem] text-midgrey/60 italic">
-          Alturascope provides <a href="/services/multi-site-rollout-documentation" class="hover:opacity-80 transition-opacity">vehicle dealership facility documentation</a> for dealer groups and OEM programme teams across the United States and Canada.
+          Alturascope provides <a href="/services/multi-site-rollout-documentation/" class="hover:opacity-80 transition-opacity">vehicle dealership facility documentation</a> for dealer groups and OEM programme teams across the United States and Canada.
         </p>
 
         <div class="mt-12 pt-8 border-t border-border flex flex-wrap gap-6 text-sm">
-          <a href="/services/multi-site-rollout-documentation" class="text-navy font-medium hover:opacity-80 transition-opacity">Multi-site documentation &rarr;</a>
-          <a href="/insights/fashion-retail-store-refit-survey-documentation" class="text-navy font-medium hover:opacity-80 transition-opacity">Fashion retail surveys &rarr;</a>
-          <a href="/insights/qsr-franchise-kitchen-equipment-documentation" class="text-navy font-medium hover:opacity-80 transition-opacity">QSR kitchen documentation &rarr;</a>
-          <a href="/insights/retail-rebrand-rollout-site-survey-documentation" class="text-navy font-medium hover:opacity-80 transition-opacity">Retail rebrand rollouts &rarr;</a>
-          <a href="/insights" class="text-navy font-medium hover:opacity-80 transition-opacity">All insights &rarr;</a>
+          <a href="/services/multi-site-rollout-documentation/" class="text-navy font-medium hover:opacity-80 transition-opacity">Multi-site documentation &rarr;</a>
+          <a href="/insights/fashion-retail-store-refit-survey-documentation/" class="text-navy font-medium hover:opacity-80 transition-opacity">Fashion retail surveys &rarr;</a>
+          <a href="/insights/qsr-franchise-kitchen-equipment-documentation/" class="text-navy font-medium hover:opacity-80 transition-opacity">QSR kitchen documentation &rarr;</a>
+          <a href="/insights/retail-rebrand-rollout-site-survey-documentation/" class="text-navy font-medium hover:opacity-80 transition-opacity">Retail rebrand rollouts &rarr;</a>
+          <a href="/insights/" class="text-navy font-medium hover:opacity-80 transition-opacity">All insights &rarr;</a>
         </div>
 
       </div>
@@ -177,7 +176,7 @@ const faqSchema = JSON.stringify({
         <p class="mt-4 text-offwhite/70 leading-body">
           Tell us the brand, the number of rooftops, and where they are. We will outline a documentation programme and return a per-facility quote within one business day.
         </p>
-        <a href="/contact" class="btn-primary mt-8">Start a Project</a>
+        <a href="/contact/" class="btn-primary mt-8">Start a Project</a>
       </div>
     </section>
 

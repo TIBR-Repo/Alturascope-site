@@ -6,7 +6,7 @@ const schema = JSON.stringify({
   "@type": "Article",
   "headline": "Healthcare Multi-Site Surveys: What Dental Chains, Urgent Care Networks, and Medical Groups Need Before Renovation Begins",
   "author": { "@type": "Organization", "name": "Alturascope" },
-  "publisher": { "@type": "Organization", "name": "Alturascope", "url": "https://alturascope.com" },
+  "publisher": { "@type": "Organization", "name": "Alturascope", "url": "https://alturascope.com/" },
   "datePublished": "2026-05-19",
   "description": "Healthcare operators running multi-site renovation and expansion programmes across dental, urgent care, veterinary, and medical office locations face documentation challenges that standard surveys cannot solve. MEP density, compliance requirements, and equipment complexity demand a deeper approach.",
   "mainEntityOfPage": "https://alturascope.com/insights/healthcare-multi-site-facility-survey-documentation/"
@@ -16,7 +16,7 @@ const breadcrumbSchema = JSON.stringify({
   "@context": "https://schema.org",
   "@type": "BreadcrumbList",
   "itemListElement": [
-    { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://alturascope.com" },
+    { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://alturascope.com/" },
     { "@type": "ListItem", "position": 2, "name": "Insights", "item": "https://alturascope.com/insights/" },
     { "@type": "ListItem", "position": 3, "name": "Healthcare Multi-Site Facility Surveys", "item": "https://alturascope.com/insights/healthcare-multi-site-facility-survey-documentation/" }
   ]
@@ -68,6 +68,9 @@ const faqSchema = JSON.stringify({
           sizes="100vw"
           alt="Modern healthcare clinical facility interior showing treatment rooms and medical equipment"
           class="w-full h-full object-cover opacity-25"
+          loading="eager"
+          fetchpriority="high"
+          decoding="async"
         />
         <div class="absolute inset-0 bg-[rgba(11,31,58,0.82)]"></div>
       </div>
@@ -183,7 +186,7 @@ const faqSchema = JSON.stringify({
           <p><strong class="text-navy">Dental support organisations (DSOs)</strong> &mdash; the fastest-consolidating segment of healthcare real estate. PE-backed DSOs are acquiring and rolling up dental practices at unprecedented rates. Every acquisition triggers a documentation and renovation cycle. Portfolios of 20 to 200+ practices, each with specialised plumbing, dedicated imaging equipment, and clinical workflow requirements.</p>
           <p><strong class="text-navy">Urgent care and walk-in clinics</strong> &mdash; brands expanding organically and through acquisition, often taking over retail spaces that need conversion to clinical use. Existing conditions documentation determines whether a shell space or second-generation retail location can support the MEP demands of an urgent care operation without prohibitively expensive service upgrades.</p>
           <p><strong class="text-navy">Veterinary corporate groups</strong> &mdash; a consolidation wave matching the dental sector. Multi-location veterinary groups are standardising facility standards across acquired practices. Surgical suites, imaging rooms, kennelling, and isolation areas all have documentation requirements that exceed standard commercial survey scope.</p>
-          <p><strong class="text-navy">ABA and autism therapy clinic operators</strong> &mdash; one of the fastest-growing centre-based care segments. These clinics need documentation that captures ceiling height for gross motor spaces, acoustic separation, secure reception and elopement prevention features, and exterior play area feasibility. Our guide to <a href="/insights/aba-autism-clinic-site-survey-build-out" class="text-navy font-medium hover:opacity-80 transition-opacity">ABA clinic site surveys</a> breaks down the spatial and safety requirements that standard commercial surveys miss.</p>
+          <p><strong class="text-navy">ABA and autism therapy clinic operators</strong> &mdash; one of the fastest-growing centre-based care segments. These clinics need documentation that captures ceiling height for gross motor spaces, acoustic separation, secure reception and elopement prevention features, and exterior play area feasibility. Our guide to <a href="/insights/aba-autism-clinic-site-survey-build-out/" class="text-navy font-medium hover:opacity-80 transition-opacity">ABA clinic site surveys</a> breaks down the spatial and safety requirements that standard commercial surveys miss.</p>
           <p><strong class="text-navy">Outpatient speciality practices</strong> &mdash; dermatology, ophthalmology, orthopaedics, and physical therapy groups running multi-site renovation programmes. Each speciality has its own equipment profile and MEP demands that must be documented to plan the renovation accurately.</p>
           <p><strong class="text-navy">Pharmacy and compounding facilities</strong> &mdash; retail pharmacy chains and compounding operations with clean room requirements, environmental controls, and regulatory documentation obligations similar to <a href="/insights/documenting-controlled-environments-precision-facilities/" class="text-navy font-medium hover:opacity-80 transition-opacity">other controlled environments</a>.</p>
         </div>
@@ -264,7 +267,7 @@ const faqSchema = JSON.stringify({
           <h2 class="text-[1.6rem] font-light text-navy mb-6">Getting Started</h2>
           <div class="space-y-6 text-midgrey leading-body text-[1.05rem]">
             <p>
-              If you are managing a healthcare portfolio renovation or expansion programme and need consistent, comprehensive site data from every location, <a href="/contact" class="text-navy font-medium hover:opacity-80 transition-opacity">tell us about it</a>. We will respond within one business day with a scope recommendation and all-in pricing across your locations &mdash; travel included.
+              If you are managing a healthcare portfolio renovation or expansion programme and need consistent, comprehensive site data from every location, <a href="/contact/" class="text-navy font-medium hover:opacity-80 transition-opacity">tell us about it</a>. We will respond within one business day with a scope recommendation and all-in pricing across your locations &mdash; travel included.
             </p>
           </div>
         </div>
@@ -274,15 +277,15 @@ const faqSchema = JSON.stringify({
         </p>
 
         <div class="mt-12 pt-8 border-t border-border flex flex-wrap gap-6 text-sm">
-          <a href="/services/aba-autism-clinic-documentation" class="text-navy font-medium hover:opacity-80 transition-opacity">ABA clinic documentation &rarr;</a>
-          <a href="/services/healthcare-facility-survey" class="text-navy font-medium hover:opacity-80 transition-opacity">Healthcare facility surveys &rarr;</a>
-          <a href="/services/multi-site-rollout-documentation" class="text-navy font-medium hover:opacity-80 transition-opacity">Multi-site rollout programmes &rarr;</a>
-          <a href="/services/pre-construction-site-intelligence" class="text-navy font-medium hover:opacity-80 transition-opacity">Pre-construction site intelligence &rarr;</a>
-          <a href="/insights/aba-autism-clinic-site-survey-build-out" class="text-navy font-medium hover:opacity-80 transition-opacity">ABA clinic site surveys &rarr;</a>
-          <a href="/insights/aba-clinic-portfolio-renovation-documentation" class="text-navy font-medium hover:opacity-80 transition-opacity">ABA clinic portfolio documentation &rarr;</a>
-          <a href="/insights/due-diligence-documentation-portfolio-acquisitions" class="text-navy font-medium hover:opacity-80 transition-opacity">Due diligence for portfolio acquisitions &rarr;</a>
-          <a href="/insights/retail-rebrand-rollout-site-survey-documentation" class="text-navy font-medium hover:opacity-80 transition-opacity">Retail rollout surveys &rarr;</a>
-          <a href="/insights" class="text-navy font-medium hover:opacity-80 transition-opacity">All insights &rarr;</a>
+          <a href="/services/aba-autism-clinic-documentation/" class="text-navy font-medium hover:opacity-80 transition-opacity">ABA clinic documentation &rarr;</a>
+          <a href="/services/healthcare-facility-survey/" class="text-navy font-medium hover:opacity-80 transition-opacity">Healthcare facility surveys &rarr;</a>
+          <a href="/services/multi-site-rollout-documentation/" class="text-navy font-medium hover:opacity-80 transition-opacity">Multi-site rollout programmes &rarr;</a>
+          <a href="/services/pre-construction-site-intelligence/" class="text-navy font-medium hover:opacity-80 transition-opacity">Pre-construction site intelligence &rarr;</a>
+          <a href="/insights/aba-autism-clinic-site-survey-build-out/" class="text-navy font-medium hover:opacity-80 transition-opacity">ABA clinic site surveys &rarr;</a>
+          <a href="/insights/aba-clinic-portfolio-renovation-documentation/" class="text-navy font-medium hover:opacity-80 transition-opacity">ABA clinic portfolio documentation &rarr;</a>
+          <a href="/insights/due-diligence-documentation-portfolio-acquisitions/" class="text-navy font-medium hover:opacity-80 transition-opacity">Due diligence for portfolio acquisitions &rarr;</a>
+          <a href="/insights/retail-rebrand-rollout-site-survey-documentation/" class="text-navy font-medium hover:opacity-80 transition-opacity">Retail rollout surveys &rarr;</a>
+          <a href="/insights/" class="text-navy font-medium hover:opacity-80 transition-opacity">All insights &rarr;</a>
         </div>
 
       </div>
@@ -296,7 +299,7 @@ const faqSchema = JSON.stringify({
         <p class="mt-4 text-offwhite/70 leading-body">
           Tell us about your portfolio and we will come back within one business day with a scope recommendation and all-in pricing across your locations.
         </p>
-        <a href="/contact" class="btn-primary mt-8">Start a Project</a>
+        <a href="/contact/" class="btn-primary mt-8">Start a Project</a>
       </div>
     </section>
 
