@@ -6,7 +6,7 @@ const schema = JSON.stringify({
   "@type": "ProfessionalService",
   "name": "Alturascope",
   "description": "Reality capture, 3D documentation, and conditions surveys for construction teams and specialist clients across the US, Canada, and the UK.",
-  "url": "https://alturascope.com",
+  "url": "https://alturascope.com/",
   "areaServed": ["United States", "Canada", "United Kingdom"],
   "serviceType": "Reality Capture and Site Documentation",
   "sameAs": ["https://www.linkedin.com/company/111948383"]
@@ -29,6 +29,9 @@ const schema = JSON.stringify({
           src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=1920&q=80"
           alt="Commercial building interior documented by Alturascope showing structural elements, ceiling services, and site conditions for renovation planning"
           class="w-full h-full object-cover opacity-35"
+          loading="eager"
+          fetchpriority="high"
+          decoding="async"
         />
         <div class="absolute inset-0 bg-[rgba(11,31,58,0.72)]"></div>
       </div>
@@ -54,7 +57,7 @@ const schema = JSON.stringify({
             The deliverable is always the same architecture: digital twin, narrated walkthrough, conditions report, equipment schedule where relevant, labeled photo storyboard, and ScopeWalk platform access. Consistent enough to compare across sites. Detailed enough to brief your consultants directly.
           </p>
         </div>
-        <a href="/services/construction-documentation" class="inline-block mt-8 text-navy font-medium hover:opacity-80 transition-opacity">
+        <a href="/services/construction-documentation/" class="inline-block mt-8 text-navy font-medium hover:opacity-80 transition-opacity">
           Full detail on construction and commercial documentation &rarr;
         </a>
       </div>
@@ -75,34 +78,34 @@ const schema = JSON.stringify({
             We coordinate access and travel nationally, with programme pricing that includes travel costs rather than adding them per visit.
           </p>
         </div>
-        <a href="/services/multi-site-rollout-documentation" class="inline-block mt-6 text-navy font-medium hover:opacity-80 transition-opacity">
+        <a href="/services/multi-site-rollout-documentation/" class="inline-block mt-6 text-navy font-medium hover:opacity-80 transition-opacity">
           How multi-site programmes work &rarr;
         </a>
 
         <!-- Sector Cards -->
         <div class="mt-16 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-          <a href="/services/qsr-restaurant-survey" class="group block bg-white rounded p-8 border border-border transition-all duration-300 hover:border-gold hover:shadow-md">
+          <a href="/services/qsr-restaurant-survey/" class="group block bg-white rounded p-8 border border-border transition-all duration-300 hover:border-gold hover:shadow-md">
             <p class="label text-gold text-[0.65rem] mb-3">QSR &amp; RESTAURANT</p>
             <h3 class="text-[1.1rem] font-medium text-navy leading-snug group-hover:opacity-80 transition-opacity">Restaurant Remodel &amp; Reimage Programmes</h3>
             <p class="mt-3 text-midgrey text-[0.85rem] leading-relaxed">Kitchen equipment schedules, above-ceiling MEP documentation, and conditions reports — consistent across every location in the programme.</p>
             <span class="inline-block mt-4 text-navy text-sm font-medium">Learn more &rarr;</span>
           </a>
 
-          <a href="/services/aba-autism-clinic-documentation" class="group block bg-white rounded p-8 border border-border transition-all duration-300 hover:border-gold hover:shadow-md">
+          <a href="/services/aba-autism-clinic-documentation/" class="group block bg-white rounded p-8 border border-border transition-all duration-300 hover:border-gold hover:shadow-md">
             <p class="label text-gold text-[0.65rem] mb-3">ABA &amp; AUTISM THERAPY</p>
             <h3 class="text-[1.1rem] font-medium text-navy leading-snug group-hover:opacity-80 transition-opacity">ABA Clinic Documentation</h3>
             <p class="mt-3 text-midgrey text-[0.85rem] leading-relaxed">Hundreds of clinics documented. Sensory rooms, acoustic separation, elopement prevention, ceiling heights, and everything PE-backed platforms need.</p>
             <span class="inline-block mt-4 text-navy text-sm font-medium">Learn more &rarr;</span>
           </a>
 
-          <a href="/services/retail-rollout-documentation" class="group block bg-white rounded p-8 border border-border transition-all duration-300 hover:border-gold hover:shadow-md">
+          <a href="/services/retail-rollout-documentation/" class="group block bg-white rounded p-8 border border-border transition-all duration-300 hover:border-gold hover:shadow-md">
             <p class="label text-gold text-[0.65rem] mb-3">RETAIL &amp; FRANCHISE</p>
             <h3 class="text-[1.1rem] font-medium text-navy leading-snug group-hover:opacity-80 transition-opacity">Retail Rebrand &amp; Refresh Programmes</h3>
             <p class="mt-3 text-midgrey text-[0.85rem] leading-relaxed">Prototype adaptation across dozens of locations. Equipment schedules, storefront conditions, and above-ceiling documentation at every site.</p>
             <span class="inline-block mt-4 text-navy text-sm font-medium">Learn more &rarr;</span>
           </a>
 
-          <a href="/services/healthcare-facility-survey" class="group block bg-white rounded p-8 border border-border transition-all duration-300 hover:border-gold hover:shadow-md">
+          <a href="/services/healthcare-facility-survey/" class="group block bg-white rounded p-8 border border-border transition-all duration-300 hover:border-gold hover:shadow-md">
             <p class="label text-gold text-[0.65rem] mb-3">HEALTHCARE</p>
             <h3 class="text-[1.1rem] font-medium text-navy leading-snug group-hover:opacity-80 transition-opacity">Healthcare Network Programmes</h3>
             <p class="mt-3 text-midgrey text-[0.85rem] leading-relaxed">Dental, urgent care, veterinary, and medical office documentation. Clinical equipment, MEP density, and compliance-relevant conditions.</p>
@@ -127,7 +130,7 @@ const schema = JSON.stringify({
             If your project is unusual — in its location, its complexity, or what it requires of the people doing the work — we'd like to hear about it.
           </p>
         </div>
-        <a href="/services/specialist-projects" class="inline-block mt-8 text-navy font-medium hover:opacity-80 transition-opacity">
+        <a href="/services/specialist-projects/" class="inline-block mt-8 text-navy font-medium hover:opacity-80 transition-opacity">
           Tell us about your project &rarr;
         </a>
       </div>
@@ -177,15 +180,15 @@ const schema = JSON.stringify({
     <section class="bg-white py-12">
       <div class="max-w-[900px] mx-auto px-6 flex flex-wrap justify-center gap-6 text-sm">
         <a href="/" class="text-navy font-medium hover:opacity-80 transition-opacity">Home &rarr;</a>
-        <a href="/work" class="text-navy font-medium hover:opacity-80 transition-opacity">The Standard &rarr;</a>
-        <a href="/services/multi-site-rollout-documentation" class="text-navy font-medium hover:opacity-80 transition-opacity">Multi-site rollout programmes &rarr;</a>
-        <a href="/services/qsr-restaurant-survey" class="text-navy font-medium hover:opacity-80 transition-opacity">QSR restaurant surveys &rarr;</a>
-        <a href="/services/aba-autism-clinic-documentation" class="text-navy font-medium hover:opacity-80 transition-opacity">ABA clinic documentation &rarr;</a>
-        <a href="/services/retail-rollout-documentation" class="text-navy font-medium hover:opacity-80 transition-opacity">Retail rollout documentation &rarr;</a>
-        <a href="/services/healthcare-facility-survey" class="text-navy font-medium hover:opacity-80 transition-opacity">Healthcare facility surveys &rarr;</a>
-        <a href="/services/pre-construction-site-intelligence" class="text-navy font-medium hover:opacity-80 transition-opacity">Pre-construction intelligence &rarr;</a>
-        <a href="/about" class="text-navy font-medium hover:opacity-80 transition-opacity">About Alturascope &rarr;</a>
-        <a href="/contact" class="text-navy font-medium hover:opacity-80 transition-opacity">Start a project &rarr;</a>
+        <a href="/work/" class="text-navy font-medium hover:opacity-80 transition-opacity">The Standard &rarr;</a>
+        <a href="/services/multi-site-rollout-documentation/" class="text-navy font-medium hover:opacity-80 transition-opacity">Multi-site rollout programmes &rarr;</a>
+        <a href="/services/qsr-restaurant-survey/" class="text-navy font-medium hover:opacity-80 transition-opacity">QSR restaurant surveys &rarr;</a>
+        <a href="/services/aba-autism-clinic-documentation/" class="text-navy font-medium hover:opacity-80 transition-opacity">ABA clinic documentation &rarr;</a>
+        <a href="/services/retail-rollout-documentation/" class="text-navy font-medium hover:opacity-80 transition-opacity">Retail rollout documentation &rarr;</a>
+        <a href="/services/healthcare-facility-survey/" class="text-navy font-medium hover:opacity-80 transition-opacity">Healthcare facility surveys &rarr;</a>
+        <a href="/services/pre-construction-site-intelligence/" class="text-navy font-medium hover:opacity-80 transition-opacity">Pre-construction intelligence &rarr;</a>
+        <a href="/about/" class="text-navy font-medium hover:opacity-80 transition-opacity">About Alturascope &rarr;</a>
+        <a href="/contact/" class="text-navy font-medium hover:opacity-80 transition-opacity">Start a project &rarr;</a>
       </div>
     </section>
 

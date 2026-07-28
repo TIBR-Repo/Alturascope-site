@@ -6,26 +6,26 @@ const schema = JSON.stringify({
   "@type": "Article",
   "headline": "Due Diligence Documentation for Portfolio Acquisitions — What the Deal Team Actually Needs",
   "author": { "@type": "Organization", "name": "Alturascope" },
-  "publisher": { "@type": "Organization", "name": "Alturascope", "url": "https://alturascope.com" },
+  "publisher": { "@type": "Organization", "name": "Alturascope", "url": "https://alturascope.com/" },
   "datePublished": "2026-01-09",
   "description": "When acquiring a portfolio of commercial properties, due diligence depends on consistent, structured site documentation. Here's what deal teams, capital planners, and PE operators actually need from the field.",
-  "mainEntityOfPage": "https://alturascope.com/insights/due-diligence-documentation-portfolio-acquisitions"
+  "mainEntityOfPage": "https://alturascope.com/insights/due-diligence-documentation-portfolio-acquisitions/"
 });
 
 const breadcrumbSchema = JSON.stringify({
   "@context": "https://schema.org",
   "@type": "BreadcrumbList",
   "itemListElement": [
-    { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://alturascope.com" },
+    { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://alturascope.com/" },
     { "@type": "ListItem", "position": 2, "name": "Insights", "item": "https://alturascope.com/insights/" },
-    { "@type": "ListItem", "position": 3, "name": "Due Diligence Documentation for Portfolio Acquisitions", "item": "https://alturascope.com/insights/due-diligence-documentation-portfolio-acquisitions" }
+    { "@type": "ListItem", "position": 3, "name": "Due Diligence Documentation for Portfolio Acquisitions", "item": "https://alturascope.com/insights/due-diligence-documentation-portfolio-acquisitions/" }
   ]
 });
 ---
 <Layout
   title="Due Diligence Documentation for Portfolio Acquisitions — What the Deal Team Needs | Alturascope"
   description="When acquiring a portfolio of commercial properties, due diligence depends on consistent, structured site documentation. Here's what deal teams, capital planners, and PE operators actually need from the field."
-  canonical="https://alturascope.com/insights/due-diligence-documentation-portfolio-acquisitions"
+  canonical="https://alturascope.com/insights/due-diligence-documentation-portfolio-acquisitions/"
   schema={schema}
   breadcrumbSchema={breadcrumbSchema}
   fullWidth={true}
@@ -39,6 +39,9 @@ const breadcrumbSchema = JSON.stringify({
           src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=1920&q=80"
           alt="Commercial property portfolio aerial view showing multiple buildings in a business district"
           class="w-full h-full object-cover opacity-25"
+          loading="eager"
+          fetchpriority="high"
+          decoding="async"
         />
         <div class="absolute inset-0 bg-[rgba(11,31,58,0.82)]"></div>
       </div>
@@ -112,14 +115,14 @@ const breadcrumbSchema = JSON.stringify({
           <div class="border-l-2 border-gold pl-6">
             <h3 class="text-navy font-medium">Mechanical systems</h3>
             <p class="mt-2 text-midgrey text-[1.05rem] leading-relaxed">
-              HVAC equipment documented with manufacturer, model, age, capacity, and visible condition. Not "the HVAC is adequate" &mdash; the actual equipment data that drives lifecycle replacement planning. For <a href="/services/self-storage-portfolio-documentation" class="text-navy font-medium hover:opacity-80 transition-opacity">self-storage portfolios</a>, this includes climate control and dehumidification systems that are critical to unit viability &mdash; a topic we explore in depth in our guide to <a href="/insights/self-storage-portfolio-site-survey-documentation/" class="text-navy font-medium hover:opacity-80 transition-opacity">self-storage portfolio site survey documentation</a>. For <a href="/services/industrial-facility-documentation" class="text-navy font-medium hover:opacity-80 transition-opacity">industrial acquisitions</a>, it extends to process cooling, compressed air, and exhaust systems.
+              HVAC equipment documented with manufacturer, model, age, capacity, and visible condition. Not "the HVAC is adequate" &mdash; the actual equipment data that drives lifecycle replacement planning. For <a href="/services/self-storage-portfolio-documentation/" class="text-navy font-medium hover:opacity-80 transition-opacity">self-storage portfolios</a>, this includes climate control and dehumidification systems that are critical to unit viability &mdash; a topic we explore in depth in our guide to <a href="/insights/self-storage-portfolio-site-survey-documentation/" class="text-navy font-medium hover:opacity-80 transition-opacity">self-storage portfolio site survey documentation</a>. For <a href="/services/industrial-facility-documentation/" class="text-navy font-medium hover:opacity-80 transition-opacity">industrial acquisitions</a>, it extends to process cooling, compressed air, and exhaust systems.
             </p>
           </div>
 
           <div class="border-l-2 border-gold pl-6">
             <h3 class="text-navy font-medium">Electrical infrastructure</h3>
             <p class="mt-2 text-midgrey text-[1.05rem] leading-relaxed">
-              Main service, distribution panels, capacity assessment data, backup power where present. For <a href="/services/education-campus-documentation" class="text-navy font-medium hover:opacity-80 transition-opacity">education campus portfolios</a>, this includes building-by-building electrical age and capacity &mdash; essential for technology upgrade and renovation planning.
+              Main service, distribution panels, capacity assessment data, backup power where present. For <a href="/services/education-campus-documentation/" class="text-navy font-medium hover:opacity-80 transition-opacity">education campus portfolios</a>, this includes building-by-building electrical age and capacity &mdash; essential for technology upgrade and renovation planning.
             </p>
           </div>
 
@@ -148,7 +151,7 @@ const breadcrumbSchema = JSON.stringify({
             Instead of arguing about which facility needs attention most urgently, the capital committee can sort the entire portfolio by building system age, condition observation priority, or estimated replacement timeline. The roof that's actively leaking ranks above the roof with five years of remaining life. The HVAC unit installed in 2003 ranks above the one installed in 2018. The facility with P1 electrical observations ranks above the one with only P3 cosmetic notes.
           </p>
           <p>
-            This isn't hypothetical &mdash; it's how <a href="/services/multi-site-rollout-documentation" class="text-navy font-medium hover:opacity-80 transition-opacity">standardised multi-site documentation</a> changes the conversation from opinion to evidence. And it's why the investment in consistent field data collection pays for itself within the first capital cycle.
+            This isn't hypothetical &mdash; it's how <a href="/services/multi-site-rollout-documentation/" class="text-navy font-medium hover:opacity-80 transition-opacity">standardised multi-site documentation</a> changes the conversation from opinion to evidence. And it's why the investment in consistent field data collection pays for itself within the first capital cycle.
           </p>
         </div>
 
@@ -195,14 +198,14 @@ const breadcrumbSchema = JSON.stringify({
           <div class="border-l-2 border-gold pl-6">
             <h3 class="text-navy font-medium">Consistency of methodology</h3>
             <p class="mt-2 text-midgrey text-[1.05rem] leading-relaxed">
-              Not a network of local subcontractors who each do things differently. One team, one approach, <a href="/insights/standardising-site-surveys-multi-site-operators" class="text-navy font-medium hover:opacity-80 transition-opacity">one standard across every location</a>. This is the single most important criterion.
+              Not a network of local subcontractors who each do things differently. One team, one approach, <a href="/insights/standardising-site-surveys-multi-site-operators/" class="text-navy font-medium hover:opacity-80 transition-opacity">one standard across every location</a>. This is the single most important criterion.
             </p>
           </div>
 
           <div class="border-l-2 border-gold pl-6">
             <h3 class="text-navy font-medium">Structured deliverables</h3>
             <p class="mt-2 text-midgrey text-[1.05rem] leading-relaxed">
-              Not PDFs and photo folders. A platform where data is searchable, comparable, and accessible to everyone who needs it. <a href="/services/pre-construction-site-intelligence" class="text-navy font-medium hover:opacity-80 transition-opacity">Pre-construction site intelligence</a> that serves the deal team, the capital planner, and the operations manager from the same dataset.
+              Not PDFs and photo folders. A platform where data is searchable, comparable, and accessible to everyone who needs it. <a href="/services/pre-construction-site-intelligence/" class="text-navy font-medium hover:opacity-80 transition-opacity">Pre-construction site intelligence</a> that serves the deal team, the capital planner, and the operations manager from the same dataset.
             </p>
           </div>
 
@@ -243,20 +246,20 @@ const breadcrumbSchema = JSON.stringify({
 
         <!-- Footer note -->
         <p class="mt-12 text-[0.85rem] text-midgrey/60 italic">
-          AlturaScope delivers standardised portfolio documentation programmes across the United States, Canada, and the United Kingdom. From pre-close sampling to full portfolio baselining &mdash; one brief, one standard, every location. <a href="/contact" class="text-navy font-medium hover:opacity-80 transition-opacity">Tell us about your portfolio</a>.
+          AlturaScope delivers standardised portfolio documentation programmes across the United States, Canada, and the United Kingdom. From pre-close sampling to full portfolio baselining &mdash; one brief, one standard, every location. <a href="/contact/" class="text-navy font-medium hover:opacity-80 transition-opacity">Tell us about your portfolio</a>.
         </p>
 
         <!-- Internal Links -->
         <div class="mt-12 pt-8 border-t border-border flex flex-wrap gap-6 text-sm">
-          <a href="/services/self-storage-portfolio-documentation" class="text-navy font-medium hover:opacity-80 transition-opacity">Self-storage portfolio documentation &rarr;</a>
-          <a href="/services/education-campus-documentation" class="text-navy font-medium hover:opacity-80 transition-opacity">Education campus documentation &rarr;</a>
-          <a href="/services/industrial-facility-documentation" class="text-navy font-medium hover:opacity-80 transition-opacity">Industrial facility documentation &rarr;</a>
-          <a href="/insights/healthcare-multi-site-facility-survey-documentation" class="text-navy font-medium hover:opacity-80 transition-opacity">Healthcare multi-site surveys &rarr;</a>
-          <a href="/insights/aba-clinic-portfolio-renovation-documentation" class="text-navy font-medium hover:opacity-80 transition-opacity">ABA clinic portfolio documentation &rarr;</a>
-          <a href="/services/multi-site-rollout-documentation" class="text-navy font-medium hover:opacity-80 transition-opacity">Multi-site rollout documentation &rarr;</a>
-          <a href="/services/pre-construction-site-intelligence" class="text-navy font-medium hover:opacity-80 transition-opacity">Pre-construction site intelligence &rarr;</a>
-          <a href="/insights/standardising-site-surveys-multi-site-operators" class="text-navy font-medium hover:opacity-80 transition-opacity">Standardising multi-site surveys &rarr;</a>
-          <a href="/insights" class="text-navy font-medium hover:opacity-80 transition-opacity">All insights &rarr;</a>
+          <a href="/services/self-storage-portfolio-documentation/" class="text-navy font-medium hover:opacity-80 transition-opacity">Self-storage portfolio documentation &rarr;</a>
+          <a href="/services/education-campus-documentation/" class="text-navy font-medium hover:opacity-80 transition-opacity">Education campus documentation &rarr;</a>
+          <a href="/services/industrial-facility-documentation/" class="text-navy font-medium hover:opacity-80 transition-opacity">Industrial facility documentation &rarr;</a>
+          <a href="/insights/healthcare-multi-site-facility-survey-documentation/" class="text-navy font-medium hover:opacity-80 transition-opacity">Healthcare multi-site surveys &rarr;</a>
+          <a href="/insights/aba-clinic-portfolio-renovation-documentation/" class="text-navy font-medium hover:opacity-80 transition-opacity">ABA clinic portfolio documentation &rarr;</a>
+          <a href="/services/multi-site-rollout-documentation/" class="text-navy font-medium hover:opacity-80 transition-opacity">Multi-site rollout documentation &rarr;</a>
+          <a href="/services/pre-construction-site-intelligence/" class="text-navy font-medium hover:opacity-80 transition-opacity">Pre-construction site intelligence &rarr;</a>
+          <a href="/insights/standardising-site-surveys-multi-site-operators/" class="text-navy font-medium hover:opacity-80 transition-opacity">Standardising multi-site surveys &rarr;</a>
+          <a href="/insights/" class="text-navy font-medium hover:opacity-80 transition-opacity">All insights &rarr;</a>
         </div>
 
       </div>
@@ -271,7 +274,7 @@ const breadcrumbSchema = JSON.stringify({
         <p class="mt-4 text-offwhite/70 leading-body">
           Share the number of locations, geographic spread, and your timeline. We'll respond within one business day with a programme recommendation and portfolio pricing.
         </p>
-        <a href="/contact" class="btn-primary mt-8">Start a Project</a>
+        <a href="/contact/" class="btn-primary mt-8">Start a Project</a>
       </div>
     </section>
 

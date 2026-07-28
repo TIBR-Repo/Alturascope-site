@@ -6,7 +6,7 @@ const schema = JSON.stringify({
   "@type": "ProfessionalService",
   "name": "Alturascope",
   "description": "Reality capture, 3D documentation, and conditions surveys for construction teams and specialist clients across the US, Canada, and the UK.",
-  "url": "https://alturascope.com",
+  "url": "https://alturascope.com/",
   "areaServed": ["United States", "Canada", "United Kingdom"],
   "serviceType": "Reality Capture and Site Documentation",
   "sameAs": ["https://www.linkedin.com/company/111948383"]
@@ -28,6 +28,9 @@ const schema = JSON.stringify({
           src="https://images.unsplash.com/photo-1487958449943-2429e8be8625?w=1920&q=80"
           alt="Significant architectural facade with atmospheric lighting representing Alturascope heritage and expertise"
           class="w-full h-full object-cover opacity-30"
+          loading="eager"
+          fetchpriority="high"
+          decoding="async"
         />
         <div class="absolute inset-0 bg-[rgba(11,31,58,0.72)]"></div>
       </div>
@@ -92,12 +95,12 @@ const schema = JSON.stringify({
         <p class="text-midgrey leading-body text-lg">
           If you have a project — straightforward or otherwise — we'd like to hear about it.
         </p>
-        <a href="/contact" class="btn-primary mt-8">Get In Touch</a>
+        <a href="/contact/" class="btn-primary mt-8">Get In Touch</a>
         <div class="mt-8 flex flex-wrap justify-center gap-6 text-sm">
           <a href="/" class="text-navy font-medium hover:opacity-80 transition-opacity">Home &rarr;</a>
-          <a href="/services" class="text-navy font-medium hover:opacity-80 transition-opacity">Our services &rarr;</a>
-          <a href="/work" class="text-navy font-medium hover:opacity-80 transition-opacity">The Standard &rarr;</a>
-          <a href="/services/construction-documentation" class="text-navy font-medium hover:opacity-80 transition-opacity">Construction documentation &rarr;</a>
+          <a href="/services/" class="text-navy font-medium hover:opacity-80 transition-opacity">Our services &rarr;</a>
+          <a href="/work/" class="text-navy font-medium hover:opacity-80 transition-opacity">The Standard &rarr;</a>
+          <a href="/services/construction-documentation/" class="text-navy font-medium hover:opacity-80 transition-opacity">Construction documentation &rarr;</a>
         </div>
       </div>
     </section>

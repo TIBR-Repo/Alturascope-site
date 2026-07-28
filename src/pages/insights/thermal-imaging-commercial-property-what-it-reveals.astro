@@ -6,26 +6,26 @@ const schema = JSON.stringify({
   "@type": "Article",
   "headline": "Thermal Imaging in Commercial Property — What It Actually Reveals",
   "author": { "@type": "Organization", "name": "Alturascope" },
-  "publisher": { "@type": "Organization", "name": "Alturascope", "url": "https://alturascope.com" },
+  "publisher": { "@type": "Organization", "name": "Alturascope", "url": "https://alturascope.com/" },
   "datePublished": "2025-12-12",
   "description": "FLIR thermal imaging reveals what visual inspection can't — moisture migration, electrical hotspots, insulation failures, and hidden MEP services. A practical guide to what thermal capture means for commercial buildings.",
-  "mainEntityOfPage": "https://alturascope.com/insights/thermal-imaging-commercial-property-what-it-reveals"
+  "mainEntityOfPage": "https://alturascope.com/insights/thermal-imaging-commercial-property-what-it-reveals/"
 });
 
 const breadcrumbSchema = JSON.stringify({
   "@context": "https://schema.org",
   "@type": "BreadcrumbList",
   "itemListElement": [
-    { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://alturascope.com" },
+    { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://alturascope.com/" },
     { "@type": "ListItem", "position": 2, "name": "Insights", "item": "https://alturascope.com/insights/" },
-    { "@type": "ListItem", "position": 3, "name": "Thermal Imaging in Commercial Property", "item": "https://alturascope.com/insights/thermal-imaging-commercial-property-what-it-reveals" }
+    { "@type": "ListItem", "position": 3, "name": "Thermal Imaging in Commercial Property", "item": "https://alturascope.com/insights/thermal-imaging-commercial-property-what-it-reveals/" }
   ]
 });
 ---
 <Layout
   title="Thermal Imaging in Commercial Property — What It Actually Reveals | Alturascope"
   description="FLIR thermal imaging reveals what visual inspection can't — moisture migration, electrical hotspots, insulation failures, and hidden MEP services. A practical guide to what thermal capture means for commercial buildings."
-  canonical="https://alturascope.com/insights/thermal-imaging-commercial-property-what-it-reveals"
+  canonical="https://alturascope.com/insights/thermal-imaging-commercial-property-what-it-reveals/"
   schema={schema}
   breadcrumbSchema={breadcrumbSchema}
   fullWidth={true}
@@ -39,6 +39,9 @@ const breadcrumbSchema = JSON.stringify({
           src="https://images.unsplash.com/photo-1581092160607-ee22621dd758?w=1920&q=80"
           alt="Thermal imaging camera pointed at commercial building infrastructure showing heat differential patterns"
           class="w-full h-full object-cover opacity-25"
+          loading="eager"
+          fetchpriority="high"
+          decoding="async"
         />
         <div class="absolute inset-0 bg-[rgba(11,31,58,0.82)]"></div>
       </div>
@@ -94,10 +97,10 @@ const breadcrumbSchema = JSON.stringify({
             This has significant implications for two audiences in particular:
           </p>
           <p>
-            For <a href="/services/insurance-loss-documentation" class="text-navy font-medium hover:opacity-80 transition-opacity">insurance loss documentation</a>, thermal imaging provides an objective, timestamped record of moisture extent at the time of capture. This matters because moisture migrates over hours and days &mdash; what you document on day one after a loss event will be different from what exists on day five. Early thermal capture establishes the baseline that adjusters, restoration contractors, and engineers all work from. Without it, moisture extent becomes a matter of opinion rather than evidence.
+            For <a href="/services/insurance-loss-documentation/" class="text-navy font-medium hover:opacity-80 transition-opacity">insurance loss documentation</a>, thermal imaging provides an objective, timestamped record of moisture extent at the time of capture. This matters because moisture migrates over hours and days &mdash; what you document on day one after a loss event will be different from what exists on day five. Early thermal capture establishes the baseline that adjusters, restoration contractors, and engineers all work from. Without it, moisture extent becomes a matter of opinion rather than evidence.
           </p>
           <p>
-            For pre-construction and <a href="/services/construction-documentation" class="text-navy font-medium hover:opacity-80 transition-opacity">conditions surveys</a>, thermal capture identifies moisture issues that visual inspection misses entirely. A ceiling that looks dry may have active moisture migration above it. A wall that appears sound may have concealed moisture behind the finish. These are the conditions that produce mould, structural deterioration, and expensive mid-project discoveries if they're not identified before work begins.
+            For pre-construction and <a href="/services/construction-documentation/" class="text-navy font-medium hover:opacity-80 transition-opacity">conditions surveys</a>, thermal capture identifies moisture issues that visual inspection misses entirely. A ceiling that looks dry may have active moisture migration above it. A wall that appears sound may have concealed moisture behind the finish. These are the conditions that produce mould, structural deterioration, and expensive mid-project discoveries if they're not identified before work begins.
           </p>
         </div>
 
@@ -111,10 +114,10 @@ const breadcrumbSchema = JSON.stringify({
             A thermal camera pointed at an electrical panel, a busbar, a transformer, or a motor drive will show these hotspots clearly. The temperature differential between a normal connection and a failing one can be 20, 40, or 80+ degrees above ambient &mdash; and the connection will look perfectly normal to the naked eye until the day it fails.
           </p>
           <p>
-            In <a href="/services/industrial-facility-documentation" class="text-navy font-medium hover:opacity-80 transition-opacity">industrial and manufacturing facilities</a>, thermal scanning of electrical distribution and motor drives is a standard element of predictive maintenance programmes. But it's equally valuable as part of facility documentation &mdash; creating a thermal baseline that identifies existing issues and provides a reference point for future comparison.
+            In <a href="/services/industrial-facility-documentation/" class="text-navy font-medium hover:opacity-80 transition-opacity">industrial and manufacturing facilities</a>, thermal scanning of electrical distribution and motor drives is a standard element of predictive maintenance programmes. But it's equally valuable as part of facility documentation &mdash; creating a thermal baseline that identifies existing issues and provides a reference point for future comparison.
           </p>
           <p>
-            In <a href="/services/data-centre-documentation" class="text-navy font-medium hover:opacity-80 transition-opacity">data centre environments</a>, where electrical reliability is existential, thermal documentation of the power chain from utility intake through UPS and PDUs to the rack level provides a spatial record of thermal conditions across the entire distribution system. Georeferenced within the 3D model, each thermal observation is tied to a precise location &mdash; not a photograph with a vague label.
+            In <a href="/services/data-centre-documentation/" class="text-navy font-medium hover:opacity-80 transition-opacity">data centre environments</a>, where electrical reliability is existential, thermal documentation of the power chain from utility intake through UPS and PDUs to the rack level provides a spatial record of thermal conditions across the entire distribution system. Georeferenced within the 3D model, each thermal observation is tied to a precise location &mdash; not a photograph with a vague label.
           </p>
         </div>
 
@@ -139,7 +142,7 @@ const breadcrumbSchema = JSON.stringify({
             Thermal imaging applied to photovoltaic arrays operates on the same principle &mdash; temperature differentials reveal performance problems &mdash; but at a completely different scale.
           </p>
           <p>
-            In a <a href="/services/solar-farm-documentation" class="text-navy font-medium hover:opacity-80 transition-opacity">solar farm environment</a>, drone-mounted thermal cameras capture thermal data across arrays spanning dozens or hundreds of acres. Underperforming panels show as anomalously warm compared to their neighbours. Specific failure modes produce characteristic thermal signatures: hotspot cells from bypass diode failures, string-level anomalies from wiring issues, and uniform temperature elevation from soiling or degradation.
+            In a <a href="/services/solar-farm-documentation/" class="text-navy font-medium hover:opacity-80 transition-opacity">solar farm environment</a>, drone-mounted thermal cameras capture thermal data across arrays spanning dozens or hundreds of acres. Underperforming panels show as anomalously warm compared to their neighbours. Specific failure modes produce characteristic thermal signatures: hotspot cells from bypass diode failures, string-level anomalies from wiring issues, and uniform temperature elevation from soiling or degradation.
           </p>
           <p>
             When this thermal data is georeferenced &mdash; pinned to precise panel locations within the array model &mdash; it transforms from a thermal image into an actionable maintenance schedule. The operations and maintenance team receives a list of specific panels at specific locations with specific anomaly types, rather than a heat map of a field.
@@ -159,7 +162,7 @@ const breadcrumbSchema = JSON.stringify({
             Professional thermal documentation means the capture is calibrated (emissivity set correctly for the material being measured), the ambient conditions are recorded (air temperature, humidity, wind conditions for exterior work), the observations are spatially referenced (tied to a specific location in a 3D model or floor plan), and the findings are integrated into a structured report that your engineering team or consultants can act on.
           </p>
           <p>
-            This is why thermal imaging works best as an integrated layer within a comprehensive <a href="/services/pre-construction-site-intelligence" class="text-navy font-medium hover:opacity-80 transition-opacity">site documentation programme</a>, not as a standalone service. The thermal data gains meaning from the spatial, visual, and written documentation around it.
+            This is why thermal imaging works best as an integrated layer within a comprehensive <a href="/services/pre-construction-site-intelligence/" class="text-navy font-medium hover:opacity-80 transition-opacity">site documentation programme</a>, not as a standalone service. The thermal data gains meaning from the spatial, visual, and written documentation around it.
           </p>
         </div>
 
@@ -175,21 +178,21 @@ const breadcrumbSchema = JSON.stringify({
           <div class="border-l-2 border-gold pl-6">
             <h3 class="text-navy font-medium">Before any renovation or fit-out</h3>
             <p class="mt-2 text-midgrey text-[1.05rem] leading-relaxed">
-              To identify concealed moisture, <a href="/insights/above-ceiling-mep-survey-fit-out" class="text-navy font-medium hover:opacity-80 transition-opacity">above-ceiling MEP routing</a>, insulation deficiencies, and electrical issues before design is committed.
+              To identify concealed moisture, <a href="/insights/above-ceiling-mep-survey-fit-out/" class="text-navy font-medium hover:opacity-80 transition-opacity">above-ceiling MEP routing</a>, insulation deficiencies, and electrical issues before design is committed.
             </p>
           </div>
 
           <div class="border-l-2 border-gold pl-6">
             <h3 class="text-navy font-medium">After a loss event</h3>
             <p class="mt-2 text-midgrey text-[1.05rem] leading-relaxed">
-              To document moisture extent and damage scope while conditions are still fresh. The <a href="/services/insurance-loss-documentation" class="text-navy font-medium hover:opacity-80 transition-opacity">evidence window closes quickly</a> and thermal data captured early is materially different from thermal data captured a week later.
+              To document moisture extent and damage scope while conditions are still fresh. The <a href="/services/insurance-loss-documentation/" class="text-navy font-medium hover:opacity-80 transition-opacity">evidence window closes quickly</a> and thermal data captured early is materially different from thermal data captured a week later.
             </p>
           </div>
 
           <div class="border-l-2 border-gold pl-6">
             <h3 class="text-navy font-medium">For facility condition assessments</h3>
             <p class="mt-2 text-midgrey text-[1.05rem] leading-relaxed">
-              Particularly across portfolios where consistent thermal data enables like-for-like comparison between buildings. <a href="/services/education-campus-documentation" class="text-navy font-medium hover:opacity-80 transition-opacity">Education campuses</a> and <a href="/services/self-storage-portfolio-documentation" class="text-navy font-medium hover:opacity-80 transition-opacity">self-storage portfolios</a> benefit from this approach.
+              Particularly across portfolios where consistent thermal data enables like-for-like comparison between buildings. <a href="/services/education-campus-documentation/" class="text-navy font-medium hover:opacity-80 transition-opacity">Education campuses</a> and <a href="/services/self-storage-portfolio-documentation/" class="text-navy font-medium hover:opacity-80 transition-opacity">self-storage portfolios</a> benefit from this approach.
             </p>
           </div>
 
@@ -216,18 +219,18 @@ const breadcrumbSchema = JSON.stringify({
 
         <!-- Footer note -->
         <p class="mt-12 text-[0.85rem] text-midgrey/60 italic">
-          AlturaScope integrates FLIR thermal imaging into every survey where it adds value &mdash; from single-site pre-construction documentation to multi-site portfolio programmes across North America and the UK. <a href="/contact" class="text-navy font-medium hover:opacity-80 transition-opacity">Tell us about your project</a>.
+          AlturaScope integrates FLIR thermal imaging into every survey where it adds value &mdash; from single-site pre-construction documentation to multi-site portfolio programmes across North America and the UK. <a href="/contact/" class="text-navy font-medium hover:opacity-80 transition-opacity">Tell us about your project</a>.
         </p>
 
         <!-- Internal Links -->
         <div class="mt-12 pt-8 border-t border-border flex flex-wrap gap-6 text-sm">
-          <a href="/services/insurance-loss-documentation" class="text-navy font-medium hover:opacity-80 transition-opacity">Insurance loss documentation &rarr;</a>
-          <a href="/services/data-centre-documentation" class="text-navy font-medium hover:opacity-80 transition-opacity">Data centre documentation &rarr;</a>
-          <a href="/services/industrial-facility-documentation" class="text-navy font-medium hover:opacity-80 transition-opacity">Industrial facility documentation &rarr;</a>
-          <a href="/services/solar-farm-documentation" class="text-navy font-medium hover:opacity-80 transition-opacity">Solar farm documentation &rarr;</a>
-          <a href="/services/construction-documentation" class="text-navy font-medium hover:opacity-80 transition-opacity">Construction documentation &rarr;</a>
-          <a href="/insights/above-ceiling-mep-survey-fit-out" class="text-navy font-medium hover:opacity-80 transition-opacity">Above-ceiling MEP surveys &rarr;</a>
-          <a href="/insights" class="text-navy font-medium hover:opacity-80 transition-opacity">All insights &rarr;</a>
+          <a href="/services/insurance-loss-documentation/" class="text-navy font-medium hover:opacity-80 transition-opacity">Insurance loss documentation &rarr;</a>
+          <a href="/services/data-centre-documentation/" class="text-navy font-medium hover:opacity-80 transition-opacity">Data centre documentation &rarr;</a>
+          <a href="/services/industrial-facility-documentation/" class="text-navy font-medium hover:opacity-80 transition-opacity">Industrial facility documentation &rarr;</a>
+          <a href="/services/solar-farm-documentation/" class="text-navy font-medium hover:opacity-80 transition-opacity">Solar farm documentation &rarr;</a>
+          <a href="/services/construction-documentation/" class="text-navy font-medium hover:opacity-80 transition-opacity">Construction documentation &rarr;</a>
+          <a href="/insights/above-ceiling-mep-survey-fit-out/" class="text-navy font-medium hover:opacity-80 transition-opacity">Above-ceiling MEP surveys &rarr;</a>
+          <a href="/insights/" class="text-navy font-medium hover:opacity-80 transition-opacity">All insights &rarr;</a>
         </div>
 
       </div>
@@ -242,7 +245,7 @@ const breadcrumbSchema = JSON.stringify({
         <p class="mt-4 text-offwhite/70 leading-body">
           Share the location, the scope, and what you need to know. We'll confirm whether thermal capture adds value and send an all-in quote within one business day.
         </p>
-        <a href="/contact" class="btn-primary mt-8">Start a Project</a>
+        <a href="/contact/" class="btn-primary mt-8">Start a Project</a>
       </div>
     </section>
 

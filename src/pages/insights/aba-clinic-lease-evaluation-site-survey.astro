@@ -6,7 +6,7 @@ const schema = JSON.stringify({
   "@type": "Article",
   "headline": "Pre-Lease Site Surveys for ABA Clinics: What to Verify Before You Sign",
   "author": { "@type": "Organization", "name": "Alturascope" },
-  "publisher": { "@type": "Organization", "name": "Alturascope", "url": "https://alturascope.com" },
+  "publisher": { "@type": "Organization", "name": "Alturascope", "url": "https://alturascope.com/" },
   "datePublished": "2026-04-15",
   "description": "ABA clinic operators evaluating new lease spaces need more than a floor plan from the landlord. A pre-lease site survey reveals the hidden constraints that determine whether a space can actually work.",
   "mainEntityOfPage": "https://alturascope.com/insights/aba-clinic-lease-evaluation-site-survey/"
@@ -16,7 +16,7 @@ const breadcrumbSchema = JSON.stringify({
   "@context": "https://schema.org",
   "@type": "BreadcrumbList",
   "itemListElement": [
-    { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://alturascope.com" },
+    { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://alturascope.com/" },
     { "@type": "ListItem", "position": 2, "name": "Insights", "item": "https://alturascope.com/insights/" },
     { "@type": "ListItem", "position": 3, "name": "ABA Clinic Pre-Lease Survey", "item": "https://alturascope.com/insights/aba-clinic-lease-evaluation-site-survey/" }
   ]
@@ -52,13 +52,12 @@ const faqSchema = JSON.stringify({
 <Layout
   title="Pre-Lease Site Surveys for ABA Clinics: What to Verify Before You Sign | Alturascope"
   description="ABA clinic operators evaluating new lease spaces need verified site data before committing. Here's what a pre-lease survey reveals that a landlord floor plan cannot."
->
-  <div slot="head">
-    <script type="application/ld+json" set:html={schema} />
-    <script type="application/ld+json" set:html={breadcrumbSchema} />
-    <script type="application/ld+json" set:html={faqSchema} />
-  </div>
 
+  canonical="https://alturascope.com/insights/aba-clinic-lease-evaluation-site-survey/"
+  schema={schema}
+  breadcrumbSchema={breadcrumbSchema}
+  faqSchema={faqSchema}
+>
   <div>
     <article class="max-w-[720px] mx-auto px-6 py-20">
       <div class="mb-8">
@@ -155,15 +154,15 @@ const faqSchema = JSON.stringify({
         </div>
 
         <p class="mt-12 text-[0.85rem] text-midgrey/60 italic">
-          Alturascope provides <a href="/services/aba-autism-clinic-documentation" class="hover:opacity-80 transition-opacity">pre-lease site surveys for ABA clinics</a> across the United States and Canada.
+          Alturascope provides <a href="/services/aba-autism-clinic-documentation/" class="hover:opacity-80 transition-opacity">pre-lease site surveys for ABA clinics</a> across the United States and Canada.
         </p>
 
         <div class="mt-12 pt-8 border-t border-border flex flex-wrap gap-6 text-sm">
-          <a href="/services/aba-autism-clinic-documentation" class="text-navy font-medium hover:opacity-80 transition-opacity">ABA clinic documentation &rarr;</a>
-          <a href="/insights/aba-clinic-sensory-room-design-documentation" class="text-navy font-medium hover:opacity-80 transition-opacity">Sensory room documentation &rarr;</a>
-          <a href="/insights/aba-clinic-portfolio-renovation-documentation" class="text-navy font-medium hover:opacity-80 transition-opacity">ABA portfolio renovation &rarr;</a>
-          <a href="/insights/aba-multi-location-growth-documentation-strategy" class="text-navy font-medium hover:opacity-80 transition-opacity">Multi-location ABA growth &rarr;</a>
-          <a href="/insights" class="text-navy font-medium hover:opacity-80 transition-opacity">All insights &rarr;</a>
+          <a href="/services/aba-autism-clinic-documentation/" class="text-navy font-medium hover:opacity-80 transition-opacity">ABA clinic documentation &rarr;</a>
+          <a href="/insights/aba-clinic-sensory-room-design-documentation/" class="text-navy font-medium hover:opacity-80 transition-opacity">Sensory room documentation &rarr;</a>
+          <a href="/insights/aba-clinic-portfolio-renovation-documentation/" class="text-navy font-medium hover:opacity-80 transition-opacity">ABA portfolio renovation &rarr;</a>
+          <a href="/insights/aba-multi-location-growth-documentation-strategy/" class="text-navy font-medium hover:opacity-80 transition-opacity">Multi-location ABA growth &rarr;</a>
+          <a href="/insights/" class="text-navy font-medium hover:opacity-80 transition-opacity">All insights &rarr;</a>
         </div>
 
       </div>
@@ -177,7 +176,7 @@ const faqSchema = JSON.stringify({
         <p class="mt-4 text-offwhite/70 leading-body">
           Share the address and approximate square footage. We will confirm whether a pre-lease survey is the right approach and return an all-in quote within one business day.
         </p>
-        <a href="/contact" class="btn-primary mt-8">Start a Project</a>
+        <a href="/contact/" class="btn-primary mt-8">Start a Project</a>
       </div>
     </section>
 

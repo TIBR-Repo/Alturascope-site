@@ -17,7 +17,7 @@ const breadcrumbSchema = JSON.stringify({
   "@context": "https://schema.org",
   "@type": "BreadcrumbList",
   "itemListElement": [
-    { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://alturascope.com" },
+    { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://alturascope.com/" },
     { "@type": "ListItem", "position": 2, "name": "UK", "item": "https://alturascope.com/uk/" },
     { "@type": "ListItem", "position": 3, "name": "Multi-Site Rollout Survey UK", "item": "https://alturascope.com/uk/multi-site-rollout-survey/" }
   ]
@@ -73,6 +73,9 @@ const faqSchema = JSON.stringify({
           src="https://images.unsplash.com/photo-1441986300917-64674bd600d8?w=1920&q=80"
           alt="UK retail store interior documented during multi-site rollout survey programme for franchise and hospitality operators"
           class="w-full h-full object-cover opacity-35"
+          loading="eager"
+          fetchpriority="high"
+          decoding="async"
         />
         <div class="absolute inset-0 bg-[rgba(11,31,58,0.72)]"></div>
       </div>
@@ -86,7 +89,7 @@ const faqSchema = JSON.stringify({
           One brief, one format, one point of contact. All-in pricing. Every location.
         </p>
         <div class="mt-10 flex flex-wrap items-center justify-center gap-4">
-          <a href="/contact" class="btn-primary">Tell Us About Your Rollout Programme</a>
+          <a href="/contact/" class="btn-primary">Tell Us About Your Rollout Programme</a>
           <a href="/uk/" class="btn-secondary-light">UK Services</a>
         </div>
       </div>
@@ -244,7 +247,7 @@ const faqSchema = JSON.stringify({
         </h2>
         <div class="mt-6 space-y-4 text-midgrey leading-body">
           <p>
-            Many UK rollout programmes include sites in North America. We deliver consistent documentation across the UK, the US, and Canada &mdash; one brief, one format, one point of contact. <a href="/services/multi-site-rollout-documentation" class="text-navy font-medium hover:opacity-80 transition-opacity underline">Learn more about our multi-site rollout documentation</a>.
+            Many UK rollout programmes include sites in North America. We deliver consistent documentation across the UK, the US, and Canada &mdash; one brief, one format, one point of contact. <a href="/services/multi-site-rollout-documentation/" class="text-navy font-medium hover:opacity-80 transition-opacity underline">Learn more about our multi-site rollout documentation</a>.
           </p>
         </div>
       </div>
@@ -308,7 +311,7 @@ const faqSchema = JSON.stringify({
         <p class="mt-4 text-midgrey leading-body">
           Share the number of locations, the approximate geography, and what you need from the documentation. We'll come back within one business day with a clear scope recommendation and an all-in quote.
         </p>
-        <a href="/contact" class="btn-primary mt-10">Get in Touch</a>
+        <a href="/contact/" class="btn-primary mt-10">Get in Touch</a>
       </div>
     </section>
 
@@ -317,8 +320,8 @@ const faqSchema = JSON.stringify({
       <div class="max-w-[760px] mx-auto px-6">
         <p class="label text-gold mb-4">Related UK Services</p>
         <div class="flex flex-wrap gap-6 text-midgrey">
-          <a href="/uk/pre-construction-survey" class="text-navy font-medium hover:opacity-80 transition-opacity">Pre-construction survey UK &rarr;</a>
-          <a href="/uk/above-ceiling-mep-survey" class="text-navy font-medium hover:opacity-80 transition-opacity">Above-ceiling MEP survey UK &rarr;</a>
+          <a href="/uk/pre-construction-survey/" class="text-navy font-medium hover:opacity-80 transition-opacity">Pre-construction survey UK &rarr;</a>
+          <a href="/uk/above-ceiling-mep-survey/" class="text-navy font-medium hover:opacity-80 transition-opacity">Above-ceiling MEP survey UK &rarr;</a>
           <a href="/uk/" class="text-navy font-medium hover:opacity-80 transition-opacity">Alturascope UK &rarr;</a>
         </div>
       </div>
@@ -338,7 +341,7 @@ const faqSchema = JSON.stringify({
         <p class="mt-4 text-offwhite/70 leading-body">
           Share the number of locations and what you need. We'll confirm scope and send an all-in quote within one business day.
         </p>
-        <a href="/contact" class="btn-primary mt-8">Start a Project</a>
+        <a href="/contact/" class="btn-primary mt-8">Start a Project</a>
       </div>
     </section>
 

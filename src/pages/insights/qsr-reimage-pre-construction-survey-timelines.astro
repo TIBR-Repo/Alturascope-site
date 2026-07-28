@@ -6,7 +6,7 @@ const schema = JSON.stringify({
   "@type": "Article",
   "headline": "How QSR Chains Are Using Pre-Construction Surveys to Cut Reimage Timelines",
   "author": { "@type": "Organization", "name": "Alturascope" },
-  "publisher": { "@type": "Organization", "name": "Alturascope", "url": "https://alturascope.com" },
+  "publisher": { "@type": "Organization", "name": "Alturascope", "url": "https://alturascope.com/" },
   "datePublished": "2026-03-10",
   "description": "Restaurant reimage programmes lose days to undocumented site conditions. Here's how pre-construction survey data eliminates the surprises that extend dark time and blow budgets.",
   "mainEntityOfPage": "https://alturascope.com/insights/qsr-reimage-pre-construction-survey-timelines/"
@@ -16,7 +16,7 @@ const breadcrumbSchema = JSON.stringify({
   "@context": "https://schema.org",
   "@type": "BreadcrumbList",
   "itemListElement": [
-    { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://alturascope.com" },
+    { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://alturascope.com/" },
     { "@type": "ListItem", "position": 2, "name": "Insights", "item": "https://alturascope.com/insights/" },
     { "@type": "ListItem", "position": 3, "name": "QSR Reimage Pre-Construction Surveys", "item": "https://alturascope.com/insights/qsr-reimage-pre-construction-survey-timelines/" }
   ]
@@ -67,6 +67,9 @@ const faqSchema = JSON.stringify({
           src="/commercial-kitchen-work.jpg"
           alt="Commercial kitchen interior during pre-construction site survey for QSR renovation programme"
           class="w-full h-full object-cover opacity-25"
+          loading="eager"
+          fetchpriority="high"
+          decoding="async"
         />
         <div class="absolute inset-0 bg-[rgba(11,31,58,0.82)]"></div>
       </div>
@@ -120,7 +123,7 @@ const faqSchema = JSON.stringify({
           <div>
             <h3 class="text-navy font-medium text-[1.1rem]">Hidden MEP Conditions Above Ceiling</h3>
             <p class="mt-3 text-midgrey leading-body text-[1.05rem]">
-              Most QSR locations have been renovated at least once. Each renovation leaves behind undocumented electrical runs, abandoned ductwork, fire suppression modifications, and plumbing routes that don't appear on any drawing. When the new design assumes a clear pathway for HVAC or electrical and the contractor opens the ceiling to find something else entirely, the programme stops while the design team scrambles to adjust. This is the single most common cause of unplanned dark time extension. Our guide to <a href="/insights/above-ceiling-mep-survey-fit-out" class="text-navy font-medium hover:opacity-80 transition-opacity">above-ceiling MEP surveys</a> covers what's typically hidden and how to document it.
+              Most QSR locations have been renovated at least once. Each renovation leaves behind undocumented electrical runs, abandoned ductwork, fire suppression modifications, and plumbing routes that don't appear on any drawing. When the new design assumes a clear pathway for HVAC or electrical and the contractor opens the ceiling to find something else entirely, the programme stops while the design team scrambles to adjust. This is the single most common cause of unplanned dark time extension. Our guide to <a href="/insights/above-ceiling-mep-survey-fit-out/" class="text-navy font-medium hover:opacity-80 transition-opacity">above-ceiling MEP surveys</a> covers what's typically hidden and how to document it.
             </p>
           </div>
 
@@ -136,7 +139,7 @@ const faqSchema = JSON.stringify({
         <h2 class="text-[1.6rem] font-light text-navy mt-16 mb-6">What Pre-Construction Survey Data Eliminates</h2>
         <div class="space-y-6 text-midgrey leading-body text-[1.05rem]">
           <p>
-            A comprehensive <a href="/services/pre-construction-site-intelligence" class="text-navy font-medium hover:opacity-80 transition-opacity">pre-construction survey</a> conducted before the design phase captures the verified conditions that every downstream decision depends on. For a QSR reimage programme, this means:
+            A comprehensive <a href="/services/pre-construction-site-intelligence/" class="text-navy font-medium hover:opacity-80 transition-opacity">pre-construction survey</a> conducted before the design phase captures the verified conditions that every downstream decision depends on. For a QSR reimage programme, this means:
           </p>
         </div>
 
@@ -159,7 +162,7 @@ const faqSchema = JSON.stringify({
           </div>
           <div class="border-l-2 border-gold pl-6">
             <h3 class="text-navy font-medium">Navigable digital twin</h3>
-            <p class="mt-1 text-midgrey text-[0.95rem] leading-relaxed">A <a href="/insights/what-is-a-matterport-digital-twin" class="text-navy font-medium hover:opacity-80 transition-opacity">Matterport digital twin</a> of the entire location that design teams, project managers, and fabrication partners can revisit as many times as needed without travelling to site</p>
+            <p class="mt-1 text-midgrey text-[0.95rem] leading-relaxed">A <a href="/insights/what-is-a-matterport-digital-twin/" class="text-navy font-medium hover:opacity-80 transition-opacity">Matterport digital twin</a> of the entire location that design teams, project managers, and fabrication partners can revisit as many times as needed without travelling to site</p>
           </div>
         </div>
 
@@ -197,7 +200,7 @@ const faqSchema = JSON.stringify({
         </div>
 
         <p class="mt-8 text-midgrey leading-body text-[1.05rem]">
-          The cost of a professional pre-construction survey at each location is a fraction of any one of these. For operators running <a href="/services/multi-site-rollout-documentation" class="text-navy font-medium hover:opacity-80 transition-opacity">multi-site rollout programmes</a>, survey data isn't an optional extra &mdash; it's the foundation the entire programme schedule is built on.
+          The cost of a professional pre-construction survey at each location is a fraction of any one of these. For operators running <a href="/services/multi-site-rollout-documentation/" class="text-navy font-medium hover:opacity-80 transition-opacity">multi-site rollout programmes</a>, survey data isn't an optional extra &mdash; it's the foundation the entire programme schedule is built on.
         </p>
 
         <!-- Consistency Across 100+ Locations -->
@@ -210,7 +213,7 @@ const faqSchema = JSON.stringify({
             When each location is surveyed by a different local provider with a different methodology and a different deliverable format, the data becomes fragmented. Design teams waste time reconciling inconsistent information instead of designing. Programme managers lose visibility because there's no standardised way to compare one location's readiness against another.
           </p>
           <p>
-            The alternative is a <a href="/insights/standardising-site-surveys-multi-site-operators" class="text-navy font-medium hover:opacity-80 transition-opacity">standardised survey methodology</a> applied consistently across every location in the programme &mdash; one brief, one format, one platform, one point of contact. This is how the best-run <a href="/services/qsr-restaurant-survey" class="text-navy font-medium hover:opacity-80 transition-opacity">QSR survey programmes</a> operate, and it's the approach that makes programme-level decisions possible.
+            The alternative is a <a href="/insights/standardising-site-surveys-multi-site-operators/" class="text-navy font-medium hover:opacity-80 transition-opacity">standardised survey methodology</a> applied consistently across every location in the programme &mdash; one brief, one format, one platform, one point of contact. This is how the best-run <a href="/services/qsr-restaurant-survey/" class="text-navy font-medium hover:opacity-80 transition-opacity">QSR survey programmes</a> operate, and it's the approach that makes programme-level decisions possible.
           </p>
         </div>
 
@@ -270,26 +273,26 @@ const faqSchema = JSON.stringify({
               The maths is simple: the cost of surveying every location in the programme is a fraction of the cost of the problems you avoid by doing so.
             </p>
             <p>
-              <a href="/contact" class="text-navy font-medium hover:opacity-80 transition-opacity">Talk to Alturascope</a> about building a survey programme around your next reimage rollout. We'll scope the methodology and return an all-in quote &mdash; travel included &mdash; within one business day.
+              <a href="/contact/" class="text-navy font-medium hover:opacity-80 transition-opacity">Talk to Alturascope</a> about building a survey programme around your next reimage rollout. We'll scope the methodology and return an all-in quote &mdash; travel included &mdash; within one business day.
             </p>
           </div>
         </div>
 
         <!-- Footer note -->
         <p class="mt-12 text-[0.85rem] text-midgrey/60 italic">
-          Alturascope delivers QSR pre-construction surveys and <a href="/services/commercial-kitchen-survey" class="hover:opacity-80 transition-opacity">commercial kitchen documentation</a> across all 50 US states, every Canadian province, and the United Kingdom.
+          Alturascope delivers QSR pre-construction surveys and <a href="/services/commercial-kitchen-survey/" class="hover:opacity-80 transition-opacity">commercial kitchen documentation</a> across all 50 US states, every Canadian province, and the United Kingdom.
         </p>
 
         <!-- Internal Links -->
         <div class="mt-12 pt-8 border-t border-border flex flex-wrap gap-6 text-sm">
-          <a href="/services/qsr-restaurant-survey" class="text-navy font-medium hover:opacity-80 transition-opacity">QSR survey services &rarr;</a>
-          <a href="/services/multi-site-rollout-documentation" class="text-navy font-medium hover:opacity-80 transition-opacity">Multi-site rollout documentation &rarr;</a>
-          <a href="/services/commercial-kitchen-survey" class="text-navy font-medium hover:opacity-80 transition-opacity">Commercial kitchen surveys &rarr;</a>
-          <a href="/services/pre-construction-site-intelligence" class="text-navy font-medium hover:opacity-80 transition-opacity">Pre-construction site intelligence &rarr;</a>
-          <a href="/insights/convenience-fuel-retail-site-survey-rollout" class="text-navy font-medium hover:opacity-80 transition-opacity">Convenience and fuel retail surveys &rarr;</a>
-          <a href="/insights/franchise-expansion-shell-survey-new-locations" class="text-navy font-medium hover:opacity-80 transition-opacity">Franchise shell surveys &rarr;</a>
-          <a href="/insights/qsr-franchise-kitchen-equipment-documentation" class="text-navy font-medium hover:opacity-80 transition-opacity">Kitchen equipment documentation &rarr;</a>
-          <a href="/insights" class="text-navy font-medium hover:opacity-80 transition-opacity">All insights &rarr;</a>
+          <a href="/services/qsr-restaurant-survey/" class="text-navy font-medium hover:opacity-80 transition-opacity">QSR survey services &rarr;</a>
+          <a href="/services/multi-site-rollout-documentation/" class="text-navy font-medium hover:opacity-80 transition-opacity">Multi-site rollout documentation &rarr;</a>
+          <a href="/services/commercial-kitchen-survey/" class="text-navy font-medium hover:opacity-80 transition-opacity">Commercial kitchen surveys &rarr;</a>
+          <a href="/services/pre-construction-site-intelligence/" class="text-navy font-medium hover:opacity-80 transition-opacity">Pre-construction site intelligence &rarr;</a>
+          <a href="/insights/convenience-fuel-retail-site-survey-rollout/" class="text-navy font-medium hover:opacity-80 transition-opacity">Convenience and fuel retail surveys &rarr;</a>
+          <a href="/insights/franchise-expansion-shell-survey-new-locations/" class="text-navy font-medium hover:opacity-80 transition-opacity">Franchise shell surveys &rarr;</a>
+          <a href="/insights/qsr-franchise-kitchen-equipment-documentation/" class="text-navy font-medium hover:opacity-80 transition-opacity">Kitchen equipment documentation &rarr;</a>
+          <a href="/insights/" class="text-navy font-medium hover:opacity-80 transition-opacity">All insights &rarr;</a>
         </div>
 
       </div>
@@ -304,7 +307,7 @@ const faqSchema = JSON.stringify({
         <p class="mt-4 text-offwhite/70 leading-body">
           Tell us how many locations, the typical size, and the programme timeline. We'll design the survey methodology and quote the entire programme &mdash; all-in, travel included.
         </p>
-        <a href="/contact" class="btn-primary mt-8">Start a Project</a>
+        <a href="/contact/" class="btn-primary mt-8">Start a Project</a>
       </div>
     </section>
 

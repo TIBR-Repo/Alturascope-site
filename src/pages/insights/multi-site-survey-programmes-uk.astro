@@ -6,7 +6,7 @@ const schema = JSON.stringify({
   "@type": "Article",
   "headline": "Multi-Site Survey Programmes in the UK: Why Nationwide Coverage Still Means Local Expertise",
   "author": { "@type": "Organization", "name": "Alturascope" },
-  "publisher": { "@type": "Organization", "name": "Alturascope", "url": "https://alturascope.com" },
+  "publisher": { "@type": "Organization", "name": "Alturascope", "url": "https://alturascope.com/" },
   "datePublished": "2026-04-07",
   "description": "UK retailers, QSR chains, and estates teams running multi-site refurbishment programmes need consistent survey data across every location. Here's why a single-source approach works better.",
   "mainEntityOfPage": "https://alturascope.com/insights/multi-site-survey-programmes-uk/"
@@ -16,7 +16,7 @@ const breadcrumbSchema = JSON.stringify({
   "@context": "https://schema.org",
   "@type": "BreadcrumbList",
   "itemListElement": [
-    { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://alturascope.com" },
+    { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://alturascope.com/" },
     { "@type": "ListItem", "position": 2, "name": "Insights", "item": "https://alturascope.com/insights/" },
     { "@type": "ListItem", "position": 3, "name": "Multi-Site Survey Programmes UK", "item": "https://alturascope.com/insights/multi-site-survey-programmes-uk/" }
   ]
@@ -71,6 +71,9 @@ const faqSchema = JSON.stringify({
           src="/Images/london2.jpg"
           alt="UK commercial streetscape representing multi-site survey programme coverage across England, Scotland, and Wales"
           class="w-full h-full object-cover opacity-25"
+          loading="eager"
+          fetchpriority="high"
+          decoding="async"
         />
         <div class="absolute inset-0 bg-[rgba(11,31,58,0.82)]"></div>
       </div>
@@ -127,10 +130,10 @@ const faqSchema = JSON.stringify({
         <h2 class="text-[1.6rem] font-light text-navy mt-16 mb-6">The Single-Source Alternative</h2>
         <div class="space-y-6 text-midgrey leading-body text-[1.05rem]">
           <p>
-            A <a href="/uk/multi-site-rollout-survey" class="text-navy font-medium hover:opacity-80 transition-opacity">single-source survey programme</a> applies one methodology across every location. One brief, one deliverable format, one quality standard, one platform. The programme manager deals with one point of contact instead of managing relationships with 10 regional firms.
+            A <a href="/uk/multi-site-rollout-survey/" class="text-navy font-medium hover:opacity-80 transition-opacity">single-source survey programme</a> applies one methodology across every location. One brief, one deliverable format, one quality standard, one platform. The programme manager deals with one point of contact instead of managing relationships with 10 regional firms.
           </p>
           <p>
-            This doesn't mean ignoring local knowledge. It means building a methodology that's robust enough to handle the full diversity of UK building stock while delivering consistent, comparable data. A <a href="/uk/heritage-building-survey" class="text-navy font-medium hover:opacity-80 transition-opacity">heritage building</a> in Bath gets the same quality of documentation as a modern unit in Milton Keynes &mdash; adapted for the property type but structured identically for the programme team.
+            This doesn't mean ignoring local knowledge. It means building a methodology that's robust enough to handle the full diversity of UK building stock while delivering consistent, comparable data. A <a href="/uk/heritage-building-survey/" class="text-navy font-medium hover:opacity-80 transition-opacity">heritage building</a> in Bath gets the same quality of documentation as a modern unit in Milton Keynes &mdash; adapted for the property type but structured identically for the programme team.
           </p>
           <p>
             The practical benefits are immediate:
@@ -168,20 +171,20 @@ const faqSchema = JSON.stringify({
           <p><span class="text-navy font-medium">Retail operators</span> &mdash; store refresh, format change, or portfolio rationalisation across multiple regions</p>
           <p><span class="text-navy font-medium">Pub and hospitality groups</span> &mdash; managed estate refurbishment programmes where condition assessment drives capital allocation</p>
           <p><span class="text-navy font-medium">NHS and public sector estates</span> &mdash; condition surveys across hospital trusts, school estates, or government property portfolios where standardised data supports RAAC assessments, fire safety reviews, or accessibility audits</p>
-          <p><span class="text-navy font-medium">PE-backed operators</span> &mdash; post-acquisition condition documentation for <a href="/insights/due-diligence-documentation-portfolio-acquisitions" class="text-navy font-medium hover:opacity-80 transition-opacity">portfolio due diligence</a> or capital planning across a newly acquired UK portfolio</p>
+          <p><span class="text-navy font-medium">PE-backed operators</span> &mdash; post-acquisition condition documentation for <a href="/insights/due-diligence-documentation-portfolio-acquisitions/" class="text-navy font-medium hover:opacity-80 transition-opacity">portfolio due diligence</a> or capital planning across a newly acquired UK portfolio</p>
         </div>
 
         <h2 class="text-[1.6rem] font-light text-navy mt-16 mb-6">What UK Design Teams Actually Need</h2>
         <div class="space-y-6 text-midgrey leading-body text-[1.05rem]">
           <p>
-            UK design teams working at RIBA Stage 1 and 2 need existing conditions data they can trust. Our standard <a href="/uk/pre-construction-survey" class="text-navy font-medium hover:opacity-80 transition-opacity">pre-construction survey</a> delivers:
+            UK design teams working at RIBA Stage 1 and 2 need existing conditions data they can trust. Our standard <a href="/uk/pre-construction-survey/" class="text-navy font-medium hover:opacity-80 transition-opacity">pre-construction survey</a> delivers:
           </p>
         </div>
 
         <div class="mt-8 space-y-6">
           <div class="border-l-2 border-gold pl-6">
             <h3 class="text-navy font-medium">Measured floor plans, sections, and elevations</h3>
-            <p class="mt-1 text-midgrey text-[0.95rem] leading-relaxed">From <a href="/uk/measured-building-survey" class="text-navy font-medium hover:opacity-80 transition-opacity">survey-grade point cloud data</a>, accurate to 5&ndash;12mm, exportable as .e57 and .rcp for Revit and AutoCAD integration</p>
+            <p class="mt-1 text-midgrey text-[0.95rem] leading-relaxed">From <a href="/uk/measured-building-survey/" class="text-navy font-medium hover:opacity-80 transition-opacity">survey-grade point cloud data</a>, accurate to 5&ndash;12mm, exportable as .e57 and .rcp for Revit and AutoCAD integration</p>
           </div>
           <div class="border-l-2 border-gold pl-6">
             <h3 class="text-navy font-medium">Navigable Matterport digital twin</h3>
@@ -193,11 +196,11 @@ const faqSchema = JSON.stringify({
           </div>
           <div class="border-l-2 border-gold pl-6">
             <h3 class="text-navy font-medium">Above-ceiling MEP documentation</h3>
-            <p class="mt-1 text-midgrey text-[0.95rem] leading-relaxed">360&deg; capture of existing services <a href="/uk/above-ceiling-mep-survey" class="text-navy font-medium hover:opacity-80 transition-opacity">above the ceiling grid</a>, where the most expensive surprises in commercial fit-out projects typically hide</p>
+            <p class="mt-1 text-midgrey text-[0.95rem] leading-relaxed">360&deg; capture of existing services <a href="/uk/above-ceiling-mep-survey/" class="text-navy font-medium hover:opacity-80 transition-opacity">above the ceiling grid</a>, where the most expensive surprises in commercial fit-out projects typically hide</p>
           </div>
           <div class="border-l-2 border-gold pl-6">
             <h3 class="text-navy font-medium">Thermal imaging overlay</h3>
-            <p class="mt-1 text-midgrey text-[0.95rem] leading-relaxed">FLIR capture identifying moisture ingress, insulation failures, and <a href="/insights/thermal-imaging-commercial-property-what-it-reveals" class="text-navy font-medium hover:opacity-80 transition-opacity">hidden thermal anomalies</a> that affect both design decisions and EPC performance</p>
+            <p class="mt-1 text-midgrey text-[0.95rem] leading-relaxed">FLIR capture identifying moisture ingress, insulation failures, and <a href="/insights/thermal-imaging-commercial-property-what-it-reveals/" class="text-navy font-medium hover:opacity-80 transition-opacity">hidden thermal anomalies</a> that affect both design decisions and EPC performance</p>
           </div>
         </div>
 
@@ -253,22 +256,22 @@ const faqSchema = JSON.stringify({
               UK multi-site survey programmes don't fail because of bad surveyors. They fail because of fragmented data from too many providers with too many formats. A single-source approach &mdash; one methodology, one format, one platform, one point of contact &mdash; gives programme teams the consistency they need to make portfolio-level decisions with confidence.
             </p>
             <p>
-              <a href="/contact" class="text-navy font-medium hover:opacity-80 transition-opacity">Talk to Alturascope</a> about your UK programme. We'll scope the methodology and return a per-site quote &mdash; travel included &mdash; within one business day.
+              <a href="/contact/" class="text-navy font-medium hover:opacity-80 transition-opacity">Talk to Alturascope</a> about your UK programme. We'll scope the methodology and return a per-site quote &mdash; travel included &mdash; within one business day.
             </p>
           </div>
         </div>
 
         <p class="mt-12 text-[0.85rem] text-midgrey/60 italic">
-          Alturascope delivers <a href="/uk/multi-site-rollout-survey" class="hover:opacity-80 transition-opacity">multi-site survey programmes</a> across England, Scotland, Wales, and Northern Ireland, as well as all 50 US states and every Canadian province.
+          Alturascope delivers <a href="/uk/multi-site-rollout-survey/" class="hover:opacity-80 transition-opacity">multi-site survey programmes</a> across England, Scotland, Wales, and Northern Ireland, as well as all 50 US states and every Canadian province.
         </p>
 
         <div class="mt-12 pt-8 border-t border-border flex flex-wrap gap-6 text-sm">
-          <a href="/uk/multi-site-rollout-survey" class="text-navy font-medium hover:opacity-80 transition-opacity">UK multi-site surveys &rarr;</a>
-          <a href="/uk" class="text-navy font-medium hover:opacity-80 transition-opacity">Alturascope UK &rarr;</a>
-          <a href="/uk/pre-construction-survey" class="text-navy font-medium hover:opacity-80 transition-opacity">UK pre-construction surveys &rarr;</a>
-          <a href="/insights/uk-retail-high-street-refurbishment-survey" class="text-navy font-medium hover:opacity-80 transition-opacity">UK retail refurbishment surveys &rarr;</a>
-          <a href="/insights/standardising-site-surveys-multi-site-operators" class="text-navy font-medium hover:opacity-80 transition-opacity">Standardising multi-site surveys &rarr;</a>
-          <a href="/insights" class="text-navy font-medium hover:opacity-80 transition-opacity">All insights &rarr;</a>
+          <a href="/uk/multi-site-rollout-survey/" class="text-navy font-medium hover:opacity-80 transition-opacity">UK multi-site surveys &rarr;</a>
+          <a href="/uk/" class="text-navy font-medium hover:opacity-80 transition-opacity">Alturascope UK &rarr;</a>
+          <a href="/uk/pre-construction-survey/" class="text-navy font-medium hover:opacity-80 transition-opacity">UK pre-construction surveys &rarr;</a>
+          <a href="/insights/uk-retail-high-street-refurbishment-survey/" class="text-navy font-medium hover:opacity-80 transition-opacity">UK retail refurbishment surveys &rarr;</a>
+          <a href="/insights/standardising-site-surveys-multi-site-operators/" class="text-navy font-medium hover:opacity-80 transition-opacity">Standardising multi-site surveys &rarr;</a>
+          <a href="/insights/" class="text-navy font-medium hover:opacity-80 transition-opacity">All insights &rarr;</a>
         </div>
 
       </div>
@@ -282,7 +285,7 @@ const faqSchema = JSON.stringify({
         <p class="mt-4 text-offwhite/70 leading-body">
           Share the number of locations, the regions, and the programme timeline. We'll design the survey approach and quote the programme end-to-end.
         </p>
-        <a href="/contact" class="btn-primary mt-8">Start a Project</a>
+        <a href="/contact/" class="btn-primary mt-8">Start a Project</a>
       </div>
     </section>
 

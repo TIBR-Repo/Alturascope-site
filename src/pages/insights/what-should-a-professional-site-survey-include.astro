@@ -6,17 +6,17 @@ const schema = JSON.stringify({
   "@type": "Article",
   "headline": "What a Professional Site Survey Should Actually Include — A Buyer's Guide",
   "author": { "@type": "Organization", "name": "Alturascope" },
-  "publisher": { "@type": "Organization", "name": "Alturascope", "url": "https://alturascope.com" },
+  "publisher": { "@type": "Organization", "name": "Alturascope", "url": "https://alturascope.com/" },
   "datePublished": "2026-02-20",
   "description": "Not all site surveys are equal. Before you commission one, here's what a professional survey package should actually deliver — and the questions worth asking any provider.",
-  "mainEntityOfPage": "https://alturascope.com/insights/what-should-a-professional-site-survey-include"
+  "mainEntityOfPage": "https://alturascope.com/insights/what-should-a-professional-site-survey-include/"
 });
 
 const breadcrumbSchema = JSON.stringify({
   "@context": "https://schema.org",
   "@type": "BreadcrumbList",
   "itemListElement": [
-    { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://alturascope.com" },
+    { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://alturascope.com/" },
     { "@type": "ListItem", "position": 2, "name": "Insights", "item": "https://alturascope.com/insights/" },
     { "@type": "ListItem", "position": 3, "name": "What Should a Professional Site Survey Include?", "item": "https://alturascope.com/insights/what-should-a-professional-site-survey-include/" }
   ]
@@ -62,6 +62,9 @@ const faqSchema = JSON.stringify({
           src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=1920&q=80"
           alt="Professional reviewing documentation and project plans at a desk"
           class="w-full h-full object-cover opacity-25"
+          loading="eager"
+          fetchpriority="high"
+          decoding="async"
         />
         <div class="absolute inset-0 bg-[rgba(11,31,58,0.82)]"></div>
       </div>
@@ -226,7 +229,7 @@ const faqSchema = JSON.stringify({
           <div>
             <h3 class="text-navy font-medium text-[1.05rem]">Can I commission a survey for a site I haven't acquired yet?</h3>
             <p class="mt-3 text-midgrey leading-body text-[1.05rem]">
-              Yes. <a href="/services/pre-construction-site-intelligence" class="text-navy font-medium hover:opacity-80 transition-opacity">Pre-acquisition surveys</a> are a common use case &mdash; documenting existing conditions, services, and any concerns before a purchase or lease commitment is made. This is particularly common for developers, asset managers, and <a href="/services/retail-rollout-documentation" class="text-navy font-medium hover:opacity-80 transition-opacity">retail operators</a> assessing multiple potential locations simultaneously.
+              Yes. <a href="/services/pre-construction-site-intelligence/" class="text-navy font-medium hover:opacity-80 transition-opacity">Pre-acquisition surveys</a> are a common use case &mdash; documenting existing conditions, services, and any concerns before a purchase or lease commitment is made. This is particularly common for developers, asset managers, and <a href="/services/retail-rollout-documentation/" class="text-navy font-medium hover:opacity-80 transition-opacity">retail operators</a> assessing multiple potential locations simultaneously.
             </p>
           </div>
         </div>
@@ -242,7 +245,7 @@ const faqSchema = JSON.stringify({
               The right provider isn't necessarily the one with the most impressive technology. It's the one who delivers a complete, well-structured record of your site that your entire team can use &mdash; and access &mdash; throughout the life of the project.
             </p>
             <p>
-              Ready to commission a site survey properly? <a href="/contact" class="text-navy font-medium hover:opacity-80 transition-opacity">Talk to Alturascope.</a> We'll come back within one business day with a scope recommendation and an all-in quote.
+              Ready to commission a site survey properly? <a href="/contact/" class="text-navy font-medium hover:opacity-80 transition-opacity">Talk to Alturascope.</a> We'll come back within one business day with a scope recommendation and an all-in quote.
             </p>
           </div>
         </div>
@@ -255,13 +258,13 @@ const faqSchema = JSON.stringify({
         <!-- Internal Links -->
         <div class="mt-12 pt-8 border-t border-border flex flex-wrap gap-6 text-sm">
           <a href="/" class="text-navy font-medium hover:opacity-80 transition-opacity">Home &rarr;</a>
-          <a href="/work" class="text-navy font-medium hover:opacity-80 transition-opacity">The Standard &rarr;</a>
-          <a href="/services/construction-documentation" class="text-navy font-medium hover:opacity-80 transition-opacity">Construction documentation &rarr;</a>
-          <a href="/services/specialist-projects" class="text-navy font-medium hover:opacity-80 transition-opacity">Specialist projects &rarr;</a>
-          <a href="/insights/what-is-a-matterport-digital-twin" class="text-navy font-medium hover:opacity-80 transition-opacity">What is a Matterport digital twin? &rarr;</a>
-          <a href="/insights/point-cloud-as-built-survey-architects-engineers" class="text-navy font-medium hover:opacity-80 transition-opacity">Point clouds &amp; as-built surveys &rarr;</a>
-          <a href="/insights/above-ceiling-mep-survey-fit-out" class="text-navy font-medium hover:opacity-80 transition-opacity">Above-ceiling MEP surveys &rarr;</a>
-          <a href="/insights" class="text-navy font-medium hover:opacity-80 transition-opacity">All insights &rarr;</a>
+          <a href="/work/" class="text-navy font-medium hover:opacity-80 transition-opacity">The Standard &rarr;</a>
+          <a href="/services/construction-documentation/" class="text-navy font-medium hover:opacity-80 transition-opacity">Construction documentation &rarr;</a>
+          <a href="/services/specialist-projects/" class="text-navy font-medium hover:opacity-80 transition-opacity">Specialist projects &rarr;</a>
+          <a href="/insights/what-is-a-matterport-digital-twin/" class="text-navy font-medium hover:opacity-80 transition-opacity">What is a Matterport digital twin? &rarr;</a>
+          <a href="/insights/point-cloud-as-built-survey-architects-engineers/" class="text-navy font-medium hover:opacity-80 transition-opacity">Point clouds &amp; as-built surveys &rarr;</a>
+          <a href="/insights/above-ceiling-mep-survey-fit-out/" class="text-navy font-medium hover:opacity-80 transition-opacity">Above-ceiling MEP surveys &rarr;</a>
+          <a href="/insights/" class="text-navy font-medium hover:opacity-80 transition-opacity">All insights &rarr;</a>
         </div>
 
       </div>
@@ -276,7 +279,7 @@ const faqSchema = JSON.stringify({
         <p class="mt-4 text-offwhite/70 leading-body">
           Tell us about the project and we'll come back within one business day with a scope recommendation and an all-in quote &mdash; travel included.
         </p>
-        <a href="/contact" class="btn-primary mt-8">Start a Project</a>
+        <a href="/contact/" class="btn-primary mt-8">Start a Project</a>
       </div>
     </section>
 
