@@ -186,7 +186,16 @@ def main():
                 continue
             if "@context" not in obj:
                 err(route, "JSON-LD block %d missing @context" % i)
-            if "@type" not in obj:
+            # A @graph node array is valid JSON-LD; each member carries its own @type.
+            if "@graph" in obj:
+                graph = obj["@graph"]
+                if not isinstance(graph, list) or not graph:
+                    err(route, "JSON-LD block %d has an empty or malformed @graph" % i)
+                else:
+                    for j, node in enumerate(graph):
+                        if not isinstance(node, dict) or "@type" not in node:
+                            err(route, "JSON-LD block %d @graph node %d missing @type" % (i, j))
+            elif "@type" not in obj:
                 err(route, "JSON-LD block %d missing @type" % i)
 
         # --- images ---

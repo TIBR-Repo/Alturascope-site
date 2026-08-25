@@ -1,20 +1,58 @@
 ---
 import Layout from "../layouts/Layout.astro";
 
-const schema = JSON.stringify({
-  "@context": "https://schema.org",
+const professionalServiceSchema = {
   "@type": "ProfessionalService",
   "name": "Alturascope",
-  "description": "Reality capture, 3D documentation, and conditions surveys for construction teams and specialist clients across the US, Canada, and the UK.",
+  "description": "Reality capture, site documentation and construction estimating for contractors, multi-site operators and specialist clients across the US, Canada, and the UK.",
   "url": "https://alturascope.com/",
   "areaServed": ["United States", "Canada", "United Kingdom"],
-  "serviceType": "Reality Capture and Site Documentation",
-  "sameAs": ["https://www.linkedin.com/company/111948383"]
+  "serviceType": ["Site Documentation", "Construction Estimating"],
+  "sameAs": ["https://www.linkedin.com/company/111948383"],
+  "hasOfferCatalog": {
+    "@type": "OfferCatalog",
+    "name": "Alturascope services",
+    "itemListElement": [
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Site documentation and reality capture",
+          "description": "Matterport digital twins, LiDAR point clouds and structured conditions reports for commercial buildings.",
+          "url": "https://alturascope.com/services/",
+        },
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Construction estimating",
+          "description": "Priced, white-labelled bid packages for contractors, returned under their own name inside two working days.",
+          "url": "https://alturascope.com/estimating/",
+        },
+      },
+    ],
+  },
+};
+
+const websiteSchema = {
+  "@type": "WebSite",
+  "@id": "https://alturascope.com/#website",
+  "url": "https://alturascope.com/",
+  "name": "Alturascope",
+  "alternateName": ["Alturascope Site Documentation", "The Alturascope Estimating Desk"],
+  "description": "Site documentation and construction estimating across the US, Canada and the UK.",
+  "publisher": { "@id": "https://alturascope.com/#organization" },
+};
+
+const schema = JSON.stringify({
+  "@context": "https://schema.org",
+  "@graph": [professionalServiceSchema, websiteSchema],
 });
 ---
 <Layout
-  title="Reality Capture & Site Documentation | US, Canada & UK | Alturascope"
-  description="Matterport digital twins, LiDAR point clouds, and structured conditions reports for construction teams and multi-site operators across the US, Canada, and UK. Travel included."
+  title="Site Documentation & Construction Estimating | Alturascope"
+  description="Digital twins, measured surveys and priced construction estimates for contractors and multi-site operators across the US, Canada and the UK. Bids in two days."
   canonical="https://alturascope.com/"
   schema={schema}
   fullWidth={true}
@@ -194,26 +232,31 @@ const schema = JSON.stringify({
         </p>
 
         <div class="mt-12" id="matterport-container">
-          <!-- REPLACE: Embed a proprietary Alturascope scan here as soon as one is available.
-          Temporary placeholder: use Matterport's public showcase scan.
-          Replace this immediately with a proprietary scan — ideally a commercial kitchen,
-          heritage interior, or complex multi-level commercial space. -->
-          <div class="relative w-full" style="aspect-ratio: 16/9;">
-            <iframe
-              data-src="https://my.matterport.com/show/?m=SxQL3iGyoDo"
-              width="100%"
-              height="100%"
-              style="aspect-ratio: 16/9; border: none; position: absolute; inset: 0;"
-              allowfullscreen
-              allow="xr-spatial-tracking"
+          <!-- Client scans are confidential; this is the measured mesh from a surveyed office
+          floor plate, which discloses no occupier, interior detail or person. Swap in a live
+          Matterport embed here once a client has given written permission to publish one. -->
+          <figure class="m-0">
+            <img
+              src="/Images/locations/digital-twin-mesh.jpg"
+              alt="Measured mesh of a surveyed office floor plate, showing every wall, column and riser in its true position"
+              width="1280"
+              height="720"
               loading="lazy"
-              title="Alturascope Matterport digital twin demonstration"
-            ></iframe>
-          </div>
+              decoding="async"
+              class="w-full h-auto"
+            />
+            <figcaption class="mt-6 text-offwhite/60 text-center text-[0.9rem] max-w-[620px] mx-auto leading-relaxed">
+              Beneath the walkthrough imagery sits this: a measured mesh of the floor plate, every
+              wall and column in its true position. It is why a dimension taken from a twin still
+              holds months later — and why the same record can be priced.
+            </figcaption>
+          </figure>
         </div>
 
-        <p class="mt-4 text-gold text-center text-[0.85rem]">
-          Navigate using mouse or touch. Every room. Every surface. Every measurement.
+        <p class="mt-8 text-center">
+          <a href="/work/locations/" class="text-gold border-b border-gold/40 hover:border-gold transition-colors text-[0.95rem]">
+            See 23 buildings we have documented &rarr;
+          </a>
         </p>
       </div>
     </section>
@@ -374,6 +417,22 @@ const schema = JSON.stringify({
           <a href="/work/sample-project/" class="btn-primary">Explore a sample project</a>
           <a href="/contact/" class="btn-secondary-light">Tell Us About Your Project</a>
         </div>
+      </div>
+    </section>
+
+    <!-- SECTION 8b: Client reference -->
+    <section class="bg-white section-padding">
+      <div class="max-w-[900px] mx-auto px-6 text-center">
+        <p class="label text-gold mb-8">Client Reference</p>
+        <blockquote class="text-[1.2rem] md:text-[1.45rem] font-light text-navy leading-relaxed">
+          &ldquo;You have been great so far, and deliver exceptional quality reports and data,
+          miles ahead of our previous reports. Your response time is on par as well, and the
+          urgency in your scope is never overlooked. Here&rsquo;s to 22 more locations!&rdquo;
+        </blockquote>
+        <p class="mt-8 text-midgrey text-[0.9rem]">
+          Nathaniel Lindley &mdash; Construction Manager, West Coast
+        </p>
+        <p class="mt-1 text-midgrey/70 text-[0.8rem]">National retail rollout programme</p>
       </div>
     </section>
 

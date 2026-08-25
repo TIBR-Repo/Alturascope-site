@@ -1,0 +1,177 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import locations from "../../data/locations.json";
+
+const schema = JSON.stringify({
+  "@context": "https://schema.org",
+  "@type": "CollectionPage",
+  "name": "Surveyed Locations",
+  "description":
+    "A sample of commercial locations documented by Alturascope across the United States - retail, office, mall and transport sites captured as Matterport digital twins.",
+  "url": "https://alturascope.com/work/locations/",
+  "isPartOf": { "@id": "https://alturascope.com/#organization" },
+});
+
+const breadcrumbSchema = JSON.stringify({
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", position: 1, name: "Home", item: "https://alturascope.com/" },
+    { "@type": "ListItem", position: 2, name: "The Standard", item: "https://alturascope.com/work/" },
+    { "@type": "ListItem", position: 3, name: "Locations", item: "https://alturascope.com/work/locations/" },
+  ],
+});
+---
+
+<Layout
+  title="Surveyed Locations | Site Survey Portfolio | Alturascope"
+  description="A sample of commercial sites documented by Alturascope - retail, office, mall and transport locations across the US, each captured as a navigable digital twin."
+  canonical="https://alturascope.com/work/locations/"
+  schema={schema}
+  breadcrumbSchema={breadcrumbSchema}
+>
+  <section class="bg-navy pt-32 pb-20 md:pt-40 md:pb-24">
+    <div class="max-w-[1100px] mx-auto px-6">
+      <p class="label mb-5">Selected Work</p>
+      <h1 class="text-[2rem] md:text-[2.6rem] font-light text-offwhite leading-tight max-w-3xl">
+        A sample of the buildings we&rsquo;ve been inside.
+      </h1>
+      <p class="mt-6 text-offwhite/70 leading-relaxed max-w-2xl">
+        Every image below is the opening view of a real Matterport digital twin captured by
+        Alturascope &mdash; not stock photography, and not a render. Shopping centres, office
+        floors, high-street units, a transport terminus, and a fair number of empty shells
+        halfway through their next life.
+      </p>
+    </div>
+  </section>
+
+  <section class="bg-offwhite py-12 md:py-16 border-b border-border">
+    <div class="max-w-[1100px] mx-auto px-6">
+      <div class="border-l-2 border-gold pl-6 max-w-3xl">
+        <p class="text-navy leading-relaxed">
+          <span class="font-medium">This is a sample, not a client list.</span> It shows the
+          kind of building we work in and the standard of capture, nothing more. Several hundred
+          further surveys have been delivered under contract and issued under other firms&rsquo;
+          names; those don&rsquo;t appear here and never will.
+        </p>
+        <p class="mt-4 text-midgrey text-[0.95rem] leading-relaxed">
+          Locations are identified by centre or street only. Occupiers, suite numbers, lease
+          details and survey findings stay confidential to the client who commissioned them.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section class="bg-white section-padding">
+    <div class="max-w-[1100px] mx-auto px-6">
+      <div class="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+        <div>
+          <p class="label mb-4">What a Twin Actually Is</p>
+          <h2 class="text-[1.8rem] md:text-[2.1rem] font-light text-navy leading-tight">
+            Underneath the photography, it&rsquo;s geometry.
+          </h2>
+          <p class="mt-6 text-midgrey leading-relaxed">
+            Strip the panoramic imagery away and what remains is a measured mesh of the floor
+            plate &mdash; every wall, column, riser and reveal in its true position. That is why
+            a dimension pulled from a twin holds up months later, and why a quantity taken off
+            one can be traced back to the surface it came from.
+          </p>
+          <p class="mt-4 text-midgrey leading-relaxed">
+            It is also the reason a survey and an estimate belong on the same platform: the
+            measurement and the money come from one record of the building.
+          </p>
+          <div class="mt-8 flex flex-wrap gap-x-8 gap-y-3">
+            <a href="/services/" class="text-navy font-medium border-b border-gold pb-0.5 hover:opacity-80 transition-opacity">How a survey works &rarr;</a>
+            <a href="/estimating/" class="text-navy font-medium border-b border-gold pb-0.5 hover:opacity-80 transition-opacity">Pricing from the same record &rarr;</a>
+          </div>
+        </div>
+        <figure class="bg-navy p-4 md:p-6">
+          <img
+            src="/Images/locations/digital-twin-mesh.jpg"
+            alt="Measured mesh view of a surveyed office floor plate, showing wall and column positions extracted from a Matterport digital twin"
+            width="1280"
+            height="720"
+            loading="lazy"
+            decoding="async"
+            class="w-full h-auto"
+          />
+          <figcaption class="mt-4 text-offwhite/60 text-[0.8rem] leading-relaxed">
+            Mesh view of a surveyed office floor plate &mdash; Chelmsford, Massachusetts. The same
+            capture that produces the walkthrough produces this.
+          </figcaption>
+        </figure>
+      </div>
+    </div>
+  </section>
+
+  <section class="bg-offwhite section-padding">
+    <div class="max-w-[1400px] mx-auto px-6 lg:px-10">
+      <div class="flex flex-wrap items-end justify-between gap-4 mb-12">
+        <div>
+          <p class="label mb-4">Locations</p>
+          <h2 class="text-[1.8rem] md:text-[2.1rem] font-light text-navy leading-tight">
+            {locations.length} sites, opened where the surveyor started.
+          </h2>
+        </div>
+        <p class="text-midgrey text-[0.9rem] max-w-sm leading-relaxed">
+          Each frame is the twin&rsquo;s own opening view &mdash; the first thing a client sees
+          when the link lands.
+        </p>
+      </div>
+
+      <ul class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 list-none p-0 m-0">
+        {locations.map((loc) => (
+          <li class="card overflow-hidden">
+            <img
+              src={"/Images/locations/" + loc.slug + ".jpg"}
+              alt={loc.label + " - commercial site documented by Alturascope as a Matterport digital twin"}
+              width={loc.w}
+              height={loc.h}
+              loading="lazy"
+              decoding="async"
+              class="w-full h-[220px] object-cover"
+            />
+            <div class="p-5">
+              <h3 class="text-navy font-medium leading-snug">{loc.label}</h3>
+              <p class="mt-1.5 text-midgrey text-[0.85rem]">{loc.kind}</p>
+            </div>
+          </li>
+        ))}
+      </ul>
+    </div>
+  </section>
+
+  <section class="bg-navy section-padding">
+    <div class="max-w-[900px] mx-auto px-6 text-center">
+      <p class="label mb-8">Client Reference</p>
+      <blockquote class="text-[1.25rem] md:text-[1.5rem] font-light text-offwhite leading-relaxed">
+        &ldquo;You have been great so far, and deliver exceptional quality reports and data,
+        miles ahead of our previous reports. Your response time is on par as well, and the
+        urgency in your scope is never overlooked. Here&rsquo;s to 22 more locations!&rdquo;
+      </blockquote>
+      <p class="mt-8 text-offwhite/60 text-[0.9rem]">
+        Nathaniel Lindley &mdash; Construction Manager, West Coast
+      </p>
+      <p class="mt-1 text-offwhite/40 text-[0.8rem]">
+        National retail rollout programme
+      </p>
+    </div>
+  </section>
+
+  <section class="bg-white section-padding">
+    <div class="max-w-[760px] mx-auto px-6 text-center">
+      <h2 class="text-[1.8rem] md:text-[2.1rem] font-light text-navy leading-tight">
+        Your building next.
+      </h2>
+      <p class="mt-6 text-midgrey leading-relaxed">
+        One site or a hundred, the standard is the same and travel is included. Tell us where
+        the buildings are and what the programme needs to answer.
+      </p>
+      <div class="mt-10 flex flex-wrap gap-4 justify-center">
+        <a href="/contact/" class="btn-primary">Discuss a survey</a>
+        <a href="/estimating/sample-quote-pack/" class="btn-secondary">See a priced estimate pack</a>
+      </div>
+    </div>
+  </section>
+</Layout>
+

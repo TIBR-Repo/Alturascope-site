@@ -49,6 +49,24 @@ const organizationSchema = JSON.stringify({
     "Quantity take-off",
     "Bid and tender pricing"
   ],
+  "makesOffer": [
+    {
+      "@type": "Offer",
+      "itemOffered": {
+        "@type": "Service",
+        "name": "Site documentation and reality capture",
+        "url": "https://alturascope.com/services/"
+      }
+    },
+    {
+      "@type": "Offer",
+      "itemOffered": {
+        "@type": "Service",
+        "name": "Construction estimating",
+        "url": "https://alturascope.com/estimating/"
+      }
+    }
+  ],
 });
 
 const navLinks = [
@@ -210,6 +228,7 @@ const navLinks = [
               <h4 class="text-xs font-medium uppercase tracking-label text-white/50 mb-6">Estimating</h4>
               <nav class="flex flex-col gap-3">
                 <a href="/estimating/" class="text-sm text-white/70 hover:text-white transition-colors">Estimating Desk</a>
+                <a href="/estimating/sample-quote-pack/" class="text-sm text-white/70 hover:text-white transition-colors">Sample Estimate Pack</a>
                 <a href="/estimating/basis-of-estimate/" class="text-sm text-white/70 hover:text-white transition-colors">Basis of Estimate</a>
                 <a href="/uk/estimating/" class="text-sm text-white/70 hover:text-white transition-colors">Estimating UK</a>
                 <a href="/estimating/#send-a-package" class="text-sm text-white/70 hover:text-white transition-colors">Send a Package</a>
@@ -221,6 +240,7 @@ const navLinks = [
               <h4 class="text-xs font-medium uppercase tracking-label text-white/50 mb-6">Company</h4>
               <nav class="flex flex-col gap-3">
                 <a href="/work/" class="text-sm text-white/70 hover:text-white transition-colors">The Standard</a>
+                <a href="/work/locations/" class="text-sm text-white/70 hover:text-white transition-colors">Surveyed Locations</a>
                 <a href="/about/" class="text-sm text-white/70 hover:text-white transition-colors">About</a>
                 <a href="/insights/" class="text-sm text-white/70 hover:text-white transition-colors">Insights</a>
                 <a href="/contact/" class="text-sm text-white/70 hover:text-white transition-colors">Contact</a>

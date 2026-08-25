@@ -1,0 +1,163 @@
+[
+ {
+  "slug": "apollo-drive-chelmsford",
+  "label": "Apollo Drive, Chelmsford, Massachusetts",
+  "kind": "Office",
+  "w": 1200,
+  "h": 675
+ },
+ {
+  "slug": "pavilions-lane-sacramento",
+  "label": "Pavilions Lane, Sacramento, California",
+  "kind": "Open-air retail",
+  "w": 1200,
+  "h": 675
+ },
+ {
+  "slug": "galleria-roseville",
+  "label": "Galleria, Roseville, California",
+  "kind": "Enclosed mall",
+  "w": 1200,
+  "h": 675
+ },
+ {
+  "slug": "corte-madera",
+  "label": "Corte Madera, California",
+  "kind": "Open-air retail",
+  "w": 1200,
+  "h": 674
+ },
+ {
+  "slug": "town-and-country-houston",
+  "label": "Town & Country, Houston, Texas",
+  "kind": "New-build shell",
+  "w": 1200,
+  "h": 675
+ },
+ {
+  "slug": "pennsylvania-avenue-washington-dc",
+  "label": "Pennsylvania Avenue, Washington, DC",
+  "kind": "Office",
+  "w": 1200,
+  "h": 675
+ },
+ {
+  "slug": "henderson-avenue-dallas",
+  "label": "Henderson Avenue, Dallas, Texas",
+  "kind": "Mixed-use retail",
+  "w": 1200,
+  "h": 675
+ },
+ {
+  "slug": "clearfork-fort-worth",
+  "label": "Clearfork, Fort Worth, Texas",
+  "kind": "Retail interior",
+  "w": 1200,
+  "h": 675
+ },
+ {
+  "slug": "santan-village-gilbert",
+  "label": "SanTan Village, Gilbert, Arizona",
+  "kind": "Open-air retail",
+  "w": 1200,
+  "h": 675
+ },
+ {
+  "slug": "scottsdale-fashion-square",
+  "label": "Scottsdale Fashion Square, Arizona",
+  "kind": "Enclosed mall",
+  "w": 1200,
+  "h": 675
+ },
+ {
+  "slug": "kierland-commons-scottsdale",
+  "label": "Kierland Commons, Scottsdale, Arizona",
+  "kind": "Open-air retail",
+  "w": 1200,
+  "h": 675
+ },
+ {
+  "slug": "grand-central-terminal-new-york",
+  "label": "Grand Central Terminal, New York",
+  "kind": "Transport hub",
+  "w": 1200,
+  "h": 675
+ },
+ {
+  "slug": "queen-anne-seattle",
+  "label": "Queen Anne, Seattle, Washington",
+  "kind": "Residential over retail",
+  "w": 1200,
+  "h": 675
+ },
+ {
+  "slug": "brea-mall",
+  "label": "Brea Mall, Brea, California",
+  "kind": "Enclosed mall",
+  "w": 1200,
+  "h": 675
+ },
+ {
+  "slug": "mission-viejo",
+  "label": "Mission Viejo, California",
+  "kind": "Enclosed mall",
+  "w": 1200,
+  "h": 675
+ },
+ {
+  "slug": "j-street-sacramento",
+  "label": "J Street, Sacramento, California",
+  "kind": "Vacant unit",
+  "w": 1200,
+  "h": 675
+ },
+ {
+  "slug": "the-gardens-mall-palm-beach",
+  "label": "The Gardens Mall, Palm Beach Gardens, Florida",
+  "kind": "Enclosed mall",
+  "w": 1200,
+  "h": 675
+ },
+ {
+  "slug": "old-orchard-skokie",
+  "label": "Old Orchard, Skokie, Illinois",
+  "kind": "Open-air retail",
+  "w": 1200,
+  "h": 675
+ },
+ {
+  "slug": "spectrum-center-irvine",
+  "label": "Spectrum Center, Irvine, California",
+  "kind": "Open-air retail",
+  "w": 1200,
+  "h": 675
+ },
+ {
+  "slug": "berkeley-way",
+  "label": "Berkeley Way, Berkeley, California",
+  "kind": "Office",
+  "w": 1200,
+  "h": 675
+ },
+ {
+  "slug": "lincoln-road-miami-beach",
+  "label": "Lincoln Road, Miami Beach, Florida",
+  "kind": "High-street retail",
+  "w": 1200,
+  "h": 675
+ },
+ {
+  "slug": "inwood-village-dallas",
+  "label": "Inwood Village, Dallas, Texas",
+  "kind": "Retail parade",
+  "w": 1200,
+  "h": 675
+ },
+ {
+  "slug": "mckinney-avenue-dallas",
+  "label": "McKinney Avenue, Dallas, Texas",
+  "kind": "Vacant retail unit",
+  "w": 1200,
+  "h": 675
+ }
+]

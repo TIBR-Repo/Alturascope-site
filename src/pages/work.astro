@@ -149,21 +149,33 @@ const schema = JSON.stringify({
           </p>
         </div>
 
-        <!-- REPLACE: Proprietary Alturascope scan — ideally a commercial kitchen, heritage interior, or complex multi-level space. -->
+        <!-- Live client scans are confidential. This is the measured mesh underlying one of
+        them, which discloses no occupier, interior detail or person. A live embed can replace
+        it here once a client has given written permission to publish their model. -->
         <div class="max-w-[1100px] mx-auto">
-          <iframe
-            loading="lazy"
-            src="https://my.matterport.com/show/?m=SxQL3iGyoDo"
-            width="100%"
-            style="aspect-ratio: 16/9; border: none;"
-            allowfullscreen
-            allow="xr-spatial-tracking"
-            title="Navigable digital twin demonstration">
-          </iframe>
+          <figure class="m-0">
+            <img
+              src="/Images/locations/digital-twin-mesh.jpg"
+              alt="Measured mesh of a surveyed office floor plate, showing every wall, column and riser in its true position"
+              width="1280"
+              height="720"
+              loading="lazy"
+              decoding="async"
+              class="w-full h-auto"
+            />
+          </figure>
         </div>
 
-        <p class="text-gold text-[0.85rem] text-center mt-4">
-          Navigate using mouse or touch. This is a live model &mdash; not a video or a photograph.
+        <p class="text-offwhite/60 text-[0.9rem] text-center mt-6 max-w-[620px] mx-auto leading-relaxed">
+          The model your team navigates is built on this &mdash; a measured mesh of the floor
+          plate rather than a photograph of it. Client models stay private to the client, so what
+          we can show publicly is the geometry and the buildings themselves.
+        </p>
+
+        <p class="text-center mt-8">
+          <a href="/work/locations/" class="text-gold border-b border-gold/40 hover:border-gold transition-colors text-[0.95rem]">
+            See 23 buildings we have documented &rarr;
+          </a>
         </p>
       </div>
     </section>

@@ -1,0 +1,321 @@
+---
+import Layout from "../../layouts/Layout.astro";
+
+const usPages = [
+  { n: 1, cap: "Cover - the headline figures, the unit rate and the audit state, before you open anything." },
+  { n: 2, cap: "Six deliverables that come back on every pack, without exception." },
+  { n: 3, cap: "Priced Schedule of Works - 23 trade sections, net cost, gross profit and price all visible." },
+  { n: 4, cap: "One section opened to line level. Every line carries its quantity, its rate and its source." },
+  { n: 5, cap: "The take-off overlay. Quantities are measured off a calibrated drawing, not typed in." },
+  { n: 6, cap: "Margin analysis by trade group - where the job makes money, before you decide what to submit." },
+  { n: 7, cap: "The machine audit. Eight deterministic checks, all green, or the pack does not leave." },
+  { n: 8, cap: "Basis of estimate - documents priced by number and revision, inclusions, exclusions, assumptions." },
+  { n: 9, cap: "The client-ready bid document, white-labelled to the contractor's own letterhead." },
+  { n: 10, cap: "The working file - the live estimate in Vyntworks that the client can open and adjust." },
+  { n: 11, cap: "Engagement - three ways in, starting with the one that costs nothing." },
+];
+
+const schema = JSON.stringify({
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "name": "Sample Estimate Pack",
+  "description":
+    "A complete demonstration estimate pack from the Alturascope estimating desk - every page of a priced construction bid, shown in full. US and UK editions available to download.",
+  "url": "https://alturascope.com/estimating/sample-quote-pack/",
+  "isPartOf": { "@id": "https://alturascope.com/#organization" },
+});
+
+const breadcrumbSchema = JSON.stringify({
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", position: 1, name: "Home", item: "https://alturascope.com/" },
+    { "@type": "ListItem", position: 2, name: "Estimating", item: "https://alturascope.com/estimating/" },
+    { "@type": "ListItem", position: 3, name: "Sample Estimate Pack", item: "https://alturascope.com/estimating/sample-quote-pack/" },
+  ],
+});
+
+const faqSchema = JSON.stringify({
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      name: "Are the figures in the sample estimate pack real?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "No. Every figure is illustrative and every name, address and drawing number is fictional. The format, the structure and the audit are exactly what a live pack contains - the pack is a demonstration of the deliverable, not a record of a real project.",
+      },
+    },
+    {
+      "@type": "Question",
+      name: "What is in an Alturascope estimate pack?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "Six deliverables come back on every pack: a priced schedule of works, a traceable quantity take-off, a margin analysis, a machine audit report, a stated basis of estimate, and a client-ready bid document on your own letterhead. A seventh - the live working file in Vyntworks - is not a document at all.",
+      },
+    },
+    {
+      "@type": "Question",
+      name: "How long does an estimate take?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "Two working days is the typical turnaround from receipt of a complete drawing set. Larger or more complex packages are agreed before work starts.",
+      },
+    },
+    {
+      "@type": "Question",
+      name: "Does the bid go out under Alturascope's name?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "No. The bid document is white-labelled to your letterhead, your terms and your covering narrative. It arrives as a draft in your own Vyntworks account for review, and it goes out as your submission.",
+      },
+    },
+  ],
+});
+---
+
+<Layout
+  title="Sample Estimate Pack | Every Page | Alturascope Estimating"
+  description="A complete demonstration estimate pack, shown in full - priced schedule, traceable take-off, margin analysis and machine audit. Download the US or UK edition."
+  canonical="https://alturascope.com/estimating/sample-quote-pack/"
+  schema={schema}
+  breadcrumbSchema={breadcrumbSchema}
+  faqSchema={faqSchema}
+  hreflang={[
+    { lang: "en", href: "https://alturascope.com/estimating/sample-quote-pack/" },
+    { lang: "en-gb", href: "https://alturascope.com/estimating/sample-quote-pack/" },
+    { lang: "x-default", href: "https://alturascope.com/estimating/sample-quote-pack/" },
+  ]}
+>
+  <!-- Hero -->
+  <section class="bg-navy pt-32 pb-20 md:pt-40 md:pb-24">
+    <div class="max-w-[1100px] mx-auto px-6">
+      <p class="label mb-5">The Estimating Desk &mdash; What Comes Back</p>
+      <h1 class="text-[2rem] md:text-[2.6rem] font-light text-offwhite leading-tight max-w-3xl">
+        Judge the work before you send us any of yours.
+      </h1>
+      <p class="mt-6 text-offwhite/70 leading-relaxed max-w-2xl">
+        Most estimating services ask you to hand over a live tender on the strength of a phone
+        call. This is the alternative: a complete pack for a demonstration project, published in
+        full &mdash; every page, every section, every check &mdash; so you can decide whether the
+        work is any good before there is anything at stake.
+      </p>
+
+      <dl class="mt-12 grid grid-cols-2 md:grid-cols-4 gap-8 max-w-3xl">
+        <div>
+          <dt class="text-[0.7rem] uppercase tracking-label text-gold">Bid Total</dt>
+          <dd class="mt-2 text-[1.6rem] font-light text-offwhite">$1,853,500</dd>
+        </div>
+        <div>
+          <dt class="text-[0.7rem] uppercase tracking-label text-gold">Trade Sections</dt>
+          <dd class="mt-2 text-[1.6rem] font-light text-offwhite">23</dd>
+        </div>
+        <div>
+          <dt class="text-[0.7rem] uppercase tracking-label text-gold">Audit Checks</dt>
+          <dd class="mt-2 text-[1.6rem] font-light text-offwhite">8 / 8</dd>
+        </div>
+        <div>
+          <dt class="text-[0.7rem] uppercase tracking-label text-gold">Turnaround</dt>
+          <dd class="mt-2 text-[1.6rem] font-light text-offwhite">2 days</dd>
+        </div>
+      </dl>
+
+      <div class="mt-12 flex flex-wrap gap-4">
+        <a href="/downloads/alturascope-demo-estimate-pack-us.pdf" class="btn-primary" download>
+          Download the US pack (PDF)
+        </a>
+        <a href="/downloads/alturascope-demo-estimate-pack-uk.pdf" class="btn-secondary-light" download>
+          Download the UK pack (PDF)
+        </a>
+      </div>
+      <p class="mt-5 text-offwhite/40 text-[0.8rem]">
+        No form, no email address. 11 pages, roughly 1&nbsp;MB.
+      </p>
+    </div>
+  </section>
+
+  <!-- Disclosure -->
+  <section class="bg-offwhite py-12 md:py-16 border-b border-border">
+    <div class="max-w-[1100px] mx-auto px-6">
+      <div class="border-l-2 border-gold pl-6 max-w-3xl">
+        <p class="text-navy leading-relaxed">
+          <span class="font-medium">This is a demonstration pack.</span> Every figure in it is
+          illustrative, and every name, address and drawing number is fictional &mdash; Project
+          Beacon and Project Halcyon are not real jobs, and the contractors named on the bid
+          letters do not exist.
+        </p>
+        <p class="mt-4 text-midgrey text-[0.95rem] leading-relaxed">
+          What is real is the format, the structure and the audit. A live pack is built by the
+          same process, carries the same six deliverables and passes the same eight checks. Real
+          client work is confidential and is never published.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Video -->
+  <section class="bg-white section-padding">
+    <div class="max-w-[1000px] mx-auto px-6">
+      <div class="text-center max-w-2xl mx-auto">
+        <p class="label mb-4">Two Minutes</p>
+        <h2 class="text-[1.8rem] md:text-[2.1rem] font-light text-navy leading-tight">
+          The whole pack, turned page by page.
+        </h2>
+        <p class="mt-6 text-midgrey leading-relaxed">
+          If you would rather not download anything, watch it instead. No commentary and no
+          voiceover &mdash; just the document.
+        </p>
+      </div>
+      <div class="mt-12">
+        <video
+          controls
+          preload="none"
+          playsinline
+          poster="/Images/pack/us-01.jpg"
+          class="w-full h-auto bg-navy"
+          width="1920"
+          height="1080"
+        >
+          <source src="/video/alturascope-estimate-pack.mp4" type="video/mp4" />
+          Your browser cannot play this video. The pack is available as a PDF above.
+        </video>
+      </div>
+    </div>
+  </section>
+
+  <!-- Page by page -->
+  <section class="bg-offwhite section-padding">
+    <div class="max-w-[1400px] mx-auto px-6 lg:px-10">
+      <div class="max-w-2xl mb-12">
+        <p class="label mb-4">Page by Page</p>
+        <h2 class="text-[1.8rem] md:text-[2.1rem] font-light text-navy leading-tight">
+          Nothing held back for the sales call.
+        </h2>
+        <p class="mt-6 text-midgrey leading-relaxed">
+          The US edition in full. The UK edition follows the same eleven pages against a Cat B
+          office fit-out in central London, priced in pounds and per square metre.
+        </p>
+      </div>
+
+      <ol class="grid grid-cols-1 md:grid-cols-2 gap-8 list-none p-0 m-0">
+        {usPages.map((p) => (
+          <li class="card overflow-hidden">
+            <img
+              src={"/Images/pack/us-" + String(p.n).padStart(2, "0") + ".jpg"}
+              alt={"Page " + p.n + " of the Alturascope demonstration estimate pack - " + p.cap}
+              width="1400"
+              height="989"
+              loading="lazy"
+              decoding="async"
+              class="w-full h-auto border-b border-border"
+            />
+            <div class="p-5 flex gap-4">
+              <span class="text-gold text-[0.8rem] tabular-nums pt-0.5">
+                {String(p.n).padStart(2, "0")}
+              </span>
+              <p class="text-midgrey text-[0.9rem] leading-relaxed">{p.cap}</p>
+            </div>
+          </li>
+        ))}
+      </ol>
+    </div>
+  </section>
+
+  <!-- UK edition -->
+  <section class="bg-white section-padding">
+    <div class="max-w-[1100px] mx-auto px-6">
+      <div class="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+        <figure>
+          <img
+            src="/Images/pack/uk-01.jpg"
+            alt="Cover of the UK edition of the Alturascope demonstration estimate pack, showing a tender total of GBP 1,362,900 for a Cat B office fit-out"
+            width="1400"
+            height="989"
+            loading="lazy"
+            decoding="async"
+            class="w-full h-auto border border-border"
+          />
+        </figure>
+        <div>
+          <p class="label mb-4">UK Edition</p>
+          <h2 class="text-[1.8rem] md:text-[2.1rem] font-light text-navy leading-tight">
+            Priced the way a UK tender is read.
+          </h2>
+          <p class="mt-6 text-midgrey leading-relaxed">
+            Project Halcyon is a 1,400&nbsp;m&sup2; NIA Cat B office fit-out in central London,
+            returning a tender total of &pound;1,362,900 at &pound;974/m&sup2;. Same six
+            deliverables, same eight checks &mdash; expressed in preliminaries, provisional sums
+            and a unit rate a UK quantity surveyor can benchmark on sight.
+          </p>
+          <div class="mt-8 flex flex-wrap gap-x-8 gap-y-3">
+            <a href="/downloads/alturascope-demo-estimate-pack-uk.pdf" download class="text-navy font-medium border-b border-gold pb-0.5 hover:opacity-80 transition-opacity">Download the UK pack &rarr;</a>
+            <a href="/uk/estimating/" class="text-navy font-medium border-b border-gold pb-0.5 hover:opacity-80 transition-opacity">UK estimating desk &rarr;</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- What it does not do -->
+  <section class="bg-navy section-padding">
+    <div class="max-w-[1100px] mx-auto px-6">
+      <div class="max-w-2xl">
+        <p class="label mb-4">Read This Part Too</p>
+        <h2 class="text-[1.8rem] md:text-[2.1rem] font-light text-offwhite leading-tight">
+          What the pack does not do.
+        </h2>
+      </div>
+      <div class="mt-12 grid md:grid-cols-3 gap-10">
+        <div>
+          <h3 class="text-offwhite font-medium">It does not price your risk</h3>
+          <p class="mt-3 text-offwhite/60 text-[0.95rem] leading-relaxed">
+            Rates reflect a major-metro commercial build-out. Your labour, your supply chain and
+            your appetite for a given job are yours to apply. The margin page exists so you can
+            do exactly that before you submit.
+          </p>
+        </div>
+        <div>
+          <h3 class="text-offwhite font-medium">It does not replace your review</h3>
+          <p class="mt-3 text-offwhite/60 text-[0.95rem] leading-relaxed">
+            The audit is a quality gate, not a commercial review. Every pack is reviewed and
+            signed off by a career estimator before release. You review it again. It is your bid,
+            your number and your name on the submission.
+          </p>
+        </div>
+        <div>
+          <h3 class="text-offwhite font-medium">It does not survey the building</h3>
+          <p class="mt-3 text-offwhite/60 text-[0.95rem] leading-relaxed">
+            Quantities are measured from the drawings you supply. Where the drawings are thin, a
+            site survey closes the gap &mdash; which is the other half of what we do.
+            <a href="/work/locations/" class="text-gold border-b border-gold/40 hover:border-gold transition-colors">See the buildings &rarr;</a>
+          </p>
+        </div>
+      </div>
+      <p class="mt-12 text-offwhite/50 text-[0.9rem] max-w-3xl leading-relaxed">
+        The full liability position, the ranking of documents and the seven statements every pack
+        is issued against are set out on the
+        <a href="/estimating/basis-of-estimate/" class="text-gold border-b border-gold/40 hover:border-gold transition-colors">basis of estimate</a>
+        page.
+      </p>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="bg-offwhite section-padding">
+    <div class="max-w-[760px] mx-auto px-6 text-center">
+      <h2 class="text-[1.8rem] md:text-[2.1rem] font-light text-navy leading-tight">
+        The first one is on us.
+      </h2>
+      <p class="mt-6 text-midgrey leading-relaxed">
+        Send one real package and get this back against your own drawings. If it comes back
+        faster and better than you would have produced yourself, we carry on. If it does not, you
+        have lost nothing and we part as friends.
+      </p>
+      <div class="mt-10 flex flex-wrap gap-4 justify-center">
+        <a href="/estimating/#send-a-package" class="btn-primary">Send a package</a>
+        <a href="/estimating/" class="btn-secondary">How the desk works</a>
+      </div>
+    </div>
+  </section>
+</Layout>
