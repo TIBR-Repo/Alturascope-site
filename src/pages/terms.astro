@@ -1,18 +1,29 @@
 ---
 import Layout from "../layouts/Layout.astro";
+
+const breadcrumbSchema = JSON.stringify({
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://alturascope.com/" },
+    { "@type": "ListItem", "position": 2, "name": "Terms", "item": "https://alturascope.com/terms/" }
+  ]
+});
 ---
 <Layout
   title="Terms | Alturascope"
-  description="Terms governing the use of the Alturascope website."
+  description="Terms governing use of the Alturascope website, and the basis on which survey and estimating engagements are undertaken."
   canonical="https://alturascope.com/terms/"
+  breadcrumbSchema={breadcrumbSchema}
   fullWidth={true}
 >
   <section class="bg-white section-padding">
     <div class="max-w-[760px] mx-auto px-6">
       <p class="label text-gold mb-4">Terms</p>
       <h1 class="text-[2rem] md:text-[2.6rem] font-light text-navy leading-tight">
-        Website Terms
+        Website and Engagement Terms
       </h1>
+
       <div class="mt-8 space-y-5 text-midgrey leading-body">
         <p>
           This website is provided for general information about Alturascope and its services. Nothing on the site creates a contractual commitment unless agreed separately in writing.
@@ -23,9 +34,61 @@ import Layout from "../layouts/Layout.astro";
         <p>
           Service scopes, timelines, and pricing are project-specific and will only be confirmed through direct communication and written proposal.
         </p>
+      </div>
+
+      <h2 class="mt-16 text-[1.5rem] font-light text-navy leading-tight">Estimating engagements</h2>
+      <div class="mt-6 space-y-5 text-midgrey leading-body">
         <p>
-          If you have questions about these terms or need a service agreement for a live project, contact Alturascope directly through the website enquiry form.
+          The following applies to work carried out through the <a href="/estimating/" class="text-navy font-medium hover:opacity-80 transition-opacity">Alturascope Estimating Desk</a>. Each engagement is confirmed in writing before work begins, and the terms of that written engagement take precedence over this summary.
         </p>
+
+        <p>
+          <span class="text-navy font-medium">The nature of the work.</span> An estimate is a professional opinion of cost based on the documents and information supplied to us and on the rates and assumptions stated in the accompanying <a href="/estimating/basis-of-estimate/" class="text-navy font-medium hover:opacity-80 transition-opacity">Basis of Estimate</a>. It is not a warranty, guarantee or representation of final outturn cost, and it does not constitute a valuation, a certification, or advice on the commercial merits of pursuing or pricing any particular opportunity.
+        </p>
+
+        <p>
+          <span class="text-navy font-medium">Your review and sign-off.</span> Every estimate is issued to the client as a draft. Alturascope does not issue any estimate, quotation, bid or tender to a third party on a client's behalf. Responsibility for reviewing the estimate, verifying that the scope priced matches the scope intended, applying commercial judgement to margin and risk, and releasing the document under the client's own name rests with the client. Deliverables are prepared so that this review can be carried out efficiently and on an informed basis.
+        </p>
+
+        <p>
+          <span class="text-navy font-medium">Information supplied.</span> The accuracy and completeness of an estimate depend on the accuracy and completeness of the documents provided. Where documents are incomplete, contradictory or illegible, we state the assumptions made and carry allowances or provisional sums rather than omitting scope. We do not independently verify the accuracy of drawings, specifications or survey information supplied to us unless separately instructed to do so.
+        </p>
+
+        <p>
+          <span class="text-navy font-medium">Revisions.</span> Two revisions are included with each package where the revision falls within the agreed basis, including addenda, rate corrections and clarifications. Changes of scope, re-basing to a materially different document set, or re-pricing after the stated validity period are re-quoted before the work is undertaken.
+        </p>
+
+        <p>
+          <span class="text-navy font-medium">Validity.</span> Estimates carry a stated validity period. Material, labour and subcontract prices move, and an estimate relied upon after its stated validity has expired should be re-based before it is submitted or used to enter into a contract.
+        </p>
+
+        <p>
+          <span class="text-navy font-medium">Confidentiality and exclusivity.</span> Documents provided to us are treated as confidential and are used solely to produce the deliverables for that engagement. We will sign a client's non-disclosure agreement before documents are transferred where one is requested. We price a given package for one bidder only, on a first-instructed basis; if we are already engaged on a package that is subsequently sent to us by another party, we decline the second instruction and say so promptly. We will not price work in respect of a site that we have documented for another party to the same transaction.
+        </p>
+
+        <p>
+          <span class="text-navy font-medium">Data handling.</span> Client documents and rate data are held within our estimating platform under a client-specific tenancy and are not pooled with, or used to price work for, any other client. Rate libraries and priced models built during an engagement belong to the client and are exportable on request, including on termination.
+        </p>
+
+        <p>
+          <span class="text-navy font-medium">Liability.</span> Nothing in these terms limits liability for death or personal injury caused by negligence, for fraud or fraudulent misrepresentation, or for any liability that cannot lawfully be limited. Subject to that, and to the terms of the individual written engagement, Alturascope's aggregate liability arising out of or in connection with an estimating engagement is limited to the fees paid for that engagement, and Alturascope is not liable for loss of profit, loss of contract, loss of opportunity, loss of anticipated savings, or any indirect or consequential loss. Liability cover appropriate to the engagement can be confirmed in writing on request.
+        </p>
+
+        <p>
+          <span class="text-navy font-medium">Independence.</span> Alturascope does not carry out construction works, does not supply materials, and does not take any share of, or commission on, the value of work estimated. Where an estimate is produced using the Vyntworks platform, that relationship is disclosed openly and does not affect the independence of the estimate.
+        </p>
+      </div>
+
+      <div class="mt-14 space-y-5 text-midgrey leading-body">
+        <p>
+          If you have questions about these terms, or need a service agreement for a live project, contact Alturascope directly through the <a href="/contact/" class="text-navy font-medium hover:opacity-80 transition-opacity">website enquiry form</a>.
+        </p>
+      </div>
+
+      <div class="mt-10 flex flex-wrap gap-6 text-sm">
+        <a href="/estimating/" class="text-navy font-medium hover:opacity-80 transition-opacity">Estimating Desk &rarr;</a>
+        <a href="/estimating/basis-of-estimate/" class="text-navy font-medium hover:opacity-80 transition-opacity">Basis of Estimate &rarr;</a>
+        <a href="/privacy/" class="text-navy font-medium hover:opacity-80 transition-opacity">Privacy policy &rarr;</a>
       </div>
     </div>
   </section>

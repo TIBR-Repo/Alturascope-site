@@ -1,0 +1,765 @@
+---
+import Layout from "../../layouts/Layout.astro";
+
+const faqs = [
+  {
+    q: "How quickly can you turn a tender round?",
+    a: "The standard turnaround is two working days from the point we agree the basis of the estimate. Repeat work priced from a rate library we have already built for you is frequently faster. Tell us the return date before anything else and we will give you a straight yes or no on whether we can hit it — we would rather decline a tender than miss the deadline, because a late return scores nothing at all rather than a lower number."
+  },
+  {
+    q: "Will you price the same tender for another bidder?",
+    a: "No. One tender, one bidder, first to instruct. If we are already pricing a package you send us, we tell you straight away and decline the work. That is written into our engagement terms rather than being a matter of goodwill, and we will sign your NDA before any drawings change hands."
+  },
+  {
+    q: "Who actually does the estimating?",
+    a: "A desk rather than one person. Between us we have thirty-three years of construction and estimating experience, and every pack is reviewed and signed off by a career estimator before it is released. Alongside that, a team of digital colleagues working inside the Vyntworks platform handles the mechanical work — taking off the drawings, extracting schedules, building the trade sections and producing the documents. They follow our written pricing methods rather than improvising, they work to set approval limits, and every action is logged. You get the capacity of software with the judgement of somebody who has priced this kind of work for years."
+  },
+  {
+    q: "Can you produce a bill of quantities, or do you only price one we supply?",
+    a: "Both. Where a bill or a schedule of works is issued with the tender we price it as it stands and query the ambiguities in writing. Where there is no bill, we take off from the drawings and build a schedule of works structured by trade, with preliminaries, provisional sums and dayworks set out separately, so the submission reads the way a quantity surveyor expects. Everything is priced in sterling, excluding VAT, and under JCT or NEC as the tender requires."
+  },
+  {
+    q: "How accurate is the estimate?",
+    a: "As accurate as the information we are given and the rates we are working from, which is exactly why every pack states both. Every priced quantity is traceable to the measurement or document it came from, and the pack is machine-audited before release: nothing can be priced without a source, nothing can be excluded without a stated reason, and every document you send has to be used or explicitly waived. Where the drawings will not support a firm price we carry a stated provisional sum rather than a guess, and it appears in the pricing document where you can see it rather than quietly falling out."
+  },
+  {
+    q: "Whose rates do you price from?",
+    a: "Yours, wherever you have them. Most contractors have rates scattered across old spreadsheets and one estimator's memory, so part of the first job is pulling those into a proper rate library — we can import your existing Excel quotations to do it. Where you have gaps we price from published rate data or go out to your supply chain for real prices, and we mark clearly which is which. The library belongs to you and is exportable at any time, including if you stop working with us."
+  },
+  {
+    q: "Will our client know you were involved?",
+    a: "Only if you tell them. Everything is produced on your letterhead in your format, including your own Word or Excel quotation template if you have one. We never contact your client, we are not named in the documents, and the quotation is issued by you under your own name. The work is white-labelled as standard rather than as an extra."
+  },
+  {
+    q: "What if the drawings are scans or marked-up prints?",
+    a: "Not a problem. The take-off reads scanned and photographed drawings as well as native PDFs, and reads the sheet number, title and stated scale from each drawing's own title block. Poor documents widen the assumptions we have to state and can slow us down; they do not stop us. A phone photograph of a marked-up plan is a legitimate starting point."
+  },
+  {
+    q: "What happens when addenda are issued mid-tender?",
+    a: "We re-price against the new revision and hand you a line-by-line difference — what was added, what was removed, what changed, and exactly what it did to your total. Late revisions are one of the most common ways a tender comes apart, and reading two hundred pages again to find the changes is precisely the work you should not be doing three days before the return date."
+  },
+  {
+    q: "Do you cover the whole of the UK?",
+    a: "Yes — England, Scotland, Wales and Northern Ireland. Estimating is done remotely, so location makes no difference to turnaround. Where the job would also benefit from a survey of the existing building, our UK survey operation covers the same territory with travel included in the project price."
+  }
+];
+
+const schema = JSON.stringify({
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "name": "Construction Estimating and Tender Pricing UK",
+  "description": "Outsourced construction estimating for UK contractors. Send the drawings and receive a priced, machine-audited, white-labelled quotation under your own name — usually within two working days.",
+  "provider": {
+    "@type": "ProfessionalService",
+    "name": "AlturaScope UK",
+    "url": "https://alturascope.com/uk/"
+  },
+  "areaServed": { "@type": "Country", "name": "United Kingdom" },
+  "serviceType": "Construction Estimating Service",
+  "audience": {
+    "@type": "BusinessAudience",
+    "audienceType": "Main contractors, subcontractors, specialist trade contractors and fit-out firms"
+  },
+  "hasOfferCatalog": {
+    "@type": "OfferCatalog",
+    "name": "Estimating Desk Services",
+    "itemListElement": [
+      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Tender Pricing" } },
+      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Quantity Take-Off from Drawings" } },
+      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Bill of Quantities Pricing" } },
+      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Subcontract Package Estimating" } },
+      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Supply Chain Enquiry and Tender Levelling" } }
+    ]
+  }
+});
+
+const breadcrumbSchema = JSON.stringify({
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://alturascope.com/" },
+    { "@type": "ListItem", "position": 2, "name": "UK", "item": "https://alturascope.com/uk/" },
+    { "@type": "ListItem", "position": 3, "name": "Estimating", "item": "https://alturascope.com/uk/estimating/" }
+  ]
+});
+
+const faqSchema = JSON.stringify({
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": faqs.map((f) => ({
+    "@type": "Question",
+    "name": f.q,
+    "acceptedAnswer": { "@type": "Answer", "text": f.a }
+  }))
+});
+---
+<Layout
+  title="Construction Estimating & Tender Pricing UK | Alturascope"
+  description="Send us the drawings and get back a priced, client-ready tender under your own name — usually in two working days. Outsourced estimating for UK contractors."
+  canonical="https://alturascope.com/uk/estimating/"
+  ogImage="https://alturascope.com/Images/london2.jpg"
+  schema={schema}
+  breadcrumbSchema={breadcrumbSchema}
+  faqSchema={faqSchema}
+  fullWidth={true}
+  lang="en-GB"
+  hreflang={[
+    { lang: "en-GB", href: "https://alturascope.com/uk/estimating/" },
+    { lang: "en", href: "https://alturascope.com/estimating/" },
+    { lang: "x-default", href: "https://alturascope.com/estimating/" }
+  ]}
+>
+  <div data-hero-page>
+
+    <!-- Hero -->
+    <section class="relative min-h-[100vh] md:min-h-0 md:h-[68vh] flex items-center justify-center">
+      <div class="absolute inset-0 bg-navy">
+        <img
+          src="/Images/london2.jpg"
+          alt="The City of London skyline at night, representing UK commercial construction tendering and estimating"
+          class="w-full h-full object-cover opacity-40"
+          loading="eager"
+          fetchpriority="high"
+          decoding="async"
+          width="1400"
+          height="933"
+        />
+        <div class="absolute inset-0 bg-[rgba(11,31,58,0.72)]"></div>
+      </div>
+      <div class="relative z-10 text-center px-6 pt-28 pb-16 md:pt-0 md:pb-0 max-w-[920px] mx-auto">
+        <p class="label text-gold mb-4">The Estimating Desk &middot; United Kingdom</p>
+        <h1 class="text-[1.8rem] md:text-[3.2rem] font-light text-offwhite leading-tight">
+          Construction Estimating and Tender Pricing, Under Your Own Name
+        </h1>
+        <p class="mt-6 text-offwhite/80 text-[1.05rem] md:text-[1.2rem] leading-body max-w-[680px] mx-auto">
+          Send us the drawings. We&rsquo;ll send back a priced, client-ready quotation &mdash; machine-audited, white-labelled, and usually inside two working days.
+        </p>
+        <div class="mt-8 flex flex-wrap justify-center gap-4">
+          <a href="#send-a-tender" class="btn-primary">Send Us a Live Tender</a>
+          <a href="/estimating/basis-of-estimate/" class="btn-secondary-light">See What&rsquo;s On Every Pack</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Pain mirror -->
+    <section class="bg-navy-light section-padding">
+      <div class="max-w-[1100px] mx-auto px-6">
+        <p class="label text-gold mb-10 text-center">Sound Familiar?</p>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-x-12">
+          <p class="text-offwhite text-[1.1rem] font-light leading-snug border-l-2 border-gold pl-5">
+            &ldquo;The tender&rsquo;s in on Friday and our estimator&rsquo;s on annual leave.&rdquo;
+          </p>
+          <p class="text-offwhite text-[1.1rem] font-light leading-snug border-l-2 border-gold pl-5">
+            &ldquo;We declined four enquiries last month. Not because we didn&rsquo;t want them &mdash; nobody had time to price them.&rdquo;
+          </p>
+          <p class="text-offwhite text-[1.1rem] font-light leading-snug border-l-2 border-gold pl-5">
+            &ldquo;I priced it at the kitchen table on Sunday night.&rdquo;
+          </p>
+          <p class="text-offwhite text-[1.1rem] font-light leading-snug border-l-2 border-gold pl-5">
+            &ldquo;We won it. Then found the fire-stopping wasn&rsquo;t in the bill.&rdquo;
+          </p>
+        </div>
+        <p class="mt-12 text-center text-offwhite/75 leading-body max-w-[56ch] mx-auto">
+          None of those are estimating problems. They are turnover problems that happen to look like workload.
+        </p>
+      </div>
+    </section>
+
+    <!-- Stats -->
+    <section class="bg-offwhite py-12 md:py-[48px]">
+      <div class="max-w-[1100px] mx-auto px-6">
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-8 md:gap-4 text-center">
+          <div>
+            <p class="text-[2.4rem] font-light text-navy">33</p>
+            <p class="text-[0.7rem] font-medium uppercase tracking-[0.12em] text-midgrey mt-1">Years Construction &amp; Estimating</p>
+          </div>
+          <div>
+            <p class="text-[2.4rem] font-light text-navy">2 Days</p>
+            <p class="text-[0.7rem] font-medium uppercase tracking-[0.12em] text-midgrey mt-1">Typical Turnaround</p>
+          </div>
+          <div>
+            <p class="text-[2.4rem] font-light text-navy">Your Name</p>
+            <p class="text-[0.7rem] font-medium uppercase tracking-[0.12em] text-midgrey mt-1">White-Labelled As Standard</p>
+          </div>
+          <div>
+            <p class="text-[2.4rem] font-light text-navy">&pound;30m+</p>
+            <p class="text-[0.7rem] font-medium uppercase tracking-[0.12em] text-midgrey mt-1">Largest Single Project Priced</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- The problem -->
+    <section class="bg-white section-padding">
+      <div class="max-w-[900px] mx-auto px-6">
+        <p class="label text-gold mb-4">The Problem</p>
+        <h2 class="text-[2rem] font-light text-navy leading-tight">
+          Estimating capacity is a ceiling on turnover.
+        </h2>
+        <div class="mt-6 space-y-4 text-midgrey leading-body">
+          <p>
+            Every contractor knows how many tenders they returned last quarter. Very few know how many enquiries they declined because nobody had the hours to price them. That second number is the more important one, because each of those was a job somebody wanted you to win and you chose not to compete for.
+          </p>
+          <p>
+            The constraint is rarely willingness and it is almost never capability. It is that estimating is bursty and salaries are not. Enquiries arrive in clusters &mdash; four packages land in the same week, all returnable the same Friday &mdash; and an estimator or QS sized for the peak is idle for much of the year, while one sized for the average turns work away every time the peak arrives. Estimators are also scarce and expensive to recruit, and they carry the method in their heads, which means the day one leaves is the day tendering stops.
+          </p>
+          <p>
+            The other half of the problem is what happens after you win. Tenders are lost on price, but margin is lost on omissions: the fire-stopping that was never in the bill, the quantity taken off a scaled drawing nobody checked, the exclusion somebody made at eleven at night and forgot to write down. A cheap estimate that is wrong is the most expensive document in the business.
+          </p>
+          <p>
+            An estimating desk you can borrow solves the first problem. Doing it inside a system that will not let an unsourced quantity or an unstated exclusion through solves the second. That combination is what this service is.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- What comes back -->
+    <section class="bg-offwhite section-padding">
+      <div class="max-w-[900px] mx-auto px-6">
+        <p class="label text-gold mb-4">What Comes Back</p>
+        <h2 class="text-[2rem] font-light text-navy leading-tight">
+          Not a number. A pack you can defend.
+        </h2>
+        <div class="mt-6 space-y-4 text-midgrey leading-body">
+          <p>
+            Anyone can send you a total. What wins work &mdash; and what protects the margin after you have won it &mdash; is being able to show exactly how the total was built, exactly what it assumes, and exactly which measurement on which drawing every quantity came from.
+          </p>
+        </div>
+
+        <div class="mt-16">
+          <h3 class="text-[1.35rem] font-medium text-navy">Priced Bill or Schedule of Works</h3>
+          <div class="mt-4 space-y-4 text-midgrey leading-body">
+            <p>
+              Where a bill of quantities is issued with the tender we price it as it stands and raise the ambiguities in writing. Where there is no bill, we take off from the drawings and build a schedule of works structured by trade, with preliminaries, provisional sums and dayworks set out separately and main contractor&rsquo;s discount and attendances handled the way the form of contract requires. Sterling, excluding VAT, under JCT or NEC as the tender demands.
+            </p>
+          </div>
+        </div>
+
+        <div class="mt-12">
+          <h3 class="text-[1.35rem] font-medium text-navy">Traceable Quantity Take-Off</h3>
+          <div class="mt-4 space-y-4 text-midgrey leading-body">
+            <p>
+              Quantities are not typed in. They are measured on the drawing and linked to the line they price, so every figure walks back to the shape it came from on the sheet it came from. We can hand you the drawing rendered with the take-off drawn over it &mdash; area fills, run centre-lines, count markers &mdash; so you can look at what was measured rather than take a number on trust. When the QS on the other side of the table questions a quantity, the answer is a picture rather than an argument.
+            </p>
+          </div>
+        </div>
+
+        <div class="mt-12">
+          <h3 class="text-[1.35rem] font-medium text-navy">Margin Analysis</h3>
+          <div class="mt-4 space-y-4 text-midgrey leading-body">
+            <p>
+              Gross profit by section and overall, so you can see where the job makes money before you decide what to submit and where you have room to sharpen. Most outsourced estimating stops at the number, which leaves you asking &ldquo;is this right?&rdquo; A margin breakdown changes the question to &ldquo;where do I compete?&rdquo; &mdash; a commercial conversation, and a considerably better one to be having the night before the return date.
+            </p>
+          </div>
+        </div>
+
+        <div class="mt-12">
+          <h3 class="text-[1.35rem] font-medium text-navy">A Stated Basis of Estimate</h3>
+          <div class="mt-4 space-y-4 text-midgrey leading-body">
+            <p>
+              Every drawing and specification priced, listed by number and revision, together with inclusions, exclusions, assumptions, provisional sums and qualifications. Written to be attached to your submission as it stands, so the scope you priced is the scope on the record. Our <a href="/estimating/basis-of-estimate/" class="text-navy font-medium hover:opacity-80 transition-opacity">Basis of Estimate standard</a> sets out exactly what appears on every pack and why.
+            </p>
+          </div>
+        </div>
+
+        <div class="mt-12">
+          <h3 class="text-[1.35rem] font-medium text-navy">A Client-Ready Quotation</h3>
+          <div class="mt-4 space-y-4 text-midgrey leading-body">
+            <p>
+              Your letterhead, your terms, your covering narrative &mdash; generated from the live numbers rather than typed up afterwards, so the document cannot disagree with the estimate behind it. If you already have a Word or Excel quotation template your clients recognise, we produce it in yours rather than ours.
+            </p>
+          </div>
+        </div>
+
+        <div class="mt-12">
+          <h3 class="text-[1.35rem] font-medium text-navy">The Working File &mdash; And It Is Yours</h3>
+          <div class="mt-4 space-y-4 text-midgrey leading-body">
+            <p>
+              The priced model itself, exportable, together with the rate library we build for you along the way. That library is the real asset: it captures how your business prices, it draws on what materials and subcontract packages have actually cost rather than what a price book says they should, and it gets sharper with every job. It belongs to you. If you stop working with us tomorrow, you take it with you.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Machine audit -->
+    <section class="bg-navy section-padding">
+      <div class="max-w-[1000px] mx-auto px-6">
+        <p class="label text-gold mb-4">Before You See It</p>
+        <h2 class="text-[2rem] font-light text-offwhite leading-tight max-w-[24ch]">
+          Every pack is machine-audited. It cannot be released while anything is red.
+        </h2>
+        <div class="mt-6 space-y-4 text-offwhite/70 leading-body max-w-[68ch]">
+          <p>
+            Estimates rarely fail because somebody applied a rate wrongly. They fail because a drawing went unread, a quantity had no source, or something was quietly dropped and nobody noticed until the job was won and the scope was fixed.
+          </p>
+          <p>
+            So before any pack leaves the desk, the platform runs a fixed set of automated checks across the estimate, the take-off and every document we were sent. They are deterministic rather than discretionary, and the job cannot be marked complete while any of them is failing. The audit report is issued with the pack, so you can see what was verified.
+          </p>
+        </div>
+
+        <div class="mt-14">
+          <div class="grid grid-cols-1 md:grid-cols-[190px_1fr] gap-2 md:gap-8 border-t border-white/15 py-6">
+            <p class="label text-gold">Provenance</p>
+            <p class="text-offwhite/80 leading-body"><span class="text-offwhite font-medium">Every priced quantity has a source.</span> A line that is neither linked to a measurement nor cited to a document is flagged. There is no such thing as a number that came from nowhere.</p>
+          </div>
+          <div class="grid grid-cols-1 md:grid-cols-[190px_1fr] gap-2 md:gap-8 border-t border-white/15 py-6">
+            <p class="label text-gold">No Silent Drops</p>
+            <p class="text-offwhite/80 leading-body"><span class="text-offwhite font-medium">Nothing can be excluded without a stated reason.</span> And &ldquo;we couldn&rsquo;t measure it&rdquo; is not an accepted reason &mdash; unmeasurable scope has to appear in the pricing document at zero, marked to be confirmed, where you can see it. This is the check that stops the fire-stopping disappearing.</p>
+          </div>
+          <div class="grid grid-cols-1 md:grid-cols-[190px_1fr] gap-2 md:gap-8 border-t border-white/15 py-6">
+            <p class="label text-gold">Nothing Unread</p>
+            <p class="text-offwhite/80 leading-body"><span class="text-offwhite font-medium">Every document you send has to be used or waived.</span> If a drawing or specification we were given is not cited by a single quantity or decision, it is raised before the pack goes out rather than discovered afterwards.</p>
+          </div>
+          <div class="grid grid-cols-1 md:grid-cols-[190px_1fr] gap-2 md:gap-8 border-t border-white/15 py-6">
+            <p class="label text-gold">Measure First</p>
+            <p class="text-offwhite/80 leading-body"><span class="text-offwhite font-medium">Prices cannot exist before measurements do.</span> The take-off has to be the basis of the price, not a justification assembled after the number was reached.</p>
+          </div>
+          <div class="grid grid-cols-1 md:grid-cols-[190px_1fr] gap-2 md:gap-8 border-t border-white/15 py-6">
+            <p class="label text-gold">Arithmetic Sanity</p>
+            <p class="text-offwhite/80 leading-body"><span class="text-offwhite font-medium">Totals are checked against the drawings&rsquo; own figures.</span> Where the measured areas and the areas printed on the sheets disagree by more than a set margin, the pack stops and somebody looks at it.</p>
+          </div>
+          <div class="grid grid-cols-1 md:grid-cols-[190px_1fr] gap-2 md:gap-8 border-t border-white/15 py-6">
+            <p class="label text-gold">No Double-Counts</p>
+            <p class="text-offwhite/80 leading-body"><span class="text-offwhite font-medium">The same space drawn twice is caught.</span> Before anything is measured the system reads the drawing register and compares sheets geometrically, so a site plan and a floor plan showing the same footprint at different scales are never measured as two separate floors.</p>
+          </div>
+          <div class="grid grid-cols-1 md:grid-cols-[190px_1fr] gap-2 md:gap-8 border-t border-white/15 py-6">
+            <p class="label text-gold">Units</p>
+            <p class="text-offwhite/80 leading-body"><span class="text-offwhite font-medium">Dimensions have to agree.</span> A linear measurement cannot quietly feed an area rate. Conversions are permitted, but only where they are declared as an assumption you can read.</p>
+          </div>
+          <div class="grid grid-cols-1 md:grid-cols-[190px_1fr] gap-2 md:gap-8 border-t border-b border-white/15 py-6">
+            <p class="label text-gold">Drift</p>
+            <p class="text-offwhite/80 leading-body"><span class="text-offwhite font-medium">Linked measurements are re-checked at the end.</span> If a measurement changed after a line was priced from it, the mismatch surfaces rather than silently persisting into your submission.</p>
+          </div>
+        </div>
+
+        <p class="mt-10 text-offwhite/50 text-[0.9rem] leading-body max-w-[70ch]">
+          The audit is a quality gate on our workmanship. It does not replace your own commercial review &mdash; see <a href="#responsibility" class="text-gold hover:opacity-80 transition-opacity">where responsibility sits</a>.
+        </p>
+      </div>
+    </section>
+
+    <!-- The desk -->
+    <section class="bg-white section-padding">
+      <div class="max-w-[1200px] mx-auto px-6">
+        <div class="max-w-[64ch]">
+          <p class="label text-gold mb-4">Who Prices It</p>
+          <h2 class="text-[2rem] font-light text-navy leading-tight">
+            A desk, not a person.
+          </h2>
+          <p class="mt-6 text-midgrey leading-body">
+            Outsourced estimating normally means one estimator with a queue, which is why it is slowest in the week you most need it &mdash; when everybody&rsquo;s return date lands on the same Friday. Ours is built the other way round.
+          </p>
+        </div>
+
+        <div class="mt-14 grid grid-cols-1 md:grid-cols-3 gap-px bg-border border border-border">
+          <div class="bg-white p-9">
+            <p class="label text-gold mb-3">The Judgement</p>
+            <h3 class="text-[1.2rem] font-medium text-navy">Thirty-three years of it</h3>
+            <p class="mt-4 text-midgrey leading-body text-[0.95rem]">
+              Eighteen years in construction and fifteen in estimating, between the two of us. Reading tender documents, arguing about scope, and living with the consequences of both. Working out what a drawing is actually asking for is not something software supplies.
+            </p>
+            <p class="mt-3 text-midgrey leading-body text-[0.95rem]">
+              Every pack is reviewed and signed off by a career estimator before it goes anywhere. That signature is the point.
+            </p>
+          </div>
+          <div class="bg-white p-9">
+            <p class="label text-gold mb-3">The Capacity</p>
+            <h3 class="text-[1.2rem] font-medium text-navy">A team of digital colleagues</h3>
+            <p class="mt-4 text-midgrey leading-body text-[0.95rem]">
+              The mechanical work &mdash; taking off the drawings, pulling out the schedules, building the sections, producing the documents &mdash; is done by a team of digital colleagues working inside Vyntworks. They follow our written pricing methods rather than improvising, they work to set approval limits, and every action is logged against a name and a time.
+            </p>
+            <p class="mt-3 text-midgrey leading-body text-[0.95rem]">
+              Which means capacity is not what decides whether we can help you. There is no single estimator with a queue.
+            </p>
+          </div>
+          <div class="bg-white p-9">
+            <p class="label text-gold mb-3">The Gate</p>
+            <h3 class="text-[1.2rem] font-medium text-navy">Nothing leaves without both</h3>
+            <p class="mt-4 text-midgrey leading-body text-[0.95rem]">
+              Every pack passes the automated audit, and then passes a person. The machine catches what a tired human misses at eleven at night; the human catches what no machine can know about your job, your client and your appetite for the risk in it.
+            </p>
+            <p class="mt-3 text-midgrey leading-body text-[0.95rem]">
+              Neither on its own would be good enough to put your name on.
+            </p>
+          </div>
+        </div>
+
+        <div class="mt-10 border-l-2 border-gold bg-offwhite py-5 px-7 max-w-[82ch]">
+          <p class="text-midgrey leading-body">
+            <span class="text-navy font-medium">Deadline week is the week most estimating services quietly stop answering the phone.</span> It is the week we are most useful. Send us three tenders that week rather than one &mdash; the desk is built for it.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- How it works -->
+    <section class="bg-offwhite section-padding">
+      <div class="max-w-[1200px] mx-auto px-6">
+        <p class="label text-gold mb-4">How It Works</p>
+        <h2 class="text-[2rem] font-light text-navy leading-tight max-w-[22ch]">
+          Four steps. You hold the pen at the end of all of them.
+        </h2>
+
+        <div class="mt-14 grid grid-cols-1 md:grid-cols-4 gap-10">
+          <div>
+            <p class="label text-gold mb-3">01</p>
+            <h3 class="text-[1.1rem] font-medium text-navy">You send the tender</h3>
+            <p class="mt-3 text-midgrey leading-body text-[0.93rem]">
+              Drawings, specification, bill, invitation to tender &mdash; whatever you have. Scans and marked-up prints are fine; the take-off handles drawings with no text layer.
+            </p>
+          </div>
+          <div>
+            <p class="label text-gold mb-3">02</p>
+            <h3 class="text-[1.1rem] font-medium text-navy">We agree the basis</h3>
+            <p class="mt-3 text-midgrey leading-body text-[0.93rem]">
+              One short call. What is in, what is out, whose rates we are using, and the return date. Ten minutes that prevents every argument later.
+            </p>
+          </div>
+          <div>
+            <p class="label text-gold mb-3">03</p>
+            <h3 class="text-[1.1rem] font-medium text-navy">We price and audit it</h3>
+            <p class="mt-3 text-midgrey leading-body text-[0.93rem]">
+              Take-off, rates, sections, margin &mdash; then the automated checks and a human review. You get a draft with the workings visible, not a finished number handed down.
+            </p>
+          </div>
+          <div>
+            <p class="label text-gold mb-3">04</p>
+            <h3 class="text-[1.1rem] font-medium text-navy">You sign it off</h3>
+            <p class="mt-3 text-midgrey leading-body text-[0.93rem]">
+              You review, make the commercial call, and submit under your own name. Nothing reaches your client until you have said so.
+            </p>
+          </div>
+        </div>
+
+        <div class="mt-12 border-l-2 border-gold bg-white py-5 px-7 max-w-[82ch]">
+          <p class="text-midgrey leading-body">
+            <span class="text-navy font-medium">When the addenda land.</span> Revisions issued mid-tender are where submissions come apart. We re-price against the new revision and hand you a line-by-line difference &mdash; what was added, what was removed, what changed, and exactly what it did to the total. No re-reading two hundred pages to find out.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Responsibility -->
+    <section id="responsibility" class="bg-white section-padding scroll-mt-24">
+      <div class="max-w-[900px] mx-auto px-6">
+        <p class="label text-gold mb-4">Where Responsibility Sits</p>
+        <h2 class="text-[2rem] font-light text-navy leading-tight">
+          It comes back as a draft. It goes out as yours.
+        </h2>
+        <div class="mt-6 space-y-4 text-midgrey leading-body">
+          <p>
+            We produce estimates, not warranties &mdash; the same as any estimator you would employ. What we owe you is a competent, transparent, fully-sourced build-up of the price. What you owe yourself is the commercial judgement on top of it: the appetite for the risk, the read on the client, the decision about what to submit.
+          </p>
+          <p>
+            So every pack states in writing exactly what it was priced from and exactly what it assumes, and nothing leaves your office until you have reviewed it and signed it off. Checking quantities, rates and scope against your own knowledge of the job remains your call &mdash; and between the traceable take-off and the automated audit, that check takes an hour rather than a weekend.
+          </p>
+          <p>
+            That is not us covering our backs. It is how the trade has always worked, written down properly for once. Our <a href="/estimating/basis-of-estimate/" class="text-navy font-medium hover:opacity-80 transition-opacity">Basis of Estimate standard</a> sets it all out, and it is issued with every pack rather than buried in a footer.
+          </p>
+        </div>
+
+        <div class="mt-10 border border-border bg-offwhite p-8">
+          <p class="text-[0.7rem] font-medium uppercase tracking-[0.15em] text-midgrey mb-6">On every pack, without exception</p>
+          <div class="space-y-4 text-midgrey leading-body text-[0.95rem]">
+            <p><span class="text-navy font-medium">A stated basis.</span> Drawing numbers and revisions priced, with inclusions, exclusions, assumptions and provisional sums listed.</p>
+            <p><span class="text-navy font-medium">A clean audit.</span> The automated check report, included with the pack, so you can see what was verified.</p>
+            <p><span class="text-navy font-medium">A sign-off gate.</span> Nothing is issued to your client by us, ever. You review and you release.</p>
+            <p><span class="text-navy font-medium">Two revisions included.</span> Scope changes, addenda and rate corrections within the agreed basis.</p>
+            <p><span class="text-navy font-medium">Confidentiality as standard.</span> We sign your NDA before the drawings arrive, and we will not price the same tender for two bidders.</p>
+            <p><span class="text-navy font-medium">Liability stated up front.</span> Set out plainly in the engagement terms &mdash; no surprises buried in a footer.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Vyntworks -->
+    <section class="bg-navy section-padding">
+      <div class="max-w-[1000px] mx-auto px-6">
+        <p class="label text-gold mb-4">The Software</p>
+        <h2 class="text-[2rem] font-light text-offwhite leading-tight">
+          We are not being coy about it. It is Vyntworks.
+        </h2>
+        <div class="mt-6 space-y-4 text-offwhite/70 leading-body max-w-[68ch]">
+          <p>
+            We do not price faster by working later. Every tender runs through <a href="https://vyntworks.com" target="_blank" rel="noopener" class="text-gold hover:opacity-80 transition-opacity">Vyntworks</a>, an operations platform built for contractors that covers estimating, procurement and cost control in one connected system &mdash; with the take-off, the automated audit and the document generation all inside it.
+          </p>
+          <p>
+            Your rate library lives in it and gets sharper with every job we do for you, drawing on what things have actually cost rather than what a price book says they should. Which is why the second tender comes back faster than the first, and the tenth faster again.
+          </p>
+          <p>
+            Plenty of estimating services will not tell you what they run on. We will, for a straightforward reason: if you like what comes back, the same system is available to you directly &mdash; and if you take it, the quotation carries through to orders, valuations, variations and the final account without anything being re-keyed.
+          </p>
+        </div>
+
+        <div class="mt-12 grid grid-cols-1 md:grid-cols-2 gap-7">
+          <div class="border border-gold/40 bg-white/[0.03] p-8">
+            <h3 class="text-[1.1rem] font-medium text-gold">Stay with the desk</h3>
+            <p class="mt-3 text-offwhite/70 leading-body text-[0.95rem]">
+              You send tenders, we price them, you never touch the software. Perfectly sensible if tendering is bursty and you have no appetite for another system to learn.
+            </p>
+          </div>
+          <div class="border border-gold/40 bg-white/[0.03] p-8">
+            <h3 class="text-[1.1rem] font-medium text-gold">Or take the keys</h3>
+            <p class="mt-3 text-offwhite/70 leading-body text-[0.95rem]">
+              Licence Vyntworks and run the desk yourself. You keep the rate library and templates we have built, we introduce you, and onboarding is delivered rather than handed over as a manual. We would far rather be the reason you outgrew us than the reason you stayed stuck.
+            </p>
+            <p class="mt-5">
+              <a href="https://vyntworks.com" target="_blank" rel="noopener" class="text-offwhite font-medium border-b border-gold pb-0.5 hover:opacity-80 transition-opacity text-[0.95rem]">vyntworks.com &rarr;</a>
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- The moat -->
+    <section class="bg-white section-padding">
+      <div class="max-w-[900px] mx-auto px-6">
+        <p class="label text-gold mb-4">What Nobody Else Can Do</p>
+        <h2 class="text-[2rem] font-light text-navy leading-tight">
+          We can price the building. Not just the drawing.
+        </h2>
+        <div class="mt-6 space-y-4 text-midgrey leading-body">
+          <p>
+            Refurbishment and fit-out estimates go wrong in the gap between what the drawing says and what the building actually is. The riser that is not where the as-built shows it. The ceiling void 300mm shallower than anyone assumed. The three-phase supply nobody checked. None of it is on the drawings, and all of it is in the price you committed to.
+          </p>
+          <p>
+            Alturascope has documented over five hundred commercial buildings across the UK, the United States and Canada &mdash; <a href="/uk/pre-construction-survey/" class="text-navy font-medium hover:opacity-80 transition-opacity">pre-construction surveys</a>, <a href="/uk/above-ceiling-mep-survey/" class="text-navy font-medium hover:opacity-80 transition-opacity">above-ceiling M&amp;E capture</a>, <a href="/uk/measured-building-survey/" class="text-navy font-medium hover:opacity-80 transition-opacity">measured building surveys</a>, thermal imaging and asset schedules. On a refurbishment we can survey the site and price the works from the same record.
+          </p>
+          <p>
+            <span class="text-navy font-medium">No other estimating bureau can survey the building. No other survey firm can price the works.</span> If your risk on this job is what is behind the walls, that combination is the entire point &mdash; and it is available on one instruction, from one supplier, with travel included.
+          </p>
+          <p>
+            <a href="/uk/" class="text-navy font-medium hover:opacity-80 transition-opacity">See Alturascope UK survey services &rarr;</a>
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Independence -->
+    <section class="bg-offwhite py-16 md:py-20">
+      <div class="max-w-[900px] mx-auto px-6 text-center">
+        <h2 class="text-[1.6rem] md:text-[1.9rem] font-light text-navy leading-tight max-w-[26ch] mx-auto">
+          We don&rsquo;t build it, so we have no reason to want the number to be anything but right.
+        </h2>
+        <p class="mt-6 text-midgrey leading-body max-w-[64ch] mx-auto">
+          We do not contract, we do not supply materials, and we do not take a percentage of the job. We also will not price works on a site we have surveyed for the other side of the table &mdash; and if that ever comes up, we will tell you before you tell us.
+        </p>
+      </div>
+    </section>
+
+    <!-- Supply chain -->
+    <section class="bg-white section-padding">
+      <div class="max-w-[1200px] mx-auto px-6">
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
+          <div>
+            <p class="label text-gold mb-4">Going Further</p>
+            <h2 class="text-[2rem] font-light text-navy leading-tight">
+              We can go out to your supply chain, too.
+            </h2>
+            <div class="mt-6 space-y-4 text-midgrey leading-body">
+              <p>
+                Pricing from a rate library is fast. Sometimes it is not enough &mdash; the tender carries a specialist element, or the job is large enough that you want real prices from real subcontractors before you commit a number to a client.
+              </p>
+              <p>
+                We can run that enquiry for you: package the scope by trade, send the request out to <em>your</em> suppliers and subcontractors, chase the returns, and level them against the same lines so you are comparing like with like. The price you select drops straight back into the estimate without being re-keyed.
+              </p>
+              <p>
+                Your relationships, your supply chain, your terms. We run the process, and you keep every commercial decision in it.
+              </p>
+            </div>
+          </div>
+
+          <div class="border border-border bg-offwhite p-9">
+            <p class="text-[0.7rem] font-medium uppercase tracking-[0.15em] text-midgrey mb-6">What that adds</p>
+            <div class="space-y-4 text-midgrey leading-body text-[0.95rem]">
+              <p><span class="text-navy font-medium">Trade packages</span> split out of the estimate, scoped and ready to send.</p>
+              <p><span class="text-navy font-medium">A comparison board</span> &mdash; every return against every line, levelled so the gaps are visible.</p>
+              <p><span class="text-navy font-medium">Chasing</span> handled, so returns actually arrive before your return date rather than after it.</p>
+              <p><span class="text-navy font-medium">Selected prices</span> applied back into the estimate with nothing typed twice.</p>
+              <p><span class="text-navy font-medium">If you win</span>, the same packages become your purchase and subcontract orders.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Engagement -->
+    <section class="bg-offwhite section-padding">
+      <div class="max-w-[1200px] mx-auto px-6">
+        <div class="max-w-[56ch]">
+          <p class="label text-gold mb-4">Engagement</p>
+          <h2 class="text-[2rem] font-light text-navy leading-tight">
+            Three ways in. Start with the one that costs you nothing.
+          </h2>
+        </div>
+
+        <div class="mt-14 grid grid-cols-1 md:grid-cols-3 gap-7">
+          <div class="card border-gold border-2 p-9">
+            <p class="label text-gold mb-3">Start Here</p>
+            <h3 class="text-[1.25rem] font-medium text-navy">The first one is on us</h3>
+            <p class="mt-3 text-midgrey leading-body text-[0.95rem]">
+              Send your next live tender. If the pack that comes back is not faster and better than what you would have produced yourself, you owe us nothing and we part as friends.
+            </p>
+            <p class="mt-6 text-[1.35rem] font-light text-navy">No fee</p>
+            <p class="mt-1 text-midgrey text-[0.85rem]">One tender, one company, once.</p>
+          </div>
+
+          <div class="card p-9">
+            <p class="label text-gold mb-3">Per Tender</p>
+            <h3 class="text-[1.25rem] font-medium text-navy">Priced job by job</h3>
+            <p class="mt-3 text-midgrey leading-body text-[0.95rem]">
+              Every tender is quoted before we start, as a fixed fee, banded by contract value and complexity. No retainer, no minimum, no notice period.
+            </p>
+            <p class="mt-6 text-[1.35rem] font-light text-navy">Fixed fee, agreed up front</p>
+            <p class="mt-1 text-midgrey text-[0.85rem]">Two revisions included. Supply-chain enquiry quoted separately.</p>
+          </div>
+
+          <div class="card p-9">
+            <p class="label text-gold mb-3">Retained Desk</p>
+            <h3 class="text-[1.25rem] font-medium text-navy">Your estimating desk, on tap</h3>
+            <p class="mt-3 text-midgrey leading-body text-[0.95rem]">
+              An agreed number of tenders a month, a named estimator who learns how you price, and a rate library that compounds. Priority in deadline weeks.
+            </p>
+            <p class="mt-6 text-[1.35rem] font-light text-navy">Monthly, rolling</p>
+            <p class="mt-1 text-midgrey text-[0.85rem]">Scoped to your tender volume. Thirty days&rsquo; notice.</p>
+          </div>
+        </div>
+
+        <div class="mt-10 border-l-2 border-gold bg-white py-5 px-7 max-w-[86ch]">
+          <p class="text-midgrey leading-body">
+            <span class="text-navy font-medium">One honest caveat on the pricing.</span> There is a tender volume past which retaining us stops making financial sense &mdash; above it you are better off licensing Vyntworks and running the desk in-house. We will tell you when you reach it, and we will help you make the move.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="bg-white section-padding">
+      <div class="max-w-[900px] mx-auto px-6">
+        <p class="label text-gold mb-4">Questions We Get Asked</p>
+        <h2 class="text-[2rem] font-light text-navy leading-tight mb-12">Before you send us anything.</h2>
+
+        <div class="space-y-8">
+          {faqs.map((faq) => (
+            <details class="group border-b border-border pb-6">
+              <summary class="cursor-pointer text-navy font-medium text-lg flex items-center justify-between gap-6">
+                {faq.q}
+                <span class="text-gold text-xl transition-transform group-open:rotate-45 flex-none">+</span>
+              </summary>
+              <p class="mt-4 text-midgrey leading-body">{faq.a}</p>
+            </details>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA + brief form -->
+    <section id="send-a-tender" class="bg-navy section-padding scroll-mt-20">
+      <div class="max-w-[1100px] mx-auto px-6">
+        <div class="grid grid-cols-1 lg:grid-cols-[0.9fr_1.1fr] gap-14 items-start">
+          <div>
+            <p class="label text-gold mb-4">Send a Tender</p>
+            <h2 class="text-[2rem] font-light text-offwhite leading-tight max-w-[18ch]">
+              Is there a tender on your desk right now?
+            </h2>
+            <p class="mt-5 text-offwhite/70 leading-body">
+              Tell us the return date first. We will come back the same working day with a straight yes or no on whether we can hit it &mdash; and if it is your first, there is no fee attached to finding out.
+            </p>
+            <p class="mt-6 text-offwhite/50 leading-body text-[0.9rem]">
+              We sign your NDA before any drawings change hands, as a matter of course. Just say so in the brief.
+            </p>
+            <p class="mt-6 text-offwhite/50 leading-body text-[0.9rem]">
+              Working in the US or Canada? <a href="/estimating/" class="text-gold hover:opacity-80 transition-opacity">Visit our North American estimating desk &rarr;</a>
+            </p>
+          </div>
+
+          <div class="bg-white p-8 md:p-10">
+            <form class="space-y-5" method="POST" action="https://api.web3forms.com/submit">
+              <input type="hidden" name="access_key" value="8c6ab3a1-43b4-4110-8b1b-4a8bb804b90c" />
+              <input type="hidden" name="subject" value="New UK ESTIMATING enquiry from Alturascope.com" />
+              <input type="hidden" name="from_name" value="Alturascope Estimating Desk (UK)" />
+              <input type="checkbox" name="botcheck" class="hidden" style="display:none" />
+
+              <div>
+                <label for="uk-name" class="block text-sm font-medium text-navy mb-1.5">Name <span class="text-gold">*</span></label>
+                <input type="text" id="uk-name" name="name" required class="w-full px-4 py-3 border border-border bg-white text-navy focus:border-gold focus:outline-none transition-colors" />
+              </div>
+
+              <div class="grid grid-cols-1 sm:grid-cols-2 gap-5">
+                <div>
+                  <label for="uk-company" class="block text-sm font-medium text-navy mb-1.5">Company <span class="text-gold">*</span></label>
+                  <input type="text" id="uk-company" name="company" required class="w-full px-4 py-3 border border-border bg-white text-navy focus:border-gold focus:outline-none transition-colors" />
+                </div>
+                <div>
+                  <label for="uk-email" class="block text-sm font-medium text-navy mb-1.5">Email <span class="text-gold">*</span></label>
+                  <input type="email" id="uk-email" name="email" required class="w-full px-4 py-3 border border-border bg-white text-navy focus:border-gold focus:outline-none transition-colors" />
+                </div>
+              </div>
+
+              <div class="grid grid-cols-1 sm:grid-cols-2 gap-5">
+                <div>
+                  <label for="uk-trade" class="block text-sm font-medium text-navy mb-1.5">Your trade or sector</label>
+                  <input type="text" id="uk-trade" name="trade" placeholder="Fit-out, M&amp;E, groundworks&hellip;" class="w-full px-4 py-3 border border-border bg-white text-navy placeholder:text-midgrey/60 focus:border-gold focus:outline-none transition-colors" />
+                </div>
+                <div>
+                  <label for="uk-due" class="block text-sm font-medium text-navy mb-1.5">Return date <span class="text-gold">*</span></label>
+                  <input type="text" id="uk-due" name="return_date" required placeholder="When is it due back?" class="w-full px-4 py-3 border border-border bg-white text-navy placeholder:text-midgrey/60 focus:border-gold focus:outline-none transition-colors" />
+                </div>
+              </div>
+
+              <div class="grid grid-cols-1 sm:grid-cols-2 gap-5">
+                <div>
+                  <label for="uk-value" class="block text-sm font-medium text-navy mb-1.5">Approximate value</label>
+                  <input type="text" id="uk-value" name="approx_value" placeholder="A ballpark is fine" class="w-full px-4 py-3 border border-border bg-white text-navy placeholder:text-midgrey/60 focus:border-gold focus:outline-none transition-colors" />
+                </div>
+                <div>
+                  <label for="uk-volume" class="block text-sm font-medium text-navy mb-1.5">Tenders per month</label>
+                  <select id="uk-volume" name="tenders_per_month" class="w-full px-4 py-3 border border-border bg-white text-navy focus:border-gold focus:outline-none transition-colors">
+                    <option>1&ndash;3</option>
+                    <option>4&ndash;8</option>
+                    <option>9&ndash;15</option>
+                    <option>More than 15</option>
+                  </select>
+                </div>
+              </div>
+
+              <div>
+                <label for="uk-docs" class="block text-sm font-medium text-navy mb-1.5">Where are the documents?</label>
+                <input type="text" id="uk-docs" name="documents" placeholder="Dropbox, SharePoint or WeTransfer link" class="w-full px-4 py-3 border border-border bg-white text-navy placeholder:text-midgrey/60 focus:border-gold focus:outline-none transition-colors" />
+                <p class="mt-1.5 text-[0.8rem] text-midgrey">Or leave blank and we&rsquo;ll send you an upload link.</p>
+              </div>
+
+              <div>
+                <label for="uk-brief" class="block text-sm font-medium text-navy mb-1.5">Anything we should know?</label>
+                <textarea id="uk-brief" name="brief" rows="3" class="w-full px-4 py-3 border border-border bg-white text-navy focus:border-gold focus:outline-none transition-colors resize-y"></textarea>
+              </div>
+
+              <div class="flex items-center gap-3">
+                <input type="checkbox" id="uk-nda" name="nda_required" value="Yes" class="w-4 h-4 accent-gold" />
+                <label for="uk-nda" class="text-[0.9rem] text-midgrey">We need an NDA in place first</label>
+              </div>
+
+              <!-- Honeypot -->
+              <div class="hidden" aria-hidden="true">
+                <label for="uk-website">Website</label>
+                <input type="text" id="uk-website" name="website" tabindex="-1" autocomplete="off" />
+              </div>
+
+              <button type="submit" class="btn-primary w-full">Send the Brief</button>
+            </form>
+          </div>
+        </div>
+
+        <div class="mt-14 flex flex-wrap gap-6 text-sm">
+          <a href="/estimating/basis-of-estimate/" class="text-offwhite/70 hover:text-offwhite transition-colors">Basis of Estimate standard &rarr;</a>
+          <a href="/uk/" class="text-offwhite/70 hover:text-offwhite transition-colors">Alturascope UK &rarr;</a>
+          <a href="/uk/pre-construction-survey/" class="text-offwhite/70 hover:text-offwhite transition-colors">Pre-construction survey &rarr;</a>
+          <a href="/uk/measured-building-survey/" class="text-offwhite/70 hover:text-offwhite transition-colors">Measured building survey &rarr;</a>
+          <a href="/estimating/" class="text-offwhite/70 hover:text-offwhite transition-colors">US &amp; Canada estimating &rarr;</a>
+        </div>
+      </div>
+    </section>
+
+  </div>
+</Layout>

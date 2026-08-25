@@ -1,0 +1,271 @@
+---
+import Layout from "../../layouts/Layout.astro";
+
+const faqs = [
+  {
+    q: "What is a basis of estimate?",
+    a: "A basis of estimate is the written statement of what an estimate was built from and what it assumes. It records the drawings and specifications priced, listed by number and revision; the rates used and where they came from; what is included; what is excluded; the assumptions made where the documents were silent; the allowances carried where a firm price was not possible; and any qualifications attached to the price. Every competent estimate rests on a basis of this kind. The difference between a professional estimate and a number is whether that basis is written down and issued with it."
+  },
+  {
+    q: "Why does the basis of estimate matter after the bid is submitted?",
+    a: "Because scope arguments happen after award, not before. When a client asserts that something was included, the basis of estimate is the contemporaneous record of what was actually priced and on which revision of which drawing. It is the difference between a discussion about documents and a discussion about memory. It also protects the estimator, the contractor and the client equally, which is why it should be attached to the submission rather than kept internally."
+  },
+  {
+    q: "What is the difference between an exclusion, an assumption and an allowance?",
+    a: "An exclusion is scope deliberately not priced, with a stated reason. An assumption is a position taken where the documents did not say — for example, that a ceiling void is deep enough for the proposed services routing — which the reader can check and challenge. An allowance is a sum carried for scope that is in the price but cannot yet be firmly measured or specified, so it is stated as a provisional figure rather than presented as a firm one. Confusing the three is how scope disputes start: an allowance presented as a firm price becomes an argument, and an assumption left unwritten becomes a change order nobody agreed to."
+  },
+  {
+    q: "What happens if something cannot be measured from the drawings?",
+    a: "It goes into the estimate at zero, marked to be confirmed, with a note explaining why. It never disappears. Our automated audit specifically rejects \"could not measure\" as a reason for excluding scope, precisely because the alternative — quietly leaving it out — is the single most common way a contractor wins a job and then discovers the margin is gone. Unmeasurable scope that is in the scope of works stays visible in the document."
+  },
+  {
+    q: "Who is responsible for the final number?",
+    a: "You are. We produce a draft with the workings visible; you review it, apply your own commercial judgment, and issue it under your own name. Nothing is sent to your client by us. The estimate is a professional work product, not a warranty of outturn cost, and the basis of estimate exists so that your review is quick and well-informed rather than an act of faith. Liability is stated plainly in the engagement terms agreed before we start work."
+  }
+];
+
+const schema = JSON.stringify({
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "The Basis of Estimate Standard",
+  "description": "What Alturascope states on every estimate: documents priced with revisions, inclusions, exclusions, assumptions, allowances, qualifications, and where responsibility sits.",
+  "author": { "@type": "Organization", "name": "Alturascope", "url": "https://alturascope.com/" },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Alturascope",
+    "url": "https://alturascope.com/",
+    "logo": { "@type": "ImageObject", "url": "https://alturascope.com/logo.png" }
+  },
+  "mainEntityOfPage": "https://alturascope.com/estimating/basis-of-estimate/",
+  "about": "Construction estimating practice and estimate documentation standards"
+});
+
+const breadcrumbSchema = JSON.stringify({
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://alturascope.com/" },
+    { "@type": "ListItem", "position": 2, "name": "Estimating", "item": "https://alturascope.com/estimating/" },
+    { "@type": "ListItem", "position": 3, "name": "Basis of Estimate", "item": "https://alturascope.com/estimating/basis-of-estimate/" }
+  ]
+});
+
+const faqSchema = JSON.stringify({
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": faqs.map((f) => ({
+    "@type": "Question",
+    "name": f.q,
+    "acceptedAnswer": { "@type": "Answer", "text": f.a }
+  }))
+});
+---
+<Layout
+  title="The Basis of Estimate Standard | Alturascope Estimating"
+  description="What we state on every estimate: documents priced with revisions, inclusions, exclusions, assumptions and allowances — and where responsibility sits."
+  canonical="https://alturascope.com/estimating/basis-of-estimate/"
+  ogImage="https://alturascope.com/Images/plan-1.jpg"
+  schema={schema}
+  breadcrumbSchema={breadcrumbSchema}
+  faqSchema={faqSchema}
+  fullWidth={true}
+  hreflang={[
+    { lang: "en", href: "https://alturascope.com/estimating/basis-of-estimate/" },
+    { lang: "x-default", href: "https://alturascope.com/estimating/basis-of-estimate/" }
+  ]}
+>
+  <div>
+
+    <!-- Header -->
+    <section class="bg-navy pt-36 pb-20 md:pt-44 md:pb-24">
+      <div class="max-w-[860px] mx-auto px-6">
+        <nav aria-label="Breadcrumb" class="mb-6">
+          <ol class="flex flex-wrap items-center gap-2 text-[0.8rem] text-offwhite/50">
+            <li><a href="/" class="hover:text-offwhite transition-colors">Home</a></li>
+            <li aria-hidden="true">&rsaquo;</li>
+            <li><a href="/estimating/" class="hover:text-offwhite transition-colors">Estimating</a></li>
+            <li aria-hidden="true">&rsaquo;</li>
+            <li class="text-offwhite/80" aria-current="page">Basis of Estimate</li>
+          </ol>
+        </nav>
+        <p class="label text-gold mb-4">The Standard</p>
+        <h1 class="text-[2rem] md:text-[3rem] font-light text-offwhite leading-tight">
+          The Basis of Estimate
+        </h1>
+        <p class="mt-6 text-offwhite/75 leading-body max-w-[64ch]">
+          Every estimate rests on a set of documents, rates, assumptions and exclusions. Most of the trade keeps that in somebody&rsquo;s head. We write it down and issue it with the price &mdash; on every pack, without exception.
+        </p>
+      </div>
+    </section>
+
+    <!-- Why -->
+    <section class="bg-white section-padding">
+      <div class="max-w-[860px] mx-auto px-6">
+        <p class="label text-gold mb-4">Why This Exists</p>
+        <h2 class="text-[1.8rem] md:text-[2rem] font-light text-navy leading-tight">
+          A price without its basis is just a number.
+        </h2>
+        <div class="mt-6 space-y-4 text-midgrey leading-body">
+          <p>
+            Scope arguments do not happen when the bid goes in. They happen four months later, on site, when somebody asserts that something was obviously included and somebody else is certain it was not. At that point the only thing that settles it is a contemporaneous record of what was actually priced &mdash; which drawings, at which revision, on what assumptions.
+          </p>
+          <p>
+            Every competent estimator works to a basis of this kind. The trade simply rarely writes it down, because writing it down takes time that a bid deadline does not allow. Producing it as a matter of routine is one of the practical advantages of estimating inside a system rather than a spreadsheet: the basis is assembled as the estimate is built, not reconstructed from memory afterwards.
+          </p>
+          <p>
+            It protects everybody. It protects you, because your submission carries its own scope definition instead of inheriting your client&rsquo;s. It protects your client, because they can see precisely what they are buying. And it protects us, because our work is legible and checkable rather than something you are asked to take on trust.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- The standard -->
+    <section class="bg-offwhite section-padding">
+      <div class="max-w-[860px] mx-auto px-6">
+        <p class="label text-gold mb-4">What Appears On Every Pack</p>
+        <h2 class="text-[1.8rem] md:text-[2rem] font-light text-navy leading-tight">
+          The seven statements.
+        </h2>
+        <div class="mt-6 text-midgrey leading-body">
+          <p>
+            Every estimate we issue carries all seven of the following. Where one of them is empty &mdash; no exclusions, no qualifications &mdash; it is stated as empty rather than omitted, so you can tell the difference between nothing to declare and nobody having looked.
+          </p>
+        </div>
+
+        <div class="mt-14 space-y-12">
+          <div>
+            <h3 class="text-[1.25rem] font-medium text-navy">1. The documents priced</h3>
+            <p class="mt-3 text-midgrey leading-body">
+              Every drawing, specification, schedule and addendum used to build the estimate, listed by number, title and revision, with the date it was issued to us. If a document you sent was not used, it is listed separately with the reason. Nothing in the package we were given is left unaccounted for &mdash; our automated audit will not release a pack that leaves a supplied document uncited and unwaived.
+            </p>
+          </div>
+
+          <div>
+            <h3 class="text-[1.25rem] font-medium text-navy">2. Inclusions</h3>
+            <p class="mt-3 text-midgrey leading-body">
+              What the price covers, expressed in the language of the trades rather than the language of the drawing register. Written so that a project manager reading it eight months later, who was not involved in the bid, can tell what was bought.
+            </p>
+          </div>
+
+          <div>
+            <h3 class="text-[1.25rem] font-medium text-navy">3. Exclusions</h3>
+            <p class="mt-3 text-midgrey leading-body">
+              What the price deliberately does not cover, each with a stated reason. &ldquo;We could not measure it&rdquo; is not an accepted reason and will not pass our audit: scope that is genuinely in the works but not yet measurable belongs in the estimate at zero and marked to be confirmed, where you can see it, rather than removed from the document where you cannot.
+            </p>
+          </div>
+
+          <div>
+            <h3 class="text-[1.25rem] font-medium text-navy">4. Assumptions</h3>
+            <p class="mt-3 text-midgrey leading-body">
+              The positions taken where the documents were silent &mdash; access arrangements, working hours, existing conditions, sequencing, whether a void is deep enough or a supply has capacity. Each one is a claim you can check and challenge before you submit, and each one becomes the reference point if reality turns out otherwise. Unwritten assumptions are how change orders arrive unannounced.
+            </p>
+          </div>
+
+          <div>
+            <h3 class="text-[1.25rem] font-medium text-navy">5. Allowances and provisional sums</h3>
+            <p class="mt-3 text-midgrey leading-body">
+              Scope that is in the price but cannot yet be firmly measured or specified, carried as a stated figure and flagged as provisional. An allowance presented as a firm price is a dispute waiting to happen, so allowances are always visible as allowances &mdash; both in the estimate and in the client-facing document.
+            </p>
+          </div>
+
+          <div>
+            <h3 class="text-[1.25rem] font-medium text-navy">6. The source of every rate</h3>
+            <p class="mt-3 text-midgrey leading-body">
+              Whether each rate came from your own rate library, from a supply chain enquiry run for this job, from a recent purchase price, or from published rate data. Where they came from different places within one section, that is stated. You should never have to wonder whether a number is yours, the market&rsquo;s, or a guess.
+            </p>
+          </div>
+
+          <div>
+            <h3 class="text-[1.25rem] font-medium text-navy">7. Qualifications and validity</h3>
+            <p class="mt-3 text-midgrey leading-body">
+              Any conditions attached to the price, together with how long it holds. Material and subcontract prices move; a price with no stated validity period is a liability you are carrying without knowing it.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Audit -->
+    <section class="bg-navy section-padding">
+      <div class="max-w-[860px] mx-auto px-6">
+        <p class="label text-gold mb-4">How It Is Enforced</p>
+        <h2 class="text-[1.8rem] md:text-[2rem] font-light text-offwhite leading-tight">
+          A standard nobody checks is an intention.
+        </h2>
+        <div class="mt-6 space-y-4 text-offwhite/70 leading-body">
+          <p>
+            Written standards decay under deadline pressure. Ours is enforced by the platform rather than by good intentions: a fixed set of deterministic checks runs across every estimate, its take-off and its documents, and the job cannot be marked complete while any of them is failing.
+          </p>
+          <p>
+            Those checks are what make the seven statements above reliable rather than aspirational. A quantity with no source is flagged. An exclusion with no valid reason is flagged. A supplied document that no line cites is flagged. Measured areas that disagree with the areas printed on the drawings are flagged. The audit report is issued with the pack.
+          </p>
+          <p>
+            <a href="/estimating/#responsibility" class="text-gold hover:opacity-80 transition-opacity">See the full list of checks and where responsibility sits &rarr;</a>
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Responsibility -->
+    <section class="bg-white section-padding">
+      <div class="max-w-[860px] mx-auto px-6">
+        <p class="label text-gold mb-4">Responsibility</p>
+        <h2 class="text-[1.8rem] md:text-[2rem] font-light text-navy leading-tight">
+          The estimate is ours. The decision is yours.
+        </h2>
+        <div class="mt-6 space-y-4 text-midgrey leading-body">
+          <p>
+            An estimate is a professional opinion of cost based on stated information. It is not a warranty of outturn cost, and no estimator &mdash; in-house or outsourced &mdash; can honestly offer one. What we are accountable for is competence and transparency: that the take-off is properly measured, that the rates are what we say they are, that the assumptions are stated, and that nothing has been quietly dropped.
+          </p>
+          <p>
+            What remains with you is the commercial judgment: your appetite for the risk in the job, your read on the client, your decision on margin, and your verification that the scope we priced is the scope you intend to sell. Every pack is issued to you as a draft. Nothing is sent to your client by us at any point. You review, you adjust, and you release it under your own name.
+          </p>
+          <p>
+            The purpose of this standard is to make that review fast and well-founded. A pack where every quantity is traceable and every assumption is written down can be checked properly in an hour. That is the whole intention.
+          </p>
+          <p>
+            Liability, revision policy and confidentiality are set out in the engagement terms agreed before any work starts, and summarised in our <a href="/terms/" class="text-navy font-medium hover:opacity-80 transition-opacity">website terms</a>. We will not price the same package for two competing bidders, and we sign your non-disclosure agreement before any documents change hands.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="bg-offwhite section-padding">
+      <div class="max-w-[860px] mx-auto px-6">
+        <p class="label text-gold mb-4">Common Questions</p>
+        <h2 class="text-[1.8rem] md:text-[2rem] font-light text-navy leading-tight mb-12">About the basis of estimate.</h2>
+
+        <div class="space-y-8">
+          {faqs.map((faq) => (
+            <details class="group border-b border-border pb-6">
+              <summary class="cursor-pointer text-navy font-medium text-lg flex items-center justify-between gap-6">
+                {faq.q}
+                <span class="text-gold text-xl transition-transform group-open:rotate-45 flex-none">+</span>
+              </summary>
+              <p class="mt-4 text-midgrey leading-body">{faq.a}</p>
+            </details>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="bg-white section-padding">
+      <div class="max-w-[700px] mx-auto px-6 text-center">
+        <h2 class="text-[1.8rem] md:text-[2rem] font-light text-navy leading-tight">Want to see one?</h2>
+        <p class="mt-4 text-midgrey leading-body">
+          Send us a live package and you will get the estimate, the traceable take-off, the audit report and a basis of estimate written exactly this way. If it is your first, there is no fee.
+        </p>
+        <a href="/estimating/#send-a-package" class="btn-primary mt-8">Send Us a Package</a>
+        <div class="mt-10 flex flex-wrap justify-center gap-6 text-sm">
+          <a href="/estimating/" class="text-navy font-medium hover:opacity-80 transition-opacity">The Estimating Desk &rarr;</a>
+          <a href="/uk/estimating/" class="text-navy font-medium hover:opacity-80 transition-opacity">UK estimating &rarr;</a>
+          <a href="/services/" class="text-navy font-medium hover:opacity-80 transition-opacity">Site documentation &rarr;</a>
+          <a href="/about/" class="text-navy font-medium hover:opacity-80 transition-opacity">About Alturascope &rarr;</a>
+        </div>
+      </div>
+    </section>
+
+  </div>
+</Layout>

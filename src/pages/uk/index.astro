@@ -6,13 +6,14 @@ const schema = JSON.stringify({
   "@type": "ProfessionalService",
   "name": "AlturaScope UK",
   "url": "https://alturascope.com/uk/",
-  "description": "Professional site survey, digital twin, and measured building survey services across the United Kingdom.",
+  "description": "Site survey, digital twin, measured building survey and construction estimating services across the United Kingdom.",
   "areaServed": { "@type": "Country", "name": "United Kingdom" },
-  "serviceType": ["Site Survey", "Measured Building Survey", "Heritage Building Documentation", "Digital Twin Survey", "MEP Documentation"],
+  "serviceType": ["Site Survey", "Measured Building Survey", "Heritage Building Documentation", "Digital Twin Survey", "MEP Documentation", "Construction Estimating"],
   "sameAs": ["https://www.linkedin.com/company/111948383"]
 });
 
 const ukServices = [
+  { title: "Construction Estimating & Tender Pricing", href: "/uk/estimating/", description: "Send us the drawings and get back a priced, client-ready quotation under your own name — usually inside two working days. Bills of quantities, schedules of works, preliminaries and provisional sums, machine-audited and white-labelled, for main contractors and specialist subcontractors across the UK." },
   { title: "Heritage Building Survey", href: "/uk/heritage-building-survey/", description: "Pre-intervention documentation for Grade I and Grade II listed buildings, scheduled monuments, conservation areas, and significant private estates. Survey-grade point cloud data and structured records for English Heritage, Historic Scotland, Cadw, and conservation architects." },
   { title: "Pre-Construction Survey", href: "/uk/pre-construction-survey/", description: "Existing conditions documentation before fit-out, refurbishment, or change of use begins. Navigable digital twin, conditions report, above-ceiling MEP capture, and asset schedule — delivered before a design decision is made." },
   { title: "Measured Building Survey", href: "/uk/measured-building-survey/", description: "Survey-grade point cloud data for architects and engineers requiring dimensional accuracy for CAD and Revit workflows. Accurate to 5–12mm across full building footprints. Exports in .e57 and .rcp format." },
@@ -21,8 +22,8 @@ const ukServices = [
 ];
 ---
 <Layout
-  title="Site Survey & Documentation Services UK | Alturascope"
-  description="Professional site survey, digital twin, and measured building survey services across England, Scotland, Wales, and Northern Ireland. Heritage buildings, commercial fit-out, multi-site programmes."
+  title="UK Site Surveys, Documentation & Estimating | Alturascope"
+  description="Site surveys, measured building surveys and construction estimating across England, Scotland, Wales and Northern Ireland. Heritage, fit-out and rollouts."
   canonical="https://alturascope.com/uk/"
   schema={schema}
   fullWidth={true}
