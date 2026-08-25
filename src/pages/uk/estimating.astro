@@ -19,6 +19,14 @@ const faqs = [
     a: "Both. Where a bill or a schedule of works is issued with the tender we price it as it stands and query the ambiguities in writing. Where there is no bill, we take off from the drawings and build a schedule of works structured by trade, with preliminaries, provisional sums and dayworks set out separately, so the submission reads the way a quantity surveyor expects. Everything is priced in sterling, excluding VAT, and under JCT or NEC as the tender requires."
   },
   {
+    q: "Do we have to use the software?",
+    a: "No. Every client gets an account because it is the fastest way to hand over an estimate you can actually interrogate, but plenty of people never log in and simply work from the PDF and the emailed summary. If you would rather we made every change, two revisions are included in the fee and you can send the rest by email. The account costs you nothing either way and carries no licence or commitment."
+  },
+  {
+    q: "What software do you use, and who can see our tender in it?",
+    a: "Vyntworks — an operations platform built for contractors, covering estimating, procurement and cost control in one connected system. You get an account on it, so when a pack is ready you are notified and the estimate is there to review, adjust and submit rather than arriving as a flat document you can only accept or query. Access is limited to you, the people you invite from your own business, and the estimator working on your package. Your documents and rate library sit in a tenancy specific to your company and are never pooled with, or used to price work for, anybody else."
+  },
+  {
     q: "How accurate is the estimate?",
     a: "As accurate as the information we are given and the rates we are working from, which is exactly why every pack states both. Every priced quantity is traceable to the measurement or document it came from, and the pack is machine-audited before release: nothing can be priced without a source, nothing can be excluded without a stated reason, and every document you send has to be used or explicitly waived. Where the drawings will not support a firm price we carry a stated provisional sum rather than a guess, and it appears in the pricing document where you can see it rather than quietly falling out."
   },
@@ -425,9 +433,9 @@ const faqSchema = JSON.stringify({
           </div>
           <div>
             <p class="label text-gold mb-3">04</p>
-            <h3 class="text-[1.1rem] font-medium text-navy">You sign it off</h3>
+            <h3 class="text-[1.1rem] font-medium text-navy">You take it from there</h3>
             <p class="mt-3 text-midgrey leading-body text-[0.93rem]">
-              You review, make the commercial call, and submit under your own name. Nothing reaches your client until you have said so.
+              You are notified that the draft is ready, and the estimate is waiting in your own account &mdash; to review, adjust and submit under your own name. A PDF arrives at the same time if that is all you want.
             </p>
           </div>
         </div>
@@ -435,6 +443,60 @@ const faqSchema = JSON.stringify({
         <div class="mt-12 border-l-2 border-gold bg-white py-5 px-7 max-w-[82ch]">
           <p class="text-midgrey leading-body">
             <span class="text-navy font-medium">When the addenda land.</span> Revisions issued mid-tender are where submissions come apart. We re-price against the new revision and hand you a line-by-line difference &mdash; what was added, what was removed, what changed, and exactly what it did to the total. No re-reading two hundred pages to find out.
+          </p>
+        </div>
+      </div>
+    </section>
+
+
+    <!-- The portal -->
+    <section class="bg-white section-padding">
+      <div class="max-w-[1200px] mx-auto px-6">
+        <div class="max-w-[64ch]">
+          <p class="label text-gold mb-4">Your Copy of the Job</p>
+          <h2 class="text-[2rem] font-light text-navy leading-tight">
+            You don&rsquo;t get a PDF and a shrug.
+          </h2>
+          <div class="mt-6 space-y-4 text-midgrey leading-body">
+            <p>
+              Most outsourced estimating ends with a document landing in your inbox. If the number needs changing you email somebody and wait, and the version everyone is arguing about is whichever attachment they opened last.
+            </p>
+            <p>
+              When your pack is ready you are notified, and the estimate is sitting in your own account inside Vyntworks &mdash; set up by us, nothing to install, no licence to buy. The PDF arrives at the same time if that is all you want. But if you want to change something, you change it yourself.
+            </p>
+          </div>
+        </div>
+
+        <div class="mt-14 grid grid-cols-1 md:grid-cols-3 gap-px bg-border border border-border">
+          <div class="bg-white p-8">
+            <h3 class="text-[1.05rem] font-medium text-navy">Every line, with its margin</h3>
+            <p class="mt-3 text-midgrey leading-body text-[0.93rem]">Trade section by trade section, line by line, with gross profit showing on each. Nothing hidden behind a total.</p>
+          </div>
+          <div class="bg-white p-8">
+            <h3 class="text-[1.05rem] font-medium text-navy">Move a number, watch the rest move</h3>
+            <p class="mt-3 text-midgrey leading-body text-[0.93rem]">Change a rate, a quantity or a margin and the section totals and GP update as you type. Sharpen a trade to win the job and see exactly what it costs you.</p>
+          </div>
+          <div class="bg-white p-8">
+            <h3 class="text-[1.05rem] font-medium text-navy">Click a quantity, see where it came from</h3>
+            <p class="mt-3 text-midgrey leading-body text-[0.93rem]">Measured lines link back to the shape on the drawing. Open it and look at what was actually measured rather than taking the figure on trust.</p>
+          </div>
+          <div class="bg-white p-8">
+            <h3 class="text-[1.05rem] font-medium text-navy">Read the audit</h3>
+            <p class="mt-3 text-midgrey leading-body text-[0.93rem]">The automated check report sits with the estimate, so you can see what was verified before you put your name on it.</p>
+          </div>
+          <div class="bg-white p-8">
+            <h3 class="text-[1.05rem] font-medium text-navy">Submit it yourself</h3>
+            <p class="mt-3 text-midgrey leading-body text-[0.93rem]">Generate the quotation on your own letterhead, straight from the live numbers, at the moment you are happy with it.</p>
+          </div>
+          <div class="bg-white p-8">
+            <h3 class="text-[1.05rem] font-medium text-navy">Or just ask us</h3>
+            <p class="mt-3 text-midgrey leading-body text-[0.93rem]">Two revisions are included if you would rather we made the changes. Plenty of clients never log in at all, and that is a perfectly good way to use this.</p>
+          </div>
+        </div>
+
+        <div class="mt-10 border-l-2 border-gold bg-offwhite py-5 px-7 max-w-[84ch]">
+          <p class="text-midgrey leading-body">
+            <span class="text-navy font-medium">One version, and everybody is looking at it.</span> Because the estimate lives in one place rather than in six attachments, the figure your estimator changed on Thursday is the figure your client sees on Friday. No reconciling versions, and no document that quietly disagrees with the model behind it.
           </p>
         </div>
       </div>
@@ -452,7 +514,7 @@ const faqSchema = JSON.stringify({
             We produce estimates, not warranties &mdash; the same as any estimator you would employ. What we owe you is a competent, transparent, fully-sourced build-up of the price. What you owe yourself is the commercial judgement on top of it: the appetite for the risk, the read on the client, the decision about what to submit.
           </p>
           <p>
-            So every pack states in writing exactly what it was priced from and exactly what it assumes, and nothing leaves your office until you have reviewed it and signed it off. Checking quantities, rates and scope against your own knowledge of the job remains your call &mdash; and between the traceable take-off and the automated audit, that check takes an hour rather than a weekend.
+            So every pack states in writing exactly what it was priced from and exactly what it assumes, and nothing leaves your office until you have reviewed it and signed it off. Checking quantities, rates and scope against your own knowledge of the job remains your call &mdash; and between the traceable take-off, the automated audit and being able to open the estimate and interrogate it line by line yourself, that check takes an hour rather than a weekend.
           </p>
           <p>
             That is not us covering our backs. It is how the trade has always worked, written down properly for once. Our <a href="/estimating/basis-of-estimate/" class="text-navy font-medium hover:opacity-80 transition-opacity">Basis of Estimate standard</a> sets it all out, and it is issued with every pack rather than buried in a footer.
@@ -464,7 +526,7 @@ const faqSchema = JSON.stringify({
           <div class="space-y-4 text-midgrey leading-body text-[0.95rem]">
             <p><span class="text-navy font-medium">A stated basis.</span> Drawing numbers and revisions priced, with inclusions, exclusions, assumptions and provisional sums listed.</p>
             <p><span class="text-navy font-medium">A clean audit.</span> The automated check report, included with the pack, so you can see what was verified.</p>
-            <p><span class="text-navy font-medium">A sign-off gate.</span> Nothing is issued to your client by us, ever. You review and you release.</p>
+            <p><span class="text-navy font-medium">A sign-off gate.</span> Nothing is issued to your client by us, ever. You review it in your own account, and you release it.</p>
             <p><span class="text-navy font-medium">Two revisions included.</span> Scope changes, addenda and rate corrections within the agreed basis.</p>
             <p><span class="text-navy font-medium">Confidentiality as standard.</span> We sign your NDA before the drawings arrive, and we will not price the same tender for two bidders.</p>
             <p><span class="text-navy font-medium">Liability stated up front.</span> Set out plainly in the engagement terms &mdash; no surprises buried in a footer.</p>
@@ -488,21 +550,21 @@ const faqSchema = JSON.stringify({
             Your rate library lives in it and gets sharper with every job we do for you, drawing on what things have actually cost rather than what a price book says they should. Which is why the second tender comes back faster than the first, and the tenth faster again.
           </p>
           <p>
-            Plenty of estimating services will not tell you what they run on. We will, for a straightforward reason: if you like what comes back, the same system is available to you directly &mdash; and if you take it, the quotation carries through to orders, valuations, variations and the final account without anything being re-keyed.
+            Plenty of estimating services will not tell you what they run on. We will, for a straightforward reason: you will be using it yourself from the first tender, because that is where your estimate is waiting for you.
           </p>
         </div>
 
         <div class="mt-12 grid grid-cols-1 md:grid-cols-2 gap-7">
           <div class="border border-gold/40 bg-white/[0.03] p-8">
-            <h3 class="text-[1.1rem] font-medium text-gold">Stay with the desk</h3>
+            <h3 class="text-[1.1rem] font-medium text-gold">You already have an account</h3>
             <p class="mt-3 text-offwhite/70 leading-body text-[0.95rem]">
-              You send tenders, we price them, you never touch the software. Perfectly sensible if tendering is bursty and you have no appetite for another system to learn.
+              Every client gets one, set up by us, at no cost. You use it to review and adjust the work we price for you, and nothing more if that is all you want. There is no licence attached and no obligation in either direction.
             </p>
           </div>
           <div class="border border-gold/40 bg-white/[0.03] p-8">
-            <h3 class="text-[1.1rem] font-medium text-gold">Or take the keys</h3>
+            <h3 class="text-[1.1rem] font-medium text-gold">Or run the whole business in it</h3>
             <p class="mt-3 text-offwhite/70 leading-body text-[0.95rem]">
-              Licence Vyntworks and run the desk yourself. You keep the rate library and templates we have built, we introduce you, and onboarding is delivered rather than handed over as a manual. We would far rather be the reason you outgrew us than the reason you stayed stuck.
+              The estimating you have been watching is one part of it. Licensed properly, the same system carries the job through purchase orders, subcontract orders, CVR and cost control, valuations, variations, retention and the final account &mdash; and the tender you won becomes the budget without anything being re-keyed. You keep the rate library and templates we have built, and onboarding is delivered rather than handed over as a manual.
             </p>
             <p class="mt-5">
               <a href="https://vyntworks.com" target="_blank" rel="noopener" class="text-offwhite font-medium border-b border-gold pb-0.5 hover:opacity-80 transition-opacity text-[0.95rem]">vyntworks.com &rarr;</a>
