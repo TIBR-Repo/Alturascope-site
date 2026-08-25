@@ -91,6 +91,13 @@
   "h": 675
  },
  {
+  "slug": "bellevue-square",
+  "label": "Bellevue Square, Bellevue, Washington",
+  "kind": "Enclosed mall",
+  "w": 1200,
+  "h": 674
+ },
+ {
   "slug": "brea-mall",
   "label": "Brea Mall, Brea, California",
   "kind": "Enclosed mall",
@@ -143,6 +150,13 @@
   "slug": "lincoln-road-miami-beach",
   "label": "Lincoln Road, Miami Beach, Florida",
   "kind": "High-street retail",
+  "w": 1200,
+  "h": 675
+ },
+ {
+  "slug": "culebra-road-san-antonio",
+  "label": "Culebra Road, San Antonio, Texas",
+  "kind": "Shell unit, mid fit-out",
   "w": 1200,
   "h": 675
  },
