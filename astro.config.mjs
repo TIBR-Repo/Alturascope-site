@@ -8,6 +8,14 @@ const BUILD_DATE = new Date().toISOString();
 export default defineConfig({
   site: 'https://alturascope.com',
   trailingSlash: 'always',
+  build: {
+    // Inline the stylesheet into every page instead of linking a content-hashed
+    // file. A deploy changes that hash, so any browser holding cached HTML from
+    // before the deploy requests a stylesheet that no longer exists and renders
+    // the page completely unstyled. Inlining removes the request, and therefore
+    // the failure: stale HTML still paints correctly using its own styles.
+    inlineStylesheets: 'always',
+  },
   integrations: [
     tailwind(),
     sitemap({
