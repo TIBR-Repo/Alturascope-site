@@ -4,13 +4,13 @@ import GalleryBand from "../../components/GalleryBand.astro";
 
 const schema = JSON.stringify({
   "@context": "https://schema.org",
-  "@type": "ProfessionalService",
-  "name": "Alturascope",
-  "description": "Reality capture, 3D documentation, and conditions surveys for construction teams and specialist clients across the US, Canada, and the UK.",
-  "url": "https://alturascope.com/",
-  "areaServed": ["United States", "Canada", "United Kingdom"],
-  "serviceType": "Reality Capture and Site Documentation",
-  "sameAs": ["https://www.linkedin.com/company/111948383"]
+  "@type": "CollectionPage",
+  "name": "Site Documentation Services",
+  "description": "Reality capture, as-built documentation, conditions surveys and multi-site programmes across the US, Canada and the UK.",
+  "url": "https://alturascope.com/services/",
+  "isPartOf": {
+    "@id": "https://alturascope.com/#organization"
+  }
 });
 ---
 <Layout
@@ -27,7 +27,7 @@ const schema = JSON.stringify({
       <!-- REPLACE: Dark atmospheric commercial or industrial interior, different from homepage hero. -->
       <div class="absolute inset-0 bg-navy">
         <img
-          src="/Images/drone-shot-1.jpg"
+          src="/Images/drone-shot-1.webp"
           width="1600"
           height="900"
           alt="Aerial orthographic view of a commercial roof and rooftop plant captured by Alturascope during a site survey"

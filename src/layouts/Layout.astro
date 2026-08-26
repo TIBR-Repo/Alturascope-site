@@ -10,6 +10,8 @@ interface Props {
   schema?: string;
   breadcrumbSchema?: string;
   faqSchema?: string;
+  /** Any additional JSON-LD node for this page (ItemList, HowTo, and so on). */
+  extraSchema?: string;
   fullWidth?: boolean;
   lang?: string;
   hreflang?: { lang: string; href: string }[];
@@ -25,6 +27,7 @@ const {
   schema,
   breadcrumbSchema,
   faqSchema,
+  extraSchema,
   fullWidth = false,
   lang = "en",
   hreflang = [],
@@ -173,6 +176,7 @@ const switchTitle = isUK
     {schema && <script type="application/ld+json" set:html={schema} />}
     {breadcrumbSchema && <script type="application/ld+json" set:html={breadcrumbSchema} />}
     {faqSchema && <script type="application/ld+json" set:html={faqSchema} />}
+    {extraSchema && <script type="application/ld+json" set:html={extraSchema} />}
   </head>
   <body>
     {!minimalChrome && (

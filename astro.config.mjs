@@ -8,6 +8,13 @@ const BUILD_DATE = new Date().toISOString();
 export default defineConfig({
   site: 'https://alturascope.com',
   trailingSlash: 'always',
+  // /uk/heritage-building-documentation/ duplicated /uk/heritage-building-survey/
+  // and had no inbound links at all - two UK pages competing for the same query.
+  // Astro emits a meta-refresh page with a canonical for static builds; the
+  // nginx config also carries a real 301 (see docs/deployment/redirects.md).
+  redirects: {
+    '/uk/heritage-building-documentation/': '/uk/heritage-building-survey/',
+  },
   build: {
     // Inline the stylesheet into every page instead of linking a content-hashed
     // file. A deploy changes that hash, so any browser holding cached HTML from

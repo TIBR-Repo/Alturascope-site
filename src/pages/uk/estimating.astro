@@ -16,7 +16,7 @@ const faqs = [
   },
   {
     q: "Can you produce a bill of quantities, or do you only price one we supply?",
-    a: "Both. Where a bill or a schedule of works is issued with the tender we price it as it stands and query the ambiguities in writing. Where there is no bill, we take off from the drawings and build a schedule of works structured by trade, with preliminaries, provisional sums and dayworks set out separately, so the submission reads the way a quantity surveyor expects. Everything is priced in sterling, excluding VAT, and under JCT or NEC as the tender requires."
+    a: "Both. Where a bill or a schedule of works is issued with the tender we price it as it stands and query the ambiguities in writing. Where there is no bill, we take off from the drawings and build a schedule of works structured by trade and measured to NRM2, with preliminaries, provisional sums and dayworks set out separately, so the submission reads the way a quantity surveyor expects. Rates you do not hold yourself are priced against published data and BCIS benchmarks, and marked as such. Everything is priced in sterling, excluding VAT, and under JCT or NEC as the tender requires."
   },
   {
     q: "Do we have to use the software?",
@@ -103,7 +103,7 @@ const faqSchema = JSON.stringify({
 ---
 <Layout
   title="Construction Estimating & Tender Pricing UK | Alturascope"
-  description="Send us the drawings and get back a priced, client-ready tender under your own name — usually in two working days. Outsourced estimating for UK contractors."
+  description="Send the drawings, get back a priced client-ready tender under your own name in two working days. NRM2 take-off, bills of quantities, BCIS-benchmarked rates."
   canonical="https://alturascope.com/uk/estimating/"
   ogImage="https://alturascope.com/Images/london2.jpg"
   schema={schema}
@@ -123,7 +123,7 @@ const faqSchema = JSON.stringify({
     <section class="relative min-h-[78vh] md:min-h-0 md:h-[66vh] flex items-center justify-center">
       <div class="absolute inset-0 bg-navy">
         <img
-          src="/Images/london2.jpg"
+          src="/Images/london2.webp"
           alt="The City of London skyline at night, representing UK commercial construction tendering and estimating"
           class="w-full h-full object-cover opacity-40"
           loading="eager"
@@ -217,7 +217,7 @@ const faqSchema = JSON.stringify({
         <div class="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
           <figure class="m-0 order-2 lg:order-1">
             <img
-              src="/Images/pack/uk-01.jpg"
+              src="/Images/pack/uk-01.webp"
               alt="Cover of the UK edition of the Alturascope demonstration estimate pack, showing a tender total of GBP 1,362,900 for a Cat B office fit-out in central London"
               width="1400"
               height="989"
@@ -297,7 +297,7 @@ const faqSchema = JSON.stringify({
           <h3 class="text-[1.35rem] font-medium text-navy">Priced Bill or Schedule of Works</h3>
           <div class="mt-4 space-y-4 text-midgrey leading-body">
             <p>
-              Where a bill of quantities is issued with the tender we price it as it stands and raise the ambiguities in writing. Where there is no bill, we take off from the drawings and build a schedule of works structured by trade, with preliminaries, provisional sums and dayworks set out separately and main contractor&rsquo;s discount and attendances handled the way the form of contract requires. Sterling, excluding VAT, under JCT or NEC as the tender demands.
+              Where a bill of quantities is issued with the tender we price it as it stands and raise the ambiguities in writing. Where there is no bill, we take off from the drawings and build a schedule of works structured by trade and measured in accordance with <span class="text-navy font-medium">NRM2</span>, with preliminaries, provisional sums and dayworks set out separately and main contractor&rsquo;s discount and attendances handled the way the form of contract requires. Where you have no rate of your own for an item, we price it against published rate data and <span class="text-navy font-medium">BCIS</span> benchmarks and mark clearly that we have done so. Sterling, excluding VAT, under JCT or NEC as the tender demands.
             </p>
           </div>
         </div>
@@ -458,7 +458,7 @@ const faqSchema = JSON.stringify({
           <div class="grid md:grid-cols-[minmax(0,220px)_1fr] gap-8 md:gap-11 items-center p-8 md:p-10">
             <figure class="m-0">
               <img
-                src="/Images/aph-image.jpg"
+                src="/Images/aph-image.webp"
                 alt="Andrew Harris, founder of Alturascope"
                 width="1150"
                 height="1533"

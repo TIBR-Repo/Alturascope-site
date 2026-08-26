@@ -10,6 +10,30 @@ const schema = JSON.stringify({
     "A sample of commercial locations documented by Alturascope across the United States - retail, office, mall and transport sites captured as Matterport digital twins.",
   "url": "https://alturascope.com/work/locations/",
   "isPartOf": { "@id": "https://alturascope.com/#organization" },
+  "mainEntity": { "@id": "https://alturascope.com/work/locations/#itemlist" },
+});
+
+// Tell crawlers what the collection actually contains. Each entry is a real
+// surveyed building, named by centre or street - never by occupier.
+const itemListSchema = JSON.stringify({
+  "@context": "https://schema.org",
+  "@type": "ItemList",
+  "name": "Commercial sites documented by Alturascope",
+  "numberOfItems": locations.length,
+  "itemListElement": locations.map((loc, i) => ({
+    "@type": "ListItem",
+    "position": i + 1,
+    "item": {
+      "@type": "ImageObject",
+      "name": loc.label,
+      "description": `${loc.kind} - commercial site documented by Alturascope as a Matterport digital twin`,
+      "contentUrl": `https://alturascope.com/Images/locations/${loc.slug}.webp`,
+      "width": loc.w,
+      "height": loc.h,
+      "creator": { "@id": "https://alturascope.com/#organization" },
+      "creditText": "Alturascope",
+    },
+  })),
 });
 
 const breadcrumbSchema = JSON.stringify({
@@ -29,6 +53,7 @@ const breadcrumbSchema = JSON.stringify({
   canonical="https://alturascope.com/work/locations/"
   schema={schema}
   breadcrumbSchema={breadcrumbSchema}
+  extraSchema={itemListSchema}
 >
   <section class="bg-navy pt-32 pb-20 md:pt-40 md:pb-24">
     <div class="max-w-[1100px] mx-auto px-6">
@@ -87,11 +112,12 @@ const breadcrumbSchema = JSON.stringify({
         </div>
         <figure class="bg-navy p-4 md:p-6">
           <img
-            src="/Images/locations/digital-twin-mesh.jpg"
+            src="/Images/locations/digital-twin-mesh.webp"
             alt="Measured mesh view of a surveyed office floor plate, showing wall and column positions extracted from a Matterport digital twin"
             width="1280"
             height="720"
-            loading="lazy"
+            loading="eager"
+            fetchpriority="high"
             decoding="async"
             class="w-full h-auto"
           />
@@ -123,7 +149,7 @@ const breadcrumbSchema = JSON.stringify({
         {locations.map((loc) => (
           <li class="card overflow-hidden">
             <img
-              src={"/Images/locations/" + loc.slug + ".jpg"}
+              src={"/Images/locations/" + loc.slug + ".webp"}
               alt={loc.label + " - commercial site documented by Alturascope as a Matterport digital twin"}
               width={loc.w}
               height={loc.h}

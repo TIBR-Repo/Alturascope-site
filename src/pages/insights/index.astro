@@ -3,13 +3,13 @@ import Layout from "../../layouts/Layout.astro";
 
 const schema = JSON.stringify({
   "@context": "https://schema.org",
-  "@type": "ProfessionalService",
-  "name": "Alturascope",
-  "description": "Reality capture, 3D documentation, and conditions surveys for construction teams and specialist clients across the US, Canada, and the UK.",
-  "url": "https://alturascope.com/",
-  "areaServed": ["United States", "Canada", "United Kingdom"],
-  "serviceType": "Reality Capture and Site Documentation",
-  "sameAs": ["https://www.linkedin.com/company/111948383"]
+  "@type": "Blog",
+  "name": "Alturascope Insights",
+  "description": "Writing on site documentation, reality capture and construction estimating for teams making decisions on existing buildings.",
+  "url": "https://alturascope.com/insights/",
+  "publisher": {
+    "@id": "https://alturascope.com/#organization"
+  }
 });
 
 const posts = [

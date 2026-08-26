@@ -172,7 +172,7 @@ const faqSchema = JSON.stringify({
           controls
           preload="none"
           playsinline
-          poster="/Images/pack/us-01.jpg"
+          poster="/Images/pack/us-01.webp"
           class="w-full h-auto bg-navy"
           width="1920"
           height="1080"
@@ -202,11 +202,12 @@ const faqSchema = JSON.stringify({
         {usPages.map((p) => (
           <li class="card overflow-hidden">
             <img
-              src={"/Images/pack/us-" + String(p.n).padStart(2, "0") + ".jpg"}
+              src={"/Images/pack/us-" + String(p.n).padStart(2, "0") + ".webp"}
               alt={"Page " + p.n + " of the Alturascope demonstration estimate pack - " + p.cap}
               width="1400"
               height="989"
-              loading="lazy"
+              loading="eager"
+            fetchpriority="high"
               decoding="async"
               class="w-full h-auto border-b border-border"
             />
@@ -228,7 +229,7 @@ const faqSchema = JSON.stringify({
       <div class="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
         <figure>
           <img
-            src="/Images/pack/uk-01.jpg"
+            src="/Images/pack/uk-01.webp"
             alt="Cover of the UK edition of the Alturascope demonstration estimate pack, showing a tender total of GBP 1,362,900 for a Cat B office fit-out"
             width="1400"
             height="989"
