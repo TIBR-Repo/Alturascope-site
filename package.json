@@ -6,7 +6,8 @@
     "dev": "astro dev",
     "build": "astro build",
     "preview": "astro preview",
-    "astro": "astro"
+    "astro": "astro",
+    "verify": "astro build && python scripts/seo-audit.py && python scripts/verify-build.py"
   },
   "dependencies": {
     "@astrojs/sitemap": "^3.7.0",
