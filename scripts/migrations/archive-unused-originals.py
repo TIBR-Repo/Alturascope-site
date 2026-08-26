@@ -8,14 +8,13 @@ deploy carries one format.
 Protected regardless of what the reference scan says:
   - og/, logo.png, apple-touch-icon.png, favicon - referenced by absolute URL
     or by crawlers rather than by a page
-  - Images/pack/uk-*.jpg - the UK sample pack, about to be used
 """
 import os
 import re
 import glob
 import shutil
 
-PROTECT = re.compile(r'^/(og/|logo\.png|apple-touch-icon\.png|favicon|Images/pack/uk-)')
+PROTECT = re.compile(r'^/(og/|logo\.png|apple-touch-icon\.png|favicon)')
 
 referenced = set()
 for f in glob.glob("dist/**/*.html", recursive=True) + glob.glob("dist/**/*.xml", recursive=True):

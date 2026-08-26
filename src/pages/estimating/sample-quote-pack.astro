@@ -15,6 +15,20 @@ const usPages = [
   { n: 11, cap: "Engagement - three ways in, starting with the one that costs nothing." },
 ];
 
+const ukPages = [
+  { n: 1, cap: "Cover - tender total, rate per square metre and the audit state, before you open anything." },
+  { n: 2, cap: "The six deliverables that come back on every tender, without exception." },
+  { n: 3, cap: "Priced schedule of works by trade, with preliminaries carried separately." },
+  { n: 4, cap: "One section opened to line level - quantity, rate and the source of each." },
+  { n: 5, cap: "The take-off overlay. Quantities measured off a calibrated drawing, not typed in." },
+  { n: 6, cap: "Margin by trade group - where the job makes money, before you decide what to submit." },
+  { n: 7, cap: "The machine audit. Eight deterministic checks, all green, or the pack does not leave." },
+  { n: 8, cap: "Basis of estimate - drawings by number and revision, inclusions, exclusions, assumptions." },
+  { n: 9, cap: "The client-ready tender document, white-labelled to the contractor's own letterhead." },
+  { n: 10, cap: "The working file - the live estimate the client can open and adjust." },
+  { n: 11, cap: "Engagement - three ways in, starting with the one that costs nothing." },
+];
+
 const schema = JSON.stringify({
   "@context": "https://schema.org",
   "@type": "WebPage",
@@ -206,8 +220,8 @@ const faqSchema = JSON.stringify({
               alt={"Page " + p.n + " of the Alturascope demonstration estimate pack - " + p.cap}
               width="1400"
               height="989"
-              loading="eager"
-            fetchpriority="high"
+              loading={p.n === 1 ? "eager" : "lazy"}
+              fetchpriority={p.n === 1 ? "high" : undefined}
               decoding="async"
               class="w-full h-auto border-b border-border"
             />
@@ -225,9 +239,9 @@ const faqSchema = JSON.stringify({
 
   <!-- UK edition -->
   <section class="bg-white section-padding">
-    <div class="max-w-[1100px] mx-auto px-6">
+    <div class="max-w-[1400px] mx-auto px-6 lg:px-10">
       <div class="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
-        <figure>
+        <figure class="m-0">
           <img
             src="/Images/pack/uk-01.webp"
             alt="Cover of the UK edition of the Alturascope demonstration estimate pack, showing a tender total of GBP 1,362,900 for a Cat B office fit-out"
@@ -255,6 +269,28 @@ const faqSchema = JSON.stringify({
           </div>
         </div>
       </div>
+
+      <ol class="mt-16 grid grid-cols-1 md:grid-cols-2 gap-8 list-none p-0 m-0">
+        {ukPages.slice(1).map((p) => (
+          <li class="card overflow-hidden">
+            <img
+              src={"/Images/pack/uk-" + String(p.n).padStart(2, "0") + ".webp"}
+              alt={"Page " + p.n + " of the UK edition of the Alturascope demonstration estimate pack - " + p.cap}
+              width="1400"
+              height="989"
+              loading="lazy"
+              decoding="async"
+              class="w-full h-auto border-b border-border"
+            />
+            <div class="p-5 flex gap-4">
+              <span class="text-gold text-[0.8rem] tabular-nums pt-0.5">
+                {String(p.n).padStart(2, "0")}
+              </span>
+              <p class="text-midgrey text-[0.9rem] leading-relaxed">{p.cap}</p>
+            </div>
+          </li>
+        ))}
+      </ol>
     </div>
   </section>
 
