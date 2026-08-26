@@ -128,8 +128,12 @@ const navLinks = [
 // The locale switcher prefers the current page's own translated counterpart
 // (supplied via the hreflang prop) and falls back to the market home page.
 const rel = (href?: string) => href?.replace("https://alturascope.com", "") || undefined;
-const ukAlternate = rel(hreflang.find((h) => h.lang.toLowerCase() === "en-gb")?.href);
-const usAlternate = rel(hreflang.find((h) => h.lang.toLowerCase() === "en")?.href);
+// A page that serves both markets lists itself as its own alternate. Honouring
+// that literally would point the switcher at the page you are already on, so
+// fall back to the other market's home page instead of rendering a dead link.
+const notSelf = (href?: string) => (href && href !== pathname ? href : undefined);
+const ukAlternate = notSelf(rel(hreflang.find((h) => h.lang.toLowerCase() === "en-gb")?.href));
+const usAlternate = notSelf(rel(hreflang.find((h) => h.lang.toLowerCase() === "en")?.href));
 const switchHref = isUK ? usAlternate || "/" : ukAlternate || "/uk/";
 const switchLabel = isUK ? "US" : "UK";
 const switchTitle = isUK

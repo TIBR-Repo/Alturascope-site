@@ -1,0 +1,113 @@
+---
+import InsightArticle from "../../components/InsightArticle.astro";
+
+const blocks = [
+  {
+    p: [
+      "Two estimators price the same package. One comes back at $1.42m, the other at $1.61m. Before you conclude that one of them is wrong, there is a question worth asking: were they pricing the same job?",
+      "Most of the time, they were not. One allowed for temporary protection to the existing floor and the other did not. One read the specification note about acoustic sealant at every head detail; the other priced the partitions off the drawing alone. Neither of them is dishonest and neither of them is incompetent. They simply made different assumptions, and nobody wrote the assumptions down.",
+      "A basis of estimate is the document that writes them down. It is the least glamorous page in an estimate pack and it is the one that decides whether you keep your margin.",
+    ],
+  },
+  {
+    h2: "What a basis of estimate actually contains",
+    p: [
+      "A basis of estimate states what the price was built from and what it takes for granted. At minimum that means six things:",
+    ],
+    points: [
+      ["The documents priced", "every drawing and specification listed by number <em>and revision</em>. Not &ldquo;the tender drawings&rdquo; - the actual sheet list, so that when addendum three lands you can tell instantly whether it changed something you priced."],
+      ["Inclusions", "what is in the number. Obvious in principle, routinely vague in practice."],
+      ["Exclusions", "what is not, each with a stated reason. An exclusion without a reason is a gap waiting to be argued about."],
+      ["Assumptions", "the judgement calls made where the documents were silent. Working hours. Access. Whether the existing slab is sound. Whether the riser is where the as-built says it is."],
+      ["Allowances and provisional sums", "the items that could not be firmly priced, carried openly at a stated figure rather than buried in a rate."],
+      ["Qualifications", "the conditions attached to the price - validity period, the programme it assumes, what happens if the sequence changes."],
+    ],
+  },
+  {
+    h2: "Why it protects margin rather than just covering backs",
+    p: [
+      "The instinctive reading of a caveats page is defensive: the estimator hedging. That gets it backwards.",
+      "Bids are lost on price. Margin is lost on omissions - and an omission is only an omission if nobody declared it. The firestopping that was never in the schedule, the quantity taken off a scaled drawing that nobody checked, the exclusion somebody made at eleven at night and forgot to mention. Each of those becomes a variation you cannot claim for, because the scope you priced is not on the record anywhere.",
+      "When the basis is written down and issued with the bid, the position reverses. The scope you priced <em>is</em> the record. A client who wants the excluded item wants a variation, and a variation is a conversation about money rather than an argument about what was implied.",
+    ],
+    note: "<span class=\"text-navy font-medium\">The test of a basis of estimate is whether it can be attached to your submission as it stands.</span> If it is written for internal use, or if it would embarrass you in front of the client, it is not doing its job. It should read as rigour, not as hedging.",
+  },
+  {
+    h2: "The exclusion that should never be accepted",
+    p: [
+      "There is one exclusion worth refusing outright, wherever you see it: <em>we were unable to measure this.</em>",
+      "Unmeasurable scope has not gone away. It has moved from the estimate into the risk you are carrying without knowing it. The correct treatment is to carry the item in the estimate at zero, marked to be confirmed, where you can see it and make a commercial decision about it. What you must not do is let it fall silently out of the total.",
+      "It is worth checking any estimate you receive for this pattern specifically. An estimate with eleven honest exclusions is safer than one with three, because the three are usually the ones somebody was willing to write down.",
+    ],
+  },
+  {
+    h2: "How to hold an estimate to it",
+    subs: [
+      {
+        h3: "Ask for the basis before you ask for the number",
+        body: "If you are commissioning an estimate, agree the basis at the start rather than reading it at the end. Ten minutes on what is in, what is out, whose rates apply and when it is due prevents most of the arguments that happen later.",
+      },
+      {
+        h3: "Check the drawing register against what you sent",
+        body: "Every document you supplied should be either cited by something in the estimate or explicitly waived. A specification that was issued and never referenced is the single most reliable early warning that something has been missed.",
+      },
+      {
+        h3: "Trace three quantities at random",
+        body: "Pick three lines and ask where the number came from. A competent estimate can point at the measurement on the sheet. If the answer is a shrug or a spreadsheet cell, treat the rest of the pack with the same suspicion.",
+      },
+      {
+        h3: "Read the assumptions as though you were the client",
+        body: "Assumptions are where optimism hides. &ldquo;Assumes unrestricted access&rdquo; on a tenanted building is not an assumption, it is a fiction, and it is your problem the day the works start.",
+      },
+    ],
+  },
+  {
+    h2: "Where this sits in our own work",
+    p: [
+      "We publish the standard we hold our own packs to as a named document - the <a href=\"/estimating/basis-of-estimate/\" class=\"text-navy font-medium hover:opacity-80 transition-opacity\">Basis of Estimate</a> - rather than burying it in engagement terms. It is issued with every estimate, and the platform we price in will not let a pack be marked complete while anything required by it is missing: nothing priced without a source, nothing excluded without a stated reason, and every document supplied either used or waived.",
+      "You can see what that produces in practice. Our <a href=\"/estimating/sample-quote-pack/\" class=\"text-navy font-medium hover:opacity-80 transition-opacity\">sample estimate pack</a> is published in full - all eleven pages of a real priced job, including the basis page and the audit report, with nothing held back for a sales call.",
+    ],
+  },
+];
+
+const faqs = [
+  {
+    q: "Is a basis of estimate the same as a scope of works?",
+    a: "No. A scope of works describes what is to be built. A basis of estimate describes what the price was built from - which documents, which assumptions, which exclusions and which allowances. The two overlap but the basis is specifically about the price, and it is the document that settles disputes about what was and was not included."
+  },
+  {
+    q: "Should the basis of estimate go to the client?",
+    a: "Yes. A basis written only for internal use protects nobody. Attaching it to the submission puts the scope you priced on the record, so that anything outside it is a variation rather than an argument. It should be written in language you are content for a client to read."
+  },
+  {
+    q: "What is the difference between an allowance and a provisional sum?",
+    a: "An allowance is a figure carried for work whose scope is known but whose quantity or specification is not yet fixed. A provisional sum is carried for work that is anticipated but not yet defined at all. Both should appear as separate visible lines rather than being absorbed into rates, so that everyone can see what is firm and what is not."
+  },
+  {
+    q: "How detailed does the drawing register need to be?",
+    a: "Sheet number, title and revision for every document priced. Revision is the part people leave off and the part that matters: when an addendum is issued mid-bid, the register is what tells you in seconds whether the change touched something you had already priced."
+  },
+  {
+    q: "Who is responsible if an estimate turns out to be wrong?",
+    a: "An estimator owes you a competent, transparent, fully sourced build-up of the price. The commercial judgement on top of it - the appetite for the risk, the read on the client, the decision about what to submit - stays with you, which is why nothing should be issued to your client by anyone but you. A clearly stated basis is what makes that division of responsibility workable rather than theoretical."
+  },
+];
+---
+<InsightArticle
+  title="What Is a Basis of Estimate? A Guide for Contractors"
+  description="A basis of estimate states what a price was built from and what it assumes. Here is what belongs in one, why it protects margin, and how to hold an estimate to it."
+  slug="what-is-a-basis-of-estimate"
+  h1="What a Basis of Estimate Is, and Why You Should Insist on One"
+  datePublished="2026-08-26"
+  heroImage="/Images/plan-1.webp"
+  heroAlt="Construction bid drawings and a specification open on a desk during a quantity take-off"
+  blocks={blocks}
+  faqs={faqs}
+  estimatingLead="Every pack we price states its basis in writing and is issued with the audit report that checked it."
+  internalLinks={[
+    { text: "The Basis of Estimate standard", href: "/estimating/basis-of-estimate/" },
+    { text: "See a complete estimate pack", href: "/estimating/sample-quote-pack/" },
+    { text: "The Estimating Desk", href: "/estimating/" },
+    { text: "How to check an estimate before you submit it", href: "/insights/how-to-check-a-construction-estimate/" },
+  ]}
+/>

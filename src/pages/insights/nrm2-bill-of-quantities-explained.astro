@@ -1,0 +1,124 @@
+---
+import InsightArticle from "../../components/InsightArticle.astro";
+
+const blocks = [
+  {
+    p: [
+      "Ask three UK subcontractors what a bill of quantities is and you will get three answers, all roughly right. Ask what makes one <em>compliant</em> and the room goes quieter.",
+      "NRM2 is the rule book. It is the second volume of the RICS New Rules of Measurement - <em>Detailed Measurement for Building Works</em> - and since 2013 it has been the standard method of measurement for UK construction. It replaced SMM7, and it governs how quantities are measured, how work is described, and what has to be shown separately rather than buried in a rate.",
+      "For a contractor pricing a tender, the practical value is simple: when everyone measures the same way, the returns can actually be compared.",
+    ],
+  },
+  {
+    h2: "What NRM2 actually governs",
+    p: [
+      "NRM2 is not a pricing standard. It says nothing about what things should cost. It governs measurement and description, which is a narrower job than people assume and a more important one.",
+    ],
+    points: [
+      ["Measurement rules by work section", "how each trade is measured, in what unit, and what is deemed included in the item rather than measured separately."],
+      ["Description content", "what a valid item description must state, so that two estimators reading the same line price the same thing."],
+      ["Preliminaries", "set out as their own section rather than spread across rates, so that site establishment, management and plant are visible."],
+      ["Provisional sums", "distinguished as <em>defined</em> (enough information to have programmed and priced for it) or <em>undefined</em> (not) - a distinction with real contractual consequences for extensions of time."],
+      ["Risk allowances", "carried openly rather than absorbed silently into unit rates."],
+      ["Dayworks and contingencies", "given their own place in the bill instead of being folded into the total."],
+    ],
+  },
+  {
+    h2: "Defined and undefined provisional sums",
+    p: [
+      "This is the part of NRM2 that most often costs money, and it is worth understanding properly.",
+      "A <em>defined</em> provisional sum comes with enough information - nature of the work, how and where it fits, scope, programme constraints - that the contractor is deemed to have allowed for it in programme and preliminaries. An <em>undefined</em> provisional sum does not, and the contractor is deemed <em>not</em> to have made that allowance.",
+      "The consequence: when undefined work is later instructed, the contractor is entitled to the time and preliminaries implications. When defined work is instructed, they are not, because they were supposed to have planned for it.",
+      "If a bill carries provisional sums without saying which kind they are, that ambiguity is a live commercial risk sitting in your tender - and it is exactly the sort of thing that should be raised in writing before the return date rather than argued about on site.",
+    ],
+    note: "<span class=\"text-navy font-medium\">A tender query is cheaper than a variation.</span> Ambiguities found while pricing should go back to the client in writing, and the answer - or the absence of one - should appear in the basis of the estimate.",
+  },
+  {
+    h2: "Where BCIS fits",
+    p: [
+      "BCIS - the RICS Building Cost Information Service - is the other name worth knowing. It is the UK's cost benchmarking dataset: elemental cost analyses of real projects, tender price indices, and location and time adjustment factors.",
+      "It answers a different question from NRM2. NRM2 tells you how to measure; BCIS tells you whether the resulting number is plausible. A £/m&sup2; that sits well outside the BCIS range for that building type, region and period is not necessarily wrong, but it is a figure that should be explained rather than submitted.",
+      "In practice a well-built estimate uses both: your own rates wherever you hold them, because what materials and subcontracts have actually cost you beats any published figure; published data and BCIS benchmarks only where you have gaps; and clear marking of which is which, so the client can see where the number is firm and where it is indicative.",
+    ],
+  },
+  {
+    h2: "What a compliant tender submission contains",
+    subs: [
+      {
+        h3: "A priced bill or schedule of works, structured by trade",
+        body: "Measured in accordance with NRM2, with quantities, rates and the resulting totals set out so they can be interrogated rather than taken on trust.",
+      },
+      {
+        h3: "Preliminaries priced separately",
+        body: "Site establishment, management, plant, temporary works and insurances shown as their own section. Preliminaries hidden inside unit rates make a tender impossible to level against a competitor's.",
+      },
+      {
+        h3: "Provisional sums and dayworks set out",
+        body: "Each identified, each defined or undefined, each visible in the total rather than absorbed.",
+      },
+      {
+        h3: "Main contractor's discount and attendances handled per the contract",
+        body: "As JCT or NEC requires for the form in use, rather than assumed.",
+      },
+      {
+        h3: "A stated basis",
+        body: "Drawings and specifications priced, listed by number and revision, with inclusions, exclusions, assumptions and qualifications - written to be attached to the submission as it stands. See <a href=\"/insights/what-is-a-basis-of-estimate/\" class=\"text-navy font-medium hover:opacity-80 transition-opacity\">what belongs in a basis of estimate</a>.",
+      },
+      {
+        h3: "Sterling, excluding VAT",
+        body: "Stated explicitly, with the CIS position clear where subcontract labour is involved.",
+      },
+    ],
+  },
+  {
+    h2: "When there is no bill at all",
+    p: [
+      "On a great many UK tenders - particularly fit-out, refurbishment and smaller works - no bill of quantities is issued. You are handed drawings, a specification and a return date.",
+      "That does not remove the standard; it moves the work to you. The take-off is done from the drawings and a schedule of works is built structured by trade and measured to NRM2, with preliminaries, provisional sums and dayworks separated out. The submission then reads the way a quantity surveyor expects, which is a quiet advantage: a tender that is easy to level is a tender that is easy to award.",
+      "It also means the drawings carry more weight than usual. Where the existing building is the risk - a riser that is not where the as-built shows it, a ceiling void shallower than anyone assumed, a supply nobody verified - a <a href=\"/uk/measured-building-survey/\" class=\"text-navy font-medium hover:opacity-80 transition-opacity\">measured survey of what is actually there</a> is worth more than another read of the drawing.",
+    ],
+  },
+];
+
+const faqs = [
+  {
+    q: "Is NRM2 mandatory in the UK?",
+    a: "Not by law. It is the RICS standard method of measurement and it applies where the contract or tender documents adopt it, which most UK building works do. Where the tender is silent, measuring to NRM2 anyway is the safer choice because it produces a submission that can be levelled against others on the same basis."
+  },
+  {
+    q: "What replaced SMM7?",
+    a: "NRM2, published by the RICS as part of the New Rules of Measurement suite and effective from 2013. NRM1 covers order of cost estimating and elemental cost planning, NRM2 covers detailed measurement for building works, and NRM3 covers maintenance works."
+  },
+  {
+    q: "What is the difference between a defined and an undefined provisional sum?",
+    a: "A defined provisional sum comes with enough information about nature, scope, location and programme that the contractor is deemed to have allowed for it in their programme and preliminaries. An undefined one does not, and the contractor is deemed not to have allowed for it - so when the work is instructed, the time and preliminaries consequences fall differently. The distinction should always be stated in the bill."
+  },
+  {
+    q: "Do I need BCIS data to price a tender?",
+    a: "No. Your own rates are better wherever you hold them, because they reflect what work has actually cost your business rather than an industry average. BCIS is useful for filling gaps and for sanity-checking a total against comparable projects by building type, region and period - and any rate taken from published data rather than your own history should be marked as such."
+  },
+  {
+    q: "Can a bill of quantities be produced from drawings alone?",
+    a: "Yes - that is what a take-off is. Quantities are measured from the drawings and built into a schedule structured by trade. The quality depends on the drawings: where they will not support a firm measurement, the correct treatment is a stated provisional sum carried visibly rather than a guess folded into a rate."
+  },
+];
+---
+<InsightArticle
+  title="NRM2 and the Bill of Quantities, Explained"
+  description="NRM2 governs how UK building work is measured and described. What it covers, why defined and undefined provisional sums matter, and where BCIS benchmarks fit."
+  slug="nrm2-bill-of-quantities-explained"
+  h1="NRM2 and the Bill of Quantities: What a Compliant UK Tender Contains"
+  datePublished="2026-08-26"
+  heroImage="/Images/london2.webp"
+  heroAlt="The City of London at night - UK construction tendering and estimating"
+  locale="uk"
+  blocks={blocks}
+  faqs={faqs}
+  estimatingLead="We take off to NRM2, separate preliminaries and provisional sums, and mark every rate that came from published data rather than yours."
+  internalLinks={[
+    { text: "The Estimating Desk UK", href: "/uk/estimating/" },
+    { text: "See a complete estimate pack", href: "/estimating/sample-quote-pack/" },
+    { text: "What a basis of estimate is", href: "/insights/what-is-a-basis-of-estimate/" },
+    { text: "Measured building survey UK", href: "/uk/measured-building-survey/" },
+  ]}
+/>

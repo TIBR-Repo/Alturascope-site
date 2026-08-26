@@ -1,0 +1,185 @@
+---
+/**
+ * Shared shell for Insights articles.
+ *
+ * The 33 existing articles each hand-roll this markup, which is why their
+ * meta, schema and internal linking drifted apart. New articles use this.
+ */
+import Layout from "../layouts/Layout.astro";
+import EstimatingBand from "./EstimatingBand.astro";
+
+interface Block {
+  /** Section heading. Omit for the opening block. */
+  h2?: string;
+  /** Body paragraphs, as HTML strings. */
+  p?: string[];
+  /** Gold-ruled definition list: [term, description]. */
+  points?: [string, string][];
+  /** Sub-sections under this heading. */
+  subs?: { h3: string; body: string }[];
+  /** A pulled-out note. */
+  note?: string;
+}
+
+interface Props {
+  title: string;
+  description: string;
+  slug: string;
+  h1: string;
+  datePublished: string;
+  dateModified?: string;
+  heroImage: string;
+  heroAlt: string;
+  blocks: Block[];
+  faqs: { q: string; a: string }[];
+  internalLinks: { text: string; href: string }[];
+  estimatingLead: string;
+  locale?: "us" | "uk";
+  hreflang?: { lang: string; href: string }[];
+}
+
+const {
+  title, description, slug, h1, datePublished, dateModified,
+  heroImage, heroAlt, blocks, faqs, internalLinks, estimatingLead,
+  locale = "us", hreflang = [],
+} = Astro.props;
+
+const url = `https://alturascope.com/insights/${slug}/`;
+
+const schema = JSON.stringify({
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": h1,
+  "author": { "@id": "https://alturascope.com/#organization" },
+  "publisher": { "@id": "https://alturascope.com/#organization" },
+  "datePublished": datePublished,
+  "dateModified": dateModified || datePublished,
+  "description": description,
+  "image": `https://alturascope.com${heroImage}`,
+  "mainEntityOfPage": url,
+  "isPartOf": { "@type": "Blog", "@id": "https://alturascope.com/insights/" },
+});
+
+const breadcrumbSchema = JSON.stringify({
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://alturascope.com/" },
+    { "@type": "ListItem", "position": 2, "name": "Insights", "item": "https://alturascope.com/insights/" },
+    { "@type": "ListItem", "position": 3, "name": h1, "item": url },
+  ],
+});
+
+const faqSchema = JSON.stringify({
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": faqs.map((f) => ({
+    "@type": "Question",
+    "name": f.q,
+    "acceptedAnswer": { "@type": "Answer", "text": f.a },
+  })),
+});
+
+const readable = new Date(datePublished).toLocaleDateString(
+  locale === "uk" ? "en-GB" : "en-US",
+  { year: "numeric", month: "long", day: "numeric" }
+);
+---
+<Layout
+  title={title}
+  description={description}
+  canonical={url}
+  schema={schema}
+  breadcrumbSchema={breadcrumbSchema}
+  faqSchema={faqSchema}
+  ogImage={`https://alturascope.com${heroImage}`}
+  fullWidth={true}
+  lang={locale === "uk" ? "en-GB" : "en"}
+  hreflang={hreflang}
+>
+  <div data-hero-page>
+
+    <section class="relative h-[45vh] max-h-[430px] min-h-[290px] flex items-center justify-center">
+      <div class="absolute inset-0 bg-navy">
+        <img
+          src={heroImage}
+          alt={heroAlt}
+          class="w-full h-full object-cover opacity-30"
+          loading="eager"
+          fetchpriority="high"
+          decoding="async"
+        />
+        <div class="absolute inset-0 bg-[rgba(11,31,58,0.80)]"></div>
+      </div>
+      <div class="relative z-10 text-center px-6 max-w-[820px] mx-auto">
+        <p class="label text-gold mb-4">Insights &middot; Estimating</p>
+        <h1 class="text-[1.75rem] md:text-[2.5rem] font-light text-offwhite leading-tight" set:html={h1} />
+        <p class="mt-5 text-offwhite/50 text-[0.85rem]">
+          <time datetime={datePublished}>{readable}</time>
+        </p>
+      </div>
+    </section>
+
+    <article class="bg-white section-padding">
+      <div class="max-w-[760px] mx-auto px-6">
+        {blocks.map((b) => (
+          <div class={b.h2 ? "mt-14" : ""}>
+            {b.h2 && <h2 class="text-[1.6rem] font-light text-navy mb-6" set:html={b.h2} />}
+            {b.p && (
+              <div class="space-y-6 text-midgrey leading-body text-[1.05rem]">
+                {b.p.map((para) => <p set:html={para} />)}
+              </div>
+            )}
+            {b.points && (
+              <div class="mt-7 space-y-4 pl-6 border-l-2 border-gold">
+                {b.points.map(([term, desc]) => (
+                  <p class="text-midgrey leading-body text-[1.02rem]">
+                    <span class="text-navy font-medium">{term}</span> &mdash; <Fragment set:html={desc} />
+                  </p>
+                ))}
+              </div>
+            )}
+            {b.subs && (
+              <div class="mt-9 space-y-9">
+                {b.subs.map((s) => (
+                  <div>
+                    <h3 class="text-navy font-medium text-[1.1rem]">{s.h3}</h3>
+                    <p class="mt-3 text-midgrey leading-body text-[1.05rem]" set:html={s.body} />
+                  </div>
+                ))}
+              </div>
+            )}
+            {b.note && (
+              <div class="mt-8 border-l-2 border-gold bg-offwhite py-5 px-7">
+                <p class="text-midgrey leading-body" set:html={b.note} />
+              </div>
+            )}
+          </div>
+        ))}
+
+        <h2 class="text-[1.6rem] font-light text-navy mt-16 mb-8">Common questions</h2>
+        <div class="space-y-6">
+          {faqs.map((f) => (
+            <details class="group border-b border-border pb-5">
+              <summary class="cursor-pointer text-navy font-medium text-[1.05rem] flex items-start justify-between gap-6">
+                {f.q}
+                <span class="text-gold text-xl transition-transform group-open:rotate-45 flex-none leading-none">+</span>
+              </summary>
+              <p class="mt-4 text-midgrey leading-body">{f.a}</p>
+            </details>
+          ))}
+        </div>
+
+        <div class="mt-14 pt-8 border-t border-border flex flex-wrap gap-x-6 gap-y-3 text-sm">
+          {internalLinks.map((l) => (
+            <a href={l.href} class="text-navy font-medium hover:opacity-80 transition-opacity">{l.text} &rarr;</a>
+          ))}
+          <a href="/insights/" class="text-navy font-medium hover:opacity-80 transition-opacity">All insights &rarr;</a>
+        </div>
+      </div>
+    </article>
+
+    <EstimatingBand locale={locale} lead={estimatingLead} />
+
+  </div>
+</Layout>

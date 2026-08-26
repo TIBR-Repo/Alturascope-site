@@ -1,0 +1,116 @@
+---
+import InsightArticle from "../../components/InsightArticle.astro";
+
+const blocks = [
+  {
+    p: [
+      "An estimate has landed. It is due out to your client tomorrow, it runs to forty pages, and you have about an hour.",
+      "Reading all of it is not the answer, and neither is spot-checking rates - rates are almost never where estimates go wrong. Estimates go wrong through omission: something that was never measured, never priced, or quietly dropped, which nobody notices until the job is won and the scope is fixed.",
+      "What follows is a checking sequence built around that. It takes under an hour on a typical package and it is ordered by how much money each check tends to save.",
+    ],
+  },
+  {
+    h2: "1. Reconcile the document register against what you sent",
+    p: [
+      "Before anything else, compare the list of documents priced against the list of documents issued.",
+      "Every drawing and specification you supplied should be either cited by something in the estimate or explicitly waived with a reason. A specification that was issued and never referenced anywhere is the single most reliable early warning that something has been missed - and it takes two minutes to spot.",
+      "Check revisions, not just sheet numbers. Pricing revision B of a drawing that reached revision D is a different job from the one you are bidding.",
+    ],
+  },
+  {
+    h2: "2. Look for what is not there",
+    p: [
+      "Read the exclusions list first and the inclusions list second. Then read the trade sections looking for the trades that are <em>absent</em>.",
+      "The items that go missing are consistent across the industry, and they are worth checking by name every time:",
+    ],
+    points: [
+      ["Firestopping and passive fire protection", "the most commonly omitted item in fit-out, and among the most expensive to add later."],
+      ["Temporary works and protection", "protection to existing finishes, hoardings, propping, temporary lighting and power."],
+      ["Builder's work in connection", "the holes, chases and making good that MEP subcontractors assume somebody else has priced."],
+      ["Testing, commissioning and handover", "commissioning, as-built information, O&amp;M manuals, training, demonstration."],
+      ["Out-of-hours and phasing costs", "where the building is occupied or trading, which the drawing will never tell you."],
+      ["Waste, disposal and compliance", "skips, segregation, and anything with a licensing requirement attached."],
+    ],
+    note: "<span class=\"text-navy font-medium\">Treat &ldquo;unable to measure&rdquo; as a red flag rather than an exclusion.</span> Scope that could not be measured has not gone away - it has moved into the risk you are carrying. It belongs in the estimate at zero, marked to be confirmed, where you can see it and decide about it.",
+  },
+  {
+    h2: "3. Trace three quantities at random",
+    p: [
+      "Pick three lines from different trades and ask a single question: where did this number come from?",
+      "A properly built estimate can point at the measurement on the sheet it was taken from. If quantities were measured on the drawing and linked to the line they price, this takes seconds. If the answer is a spreadsheet cell with no provenance, the rest of the pack deserves the same suspicion.",
+      "Pay particular attention to areas. Compare a measured floor area against the area printed on the drawing's own title block or schedule. Where they disagree by more than a few percent, something is wrong - and the most common cause is a site plan and a floor plan showing the same footprint at different scales, measured as two separate floors.",
+    ],
+  },
+  {
+    h2: "4. Read the margin, not just the total",
+    p: [
+      "A single bottom-line figure tells you almost nothing. Gross profit by section tells you where the job actually makes money and where you have room to sharpen if you need to compete.",
+      "Look for sections where margin is unusually thin or unusually fat. Thin margin often means a trade was priced defensively because the information was poor - which is a signal about risk, not just price. Fat margin in one section can mean a rate was applied at the wrong unit.",
+      "This is also the check that turns the night-before conversation from &ldquo;is this right?&rdquo; into &ldquo;where do I compete?&rdquo;, which is a considerably better question to be asking.",
+    ],
+  },
+  {
+    h2: "5. Sanity-check the shape of the number",
+    p: [
+      "Before you submit, compare the total against something. A cost per square foot or per square metre for the building type and region. A comparable job you have done. In the UK, a BCIS benchmark for the sector and period.",
+      "The point is not that an outlier is wrong. The point is that an outlier should be <em>explained</em>. If the figure sits well outside the range you would expect, you want to know why before your client asks - and the explanation is usually either a genuine feature of the job or an error you have just caught.",
+    ],
+  },
+  {
+    h2: "6. Read the assumptions as if you were the client",
+    p: [
+      "Assumptions are where optimism hides. &ldquo;Assumes unrestricted access&rdquo; on a tenanted building. &ldquo;Assumes existing slab is sound&rdquo; where nobody has lifted a floor covering. &ldquo;Assumes single mobilisation&rdquo; on a phased job.",
+      "Each of those may be perfectly reasonable. Each of them is also a variation waiting to happen, and the difference between a variation you can claim for and one you cannot is whether the assumption was stated on the record before the job started.",
+      "This is why the basis of estimate is worth reading last and worth reading properly - it is the page that decides who carries what. We set out <a href=\"/insights/what-is-a-basis-of-estimate/\" class=\"text-navy font-medium hover:opacity-80 transition-opacity\">what belongs in one</a> separately.",
+    ],
+  },
+  {
+    h2: "Making the check faster next time",
+    p: [
+      "Most of this hour disappears if the estimate arrives with its provenance attached: quantities linked to the measurements they came from, exclusions each carrying a stated reason, every supplied document either used or waived, and an audit report saying which of those were verified before release.",
+      "That is the standard our own packs are held to, and the check is deterministic rather than discretionary - the platform will not let a pack be marked complete while any of it is failing. You can see the whole thing in our <a href=\"/estimating/sample-quote-pack/\" class=\"text-navy font-medium hover:opacity-80 transition-opacity\">published sample estimate pack</a>, audit report included.",
+    ],
+  },
+];
+
+const faqs = [
+  {
+    q: "How long should checking an estimate take?",
+    a: "Under an hour for a typical package, if the estimate carries its own provenance. Reconciling the document register, checking for the commonly omitted trades, tracing three quantities and reading margin by section are the four checks that catch most of what matters. Reading every line is neither realistic nor the best use of the time."
+  },
+  {
+    q: "What is the most commonly omitted item in a construction estimate?",
+    a: "Firestopping and passive fire protection, particularly on fit-out and refurbishment. It is easy to miss because it rarely has its own drawing - it sits in specification notes and fire strategy documents - and it is expensive to add once the scope is contractually fixed. Builder's work in connection runs a close second."
+  },
+  {
+    q: "How do I know if a quantity is right?",
+    a: "Ask where it came from. A quantity measured on the drawing and linked to the line it prices can be shown to you as a picture of what was measured. Separately, compare measured areas against the areas printed on the drawings themselves - a disagreement beyond a few percent usually means the same space has been measured twice at different scales."
+  },
+  {
+    q: "Should I check rates or quantities first?",
+    a: "Quantities, and specifically the absence of them. A rate that is ten percent out costs you ten percent of that item. A trade that was never measured costs you all of it, and you are contractually committed before anyone notices."
+  },
+  {
+    q: "Is an outsourced estimate riskier than one done in-house?",
+    a: "Not inherently, and it can be less risky where the alternative is your own estimator producing it at eleven at night in a deadline week. What matters is whether the pack states its basis, whether quantities are traceable, and whether you review and sign it off before anything reaches your client. Nothing should be issued to your client by anyone but you."
+  },
+];
+---
+<InsightArticle
+  title="How to Check a Construction Estimate Before You Submit"
+  description="Estimates fail through omission, not arithmetic. Six checks, in order of what they save: document register, missing trades, traceable quantities, margin, benchmark, assumptions."
+  slug="how-to-check-a-construction-estimate"
+  h1="How to Check a Construction Estimate Before You Submit It"
+  datePublished="2026-08-26"
+  heroImage="/Images/pack/us-03.webp"
+  heroAlt="A priced schedule of works showing trade sections with net cost, gross profit and price"
+  blocks={blocks}
+  faqs={faqs}
+  estimatingLead="Our packs arrive with their provenance attached, so this check takes minutes rather than an evening."
+  internalLinks={[
+    { text: "The Estimating Desk", href: "/estimating/" },
+    { text: "See a complete estimate pack", href: "/estimating/sample-quote-pack/" },
+    { text: "What a basis of estimate is", href: "/insights/what-is-a-basis-of-estimate/" },
+    { text: "How estimating capacity caps revenue", href: "/insights/estimating-capacity-limits-contractor-growth/" },
+  ]}
+/>

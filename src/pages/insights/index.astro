@@ -14,6 +14,34 @@ const schema = JSON.stringify({
 
 const posts = [
   {
+    title: "What a Basis of Estimate Is, and Why You Should Insist on One",
+    description: "A basis of estimate states what a price was built from and what it assumes. What belongs in one, why it protects margin rather than covering backs, and how to hold an estimate to it.",
+    href: "/insights/what-is-a-basis-of-estimate/",
+    date: "August 2026",
+    category: "ESTIMATING"
+  },
+  {
+    title: "The Bids You Never Submitted: How Estimating Capacity Caps Revenue",
+    description: "The invitations you declined for lack of hours never appear in the accounts. How to put a number on them, and the four ways contractors actually fix the constraint.",
+    href: "/insights/estimating-capacity-limits-contractor-growth/",
+    date: "August 2026",
+    category: "ESTIMATING"
+  },
+  {
+    title: "How to Check a Construction Estimate Before You Submit It",
+    description: "Estimates fail through omission, not arithmetic. Six checks in under an hour, ordered by how much money each one tends to save.",
+    href: "/insights/how-to-check-a-construction-estimate/",
+    date: "August 2026",
+    category: "ESTIMATING"
+  },
+  {
+    title: "NRM2 and the Bill of Quantities: What a Compliant UK Tender Contains",
+    description: "NRM2 governs how UK building work is measured and described. What it covers, why defined and undefined provisional sums matter, and where BCIS benchmarks fit.",
+    href: "/insights/nrm2-bill-of-quantities-explained/",
+    date: "August 2026",
+    category: "ESTIMATING UK"
+  },
+  {
     title: "Brand Standard Compliance Documentation for Multi-Site Operators",
     description: "Multi-site operators know their brand standards. They often do not know the current physical state of every location. Systematic compliance documentation closes that gap.",
     href: "/insights/multi-site-brand-standard-compliance-documentation/",
@@ -231,6 +259,43 @@ const posts = [
     category: "SITE DOCUMENTATION"
   }
 ];
+
+// Twenty-six card categories made twenty-six filter chips, which is a wall
+// rather than a filter. The granular label stays on the card; the chips group
+// them into the handful of topics a reader actually arrives with.
+const TOPIC_OF = {
+  "ESTIMATING": "Estimating",
+  "ESTIMATING UK": "Estimating",
+  "COST & ROI": "Estimating",
+  "SITE DOCUMENTATION": "Surveys & Method",
+  "SURVEY METHODOLOGY": "Surveys & Method",
+  "THERMAL IMAGING": "Surveys & Method",
+  "MEP & FIT-OUT": "Surveys & Method",
+  "BUYER'S GUIDE": "Surveys & Method",
+  "DUE DILIGENCE": "Surveys & Method",
+  "MULTI-SITE": "Multi-Site Programmes",
+  "MULTI-SITE UK": "Multi-Site Programmes",
+  "RETAIL ROLLOUT": "Multi-Site Programmes",
+  "RETAIL UK": "Multi-Site Programmes",
+  "FRANCHISE": "Multi-Site Programmes",
+  "QSR REMODEL": "Multi-Site Programmes",
+  "QSR & RESTAURANT": "Multi-Site Programmes",
+  "CONVENIENCE RETAIL": "Multi-Site Programmes",
+  "FASHION RETAIL": "Multi-Site Programmes",
+  "AUTOMOTIVE": "Multi-Site Programmes",
+  "ABA CLINICS": "Healthcare & Clinics",
+  "ABA & AUTISM THERAPY": "Healthcare & Clinics",
+  "HEALTHCARE": "Healthcare & Clinics",
+  "DATA CENTRES": "Specialist Facilities",
+  "DATA CENTRES UK": "Specialist Facilities",
+  "CONTROLLED ENVIRONMENTS": "Specialist Facilities",
+  "HERITAGE & SPECIALIST": "Specialist Facilities",
+  "SELF-STORAGE": "Specialist Facilities",
+};
+const ORDER = ["Estimating", "Surveys & Method", "Multi-Site Programmes", "Healthcare & Clinics", "Specialist Facilities"];
+const withTopic = posts.map((p) => ({ ...p, topic: TOPIC_OF[p.category] || "Surveys & Method" }));
+const counts = withTopic.reduce((acc, p) => ({ ...acc, [p.topic]: (acc[p.topic] || 0) + 1 }), {});
+const categories = ["All", ...ORDER.filter((t) => counts[t])];
 ---
 <Layout
   title="Construction Insights & Industry Guides | Alturascope"
@@ -259,9 +324,26 @@ const posts = [
     <!-- Posts -->
     <section class="bg-white section-padding">
       <div class="max-w-[900px] mx-auto px-6">
+
+        <!-- Filter. Thirty-seven articles in one undifferentiated list ran to
+             eighteen screens on a phone with no way to narrow it. -->
+        <div class="flex flex-wrap gap-2 mb-12" role="group" aria-label="Filter articles by topic">
+          {categories.map((cat) => (
+            <button
+              type="button"
+              data-filter={cat}
+              class="filter-chip text-[0.78rem] font-medium tracking-nav border border-border text-midgrey px-4 py-2 rounded-sm transition-colors hover:border-gold hover:text-navy"
+            >
+              {cat === "All" ? `All (${posts.length})` : `${cat} (${counts[cat]})`}
+            </button>
+          ))}
+        </div>
+
+        <p id="filter-count" class="sr-only" role="status" aria-live="polite"></p>
+
         <div class="space-y-12">
-          {posts.map((post) => (
-            <a href={post.href} class="block group">
+          {withTopic.map((post) => (
+            <a href={post.href} class="post-card block group" data-category={post.topic}>
               <div class="border border-border rounded p-8 transition-all duration-300 hover:border-gold hover:shadow-md">
                 <div class="flex items-center gap-4 mb-4">
                   <span class="label text-gold text-[0.7rem]">{post.category}</span>
@@ -282,4 +364,42 @@ const posts = [
     </section>
 
   </div>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        const chips = Array.from(document.querySelectorAll(".filter-chip"));
+        const cards = Array.from(document.querySelectorAll(".post-card"));
+        const status = document.getElementById("filter-count");
+        const ACTIVE = ["bg-navy", "text-white", "border-navy"];
+        const IDLE = ["text-midgrey", "border-border"];
+
+        function apply(cat) {
+          let shown = 0;
+          cards.forEach((card) => {
+            const match = cat === "All" || card.getAttribute("data-category") === cat;
+            card.style.display = match ? "" : "none";
+            if (match) shown++;
+          });
+          chips.forEach((chip) => {
+            const on = chip.getAttribute("data-filter") === cat;
+            chip.classList.toggle("is-active", on);
+            ACTIVE.forEach((c) => chip.classList.toggle(c, on));
+            IDLE.forEach((c) => chip.classList.toggle(c, !on));
+            chip.setAttribute("aria-pressed", String(on));
+          });
+          if (status) status.textContent = `${shown} article${shown === 1 ? "" : "s"} shown`;
+          const url = new URL(window.location.href);
+          if (cat === "All") url.searchParams.delete("topic");
+          else url.searchParams.set("topic", cat);
+          history.replaceState(null, "", url);
+        }
+
+        chips.forEach((chip) => {
+          chip.addEventListener("click", () => apply(chip.getAttribute("data-filter") || "All"));
+        });
+
+        const initial = new URL(window.location.href).searchParams.get("topic");
+        apply(initial && chips.some((c) => c.getAttribute("data-filter") === initial) ? initial : "All");
+      });
+    </script>
 </Layout>

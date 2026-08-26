@@ -122,9 +122,15 @@ def main():
             if f.endswith(".html"):
                 full = os.path.join(root, f)
                 route = route_for(full)
-                p = Page()
                 with open(full, encoding="utf-8") as fh:
-                    p.feed(fh.read())
+                    html = fh.read()
+                # Astro emits a meta-refresh stub for each configured redirect.
+                # It is intentionally title-only and noindex, so auditing it as
+                # a content page reports failures that are the point of the file.
+                if 'http-equiv="refresh"' in html:
+                    continue
+                p = Page()
+                p.feed(html)
                 pages[route] = p
 
     routes = set(pages.keys())
