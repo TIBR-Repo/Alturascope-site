@@ -52,8 +52,17 @@
     @apply opacity-85;
   }
 
+  /* Phone padding was py-20 (160px a section). Across a seventeen-section page
+     that is nearly three screens of nothing, which is most of why the long
+     pages felt endless on a handset. Desktop keeps its air. */
   .section-padding {
-    @apply py-20 md:py-[120px];
+    @apply py-14 md:py-[104px];
+  }
+
+  /* Used further down long pages, where a full section's breathing room
+     compounds into several screens of empty scroll. */
+  .section-padding-tight {
+    @apply py-10 md:py-[68px];
   }
 
   .card {
@@ -62,5 +71,34 @@
   }
   .card:hover {
     @apply border-gold;
+  }
+
+  /* Header dropdowns. Opens on hover and on keyboard focus, so the panel is
+     reachable without JavaScript. The pt-3 on .nav-panel is a deliberate hover
+     bridge - without it the panel closes as the pointer crosses the gap. */
+  .nav-panel {
+    opacity: 0;
+    visibility: hidden;
+    transform: translate(-50%, -4px);
+    transition: opacity 180ms ease, transform 180ms ease, visibility 180ms;
+  }
+  .nav-group:hover .nav-panel,
+  .nav-group:focus-within .nav-panel {
+    opacity: 1;
+    visibility: visible;
+    transform: translate(-50%, 0);
+  }
+  .nav-group:hover .nav-chevron,
+  .nav-group:focus-within .nav-chevron {
+    transform: rotate(180deg);
+  }
+}
+
+@layer utilities {
+  a:focus-visible,
+  button:focus-visible,
+  summary:focus-visible {
+    outline: 2px solid #C9A84C;
+    outline-offset: 3px;
   }
 }

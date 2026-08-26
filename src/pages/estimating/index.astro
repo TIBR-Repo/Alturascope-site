@@ -122,7 +122,7 @@ const faqSchema = JSON.stringify({
   <div data-hero-page>
 
     <!-- Hero -->
-    <section class="relative min-h-[100vh] md:min-h-0 md:h-[68vh] flex items-center justify-center">
+    <section class="relative min-h-[78vh] md:min-h-0 md:h-[66vh] flex items-center justify-center">
       <div class="absolute inset-0 bg-navy">
         <img
           src="/Images/plan-1.jpg"
@@ -150,6 +150,20 @@ const faqSchema = JSON.stringify({
         </div>
       </div>
     </section>
+
+    <!-- In-page navigation -->
+    <nav class="sticky top-[84px] z-40 bg-white/95 backdrop-blur border-b border-border" aria-label="On this page">
+      <div class="max-w-[1200px] mx-auto px-6">
+        <ul class="flex items-center gap-6 md:gap-9 overflow-x-auto whitespace-nowrap py-3.5 -mb-px list-none m-0">
+          <li><a href="#what-you-get" class="subnav-link text-[0.82rem] font-medium tracking-nav text-midgrey hover:text-navy transition-colors">What you get</a></li>
+          <li><a href="#the-audit" class="subnav-link text-[0.82rem] font-medium tracking-nav text-midgrey hover:text-navy transition-colors">The audit</a></li>
+          <li><a href="#how-it-works" class="subnav-link text-[0.82rem] font-medium tracking-nav text-midgrey hover:text-navy transition-colors">How it works</a></li>
+          <li><a href="#pricing" class="subnav-link text-[0.82rem] font-medium tracking-nav text-midgrey hover:text-navy transition-colors">Pricing</a></li>
+          <li><a href="#faq" class="subnav-link text-[0.82rem] font-medium tracking-nav text-midgrey hover:text-navy transition-colors">Questions</a></li>
+          <li class="ml-auto pl-6 hidden md:block"><a href="#send-a-package" class="text-[0.82rem] font-medium tracking-nav text-navy border-b-2 border-gold pb-0.5">Send a bid package</a></li>
+        </ul>
+      </div>
+    </nav>
 
     <!-- Pain mirror -->
     <section class="bg-navy-light section-padding">
@@ -199,6 +213,44 @@ const faqSchema = JSON.stringify({
       </div>
     </section>
 
+    <!-- See the pack -->
+    <section class="bg-white section-padding">
+      <div class="max-w-[1100px] mx-auto px-6">
+        <div class="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+          <div>
+            <p class="label text-gold mb-4">Before You Send Anything</p>
+            <h2 class="text-[2rem] font-light text-navy leading-tight">
+              Read a complete pack first.
+            </h2>
+            <p class="mt-6 text-midgrey leading-body">
+              We have published a full demonstration estimate pack &mdash; all eleven pages, both
+              a US bid and a UK tender &mdash; so you can judge the work before there is anything
+              of yours at stake. Priced schedule, traceable take-off, margin analysis and the
+              audit report, nothing held back for the sales call.
+            </p>
+            <div class="mt-8 flex flex-wrap gap-4">
+              <a href="/estimating/sample-quote-pack/" class="btn-primary">See every page</a>
+              <a href="/downloads/alturascope-demo-estimate-pack-us.pdf" download class="btn-secondary">Download the PDF</a>
+            </div>
+          </div>
+          <figure class="m-0">
+            <img
+              src="/Images/pack/us-03.jpg"
+              alt="Priced schedule of works from an Alturascope estimate pack, showing 23 trade sections with net cost, gross profit and price"
+              width="1400"
+              height="989"
+              loading="lazy"
+              decoding="async"
+              class="w-full h-auto border border-border"
+            />
+            <figcaption class="mt-3 text-midgrey text-[0.8rem]">
+              Page 3 &mdash; the priced schedule. Demonstration figures.
+            </figcaption>
+          </figure>
+        </div>
+      </div>
+    </section>
+
     <!-- The problem -->
     <section class="bg-white section-padding">
       <div class="max-w-[900px] mx-auto px-6">
@@ -224,8 +276,8 @@ const faqSchema = JSON.stringify({
     </section>
 
     <!-- What comes back -->
-    <section class="bg-offwhite section-padding">
-      <div class="max-w-[900px] mx-auto px-6">
+    <section id="what-you-get" class="scroll-mt-[150px] bg-offwhite section-padding">
+      <div class="max-w-[1180px] mx-auto px-6">
         <p class="label text-gold mb-4">What Comes Back</p>
         <h2 class="text-[2rem] font-light text-navy leading-tight">
           Not a number. A pack you can defend.
@@ -236,7 +288,13 @@ const faqSchema = JSON.stringify({
           </p>
         </div>
 
-        <div class="mt-16">
+
+
+
+
+
+        <div class="mt-14 grid grid-cols-1 md:grid-cols-2 gap-x-14 gap-y-12">
+        <div>
           <h3 class="text-[1.35rem] font-medium text-navy">Priced Schedule of Works</h3>
           <div class="mt-4 space-y-4 text-midgrey leading-body">
             <p>
@@ -244,8 +302,7 @@ const faqSchema = JSON.stringify({
             </p>
           </div>
         </div>
-
-        <div class="mt-12">
+        <div>
           <h3 class="text-[1.35rem] font-medium text-navy">Traceable Quantity Take-Off</h3>
           <div class="mt-4 space-y-4 text-midgrey leading-body">
             <p>
@@ -253,8 +310,7 @@ const faqSchema = JSON.stringify({
             </p>
           </div>
         </div>
-
-        <div class="mt-12">
+        <div>
           <h3 class="text-[1.35rem] font-medium text-navy">Margin Analysis</h3>
           <div class="mt-4 space-y-4 text-midgrey leading-body">
             <p>
@@ -262,8 +318,7 @@ const faqSchema = JSON.stringify({
             </p>
           </div>
         </div>
-
-        <div class="mt-12">
+        <div>
           <h3 class="text-[1.35rem] font-medium text-navy">A Stated Basis of Estimate</h3>
           <div class="mt-4 space-y-4 text-midgrey leading-body">
             <p>
@@ -271,8 +326,7 @@ const faqSchema = JSON.stringify({
             </p>
           </div>
         </div>
-
-        <div class="mt-12">
+        <div>
           <h3 class="text-[1.35rem] font-medium text-navy">A Client-Ready Bid Document</h3>
           <div class="mt-4 space-y-4 text-midgrey leading-body">
             <p>
@@ -280,8 +334,7 @@ const faqSchema = JSON.stringify({
             </p>
           </div>
         </div>
-
-        <div class="mt-12">
+        <div>
           <h3 class="text-[1.35rem] font-medium text-navy">The Working File &mdash; And It Is Yours</h3>
           <div class="mt-4 space-y-4 text-midgrey leading-body">
             <p>
@@ -289,11 +342,12 @@ const faqSchema = JSON.stringify({
             </p>
           </div>
         </div>
+        </div>
       </div>
     </section>
 
     <!-- Machine audit -->
-    <section class="bg-navy section-padding">
+    <section id="the-audit" class="scroll-mt-[150px] bg-navy section-padding">
       <div class="max-w-[1000px] mx-auto px-6">
         <p class="label text-gold mb-4">Before You See It</p>
         <h2 class="text-[2rem] font-light text-offwhite leading-tight max-w-[24ch]">
@@ -308,37 +362,37 @@ const faqSchema = JSON.stringify({
           </p>
         </div>
 
-        <div class="mt-14 space-y-0">
-          <div class="grid grid-cols-1 md:grid-cols-[190px_1fr] gap-2 md:gap-8 border-t border-white/15 py-6">
-            <p class="label text-gold">Provenance</p>
+        <div class="mt-14 grid grid-cols-1 lg:grid-cols-2 lg:gap-x-14">
+          <div class="border-t border-white/15 py-5">
+            <p class="label text-gold mb-2">Provenance</p>
             <p class="text-offwhite/80 leading-body"><span class="text-offwhite font-medium">Every priced quantity has a source.</span> A line that is neither linked to a measurement nor cited to a document is flagged. There is no such thing as a number that came from nowhere.</p>
           </div>
-          <div class="grid grid-cols-1 md:grid-cols-[190px_1fr] gap-2 md:gap-8 border-t border-white/15 py-6">
-            <p class="label text-gold">No Silent Drops</p>
+          <div class="border-t border-white/15 py-5">
+            <p class="label text-gold mb-2">No Silent Drops</p>
             <p class="text-offwhite/80 leading-body"><span class="text-offwhite font-medium">Nothing can be excluded without a stated reason.</span> And &ldquo;we couldn&rsquo;t measure it&rdquo; is not an accepted reason &mdash; unmeasurable scope has to appear in the estimate at zero, marked to be confirmed, where you can see it. This is the check that stops the firestopping disappearing.</p>
           </div>
-          <div class="grid grid-cols-1 md:grid-cols-[190px_1fr] gap-2 md:gap-8 border-t border-white/15 py-6">
-            <p class="label text-gold">Nothing Unread</p>
+          <div class="border-t border-white/15 py-5">
+            <p class="label text-gold mb-2">Nothing Unread</p>
             <p class="text-offwhite/80 leading-body"><span class="text-offwhite font-medium">Every document you send has to be used or waived.</span> If a drawing or specification we were given is not cited by a single quantity or decision, it is raised before the pack goes out rather than discovered afterwards.</p>
           </div>
-          <div class="grid grid-cols-1 md:grid-cols-[190px_1fr] gap-2 md:gap-8 border-t border-white/15 py-6">
-            <p class="label text-gold">Measure First</p>
+          <div class="border-t border-white/15 py-5">
+            <p class="label text-gold mb-2">Measure First</p>
             <p class="text-offwhite/80 leading-body"><span class="text-offwhite font-medium">Prices cannot exist before measurements do.</span> The take-off has to be the basis of the price, not a justification assembled after the number was reached.</p>
           </div>
-          <div class="grid grid-cols-1 md:grid-cols-[190px_1fr] gap-2 md:gap-8 border-t border-white/15 py-6">
-            <p class="label text-gold">Arithmetic Sanity</p>
+          <div class="border-t border-white/15 py-5">
+            <p class="label text-gold mb-2">Arithmetic Sanity</p>
             <p class="text-offwhite/80 leading-body"><span class="text-offwhite font-medium">Totals are checked against the drawings&rsquo; own figures.</span> Where the measured areas and the areas printed on the sheets disagree by more than a set margin, the pack stops and somebody looks at it.</p>
           </div>
-          <div class="grid grid-cols-1 md:grid-cols-[190px_1fr] gap-2 md:gap-8 border-t border-white/15 py-6">
-            <p class="label text-gold">No Double-Counts</p>
+          <div class="border-t border-white/15 py-5">
+            <p class="label text-gold mb-2">No Double-Counts</p>
             <p class="text-offwhite/80 leading-body"><span class="text-offwhite font-medium">The same space drawn twice is caught.</span> Before anything is measured the system reads the drawing register and compares sheets geometrically, so a site plan and a floor plan showing the same footprint at different scales are never measured as two separate floors.</p>
           </div>
-          <div class="grid grid-cols-1 md:grid-cols-[190px_1fr] gap-2 md:gap-8 border-t border-white/15 py-6">
-            <p class="label text-gold">Units</p>
+          <div class="border-t border-white/15 py-5">
+            <p class="label text-gold mb-2">Units</p>
             <p class="text-offwhite/80 leading-body"><span class="text-offwhite font-medium">Dimensions have to agree.</span> A linear measurement cannot quietly feed an area rate. Conversions are permitted, but only where they are declared as an assumption you can read.</p>
           </div>
-          <div class="grid grid-cols-1 md:grid-cols-[190px_1fr] gap-2 md:gap-8 border-t border-b border-white/15 py-6">
-            <p class="label text-gold">Drift</p>
+          <div class="border-t border-white/15 py-5">
+            <p class="label text-gold mb-2">Drift</p>
             <p class="text-offwhite/80 leading-body"><span class="text-offwhite font-medium">Linked measurements are re-checked at the end.</span> If a measurement changed after a line was priced from it, the mismatch surfaces rather than silently persisting into your submission.</p>
           </div>
         </div>
@@ -400,90 +454,41 @@ const faqSchema = JSON.stringify({
             <span class="text-navy font-medium">Deadline week is the week most estimating services quietly stop answering the phone.</span> It is the week we are most useful. Send us three packages that week rather than one &mdash; the desk is built for it.
           </p>
         </div>
-      </div>
-    </section>
 
-    <!-- Who signs it -->
-    <section class="bg-navy section-padding">
-      <div class="max-w-[1100px] mx-auto px-6">
-        <div class="grid md:grid-cols-[minmax(0,260px)_1fr] gap-10 md:gap-14 items-center">
-          <figure class="m-0">
-            <img
-              src="/Images/aph-image.jpg"
-              alt="Andrew Harris, founder of Alturascope"
-              width="1150"
-              height="1533"
-              loading="lazy"
-              decoding="async"
-              class="w-full h-auto"
-            />
-          </figure>
-          <div>
-            <p class="label text-gold mb-4">The Name On It</p>
-            <h2 class="text-[1.8rem] md:text-[2rem] font-light text-offwhite leading-tight">
-              Someone is accountable for the number.
-            </h2>
-            <div class="mt-6 space-y-4 text-offwhite/70 leading-body">
-              <p>
-                Eighteen years in construction, several hundred commercial sites documented across
+        <div class="mt-12 border border-border bg-offwhite">
+          <div class="grid md:grid-cols-[minmax(0,220px)_1fr] gap-8 md:gap-11 items-center p-8 md:p-10">
+            <figure class="m-0">
+              <img
+                src="/Images/aph-image.jpg"
+                alt="Andrew Harris, founder of Alturascope"
+                width="1150"
+                height="1533"
+                loading="lazy"
+                decoding="async"
+                class="w-full h-auto"
+              />
+            </figure>
+            <div>
+              <p class="label text-gold mb-3">The Name On It</p>
+              <h3 class="text-[1.3rem] font-medium text-navy leading-snug">Someone is accountable for the number.</h3>
+              <p class="mt-4 text-midgrey leading-body text-[0.95rem]">Eighteen years in construction, several hundred commercial sites documented across
                 the US, Canada and the UK, and a business that lives or dies on whether the
-                information it hands over turns out to be right.
-              </p>
-              <p>
-                The estimating side is run with Selwyn Doling, a career estimator of fifteen
+                information it hands over turns out to be right.</p>
+              <p class="mt-3 text-midgrey leading-body text-[0.95rem]">The estimating side is run with Selwyn Doling, a career estimator of fifteen
                 years&rsquo; standing, who reviews and signs off every pack before it is issued.
                 Between the platform and the two of us, nothing goes out that neither a machine
-                nor a person has checked.
-              </p>
-              <p class="text-offwhite/50 text-[0.92rem]">
-                &mdash; Andrew Harris, Founder
-              </p>
+                nor a person has checked.</p>
+              <p class="mt-4 text-midgrey/70 text-[0.88rem]">&mdash; Andrew Harris, Founder</p>
             </div>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- See the pack -->
-    <section class="bg-white section-padding">
-      <div class="max-w-[1100px] mx-auto px-6">
-        <div class="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
-          <div>
-            <p class="label text-gold mb-4">Before You Send Anything</p>
-            <h2 class="text-[2rem] font-light text-navy leading-tight">
-              Read a complete pack first.
-            </h2>
-            <p class="mt-6 text-midgrey leading-body">
-              We have published a full demonstration estimate pack &mdash; all eleven pages, both
-              a US bid and a UK tender &mdash; so you can judge the work before there is anything
-              of yours at stake. Priced schedule, traceable take-off, margin analysis and the
-              audit report, nothing held back for the sales call.
-            </p>
-            <div class="mt-8 flex flex-wrap gap-4">
-              <a href="/estimating/sample-quote-pack/" class="btn-primary">See every page</a>
-              <a href="/downloads/alturascope-demo-estimate-pack-us.pdf" download class="btn-secondary">Download the PDF</a>
-            </div>
-          </div>
-          <figure class="m-0">
-            <img
-              src="/Images/pack/us-03.jpg"
-              alt="Priced schedule of works from an Alturascope estimate pack, showing 23 trade sections with net cost, gross profit and price"
-              width="1400"
-              height="989"
-              loading="lazy"
-              decoding="async"
-              class="w-full h-auto border border-border"
-            />
-            <figcaption class="mt-3 text-midgrey text-[0.8rem]">
-              Page 3 &mdash; the priced schedule. Demonstration figures.
-            </figcaption>
-          </figure>
-        </div>
-      </div>
-    </section>
+
 
     <!-- How it works -->
-    <section class="bg-offwhite section-padding">
+    <section id="how-it-works" class="scroll-mt-[150px] bg-offwhite section-padding">
       <div class="max-w-[1200px] mx-auto px-6">
         <p class="label text-gold mb-4">How It Works</p>
         <h2 class="text-[2rem] font-light text-navy leading-tight max-w-[22ch]">
@@ -531,7 +536,7 @@ const faqSchema = JSON.stringify({
 
 
     <!-- The portal -->
-    <section class="bg-white section-padding">
+    <section class="bg-white section-padding-tight">
       <div class="max-w-[1200px] mx-auto px-6">
         <div class="max-w-[64ch]">
           <p class="label text-gold mb-4">Your Copy of the Job</p>
@@ -562,16 +567,8 @@ const faqSchema = JSON.stringify({
             <p class="mt-3 text-midgrey leading-body text-[0.93rem]">Measured lines link back to the shape on the drawing. Open it and look at what was actually measured rather than taking the figure on trust.</p>
           </div>
           <div class="bg-white p-8">
-            <h3 class="text-[1.05rem] font-medium text-navy">Read the audit</h3>
-            <p class="mt-3 text-midgrey leading-body text-[0.93rem]">The automated check report sits with the estimate, so you can see what was verified before you put your name on it.</p>
-          </div>
-          <div class="bg-white p-8">
             <h3 class="text-[1.05rem] font-medium text-navy">Issue it yourself</h3>
             <p class="mt-3 text-midgrey leading-body text-[0.93rem]">Generate the client document on your own letterhead, straight from the live numbers, at the moment you are happy with it.</p>
-          </div>
-          <div class="bg-white p-8">
-            <h3 class="text-[1.05rem] font-medium text-navy">Or just ask us</h3>
-            <p class="mt-3 text-midgrey leading-body text-[0.93rem]">Two revisions are included if you would rather we made the changes. Plenty of clients never log in at all, and that is a perfectly good way to use this.</p>
           </div>
         </div>
 
@@ -584,7 +581,7 @@ const faqSchema = JSON.stringify({
     </section>
 
     <!-- Responsibility -->
-    <section id="responsibility" class="bg-white section-padding scroll-mt-24">
+    <section id="responsibility" class="bg-white section-padding-tight scroll-mt-24">
       <div class="max-w-[900px] mx-auto px-6">
         <p class="label text-gold mb-4">Where Responsibility Sits</p>
         <h2 class="text-[2rem] font-light text-navy leading-tight">
@@ -602,22 +599,19 @@ const faqSchema = JSON.stringify({
           </p>
         </div>
 
-        <div class="mt-10 border border-border bg-offwhite p-8">
-          <p class="text-[0.7rem] font-medium uppercase tracking-[0.15em] text-midgrey mb-6">On every pack, without exception</p>
-          <div class="space-y-4 text-midgrey leading-body text-[0.95rem]">
-            <p><span class="text-navy font-medium">A stated basis.</span> Drawing numbers and revisions priced, with inclusions, exclusions, assumptions and allowances listed.</p>
-            <p><span class="text-navy font-medium">A clean audit.</span> The automated check report, included with the pack, so you can see what was verified.</p>
-            <p><span class="text-navy font-medium">A sign-off gate.</span> Nothing is issued to your client by us, ever. You review it in your own account, and you release it.</p>
-            <p><span class="text-navy font-medium">Two revisions included.</span> Scope changes, addenda and rate corrections within the agreed basis.</p>
-            <p><span class="text-navy font-medium">Confidentiality as standard.</span> We sign your non-disclosure agreement before the drawings arrive, and we will not price the same package for two bidders.</p>
-            <p><span class="text-navy font-medium">Liability stated up front.</span> Set out plainly in the engagement terms &mdash; no surprises buried in a footer.</p>
-          </div>
+        <div class="mt-10 border-l-2 border-gold bg-offwhite py-6 px-7">
+          <p class="text-midgrey leading-body">
+            <span class="text-navy font-medium">Every pack states its basis, carries its audit report, and waits for your sign-off.</span> Two revisions are included, we sign your non-disclosure agreement before the drawings arrive, we will not price the same package for two bidders, and the liability position is stated plainly in the engagement terms rather than buried in a footer.
+          </p>
+          <p class="mt-4">
+            <a href="/estimating/basis-of-estimate/" class="text-navy font-medium border-b border-gold pb-0.5 hover:opacity-80 transition-opacity">Read the Basis of Estimate standard &rarr;</a>
+          </p>
         </div>
       </div>
     </section>
 
     <!-- Vyntworks -->
-    <section class="bg-navy section-padding">
+    <section class="bg-navy section-padding-tight">
       <div class="max-w-[1000px] mx-auto px-6">
         <p class="label text-gold mb-4">The Software</p>
         <h2 class="text-[2rem] font-light text-offwhite leading-tight">
@@ -635,29 +629,20 @@ const faqSchema = JSON.stringify({
           </p>
         </div>
 
-        <div class="mt-12 grid grid-cols-1 md:grid-cols-2 gap-7">
-          <div class="border border-gold/40 bg-white/[0.03] p-8">
-            <h3 class="text-[1.1rem] font-medium text-gold">You already have an account</h3>
-            <p class="mt-3 text-offwhite/70 leading-body text-[0.95rem]">
-              Every client gets one, set up by us, at no cost. You use it to review and adjust the work we price for you, and nothing more if that is all you want. There is no licence attached and no obligation in either direction.
-            </p>
-          </div>
-          <div class="border border-gold/40 bg-white/[0.03] p-8">
-            <h3 class="text-[1.1rem] font-medium text-gold">Or run the whole business in it</h3>
-            <p class="mt-3 text-offwhite/70 leading-body text-[0.95rem]">
-              The estimating you have been watching is one part of it. Licensed properly, the same system carries the job through purchase orders, subcontract packages, cost control, applications and the final account &mdash; and the quote you won becomes the budget without anything being re-keyed. You keep the rate library and templates we have built, and onboarding is delivered rather than handed over as a manual.
-            </p>
-            <p class="mt-5">
-              <a href="https://vyntworks.com" target="_blank" rel="noopener" class="text-offwhite font-medium border-b border-gold pb-0.5 hover:opacity-80 transition-opacity text-[0.95rem]">vyntworks.com &rarr;</a>
-            </p>
-          </div>
+        <div class="mt-10 border border-gold/40 bg-white/[0.03] p-8 max-w-[68ch]">
+          <p class="text-offwhite/80 leading-body">
+            <span class="text-gold font-medium">You already have an account.</span> Every client gets one, set up by us, at no cost and with no licence attached &mdash; it is simply where your estimate is waiting. Licensed properly, the same system carries the job on through purchase orders, subcontract packages, cost control and the final account, and the quote you won becomes the budget without anything being re-keyed.
+          </p>
+          <p class="mt-5">
+            <a href="https://vyntworks.com" target="_blank" rel="noopener" class="text-offwhite font-medium border-b border-gold pb-0.5 hover:opacity-80 transition-opacity text-[0.95rem]">vyntworks.com &rarr;</a>
+          </p>
         </div>
       </div>
     </section>
 
     <!-- The moat -->
-    <section class="bg-white section-padding">
-      <div class="max-w-[900px] mx-auto px-6">
+    <section class="bg-white section-padding-tight">
+      <div class="max-w-[1000px] mx-auto px-6">
         <p class="label text-gold mb-4">What Nobody Else Can Do</p>
         <h2 class="text-[2rem] font-light text-navy leading-tight">
           We can price the building. Not just the drawing.
@@ -676,23 +661,17 @@ const faqSchema = JSON.stringify({
             <a href="/services/" class="text-navy font-medium hover:opacity-80 transition-opacity">See the site documentation service &rarr;</a>
           </p>
         </div>
+
+        <div class="mt-10 border-l-2 border-gold bg-offwhite py-6 px-7">
+          <p class="text-navy font-medium leading-snug text-[1.05rem]">We don&rsquo;t build it, so we have no reason to want the number to be anything but right.</p>
+          <p class="mt-3 text-midgrey leading-body">We do not contract, we do not supply materials, and we do not take a percentage of the job. We also will not price work on a site we have documented for the other side of the table &mdash; and if that ever comes up, we will tell you before you tell us.</p>
+        </div>
       </div>
     </section>
 
-    <!-- Independence -->
-    <section class="bg-offwhite py-16 md:py-20">
-      <div class="max-w-[900px] mx-auto px-6 text-center">
-        <h2 class="text-[1.6rem] md:text-[1.9rem] font-light text-navy leading-tight max-w-[26ch] mx-auto">
-          We don&rsquo;t build it, so we have no reason to want the number to be anything but right.
-        </h2>
-        <p class="mt-6 text-midgrey leading-body max-w-[64ch] mx-auto">
-          We do not contract, we do not supply materials, and we do not take a percentage of the job. We also will not price work on a site we have documented for the other side of the table &mdash; and if that ever comes up, we will tell you before you tell us.
-        </p>
-      </div>
-    </section>
 
     <!-- Supply chain -->
-    <section class="bg-white section-padding">
+    <section class="bg-white section-padding-tight">
       <div class="max-w-[1200px] mx-auto px-6">
         <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
           <div>
@@ -728,7 +707,7 @@ const faqSchema = JSON.stringify({
     </section>
 
     <!-- Engagement -->
-    <section class="bg-offwhite section-padding">
+    <section id="pricing" class="scroll-mt-[150px] bg-offwhite section-padding-tight">
       <div class="max-w-[1200px] mx-auto px-6">
         <div class="max-w-[56ch]">
           <p class="label text-gold mb-4">Engagement</p>
@@ -778,7 +757,7 @@ const faqSchema = JSON.stringify({
     </section>
 
     <!-- FAQ -->
-    <section class="bg-white section-padding">
+    <section id="faq" class="scroll-mt-[150px] bg-white section-padding-tight">
       <div class="max-w-[900px] mx-auto px-6">
         <p class="label text-gold mb-4">Questions We Get Asked</p>
         <h2 class="text-[2rem] font-light text-navy leading-tight mb-12">Before you send us anything.</h2>
