@@ -1,5 +1,6 @@
 ---
 import Layout from "../layouts/Layout.astro";
+import EstimatingBand from "./EstimatingBand.astro";
 
 interface FaqItem {
   question: string;
@@ -21,6 +22,8 @@ interface Props {
   whoThisIsForBody: string;
   faqs: FaqItem[];
   internalLinks: { text: string; href: string }[];
+  /** One sentence tying this page's subject to pricing. */
+  estimatingLead?: string;
   matterportUrl?: string;
   hreflang?: { lang: string; href: string }[];
 }
@@ -40,6 +43,7 @@ const {
   whoThisIsForBody,
   faqs,
   internalLinks,
+  estimatingLead = "Once the building is documented, the next question is what the work costs.",
   matterportUrl,
   hreflang = [],
 } = Astro.props;
@@ -216,6 +220,8 @@ const faqSchema = JSON.stringify({
         </div>
       </div>
     </section>
+
+    <EstimatingBand lead={estimatingLead} />
 
     <!-- CTA -->
     <section class="bg-white section-padding">

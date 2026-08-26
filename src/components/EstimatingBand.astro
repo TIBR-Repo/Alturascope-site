@@ -1,0 +1,51 @@
+---
+/**
+ * Contextual link from a survey page across to the Estimating Desk.
+ *
+ * The two service lines were topically isolated from each other: not one of
+ * the 33 insight articles or 28 service pages linked to /estimating/ in body
+ * copy, so the newest revenue line inherited none of the site's authority.
+ * This band is the editorial link, placed where the thought naturally follows
+ * - you have just read about documenting the building, so who prices the work?
+ */
+interface Props {
+  locale?: "us" | "uk";
+  /** One sentence tying this specific page's subject to pricing. */
+  lead: string;
+}
+
+const { locale = "us", lead } = Astro.props;
+
+const estimatingHref = locale === "uk" ? "/uk/estimating/" : "/estimating/";
+const noun = locale === "uk" ? "tender" : "bid";
+const spelling = locale === "uk" ? "white-labelled" : "white-labeled";
+---
+
+<section class="bg-navy section-padding-tight">
+  <div class="max-w-[1100px] mx-auto px-6">
+    <div class="grid lg:grid-cols-[1.35fr_1fr] gap-10 lg:gap-16 items-center">
+      <div>
+        <p class="label text-gold mb-4">And Then Price It</p>
+        <h2 class="text-[1.7rem] md:text-[2rem] font-light text-offwhite leading-tight max-w-[24ch]">
+          We can price the work as well as document it.
+        </h2>
+        <p class="mt-6 text-offwhite/70 leading-body max-w-[62ch]">
+          {lead} Send the package to our Estimating Desk and it comes back as a priced,
+          machine-audited, {spelling} {noun} under your own name &mdash; usually inside two
+          working days.
+        </p>
+        <p class="mt-4 text-offwhite/70 leading-body max-w-[62ch]">
+          No other estimating bureau can survey the building, and no other survey firm can
+          price the work. On a renovation we do both from the same record.
+        </p>
+      </div>
+      <div class="flex flex-col gap-3">
+        <a href={estimatingHref} class="btn-primary text-center">See the Estimating Desk</a>
+        <a href="/estimating/sample-quote-pack/" class="btn-secondary-light text-center">Read a complete pack</a>
+        <a href="/estimating/basis-of-estimate/" class="text-offwhite/60 hover:text-offwhite transition-colors text-[0.85rem] text-center mt-1">
+          What is on every pack &rarr;
+        </a>
+      </div>
+    </div>
+  </div>
+</section>

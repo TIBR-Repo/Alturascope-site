@@ -1,5 +1,6 @@
 ---
 import Layout from "../../layouts/Layout.astro";
+import EstimatingBand from "../../components/EstimatingBand.astro";
 
 const schema = JSON.stringify({
   "@context": "https://schema.org",
@@ -95,8 +96,10 @@ const faqSchema = JSON.stringify({
       <!-- REPLACE: Atmospheric commercial construction or renovation space. Empty, dramatic, shows scale. -->
       <div class="absolute inset-0 bg-navy">
         <img
-          src="https://images.unsplash.com/photo-1581094794329-c8112a89af12?w=1920&q=80"
-          alt="Commercial construction site interior with exposed structure and MEP services documented during pre-construction survey for design-build planning"
+          src="/Images/construction.jpg"
+          width="1600"
+          height="1245"
+          alt="Commercial building interior during construction, documented by Alturascope for the as-built record"
           class="w-full h-full object-cover opacity-35"
           loading="eager"
           fetchpriority="high"
@@ -347,6 +350,8 @@ const faqSchema = JSON.stringify({
         </div>
       </div>
     </section>
+
+    <EstimatingBand locale="us" lead="An as-built record answers what is there; a priced schedule answers what it costs to alter." />
 
     <!-- CTA -->
     <section class="bg-offwhite section-padding">

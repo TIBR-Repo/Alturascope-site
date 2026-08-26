@@ -1,5 +1,6 @@
 ---
 import Layout from "../../layouts/Layout.astro";
+import EstimatingBand from "../../components/EstimatingBand.astro";
 
 const schema = JSON.stringify({
   "@context": "https://schema.org",
@@ -68,14 +69,13 @@ const faqSchema = JSON.stringify({
     <section class="relative min-h-[100vh] md:min-h-0 md:h-[60vh] flex items-center justify-center">
       <div class="absolute inset-0 bg-navy">
         <img
-          src="https://images.unsplash.com/photo-1600518464441-9154a4dea21b?w=1920&q=80"
+          src="/Images/site-interior-2.jpg"
+          width="1920"
+          height="1080"
           srcset="
-            https://images.unsplash.com/photo-1600518464441-9154a4dea21b?w=800&q=70 800w,
-            https://images.unsplash.com/photo-1600518464441-9154a4dea21b?w=1200&q=75 1200w,
-            https://images.unsplash.com/photo-1600518464441-9154a4dea21b?w=1920&q=80 1920w
-          "
+            /Images/stock/1600518464441-9154a4dea21b.jpg"
           sizes="100vw"
-          alt="Self-storage facility corridor with rows of climate-controlled storage units"
+          alt="Aerial orthographic survey of a storage facility roof and site captured by Alturascope"
           class="w-full h-full object-cover opacity-35"
           loading="eager"
           fetchpriority="high"
@@ -294,6 +294,8 @@ const faqSchema = JSON.stringify({
         </div>
       </div>
     </section>
+
+    <EstimatingBand locale="us" lead="Portfolio capex is a pricing exercise as much as a survey one." />
 
     <!-- CTA -->
     <section class="bg-offwhite section-padding">

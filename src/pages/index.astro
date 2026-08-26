@@ -1,5 +1,6 @@
 ---
 import Layout from "../layouts/Layout.astro";
+import GalleryBand from "../components/GalleryBand.astro";
 
 const professionalServiceSchema = {
   "@type": "ProfessionalService",
@@ -306,6 +307,8 @@ const schema = JSON.stringify({
         </div>
       </div>
     </section>
+
+    <GalleryBand />
 
     <!-- SECTION 6: Who We Work With -->
     <section class="bg-offwhite section-padding">

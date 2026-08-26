@@ -1,5 +1,6 @@
 ---
 import Layout from "../../layouts/Layout.astro";
+import EstimatingBand from "../../components/EstimatingBand.astro";
 
 const schema = JSON.stringify({
   "@context": "https://schema.org",
@@ -278,6 +279,8 @@ const faqSchema = JSON.stringify({
         </div>
       </div>
     </section>
+
+    <EstimatingBand locale="uk" lead="Listed building work is priced on access, fabric and constraint rather than floor area." />
 
     <!-- CTA -->
     <section class="bg-offwhite section-padding">

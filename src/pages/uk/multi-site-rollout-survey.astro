@@ -1,5 +1,6 @@
 ---
 import Layout from "../../layouts/Layout.astro";
+import EstimatingBand from "../../components/EstimatingBand.astro";
 
 const schema = JSON.stringify({
   "@context": "https://schema.org",
@@ -70,8 +71,10 @@ const faqSchema = JSON.stringify({
     <section class="relative min-h-screen flex items-center justify-center pt-24">
       <div class="absolute inset-0 bg-navy">
         <img
-          src="https://images.unsplash.com/photo-1441986300917-64674bd600d8?w=1920&q=80"
-          alt="UK retail store interior documented during multi-site rollout survey programme for franchise and hospitality operators"
+          src="/pre-construction-survey.jpg"
+          width="1920"
+          height="1440"
+          alt="Vacant retail unit documented before fit-out during a UK multi-site rollout survey programme"
           class="w-full h-full object-cover opacity-35"
           loading="eager"
           fetchpriority="high"
@@ -301,6 +304,8 @@ const faqSchema = JSON.stringify({
         </div>
       </div>
     </section>
+
+    <EstimatingBand locale="uk" lead="A rollout means pricing the same shop fit repeatedly, to the same deadlines." />
 
     <!-- CTA -->
     <section class="bg-white section-padding">
