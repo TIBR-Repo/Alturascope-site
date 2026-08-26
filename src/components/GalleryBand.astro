@@ -1,0 +1,74 @@
+---
+/**
+ * A four-image strip pointing at /work/locations/.
+ *
+ * Audit finding: the gallery of 25 surveyed buildings had four inbound links
+ * across 83 pages and no place in the navigation, while the contact form had
+ * seventy-one. It is the most immediately convincing thing on the site and it
+ * was the hardest thing to find.
+ */
+import locations from "../data/locations.json";
+
+interface Props {
+  /** Slugs to feature. Defaults to a spread of building types. */
+  featured?: string[];
+  heading?: string;
+  lead?: string;
+  tone?: "light" | "dark";
+}
+
+const {
+  featured = [
+    "pennsylvania-avenue-washington-dc",
+    "galleria-roseville",
+    "town-and-country-houston",
+    "apollo-drive-chelmsford",
+  ],
+  heading = "A sample of the buildings we&rsquo;ve been inside.",
+  lead = "Twenty-five commercial sites documented as navigable digital twins - retail, office, mall and transport. Named by centre or street, never by occupier.",
+  tone = "light",
+} = Astro.props;
+
+const bySlug = new Map(locations.map((l) => [l.slug, l]));
+const picks = featured.map((s) => bySlug.get(s)).filter(Boolean);
+
+const dark = tone === "dark";
+---
+
+<section class={`section-padding-tight ${dark ? "bg-navy" : "bg-offwhite"}`}>
+  <div class="max-w-[1400px] mx-auto px-6 lg:px-10">
+    <div class="flex flex-wrap items-end justify-between gap-6">
+      <div class="max-w-[54ch]">
+        <p class="label text-gold mb-4">Surveyed Locations</p>
+        <h2 class={`text-[1.7rem] md:text-[2rem] font-light leading-tight ${dark ? "text-offwhite" : "text-navy"}`} set:html={heading} />
+        <p class={`mt-5 leading-body ${dark ? "text-offwhite/70" : "text-midgrey"}`}>{lead}</p>
+      </div>
+      <a
+        href="/work/locations/"
+        class={`font-medium border-b pb-1 transition-opacity hover:opacity-70 ${dark ? "text-offwhite border-gold" : "text-navy border-gold"}`}
+      >
+        See all 25 locations &rarr;
+      </a>
+    </div>
+
+    <div class="mt-10 grid grid-cols-2 lg:grid-cols-4 gap-3 md:gap-4">
+      {picks.map((loc) => (
+        <a href="/work/locations/" class="group block relative overflow-hidden">
+          <img
+            src={`/Images/locations/${loc.slug}.webp`}
+            alt={`${loc.label} - commercial site documented by Alturascope as a Matterport digital twin`}
+            width={loc.w}
+            height={loc.h}
+            loading="lazy"
+            decoding="async"
+            class="w-full h-[150px] md:h-[190px] object-cover transition-transform duration-500 group-hover:scale-[1.04]"
+          />
+          <div class="absolute inset-x-0 bottom-0 bg-gradient-to-t from-navy/90 to-transparent px-4 pt-10 pb-3">
+            <p class="text-white text-[0.78rem] font-medium leading-snug">{loc.label}</p>
+            <p class="text-white/60 text-[0.7rem] uppercase tracking-[0.1em] mt-0.5">{loc.kind}</p>
+          </div>
+        </a>
+      ))}
+    </div>
+  </div>
+</section>

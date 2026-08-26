@@ -1,5 +1,6 @@
 ---
 import Layout from "../../layouts/Layout.astro";
+import EstimatingBand from "../../components/EstimatingBand.astro";
 
 const schema = JSON.stringify({
   "@context": "https://schema.org",
@@ -56,8 +57,8 @@ const faqSchema = JSON.stringify({
 });
 ---
 <Layout
-  title="Pre-Construction Survey UK — Existing Conditions Documentation | Alturascope"
-  description="Existing conditions surveys for commercial fit-out, refurbishment, and change of use across the UK. Digital twin, conditions report, above-ceiling MEP documentation, and asset schedule before a design decision is made."
+  title="Pre-Construction Survey UK — Existing Conditions Documentation"
+  description="Existing conditions surveys for commercial fit-out, refurbishment, and change of use across the UK."
   canonical="https://alturascope.com/uk/pre-construction-survey/"
   schema={schema}
   breadcrumbSchema={breadcrumbSchema}
@@ -75,8 +76,10 @@ const faqSchema = JSON.stringify({
     <section class="relative min-h-screen flex items-center justify-center pt-24">
       <div class="absolute inset-0 bg-navy">
         <img
-          src="https://images.unsplash.com/photo-1513635269975-59663e0ac1ad?w=1920&q=80"
-          alt="Commercial interior documented during UK pre-construction survey showing existing conditions, MEP services, and above-ceiling infrastructure before fit-out"
+          src="/Images/hvac.webp"
+          width="1920"
+          height="1440"
+          alt="Exposed services and structure in a commercial floor plate stripped for fit-out, documented on a UK pre-construction survey"
           class="w-full h-full object-cover opacity-35"
           loading="eager"
           fetchpriority="high"
@@ -295,6 +298,8 @@ const faqSchema = JSON.stringify({
         </div>
       </div>
     </section>
+
+    <EstimatingBand locale="uk" lead="Once the existing conditions are recorded, the next question is what the works will cost." />
 
     <!-- CTA: Tell Us About Your Project -->
     <section class="bg-offwhite section-padding">

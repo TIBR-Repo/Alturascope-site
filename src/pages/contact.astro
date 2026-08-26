@@ -3,18 +3,18 @@ import Layout from "../layouts/Layout.astro";
 
 const schema = JSON.stringify({
   "@context": "https://schema.org",
-  "@type": "ProfessionalService",
-  "name": "Alturascope",
-  "description": "Reality capture, 3D documentation, and conditions surveys for construction teams and specialist clients across the US, Canada, and the UK.",
-  "url": "https://alturascope.com/",
-  "areaServed": ["United States", "Canada", "United Kingdom"],
-  "serviceType": "Reality Capture and Site Documentation",
-  "sameAs": ["https://www.linkedin.com/company/111948383"]
+  "@type": "ContactPage",
+  "name": "Contact Alturascope",
+  "description": "Start a site documentation project or send a bid package to the Estimating Desk.",
+  "url": "https://alturascope.com/contact/",
+  "isPartOf": {
+    "@id": "https://alturascope.com/#organization"
+  }
 });
 ---
 <Layout
   title="Start a Project | Alturascope"
-  description="Share the address, size, and decision you're trying to make. We'll respond within one business day with a scope recommendation and an all-in quote — travel included."
+  description="Share the address, the size and what you need to decide. We reply within one business day with a scope recommendation and an all-in quote, travel included."
   canonical="https://alturascope.com/contact/"
   schema={schema}
   fullWidth={true}

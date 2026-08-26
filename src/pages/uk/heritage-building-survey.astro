@@ -1,5 +1,6 @@
 ---
 import Layout from "../../layouts/Layout.astro";
+import EstimatingBand from "../../components/EstimatingBand.astro";
 
 const schema = JSON.stringify({
   "@context": "https://schema.org",
@@ -58,15 +59,15 @@ const faqSchema = JSON.stringify({
 });
 ---
 <Layout
-  title="Heritage Building Survey UK — Listed Buildings & Conservation Documentation | Alturascope"
-  description="Survey-grade documentation for Grade I and Grade II listed buildings, scheduled monuments, and conservation areas across the UK. Records for English Heritage, Historic Scotland, Cadw, and conservation architects."
+  title="Heritage Building Survey UK: Listed &amp; Conservation Work"
+  description="Survey-grade documentation for Grade I and Grade II listed buildings, scheduled monuments, and conservation areas across the UK."
   canonical="https://alturascope.com/uk/heritage-building-survey/"
   schema={schema}
   breadcrumbSchema={breadcrumbSchema}
   faqSchema={faqSchema}
   fullWidth={true}
   lang="en-GB"
-  hreflang={[{ lang: "en-gb", href: "https://alturascope.com/uk/heritage-building-survey/" }, { lang: "en", href: "https://alturascope.com/uk/heritage-building-survey/" }]}
+  hreflang={[{ lang: "en-GB", href: "https://alturascope.com/uk/heritage-building-survey/" }, { lang: "en", href: "https://alturascope.com/services/heritage-building-documentation/" }]}
 >
   <div data-hero-page>
 
@@ -74,7 +75,7 @@ const faqSchema = JSON.stringify({
     <section class="relative min-h-screen flex items-center justify-center pt-24">
       <div class="absolute inset-0 bg-navy">
         <img
-          src="/dan-stephens-gDP_HYXfUwM-unsplash.jpg"
+          src="/dan-stephens-gDP_HYXfUwM-unsplash.webp"
           alt="Listed heritage country house documented with LiDAR and Matterport for heritage survey, showing Palladian architecture reflected in ornamental lake"
           class="w-full h-full object-cover opacity-35"
           loading="eager"
@@ -278,6 +279,8 @@ const faqSchema = JSON.stringify({
         </div>
       </div>
     </section>
+
+    <EstimatingBand locale="uk" lead="Listed building work is priced on access, fabric and constraint rather than floor area." />
 
     <!-- CTA -->
     <section class="bg-offwhite section-padding">

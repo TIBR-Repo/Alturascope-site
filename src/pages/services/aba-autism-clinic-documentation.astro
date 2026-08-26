@@ -1,5 +1,6 @@
 ---
 import Layout from "../../layouts/Layout.astro";
+import EstimatingBand from "../../components/EstimatingBand.astro";
 
 const schema = JSON.stringify({
   "@context": "https://schema.org",
@@ -79,10 +80,10 @@ const faqSchema = JSON.stringify({
 });
 ---
 <Layout
-  title="ABA & Autism Therapy Clinic Documentation — Site Surveys for Operators & Developers | Alturascope"
-  description="Pre-lease evaluation, build-out documentation, and portfolio condition surveys for ABA and autism therapy clinic operators. Hundreds of clinics surveyed. Sensory rooms, acoustic separation, elopement prevention, and clinical programme requirements documented."
+  title="ABA &amp; Autism Therapy Clinic Documentation &amp; Site Surveys"
+  description="Pre-lease evaluation, build-out documentation, and portfolio condition surveys for ABA and autism therapy clinic operators. Hundreds of clinics surveyed."
   canonical="https://alturascope.com/services/aba-autism-clinic-documentation/"
-  ogImage="https://images.unsplash.com/photo-1497032628192-86f99bcd76bc?w=1200&q=80"
+  ogImage="/Images/stock/1497032628192-86f99bcd76bc.webp"
   schema={schema}
   breadcrumbSchema={breadcrumbSchema}
   faqSchema={faqSchema}
@@ -94,14 +95,13 @@ const faqSchema = JSON.stringify({
     <section class="relative min-h-[100vh] md:min-h-0 md:h-[60vh] flex items-center justify-center">
       <div class="absolute inset-0 bg-navy">
         <img
-          src="https://images.unsplash.com/photo-1497032628192-86f99bcd76bc?w=1920&q=80"
+          src="/pre-construction-survey.webp"
+          width="1920"
+          height="1440"
           srcset="
-            https://images.unsplash.com/photo-1497032628192-86f99bcd76bc?w=800&q=70 800w,
-            https://images.unsplash.com/photo-1497032628192-86f99bcd76bc?w=1200&q=75 1200w,
-            https://images.unsplash.com/photo-1497032628192-86f99bcd76bc?w=1920&q=80 1920w
-          "
+            /Images/stock/1497032628192-86f99bcd76bc.webp"
           sizes="100vw"
-          alt="Bright modern therapy clinic interior with natural lighting and activity spaces for ABA autism therapy programme documentation"
+          alt="Vacant clinic suite documented before an ABA therapy build-out, showing ceiling grid, partitions and existing services"
           class="w-full h-full object-cover opacity-35"
           loading="eager"
           fetchpriority="high"
@@ -515,6 +515,8 @@ const faqSchema = JSON.stringify({
         <a href="/contact/" class="btn-primary mt-8">Start a Project</a>
       </div>
     </section>
+
+    <EstimatingBand locale="us" lead="Clinic operators opening several locations a year price the same build-out repeatedly." />
 
   </div>
 </Layout>

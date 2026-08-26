@@ -1,5 +1,6 @@
 ---
 import Layout from "../../layouts/Layout.astro";
+import EstimatingBand from "../../components/EstimatingBand.astro";
 
 const schema = JSON.stringify({
   "@context": "https://schema.org",
@@ -56,8 +57,8 @@ const faqSchema = JSON.stringify({
 });
 ---
 <Layout
-  title="Measured Building Survey UK — Point Cloud & As-Built Documentation | Alturascope"
-  description="Survey-grade measured building surveys across the UK. Point cloud data accurate to 5–12mm for CAD and Revit workflows. As-built floor plans, sections, and elevations. .e57 and .rcp export."
+  title="Measured Building Survey UK — Point Cloud & As-Built Documentation"
+  description="Survey-grade measured building surveys across the UK. Point cloud data accurate to 5–12mm for CAD and Revit workflows."
   canonical="https://alturascope.com/uk/measured-building-survey/"
   schema={schema}
   breadcrumbSchema={breadcrumbSchema}
@@ -72,8 +73,10 @@ const faqSchema = JSON.stringify({
     <section class="relative min-h-screen flex items-center justify-center pt-24">
       <div class="absolute inset-0 bg-navy">
         <img
-          src="https://images.unsplash.com/photo-1513635269975-59663e0ac1ad?w=1920&q=80"
-          alt="UK commercial interior documented with LiDAR point cloud during measured building survey for architectural and engineering use"
+          src="/Images/site-inside.webp"
+          width="1600"
+          height="1200"
+          alt="Commercial interior captured as survey-grade point cloud data during a UK measured building survey"
           class="w-full h-full object-cover opacity-35"
           loading="eager"
           fetchpriority="high"
@@ -284,6 +287,8 @@ const faqSchema = JSON.stringify({
         </div>
       </div>
     </section>
+
+    <EstimatingBand locale="uk" lead="A measured survey gives you the quantities; someone still has to price them." />
 
     <!-- CTA: Tell Us What You're Designing -->
     <section class="bg-offwhite section-padding">

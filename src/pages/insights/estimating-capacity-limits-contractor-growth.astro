@@ -1,0 +1,113 @@
+---
+import InsightArticle from "../../components/InsightArticle.astro";
+
+const blocks = [
+  {
+    p: [
+      "Every contractor can tell you how many bids they submitted last quarter. Very few can tell you how many invitations they declined because nobody had the hours to price them.",
+      "That second number is the more useful one. Each of those was a job somebody actively wanted you to win, arriving with no marketing cost attached, and you chose not to compete for it. Not on strategy. On capacity.",
+      "It rarely shows up anywhere. There is no line in the management accounts for revenue you never tendered for, which is precisely why estimating capacity is the constraint that gets least attention and does most damage.",
+    ],
+  },
+  {
+    h2: "Why estimating is structurally hard to staff",
+    p: [
+      "The problem is not that estimating is difficult, although it is. The problem is that demand for it is bursty and salaries are not.",
+      "Work does not arrive evenly. Four packages land in the same week, all returnable the same Friday, and then nothing for ten days. An estimator sized for the peak sits underused most of the year. An estimator sized for the average turns work away every single time the peak arrives - which is exactly when the opportunity is richest, because everyone else is also at capacity and the field thins out.",
+    ],
+    points: [
+      ["Estimators are scarce", "and the good ones are rarely looking. Recruitment is measured in months, not weeks."],
+      ["The method lives in one head", "so the day your estimator leaves is the day bidding stops, and the rate knowledge walks out with them."],
+      ["Holiday and illness are absolute", "there is no partial coverage. A tender return date does not move because somebody is away."],
+      ["The peak is when you most need to win", "the weeks with four invitations are the weeks that decide the year, and they are the weeks you are least able to respond."],
+    ],
+  },
+  {
+    h2: "The arithmetic nobody does",
+    p: [
+      "It is worth doing this calculation once, honestly, on your own numbers.",
+      "Take the number of invitations you declined last year for capacity reasons. Multiply by your average contract value, then by your realistic win rate, then by your gross margin. That figure is what estimating capacity cost you - not in theory, in cash.",
+      "For most firms in the ten-to-fifty-million range the answer is uncomfortable, and it is almost always a large multiple of what additional estimating capacity would have cost. The reason the decision still feels hard is that the cost of an estimator is a visible fixed commitment, and the cost of the bids you never submitted is invisible.",
+    ],
+    note: "<span class=\"text-navy font-medium\">A useful discipline: log every declined invitation with the reason.</span> Within a quarter you will have a number that makes the decision for you, one way or the other. Most firms have never written it down.",
+  },
+  {
+    h2: "The other half: margin lost after you win",
+    p: [
+      "Capacity pressure does not only cost you the bids you skipped. It degrades the ones you did submit.",
+      "An estimate produced at eleven at night on a Sunday is where omissions come from - the firestopping that was never in the schedule, the quantity taken from a scaled drawing nobody checked, the exclusion somebody decided on and never wrote down. A cheap estimate that is wrong is the most expensive document in the business, because you are now contractually committed to a scope you priced by accident.",
+      "So the capacity problem has two costs: the work you did not bid for, and the margin you gave away on the work you did.",
+    ],
+  },
+  {
+    h2: "Four ways firms actually solve it",
+    subs: [
+      {
+        h3: "Hire for the peak and accept the idle time",
+        body: "Works, and it is the most expensive option. Defensible above a certain bid volume - and there genuinely is a volume past which an in-house desk is the right answer.",
+      },
+      {
+        h3: "Bid more selectively",
+        body: "Sensible discipline, frequently dressed up as strategy when it is really capitulation. Selectivity should be a choice about which jobs suit you, not a consequence of who is free on Thursday.",
+      },
+      {
+        h3: "Price faster with better tooling",
+        body: "Traceable take-off, a rate library that improves with every job, automated checks before release. This raises the ceiling substantially, but it needs someone to run it, and it needs the rate knowledge to leave one person's head and become an asset the business owns.",
+      },
+      {
+        h3: "Borrow a desk when the peak arrives",
+        body: "Outsource the overflow rather than the function. The value is entirely in whether it is available in deadline week, which is the week most estimating services quietly stop answering the phone.",
+      },
+    ],
+  },
+  {
+    h2: "What to ask an outsourced estimator",
+    p: [
+      "If you go the fourth route, the questions that matter are not about price.",
+      "Ask what happens when three packages arrive on the same day - a service built around one estimator with a queue is slowest exactly when you need it most. Ask whether the pack states its basis in writing and whether you can trace a quantity back to the drawing it was measured on. Ask who owns the rate library afterwards. Ask whether they will price the same package for a competing bidder.",
+      "And ask to see a complete pack before you send anything of your own. A firm that will not show you finished work is asking you to take the most important part on trust.",
+    ],
+  },
+];
+
+const faqs = [
+  {
+    q: "How many bids should a contractor be submitting?",
+    a: "There is no universal figure - it depends on win rate, contract size and how selective you can afford to be. The more useful measure is the gap between invitations received and bids submitted. If you are declining a meaningful share for capacity reasons rather than because the jobs were wrong for you, the constraint is estimating rather than strategy."
+  },
+  {
+    q: "Is outsourced estimating cheaper than hiring an estimator?",
+    a: "Below a certain bid volume, usually yes, because you pay for the peaks rather than carrying the troughs. Above it, an in-house desk is genuinely better value, and any honest provider will tell you where that crossover sits for your volume rather than waiting for you to work it out."
+  },
+  {
+    q: "How do we keep our own pricing knowledge if we outsource?",
+    a: "By insisting that the rate library built during the work belongs to you and is exportable. That library - what materials and subcontracts have actually cost you, rather than what a price book says they should - is the durable asset. If a provider will not hand it over, the arrangement makes you more dependent over time rather than less."
+  },
+  {
+    q: "Will an outsourced estimator understand our business?",
+    a: "Not on the first package, and anyone claiming otherwise is overselling. It is worth starting with a live job rather than a test one, agreeing the basis properly at the outset, and expecting the second package to come back sharper than the first as your rates and preferences are captured."
+  },
+  {
+    q: "What is the risk of an outsourced bid being wrong?",
+    a: "The same risk as any estimate, managed the same way: a stated basis, traceable quantities, and your own sign-off before anything reaches the client. Nothing should be issued to your client by anyone but you. What outsourcing changes is capacity, not where responsibility sits."
+  },
+];
+---
+<InsightArticle
+  title="How Estimating Capacity Caps Contractor Revenue"
+  description="The bids you declined for lack of hours never reach the accounts. How to put a number on them, and the four ways contractors fix the constraint."
+  slug="estimating-capacity-limits-contractor-growth"
+  h1="The Bids You Never Submitted: How Estimating Capacity Caps Revenue"
+  datePublished="2026-08-26"
+  heroImage="/Images/construction.webp"
+  heroAlt="Commercial building interior under construction, of the kind priced from a bid package"
+  blocks={blocks}
+  faqs={faqs}
+  estimatingLead="Deadline week is when most estimating services stop answering the phone; it is when a borrowed desk is worth most."
+  internalLinks={[
+    { text: "The Estimating Desk", href: "/estimating/" },
+    { text: "See a complete estimate pack", href: "/estimating/sample-quote-pack/" },
+    { text: "What a basis of estimate is", href: "/insights/what-is-a-basis-of-estimate/" },
+    { text: "Pre-construction site intelligence", href: "/services/pre-construction-site-intelligence/" },
+  ]}
+/>

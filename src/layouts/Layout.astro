@@ -10,6 +10,8 @@ interface Props {
   schema?: string;
   breadcrumbSchema?: string;
   faqSchema?: string;
+  /** Any additional JSON-LD node for this page (ItemList, HowTo, and so on). */
+  extraSchema?: string;
   fullWidth?: boolean;
   lang?: string;
   hreflang?: { lang: string; href: string }[];
@@ -25,6 +27,7 @@ const {
   schema,
   breadcrumbSchema,
   faqSchema,
+  extraSchema,
   fullWidth = false,
   lang = "en",
   hreflang = [],
@@ -69,13 +72,73 @@ const organizationSchema = JSON.stringify({
   ],
 });
 
-const navLinks = [
-  { href: "/work/", label: "The Standard" },
-  { href: "/services/", label: "Services" },
-  { href: "/estimating/", label: "Estimating" },
-  { href: "/about/", label: "About" },
-  { href: "/contact/", label: "Contact" },
+// Locale is derived from the URL so every page in /uk/ gets UK chrome automatically.
+const pathname = Astro.url.pathname;
+const isUK = pathname === "/uk" || pathname.startsWith("/uk/");
+const homeHref = isUK ? "/uk/" : "/";
+
+// Proof pages (the gallery, the sample pack, the sample deliverable) are shared
+// between both locales - they are the same buildings and the same documents.
+const workChildren = [
+  { href: "/work/", label: "The Standard", note: "How a survey runs" },
+  { href: "/work/locations/", label: "Surveyed Locations", note: "25 buildings, and counting" },
+  { href: "/work/sample-project/", label: "Sample Project", note: "A complete deliverable" },
 ];
+
+const estimatingChildren = isUK
+  ? [
+      { href: "/uk/estimating/", label: "Estimating Desk", note: "Priced tenders under your name" },
+      { href: "/estimating/sample-quote-pack/", label: "Sample Estimate Pack", note: "A real priced tender" },
+      { href: "/estimating/basis-of-estimate/", label: "Basis of Estimate", note: "The standard we work to" },
+    ]
+  : [
+      { href: "/estimating/", label: "Estimating Desk", note: "Priced bids under your name" },
+      { href: "/estimating/sample-quote-pack/", label: "Sample Estimate Pack", note: "A real priced bid" },
+      { href: "/estimating/basis-of-estimate/", label: "Basis of Estimate", note: "The standard we work to" },
+    ];
+
+const ukServiceChildren = [
+  { href: "/uk/measured-building-survey/", label: "Measured Building Survey", note: "Point cloud and as-built" },
+  { href: "/uk/pre-construction-survey/", label: "Pre-Construction Survey", note: "Existing conditions" },
+  { href: "/uk/heritage-building-survey/", label: "Heritage & Listed Buildings", note: "Conservation documentation" },
+  { href: "/uk/multi-site-rollout-survey/", label: "Multi-Site Rollout", note: "Retail, QSR and franchise" },
+  { href: "/uk/above-ceiling-mep-survey/", label: "Above-Ceiling MEP", note: "What is above the grid" },
+];
+
+const usServiceChildren = [
+  { href: "/services/construction-documentation/", label: "Construction Documentation", note: "As-builts and record sets" },
+  { href: "/services/pre-construction-site-intelligence/", label: "Pre-Construction Intelligence", note: "Before you price the work" },
+  { href: "/services/multi-site-rollout-documentation/", label: "Multi-Site Rollout", note: "Programmes at scale" },
+  { href: "/services/specialist-projects/", label: "Specialist Projects", note: "Heritage, aviation, marine" },
+  { href: "/services/", label: "All services and sectors", note: "The full list" },
+];
+
+const navLinks = [
+  { href: "/work/", label: "Work", children: workChildren },
+  {
+    href: isUK ? "/uk/" : "/services/",
+    label: "Services",
+    children: isUK ? ukServiceChildren : usServiceChildren,
+  },
+  { href: isUK ? "/uk/estimating/" : "/estimating/", label: "Estimating", children: estimatingChildren },
+  { href: "/insights/", label: "Insights" },
+  { href: "/about/", label: "About" },
+];
+
+// The locale switcher prefers the current page's own translated counterpart
+// (supplied via the hreflang prop) and falls back to the market home page.
+const rel = (href?: string) => href?.replace("https://alturascope.com", "") || undefined;
+// A page that serves both markets lists itself as its own alternate. Honouring
+// that literally would point the switcher at the page you are already on, so
+// fall back to the other market's home page instead of rendering a dead link.
+const notSelf = (href?: string) => (href && href !== pathname ? href : undefined);
+const ukAlternate = notSelf(rel(hreflang.find((h) => h.lang.toLowerCase() === "en-gb")?.href));
+const usAlternate = notSelf(rel(hreflang.find((h) => h.lang.toLowerCase() === "en")?.href));
+const switchHref = isUK ? usAlternate || "/" : ukAlternate || "/uk/";
+const switchLabel = isUK ? "US" : "UK";
+const switchTitle = isUK
+  ? "Switch to Alturascope United States"
+  : "Switch to Alturascope United Kingdom";
 ---
 <html lang={lang}>
   <head>
@@ -98,7 +161,9 @@ const navLinks = [
     <meta property="og:url" content={canonical} />
     <meta property="og:image" content={ogImage} />
     <meta property="og:site_name" content="Alturascope" />
-    <meta property="og:locale" content="en_US" />
+    <meta property="og:locale" content={isUK ? "en_GB" : "en_US"} />
+    {isUK && <meta property="og:locale:alternate" content="en_US" />}
+    {!isUK && <meta property="og:locale:alternate" content="en_GB" />}
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content={title} />
     <meta name="twitter:description" content={description} />
@@ -115,6 +180,7 @@ const navLinks = [
     {schema && <script type="application/ld+json" set:html={schema} />}
     {breadcrumbSchema && <script type="application/ld+json" set:html={breadcrumbSchema} />}
     {faqSchema && <script type="application/ld+json" set:html={faqSchema} />}
+    {extraSchema && <script type="application/ld+json" set:html={extraSchema} />}
   </head>
   <body>
     {!minimalChrome && (
@@ -122,19 +188,52 @@ const navLinks = [
     <!-- Header -->
     <header id="site-header" class="fixed top-0 left-0 right-0 z-50 transition-all duration-300">
       <div class="mx-auto max-w-[1400px] px-6 md:px-8 lg:px-12 py-5 flex items-center justify-between">
-        <a href="/" class="flex items-center" aria-label="Alturascope home">
+        <a href={homeHref} class="flex items-center gap-2" aria-label="Alturascope home">
           <span id="logo-text" class="text-xl font-light tracking-wide text-white transition-colors duration-300">ALTURASCOPE</span>
+          {isUK && <span id="logo-locale" class="text-[0.65rem] font-medium tracking-[0.12em] text-gold border border-gold/50 rounded-sm px-1.5 py-0.5 leading-none">UK</span>}
         </a>
 
-        <nav class="hidden lg:flex items-center gap-8">
+        <nav class="hidden lg:flex items-center gap-7" aria-label="Primary">
           {navLinks.map((link) => (
-            <a
-              href={link.href}
-              class="nav-link text-[0.875rem] font-medium tracking-nav text-white/90 hover:text-white transition-colors duration-300"
-            >
-              {link.label}
-            </a>
+            link.children ? (
+              <div class="nav-group relative">
+                <a
+                  href={link.href}
+                  class="nav-link inline-flex items-center gap-1.5 py-2 text-[0.875rem] font-medium tracking-nav text-white/90 hover:text-white transition-colors duration-300"
+                >
+                  {link.label}
+                  <svg class="w-2.5 h-2.5 opacity-60 transition-transform duration-200 nav-chevron" viewBox="0 0 10 6" fill="none" aria-hidden="true"><path d="M1 1l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                </a>
+                <div class="nav-panel absolute left-1/2 -translate-x-1/2 top-full pt-3 w-[310px]">
+                  <div class="bg-white border border-border shadow-[0_12px_40px_-12px_rgba(11,31,58,0.28)] rounded-sm py-2">
+                    {link.children.map((child) => (
+                      <a href={child.href} class="block px-5 py-3 hover:bg-offwhite transition-colors">
+                        <span class="block text-[0.875rem] font-medium text-navy leading-snug">{child.label}</span>
+                        <span class="block text-[0.75rem] text-midgrey mt-0.5 leading-snug">{child.note}</span>
+                      </a>
+                    ))}
+                  </div>
+                </div>
+              </div>
+            ) : (
+              <a
+                href={link.href}
+                class="nav-link py-2 text-[0.875rem] font-medium tracking-nav text-white/90 hover:text-white transition-colors duration-300"
+              >
+                {link.label}
+              </a>
+            )
           ))}
+
+          <a
+            href={switchHref}
+            title={switchTitle}
+            class="nav-switch inline-flex items-center gap-1.5 text-[0.75rem] font-medium tracking-[0.08em] text-white/70 hover:text-white border border-white/30 hover:border-white/60 rounded-sm px-2.5 py-1.5 transition-colors duration-300"
+          >
+            <svg class="w-3 h-3" viewBox="0 0 16 16" fill="none" aria-hidden="true"><circle cx="8" cy="8" r="6.5" stroke="currentColor" stroke-width="1.2"/><path d="M1.5 8h13M8 1.5c1.8 2 2.7 4.1 2.7 6.5S9.8 12.5 8 14.5C6.2 12.5 5.3 10.4 5.3 8S6.2 3.5 8 1.5z" stroke="currentColor" stroke-width="1.2"/></svg>
+            {switchLabel}
+          </a>
+
           <a href="/contact/" class="btn-primary text-sm px-6 py-3">Start a Project</a>
         </nav>
 
@@ -153,13 +252,29 @@ const navLinks = [
     </header>
 
     <!-- Mobile overlay -->
-    <div id="mobile-overlay" class="fixed inset-0 z-[60] bg-navy flex flex-col items-center justify-center hidden opacity-0 transition-opacity duration-300">
-      <button id="mobile-close" class="absolute top-6 right-6 text-gold text-3xl font-light leading-none" aria-label="Close navigation">&times;</button>
-      <nav class="flex flex-col items-center gap-8">
+    <div id="mobile-overlay" class="fixed inset-0 z-[60] bg-navy hidden opacity-0 transition-opacity duration-300 overflow-y-auto">
+      <button id="mobile-close" class="absolute top-5 right-6 text-gold text-3xl font-light leading-none z-10" aria-label="Close navigation">&times;</button>
+      <nav class="px-8 pt-24 pb-16 max-w-md mx-auto" aria-label="Primary mobile">
         {navLinks.map((link) => (
-          <a href={link.href} class="text-white text-2xl font-light">{link.label}</a>
+          <div class="border-b border-white/10 py-5">
+            <a href={link.href} class="block text-white text-xl font-light">{link.label}</a>
+            {link.children && (
+              <div class="mt-3 flex flex-col gap-2.5 pl-4 border-l border-gold/40">
+                {link.children.map((child) => (
+                  <a href={child.href} class="block text-white/65 text-[0.95rem] leading-snug">{child.label}</a>
+                ))}
+              </div>
+            )}
+          </div>
         ))}
-        <a href="/contact/" class="btn-primary mt-4 text-base px-8 py-3.5">Start a Project</a>
+        <div class="border-b border-white/10 py-5">
+          <a href="/contact/" class="block text-white text-xl font-light">Contact</a>
+        </div>
+        <a href={switchHref} class="inline-flex items-center gap-2 mt-6 text-[0.8rem] font-medium tracking-[0.08em] text-white/70 border border-white/30 rounded-sm px-3 py-2">
+          <svg class="w-3.5 h-3.5" viewBox="0 0 16 16" fill="none" aria-hidden="true"><circle cx="8" cy="8" r="6.5" stroke="currentColor" stroke-width="1.2"/><path d="M1.5 8h13M8 1.5c1.8 2 2.7 4.1 2.7 6.5S9.8 12.5 8 14.5C6.2 12.5 5.3 10.4 5.3 8S6.2 3.5 8 1.5z" stroke="currentColor" stroke-width="1.2"/></svg>
+          {isUK ? "Switch to Alturascope US" : "Switch to Alturascope UK"}
+        </a>
+        <a href="/contact/" class="btn-primary mt-8 w-full justify-center flex text-base px-8 py-3.5">Start a Project</a>
       </nav>
     </div>
     </Fragment>
@@ -222,6 +337,8 @@ const navLinks = [
                 <a href="/services/commercial-kitchen-survey/" class="text-sm text-white/70 hover:text-white transition-colors">Commercial Kitchens</a>
                 <a href="/services/aviation-facility-survey/" class="text-sm text-white/70 hover:text-white transition-colors">Aviation</a>
                 <a href="/services/heritage-building-documentation/" class="text-sm text-white/70 hover:text-white transition-colors">Heritage</a>
+                <a href="/services/film-tv-location-documentation/" class="text-sm text-white/70 hover:text-white transition-colors">Film &amp; TV Locations</a>
+                <a href="/services/private-aircraft-documentation/" class="text-sm text-white/70 hover:text-white transition-colors">Private Aircraft</a>
               </nav>
             </div>
             <div>
@@ -244,9 +361,13 @@ const navLinks = [
                 <a href="/about/" class="text-sm text-white/70 hover:text-white transition-colors">About</a>
                 <a href="/insights/" class="text-sm text-white/70 hover:text-white transition-colors">Insights</a>
                 <a href="/contact/" class="text-sm text-white/70 hover:text-white transition-colors">Contact</a>
+                <span class="block mt-3 mb-1 text-xs font-medium uppercase tracking-label text-white/40">United Kingdom</span>
                 <a href="/uk/" class="text-sm text-white/70 hover:text-white transition-colors">Alturascope UK</a>
+                <a href="/uk/measured-building-survey/" class="text-sm text-white/70 hover:text-white transition-colors">Measured Building Survey</a>
                 <a href="/uk/heritage-building-survey/" class="text-sm text-white/70 hover:text-white transition-colors">Heritage Survey UK</a>
                 <a href="/uk/pre-construction-survey/" class="text-sm text-white/70 hover:text-white transition-colors">Pre-Construction UK</a>
+                <a href="/uk/multi-site-rollout-survey/" class="text-sm text-white/70 hover:text-white transition-colors">Multi-Site Rollout UK</a>
+                <a href="/uk/above-ceiling-mep-survey/" class="text-sm text-white/70 hover:text-white transition-colors">Above-Ceiling MEP UK</a>
               </nav>
             </div>
           </div>
@@ -266,6 +387,7 @@ const navLinks = [
         const header = document.getElementById("site-header");
         const logo = document.getElementById("logo-text");
         const navLinks = document.querySelectorAll(".nav-link");
+        const navSwitch = document.querySelector(".nav-switch");
         const burgerLines = [
           document.getElementById("burger-top"),
           document.getElementById("burger-mid"),
@@ -294,6 +416,10 @@ const navLinks = [
             burgerLines.forEach((l) => {
               l?.classList.replace("bg-white", "bg-navy");
             });
+            if (navSwitch) {
+              navSwitch.classList.remove("text-white/70", "hover:text-white", "border-white/30", "hover:border-white/60");
+              navSwitch.classList.add("text-navy/70", "hover:text-navy", "border-navy/25", "hover:border-navy/50");
+            }
           } else {
             header.classList.remove("bg-white", "border-b", "border-border", "shadow-sm");
             header.classList.add("bg-transparent");
@@ -307,6 +433,10 @@ const navLinks = [
             burgerLines.forEach((l) => {
               l?.classList.replace("bg-navy", "bg-white");
             });
+            if (navSwitch) {
+              navSwitch.classList.add("text-white/70", "hover:text-white", "border-white/30", "hover:border-white/60");
+              navSwitch.classList.remove("text-navy/70", "hover:text-navy", "border-navy/25", "hover:border-navy/50");
+            }
           }
         }
 

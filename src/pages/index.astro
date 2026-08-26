@@ -1,5 +1,6 @@
 ---
 import Layout from "../layouts/Layout.astro";
+import GalleryBand from "../components/GalleryBand.astro";
 
 const professionalServiceSchema = {
   "@type": "ProfessionalService",
@@ -69,7 +70,7 @@ const schema = JSON.stringify({
     <section class="relative min-h-screen flex items-center justify-center py-20 md:py-28 lg:py-32">
       <div class="absolute inset-0 bg-navy">
         <img
-          src="/Images/construction.jpg"
+          src="/Images/construction.webp"
           alt="Commercial building interior documented for pre-construction site survey and renovation planning"
           class="w-full h-full object-cover opacity-35"
           loading="eager"
@@ -203,7 +204,7 @@ const schema = JSON.stringify({
                 <div class="w-2.5 h-2.5 rounded-full bg-green-400"></div>
               </div>
               <img
-                src="/scopewalk-platform.png"
+                src="/scopewalk-platform.webp"
                 alt="ScopeWalk site documentation platform showing structured project deliverables with labelled room photographs and conditions reports"
                 class="w-full"
                 loading="lazy"
@@ -237,7 +238,7 @@ const schema = JSON.stringify({
           Matterport embed here once a client has given written permission to publish one. -->
           <figure class="m-0">
             <img
-              src="/Images/locations/digital-twin-mesh.jpg"
+              src="/Images/locations/digital-twin-mesh.webp"
               alt="Measured mesh of a surveyed office floor plate, showing every wall, column and riser in its true position"
               width="1280"
               height="720"
@@ -306,6 +307,8 @@ const schema = JSON.stringify({
         </div>
       </div>
     </section>
+
+    <GalleryBand />
 
     <!-- SECTION 6: Who We Work With -->
     <section class="bg-offwhite section-padding">
@@ -388,7 +391,7 @@ const schema = JSON.stringify({
 
           <div>
             <img
-              src="/coverage-map.png"
+              src="/coverage-map.webp"
               alt="Alturascope site survey coverage map showing nationwide operations across all 50 US states, Canada, and the United Kingdom"
               class="w-full"
               loading="lazy"

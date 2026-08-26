@@ -1,5 +1,6 @@
 ---
 import Layout from "../../layouts/Layout.astro";
+import EstimatingBand from "../../components/EstimatingBand.astro";
 
 const schema = JSON.stringify({
   "@context": "https://schema.org",
@@ -72,10 +73,10 @@ const faqSchema = JSON.stringify({
 });
 ---
 <Layout
-  title="Retail Rollout Site Documentation — Multi-Site Survey Programme | Alturascope"
-  description="Site documentation for retail remodel, rebrand, and expansion programmes. Conditions surveys, equipment schedules, and Matterport digital twins delivered consistently across every location — nationwide."
+  title="Retail Rollout Site Documentation — Multi-Site Survey Programme"
+  description="Conditions surveys, equipment schedules and Matterport digital twins for retail remodel, rebrand and expansion programmes - consistent at every location."
   canonical="https://alturascope.com/services/retail-rollout-documentation/"
-  ogImage="https://images.unsplash.com/photo-1604719312566-8912e9227c6a?w=1200&q=80"
+  ogImage="/Images/stock/1604719312566-8912e9227c6a.webp"
   schema={schema}
   breadcrumbSchema={breadcrumbSchema}
   faqSchema={faqSchema}
@@ -87,14 +88,13 @@ const faqSchema = JSON.stringify({
     <section class="relative min-h-[100vh] md:min-h-0 md:h-[60vh] flex items-center justify-center">
       <div class="absolute inset-0 bg-navy">
         <img
-          src="https://images.unsplash.com/photo-1604719312566-8912e9227c6a?w=1920&q=80"
+          src="/pre-construction-survey.webp"
+          width="1920"
+          height="1440"
           srcset="
-            https://images.unsplash.com/photo-1604719312566-8912e9227c6a?w=800&q=70 800w,
-            https://images.unsplash.com/photo-1604719312566-8912e9227c6a?w=1200&q=75 1200w,
-            https://images.unsplash.com/photo-1604719312566-8912e9227c6a?w=1920&q=80 1920w
-          "
+            /Images/stock/1604719312566-8912e9227c6a.webp"
           sizes="100vw"
-          alt="Modern retail store interior with display fixtures, ceiling infrastructure, and lighting visible during a pre-construction site survey"
+          alt="Vacant retail unit documented by Alturascope before a rollout fit-out begins"
           class="w-full h-full object-cover opacity-35"
           loading="eager"
           fetchpriority="high"
@@ -382,6 +382,8 @@ const faqSchema = JSON.stringify({
         </div>
       </div>
     </section>
+
+    <EstimatingBand locale="us" lead="Store programmes are won and lost on how quickly a landlord package can be priced." />
 
     <!-- CTA -->
     <section class="bg-white section-padding">

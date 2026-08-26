@@ -1,5 +1,6 @@
 ---
 import Layout from "../../layouts/Layout.astro";
+import EstimatingBand from "../../components/EstimatingBand.astro";
 
 const schema = JSON.stringify({
   "@context": "https://schema.org",
@@ -24,7 +25,7 @@ const breadcrumbSchema = JSON.stringify({
 ---
 <Layout
   title="Specialist Site Documentation | Alturascope"
-  description="Complex environments, sensitive briefs, high-stakes projects. If the standard approach won't cut it — heritage buildings, aviation facilities, superyachts, resorts — this is where we work."
+  description="Complex environments and sensitive briefs. Heritage buildings, aviation facilities, superyachts and resorts - where the standard approach will not do."
   canonical="https://alturascope.com/services/specialist-projects/"
   schema={schema}
   breadcrumbSchema={breadcrumbSchema}
@@ -37,8 +38,10 @@ const breadcrumbSchema = JSON.stringify({
       <!-- REPLACE: Significant heritage interior, private estate space, or dramatically atmospheric architectural photograph. Must read as extraordinary, not commercial. -->
       <div class="absolute inset-0 bg-navy">
         <img
-          src="https://images.unsplash.com/photo-1558618666-fcd25c85f82e?w=1920&q=80"
-          alt="Heritage building interior with vaulted stone corridors documented during specialist site survey for conservation and restoration planning"
+          src="/Images/attic.webp"
+          width="1920"
+          height="1440"
+          alt="Roof void and structural timbers documented by Alturascope on a specialist survey"
           class="w-full h-full object-cover opacity-30"
           loading="eager"
           fetchpriority="high"
@@ -174,6 +177,8 @@ const breadcrumbSchema = JSON.stringify({
         <a href="/services/" class="text-navy font-medium hover:opacity-80 transition-opacity">All services &rarr;</a>
       </div>
     </section>
+
+    <EstimatingBand locale="us" lead="Specialist work rarely fits a price book, which is exactly when a traceable build-up matters." />
 
   </div>
 </Layout>

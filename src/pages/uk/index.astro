@@ -1,5 +1,6 @@
 ---
 import Layout from "../../layouts/Layout.astro";
+import GalleryBand from "../../components/GalleryBand.astro";
 
 const schema = JSON.stringify({
   "@context": "https://schema.org",
@@ -40,14 +41,16 @@ const ukServices = [
     <section class="relative min-h-screen flex items-center justify-center pt-24 pb-36">
       <div class="absolute inset-0 bg-navy">
         <img
-          src="https://images.unsplash.com/photo-1513635269975-59663e0ac1ad?w=1920&q=80"
-          alt="British heritage building interior documented by Alturascope UK for site survey and reality capture across England, Scotland, Wales, and Northern Ireland"
-          class="w-full h-full object-cover opacity-35"
+          src="/Images/london2.webp"
+          alt="The City of London at night from the Thames - Alturascope UK covers site surveys and construction estimating across England, Scotland, Wales and Northern Ireland"
+          width="1400"
+          height="934"
+          class="w-full h-full object-cover opacity-50"
           loading="eager"
           fetchpriority="high"
           decoding="async"
         />
-        <div class="absolute inset-0 bg-[rgba(11,31,58,0.72)]"></div>
+        <div class="absolute inset-0 bg-[rgba(11,31,58,0.62)]"></div>
       </div>
 
       <div class="relative z-10 text-center max-w-[760px] mx-auto px-6">
@@ -78,8 +81,75 @@ const ukServices = [
       </div>
     </section>
 
+    <!-- Credibility bar -->
+    <section class="bg-offwhite py-12 md:py-[48px]">
+      <div class="max-w-[1100px] mx-auto px-6">
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-8 md:gap-4 text-center">
+          <div>
+            <p class="text-[2.4rem] font-light text-navy">4</p>
+            <p class="text-[0.7rem] font-medium uppercase tracking-[0.12em] text-midgrey mt-1">Nations Covered</p>
+          </div>
+          <div>
+            <p class="text-[2.4rem] font-light text-navy">500+</p>
+            <p class="text-[0.7rem] font-medium uppercase tracking-[0.12em] text-midgrey mt-1">Commercial Sites Documented</p>
+          </div>
+          <div>
+            <p class="text-[2.4rem] font-light text-navy">33</p>
+            <p class="text-[0.7rem] font-medium uppercase tracking-[0.12em] text-midgrey mt-1">Years Construction &amp; Estimating</p>
+          </div>
+          <div>
+            <p class="text-[2.4rem] font-light text-navy">2 Days</p>
+            <p class="text-[0.7rem] font-medium uppercase tracking-[0.12em] text-midgrey mt-1">Typical Tender Turnaround</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Two services -->
+    <section class="bg-white section-padding">
+      <div class="max-w-[1200px] mx-auto px-6">
+        <div class="text-center max-w-[60ch] mx-auto mb-14">
+          <p class="label text-gold mb-4">Two Services</p>
+          <h2 class="text-[2rem] md:text-[2.2rem] font-light text-navy leading-tight">
+            The survey, and the number that follows it.
+          </h2>
+          <p class="mt-5 text-midgrey leading-body">
+            Most UK clients arrive with one of two questions. We built a service for each &mdash; and on a refurbishment, the second is far better for having done the first.
+          </p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+          <div class="card p-9">
+            <p class="label text-gold mb-3">Site Documentation</p>
+            <h3 class="text-[1.3rem] font-medium text-navy">&ldquo;What am I actually working with?&rdquo;</h3>
+            <p class="mt-4 text-midgrey leading-body">
+              Measured building surveys, Matterport digital twins, conditions reports, asset schedules and above-ceiling capture &mdash; delivered in the same structure every time, through ScopeWalk. Point cloud accurate to 5&ndash;12mm, exported in .e57 and .rcp for CAD and Revit.
+            </p>
+            <p class="mt-6">
+              <a href="/uk/measured-building-survey/" class="text-navy font-medium border-b border-gold pb-0.5 hover:opacity-80 transition-opacity">See the survey service &rarr;</a>
+            </p>
+          </div>
+
+          <div class="card border-gold bg-offwhite p-9">
+            <p class="label text-gold mb-3">Estimating Desk</p>
+            <h3 class="text-[1.3rem] font-medium text-navy">&ldquo;What is it going to cost me?&rdquo;</h3>
+            <p class="mt-4 text-midgrey leading-body">
+              Send us the drawings; we send back a priced, client-ready tender under your own name &mdash; usually inside two working days. Bills of quantities, preliminaries and provisional sums, measured to NRM2, in sterling and excluding VAT, under JCT or NEC as the tender requires.
+            </p>
+            <p class="mt-6">
+              <a href="/uk/estimating/" class="text-navy font-medium border-b border-gold pb-0.5 hover:opacity-80 transition-opacity">See the estimating service &rarr;</a>
+            </p>
+          </div>
+        </div>
+
+        <p class="mt-12 text-center text-midgrey leading-body max-w-[68ch] mx-auto">
+          On a refurbishment or a fit-out the two run together: we survey the building, then price the works from the same record &mdash; so the tender is built on the building as it stands, not the drawing as it was drawn.
+        </p>
+      </div>
+    </section>
+
     <!-- UK Services -->
-    <section id="uk-services" class="bg-white section-padding">
+    <section id="uk-services" class="bg-offwhite section-padding">
       <div class="max-w-[1000px] mx-auto px-6">
         <p class="label text-gold mb-4">UK Services</p>
         <h2 class="text-[2rem] font-light text-navy leading-tight">
@@ -102,7 +172,7 @@ const ukServices = [
     </section>
 
     <!-- UK Coverage -->
-    <section class="bg-offwhite section-padding">
+    <section class="bg-white section-padding">
       <div class="max-w-[760px] mx-auto px-6">
         <p class="label text-gold mb-4">Coverage</p>
         <h2 class="text-[2rem] font-light text-navy leading-tight">
@@ -120,7 +190,7 @@ const ukServices = [
     </section>
 
     <!-- Heritage Strength -->
-    <section class="bg-white section-padding">
+    <section class="bg-offwhite section-padding">
       <div class="max-w-[760px] mx-auto px-6">
         <p class="label text-gold mb-4">Heritage &amp; Listed Buildings</p>
         <h2 class="text-[2rem] font-light text-navy leading-tight">
@@ -183,8 +253,10 @@ const ukServices = [
       </div>
     </section>
 
+    <GalleryBand heading="A sample of the buildings we&amp;rsquo;ve been inside." lead="Twenty-five commercial sites documented as navigable digital twins. The UK operation works to the same standard, the same deliverable structure and the same naming rule - by centre or street, never by occupier." />
+
     <!-- CTA -->
-    <section class="bg-offwhite section-padding">
+    <section class="bg-white section-padding">
       <div class="max-w-[700px] mx-auto px-6 text-center">
         <h2 class="text-[2rem] font-light text-navy">
           Tell Us About Your UK Project

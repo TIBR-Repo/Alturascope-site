@@ -3,13 +3,16 @@ import Layout from "../layouts/Layout.astro";
 
 const schema = JSON.stringify({
   "@context": "https://schema.org",
-  "@type": "ProfessionalService",
-  "name": "Alturascope",
-  "description": "Reality capture, 3D documentation, and conditions surveys for construction teams and specialist clients across the US, Canada, and the UK.",
-  "url": "https://alturascope.com/",
-  "areaServed": ["United States", "Canada", "United Kingdom"],
-  "serviceType": "Reality Capture and Site Documentation",
-  "sameAs": ["https://www.linkedin.com/company/111948383"]
+  "@type": "AboutPage",
+  "name": "About Alturascope",
+  "description": "Who runs Alturascope, how the survey and estimating sides fit together, and the standard both are held to.",
+  "url": "https://alturascope.com/about/",
+  "isPartOf": {
+    "@id": "https://alturascope.com/#organization"
+  },
+  "about": {
+    "@id": "https://alturascope.com/#organization"
+  }
 });
 ---
 <Layout
@@ -25,8 +28,10 @@ const schema = JSON.stringify({
     <section class="relative h-[50vh] min-h-[350px] flex items-center justify-center">
       <div class="absolute inset-0 bg-navy">
         <img
-          src="https://images.unsplash.com/photo-1487958449943-2429e8be8625?w=1920&q=80"
-          alt="Significant architectural facade with atmospheric lighting representing Alturascope heritage and expertise"
+          src="/Images/site-interior-1.webp"
+          width="1600"
+          height="1205"
+          alt="Aerial orthographic survey of a commercial building roof, showing plant, membrane condition and the surrounding site"
           class="w-full h-full object-cover opacity-30"
           loading="eager"
           fetchpriority="high"
@@ -67,7 +72,7 @@ const schema = JSON.stringify({
         <div class="grid md:grid-cols-[minmax(0,300px)_1fr] gap-10 md:gap-14 items-start">
           <figure class="m-0">
             <img
-              src="/Images/aph-image.jpg"
+              src="/Images/aph-image.webp"
               alt="Andrew Harris, founder of Alturascope"
               width="1150"
               height="1533"
