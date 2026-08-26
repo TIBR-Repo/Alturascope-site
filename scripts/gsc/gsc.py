@@ -24,6 +24,7 @@ import argparse
 import datetime as dt
 import json
 import os
+import re
 import sys
 from collections import defaultdict
 
@@ -103,7 +104,26 @@ def resolve_site(svc, explicit: str | None = None) -> str:
     return matches[0]["siteUrl"]
 
 
+def normalise_path(path: str) -> str:
+    """Undo Git Bash's MSYS path conversion.
+
+    A leading-slash argument like /uk/estimating/ gets rewritten by Git Bash
+    into C:/Program Files/Git/uk/estimating/ before Python ever sees it, which
+    then 403s against the API. Callers can also pass a bare path with no
+    leading slash, or a full URL.
+    """
+    if path.startswith("http"):
+        return path
+    m = re.search(r"(?:^[A-Za-z]:)?[\/].*?[Gg]it(/.*)$", path)
+    if m:
+        path = m.group(1)
+    return path if path.startswith("/") else "/" + path
+
+
 def page_url(site: str, path: str) -> str:
+    path = normalise_path(path)
+    if path.startswith("http"):
+        return path
     if site.startswith("sc-domain:"):
         return f"https://{site.split(':', 1)[1]}{path}"
     return site.rstrip("/") + path
@@ -171,6 +191,7 @@ def cmd_index_status(svc, site, args):
     print(f"\n  {'verdict':<12} {'coverage':<34} {'last crawl':<12} page")
     print(f"  {'-'*12} {'-'*34} {'-'*12} {'-'*40}")
     for p in paths:
+        p = normalise_path(p)
         url = p if p.startswith("http") else page_url(site, p)
         try:
             r = svc.urlInspection().index().inspect(body={

@@ -9,6 +9,17 @@ runs headlessly, forever, including from a scheduled job.
 
 ---
 
+## Status: live since 26 August 2026
+
+Set up and working. Property is a **Domain property** (`sc-domain:alturascope.com`),
+which covers http/https and every subdomain. The service account
+`gsc-reader@claude-gsc-alturascope.iam.gserviceaccount.com` holds `siteFullUser`,
+which is enough for everything here including sitemap submission.
+
+The setup below is kept for reference, or for standing it up again elsewhere.
+
+---
+
 ## One-time setup
 
 ### 1. Create the service account (Google Cloud, ~5 min)
