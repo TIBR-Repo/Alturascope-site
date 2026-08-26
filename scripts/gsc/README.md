@@ -118,8 +118,37 @@ Worth doing only if the sitemap route proves too slow in practice.
 
 ---
 
-## Running it on a schedule
+## Scheduled reporting (live since 26 August 2026)
 
-Once the key is in place, this can run unattended — for example a weekly
-`compare` and `index-status` that lands as a report. Ask and it'll be set up as
-a scheduled job; nothing further is needed from you after the key exists.
+Two **Windows scheduled tasks** — real ones, not a Claude session cron, so they
+survive reboots and run whether or not anything else is open:
+
+| Task | When | What |
+| --- | --- | --- |
+| `Alturascope SEO - daily index check` | daily 08:12 | `report.py --quick` — index status only, ~40s |
+| `Alturascope SEO - weekly report` | Mondays 08:23 | `report.py` — performance, themes, before/after, ~2min |
+
+Reports land in **`Documents\Alturascope-SEO\`**: a dated `report-YYYY-MM-DD.md`
+plus `latest.md`, which is always the most recent. `state.json` holds the previous
+run so each report can say what *moved* rather than just restating totals — it
+calls out any page that became indexed since last time. `run.log` captures stdout
+and stderr, because a scheduled task otherwise swallows both and a failure is
+invisible.
+
+Re-register or change the times with:
+
+```powershell
+powershell -ExecutionPolicy Bypass -File scripts\gsc\install-schedule.ps1
+```
+
+Run one immediately:
+
+```powershell
+Start-ScheduledTask -TaskName "Alturascope SEO - weekly report"
+```
+
+Remove them:
+
+```powershell
+Get-ScheduledTask -TaskName "Alturascope SEO*" | Unregister-ScheduledTask -Confirm:$false
+```
