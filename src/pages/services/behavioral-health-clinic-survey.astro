@@ -1,0 +1,54 @@
+---
+import SectorPage from "../../components/SectorPage.astro";
+
+const checks = [
+  { title: "Ligature risk in the existing fabric", body: "Door hardware, grab rails, ceiling grid, sprinkler heads, window restrictors and plumbing fixtures inherited from a previous tenant are the single most consequential thing to record. A room can look finished and still be unsuitable, and the remediation cost varies enormously depending on what is already there." },
+  { title: "Sightlines and observation", body: "Whether staff can observe circulation, waiting and group rooms from the positions they will actually occupy is a layout question with a licensing consequence. Columns, returns and existing partition positions decide it, and a leasing plan will not show them accurately." },
+  { title: "Acoustic separation for confidentiality", body: "Counselling and group rooms carry a confidentiality expectation that lightweight partitions dying at the ceiling grid will not meet. Whether walls run to slab, whether the plenum is continuous and how doors are specified are the deciding factors." },
+  { title: "Medication storage and dispensing", body: "Secure storage, controlled access, refrigeration and in some programmes dispensing all need power, security provision and a defensible location. Retro-fitting security-rated construction into a second-generation shell is more involved than it looks." },
+  { title: "Separated circulation and egress", body: "Many programmes need client and staff routes that do not cross, plus a discreet exit. The existing core, demise and egress arrangement often decide whether that is achievable at all in a given unit." },
+  { title: "Washroom counts and accessibility", body: "Occupant load for a treatment programme is very different from the retail or office use being replaced, and fixture counts follow occupancy. Where the existing washrooms are close to compliant but not quite, the correction can change a site's viability." },
+  { title: "HVAC zoning for small rooms", body: "A clinic subdivides an open shell into many small rooms, each needing supply, return and enough air change. Whether the existing plant can be zoned to that granularity, or whether it needs replacing, is a major cost fork found early or late." },
+  { title: "Discreet frontage and neighbours", body: "Signage, visibility, parking and adjacency to other tenancies matter more here than in most sectors, both for clients and for local approval. Those are site facts worth recording alongside the building ones." },
+];
+
+const faqs = [
+  { q: "Which programmes does this cover?", a: "Outpatient behavioural health, substance use disorder treatment, counselling and therapy clinics, and adjacent programmes in small-format multi-site space. We also work extensively with ABA and autism therapy providers, which have their own dedicated page." },
+  { q: "Do you assess licensing compliance?", a: "No, and you should be careful of anyone who says they do from a survey alone. State licensing is specialist and jurisdiction-specific. We record the physical conditions your architect and licensing consultant need to make that determination, and we name what could not be established rather than guessing." },
+  { q: "Do you work for PE-backed platform operators?", a: "Frequently. Behavioural health has consolidated quickly, and acquired clinics almost never come with a usable record of the building. That is exactly the problem a consistent portfolio survey solves." },
+  { q: "Can you survey while a clinic is operating?", a: "Yes, out of hours, and with the discretion the setting requires. We photograph the building rather than the people in it, and we work to whatever access constraints the programme sets." },
+  { q: "Can you survey a candidate unit before we sign?", a: "That is the most valuable point. Whether separated circulation is achievable, whether the washroom counts work at the intended occupancy and what the ligature remediation will involve are all answerable before the lease commits you." },
+];
+---
+<SectorPage
+  title="Behavioral Health Clinic Conditions Surveys"
+  description="Existing conditions surveys for behavioral health and addiction treatment clinics - ligature risk, sightlines, acoustic privacy and separated circulation."
+  slug="behavioral-health-clinic-survey"
+  h1="Behavioral Health &amp; Treatment Clinic Surveys"
+  standfirst="Ligature risk, observation sightlines, acoustic confidentiality and separated circulation &mdash; recorded before the design and the licensing application."
+  heroImage="/pre-construction-survey.webp"
+  heroAlt="Vacant commercial suite documented before a behavioral health clinic fit-out, showing partitions, ceiling grid and existing services"
+  opening={[
+    "Behavioural health and addiction treatment clinics carry requirements that most fit-out teams meet for the first time on the job: ligature-resistant fabric, observation sightlines, acoustic confidentiality, secure medication storage and circulation that keeps client and staff routes apart. Almost all of it interacts with what the previous tenant left behind.",
+    "That inheritance is the risk. A second-generation suite with existing partitions, door hardware, ceiling grid and washrooms can look most of the way there and still need substantial remediation &mdash; or it can be far closer than it appears. The difference is worth several hundred thousand dollars across a portfolio, and it is only visible from a proper survey.",
+    "We record the fabric as it stands, reconcile it against whatever drawings exist, and hand your architect and licensing consultant a factual record to design and apply from. We do not determine compliance, and we say plainly what could not be established.",
+  ]}
+  checksLabel="What Goes Wrong"
+  checksHeading="Eight things that decide the remediation cost in a treatment fit-out."
+  checks={checks}
+  platformHeading="Platform operators inherit clinics nobody ever recorded."
+  platformBody={[
+    "Behavioural health has consolidated rapidly, with platform groups acquiring clinics established independently over many years. The clinical programme and the licences transfer; a usable record of the building almost never does.",
+    "That leaves a portfolio nobody can plan against. Which sites meet the current standard? Which need ligature remediation, and how much? Which have circulation that will not support a programme change? Those are answerable, but only from a consistent survey of every location to the same brief.",
+    "We run those programmes the way we run any multi-site rollout, with the discretion the setting requires: the same deliverable structure at every clinic, so the group can compare sites and plan capital rather than reacting to whatever the next inspection finds.",
+  ]}
+  scopeNote="<span class='text-navy font-medium'>Typical scope.</span> Most outpatient clinics are captured in a single day. Operating clinics are surveyed out of hours, and we photograph the building rather than the people using it. Travel is included in the project price across the US and Canada."
+  faqs={faqs}
+  estimatingLead="Once the clinic is recorded, the next question is what the remediation and fit-out cost &mdash; and we can price it from the same record."
+  internalLinks={[
+    { text: "ABA and autism therapy clinics", href: "/services/aba-autism-clinic-documentation/" },
+    { text: "Healthcare facility surveys", href: "/services/healthcare-facility-survey/" },
+    { text: "Due diligence for portfolio acquisitions", href: "/insights/due-diligence-documentation-portfolio-acquisitions/" },
+    { text: "Multi-site rollout programmes", href: "/services/multi-site-rollout-documentation/" },
+  ]}
+/>

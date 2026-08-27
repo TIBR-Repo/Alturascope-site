@@ -1,0 +1,245 @@
+---
+/**
+ * A sector page built as a fit-out risk list, not a brochure.
+ *
+ * The premise, from the Joe & The Juice deliverable: what a Director of
+ * Construction actually buys is an answer to "what will this space cost me
+ * that the drawings do not show". So the centre of each page is the list of
+ * things that specifically go wrong in that sector's fit-out - written from
+ * having stood in the buildings and read the panel schedules.
+ *
+ * Every sector here shares one buyer: a platform operator, usually private
+ * equity backed, opening new sites and inheriting acquired ones that nobody
+ * ever documented.
+ */
+import Layout from "../layouts/Layout.astro";
+import EstimatingBand from "./EstimatingBand.astro";
+import GalleryBand from "./GalleryBand.astro";
+
+interface Check {
+  /** The thing that goes wrong. */
+  title: string;
+  /** Why it goes wrong and what it costs. */
+  body: string;
+}
+
+interface Props {
+  title: string;
+  description: string;
+  slug: string;
+  h1: string;
+  /** One sentence under the H1. */
+  standfirst: string;
+  heroImage: string;
+  heroAlt: string;
+  /** 2-3 paragraphs on why this sector's fit-out is different. */
+  opening: string[];
+  /** The risk list. This is the page. */
+  checksLabel: string;
+  checksHeading: string;
+  checks: Check[];
+  /** The portfolio / platform-operator argument. */
+  platformHeading: string;
+  platformBody: string[];
+  /** Typical size band and what a visit covers. */
+  scopeNote: string;
+  faqs: { q: string; a: string }[];
+  internalLinks: { text: string; href: string }[];
+  estimatingLead: string;
+}
+
+const {
+  title, description, slug, h1, standfirst, heroImage, heroAlt, opening,
+  checksLabel, checksHeading, checks, platformHeading, platformBody,
+  scopeNote, faqs, internalLinks, estimatingLead,
+} = Astro.props;
+
+const url = `https://alturascope.com/services/${slug}/`;
+
+const schema = JSON.stringify({
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "name": h1,
+  "description": description,
+  "provider": { "@id": "https://alturascope.com/#organization" },
+  "areaServed": ["United States", "Canada"],
+  "serviceType": "Existing conditions survey",
+  "audience": {
+    "@type": "BusinessAudience",
+    "audienceType": "Multi-site operators, platform groups and their construction teams",
+  },
+  "url": url,
+});
+
+const breadcrumbSchema = JSON.stringify({
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://alturascope.com/" },
+    { "@type": "ListItem", "position": 2, "name": "Services", "item": "https://alturascope.com/services/" },
+    { "@type": "ListItem", "position": 3, "name": h1, "item": url },
+  ],
+});
+
+const faqSchema = JSON.stringify({
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": faqs.map((f) => ({
+    "@type": "Question",
+    "name": f.q,
+    "acceptedAnswer": { "@type": "Answer", "text": f.a },
+  })),
+});
+---
+<Layout
+  title={title}
+  description={description}
+  canonical={url}
+  schema={schema}
+  breadcrumbSchema={breadcrumbSchema}
+  faqSchema={faqSchema}
+  ogImage={`https://alturascope.com${heroImage}`}
+  fullWidth={true}
+>
+  <div data-hero-page>
+
+    <!-- Hero -->
+    <section class="relative h-[52vh] max-h-[460px] min-h-[320px] flex items-center justify-center">
+      <div class="absolute inset-0 bg-navy">
+        <img
+          src={heroImage}
+          alt={heroAlt}
+          class="w-full h-full object-cover opacity-35"
+          loading="eager"
+          fetchpriority="high"
+          decoding="async"
+        />
+        <div class="absolute inset-0 bg-[rgba(11,31,58,0.74)]"></div>
+      </div>
+      <div class="relative z-10 text-center px-6 max-w-[860px] mx-auto">
+        <p class="label text-gold mb-4">Existing Conditions Surveys</p>
+        <h1 class="text-[1.9rem] md:text-[2.7rem] font-light text-offwhite leading-tight" set:html={h1} />
+        <p class="mt-5 text-offwhite/80 leading-body max-w-[62ch] mx-auto" set:html={standfirst} />
+      </div>
+    </section>
+
+    <!-- Why this sector is different -->
+    <section class="bg-white section-padding">
+      <div class="max-w-[820px] mx-auto px-6">
+        <div class="space-y-5 text-midgrey leading-body text-[1.05rem]">
+          {opening.map((p) => <p set:html={p} />)}
+        </div>
+      </div>
+    </section>
+
+    <!-- The risk list. This is the page. -->
+    <section class="bg-navy section-padding">
+      <div class="max-w-[1100px] mx-auto px-6">
+        <p class="label text-gold mb-4">{checksLabel}</p>
+        <h2 class="text-[1.8rem] md:text-[2rem] font-light text-offwhite leading-tight max-w-[26ch]" set:html={checksHeading} />
+        <p class="mt-6 text-offwhite/60 leading-body max-w-[64ch]">
+          Every one of these has cost somebody money on a job we have walked. They are what a
+          drawing set will not tell you and a photograph will not either.
+        </p>
+
+        <div class="mt-12 grid grid-cols-1 lg:grid-cols-2 lg:gap-x-14">
+          {checks.map((c) => (
+            <div class="border-t border-white/15 py-5">
+              <p class="label text-gold mb-2">{c.title}</p>
+              <p class="text-offwhite/80 leading-body" set:html={c.body} />
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <!-- The platform operator argument -->
+    <section class="bg-offwhite section-padding-tight">
+      <div class="max-w-[820px] mx-auto px-6">
+        <p class="label text-gold mb-4">If You Are Running a Portfolio</p>
+        <h2 class="text-[1.7rem] md:text-[1.95rem] font-light text-navy leading-tight max-w-[28ch]" set:html={platformHeading} />
+        <div class="mt-6 space-y-5 text-midgrey leading-body">
+          {platformBody.map((p) => <p set:html={p} />)}
+        </div>
+        <div class="mt-8 border-l-2 border-gold bg-white py-5 px-7">
+          <p class="text-midgrey leading-body" set:html={scopeNote} />
+        </div>
+      </div>
+    </section>
+
+    <!-- What you receive -->
+    <section class="bg-white section-padding-tight">
+      <div class="max-w-[1100px] mx-auto px-6">
+        <p class="label text-gold mb-4">What Comes Back</p>
+        <h2 class="text-[1.7rem] md:text-[1.95rem] font-light text-navy leading-tight">
+          The same record at every location.
+        </h2>
+        <div class="mt-10 grid grid-cols-1 md:grid-cols-3 gap-px bg-border border border-border">
+          <div class="bg-white p-8">
+            <h3 class="text-[1.05rem] font-medium text-navy">A navigable record of the space</h3>
+            <p class="mt-3 text-midgrey leading-body text-[0.93rem]">A measured digital twin your architect, MEP consultant and GC can all walk without another site visit, plus the measured mesh underneath it.</p>
+          </div>
+          <div class="bg-white p-8">
+            <h3 class="text-[1.05rem] font-medium text-navy">A written conditions report</h3>
+            <p class="mt-3 text-midgrey leading-body text-[0.93rem]">Findings prioritised, with the capacity and reuse questions answered and the open items named rather than left to be discovered on site.</p>
+          </div>
+          <div class="bg-white p-8">
+            <h3 class="text-[1.05rem] font-medium text-navy">Equipment and services schedules</h3>
+            <p class="mt-3 text-midgrey leading-body text-[0.93rem]">Makes, models, plate data, panel schedules and service sizes, photographed and recorded so nothing rests on somebody's recollection.</p>
+          </div>
+        </div>
+        <p class="mt-8 text-midgrey leading-body max-w-[68ch]">
+          Everything lands in <a href="/#scopewalk" class="text-navy font-medium hover:opacity-80 transition-opacity">ScopeWalk</a>,
+          so a portfolio stays in one structured place rather than in a folder of files per site.
+          See <a href="/work/sample-project/" class="text-navy font-medium hover:opacity-80 transition-opacity">a complete sample deliverable</a>
+          or <a href="/work/locations/" class="text-navy font-medium hover:opacity-80 transition-opacity">the buildings we have been inside</a>.
+        </p>
+      </div>
+    </section>
+
+    <GalleryBand tone="light" />
+
+    <!-- FAQ -->
+    <section class="bg-white section-padding-tight">
+      <div class="max-w-[820px] mx-auto px-6">
+        <p class="label text-gold mb-4">Questions We Get Asked</p>
+        <h2 class="text-[1.7rem] md:text-[1.95rem] font-light text-navy leading-tight mb-10">
+          Before you send us a site list.
+        </h2>
+        <div class="space-y-6">
+          {faqs.map((f) => (
+            <details class="group border-b border-border pb-5">
+              <summary class="cursor-pointer text-navy font-medium text-[1.05rem] flex items-start justify-between gap-6">
+                {f.q}
+                <span class="text-gold text-xl transition-transform group-open:rotate-45 flex-none leading-none">+</span>
+              </summary>
+              <p class="mt-4 text-midgrey leading-body">{f.a}</p>
+            </details>
+          ))}
+        </div>
+
+        <div class="mt-12 pt-8 border-t border-border flex flex-wrap gap-x-6 gap-y-3 text-sm">
+          {internalLinks.map((l) => (
+            <a href={l.href} class="text-navy font-medium hover:opacity-80 transition-opacity">{l.text} &rarr;</a>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <EstimatingBand lead={estimatingLead} />
+
+    <!-- CTA -->
+    <section class="bg-offwhite section-padding-tight">
+      <div class="max-w-[700px] mx-auto px-6 text-center">
+        <h2 class="text-[1.8rem] font-light text-navy">Send us the site list.</h2>
+        <p class="mt-4 text-midgrey leading-body">
+          Tell us the locations, the approximate sizes and what you are trying to decide. We come
+          back within one business day with a scope recommendation and an all-in quote &mdash;
+          travel included, whether that is one site or forty.
+        </p>
+        <a href="/contact/" class="btn-primary mt-8">Start a Project</a>
+      </div>
+    </section>
+
+  </div>
+</Layout>

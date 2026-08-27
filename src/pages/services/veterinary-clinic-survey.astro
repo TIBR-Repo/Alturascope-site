@@ -1,0 +1,54 @@
+---
+import SectorPage from "../../components/SectorPage.astro";
+
+const checks = [
+  { title: "Radiography shielding", body: "Lead-lined walls, doors and view panels are rarely on a landlord's drawing set, and a previous tenant's imaging room may have been stripped, lined to a different kVp rating, or lined only to chest height. Physicist sign-off is required before use; discovering the lining is absent or unverifiable after the fit-out is priced is an expensive surprise." },
+  { title: "Kennel and ward drainage", body: "Kennel runs need trench or channel drainage falling to a trapped outlet, and a second-generation retail or office slab almost never has it. Cutting new drainage means slab work, and slab work means checking the membrane, the post-tension layout and, in a mall, the landlord's environmental protocol." },
+  { title: "Isolation and negative pressure", body: "Isolation wards and dental or surgical suites need separated ventilation, and in most cases dedicated extract that cannot recirculate. What matters is whether the existing plant can be split at all, or whether you are buying new equipment and a new roof penetration." },
+  { title: "Anaesthetic gas scavenging", body: "Waste anaesthetic gas needs active scavenging, discharged clear of intakes. On an inline unit the discharge route is often the constraint, not the equipment, and the landlord controls the route." },
+  { title: "Electrical capacity for imaging", body: "Digital radiography, CT and dental units draw hard and often need dedicated single-phase or three-phase circuits with specific impedance. The panel schedule tells you what is nominally spare; the plate data and the actual feeder tell you what is really available." },
+  { title: "Acoustic separation", body: "Barking carries, and it carries into the neighbouring tenancy as readily as into your own consult rooms. Party-wall construction, ceiling plenum continuity and door specification decide whether you have a lease problem, and none of it is visible in a photograph." },
+  { title: "Hot water and sterilisation load", body: "Autoclaves, prep sinks and kennel washdown make demand very unlike the retail unit you are taking over. Existing water heater capacity, recovery rate and the incoming service size are all worth confirming before the equipment schedule is fixed." },
+  { title: "Floor finish and substrate", body: "Seamless welded vinyl or resin with coved skirting is standard, and it needs a sound, level, dry substrate. Existing tile beds, self-levelling failures and moisture in a slab that has been covered for twenty years all surface at the worst point in the programme." },
+];
+
+const faqs = [
+  { q: "Do you survey practices that are still trading?", a: "Yes, and most of them are. We work after hours where the practice needs to stay open, which is how we handled a live trading unit on a recent multi-site job. It costs a little more in scheduling and nothing in disruption." },
+  { q: "Can you cover an acquired portfolio rather than a single site?", a: "That is the more common instruction. One brief, one format, one point of contact, and the same record structure for every practice, so the group can compare sites rather than reading twenty differently written reports." },
+  { q: "Do you produce the shielding certification?", a: "No. We record what is physically there, what the record drawings claim, and where the two disagree - so your radiation physicist and architect are working from fact. Certification stays with the qualified specialist, and we will tell you plainly when one is needed." },
+  { q: "What size practices do you work on?", a: "From a small-format inline clinic up to a full hospital of around ten thousand square feet. The small-format multi-site practices are where we do most of our work, because that is where the same questions recur at every location." },
+  { q: "How quickly can you turn a site around?", a: "Most practices are captured in a single day on site. The written record follows within days rather than weeks, and on a programme we schedule the visits so the deliverables arrive in the order your design team needs them." },
+];
+---
+<SectorPage
+  title="Veterinary Clinic & Hospital Existing Conditions Surveys"
+  description="Existing conditions surveys for veterinary practices - imaging shielding, kennel drainage, isolation ventilation and MEP capacity, checked before design."
+  slug="veterinary-clinic-survey"
+  h1="Veterinary Practice Existing Conditions Surveys"
+  standfirst="Imaging shielding, kennel drainage, isolation ventilation and the electrical capacity to run it all &mdash; established before the fit-out is designed, not after."
+  heroImage="/pre-construction-survey.webp"
+  heroAlt="Vacant commercial unit documented before a veterinary practice fit-out, showing ceiling grid, partitions and existing services"
+  opening={[
+    "A veterinary practice puts more services into a small footprint than almost anything else on a retail park. Imaging, surgery, isolation, kennelling, laundry and sterilisation all land in a shell that was built for a shop &mdash; and the difference between a straightforward fit-out and an expensive one is usually decided by things nobody can see on the walk-round.",
+    "Groups taking on second-generation space inherit a further problem: the previous tenant's alterations. A room that was lined for radiography may have been stripped. A drainage run may have been capped rather than removed. A panel may show spare ways that turn out to be feeding something live. Record drawings, where they exist at all, describe the building as designed rather than as it stands today.",
+    "We survey the practice as it actually is, reconcile it against whatever record set exists, and hand your design team a record they can price from. That is the same work we do for restaurant and clinic rollouts, applied to a building type with tighter constraints.",
+  ]}
+  checksLabel="What Goes Wrong"
+  checksHeading="Eight things that decide a veterinary fit-out budget."
+  checks={checks}
+  platformHeading="Acquired practices were never documented by the people who built them."
+  platformBody={[
+    "Veterinary is one of the most heavily consolidated small-format sectors in North America. Groups acquire practices built by independent owners over decades, with alterations nobody recorded and equipment nobody scheduled. The clinical side transfers with the deal; the building knowledge usually does not.",
+    "That leaves a portfolio you cannot plan capex against. Which sites can take a CT without a service upgrade? Which have drainage that will support an extra ward? Which have an imaging room that was never certified? Those are answerable questions, but only from a consistent survey of every location.",
+    "We run those programmes the way we run retail and QSR rollouts: one brief, one deliverable structure, and every practice recorded to the same standard so the portfolio can actually be compared.",
+  ]}
+  scopeNote="<span class='text-navy font-medium'>Typical scope.</span> A single-day visit covers most inline practices up to around five thousand square feet; larger hospitals and sites with occupied wards are scheduled across two visits or out of hours. Travel is included in the project price, whether the programme is one site or forty."
+  faqs={faqs}
+  estimatingLead="Once the practice is recorded, the next question is what the fit-out costs &mdash; and we can price it from the same record."
+  internalLinks={[
+    { text: "Multi-site rollout programmes", href: "/services/multi-site-rollout-documentation/" },
+    { text: "Healthcare facility surveys", href: "/services/healthcare-facility-survey/" },
+    { text: "ABA and autism therapy clinics", href: "/services/aba-autism-clinic-documentation/" },
+    { text: "What a survey actually delivers", href: "/work/" },
+  ]}
+/>

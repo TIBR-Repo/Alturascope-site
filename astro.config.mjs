@@ -13,6 +13,21 @@ export default defineConfig({
   // Astro emits a meta-refresh page with a canonical for static builds; the
   // nginx config also carries a real 301 (see docs/deployment/redirects.md).
   redirects: {
+    // Pruned Aug 2026: 28 service pages spanning superyachts, private aircraft,
+    // solar farms and art collections diluted what the site is about and
+    // competed with the sectors we actually sell. Folded into the page that
+    // already exists for exactly this work.
+    '/services/superyacht-documentation/': '/services/specialist-projects/',
+    '/services/private-aircraft-documentation/': '/services/specialist-projects/',
+    '/services/private-collection-documentation/': '/services/specialist-projects/',
+    '/services/private-estate-documentation/': '/services/specialist-projects/',
+    '/services/film-tv-location-documentation/': '/services/specialist-projects/',
+    '/services/solar-farm-documentation/': '/services/specialist-projects/',
+    '/services/aviation-facility-survey/': '/services/specialist-projects/',
+    '/services/resort-hotel-capex-survey/': '/services/specialist-projects/',
+    // The sector is dropped, but the data centre *article* stays - it is the
+    // single highest-impression page on the site (233 impressions, position 20.9).
+    '/services/data-centre-documentation/': '/services/industrial-facility-documentation/',
     '/uk/heritage-building-documentation/': '/uk/heritage-building-survey/',
   },
   build: {

@@ -1,0 +1,54 @@
+---
+import SectorPage from "../../components/SectorPage.astro";
+
+const checks = [
+  { title: "Floor loading and structure", body: "Free weights, rigs and dropped loads are a structural question, not a finishes one. On an upper floor or over a basement car park the existing capacity governs the programme, and that means establishing the slab construction and span rather than assuming a ground-bearing slab." },
+  { title: "Impact noise to the tenancy below", body: "This is the single most common reason a studio ends up in dispute with a landlord. Structure-borne impact from dropped weights and jump-based classes travels in ways airborne testing will not predict, and the existing floor build-up decides what isolation is achievable at what depth." },
+  { title: "Ceiling height under the services", body: "Rigs, rowers, reformers and functional frames need clear height, and the constraint is almost never the slab soffit &mdash; it is the ductwork, sprinkler mains and lighting under it. Measured clear height beneath the services is the number that matters, and it varies across the unit." },
+  { title: "HVAC for occupied class loads", body: "A studio at capacity is a very high sensible and latent load in a small volume, arriving in bursts on a class timetable. Second-generation retail plant is rarely sized for it, and the reuse question is worth answering before the equipment schedule is fixed." },
+  { title: "Showers, changing and drainage", body: "Adding wet areas to a retail shell means new drainage, tanking and ventilation, and the drainage route back to the building stack is usually the constraint. Where the unit has no existing wet area away from the washroom core this can dominate the fit-out cost." },
+  { title: "Power for equipment and recovery", body: "Treadmills, cycles, saunas, cryo and contrast plunge add up quickly, and recovery amenities in particular are heavy. The panel and the incoming service both need checking against the real equipment list, not the retail base build." },
+  { title: "Egress with a full class", body: "Occupant load in a studio is much higher than the retail use it replaces, which changes exit width, door swing and travel distance. This is a change-of-use question that can surface late and be expensive to answer." },
+  { title: "Front-of-house and retail flow", body: "Check-in, retail display, changing and studio access all compete for a small front of house. Testing the layout against measured reality, including the door swings and the columns, avoids designing a flow the unit will not take." },
+];
+
+const faqs = [
+  { q: "Do you work with franchise groups opening multiple studios?", a: "Yes, and franchise and multi-unit operators are most of this work. One brief covers the programme, and every studio comes back in the same format so the group can compare sites rather than reading a different report per location." },
+  { q: "Can you survey a candidate unit before we sign?", a: "That is where this pays for itself. Floor loading, clear height under the services and the impact-noise position are the three things most likely to make a unit unsuitable, and all three are answerable before the lease is committed." },
+  { q: "Do you carry out the acoustic testing?", a: "We record the existing floor and party-wall construction and the measured conditions your acoustician needs, and we will say when specialist testing is required. The acoustic design and any testing stays with the specialist - what we remove is the guesswork about what the building actually is." },
+  { q: "Do you cover recovery and wellness amenities?", a: "Yes. Saunas, contrast plunge, cryo and infrared all bring power, drainage, ventilation and floor loading questions, and they are increasingly the part of the fit-out that surprises people." },
+  { q: "What size studios do you survey?", a: "From around fifteen hundred square feet up to ten thousand. The boutique multi-unit formats are where we work most often." },
+];
+---
+<SectorPage
+  title="Fitness & Boutique Studio Conditions Surveys"
+  description="Existing conditions surveys for gyms and boutique studios - floor loading, impact noise, clear height under services and wet-area drainage."
+  slug="fitness-studio-survey"
+  h1="Fitness &amp; Boutique Studio Surveys"
+  standfirst="Floor loading, impact noise, clear height under the services and whether the plant will carry a full class &mdash; answered before you sign."
+  heroImage="/Images/hvac.webp"
+  heroAlt="Exposed structure and ceiling services in a commercial unit being assessed for a fitness studio fit-out"
+  opening={[
+    "A boutique studio asks more of a retail shell than almost any other small-format use. It arrives with concentrated floor loads, impact noise, a high occupant load in bursts, heavy ventilation demand and often wet areas &mdash; into a unit designed to hold shelving and shoppers.",
+    "Three things decide whether a candidate unit works, and all three are invisible on a leasing plan: what the floor will carry, what the impact noise will do to the tenancy below, and what the clear height is once you measure beneath the ductwork rather than to the slab. Each of them can make a site unviable, and each is cheap to establish before signing.",
+    "We survey the unit as it stands, record the structure, services and measured clear heights, and hand your designer and franchisor a record they can plan a compliant fit-out from.",
+  ]}
+  checksLabel="What Goes Wrong"
+  checksHeading="Eight things that decide whether a unit will take a studio at all."
+  checks={checks}
+  platformHeading="Franchise growth is a property problem before it is a fitness one."
+  platformBody={[
+    "Boutique fitness expands through franchisees and multi-unit operators signing second-generation retail space, often quickly and often in competitive markets. The brand standard assumes a building that will support it; the available unit frequently does not.",
+    "A consistent pre-lease survey turns that into a decision rather than a discovery. It tells the franchisor and the franchisee which units carry the format as designed, which need a landlord contribution, and which should be declined - with the same evidence in every case.",
+    "For groups with studios already trading, the same record supports refit and rebrand planning, and answers what each site can take without opening a ceiling to find out.",
+  ]}
+  scopeNote="<span class='text-navy font-medium'>Typical scope.</span> A single-day visit covers most studios and candidate units, including measured clear heights under the services and the existing floor build-up. Trading studios are surveyed outside class hours. Travel is included in the project price across the US and Canada."
+  faqs={faqs}
+  estimatingLead="Once the unit is recorded, the next question is what the fit-out costs &mdash; and we can price it from the same record."
+  internalLinks={[
+    { text: "Multi-site rollout programmes", href: "/services/multi-site-rollout-documentation/" },
+    { text: "Retail fit-out surveys", href: "/services/retail-rollout-documentation/" },
+    { text: "Med spa and aesthetics clinics", href: "/services/medical-aesthetics-clinic-survey/" },
+    { text: "Pre-lease due diligence", href: "/services/pre-construction-site-intelligence/" },
+  ]}
+/>

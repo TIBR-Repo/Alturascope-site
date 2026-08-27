@@ -1,0 +1,54 @@
+---
+import SectorPage from "../../components/SectorPage.astro";
+
+const checks = [
+  { title: "Laser and device power", body: "Aesthetic lasers, body-contouring platforms and RF devices draw far more than the retail unit was wired for, and several need dedicated circuits at specific voltages. What matters is the real headroom in the incoming service, not the number of blank ways on the panel door." },
+  { title: "Plumbing to every treatment room", body: "Hydrafacial, body treatments and post-procedure washdown all want water and drainage at the room, and second-generation retail rarely has either away from the washroom core. Adding it means slab work or a plinth, and the choice changes the ceiling height and the finish schedule." },
+  { title: "Laser-safe rooms", body: "Treatment rooms using Class 4 devices need controlled access, window covering, warning signage and surfaces that will not specularly reflect. Door position, glazing and even the corridor arrangement can be the constraint, and they are cheap to change on a drawing and expensive to change afterwards." },
+  { title: "Ventilation and plume extraction", body: "Laser and RF procedures generate plume that needs local extract, and injectables rooms often need better air change rates than the base building provides. Whether the existing plant can be zoned or split at all is the question that decides the cost." },
+  { title: "Acoustic and visual privacy", body: "Treatment rooms carry a privacy expectation closer to healthcare than to retail. Partitions that stop at the ceiling grid, shared plenums and lightweight doors are all common in the shell and all fail that expectation." },
+  { title: "Reception, retail and flow", body: "These clinics sell product as well as treatment, so the front of house is doing retail work while the back is doing clinical work. Circulation, sightlines and the number of treatment rooms a footprint will really carry are worth testing against measured reality rather than a leasing plan." },
+  { title: "Slab and floor loading", body: "Cryo chambers, hydro beds and some body-contouring platforms are heavy and localised. Floor construction, and in an upper-floor unit the structural capacity, need establishing before the equipment list is committed." },
+  { title: "Existing conditions the landlord will not warrant", body: "Ceiling heights that vary across the unit, an existing grease or waste run in the wrong place, unrecorded structure above the grid. On a fast-moving fit-out these are found by the contractor at the worst moment unless they are found first." },
+];
+
+const faqs = [
+  { q: "Do you work with med spa groups opening several sites a year?", a: "Yes, and that is the pattern this service is built for. One brief, the same deliverable at every location, so a group opening ten clinics is not reading ten differently structured reports." },
+  { q: "Can you survey before we sign the lease?", a: "That is the most valuable time to do it. A pre-lease survey answers whether the unit will actually take your device list and treatment room count before you are committed, and what the landlord will need to contribute." },
+  { q: "Do you specify the equipment or the laser safety measures?", a: "No. We establish what the building can support and what is physically present, so your designer, equipment supplier and laser safety officer are all working from the same measured facts. We name the open items rather than guessing at them." },
+  { q: "What if the unit is still a shop?", a: "Most are. Surveying a trading or recently vacated retail unit is routine, and out of hours where the tenant is still operating." },
+  { q: "How large a clinic do you cover?", a: "From a small inline suite up to around ten thousand square feet. The multi-site small-format clinics are where we work most, because the same questions recur at every site." },
+];
+---
+<SectorPage
+  title="Med Spa & Aesthetics Clinic Conditions Surveys"
+  description="Existing conditions surveys for med spa and aesthetic clinics - device power, treatment-room plumbing, plume extraction and laser-safe room layout."
+  slug="medical-aesthetics-clinic-survey"
+  h1="Med Spa &amp; Aesthetics Clinic Surveys"
+  standfirst="Device power, treatment-room plumbing, extraction and laser-safe layout &mdash; tested against the actual unit before the design is committed."
+  heroImage="/pre-construction-survey.webp"
+  heroAlt="Vacant retail unit documented before a medical aesthetics clinic fit-out, showing ceiling grid and existing services"
+  opening={[
+    "Medical aesthetics is one of the fastest-growing small-format sectors in North America, and one of the most demanding to fit out. A clinic asks a retail shell to behave like a healthcare building: dedicated device power, water and drainage in treatment rooms, local extraction, acoustic privacy and controlled-access laser rooms &mdash; usually in under three thousand square feet, and usually to a deadline set by a lease.",
+    "The failure mode is consistent. The device list is chosen first, the unit is signed second, and the building turns out not to support the plan. By then the lease is committed and the options are expensive ones.",
+    "A survey before design fixes the order of those decisions. We record what the unit can actually carry, reconcile it against the landlord's drawings, and give your designer and equipment supplier one agreed set of facts.",
+  ]}
+  checksLabel="What Goes Wrong"
+  checksHeading="Eight things that decide whether the device list fits the unit."
+  checks={checks}
+  platformHeading="Growth-stage groups sign leases faster than anyone can check them."
+  platformBody={[
+    "Aesthetics groups are opening at pace, frequently with private equity behind them, and often taking whatever suitable second-generation space becomes available in a target market. Speed is the strategy, which is exactly why the building diligence gets compressed.",
+    "A short, consistent survey at the point of signing is the cheapest insurance in that model. It tells you which units carry the full treatment programme, which need a service upgrade, and which should be passed on &mdash; before the fit-out budget is set rather than after the contractor opens the ceiling.",
+    "Across a portfolio it also gives you something you cannot otherwise get: a comparable record of every clinic, so capital planning and device redeployment are decisions rather than guesses.",
+  ]}
+  scopeNote="<span class='text-navy font-medium'>Typical scope.</span> Most clinics and candidate units are captured in a single day. Pre-lease surveys are scheduled around landlord access, and trading clinics are surveyed out of hours. Travel is included in the project price across the US and Canada."
+  faqs={faqs}
+  estimatingLead="Once the unit is recorded, the next question is what the fit-out costs &mdash; and we can price it from the same record."
+  internalLinks={[
+    { text: "Healthcare facility surveys", href: "/services/healthcare-facility-survey/" },
+    { text: "Fitness and boutique studio surveys", href: "/services/fitness-studio-survey/" },
+    { text: "Pre-lease due diligence", href: "/services/pre-construction-site-intelligence/" },
+    { text: "Multi-site rollout programmes", href: "/services/multi-site-rollout-documentation/" },
+  ]}
+/>

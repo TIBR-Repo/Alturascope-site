@@ -1,0 +1,54 @@
+---
+import SectorPage from "../../components/SectorPage.astro";
+
+const checks = [
+  { title: "Compressed air and vacuum", body: "Every operatory needs medical air and suction, and the plant room has to be somewhere the noise and heat are tolerable. In a second-generation unit the question is whether there is a plausible location at all, whether the existing utility runs can be reused, and whether the route back to each chair crosses something structural." },
+  { title: "Chair services in the floor", body: "Air, vacuum, water, waste and data arrive at each operatory through the slab or a raised plinth. Changing the operatory layout means new floor penetrations, and that means knowing the slab construction, whether it is post-tensioned, and whether the landlord requires scanning before any cut." },
+  { title: "Panel capacity for the chair count", body: "Chairs, compressors, vacuum pumps, sterilisers, imaging and a CBCT add up fast in a unit sized for retail. A panel schedule showing spare ways is not the same as a service with headroom, and the difference is a utility upgrade with a lead time measured in months." },
+  { title: "Lead lining and CBCT siting", body: "Intraoral rooms and a CBCT have different shielding requirements, and a CBCT often has floor loading and siting constraints as well. Where a previous dental tenant has left lining in place, its rating and continuity still need establishing rather than assuming." },
+  { title: "Amalgam separation and waste", body: "Separators are required on the waste line and must be accessible for servicing. Retro-fitting one into a slab-run waste on a second-generation unit is a materially different job from allowing for it in a new layout." },
+  { title: "Sterilisation and hot water", body: "An autoclave bay changes the hot water demand and the local ventilation requirement. Existing water heater capacity and recovery rate matter more than the headline size, and the incoming service is worth confirming rather than inferring." },
+  { title: "Acoustic separation between operatories", body: "Open-plan operatories are common but patient privacy is regulated. Whether partitions run to slab or die at the ceiling grid decides both the acoustic and the compliance answer, and it is one of the most frequent late-stage surprises we find." },
+  { title: "ADA and circulation in a small footprint", body: "Accessible washrooms, turning circles and door swings consume a lot of a small unit. Where an existing washroom is nearly compliant but not quite, the cost of correcting it can quietly change the viability of the whole site." },
+];
+
+const faqs = [
+  { q: "Do you work for DSOs and PE-backed groups?", a: "That is most of the multi-site work we do, across dental, veterinary and behavioural health. The pattern is the same: sites acquired from independent owners, no consistent record of any of them, and a capital plan that needs one." },
+  { q: "Can you survey a practice without closing it?", a: "Yes. We work evenings and weekends where a practice needs to keep treating, which is standard on live sites. It affects scheduling rather than the deliverable." },
+  { q: "Do you assess whether shielding is compliant?", a: "We record what is present, what the record drawings say, and where they disagree. Compliance sign-off belongs to a qualified physicist, and we will say clearly when one is needed. What we remove is the guesswork about what is actually there." },
+  { q: "We are converting a retail unit rather than an existing practice. Is that different?", a: "It is often simpler to survey and harder to fit out, because nothing is in place. The survey shifts from what can be reused to what the shell can support - service sizes, slab construction, plant locations and the routes between them." },
+  { q: "Can you cover several states in one programme?", a: "Yes. We operate across all fifty US states and every Canadian province under a national travel model, with travel included in the project price. One brief covers the programme rather than a quote per location." },
+];
+---
+<SectorPage
+  title="Dental Practice Existing Conditions Surveys"
+  description="Existing conditions surveys for dental practices and DSO portfolios - chair services, compressed air and vacuum, panel capacity, lead lining and slab build."
+  slug="dental-practice-survey"
+  h1="Dental Practice Existing Conditions Surveys"
+  standfirst="Chair services, compressed air and vacuum, panel capacity and what is actually in the slab &mdash; established before the operatory layout is fixed."
+  heroImage="/pre-construction-survey.webp"
+  heroAlt="Vacant commercial suite documented before a dental practice fit-out, showing ceiling grid, partitions and existing service routes"
+  opening={[
+    "A dental fit-out is a services problem wearing a retail unit. Each operatory needs air, vacuum, water, waste, power and data arriving in the floor at a fixed position, plus imaging, sterilisation and a plant location that does not sit behind a treatment room wall. In a purpose-built unit that is planned in. In second-generation space it is negotiated against whatever the last tenant left behind.",
+    "The decisions that move the budget happen early: how many chairs the service will actually support, whether the slab can be cut and at what cost, whether the existing plant room location works, and whether a previously lined imaging room can be relied on. All of them are answerable from site &mdash; and none of them from a landlord's floor plan.",
+    "We record the unit as it stands, reconcile it against whatever drawings exist, and give your architect and equipment supplier a single agreed set of facts to design from.",
+  ]}
+  checksLabel="What Goes Wrong"
+  checksHeading="Eight things that decide how many chairs a unit will really take."
+  checks={checks}
+  platformHeading="A DSO cannot plan capex on practices nobody has ever recorded."
+  platformBody={[
+    "Dental is the most consolidated small-format healthcare sector in North America. Groups acquire practices built and altered by independent dentists over thirty years, with no drawing set, no equipment schedule and no record of what was changed. The patient list transfers cleanly; the building does not.",
+    "The result is a portfolio where nobody can answer basic planning questions. Which practices can take two more chairs without a service upgrade? Which have a compressor location that will fail an inspection? Which were lined for imaging and which merely appear to have been? Those questions have answers, but only from a consistent survey.",
+    "We run dental portfolio programmes the same way we run restaurant rollouts: one brief, the same deliverable at every site, and a structured record the group can actually compare and plan against.",
+  ]}
+  scopeNote="<span class='text-navy font-medium'>Typical scope.</span> Most practices are captured in a single day, including operatories, plant, imaging rooms and service routes. Trading practices are surveyed out of hours. Travel is included in the project price across the US and Canada, whether the programme is one practice or a whole acquired group."
+  faqs={faqs}
+  estimatingLead="Once the practice is recorded, the next question is what the fit-out costs &mdash; and we can price it from the same record."
+  internalLinks={[
+    { text: "Healthcare facility surveys", href: "/services/healthcare-facility-survey/" },
+    { text: "Veterinary practice surveys", href: "/services/veterinary-clinic-survey/" },
+    { text: "Multi-site rollout programmes", href: "/services/multi-site-rollout-documentation/" },
+    { text: "Due diligence for portfolio acquisitions", href: "/insights/due-diligence-documentation-portfolio-acquisitions/" },
+  ]}
+/>
