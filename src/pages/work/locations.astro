@@ -18,6 +18,9 @@ const schema = JSON.stringify({
 const itemListSchema = JSON.stringify({
   "@context": "https://schema.org",
   "@type": "ItemList",
+  // The CollectionPage above points at this node by @id; without it that
+  // mainEntity reference dangles.
+  "@id": "https://alturascope.com/work/locations/#itemlist",
   "name": "Commercial sites documented by Alturascope",
   "numberOfItems": locations.length,
   "itemListElement": locations.map((loc, i) => ({
@@ -31,7 +34,14 @@ const itemListSchema = JSON.stringify({
       "width": loc.w,
       "height": loc.h,
       "creator": { "@id": "https://alturascope.com/#organization" },
+      "copyrightHolder": { "@id": "https://alturascope.com/#organization" },
+      // Search Console flags an ImageObject without these three as incomplete
+      // Image Metadata. They are also what makes an image eligible for the
+      // licensable treatment in Google Images, which links back to us.
       "creditText": "Alturascope",
+      "copyrightNotice": `© ${new Date().getFullYear()} Alturascope. All rights reserved.`,
+      "license": "https://alturascope.com/terms/#image-licensing",
+      "acquireLicensePage": "https://alturascope.com/contact/",
     },
   })),
 });
