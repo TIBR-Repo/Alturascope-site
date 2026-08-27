@@ -35,10 +35,15 @@ def main():
         pages[route_of(f)] = open(f, encoding="utf-8", errors="ignore").read()
 
     routes = set(pages)
+    # A redirect stub exists at its old path, so a link to one technically
+    # resolves - which is exactly why it slipped past this check the first
+    # time. Internal links should point at the destination: a hop wastes crawl
+    # budget and dilutes the signal the link was meant to pass.
+    redirects = {r for r, h in pages.items() if 'http-equiv="refresh"' in h}
     ids = {r: set(re.findall(r'\bid="([^"]+)"', h)) for r, h in pages.items()}
 
     # --- internal links, trailing slashes, fragments -----------------------
-    bad_link, bad_frag, no_slash = [], [], []
+    bad_link, bad_frag, no_slash, to_redirect = [], [], [], []
     asset_re = re.compile(r"\.(jpg|jpeg|png|webp|svg|pdf|mp4|xml|txt|ico|json)$", re.I)
     for r, html in pages.items():
         if 'http-equiv="refresh"' in html:
@@ -52,6 +57,8 @@ def main():
                 no_slash.append((r, href))
             elif path not in routes:
                 bad_link.append((r, href))
+            elif path in redirects:
+                to_redirect.append((r, href))
             elif frag and frag not in ids.get(path, set()):
                 bad_frag.append((r, href))
 
@@ -113,6 +120,7 @@ def main():
     check("no missing image or media assets", sorted(missing),
           lambda a: f"{a}  (from {len(missing[a])} page(s))")
     check("no page lazy-loads its own hero image", lazy_hero)
+    check("no internal links pointing at a redirect", to_redirect, pair)
     check("no orphan pages", orphans, fatal=False)
 
     total_img = sum(
