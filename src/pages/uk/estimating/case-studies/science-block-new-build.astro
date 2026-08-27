@@ -1,0 +1,107 @@
+---
+import CaseStudy from "../../../../components/CaseStudy.astro";
+
+const brief = [
+  { document: "Planning application set", status: "Received" as const,
+    note: "27 sheets at 1:100 and 1:200 on A3 &mdash; site, floor and roof plans, elevations, sections and a materials schedule." },
+  { document: "The contractor&rsquo;s own costing notes", status: "Received" as const,
+    note: "A hand-built take-off and costing brief. Adopted as the priced basis and then verified line by line against the drawings." },
+  { document: "Draft project programme", status: "Received" as const,
+    note: "42 activities over 39 weeks. Used to price preliminaries and site management week by week rather than as a percentage." },
+  { document: "A cladding subcontractor&rsquo;s quote and bill &mdash; from a different job", status: "Received" as const,
+    note: "Usable as a rate library only. It excluded scaffold, which mattered later." },
+  { document: "Structural drawings", status: "Missing" as const,
+    note: "None. The foundation type was contradictory within the notes themselves." },
+  { document: "Window schedule", status: "Missing" as const,
+    note: "Thirty windows counted off the elevations and carried as a stated provisional sum." },
+  { document: "Ground investigation, M&amp;E design, confirmed floor level", status: "Missing" as const,
+    note: "Geotechnical, SUDS and a raft allowance carried. Finished floor level flagged as a &plusmn;150&nbsp;mm risk to the groundworks quantities." },
+];
+
+const method = [
+  { title: "Template first, then price",
+    body: "A master template of roughly 1,870 lines was cloned and priced line by line, rather than a fresh list of items being invented. The first pass added 127 duplicate lines at section level and was thrown away; the second priced the template&rsquo;s own lines." },
+  { title: "Every rate source-tagged",
+    body: "Three comparable projects &mdash; a boathouse new-build, a primary-school nursery block and a third school&rsquo;s mined actuals &mdash; plus the cladding bill and an in-house parametric &pound;/m&sup2; model. Each line records where its rate came from." },
+  { title: "Take-off linked to the quote, then deliberately unlinked",
+    body: "23 measurement groups, 105 items across five calibrated drawing pages, with quote lines linked live to the drawing metrics for counts. The area and linear links were then removed on purpose: the contractor&rsquo;s measured quantities govern, and the drawing polygons must not silently override them." },
+  { title: "Preliminaries off the client&rsquo;s own programme",
+    body: "Site management, welfare, access and the 26-week on-site period were priced from the programme that arrived with the brief, not from a generic allowance." },
+];
+
+const findings = [
+  { title: "A contradictory foundation design",
+    hiding: "The costing notes list both a 300&nbsp;mm raft slab and strip footings with block-and-beam.",
+    carried: "Read as stepped strips with a suspended floor on the sloping site, with a raft allowance where the levels demand it &mdash; priced as the notes&rsquo; own lines plus the allowance, and put back to the design team to confirm." },
+  { title: "A unit error",
+    hiding: "West elevation cladding was stated as 114&nbsp;m&sup3;.",
+    carried: "Taken as m&sup2;, checked against the actual elevation extent, and flagged rather than quietly corrected." },
+  { title: "A double-counted layer",
+    hiding: "230&nbsp;m&sup2; of fireline board listed identically for both the ground and first floors.",
+    carried: "Priced once, to the underside of the first floor, with the duplication noted. That single catch avoided a five-figure double count." },
+  { title: "Scaffold excluded by the cladding subcontractor",
+    hiding: "The subcontractor&rsquo;s bill &mdash; the only cladding rate source available &mdash; excluded access.",
+    carried: "A scaffold and MEWP allowance carried in preliminaries, so the cladding rate was not silently short." },
+  { title: "Site access on no drawing at all",
+    hiding: "A single line in the architect&rsquo;s brief mentioned a temporary trackway around farm buildings.",
+    carried: "Provisional sum carried, with the scope and length listed as a clarification to be confirmed." },
+  { title: "Items raised in conversation but never drawn",
+    hiding: "Fume cupboards, battery storage, a second HRV unit per classroom and an SBEM A+ target.",
+    carried: "Four priced options carried outside the total, so the base price stayed comparable with anything else the client was pricing against." },
+  { title: "Thirty windows and no schedule",
+    hiding: "Counted off the elevations. No sizes, no specification, no performance requirement.",
+    carried: "A stated provisional sum and a written request for the schedule &mdash; not a guessed rate dressed up as a measured one." },
+];
+
+const delivered = [
+  { title: "A 27-section priced quote",
+    body: "Built on the contractor&rsquo;s own master template so it slotted straight into their system. Roughly 1,870 lines, every priced line carrying a source tag." },
+  { title: "The measured take-off on the drawing",
+    body: "Five calibrated pages, 23 groups and 105 items, with the count lines linked live to the quote." },
+  { title: "Four priced options",
+    body: "Fume cupboards, battery storage, an HRV upgrade and SBEM A+ advisory &mdash; each stated outside the total." },
+  { title: "A clarifications list with the hand-back",
+    body: "Window schedule, project number, foundation type and finished floor level: the four things the price genuinely depends on." },
+];
+---
+<CaseStudy
+  number="02"
+  sector="New build &middot; education"
+  region="South-East England"
+  band="&pound;1m &ndash; &pound;2m"
+  slug="science-block-new-build"
+  title="Case Study: New Build Science Block Tender"
+  description="A two-storey teaching and science block priced from a planning set in two working days - and the seven findings, three of them inside the contractor's own notes."
+  h1="A science block from a planning set, in two working days"
+  summary="A ground-up two-storey teaching and science block of roughly 445&nbsp;m&sup2; GIA &mdash; light-gauge steel frame, two laboratories, PV roof, sloping site &mdash; priced from planning drawings and the contractor&rsquo;s own costing notes, with the quote lines linked live to the drawing."
+  stats={[
+    { value: "445 m&sup2;", label: "GIA over two storeys" },
+    { value: "2 days", label: "Brief to issued quote" },
+    { value: "27", label: "Priced sections" },
+    { value: "105", label: "Take-off items" },
+  ]}
+  brief={brief}
+  ask="A full quote &lsquo;by the end of the week&rsquo;, with the contractor&rsquo;s own quantities respected in all respects. First email Thursday, supporting pack Friday, quote issued Monday."
+  method={method}
+  methodFigure={{
+    src: "/Images/case-studies/education-ground-floor.webp",
+    alt: "Ground floor plan at 1:100 showing classroom, prep room, laboratory, hallway, entrance and plant room with measured areas",
+    caption: "Ground floor as proposed, 1:100 &mdash; the planning-stage drawing the whole price was measured from.",
+    width: 1340, height: 860,
+  }}
+  findings={findings}
+  delivered={delivered}
+  deliveredFigures={[
+    { src: "/Images/case-studies/education-first-floor.webp",
+      alt: "First floor plan as proposed, the second plate measured for the take-off",
+      caption: "First floor as proposed &mdash; the second measured plate.",
+      width: 1340, height: 860 },
+    { src: "/Images/case-studies/education-takeoff-viewer.webp",
+      alt: "Take-off viewer showing classroom, prep and laboratory floor zones measured on the ground floor plan, each group summing live",
+      caption: "The take-off viewer &mdash; each measurement group sums live, and every quantity carries its audit trail back to the drawing.",
+      width: 410, height: 282 },
+  ]}
+  outcome="Quote issued on day two. Awaiting the window schedule, the project number and confirmation of the foundation type &mdash; the three things the price still depends on. A volumetric competitor was already engaged on the scheme, which the contractor described as &lsquo;not a level playing field&rsquo;. No award recorded."
+  takeaway="Respect the client&rsquo;s quantities in all respects &mdash; but read them. Three of the seven findings were inside their own notes."
+  datePublished="2026-08-27"
+/>

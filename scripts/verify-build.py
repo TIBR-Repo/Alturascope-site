@@ -48,7 +48,10 @@ def main():
     for r, html in pages.items():
         if 'http-equiv="refresh"' in html:
             continue
-        for href in set(re.findall(r'href="(/[^"]*)"', html)):
+        # Both site-absolute links and bare same-page fragments. The bare "#id"
+        # form was missed originally because this pattern required a leading
+        # slash - which let a sub-nav link at a non-existent anchor ship.
+        for href in set(re.findall(r'href="((?:/|#)[^"]*)"', html)):
             path, _, frag = href.partition("#")
             path = path or r
             if asset_re.search(path):
@@ -77,7 +80,11 @@ def main():
     for r, html in pages.items():
         body = html.split("<body", 1)[-1]
         body = re.sub(r"<header[\s\S]*?</header>", "", body)
-        m = re.search(r"<img[^>]*>", body)
+        # Only the first section counts. A page with a text-only hero has its
+        # first image far below the fold, where lazy loading is correct - the
+        # original check flagged those as failures.
+        first_section = body.split("</section>", 1)[0]
+        m = re.search(r"<img[^>]*>", first_section)
         if m and 'loading="lazy"' in m.group(0):
             lazy_hero.append(r)
 

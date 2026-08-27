@@ -1,0 +1,312 @@
+---
+/**
+ * An estimating case study.
+ *
+ * The shape follows how a contractor actually evaluates an estimator: what
+ * arrived (including what was missing), how it was measured, what it caught,
+ * what went into the pack, and where it ended up - honestly, including the
+ * jobs with no recorded award.
+ *
+ * "What it caught" is the section that does the work. Everything else is table
+ * stakes; that one is the only part a competitor cannot copy, because it comes
+ * from having actually read the drawings.
+ *
+ * Anonymisation is structural, not cosmetic: region and value band only, never
+ * a client name, an address or a tender total.
+ *
+ * No hreflang is declared. These studies are UK-only work with no US
+ * counterpart, so naming /estimating/ as the en alternate would be a one-way
+ * claim the US page never reciprocates - which the SEO audit correctly flags.
+ */
+import Layout from "../layouts/Layout.astro";
+
+interface Row {
+  document: string;
+  status: "Received" | "Missing";
+  note: string;
+}
+interface Finding {
+  title: string;
+  hiding: string;
+  carried: string;
+}
+interface Figure {
+  src: string;
+  alt: string;
+  caption: string;
+  width: number;
+  height: number;
+}
+
+interface Props {
+  number: string;
+  sector: string;
+  region: string;
+  band: string;
+  slug: string;
+  title: string;
+  description: string;
+  h1: string;
+  summary: string;
+  stats: { value: string; label: string }[];
+  brief: Row[];
+  ask: string;
+  method: { title: string; body: string }[];
+  methodFigure?: Figure;
+  findings: Finding[];
+  delivered: { title: string; body: string }[];
+  deliveredFigures?: Figure[];
+  outcome: string;
+  takeaway: string;
+  datePublished: string;
+}
+
+const {
+  number, sector, region, band, slug, title, description, h1, summary, stats,
+  brief, ask, method, methodFigure, findings, delivered, deliveredFigures,
+  outcome, takeaway, datePublished,
+} = Astro.props;
+
+const url = `https://alturascope.com/uk/estimating/case-studies/${slug}/`;
+
+const schema = JSON.stringify({
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": h1,
+  "description": description,
+  "author": { "@id": "https://alturascope.com/#organization" },
+  "publisher": { "@id": "https://alturascope.com/#organization" },
+  "datePublished": datePublished,
+  "dateModified": datePublished,
+  "mainEntityOfPage": url,
+  "about": {
+    "@type": "Service",
+    "name": "Construction estimating and tender pricing",
+    "url": "https://alturascope.com/uk/estimating/",
+  },
+});
+
+const breadcrumbSchema = JSON.stringify({
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://alturascope.com/" },
+    { "@type": "ListItem", "position": 2, "name": "UK", "item": "https://alturascope.com/uk/" },
+    { "@type": "ListItem", "position": 3, "name": "Estimating Desk", "item": "https://alturascope.com/uk/estimating/" },
+    { "@type": "ListItem", "position": 4, "name": h1, "item": url },
+  ],
+});
+---
+<Layout
+  title={title}
+  description={description}
+  canonical={url}
+  schema={schema}
+  breadcrumbSchema={breadcrumbSchema}
+  fullWidth={true}
+  lang="en-GB"
+>
+  <div data-hero-page>
+
+    <!-- Hero -->
+    <section class="bg-navy pt-32 pb-16 md:pt-40 md:pb-20">
+      <div class="max-w-[1100px] mx-auto px-6">
+        <p class="label text-gold mb-5">
+          Case study {number} &middot; {sector} &middot; {region} &middot; {band}
+        </p>
+        <h1 class="text-[1.9rem] md:text-[2.7rem] font-light text-offwhite leading-tight max-w-[22ch]" set:html={h1} />
+        <p class="mt-6 text-offwhite/75 leading-body max-w-[68ch] text-[1.05rem]" set:html={summary} />
+
+        <div class="mt-12 grid grid-cols-2 md:grid-cols-4 gap-8 md:gap-4">
+          {stats.map((s) => (
+            <div>
+              <p class="text-[1.6rem] md:text-[1.85rem] font-light text-offwhite leading-tight" set:html={s.value} />
+              <p class="text-[0.68rem] font-medium uppercase tracking-[0.12em] text-gold mt-2 leading-snug">{s.label}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <!-- The brief -->
+    <section class="bg-white section-padding-tight">
+      <div class="max-w-[1000px] mx-auto px-6">
+        <p class="label text-gold mb-4">The Brief</p>
+        <h2 class="text-[1.7rem] md:text-[1.95rem] font-light text-navy leading-tight">
+          What arrived &mdash; and what didn&rsquo;t.
+        </h2>
+
+        <div class="mt-9 overflow-x-auto">
+          <table class="w-full min-w-[620px] border-collapse text-[0.93rem]">
+            <thead>
+              <tr class="border-b border-border">
+                <th class="text-left py-3 pr-6 text-[0.7rem] font-medium uppercase tracking-[0.1em] text-midgrey">Document</th>
+                <th class="text-left py-3 pr-6 text-[0.7rem] font-medium uppercase tracking-[0.1em] text-midgrey w-[92px]">Status</th>
+                <th class="text-left py-3 text-[0.7rem] font-medium uppercase tracking-[0.1em] text-midgrey">Note</th>
+              </tr>
+            </thead>
+            <tbody>
+              {brief.map((r) => (
+                <tr class="border-b border-border/60 align-top">
+                  <td class="py-4 pr-6 text-navy font-medium" set:html={r.document} />
+                  <td class="py-4 pr-6">
+                    <span class={`inline-block text-[0.68rem] font-medium uppercase tracking-[0.08em] px-2 py-1 rounded-sm ${
+                      r.status === "Received" ? "bg-offwhite text-midgrey" : "bg-gold/15 text-gold"
+                    }`}>{r.status}</span>
+                  </td>
+                  <td class="py-4 text-midgrey leading-body" set:html={r.note} />
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+
+        <div class="mt-9 border-l-2 border-gold bg-offwhite py-5 px-7">
+          <p class="text-midgrey leading-body">
+            <span class="text-navy font-medium">The ask.</span> <Fragment set:html={ask} />
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Method -->
+    <section class="bg-offwhite section-padding-tight">
+      <div class="max-w-[1000px] mx-auto px-6">
+        <p class="label text-gold mb-4">Method</p>
+        <h2 class="text-[1.7rem] md:text-[1.95rem] font-light text-navy leading-tight">
+          How it was measured and priced.
+        </h2>
+        <div class="mt-9 grid md:grid-cols-2 gap-x-12 gap-y-8">
+          {method.map((m) => (
+            <div>
+              <h3 class="text-[1.02rem] font-medium text-navy">{m.title}</h3>
+              <p class="mt-2 text-midgrey leading-body text-[0.95rem]" set:html={m.body} />
+            </div>
+          ))}
+        </div>
+        {methodFigure && (
+          <figure class="mt-12 m-0">
+            <img
+              src={methodFigure.src}
+              alt={methodFigure.alt}
+              width={methodFigure.width}
+              height={methodFigure.height}
+              loading="lazy"
+              decoding="async"
+              class="w-full h-auto border border-border bg-white"
+            />
+            <figcaption class="mt-3 text-midgrey text-[0.82rem] leading-relaxed">{methodFigure.caption}</figcaption>
+          </figure>
+        )}
+      </div>
+    </section>
+
+    <!-- What it caught -->
+    <section class="bg-navy section-padding-tight">
+      <div class="max-w-[1100px] mx-auto px-6">
+        <p class="label text-gold mb-4">What It Caught</p>
+        <h2 class="text-[1.7rem] md:text-[1.95rem] font-light text-offwhite leading-tight max-w-[26ch]">
+          The things that would have eaten the margin.
+        </h2>
+
+        <div class="mt-10">
+          {findings.map((f, i) => (
+            <div class="border-t border-white/15 py-6 grid md:grid-cols-[36px_1fr_1fr] gap-x-8 gap-y-3">
+              <p class="text-gold text-[0.95rem] tabular-nums pt-0.5">{String(i + 1).padStart(2, "0")}</p>
+              <div>
+                <h3 class="text-offwhite font-medium text-[1.02rem]" set:html={f.title} />
+                <p class="mt-2 text-offwhite/60 leading-body text-[0.93rem]" set:html={f.hiding} />
+              </div>
+              <div class="md:border-l md:border-white/10 md:pl-8">
+                <p class="label text-gold mb-2">How it was carried</p>
+                <p class="text-offwhite/80 leading-body text-[0.93rem]" set:html={f.carried} />
+              </div>
+            </div>
+          ))}
+          <div class="border-t border-white/15"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Delivered -->
+    <section class="bg-white section-padding-tight">
+      <div class="max-w-[1000px] mx-auto px-6">
+        <p class="label text-gold mb-4">Delivered</p>
+        <h2 class="text-[1.7rem] md:text-[1.95rem] font-light text-navy leading-tight">
+          What went into the tender pack.
+        </h2>
+        <div class="mt-9 grid md:grid-cols-2 gap-x-12 gap-y-8">
+          {delivered.map((d) => (
+            <div>
+              <h3 class="text-[1.02rem] font-medium text-navy">{d.title}</h3>
+              <p class="mt-2 text-midgrey leading-body text-[0.95rem]" set:html={d.body} />
+            </div>
+          ))}
+        </div>
+
+        {deliveredFigures && deliveredFigures.length > 0 && (
+          <div class={`mt-12 grid gap-6 ${deliveredFigures.length > 1 ? "md:grid-cols-2" : ""}`}>
+            {deliveredFigures.map((f) => (
+              <figure class="m-0">
+                <img
+                  src={f.src}
+                  alt={f.alt}
+                  width={f.width}
+                  height={f.height}
+                  loading="lazy"
+                  decoding="async"
+                  class="w-full h-auto border border-border bg-white"
+                />
+                <figcaption class="mt-3 text-midgrey text-[0.82rem] leading-relaxed">{f.caption}</figcaption>
+              </figure>
+            ))}
+          </div>
+        )}
+      </div>
+    </section>
+
+    <!-- Outcome + takeaway -->
+    <section class="bg-offwhite section-padding-tight">
+      <div class="max-w-[1000px] mx-auto px-6">
+        <div class="grid md:grid-cols-2 gap-10 md:gap-16">
+          <div>
+            <p class="label text-gold mb-4">Outcome</p>
+            <p class="text-midgrey leading-body" set:html={outcome} />
+          </div>
+          <div class="md:border-l md:border-border md:pl-16">
+            <p class="label text-gold mb-4">What We&rsquo;d Say to the Next Contractor</p>
+            <p class="text-navy leading-snug text-[1.15rem] font-light" set:html={takeaway} />
+          </div>
+        </div>
+
+        <p class="mt-12 pt-8 border-t border-border text-midgrey/80 text-[0.85rem] leading-relaxed max-w-[80ch]">
+          Anonymised by design. Region and value band only &mdash; never a client, an address or a
+          tender total. Drawings are reproduced with title blocks removed, and delivered packs are
+          shown as blurred page mosaics so the scale and structure are visible and none of the
+          content is legible.
+        </p>
+      </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="bg-white section-padding-tight">
+      <div class="max-w-[760px] mx-auto px-6 text-center">
+        <h2 class="text-[1.7rem] md:text-[1.95rem] font-light text-navy leading-tight">
+          Is there a package on your desk right now?
+        </h2>
+        <p class="mt-5 text-midgrey leading-body">
+          Send it and we will price it the same way. Two working days from the point we agree the
+          basis, on your letterhead, with every assumption written down where your client can see it.
+        </p>
+        <div class="mt-8 flex flex-wrap justify-center gap-4">
+          <a href="/uk/estimating/#send-a-tender" class="btn-primary">Send a Tender Package</a>
+          <a href="/estimating/sample-quote-pack/" class="btn-secondary">See a complete pack</a>
+        </div>
+        <p class="mt-8 text-[0.9rem]">
+          <a href="/uk/estimating/" class="text-navy font-medium hover:opacity-80 transition-opacity">&larr; Back to the UK Estimating Desk</a>
+        </p>
+      </div>
+    </section>
+
+  </div>
+</Layout>

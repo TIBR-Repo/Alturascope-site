@@ -1,6 +1,7 @@
 ---
 import Layout from "../../layouts/Layout.astro";
 import UkEntity from "../../components/UkEntity.astro";
+import CaseStudyCards from "../../components/CaseStudyCards.astro";
 
 const faqs = [
   {
@@ -159,7 +160,7 @@ const faqSchema = JSON.stringify({
           <li><a href="#how-it-works" class="subnav-link text-[0.82rem] font-medium tracking-nav text-midgrey hover:text-navy transition-colors">How it works</a></li>
           <li><a href="#pricing" class="subnav-link text-[0.82rem] font-medium tracking-nav text-midgrey hover:text-navy transition-colors">Pricing</a></li>
           <li><a href="#faq" class="subnav-link text-[0.82rem] font-medium tracking-nav text-midgrey hover:text-navy transition-colors">Questions</a></li>
-          <li class="ml-auto pl-6 hidden md:block"><a href="#send-a-package" class="text-[0.82rem] font-medium tracking-nav text-navy border-b-2 border-gold pb-0.5">Send a tender package</a></li>
+          <li class="ml-auto pl-6 hidden md:block"><a href="#send-a-tender" class="text-[0.82rem] font-medium tracking-nav text-navy border-b-2 border-gold pb-0.5">Send a tender package</a></li>
         </ul>
       </div>
     </nav>
@@ -250,6 +251,8 @@ const faqSchema = JSON.stringify({
         </div>
       </div>
     </section>
+
+    <CaseStudyCards />
 
     <!-- The problem -->
     <section class="bg-white section-padding">

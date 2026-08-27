@@ -1,0 +1,116 @@
+---
+import CaseStudy from "../../../../components/CaseStudy.astro";
+
+/*
+ * Anonymisation notes for this study, deliberately stronger than the source draft:
+ *   - "listed" dropped from the headline
+ *   - "Covent Garden" dropped from the regional-uplift note (it names a labour
+ *     zone precise enough to place the building)
+ *   - the specific floor range dropped from the floor-agnostic note
+ *   - the floor-plate zoning diagram is not published: its circular core is the
+ *     single most identifying thing in the whole pack
+ * Together those would otherwise have let anyone in the London fit-out market
+ * name the building.
+ */
+
+const brief = [
+  { document: "Designer feasibility layout &mdash; full office floor", status: "Received" as const,
+    note: "One PDF sheet. Desks, meeting rooms, IDF/MDF, tea points." },
+  { document: "Designer feasibility layout &mdash; social half-floor", status: "Received" as const,
+    note: "One PDF sheet. Kitchen, training, games, bleacher." },
+  { document: "Building marketing brochure", status: "Received" as const,
+    note: "57 pages. Used for the base-build specification and the schedule of areas." },
+  { document: "Specification", status: "Missing" as const,
+    note: "None. Finishes, partitions and the M&amp;E basis all had to be assumed, and every assumption stated." },
+  { document: "Bill of quantities", status: "Missing" as const,
+    note: "None. Every quantity measured in-house off the two layouts." },
+  { document: "Per-room areas, window lengths, floor-box and light-fitting counts", status: "Missing" as const,
+    note: "Not derivable from what was issued &mdash; logged as clarifications rather than guessed." },
+  { document: "Floor number", status: "Missing" as const,
+    note: "Never fixed. Priced floor-agnostic, since the upper plates are identical." },
+];
+
+const method = [
+  { title: "Measured, not assumed",
+    body: "Two take-offs &mdash; 111 items in 14 groups on the office floor, 45 items in 18 groups on the social floor &mdash; calibrated to the drawing and cross-checked against the brochure&rsquo;s schedule of areas." },
+  { title: "One backbone, three touchpoint ladders",
+    body: "Strip-out, alterations, electrical, data, HVAC, fire alarm, plumbing, surveys, CDM and preliminaries priced once and applied to every tier. Only joinery, kitchens, finishes, blinds, acoustics, signage, feature lighting, security and AV flex between tiers." },
+  { title: "Regional pricing done properly",
+    body: "Materials priced nationally. Labour carries the central London uplifts and nothing else &mdash; applied retroactively to 76 items after the first pass got it wrong, and written down afterwards as an absolute rule." },
+  { title: "Margin by section type",
+    body: "Pre-construction, M&amp;E, fabric and finishes each carry their own margin band rather than one blanket percentage, so the differences between tiers reflect what the occupant actually sees and touches." },
+];
+
+const findings = [
+  { title: "A demise wall nobody had drawn",
+    hiding: "On neither layout. A 60-minute wall of roughly 30 metres separating the demise from the rest of the plate.",
+    carried: "Priced in full and stated as a credit-back if the landlord delivers it, so the contractor could answer the question either way without re-pricing." },
+  { title: "No comms room on the social floor",
+    hiding: "The office floor shows an IDF/MDF store; the social floor shows nothing at all. Cooling and UPS for it unresolved.",
+    carried: "Carried as a named allowance and listed on the tender-pack notes page as a clarification, with an option to resolve." },
+  { title: "AV scope creep",
+    hiding: "A &lsquo;full AV&rsquo; reading of the layouts would have added six figures at the top tier before anyone had asked for it.",
+    carried: "Scoped to display-only across all tiers, with the full-AV delta stated separately so the client could choose it consciously." },
+  { title: "Base-build assumptions with no specification behind them",
+    hiding: "No spec was issued, so ceiling heights, exposed soffit, chilled beams, integrated lighting and raised floor were all inferred from renders and the brochure.",
+    carried: "Every assumption written onto one page of the report, with fallback allowances for asbestos R&amp;D and structural condition if the landlord&rsquo;s surveys did not materialise." },
+  { title: "Twenty provisional sums",
+    hiding: "Strip-out contingency, reception desk, logo joinery, acoustic rafts, Cat A lighting, fire, HVAC and BMS modifications, soil stack, distribution pipework.",
+    carried: "Set out as their own register with a &lsquo;why provisional&rsquo; column, rather than buried inside a line rate." },
+  { title: "Quantities that could only be rules of thumb",
+    hiding: "Without a specification, skirting lengths and pattressing heights had to be estimated by rule of thumb.",
+    carried: "Flagged as exactly that on the notes page rather than presented as measured." },
+];
+
+const delivered = [
+  { title: "A 22-page tier comparison report",
+    body: "Contents, at a glance, building and floors, scope in and out, how the tiers work, nine tier-ladder pages, the tier-neutral backbone, cost summary, &pound;/m&sup2; ladder, industry benchmark, provisional sums, clarifications, pre-tender options, assumptions and exclusions." },
+  { title: "An 18-page project programme",
+    body: "26 weeks in four phases, with site logistics, street-view approaches, sustainable delivery, master Gantt, floor-plate zoning, an IDF micro-schedule, punch list, long-lead register, acceleration strategy and health and safety." },
+  { title: "Three live quotes",
+    body: "One per tier, around 310 lines each, structured three deep &mdash; section to floor to item &mdash; and clickable straight from the report." },
+  { title: "Five bookable options",
+    body: "Motorised blinds, a solid-timber bleacher, broader acoustic treatment, additional wallcovering and games equipment, each with a stated add." },
+];
+---
+<CaseStudy
+  number="01"
+  sector="Cat B office fit-out"
+  region="Central London"
+  band="&pound;1m &ndash; &pound;2m"
+  slug="cat-b-fit-out-central-london"
+  title="Case Study: Cat B Office Fit-Out Tender, London"
+  description="Two feasibility layouts and a marketing brochure, priced at three tiers in four days - and the six things the drawings did not show. A UK estimating case study."
+  h1="Two floors, three prices, four days"
+  summary="A Cat B office fit-out on a landlord&rsquo;s retained Cat A shell &mdash; 1,380&nbsp;m&sup2; NIA for 130 desks plus a social half-floor &mdash; priced at three tiers from two feasibility layouts and a marketing brochure. No specification, no bill of quantities, and no confirmed floor."
+  stats={[
+    { value: "1,380 m&sup2;", label: "NIA over two floors" },
+    { value: "4 days", label: "Brief to issued pack" },
+    { value: "24", label: "Trade sections" },
+    { value: "3", label: "Priced tiers" },
+  ]}
+  brief={brief}
+  ask="A Bronze, Silver and Gold budget for the fit-out package only, sitting on top of the landlord&rsquo;s retained Cat A, to go inside the contractor&rsquo;s own tender pack."
+  method={method}
+  methodFigure={{
+    src: "/Images/case-studies/london-master-programme.webp",
+    alt: "26-week master programme Gantt chart showing pre-construction, construction, client fit-up and closeout phases with the M&E critical path marked",
+    caption: "The 26-week master programme &mdash; long-lead procurement and the M&amp;E critical path called out. Added at the contractor&rsquo;s request the day after the pack was issued.",
+    width: 1035, height: 437,
+  }}
+  findings={findings}
+  delivered={delivered}
+  deliveredFigures={[
+    { src: "/Images/case-studies/london-tier-report-pages.webp",
+      alt: "Page mosaic of the 22-page tier comparison report, blurred so layout and scale are visible but no text is legible",
+      caption: "The 22-page tier report &mdash; pages blurred, layout only.",
+      width: 1400, height: 424 },
+    { src: "/Images/case-studies/london-programme-addendum-pages.webp",
+      alt: "Page mosaic of the 18-page programme addendum, blurred so layout and scale are visible but no text is legible",
+      caption: "The 18-page programme addendum &mdash; pages blurred, layout only.",
+      width: 1240, height: 439 },
+  ]}
+  outcome="Pack issued and the fee billed. No award is recorded in the working files, so we are not claiming one &mdash; and on a budget exercise of this kind the pack often sits inside a wider tender whose result comes back months later."
+  takeaway="Two drawings and a brochure are enough to price a Cat B job properly &mdash; provided every assumption is written down where the client can see it."
+  datePublished="2026-08-27"
+/>

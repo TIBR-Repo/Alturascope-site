@@ -1,0 +1,64 @@
+---
+/**
+ * Case study cards for /uk/estimating/.
+ *
+ * These sit high on the page on purpose. The Basis of Estimate is the standard
+ * we publish, the sample pack is the demonstration, and these are the third
+ * leg: the standard applied to real jobs. Proof belongs near the top, not
+ * next to the CTA.
+ *
+ * Add a study by appending to STUDIES - the grid re-flows.
+ */
+const STUDIES = [
+  {
+    href: "/uk/estimating/case-studies/cat-b-fit-out-central-london/",
+    meta: "Cat B office fit-out · Central London · £1m – £2m",
+    title: "Two floors, three prices, four days",
+    blurb:
+      "No specification, no bill of quantities and no confirmed floor. Two feasibility layouts and a marketing brochure, priced at three tiers — and a 30-metre fire-rated demise wall that appeared on neither drawing.",
+    stats: ["1,380 m² NIA", "4 days", "6 findings"],
+  },
+  {
+    href: "/uk/estimating/case-studies/science-block-new-build/",
+    meta: "New build · education · South-East England · £1m – £2m",
+    title: "A science block from a planning set, in two working days",
+    blurb:
+      "Priced from planning drawings and the contractor’s own costing notes. Seven findings — including 230 m² of fireline board counted twice, which alone avoided a five-figure double count.",
+    stats: ["445 m² GIA", "2 days", "7 findings"],
+  },
+];
+---
+<section class="bg-offwhite section-padding-tight">
+  <div class="max-w-[1200px] mx-auto px-6">
+    <div class="max-w-[62ch]">
+      <p class="label text-gold mb-4">Recent Work</p>
+      <h2 class="text-[1.8rem] md:text-[2rem] font-light text-navy leading-tight">
+        Real tenders, written up in full.
+      </h2>
+      <p class="mt-5 text-midgrey leading-body">
+        Each one sets out what arrived, what was missing, how it was measured, and
+        &mdash; the part that matters &mdash; what it caught before it reached the client.
+        Anonymised by design: region and value band only, never a client, an address or a
+        tender total.
+      </p>
+    </div>
+
+    <div class="mt-11 grid grid-cols-1 md:grid-cols-2 gap-7">
+      {STUDIES.map((s) => (
+        <a href={s.href} class="group block card p-8 hover:border-gold transition-colors">
+          <p class="text-[0.72rem] font-medium uppercase tracking-[0.1em] text-gold leading-snug">{s.meta}</p>
+          <h3 class="mt-4 text-[1.25rem] font-medium text-navy leading-snug group-hover:opacity-80 transition-opacity">
+            {s.title}
+          </h3>
+          <p class="mt-3 text-midgrey leading-body text-[0.95rem]">{s.blurb}</p>
+          <div class="mt-6 flex flex-wrap gap-x-6 gap-y-2 pt-5 border-t border-border">
+            {s.stats.map((t) => (
+              <span class="text-[0.78rem] font-medium text-navy tabular-nums">{t}</span>
+            ))}
+          </div>
+          <span class="inline-block mt-5 text-navy text-sm font-medium">Read the case study &rarr;</span>
+        </a>
+      ))}
+    </div>
+  </div>
+</section>
