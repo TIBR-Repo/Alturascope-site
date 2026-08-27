@@ -126,22 +126,23 @@ const navLinks = [
   { href: "/about/", label: "About" },
 ];
 
-// A UK-specific ProfessionalService node, emitted only on /uk/ pages and only
-// where real entity details exist. Until August 2026 eight UK pages asserted UK
-// coverage with no address, phone or company number anywhere on the site.
+// A UK-specific ProfessionalService node, emitted on /uk/ pages. Alturascope
+// trades in the UK as a name of Orleyton Ltd, so legalName carries the
+// registered name and name carries the trading one - which is what lets Google
+// reconcile the site with the Companies House record.
 //
-// vatID and identifier are deliberately gated on legalName: publishing a
-// registration number without naming the entity it belongs to asserts it is
-// Alturascope's own, and the VAT number supplied was Selwyn's.
+// Until August 2026 eight UK pages asserted UK coverage with no address, phone
+// or company number anywhere on the site.
 const ukStreet = [ukEntity.street, ukEntity.locality].filter(Boolean).join(", ");
 const hasUkAddress = Boolean(ukStreet || ukEntity.postalCode);
-const hasUkEntity = hasUkAddress || Boolean(ukEntity.phone);
+const hasUkEntity = hasUkAddress || Boolean(ukEntity.phone) || Boolean(ukEntity.companyNumber);
 const ukNamed = Boolean(ukEntity.legalName);
 const ukEntitySchema = isUK && hasUkEntity ? JSON.stringify({
   "@context": "https://schema.org",
   "@type": "ProfessionalService",
   "@id": "https://alturascope.com/uk/#ukbusiness",
-  "name": ukEntity.legalName || "Alturascope UK",
+  "name": "Alturascope",
+  ...(ukNamed ? { legalName: ukEntity.legalName } : {}),
   "parentOrganization": { "@id": "https://alturascope.com/#organization" },
   "url": "https://alturascope.com/uk/",
   "areaServed": { "@type": "Country", "name": "United Kingdom" },
@@ -155,7 +156,15 @@ const ukEntitySchema = isUK && hasUkEntity ? JSON.stringify({
   ...(ukEntity.phone ? { telephone: ukEntity.phone } : {}),
   ...(ukEntity.email ? { email: ukEntity.email } : {}),
   ...(ukNamed && ukEntity.vatNumber ? { vatID: ukEntity.vatNumber } : {}),
-  ...(ukNamed && ukEntity.companyNumber ? { identifier: ukEntity.companyNumber } : {}),
+  ...(ukNamed && ukEntity.companyNumber
+    ? {
+        identifier: {
+          "@type": "PropertyValue",
+          propertyID: "Companies House",
+          value: ukEntity.companyNumber,
+        },
+      }
+    : {}),
   ...(ukEntity.openingHours ? { openingHours: ukEntity.openingHours } : {}),
   ...(hasUkAddress ? {
     address: {
@@ -360,7 +369,12 @@ const switchTitle = isUK
                 {ukEntity.phone && (
                   <a href={`tel:${ukEntity.phone.replace(/[^+0-9]/g, "")}`} class="block mt-1 text-white/70 hover:text-white transition-colors">{ukEntity.phone}</a>
                 )}
-                {ukNamed && ukEntity.vatNumber && <span class="block mt-1">VAT no. {ukEntity.vatNumber}</span>}
+                {ukNamed && ukEntity.companyNumber && (
+                  <span class="block mt-2 text-white/45 text-[0.8rem]">
+                    Registered in {ukEntity.registeredIn} no. {ukEntity.companyNumber}
+                    {ukEntity.vatNumber && <> &middot; VAT {ukEntity.vatNumber}</>}
+                  </span>
+                )}
               </address>
             )}
             <p class="mt-4 text-xs text-white/40">

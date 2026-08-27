@@ -1,6 +1,11 @@
 {
-  "_comment": "UK entity details. Nothing renders while a field is null. IMPORTANT: the VAT number only renders once legalName is set - publishing a VAT number without naming the entity it belongs to reads as a claim that it is Alturascope's, and this one was supplied as Selwyn's. Set legalName to whichever company actually contracts UK work and the registration block switches on.",
-  "legalName": null,
+  "_comment": "UK entity details. Verified against Companies House 2026-08-27: ORLEYTON LTD, no. 12577916, active private limited company incorporated 29 April 2020, registered office exactly as below. Alturascope is a trading name. A UK limited company must disclose its registered name, number, place of registration and registered office on its websites (Companies Act 2006 s.1202-1206), so this block is a legal requirement as well as a local search signal. Fields left null simply do not render.",
+  "legalName": "Orleyton Ltd",
+  "tradingAs": "Alturascope",
+  "registeredIn": "England and Wales",
+  "companyNumber": "12577916",
+  "vatNumber": "GB 347 9139 66",
+  "isRegisteredOffice": true,
   "phone": null,
   "email": null,
   "street": "The Old Plough, Bagstone Road",
@@ -8,7 +13,5 @@
   "postTown": "Wotton-under-Edge",
   "region": "Gloucestershire",
   "postalCode": "GL12 8BD",
-  "companyNumber": null,
-  "vatNumber": "GB 347 9139 66",
   "openingHours": "Mo-Fr 08:00-18:00"
 }
