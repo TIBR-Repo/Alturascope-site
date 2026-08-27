@@ -1,13 +1,14 @@
 {
-  "_comment": "UK entity details. Every field is null until Andrew supplies the real values - nothing renders while a field is null, so no placeholder text can reach the live site. Filling these in switches on: the UK contact block on /uk/, the UK address and phone in the footer on /uk/ pages, and the ProfessionalService schema node with areaServed GB. That schema node is the single biggest UK ranking lever, because right now the site asserts UK coverage with no entity signal behind it at all.",
+  "_comment": "UK entity details. Nothing renders while a field is null. IMPORTANT: the VAT number only renders once legalName is set - publishing a VAT number without naming the entity it belongs to reads as a claim that it is Alturascope's, and this one was supplied as Selwyn's. Set legalName to whichever company actually contracts UK work and the registration block switches on.",
   "legalName": null,
   "phone": null,
   "email": null,
-  "street": null,
-  "locality": null,
-  "region": null,
-  "postalCode": null,
+  "street": "The Old Plough, Bagstone Road",
+  "locality": "Bagstone",
+  "postTown": "Wotton-under-Edge",
+  "region": "Gloucestershire",
+  "postalCode": "GL12 8BD",
   "companyNumber": null,
-  "vatNumber": null,
+  "vatNumber": "GB 347 9139 66",
   "openingHours": "Mo-Fr 08:00-18:00"
 }
