@@ -1,6 +1,7 @@
 ---
 import Layout from "../../layouts/Layout.astro";
 import GalleryBand from "../../components/GalleryBand.astro";
+import UkEntity from "../../components/UkEntity.astro";
 
 const schema = JSON.stringify({
   "@context": "https://schema.org",
@@ -23,8 +24,8 @@ const ukServices = [
 ];
 ---
 <Layout
-  title="UK Site Surveys, Documentation & Estimating | Alturascope"
-  description="Site surveys, measured building surveys and construction estimating across England, Scotland, Wales and Northern Ireland. Heritage, fit-out and rollouts."
+  title="UK Construction Estimating &amp; Measured Surveys"
+  description="Tender pricing and bills of quantities measured to NRM2, returned under your own name in two working days. Measured building surveys across the UK."
   canonical="https://alturascope.com/uk/"
   schema={schema}
   fullWidth={true}
@@ -54,19 +55,22 @@ const ukServices = [
       </div>
 
       <div class="relative z-10 text-center max-w-[760px] mx-auto px-6">
-        <p class="label text-gold mb-6">Reality Capture &middot; Site Documentation &middot; United Kingdom</p>
+        <p class="label text-gold mb-6">Estimating &middot; Measured Surveys &middot; United Kingdom</p>
         <h1 class="text-[2.4rem] md:text-[3.6rem] font-light text-offwhite leading-[1.1]">
-          Site Survey, Documentation and Estimating Services Across the UK
+          Construction Estimating and Tender Pricing Across the UK
         </h1>
         <p class="mt-4 text-[1.2rem] md:text-[1.35rem] font-light text-offwhite/90 leading-[1.3]">
-          Know the building. Price the work.
+          Send the drawings. Get back a priced tender under your own name.
         </p>
-        <p class="mt-6 text-[1.15rem] text-offwhite/80 font-normal leading-relaxed max-w-[620px] mx-auto">
-          Measured building surveys, Matterport digital twins, heritage documentation and structured conditions reports &mdash; and an estimating desk that prices a tender and returns it on your own letterhead, usually inside two working days.
+        <p class="mt-6 text-[1.15rem] text-offwhite/80 font-normal leading-relaxed max-w-[640px] mx-auto">
+          Bills of quantities and schedules of works measured to NRM2, with preliminaries and
+          provisional sums set out the way a quantity surveyor expects &mdash; machine-audited,
+          white-labelled, usually inside two working days. And when the risk is the building
+          rather than the drawing, we survey it too.
         </p>
         <div class="mt-10 flex flex-wrap items-center justify-center gap-4">
-          <a href="#uk-services" class="btn-primary">See UK Services</a>
-          <a href="/uk/estimating/" class="btn-secondary-light">The Estimating Desk</a>
+          <a href="/uk/estimating/" class="btn-primary">The Estimating Desk</a>
+          <a href="#uk-services" class="btn-secondary-light">Survey Services</a>
         </div>
         <p class="mt-8 text-offwhite/50 text-sm">
           Covering England, Scotland, Wales, and Northern Ireland &mdash; including London, Manchester, Birmingham, Edinburgh, Bristol, and Leeds.
@@ -119,25 +123,25 @@ const ukServices = [
         </div>
 
         <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+          <div class="card border-gold bg-offwhite p-9">
+            <p class="label text-gold mb-3">Estimating Desk</p>
+            <h3 class="text-[1.3rem] font-medium text-navy">&ldquo;What is it going to cost me?&rdquo;</h3>
+            <p class="mt-4 text-midgrey leading-body">
+              Send us the drawings; we send back a priced, client-ready tender under your own name &mdash; usually inside two working days. Bills of quantities, preliminaries and provisional sums, measured to NRM2, benchmarked against BCIS where you have no rate of your own, in sterling and excluding VAT, under JCT or NEC as the tender requires.
+            </p>
+            <p class="mt-6">
+              <a href="/uk/estimating/" class="text-navy font-medium border-b border-gold pb-0.5 hover:opacity-80 transition-opacity">See the estimating service &rarr;</a>
+            </p>
+          </div>
+
           <div class="card p-9">
-            <p class="label text-gold mb-3">Site Documentation</p>
+            <p class="label text-gold mb-3">Measured Surveys</p>
             <h3 class="text-[1.3rem] font-medium text-navy">&ldquo;What am I actually working with?&rdquo;</h3>
             <p class="mt-4 text-midgrey leading-body">
               Measured building surveys, Matterport digital twins, conditions reports, asset schedules and above-ceiling capture &mdash; delivered in the same structure every time, through ScopeWalk. Point cloud accurate to 5&ndash;12mm, exported in .e57 and .rcp for CAD and Revit.
             </p>
             <p class="mt-6">
               <a href="/uk/measured-building-survey/" class="text-navy font-medium border-b border-gold pb-0.5 hover:opacity-80 transition-opacity">See the survey service &rarr;</a>
-            </p>
-          </div>
-
-          <div class="card border-gold bg-offwhite p-9">
-            <p class="label text-gold mb-3">Estimating Desk</p>
-            <h3 class="text-[1.3rem] font-medium text-navy">&ldquo;What is it going to cost me?&rdquo;</h3>
-            <p class="mt-4 text-midgrey leading-body">
-              Send us the drawings; we send back a priced, client-ready tender under your own name &mdash; usually inside two working days. Bills of quantities, preliminaries and provisional sums, measured to NRM2, in sterling and excluding VAT, under JCT or NEC as the tender requires.
-            </p>
-            <p class="mt-6">
-              <a href="/uk/estimating/" class="text-navy font-medium border-b border-gold pb-0.5 hover:opacity-80 transition-opacity">See the estimating service &rarr;</a>
             </p>
           </div>
         </div>
@@ -254,6 +258,8 @@ const ukServices = [
     </section>
 
     <GalleryBand heading="A sample of the buildings we&amp;rsquo;ve been inside." lead="Twenty-five commercial sites documented as navigable digital twins. The UK operation works to the same standard, the same deliverable structure and the same naming rule - by centre or street, never by occupier." />
+
+    <UkEntity />
 
     <!-- CTA -->
     <section class="bg-white section-padding">

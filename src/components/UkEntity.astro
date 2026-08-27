@@ -1,0 +1,71 @@
+---
+/**
+ * UK entity details - address, phone, company and VAT numbers.
+ *
+ * Renders nothing at all until src/data/uk-entity.json holds real values, so
+ * there is never placeholder text on the live site. The moment those fields
+ * are filled in, this switches on the visible contact block and the layout
+ * emits a matching ProfessionalService node with areaServed GB.
+ *
+ * Why it matters: eight /uk/ pages currently assert UK coverage with no phone
+ * number, no address and no company detail anywhere on the site. That is an
+ * assertion with nothing behind it, and it is the most likely reason the UK
+ * pages sit on page five for terms they should compete for.
+ */
+import uk from "../data/uk-entity.json";
+
+interface Props {
+  tone?: "light" | "dark";
+}
+const { tone = "light" } = Astro.props;
+
+export const hasUkEntity =
+  Boolean(uk.phone) || Boolean(uk.street) || Boolean(uk.companyNumber);
+
+const dark = tone === "dark";
+const addressLines = [uk.street, uk.locality, uk.region, uk.postalCode].filter(Boolean);
+---
+{hasUkEntity && (
+  <section class={`section-padding-tight ${dark ? "bg-navy" : "bg-offwhite"}`}>
+    <div class="max-w-[1100px] mx-auto px-6">
+      <p class="label text-gold mb-4">Alturascope in the UK</p>
+      <div class="grid md:grid-cols-3 gap-10">
+        {addressLines.length > 0 && (
+          <div>
+            <h3 class={`text-[0.95rem] font-medium ${dark ? "text-offwhite" : "text-navy"}`}>Office</h3>
+            <address class={`mt-3 not-italic leading-body text-[0.95rem] ${dark ? "text-offwhite/70" : "text-midgrey"}`}>
+              {uk.legalName && <span class="block">{uk.legalName}</span>}
+              {addressLines.map((l) => <span class="block">{l}</span>)}
+              <span class="block">United Kingdom</span>
+            </address>
+          </div>
+        )}
+        {(uk.phone || uk.email) && (
+          <div>
+            <h3 class={`text-[0.95rem] font-medium ${dark ? "text-offwhite" : "text-navy"}`}>Contact</h3>
+            <div class={`mt-3 leading-body text-[0.95rem] ${dark ? "text-offwhite/70" : "text-midgrey"}`}>
+              {uk.phone && (
+                <a href={`tel:${uk.phone.replace(/[^+0-9]/g, "")}`} class={`block ${dark ? "text-offwhite" : "text-navy"} font-medium hover:opacity-80 transition-opacity`}>
+                  {uk.phone}
+                </a>
+              )}
+              {uk.email && (
+                <a href={`mailto:${uk.email}`} class="block mt-1 hover:opacity-80 transition-opacity">{uk.email}</a>
+              )}
+              <span class="block mt-2">Monday to Friday, 08:00&ndash;18:00</span>
+            </div>
+          </div>
+        )}
+        {(uk.companyNumber || uk.vatNumber) && (
+          <div>
+            <h3 class={`text-[0.95rem] font-medium ${dark ? "text-offwhite" : "text-navy"}`}>Registration</h3>
+            <div class={`mt-3 leading-body text-[0.95rem] ${dark ? "text-offwhite/70" : "text-midgrey"}`}>
+              {uk.companyNumber && <span class="block">Company no. {uk.companyNumber}</span>}
+              {uk.vatNumber && <span class="block">VAT no. {uk.vatNumber}</span>}
+            </div>
+          </div>
+        )}
+      </div>
+    </div>
+  </section>
+)}

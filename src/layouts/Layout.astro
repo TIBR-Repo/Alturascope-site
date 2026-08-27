@@ -1,5 +1,6 @@
 ---
 import "../styles/global.css";
+import ukEntity from "../data/uk-entity.json";
 
 interface Props {
   title: string;
@@ -125,6 +126,38 @@ const navLinks = [
   { href: "/about/", label: "About" },
 ];
 
+// A UK-specific ProfessionalService node, emitted only on /uk/ pages and only
+// once real entity details exist. Eight UK pages currently assert UK coverage
+// with no address, phone or company number anywhere on the site - an assertion
+// with nothing behind it.
+const ukAddress = [ukEntity.street, ukEntity.locality, ukEntity.region, ukEntity.postalCode].filter(Boolean);
+const hasUkEntity = Boolean(ukEntity.phone || ukEntity.street || ukEntity.companyNumber);
+const ukEntitySchema = isUK && hasUkEntity ? JSON.stringify({
+  "@context": "https://schema.org",
+  "@type": "ProfessionalService",
+  "@id": "https://alturascope.com/uk/#ukbusiness",
+  "name": ukEntity.legalName || "Alturascope UK",
+  "parentOrganization": { "@id": "https://alturascope.com/#organization" },
+  "url": "https://alturascope.com/uk/",
+  "areaServed": { "@type": "Country", "name": "United Kingdom" },
+  "serviceType": ["Construction estimating", "Tender pricing", "Measured building survey", "Existing conditions survey"],
+  ...(ukEntity.phone ? { telephone: ukEntity.phone } : {}),
+  ...(ukEntity.email ? { email: ukEntity.email } : {}),
+  ...(ukEntity.vatNumber ? { vatID: ukEntity.vatNumber } : {}),
+  ...(ukEntity.companyNumber ? { identifier: ukEntity.companyNumber } : {}),
+  ...(ukEntity.openingHours ? { openingHours: ukEntity.openingHours } : {}),
+  ...(ukAddress.length ? {
+    address: {
+      "@type": "PostalAddress",
+      ...(ukEntity.street ? { streetAddress: ukEntity.street } : {}),
+      ...(ukEntity.locality ? { addressLocality: ukEntity.locality } : {}),
+      ...(ukEntity.region ? { addressRegion: ukEntity.region } : {}),
+      ...(ukEntity.postalCode ? { postalCode: ukEntity.postalCode } : {}),
+      addressCountry: "GB",
+    },
+  } : {}),
+}) : null;
+
 // The locale switcher prefers the current page's own translated counterpart
 // (supplied via the hreflang prop) and falls back to the market home page.
 const rel = (href?: string) => href?.replace("https://alturascope.com", "") || undefined;
@@ -181,6 +214,7 @@ const switchTitle = isUK
     {breadcrumbSchema && <script type="application/ld+json" set:html={breadcrumbSchema} />}
     {faqSchema && <script type="application/ld+json" set:html={faqSchema} />}
     {extraSchema && <script type="application/ld+json" set:html={extraSchema} />}
+    {ukEntitySchema && <script type="application/ld+json" set:html={ukEntitySchema} />}
   </head>
   <body>
     {!minimalChrome && (

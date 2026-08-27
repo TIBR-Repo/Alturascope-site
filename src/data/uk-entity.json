@@ -1,0 +1,13 @@
+{
+  "_comment": "UK entity details. Every field is null until Andrew supplies the real values - nothing renders while a field is null, so no placeholder text can reach the live site. Filling these in switches on: the UK contact block on /uk/, the UK address and phone in the footer on /uk/ pages, and the ProfessionalService schema node with areaServed GB. That schema node is the single biggest UK ranking lever, because right now the site asserts UK coverage with no entity signal behind it at all.",
+  "legalName": null,
+  "phone": null,
+  "email": null,
+  "street": null,
+  "locality": null,
+  "region": null,
+  "postalCode": null,
+  "companyNumber": null,
+  "vatNumber": null,
+  "openingHours": "Mo-Fr 08:00-18:00"
+}
