@@ -153,7 +153,8 @@ const ukEntitySchema = isUK && hasUkEntity ? JSON.stringify({
     "Existing conditions survey",
     "Historic building recording",
   ],
-  ...(ukEntity.phone ? { telephone: ukEntity.phone } : {}),
+  // E.164 in schema so the number resolves from anywhere, not just the UK.
+  ...(ukEntity.phone ? { telephone: ukEntity.phoneE164 || ukEntity.phone } : {}),
   ...(ukEntity.email ? { email: ukEntity.email } : {}),
   ...(ukNamed && ukEntity.vatNumber ? { vatID: ukEntity.vatNumber } : {}),
   ...(ukNamed && ukEntity.companyNumber
@@ -367,7 +368,7 @@ const switchTitle = isUK
                 <span class="block">{[ukEntity.postTown, ukEntity.postalCode].filter(Boolean).join(", ")}</span>
                 <span class="block">United Kingdom</span>
                 {ukEntity.phone && (
-                  <a href={`tel:${ukEntity.phone.replace(/[^+0-9]/g, "")}`} class="block mt-1 text-white/70 hover:text-white transition-colors">{ukEntity.phone}</a>
+                  <a href={`tel:${ukEntity.phoneE164 || ukEntity.phone.replace(/[^+0-9]/g, "")}`} class="block mt-1 text-white/70 hover:text-white transition-colors">{ukEntity.phone}</a>
                 )}
                 {ukNamed && ukEntity.companyNumber && (
                   <span class="block mt-2 text-white/45 text-[0.8rem]">
