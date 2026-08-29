@@ -54,6 +54,16 @@ WATCHED = [
     "/insights/nrm2-bill-of-quantities-explained/",
     "/insights/how-to-check-a-construction-estimate/",
     "/insights/estimating-capacity-limits-contractor-growth/",
+    # UK estimating case studies, published 2026-08-27
+    "/uk/estimating/case-studies/cat-b-fit-out-central-london/",
+    "/uk/estimating/case-studies/science-block-new-build/",
+    # Sector pages built 2026-08-27 around the private-equity rollup buyer
+    "/services/veterinary-clinic-survey/",
+    "/services/dental-practice-survey/",
+    "/services/medical-aesthetics-clinic-survey/",
+    "/services/behavioral-health-clinic-survey/",
+    "/services/fitness-studio-survey/",
+    "/services/cannabis-facility-documentation/",
 ]
 
 # Terms the overhaul was aimed at. `queries` groups against these.
