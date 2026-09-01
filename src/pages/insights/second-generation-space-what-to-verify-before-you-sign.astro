@@ -1,0 +1,135 @@
+---
+import InsightArticle from "../../components/InsightArticle.astro";
+
+const blocks = [
+  {
+    p: [
+      "Second-generation space is the most attractive real estate in the market and the easiest to misprice. The pitch is obvious: someone else already paid for the grease interceptor, the hood, the three-phase service and the drainage, so your fit-out starts halfway up the hill.",
+      "Sometimes that is true. Often what you have inherited is a building that was fitted out for a different operator, altered without permits, closed for eleven months, and stripped of the equipment that made it worth having. The lease is signed on the first story and the capital plan meets the second.",
+      "The gap between the two is almost always closed in the same place: what was actually verified before signature. Below is what that verification consists of, in the order the money tends to sit.",
+    ],
+  },
+  {
+    h2: "Dark time is a risk multiplier, not a discount",
+    p: [
+      "The single most useful question about a second-generation space is how long it has been empty, and the answer should change how much diligence you do rather than how much you offer.",
+      "A space dark for three months is broadly the space the last operator left. A space dark for two years has had its utilities disconnected and possibly abandoned, its permits expired, its grandfathered code position quietly lapsed, its roof unmaintained through two winters, and its remaining equipment sitting unrun - which is worse for a compressor than running it.",
+    ],
+    points: [
+      ["Permits and approvals", "an expired permit is not a paperwork problem, it is a re-approval under the current code."],
+      ["Grandfathered conditions", "many jurisdictions treat a prolonged vacancy or a change of use as the end of a legal non-conforming status. Restrooms, egress, sprinkler coverage and accessibility are the usual casualties."],
+      ["Utilities", "a disconnected service is not the same as an available service. Reconnection can require upgrade to current standards, and the timeline is the landlord's contractor's, not yours."],
+      ["Mechanical plant", "unrun rooftop units, unused grease lines and dry traps degrade. Age on the data plate is the start of the assessment, not the end of it."],
+    ],
+    note: "<span class=\"text-navy font-medium\">Ask for the closure date in writing</span> and treat anything over twelve months as a different category of deal, with the diligence budget to match.",
+  },
+  {
+    h2: "The eight things that carry the money",
+    subs: [
+      {
+        h3: "1. Sanitary and grease",
+        body: "Whether an interceptor exists, whether it is sized for your menu and covers rather than your predecessor's, whether it was ever formally adopted by the authority, and where the sanitary line actually runs and at what fall. Upsizing a sewer connection or re-cutting a slab for drainage is one of the largest single line items in a restaurant conversion and it is invisible from a walk-through.",
+      },
+      {
+        h3: "2. HVAC tonnage and make-up air",
+        body: "Existing tonnage against your layout, not against the building's square footage. A dining-heavy plan and a kitchen-heavy plan on the same footprint want different systems. Make-up air is the one people miss: a bigger hood needs bigger make-up, and the unit that served the previous concept may not have the capacity or the roof structure to be replaced with one that does.",
+      },
+      {
+        h3: "3. Electrical service capacity",
+        body: "The service size at the main, the spare capacity in the panel, and whether the panel is a make you can still get breakers for. Available amperage is the constraint that decides whether an all-electric kitchen or a bank of treatment devices is possible at all, and it is a landlord conversation, not a design one.",
+      },
+      {
+        h3: "4. Gas service and metering",
+        body: "Line size, meter capacity and the point of connection. A menu change from the previous operator can push demand past what the incoming service will carry, and utility-side upgrades run on utility timescales.",
+      },
+      {
+        h3: "5. Structure above the ceiling",
+        body: "Clear height under services rather than to deck, the actual ceiling void, and whether the roof structure will take new rooftop plant without reinforcement. See <a href=\"/insights/above-ceiling-mep-survey-fit-out/\" class=\"text-navy font-medium hover:opacity-80 transition-opacity\">what an above-ceiling survey looks for</a>.",
+      },
+      {
+        h3: "6. The slab",
+        body: "Thickness, whether it is on grade or suspended, what is already cut into it, and whether previous cuts were reinstated properly. On former dry-cleaning, automotive and photo-processing tenancies, ask about contamination before you plan any trenching at all.",
+      },
+      {
+        h3: "7. Roof age, warranty and who owns it",
+        body: "The remaining warranty, who voids it, and who pays when new curbs are cut. This is a lease negotiation item that is nearly always cheaper before signature than after.",
+      },
+      {
+        h3: "8. Accessibility and egress under the new use",
+        body: "A change of use or an alteration over a threshold value triggers upgrade obligations in most jurisdictions. Restroom count and configuration, door hardware, counter heights, path of travel and exit width should be assessed against your plan, not the previous occupancy.",
+      },
+    ],
+  },
+  {
+    h2: "Equipment: get a schedule, and test it",
+    p: [
+      "&ldquo;Equipment included&rdquo; in a listing means the equipment was there when the photographs were taken. Before signature you want a written schedule - make, model, serial, age, condition - with confirmation that each item is free of liens and is actually included in the demise.",
+      "Then test what you intend to reuse. A walk-in that holds temperature, a hood that pulls, a unit that starts. Reuse assumptions are the largest and least examined items in most second-generation budgets: an operator who assumes reuse of a $40,000 refrigeration package and discovers otherwise in month two has lost the entire benefit of taking the space.",
+      "Our judgement on reuse is deliberately conservative and always stated with its reasoning, because the alternative - an optimistic reuse recommendation - transfers risk to whoever signed the lease.",
+    ],
+  },
+  {
+    h2: "Who pays for what, in writing",
+    p: [
+      "Nearly every dispute in the first year of a second-generation tenancy is about an item that both parties assumed the other owned. The instruments that prevent it are unglamorous and cheap.",
+    ],
+    points: [
+      ["A schedule of condition", "a dated, photographic record of the space as handed over, agreed by both parties and attached to the lease. It settles dilapidations arguments years later, and it costs a fraction of one."],
+      ["A written responsibility split", "for the roof, the rooftop plant, the interceptor, the service upgrades and the slab. &ldquo;Landlord maintains base building&rdquo; is not a split, it is the start of an argument."],
+      ["The TI allowance against a real scope", "an allowance negotiated before the existing conditions are known is a number chosen for its roundness."],
+      ["Delivery condition, defined by what is there", "vague delivery language and a specific building rarely agree."],
+    ],
+  },
+  {
+    h2: "How this fits a rollout",
+    p: [
+      "For a single site, this is a diligence exercise. For an operator taking ten or forty sites a year, it is a filter, and the value changes shape: the point is not to assess one building well but to apply the <em>same</em> assessment to every candidate so that sites can be compared, sequenced and priced against each other.",
+      "That is the difference between a survey and a survey programme - one brief, one format, one schedule structure, so that the site with the undersized service and the site with the twelve-year-old roof are visible next to each other before the committee meets rather than after. Our approach to running that across a portfolio is set out in <a href=\"/insights/standardising-site-surveys-multi-site-operators/\" class=\"text-navy font-medium hover:opacity-80 transition-opacity\">standardising site surveys across multi-site operators</a>.",
+      "The economics are unsentimental. A pre-lease survey costs a small fraction of a fit-out and a very small fraction of a bad lease. Its job is not to find problems - it is to let you sign knowing which ones you are buying.",
+    ],
+  },
+];
+
+const faqs = [
+  {
+    q: "What is second-generation space?",
+    a: "Commercial space that has already been fitted out for a previous tenant and retains some of that infrastructure - typically drainage, ventilation, electrical service, and sometimes equipment. It is attractive because it can reduce fit-out cost and time, and risky because the previous fit-out was designed for a different operator and may have been altered without permits."
+  },
+  {
+    q: "What should be verified before signing a second-generation lease?",
+    a: "Sanitary and grease provision including whether an interceptor was formally adopted, HVAC tonnage and make-up air against your layout, electrical service and spare panel capacity, gas line and meter size, clear height and ceiling void, slab construction and previous cuts, roof age and warranty responsibility, and accessibility and egress obligations under the new use. Plus a written, tested equipment schedule."
+  },
+  {
+    q: "Why does it matter how long a space has been vacant?",
+    a: "Vacancy compounds risk. Permits expire, legal non-conforming status can lapse, utilities are disconnected in ways that trigger upgrade requirements on reconnection, roofs go unmaintained, and mechanical plant degrades faster unrun than run. A space dark for two years should be treated as a materially different proposition from one dark for three months, with more diligence rather than a lower offer."
+  },
+  {
+    q: "Is a schedule of condition worth doing on a fit-out lease?",
+    a: "Yes, and it is one of the cheapest protections available. A dated photographic record of the space as handed over, agreed by both parties and attached to the lease, resolves dilapidations and responsibility disputes that otherwise turn on recollection several years later. It costs a very small fraction of the argument it prevents."
+  },
+  {
+    q: "How long does a pre-lease survey take?",
+    a: "For a typical 1,000 to 10,000 square foot space, capture on site takes a few hours and does not require the space to be cleared or powered down. A written conditions report with equipment and capacity schedules, reuse assessment and a navigable record of the space usually follows within a few working days - well inside a normal lease negotiation."
+  },
+];
+---
+<InsightArticle
+  title="Second-Generation Space: What to Verify Before You Sign"
+  description="Someone else paid for the interceptor, the hood and the service - or did they? The eight things that carry the money in a second-generation lease."
+  slug="second-generation-space-what-to-verify-before-you-sign"
+  h1="Second-Generation Space: What to Verify Before You Sign"
+  datePublished="2026-09-01"
+  heroImage="/Images/site-interior-2.webp"
+  heroAlt="The interior of a vacant second-generation commercial unit before fit-out"
+  eyebrow="Insights &middot; Pre-Lease Due Diligence"
+  blocks={blocks}
+  faqs={faqs}
+  estimatingLead="Once the conditions are known, the same record prices the fit-out - so the budget you take to committee is built on the building rather than on a rate per square foot."
+  internalLinks={[
+    { text: "Pre-lease due diligence surveys", href: "/services/pre-construction-site-intelligence/" },
+    { text: "Restaurant & QSR conditions surveys", href: "/services/qsr-restaurant-survey/" },
+    { text: "Commercial kitchen surveys", href: "/services/commercial-kitchen-survey/" },
+    { text: "Above-ceiling MEP surveys", href: "/insights/above-ceiling-mep-survey-fit-out/" },
+    { text: "What an Alturascope survey delivers", href: "/work/" },
+  ]}
+/>

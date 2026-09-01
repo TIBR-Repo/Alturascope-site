@@ -1,0 +1,122 @@
+---
+import InsightArticle from "../../components/InsightArticle.astro";
+
+const blocks = [
+  {
+    p: [
+      "Most veterinary construction happening right now is not new build. It is conversion: a retail bay, an office suite or a tired clinic reworked into a space that has to handle imaging, surgery, isolation and overnight patients.",
+      "That work sits much closer to healthcare construction than to a standard commercial fit-out, and it is priced as a standard commercial fit-out far too often. The result is a familiar pattern - a budget built on a general commercial rate per square foot, and a project that meets its real requirements somewhere around framing.",
+      "The specific risks are well known to people who have done them and invisible to people who have not. Here they are, in the order they tend to surface.",
+    ],
+  },
+  {
+    h2: "Imaging shielding, and why it has to be settled first",
+    p: [
+      "Radiography and CT rooms need shielding designed from a physicist's report - typically lead-lined wall and ceiling assemblies, lead-lined doors and frames, and a shielded control position. None of it is expensive relative to the project. All of it is expensive if it arrives late.",
+      "The failure mode is precise: the shielding has to be installed before the wall is closed. A contractor who has not done imaging work does not know to flag it during framing, and by the time it surfaces the correction means opening completed assemblies, re-inspecting, and losing programme.",
+    ],
+    points: [
+      ["Room position", "shielding requirements depend on what is on the other side of every wall, floor and ceiling - including the tenancy above and the pavement outside. Moving the imaging room after the physicist's report means a new report."],
+      ["Structural allowance", "lead-lined assemblies and the equipment itself add load. On a suspended slab or a light-gauge partition system this is a design input, not a detail."],
+      ["Door swings and control sightlines", "the control alcove has to see the patient. It is a layout constraint that arrives late if imaging is treated as a room name rather than a system."],
+      ["Existing conditions above", "what is already in the ceiling void over the proposed imaging room decides whether the shielded ceiling can be built at the height the equipment needs."],
+    ],
+    note: "<span class=\"text-navy font-medium\">Establish the imaging room location against verified existing conditions before layout is fixed.</span> It is the single constraint most likely to invalidate a floor plan that has already been approved.",
+  },
+  {
+    h2: "Kennel and ward drainage",
+    p: [
+      "Kennel runs, wards and bathing areas need drainage that a retail bay does not have: floor gullies, fall to them, and waterproofing that survives daily washdown with disinfectant.",
+      "In a conversion this is a slab question, and the slab answers it. Whether the floor is on grade or suspended, how thick it is, where existing drainage runs and at what invert, and whether previous cuts were properly reinstated all decide whether the drainage layout the designer drew can actually be built where it was drawn.",
+      "The specific trap is fall. Adding gullies is straightforward; achieving fall to them across a run of kennels within an existing floor-to-ceiling height, without stepping into adjacent rooms or losing headroom under services, is the part that quietly changes the layout. It should be resolved from measured existing conditions, not assumed.",
+    ],
+  },
+  {
+    h2: "Ventilation, isolation and pressure relationships",
+    p: [
+      "A veterinary facility needs several ventilation regimes in one envelope: general practice areas, an isolation ward that must be held at negative pressure relative to its surroundings, surgery, and kennel areas with high air change rates and odour control. Anaesthetic gas scavenging sits alongside them.",
+      "A single existing rooftop unit sized for retail will not deliver that, and the question is not only tonnage but zoning - whether the existing distribution can be reworked into separate zones with the pressure relationships intact, or whether the plant has to be replaced. That in turn asks whether the roof structure will take new curbs and units, and whether the electrical service has the capacity to run them.",
+      "The chain runs: ventilation strategy &rarr; plant &rarr; roof structure &rarr; electrical capacity. Each link is an existing-building fact, and a wrong assumption at any point invalidates the ones after it.",
+    ],
+  },
+  {
+    h2: "Noise, in both directions",
+    p: [
+      "Barking is a planning and neighbour issue as much as a welfare one. Kennel and ward areas need acoustic separation from consult rooms, from the waiting area, and frequently from the tenancy next door - which in a retail conversion may be a demising wall that stops at the ceiling grid rather than at the deck.",
+      "Checking whether demising walls run full height to structure is a five-minute observation on a survey and a very expensive discovery after handover. The same applies to the return air path: a shared plenum will carry sound between rooms regardless of what the partitions do.",
+    ],
+  },
+  {
+    h2: "Services the previous use never needed",
+    subs: [
+      {
+        h3: "Plumbing volume and hot water",
+        body: "Treatment, prep, bathing and kennel washdown place a demand on hot water and drainage that an office or retail tenancy never did. Incoming main size, water heater capacity and location, and waste routing all need checking against the clinical layout rather than the floor area.",
+      },
+      {
+        h3: "Medical gas and vacuum",
+        body: "Where oxygen, scavenging and suction runs will go, what they cross, and whether the ceiling void has room for them alongside what is already there.",
+      },
+      {
+        h3: "Dedicated circuits and panel capacity",
+        body: "Imaging, autoclaves, dental units and monitoring want dedicated circuits. What matters is spare capacity in the existing panel and whether breakers for that panel are still obtainable, not the headline service size.",
+      },
+      {
+        h3: "Floor finishes and substrate",
+        body: "Seamless, chemical-resistant, coved flooring needs a substrate that will accept it. Existing adhesive residue, unlevel screeds and previous patching are all reasons a specified system fails at installation.",
+      },
+    ],
+  },
+  {
+    h2: "For groups acquiring practices",
+    p: [
+      "A single conversion is a project. A veterinary group buying practices is running a different problem: inheriting buildings nobody in the current organisation has surveyed, with capital needs that were priced on the vendor's account rather than on the fabric.",
+      "The useful instrument there is not a deeper survey of one site but the same survey of every site - one brief, one format, one schedule structure, so that the practice with the failing rooftop unit and the practice with the unshielded imaging room appear next to each other in the same table. That is what turns an inherited estate into a capital programme instead of a series of surprises. The mechanics are the same ones described in <a href=\"/insights/due-diligence-documentation-portfolio-acquisitions/\" class=\"text-navy font-medium hover:opacity-80 transition-opacity\">due diligence documentation for portfolio acquisitions</a>.",
+      "One boundary worth stating plainly: this is a record of existing conditions, not a certification. We document what is there, what capacity exists and what is likely to be reusable, with the evidence attached. The physicist's shielding report, the code determination and the design remain with the people qualified to issue them.",
+    ],
+  },
+];
+
+const faqs = [
+  {
+    q: "Can a retail unit be converted into a veterinary clinic?",
+    a: "Frequently yes, and most current veterinary construction is exactly that. The conversion succeeds or fails on a small number of existing-building facts: slab construction and drainage, roof structure and ventilation capacity, electrical service and spare panel capacity, ceiling void depth, and whether demising walls run full height. Establish those before the layout is fixed rather than after."
+  },
+  {
+    q: "What is the most common expensive surprise in a veterinary fit-out?",
+    a: "Imaging shielding discovered after framing. Lead-lined wall and ceiling assemblies have to be installed before the wall is closed, and a contractor without healthcare imaging experience often does not flag it during framing. The second most common is kennel drainage - achieving fall to new gullies within an existing slab and floor-to-ceiling height, which quietly changes layouts."
+  },
+  {
+    q: "Does an isolation ward need its own ventilation?",
+    a: "It needs to be held at negative pressure relative to surrounding spaces, which in practice means it cannot simply share a zone with general practice areas. Whether that is achievable depends on whether existing distribution can be reworked into separate zones or whether the plant has to be replaced - which then raises roof structure and electrical capacity questions."
+  },
+  {
+    q: "What should a survey capture before a veterinary conversion is designed?",
+    a: "Slab construction, thickness and existing drainage inverts; roof structure and its capacity for new plant; existing HVAC plant with nameplate data and zoning; electrical service size and spare panel capacity; clear height under services rather than to deck; whether demising walls run to structure; incoming water and gas sizing; and a full photographic and measured record of what is above the ceiling."
+  },
+  {
+    q: "Do you certify shielding or code compliance?",
+    a: "No. We produce a record of existing conditions with the evidence attached - measurements, photographs, nameplate data, capacity figures and a reuse assessment. Shielding design comes from a medical physicist, and code determinations and design come from the licensed professionals responsible for them. The record is what those people work from."
+  },
+];
+---
+<InsightArticle
+  title="Veterinary Clinic Conversions: What Goes Wrong"
+  description="Most veterinary construction is conversion priced as commercial fit-out. Imaging shielding, kennel drainage and isolation ventilation - and when each one hits."
+  slug="veterinary-clinic-conversion-existing-building-risks"
+  h1="Converting an Existing Building into a Veterinary Clinic: What Goes Wrong"
+  datePublished="2026-09-01"
+  heroImage="/Images/site-interior-1.webp"
+  heroAlt="An existing commercial interior before conversion to a clinical use"
+  eyebrow="Insights &middot; Veterinary"
+  blocks={blocks}
+  faqs={faqs}
+  estimatingLead="When the conditions are documented, the conversion can be priced from the building rather than from a rate per square foot - which is where veterinary budgets usually go wrong."
+  internalLinks={[
+    { text: "Veterinary clinic conditions surveys", href: "/services/veterinary-clinic-survey/" },
+    { text: "Dental practice conditions surveys", href: "/services/dental-practice-survey/" },
+    { text: "Healthcare multi-site surveys", href: "/insights/healthcare-multi-site-facility-survey-documentation/" },
+    { text: "Above-ceiling MEP surveys", href: "/insights/above-ceiling-mep-survey-fit-out/" },
+    { text: "Pre-lease due diligence surveys", href: "/services/pre-construction-site-intelligence/" },
+  ]}
+/>

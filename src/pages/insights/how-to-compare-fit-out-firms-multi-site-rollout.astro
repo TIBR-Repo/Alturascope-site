@@ -1,0 +1,139 @@
+---
+import InsightArticle from "../../components/InsightArticle.astro";
+
+const blocks = [
+  {
+    p: [
+      "A first point of clarity, because it decides how to read the rest of this: we are not a fit-out firm and we do not want the work. We survey the sites that rollout programmes are built on, and we price tenders. That means we see a lot of these selections from the side, and we see which ones go badly.",
+      "The pattern is consistent. Programmes are awarded on a price comparison between firms who were bidding on different information, and the difference between the winning number and the final account is roughly the size of what nobody had established about the buildings.",
+      "So this is two things: what actually distinguishes one fit-out firm from another on a multi-site programme, and how to run the comparison so that the price you compare means something.",
+    ],
+  },
+  {
+    h2: "The comparison trap",
+    p: [
+      "On a single project, comparing contractors is reasonably honest work. On a rollout it is not, for a structural reason: nobody has seen most of the sites.",
+      "The tender goes out with a prototype design, a schedule of locations, and whatever the landlords supplied. Each bidder then makes their own assumptions about forty buildings they have not surveyed - the state of the services, the roof, the slab, what the last tenant left. One prices the risk in. One excludes it. One absorbs it and intends to recover it in variations.",
+      "The three numbers that come back are not three prices for the same work. They are three different risk positions, and the cheapest is frequently the one that has decided to argue about it later.",
+    ],
+    note: "<span class=\"text-navy font-medium\">The fix is upstream of the tender.</span> Document the sites first, issue the documentation with the enquiry, and the bids converge - because everybody is pricing the same buildings instead of their own guesses.",
+  },
+  {
+    h2: "What actually differs between firms",
+    p: [
+      "Once the information is level, real differences remain and they are worth weighting deliberately.",
+    ],
+    subs: [
+      {
+        h3: "Self-perform or subcontract, and where",
+        body: "A firm that self-performs its core trades in its home market and brokers everything beyond it behaves like two different companies depending on which site you are on. Ask specifically which trades are self-performed and in which states or regions, and what changes outside that footprint.",
+      },
+      {
+        h3: "Coverage without a rotating cast",
+        body: "The question is not whether they can reach every location. It is who is accountable at site thirty. A programme run by one project manager with regional supervisors is a different product from one where each region is effectively a separate company with its own standards.",
+      },
+      {
+        h3: "How they price the unknown",
+        body: "Ask directly how a second-generation surprise is handled: does it come as a variation, sit within a stated allowance, or fall inside their risk? The answer tells you more about your final account than the tender total does.",
+      },
+      {
+        h3: "Programme, and dark time specifically",
+        body: "For a trading location, days closed are the real cost and they dwarf the construction differential. A firm with a credible sequencing plan and a record of hitting reopening dates is worth a premium that is easy to calculate and rarely calculated.",
+      },
+      {
+        h3: "Permitting capability by jurisdiction",
+        body: "Multi-site programmes live and die on permits. Who applies, how many jurisdictions they have worked in, and what their expediting arrangements are in the ones they have not.",
+      },
+      {
+        h3: "Reporting you can actually use",
+        body: "Ask to see a real weekly report from a live programme, redacted. If reporting differs site to site, or arrives as photographs in an email, portfolio-level control does not exist and you will be building it yourself."
+      },
+      {
+        h3: "Snagging and warranty across a portfolio",
+        body: "How defects are tracked once the programme has moved on, who returns, and how long the warranty position survives. This is where multi-site delivery most often quietly fails.",
+      },
+      {
+        h3: "Financial capacity for the peak",
+        body: "Not for the programme value, but for the busiest quarter of it. Bonding, insurance, and how much work-in-progress they are carrying elsewhere."
+      },
+    ],
+  },
+  {
+    h2: "References: ask for programme ten, not programme one",
+    p: [
+      "Every firm will offer a reference from a programme that went well. The useful request is different: the most recent multi-site programme they completed, whether or not it went well, and the client contact for it.",
+      "Then ask that client four questions. What was the final account against the award? How many reopening dates moved? Who was the point of contact at the end, and was it the same person as at the start? Would you use them for the next forty?",
+      "The gap between a firm's showcase reference and their most recent one is often the whole story.",
+    ],
+  },
+  {
+    h2: "Score it, and let price be one column of several",
+    p: [
+      "A defensible comparison for a rollout usually weights something like: levelled price, programme credibility including dark time, coverage and accountability model, permitting capability, reporting and portfolio control, and the reference position. Price matters and should not be a majority of the score, because on a rollout the differential between firms is small next to the cost of a programme that slips.",
+      "Whatever the weighting, decide it before the bids arrive. A scoring model built after the numbers are known is a justification, not a decision.",
+    ],
+  },
+  {
+    h2: "How to make the bids comparable in the first place",
+    p: [
+      "Three things do most of the work, and all of them happen before the enquiry goes out.",
+    ],
+    points: [
+      ["Survey the sites, or a real sample of them", "existing conditions, capacity, and what is reusable, in one consistent format across every location. On a large programme a properly structured sample - the oldest, the newest, the smallest, the most awkward - calibrates the assumptions for the rest."],
+      ["Issue that documentation with the enquiry", "so that bidders price the buildings rather than their risk appetite. This is the single change that most reduces bid spread."],
+      ["Level the returns properly", "against your scope, element by element, with every gap added back at your own rate. The method is set out in <a href=\"/insights/how-to-level-subcontractor-bids/\" class=\"text-navy font-medium hover:opacity-80 transition-opacity\">how to level subcontractor bids</a>, and it applies just as directly to main contractors."],
+    ],
+  },
+  {
+    h2: "The uncomfortable arithmetic",
+    p: [
+      "Surveying a portfolio before tender costs a fraction of one percent of a rollout programme. The spread between the bids it removes is routinely several percent, and the variations it prevents are more than that again.",
+      "It is an unpopular line item because it appears before the money is committed, in a budget that has not been approved yet, to answer questions nobody has been asked yet. It is also the only point in the process where information is still cheap.",
+      "If you take nothing else: do not compare fit-out firms until they are comparing the same buildings.",
+    ],
+  },
+];
+
+const faqs = [
+  {
+    q: "How do you compare fit-out contractors for a multi-site rollout?",
+    a: "Level the information before you compare the price. On a rollout most bidders have not seen most of the sites, so their numbers differ mainly in how much unknown risk each has priced, excluded or absorbed. Document the locations, issue that with the enquiry, then score on levelled price, programme and dark-time credibility, accountability model across regions, permitting capability, portfolio reporting and a recent reference - with the weighting fixed before bids arrive."
+  },
+  {
+    q: "Should a rollout go to one national firm or several regional ones?",
+    a: "It depends on whether the firm's capability is genuinely national or brokered outside its home market. A single firm gives one point of accountability and consistent reporting; several regional firms give local knowledge and permitting familiarity but require you to supply the portfolio-level control yourself. Ask which trades are self-performed and where, because a national firm that subcontracts everything outside two states is effectively several regional firms with one invoice."
+  },
+  {
+    q: "Why do fit-out bids vary so much on a rollout?",
+    a: "Largely because the bidders are guessing about the same unknown buildings and guessing differently. Where existing conditions are undocumented, one bidder prices the risk, one excludes it, and one absorbs it intending to recover it through variations. The spread is a measure of how little anyone knows about the sites rather than a measure of competitiveness."
+  },
+  {
+    q: "What should you ask a fit-out firm's references?",
+    a: "Ask for the most recent multi-site programme they completed rather than their best one, then ask that client: what was the final account against the award, how many reopening dates moved, was the point of contact at the end the same person as at the start, and would you use them again for another forty sites."
+  },
+  {
+    q: "Do you tender or manage fit-out works?",
+    a: "No. We survey existing conditions and produce the documentation that programmes are designed, tendered and priced from, and we price tenders through our estimating desk. We are not a fit-out contractor and do not bid on the work, which is the reason the survey findings can be conservative about reuse without anyone's margin depending on the answer."
+  },
+];
+---
+<InsightArticle
+  title="How to Compare Fit-Out Firms for a Multi-Site Rollout"
+  description="Rollout bids are three risk positions, not three prices. What really differs between fit-out firms, and how to make the numbers comparable before you compare."
+  slug="how-to-compare-fit-out-firms-multi-site-rollout"
+  h1="How to Compare Fit-Out Firms for a Multi-Site Rollout"
+  datePublished="2026-09-01"
+  heroImage="/Images/drone-shot-1.webp"
+  heroAlt="Aerial view of a commercial site during a multi-location rollout programme"
+  eyebrow="Insights &middot; Multi-Site"
+  blocks={blocks}
+  faqs={faqs}
+  estimatingLead="We also price tenders for contractors bidding this kind of work, which is how we know what the returns look like from the other side of the table."
+  internalLinks={[
+    { text: "Multi-site rollout site surveys", href: "/services/multi-site-rollout-documentation/" },
+    { text: "How to level subcontractor bids", href: "/insights/how-to-level-subcontractor-bids/" },
+    { text: "Standardising surveys across sites", href: "/insights/standardising-site-surveys-multi-site-operators/" },
+    { text: "QSR reimage survey timelines", href: "/insights/qsr-reimage-pre-construction-survey-timelines/" },
+    { text: "What an Alturascope survey delivers", href: "/work/" },
+  ]}
+/>
