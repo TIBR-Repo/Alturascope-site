@@ -14,6 +14,41 @@ const schema = JSON.stringify({
 
 const posts = [
   {
+    title: "What AI Actually Does in a Site Survey and Estimating Workflow",
+    description: "AI has collapsed the cost of writing a survey up. It has not moved the cost of knowing what to look at. What it does well, where it fails quietly, and what to ask a supplier.",
+    href: "/insights/ai-in-site-survey-and-estimating-workflows/",
+    date: "September 2026",
+    category: "AI & METHOD"
+  },
+  {
+    title: "Second-Generation Space: What to Verify Before You Sign",
+    description: "Someone else paid for the interceptor, the hood and the service - or did they? The eight things that carry the money in a second-generation lease, and why dark time matters.",
+    href: "/insights/second-generation-space-what-to-verify-before-you-sign/",
+    date: "September 2026",
+    category: "DUE DILIGENCE"
+  },
+  {
+    title: "How to Compare Fit-Out Firms for a Multi-Site Rollout",
+    description: "Rollout bids are usually three different risk positions rather than three prices. What actually differs between firms, and how to make the numbers comparable first.",
+    href: "/insights/how-to-compare-fit-out-firms-multi-site-rollout/",
+    date: "September 2026",
+    category: "MULTI-SITE"
+  },
+  {
+    title: "How to Level Subcontractor Bids Without Guessing",
+    description: "Four quotes, thirty per cent apart. The lowest number is usually the smallest scope. A method for making bids comparable, and the exclusions that hide in every package.",
+    href: "/insights/how-to-level-subcontractor-bids/",
+    date: "September 2026",
+    category: "ESTIMATING"
+  },
+  {
+    title: "Converting an Existing Building into a Veterinary Clinic: What Goes Wrong",
+    description: "Most veterinary construction is conversion work priced as standard commercial fit-out. Imaging shielding, kennel drainage and isolation ventilation - and when each one surfaces.",
+    href: "/insights/veterinary-clinic-conversion-existing-building-risks/",
+    date: "September 2026",
+    category: "VETERINARY"
+  },
+  {
     title: "What a Basis of Estimate Is, and Why You Should Insist on One",
     description: "A basis of estimate states what a price was built from and what it assumes. What belongs in one, why it protects margin rather than covering backs, and how to hold an estimate to it.",
     href: "/insights/what-is-a-basis-of-estimate/",
@@ -273,6 +308,7 @@ const TOPIC_OF = {
   "MEP & FIT-OUT": "Surveys & Method",
   "BUYER'S GUIDE": "Surveys & Method",
   "DUE DILIGENCE": "Surveys & Method",
+  "AI & METHOD": "Surveys & Method",
   "MULTI-SITE": "Multi-Site Programmes",
   "MULTI-SITE UK": "Multi-Site Programmes",
   "RETAIL ROLLOUT": "Multi-Site Programmes",
@@ -286,6 +322,7 @@ const TOPIC_OF = {
   "ABA CLINICS": "Healthcare & Clinics",
   "ABA & AUTISM THERAPY": "Healthcare & Clinics",
   "HEALTHCARE": "Healthcare & Clinics",
+  "VETERINARY": "Healthcare & Clinics",
   "DATA CENTRES": "Specialist Facilities",
   "DATA CENTRES UK": "Specialist Facilities",
   "CONTROLLED ENVIRONMENTS": "Specialist Facilities",
@@ -299,7 +336,7 @@ const categories = ["All", ...ORDER.filter((t) => counts[t])];
 ---
 <Layout
   title="Construction Insights & Industry Guides | Alturascope"
-  description="Practical guides on site documentation, reality capture, Matterport, LiDAR, and how to reduce project risk with better pre-construction information."
+  description="Practical guides on existing conditions surveys, pre-lease due diligence and construction estimating - written for the people who have to price it and build it."
   canonical="https://alturascope.com/insights/"
   schema={schema}
   fullWidth={true}

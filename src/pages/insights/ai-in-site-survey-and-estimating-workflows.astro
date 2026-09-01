@@ -1,0 +1,141 @@
+---
+import InsightArticle from "../../components/InsightArticle.astro";
+
+const blocks = [
+  {
+    p: [
+      "Every construction software vendor now has an AI page. Most of them describe the same product: upload a drawing, get a take-off. The claims are broad, the demos are clean, and the sets in the demos are never the sets you actually receive.",
+      "We use AI in the middle of a real workflow - hundreds of site photographs, an hour of narrated walkthrough, a drawing set of varying quality - and the honest summary is narrower and more useful than the marketing. <em>AI has collapsed the cost of writing things down. It has not moved the cost of knowing what to look at.</em>",
+      "This is what that means in practice, on both sides of the business: the survey, and the estimate.",
+    ],
+  },
+  {
+    h2: "What it genuinely does well",
+    p: [
+      "The wins are real, and they are all in the same category: turning something already captured into something structured. None of them involve judgement.",
+    ],
+    points: [
+      ["Reading nameplates", "a photograph of a rooftop unit's data plate becomes make, model, tonnage, refrigerant, voltage and manufacture date, in a table, without anyone squinting at a phone screen at a desk three days later. This is the single largest time saving in the whole survey process."],
+      ["Transcribing the walkthrough", "a surveyor narrating while walking produces far better observations than a surveyor typing. Transcription makes narration a viable primary record rather than a note-to-self."],
+      ["Enforcing consistency", "the same schema applied to every location in a programme. Where a human writes &ldquo;RTU-3, looks near end of life&rdquo; at one site and &ldquo;rooftop unit 3 - old&rdquo; at another, a structured extraction gives you a column you can actually sort a portfolio by."],
+      ["First-pass quantities", "measuring what is drawn on a clean, layered PDF is a task machines are good at. It is a starting quantity, not an answer."],
+      ["Auditing arithmetic and omissions", "cross-checking a priced schedule for units that changed mid-document, quantities that do not reconcile to the take-off, or a trade present in the drawings and absent from the bill. Machines do not get bored on page 40."],
+    ],
+    note: "<span class=\"text-navy font-medium\">The pattern:</span> in every one of those, a human decided what to capture and a machine did the clerical work afterwards. Reverse the order and the value disappears.",
+  },
+  {
+    h2: "What it still gets wrong",
+    p: [
+      "Published accuracy figures for AI take-off on complex commercial sets sit around 8&ndash;12% error, and rise sharply with drawing quality. That number is worth holding on to, but it is not the interesting failure. The interesting failure is categorical.",
+    ],
+    subs: [
+      {
+        h3: "It cannot see what is not there",
+        body: "AI is good at measuring what is on the page. It is very bad at noticing what should have been on the page and is not. The missing MEP sheet, the detail that is referenced twice and drawn nowhere, the riser that appears on the architectural and vanishes on the services drawing - these are the findings that save five figures, and they come from someone who has priced the trade knowing what a complete set looks like.",
+      },
+      {
+        h3: "It has no access to the hidden condition",
+        body: "The slab build-up, the actual panel capacity, whether the grease interceptor was ever adopted, whether the ceiling void is 400mm or 180mm. No model reads this from a drawing, because the drawing does not know either. This is why the survey exists.",
+      },
+      {
+        h3: "Input quality collapses it quietly",
+        body: "A scanned drawing, a hand-marked revision that never reached the digital file, a structural note overprinting a plumbing symbol - each degrades extraction, and none of them announce themselves. The output still looks confident. This is the failure mode that actually costs money: not being wrong, but being wrong in a format that reads as certain.",
+      },
+      {
+        h3: "It cannot allocate risk",
+        body: "How much contingency the unknown slab deserves, whether an ambiguous provisional sum should be queried or absorbed, whether to price the work the way it is drawn or the way it will be built. These are commercial decisions with a name attached to them. There is no version of this that a model should be making.",
+      },
+    ],
+  },
+  {
+    h2: "Where we actually put it",
+    p: [
+      "A worked example, because the general claim is worthless without one. A 4,000&nbsp;sq&nbsp;ft second-generation restaurant survey produces roughly 400 photographs, a narrated walkthrough, and a set of measurements.",
+    ],
+    points: [
+      ["The looking is entirely human", "which units to photograph, which panel schedules matter, which ceiling tile to lift, what to open, what to question. No model is involved, because this is the part that is the job."],
+      ["The transcription and extraction are machine", "narration to text, nameplates to a schedule, photographs indexed against the areas they belong to."],
+      ["The draft is assembled, not written", "the equipment schedule, the capacity figures and the observations are pulled into the report structure automatically, so the surveyor edits a draft rather than facing a blank page."],
+      ["Every finding is signed off by a person", "the report that leaves the building has been read line by line by whoever was in the building. That is not a policy position, it is the only way the reuse recommendations are worth anything."],
+    ],
+  },
+  {
+    h2: "The same rule on the estimating side",
+    p: [
+      "On a tender, the machine checks and the human decides. Automated auditing runs over the priced schedule for unit mismatches, unreconciled quantities, trades measured but not priced and rates that sit outside the plausible range for the work. It is a very good second reader.",
+      "What it does not do is set the rates, judge the programme, decide what is a defined and what is an undefined provisional sum, or write the qualifications. Those go in the <a href=\"/insights/what-is-a-basis-of-estimate/\" class=\"text-navy font-medium hover:opacity-80 transition-opacity\">basis of estimate</a>, and the basis of estimate is the document that carries the name of the person who priced it.",
+      "There is a straightforward test for whether an AI claim in this industry is serious: ask what happens when the input is bad. A tool that degrades loudly - flags the sheet it could not read, refuses to measure the detail it could not resolve - is useful. A tool that degrades silently is worse than no tool, because it produces a number nobody checked with a confidence nobody earned.",
+    ],
+  },
+  {
+    h2: "What this means if you are buying",
+    p: [
+      "Three questions worth asking any supplier who leads with AI, whether they are surveying your sites or pricing your tenders.",
+    ],
+    subs: [
+      {
+        h3: "Who looked at the building?",
+        body: "If the answer involves only a drawing set, you are buying a re-measure of a document, not an assessment of a property. That may be exactly what you want - but it is a different product, and it should be a different price.",
+      },
+      {
+        h3: "What does the output say when it is unsure?",
+        body: "Ask to see a real deliverable with its assumptions, exclusions and open items visible. A record that never says &ldquo;not verified&rdquo; has either had a very unusual site or is not telling you everything.",
+      },
+      {
+        h3: "Who signs it?",
+        body: "A named person who was on site, or in the tender. If nobody will put their name to the findings, the automation has been used to remove accountability rather than to remove clerical work.",
+      },
+    ],
+  },
+  {
+    h2: "The short version",
+    p: [
+      "AI has made it economically sensible to document a building far more thoroughly than before, because the expensive part - writing it all up in a consistent, comparable structure - stopped being expensive. That is a genuine shift, and it is why a survey that would once have taken a fortnight to report now takes days.",
+      "It has changed nothing about what has to be looked at, lifted, opened or questioned on site. If anything it has raised the value of that, because the thoroughness of the record now depends almost entirely on the thoroughness of the person who captured it.",
+    ],
+  },
+];
+
+const faqs = [
+  {
+    q: "Can AI do a construction take-off from drawings?",
+    a: "It can produce a first-pass quantity from a clean, layered drawing set, and on simple work that pass is good. Published accuracy on complex commercial sets sits around 8 to 12 per cent error, and degrades sharply with scan quality, overlapping annotation and hand-marked revisions. Treat it as a starting quantity that an estimator reviews, not as a measured quantity."
+  },
+  {
+    q: "Can AI read a site photograph and tell you what equipment is installed?",
+    a: "Reliably, if the data plate is legible in the photograph. Extracting make, model, capacity, voltage and manufacture date from nameplate images into a structured schedule is one of the strongest current applications and it removes a large amount of manual transcription. It cannot tell you whether the unit is serviceable, whether it has capacity for the new layout, or whether it was installed to code."
+  },
+  {
+    q: "Does using AI mean the survey is less thorough?",
+    a: "It should mean the opposite. The constraint on survey thoroughness has always been reporting time rather than site time, because capturing an observation is cheap and writing it up consistently is not. Removing the reporting cost makes it viable to record more, not less. The risk is a supplier who uses the same saving to shorten the site visit instead."
+  },
+  {
+    q: "What can AI not do in construction estimating?",
+    a: "It cannot judge hidden conditions, notice scope that is missing from the documents, allocate risk, decide contingency, price the way work will actually be built rather than the way it is drawn, or take responsibility for the number. Those are the parts that decide whether a tender makes money, and they belong to a named estimator."
+  },
+  {
+    q: "How should an AI-assisted deliverable be checked?",
+    a: "Look for what it says when it is uncertain. A trustworthy output flags the sheet it could not read, marks the quantity it could not resolve, and separates what was verified on site from what was taken from a document. Silent confidence across an entire deliverable is the warning sign, not the reassurance."
+  },
+];
+---
+<InsightArticle
+  title="What AI Actually Does in a Site Survey Workflow"
+  description="AI collapsed the cost of writing a survey up, not the cost of knowing what to look at. What it does well, where it fails quietly, and what to ask a supplier."
+  slug="ai-in-site-survey-and-estimating-workflows"
+  h1="What AI Actually Does in a Site Survey and Estimating Workflow"
+  datePublished="2026-09-01"
+  heroImage="/Images/plan-1.webp"
+  heroAlt="A construction drawing set on a table - the input to an AI-assisted take-off"
+  eyebrow="Insights &middot; Method"
+  blocks={blocks}
+  faqs={faqs}
+  estimatingLead="Every estimate we return is machine-audited for omissions and arithmetic, and priced and signed by a person who can tell you why each rate is what it is."
+  internalLinks={[
+    { text: "What an Alturascope survey delivers", href: "/work/" },
+    { text: "See a complete estimate pack", href: "/estimating/sample-quote-pack/" },
+    { text: "What a basis of estimate is", href: "/insights/what-is-a-basis-of-estimate/" },
+    { text: "How to check a construction estimate", href: "/insights/how-to-check-a-construction-estimate/" },
+    { text: "Above-ceiling MEP surveys", href: "/insights/above-ceiling-mep-survey-fit-out/" },
+  ]}
+/>

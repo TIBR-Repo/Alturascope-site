@@ -1,0 +1,142 @@
+---
+import InsightArticle from "../../components/InsightArticle.astro";
+
+const blocks = [
+  {
+    p: [
+      "Four quotes come back for the same package and they differ by thirty per cent. The temptation is to carry the lowest and hope. The reality is that the lowest number is almost never the lowest price - it is usually the smallest scope.",
+      "Levelling is the work of making bids comparable before choosing between them. It is unglamorous, it takes an hour or two per package, and it is the single highest-return hour in most tenders, because a gap you find while levelling costs nothing and the same gap found on site costs a variation plus an argument.",
+      "Here is the method, in the order that finds the money fastest.",
+    ],
+  },
+  {
+    h2: "Build one scope column, then compare against it",
+    p: [
+      "The mistake is comparing bids to each other. Bids should be compared to <em>your</em> scope, one at a time, because each bidder has quietly defined a different job and comparing two different jobs to each other tells you nothing.",
+      "So the sheet has one column on the left listing every element of the package as you intend it to be built, and one column per bidder. Every cell is priced, excluded, or unstated - and unstated is the one that costs money, because it will be argued to be excluded later.",
+    ],
+    points: [
+      ["Priced", "the bidder has this and has said so."],
+      ["Excluded", "the bidder has said they do not have it. Fine - you now price it elsewhere."],
+      ["Unstated", "silence. Treat as excluded, add it at your own rate, and raise it in writing."],
+      ["Provisional or allowance", "carried as a sum rather than a price. Not the same as a firm number and should never be compared as one."],
+    ],
+  },
+  {
+    h2: "The exclusions that hide in every package",
+    p: [
+      "The same items disappear from subcontract quotations across every trade and every market. Run this list against each bid before you look at the total.",
+    ],
+    subs: [
+      {
+        h3: "Access, hoisting and scaffold",
+        body: "Who provides the access, for how long, and who strikes it. Scaffold is the classic - excluded by every bidder in a package on the assumption that someone else is providing it, and priced by nobody.",
+      },
+      {
+        h3: "Attendances and builder's work",
+        body: "Cutting, chasing, forming openings, fire-stopping penetrations, making good after. Trades routinely price their own work and exclude the builder's work in connection with it, which then lands on the main contractor unpriced.",
+      },
+      {
+        h3: "Temporary works, protection and waste",
+        body: "Propping, temporary supports, floor and finish protection, skips and clearance. On refurbishment these are not small.",
+      },
+      {
+        h3: "Out-of-hours and phasing",
+        body: "If the building is occupied, or the landlord restricts noisy work, or the programme needs weekend possession, the bid priced on normal hours is not the bid you can build with. This should be stated in the enquiry, not discovered in the return.",
+      },
+      {
+        h3: "Testing, commissioning and handover documentation",
+        body: "Commissioning, certification, O&amp;M manuals, as-built drawings, training and warranties. Often excluded, always required, rarely cheap.",
+      },
+      {
+        h3: "Permits, inspections and statutory fees",
+        body: "Who applies, who pays, and whose programme absorbs the wait.",
+      },
+      {
+        h3: "Tax, retention and terms",
+        body: "Whether the figure is before or after sales tax or VAT, the retention percentage assumed, payment terms, and any bond or insurance requirement. Two bids on different terms are two different amounts of money.",
+      },
+    ],
+    note: "<span class=\"text-navy font-medium\">A useful discipline:</span> every gap you find gets added back into that bidder's column at <em>your</em> rate. The levelled total, not the submitted total, is the number you compare.",
+  },
+  {
+    h2: "Read the qualifications before the price",
+    p: [
+      "The qualifications page is where a bidder tells you what they actually agreed to. Read it first and the number afterwards, because the number is meaningless until you know what it buys.",
+      "Look particularly for: a different drawing revision to the one you issued, a stated programme that does not match yours, an assumed possession or sequence, a substituted product &ldquo;or equal approved&rdquo;, a quantity stated as measured by them rather than as issued, and any validity period short enough to expire before award.",
+      "A quotation with a full page of exclusions is not a worse bid than one with none. It is usually a better one, from someone who has read the documents. A bid with no exclusions at all has either not been priced carefully or is relying on you not to notice.",
+    ],
+  },
+  {
+    h2: "Sanity-check the outlier before you celebrate it",
+    p: [
+      "When one bid sits thirty per cent below the pack, there are only a few explanations and only one of them is good news.",
+    ],
+    points: [
+      ["A missing scope element", "the most common by a wide margin. Find it before award."],
+      ["A quantity error", "they measured a different area, or measured one floor of two."],
+      ["A different specification", "cheaper product, thinner section, lesser warranty."],
+      ["A different set of assumptions", "normal hours, free access, no protection, no out-of-hours."],
+      ["Genuine advantage", "existing stock, a crew already on an adjacent site, a supplier relationship. Real, but rarer than the other four combined."],
+    ],
+  },
+  {
+    h2: "One written query, to everyone",
+    p: [
+      "When levelling raises questions - and it always does - send one written query to every bidder in the package, with the same wording and the same deadline. Not phone calls, and not different questions to different people.",
+      "Two reasons. It keeps the comparison honest, because you have not given one bidder information the others lack. And it produces a written record of what each bidder confirmed, which is what you rely on when the argument arrives eight months later.",
+      "The answers, and the absence of answers, then belong in your own submission. That is what a <a href=\"/insights/what-is-a-basis-of-estimate/\" class=\"text-navy font-medium hover:opacity-80 transition-opacity\">basis of estimate</a> is for: the client sees what the price was built from, which assumptions are carrying risk, and where a firm number becomes an indicative one.",
+    ],
+  },
+  {
+    h2: "Where the survey earns its money",
+    p: [
+      "A large share of the discrepancies between bids on refurbishment and fit-out work are not really pricing differences at all. They are different guesses about the same unknown building - what is above the ceiling, what the panel will take, whether the slab can be cut, whether the demising wall goes to structure.",
+      "Bidders guess because the documents do not say. Each guess is priced differently, or excluded, or absorbed, and the spread you are trying to level is partly a measure of how little anybody knows about the site.",
+      "Issuing a documented record of existing conditions with the enquiry narrows that spread directly. Bidders price the same building, exclusions fall away because the answer is in the pack, and the levelling exercise becomes a comparison of rates rather than an archaeology of assumptions. It is the cheapest way to make a tender competitive on price instead of on optimism.",
+    ],
+  },
+];
+
+const faqs = [
+  {
+    q: "What does levelling subcontractor bids mean?",
+    a: "Adjusting each bid so that they all cover the same scope before they are compared. In practice that means listing your intended scope element by element, marking each bid as priced, excluded or unstated against every element, and adding the gaps back into each bidder's total at your own rates. The levelled totals are comparable; the submitted totals almost never are."
+  },
+  {
+    q: "Why is the lowest bid usually not the cheapest?",
+    a: "Because it is usually the narrowest. The commonest reason for a low outlier is a missing scope element, followed by a quantity error, a lesser specification, and a different set of assumptions about access, hours and attendances. Genuine cost advantage exists but is rarer than those four combined, so an outlier should be investigated before it is carried."
+  },
+  {
+    q: "What is most often excluded from a subcontractor quotation?",
+    a: "Access and scaffold, builder's work in connection and making good, temporary works and protection, waste removal, out-of-hours and phased working, testing and commissioning, O&M manuals and as-built information, statutory fees, and clarity on tax, retention and payment terms. Silence on any of these should be treated as an exclusion, not as inclusion."
+  },
+  {
+    q: "Should tender queries go to all bidders?",
+    a: "Yes. One query, identical wording, identical deadline, issued to everyone in the package. It keeps the comparison honest because no bidder holds information the others lack, and it produces the written record you rely on if the scope is disputed after award. The answers - and any unanswered questions - then belong in the basis of your own estimate."
+  },
+  {
+    q: "How does existing conditions information affect bid spread?",
+    a: "It narrows it. On refurbishment and fit-out work much of the spread between bids is different guesses about the same unknown building rather than genuine pricing difference. Issuing a documented record of existing conditions with the enquiry means bidders price the same building, exclusions fall away, and levelling becomes a comparison of rates rather than of assumptions."
+  },
+];
+---
+<InsightArticle
+  title="How to Level Subcontractor Bids Without Guessing"
+  description="Four quotes, thirty per cent apart. The lowest number is usually the smallest scope. How to make bids comparable, and the exclusions that hide in every package."
+  slug="how-to-level-subcontractor-bids"
+  h1="How to Level Subcontractor Bids Without Guessing"
+  datePublished="2026-09-01"
+  heroImage="/Images/construction.webp"
+  heroAlt="A commercial construction site during fit-out works"
+  blocks={blocks}
+  faqs={faqs}
+  estimatingLead="We level the packages as part of pricing the tender, and every gap we add back is shown with the rate we used and where it came from."
+  internalLinks={[
+    { text: "The Estimating Desk", href: "/estimating/" },
+    { text: "See a complete estimate pack", href: "/estimating/sample-quote-pack/" },
+    { text: "What a basis of estimate is", href: "/insights/what-is-a-basis-of-estimate/" },
+    { text: "How to check an estimate before you submit it", href: "/insights/how-to-check-a-construction-estimate/" },
+    { text: "NRM2 and the bill of quantities", href: "/insights/nrm2-bill-of-quantities-explained/" },
+  ]}
+/>

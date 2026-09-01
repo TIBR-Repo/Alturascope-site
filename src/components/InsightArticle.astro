@@ -34,6 +34,8 @@ interface Props {
   faqs: { q: string; a: string }[];
   internalLinks: { text: string; href: string }[];
   estimatingLead: string;
+  /** Eyebrow above the H1. */
+  eyebrow?: string;
   locale?: "us" | "uk";
   hreflang?: { lang: string; href: string }[];
 }
@@ -41,6 +43,7 @@ interface Props {
 const {
   title, description, slug, h1, datePublished, dateModified,
   heroImage, heroAlt, blocks, faqs, internalLinks, estimatingLead,
+  eyebrow = "Insights &middot; Estimating",
   locale = "us", hreflang = [],
 } = Astro.props;
 
@@ -112,7 +115,7 @@ const readable = new Date(datePublished).toLocaleDateString(
         <div class="absolute inset-0 bg-[rgba(11,31,58,0.80)]"></div>
       </div>
       <div class="relative z-10 text-center px-6 max-w-[820px] mx-auto">
-        <p class="label text-gold mb-4">Insights &middot; Estimating</p>
+        <p class="label text-gold mb-4" set:html={eyebrow} />
         <h1 class="text-[1.75rem] md:text-[2.5rem] font-light text-offwhite leading-tight" set:html={h1} />
         <p class="mt-5 text-offwhite/50 text-[0.85rem]">
           <time datetime={datePublished}>{readable}</time>
