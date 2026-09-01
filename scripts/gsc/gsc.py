@@ -64,6 +64,12 @@ WATCHED = [
     "/services/behavioral-health-clinic-survey/",
     "/services/fitness-studio-survey/",
     "/services/cannabis-facility-documentation/",
+    # Articles published 2026-09-01 in the CTR/coverage round
+    "/insights/ai-in-site-survey-and-estimating-workflows/",
+    "/insights/second-generation-space-what-to-verify-before-you-sign/",
+    "/insights/how-to-compare-fit-out-firms-multi-site-rollout/",
+    "/insights/how-to-level-subcontractor-bids/",
+    "/insights/veterinary-clinic-conversion-existing-building-risks/",
 ]
 
 # Terms the overhaul was aimed at. `queries` groups against these.
