@@ -1,0 +1,124 @@
+---
+import InsightArticle from "../../components/InsightArticle.astro";
+
+const blocks = [
+  {
+    p: [
+      "Most new ABA clinics are not built. They are converted, and what they are converted from is almost always a suburban office suite: a reception, a corridor, a run of nine-by-twelve offices, a conference room, a break room, a server room and two toilets.",
+      "On a plan that looks encouraging. Rooms already exist, partitions already exist, the toilets are already there. In practice an office suite is designed around a set of assumptions that ABA delivery breaks almost immediately, and the mismatches are consistent enough to list.",
+      "We have surveyed several of these for multi-state providers. The rooms come back looking remarkably similar site to site - and so do the problems.",
+    ],
+  },
+  {
+    h2: "The ceiling is the first constraint, and it is usually the binding one",
+    p: [
+      "Office suites of this type run a suspended grid at around nine feet, often lower. On one suite we recorded a reception ceiling at 8&prime;11&Prime;; through the rest of the floor, nine feet was typical, in 2&times;2 and 2&times;4 tile.",
+      "For consult rooms and offices that is fine. For a gross motor room it is the thing that decides whether the space works at all. Swings, climbing equipment, ball work and running space all want height, and nine feet under a grid is not height - especially once you account for what is above the grid.",
+      "So the sequence matters. Establish the actual clear height <em>under services</em>, not to deck and not to the tile, in the specific area you intend to use for gross motor work, before the layout is agreed. Where the grid can be removed and the space opened to structure, that is often the single highest-value move in the whole conversion. Whether it can be removed depends entirely on what is up there, which is a survey question and not a design one.",
+    ],
+    note: "<span class=\"text-navy font-medium\">Ask for the number that matters.</span> Not \"ceiling height 9 feet\" but \"clear height beneath the lowest service in the north-east quadrant\". Those are frequently a foot apart.",
+  },
+  {
+    h2: "Office room sizes do not match therapy room sizes",
+    p: [
+      "The office module in these buildings is remarkably consistent: roughly nine and a half by eleven or twelve feet, repeated down both sides of a corridor, plus one or two larger rooms and a big open area.",
+      "That module is close enough to a therapy room to be tempting and wrong often enough to be expensive. Some sessions need considerably more floor area than an office. Some need less but need observation. A one-to-one room, a small group room and a sensory room are three different footprints, and a corridor of identical boxes gives you one.",
+      "Which means most conversions involve taking walls out rather than putting them in - and that raises the questions the survey has to answer: are these partitions structural, do they run to deck or stop at the grid, what services are in them, and is the ceiling grid layout going to survive their removal. On the suites we recorded, partitions were typically five to five and a half inches with steel knock-down frames: easy to remove, but the grid, lighting and mechanical layout above them all assume they exist.",
+    ],
+  },
+  {
+    h2: "The acoustic problem is structural, not a finish",
+    p: [
+      "Acoustic separation between therapy rooms is the most consistently underestimated item in ABA fit-outs, and an office suite is close to a worst case for it.",
+      "Two features cause it. Partitions that stop at the suspended grid rather than running to the deck, which leaves a continuous void over the top of every wall. And a shared return-air plenum, which carries sound between rooms regardless of what the partitions do.",
+      "Both are five-minute observations on a survey - lift a tile, look along the top of the wall - and both are extremely expensive discoveries after the ceiling is closed. Neither is solved by anything you specify as a finish.",
+      "Rooftop and mechanical noise sits alongside this. It is covered in more detail in our piece on <a href=\"/insights/aba-clinic-hvac-acoustic-documentation/\" class=\"text-navy font-medium hover:opacity-80 transition-opacity\">HVAC and acoustic documentation for ABA clinics</a>.",
+    ],
+  },
+  {
+    h2: "Floors, and why carpet is not a finishes decision",
+    p: [
+      "Office suites are carpeted, corridors included. Clinical and sensory areas need cleanable, resilient, often seamless flooring - which is a substrate question, not a specification question.",
+      "What matters is what the carpet is hiding: adhesive residue, unlevel screed, previous patching, and whether the slab is on grade or suspended. A resilient system specified over a substrate nobody assessed is a system that fails at installation, on the programme's critical path.",
+      "Take the survey down to substrate in at least a sample of rooms, and record the slab construction while you are there. It is also what tells you whether anything can be cut - relevant the moment a plumbing fixture moves.",
+    ],
+  },
+  {
+    h2: "The things that are already there, and whether they help",
+    subs: [
+      {
+        h3: "Toilets",
+        body: "Usually two, usually sized for an office population. ABA use is different in count, in accessibility requirements and often in the need for a changing facility. Existing toilets are a starting point rather than a solution, and adding one is a drainage question that lands back on the slab.",
+      },
+      {
+        h3: "The electrical room and the panel",
+        body: "These suites typically have a dedicated electrical room and a panel with some spare capacity. Record the spare ways, not just the service size - and note whether the panel is a make you can still get breakers for.",
+      },
+      {
+        h3: "The server or comms room",
+        body: "Often reusable as-is, which is a genuine saving. Worth confirming the cooling arrangement, since it was sized for an office tenant's equipment rather than yours.",
+      },
+      {
+        h3: "The break room",
+        body: "Frequently the most reusable room in the suite, and frequently the one the layout wants to move. Check drainage and supply before assuming it stays.",
+      },
+      {
+        h3: "Doors and frames",
+        body: "Standard three-foot leaves in steel knock-down frames. Fine structurally; worth checking hardware, vision panels and closers against sightline and safety requirements rather than assuming they carry over.",
+      },
+    ],
+  },
+  {
+    h2: "For operators opening several a year",
+    p: [
+      "A single conversion is a design problem. A provider opening across several states is running a different one: comparing candidate suites quickly enough to make a lease decision, with data consistent enough that the comparison means something.",
+      "That argues for a short, fixed brief applied identically at every candidate: clear height under services in the intended gross motor area, partition construction and whether walls run to deck, return-air arrangement, slab construction and substrate condition, panel spare ways, toilet count and accessibility position, and a full record of what is above the ceiling.",
+      "Eight fields, the same every time. It fits on one page, it takes a few hours on site, and it is the difference between choosing a location and discovering one. The wider approach to running that across a growing estate is set out in <a href=\"/insights/aba-multi-location-growth-documentation-strategy/\" class=\"text-navy font-medium hover:opacity-80 transition-opacity\">multi-location documentation strategy for ABA portfolios</a>.",
+      "One boundary worth stating: this is a record of existing conditions, not a licensing or code assessment. We document what is there, measured and photographed, with capacity figures and a reuse view attached. The design, the code determination and the licensing submission stay with the people qualified to make them.",
+    ],
+  },
+];
+
+const faqs = [
+  {
+    q: "Can an office suite be converted into an ABA clinic?",
+    a: "Usually yes, and most new clinics are exactly that. The recurring constraints are ceiling height for gross motor space, an office room module that does not match therapy room sizes, partitions that stop at the ceiling grid and a shared return-air plenum that carry sound between rooms, carpeted floors over an unassessed substrate, and toilet provision sized for an office population. Each is checkable before a lease is signed."
+  },
+  {
+    q: "What ceiling height does an ABA gross motor room need?",
+    a: "More than a typical office suite offers. These buildings commonly run a suspended grid at around nine feet, and clear height beneath the lowest service is often materially less than the height to the tile. Whether the grid can be removed to open the space to structure is the single highest-value question in most conversions, and it depends entirely on what is in the void - which is a survey question, not a design one."
+  },
+  {
+    q: "Why is acoustic separation so difficult in a converted office?",
+    a: "Because it is structural rather than a finish. Office partitions frequently stop at the suspended ceiling grid instead of running to the deck, leaving a continuous void over every wall, and a shared return-air plenum carries sound between rooms whatever the partitions do. Both are visible in minutes by lifting a ceiling tile, and both are very expensive to remedy after the ceiling is closed."
+  },
+  {
+    q: "What should be surveyed before leasing space for an ABA clinic?",
+    a: "Clear height under services in the intended gross motor area, partition construction and whether walls run to deck, the return-air arrangement, slab construction and floor substrate beneath the existing carpet, electrical panel spare ways rather than headline service size, toilet count and accessibility position, and a complete photographic record of the ceiling void. Eight fields, applied identically at every candidate site so that options can be compared."
+  },
+  {
+    q: "Do you handle licensing or code compliance for clinic fit-outs?",
+    a: "No. We produce a record of existing conditions with the evidence attached - measurements, photographs, nameplate data, capacity figures and a reuse assessment. Design, code determinations and licensing submissions remain with the licensed professionals responsible for them. The record is what those people work from."
+  },
+];
+---
+<InsightArticle
+  title="Converting an Office Suite Into an ABA Clinic"
+  description="Most ABA clinics are converted from office suites. Ceiling height, room module, partitions that stop at the grid - the mismatches are consistent enough to list."
+  slug="converting-an-office-suite-into-an-aba-clinic"
+  h1="Converting an Office Suite Into an ABA Clinic: What Actually Constrains It"
+  datePublished="2026-09-02"
+  heroImage="/Images/site-interior-2.webp"
+  heroAlt="An existing office suite interior before conversion to clinical use"
+  eyebrow="Insights &middot; ABA Clinics"
+  blocks={blocks}
+  faqs={faqs}
+  estimatingLead="With the conditions recorded, the conversion prices from the building rather than from a rate per square foot - which is where clinic budgets usually slip."
+  internalLinks={[
+    { text: "ABA clinic conditions surveys", href: "/services/aba-autism-clinic-documentation/" },
+    { text: "Pre-lease site surveys for ABA clinics", href: "/insights/aba-clinic-lease-evaluation-site-survey/" },
+    { text: "HVAC and acoustic documentation", href: "/insights/aba-clinic-hvac-acoustic-documentation/" },
+    { text: "Sensory room documentation", href: "/insights/aba-clinic-sensory-room-design-documentation/" },
+    { text: "Above-ceiling MEP surveys", href: "/insights/above-ceiling-mep-survey-fit-out/" },
+  ]}
+/>

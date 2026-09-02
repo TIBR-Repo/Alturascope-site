@@ -1,0 +1,137 @@
+---
+import InsightArticle from "../../components/InsightArticle.astro";
+
+const blocks = [
+  {
+    p: [
+      "Over one summer we surveyed a run of mall units for the same operator, to the same brand standard, with the same brief. A 1950s Midwest centre heavily modernised over the decades. A prestige South Florida mall on the coast. A Southern California regional mall.",
+      "Three units, one specification, and three completely different buildings underneath. What separated them was not the retail - it was what each landlord owned, and therefore what each fit-out had to negotiate rather than buy.",
+      "That is the thing rollout budgets consistently get wrong. A mall unit is not a small building. It is a slot inside a large one, and a surprising share of your scope is somebody else's property.",
+    ],
+  },
+  {
+    h2: "Three units, three answers on grease",
+    p: [
+      "Grease is the clearest example, because the same requirement produced three unrelated outcomes.",
+    ],
+    points: [
+      ["The coastal mall had one already", "a commercial interceptor in the exterior service yard, serving the unit. Requirement met on arrival - though ownership and maintenance responsibility still needed confirming with the landlord, which is a lease question rather than an engineering one."],
+      ["The California unit had nothing, and nowhere to put it", "no interceptor, no connection within the suite, and critically no basement and no crawl space to route drainage through. The building engineer volunteered that the neighbouring tenant had installed a connection to the main building interceptor at significant cost. That is the most valuable sentence from the whole visit and it came from a conversation, not a drawing."],
+      ["The Midwest unit had three possible routes", "no interceptor and no trenching, but the landlord offered a basement grease room. Options were: stub to the rear with tanker pump-out, an above-ground automatic grease removal unit inside the demise, or the landlord's basement room. Three routes with three different costs, three different programmes and three different lease consequences."],
+    ],
+    note: "<span class=\"text-navy font-medium\">Same brand standard, same trade, same line in the budget.</span> One site: zero. One site: a major landlord negotiation. One site: a strategic choice that should be made before signing, not after.",
+  },
+  {
+    h2: "Electrical: the range is enormous and the number is not amperage",
+    p: [
+      "Across the same three units the incoming electrical service ran from 100 amps to 800 amps. That is not a variation, it is a different category of building.",
+      "The coastal unit had an 800A 480/277V three-phase service with five panels carrying substantial spare capacity and a step-down transformer sitting above the back-of-house ceiling. Comfortably more than the fit-out needed.",
+      "The California unit had a shared feeder with the adjacent suite running through a legacy fusible switch of a make that has been out of production for decades, with a transformer sizing the real ceiling on load. Parts availability alone makes that a replacement rather than a modification, and a shared feeder means the neighbour is involved.",
+      "The Midwest site spanned two suites: one at 100A three-phase, one at 300A, against a 400A preference. Upgrade scope, panel space and circuit availability all needed verifying before any equipment schedule could be trusted.",
+      "The useful discipline is to stop reporting service size as the answer. Record the make and age of the gear, whether parts are still obtainable, whether the feeder is shared, where the step-down transformer sits, and how many spare ways the panel actually has.",
+    ],
+  },
+  {
+    h2: "The HVAC arrangement decides who you are negotiating with",
+    p: [
+      "Three units, three completely different mechanical propositions - and each one determines whether your comfort strategy is a purchase or a conversation.",
+      "The coastal unit had two rooftop units giving separate zones for kitchen and dining. Straightforward, and self-contained. The problems there were maintenance-grade: non-functional thermostats and corrosion consistent with age and coastal exposure - which is itself a useful reminder that a survey by the sea should look at the rooftop steelwork as well as the plant sitting on it.",
+      "The California unit had a single-zone split heat pump with supplemental electric heat, serviceable but near the end of its life. Reusable in the short term with a replacement budget carried - a legitimate answer, provided somebody writes it down.",
+      "The Midwest unit had four-pipe fan coils fed from a central plant, one of them not working, and no simultaneous heating and cooling. That is the one that matters most, because a central plant means capacity, scheduling and billing all belong to the landlord. You are not buying a system; you are asking for one.",
+    ],
+  },
+  {
+    h2: "What the landlord actually controls",
+    p: [
+      "Pulling the three together, this is the list that turns out to be somebody else's property on nearly every mall fit-out.",
+    ],
+    subs: [
+      {
+        h3: "Roof penetrations",
+        body: "New curbs, new plant, new flues and any core drilling. Who approves, who executes, whose warranty is affected, and what the roofer of record arrangement is. On one of these sites, roof penetrations required coordination with mall operations as an explicit scope item.",
+      },
+      {
+        h3: "The route to the building interceptor",
+        body: "Where the main interceptor is, whether there is a basement or service corridor to route through, who owns the run, and who maintains it afterwards.",
+      },
+      {
+        h3: "Incoming service capacity and upgrades",
+        body: "Feeders, transformers and meters usually sit outside the demise. An upgrade is a landlord and utility programme with its own lead time, not a subcontract package.",
+      },
+      {
+        h3: "Central plant capacity and BTU or service-charge terms",
+        body: "Where heating and cooling come from a house system, capacity and cost are lease terms. Read them before designing to them."
+      },
+      {
+        h3: "Working hours, deliveries and hoarding",
+        body: "Mall operations set when noisy work happens, where waste goes and what the hoarding looks like. This sets the programme far more than the trades do.",
+      },
+      {
+        h3: "The condition you inherit and the condition you leave",
+        body: "On the coastal unit the back-of-house floor was grease-contaminated with penetration into the grout, heaviest at the former fryer bank, and there were roof membrane defects. Both are somebody's liability. Which somebody is decided by whether a dated record exists at handover."
+      },
+    ],
+  },
+  {
+    h2: "Why sampling does not work here",
+    p: [
+      "The instinct on a multi-site programme is to survey a representative site and extrapolate. These three units show why that fails in malls specifically: there was no representative site. Grease ranged from solved to unsolvable-in-demise. Power ranged from 100A to 800A. Mechanical ranged from self-contained rooftop units to a landlord's central plant.",
+      "A per-square-foot allowance built off any one of them would have been badly wrong for the other two - not by ten per cent, but by whether an entire trade exists in the scope at all.",
+      "What does transfer between sites is the <em>brief</em>. The same fields, recorded the same way, at every location - so the site with no grease route and the site with dead gear appear next to each other in one table before the capital plan is set. That is the whole argument for one format across a programme, and it is set out in <a href=\"/insights/standardising-site-surveys-multi-site-operators/\" class=\"text-navy font-medium hover:opacity-80 transition-opacity\">standardising site surveys across multi-site operators</a>.",
+    ],
+  },
+  {
+    h2: "The five questions to answer before a mall lease is signed",
+    points: [
+      ["Where does grease go, and who owns that route?", "Interceptor present, absent, or possible only via a landlord facility - and what the neighbouring tenants paid to solve it."],
+      ["What is the service, what make is the gear, and how many spare ways are there?", "Not amperage alone. Shared feeders and obsolete switchgear are replacement triggers."],
+      ["Is the mechanical plant yours or the house's?", "It decides whether capacity is a purchase or a negotiation, and whether energy is metered or apportioned."],
+      ["What may be penetrated, by whom, and under whose warranty?", "Roof, slab and demising walls."],
+      ["What condition are you accepting?", "A dated photographic record at handover, agreed by both parties. Contaminated floors and defective membranes become your problem otherwise."],
+    ],
+  },
+];
+
+const faqs = [
+  {
+    q: "What does a mall landlord control in a tenant fit-out?",
+    a: "Typically more than tenants expect: roof penetrations and the roofer of record, the route to and ownership of the building grease interceptor, incoming service capacity including feeders, transformers and meters, central plant capacity and how it is billed, working hours, deliveries, waste routes and hoarding standards, and the condition you are deemed to accept at handover. Much of a fit-out scope is negotiated rather than purchased."
+  },
+  {
+    q: "How much do mall units vary within the same brand rollout?",
+    a: "Enough that per-square-foot allowances are unreliable. Across three units surveyed for one operator to one standard, incoming electrical service ranged from 100 amps to 800 amps, grease provision ranged from an existing commercial interceptor to no viable in-demise route at all, and mechanical ranged from self-contained rooftop units to landlord central-plant fan coils. The difference is whether a trade exists in the scope, not a percentage."
+  },
+  {
+    q: "Why is a grease interceptor such a common problem in mall units?",
+    a: "Because the solution usually sits outside the demise. Connecting to a building interceptor needs a route - a basement, crawl space or service corridor - and where none exists the options narrow to an above-ground removal unit inside the unit, a stub with tanker pump-out, or a landlord-built facility. Each carries a different cost, programme and lease consequence, which is why it should be settled before signature."
+  },
+  {
+    q: "Is electrical service size enough to assess a unit?",
+    a: "No. Record the make and age of the switchgear and whether parts are still obtainable, whether the feeder is shared with an adjacent suite, where any step-down transformer sits, and how many spare ways the panel has. Obsolete gear and shared feeders turn a modification into a replacement involving the landlord, and a nearly full panel constrains equipment regardless of incoming amperage."
+  },
+  {
+    q: "Can you survey a sample of sites and extrapolate across a mall portfolio?",
+    a: "Sampling calibrates assumptions but does not replace site-by-site data in malls, because the infrastructure variation is categorical rather than proportional. What transfers between locations is the brief - the same fields recorded the same way at every site - so that the sites with real constraints are visible in one table before the capital plan is set."
+  },
+];
+---
+<InsightArticle
+  title="What a Mall Landlord Controls That Your Fit-Out Depends On"
+  description="Three mall units, one brand standard, three different buildings underneath. Grease from solved to impossible, power from 100A to 800A, and who really owns it."
+  slug="what-a-mall-landlord-controls-in-a-fit-out"
+  h1="What a Mall Landlord Controls That Your Fit-Out Depends On"
+  datePublished="2026-09-02"
+  heroImage="/Images/site-inside.webp"
+  heroAlt="The interior of a shopping mall retail unit before fit-out"
+  eyebrow="Insights &middot; Multi-Site"
+  blocks={blocks}
+  faqs={faqs}
+  estimatingLead="Once each unit is documented, they can be priced individually instead of averaged - which is where mall rollout budgets usually go wrong."
+  internalLinks={[
+    { text: "Multi-site rollout site surveys", href: "/services/multi-site-rollout-documentation/" },
+    { text: "Retail fit-out & remodel surveys", href: "/services/retail-rollout-documentation/" },
+    { text: "Second-generation space: what to verify", href: "/insights/second-generation-space-what-to-verify-before-you-sign/" },
+    { text: "How to compare fit-out firms", href: "/insights/how-to-compare-fit-out-firms-multi-site-rollout/" },
+    { text: "Surveyed locations", href: "/work/locations/" },
+  ]}
+/>

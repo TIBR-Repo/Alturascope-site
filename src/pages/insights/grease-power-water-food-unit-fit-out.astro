@@ -1,0 +1,129 @@
+---
+import InsightArticle from "../../components/InsightArticle.astro";
+
+const blocks = [
+  {
+    p: [
+      "Across a run of food and beverage unit surveys for one multi-site operator - malls, high streets, a transit terminal, all to one brand standard - three services decided almost every outcome. Grease, power and water.",
+      "Not the finishes, not the layout, not the equipment package. Those are design work with predictable costs. Grease, power and water are where a unit either works, works with a landlord negotiation attached, or does not work at all - and the difference between those three answers is usually invisible on a lease plan and obvious after two hours on site.",
+      "Here are the thresholds that mattered, the numbers that came back, and what to check on any unit you are considering.",
+    ],
+  },
+  {
+    h2: "Grease: the question is the route, not the interceptor",
+    p: [
+      "Everyone asks whether there is an interceptor. The question that decides the cost is where the grease waste can physically go.",
+      "Across these surveys the answers were completely unrelated to each other. One unit had a commercial interceptor already sitting in an exterior service yard - requirement met, though ownership and maintenance still needed pinning down with the landlord. One had a low-profile 20 GPM unit under the three-compartment sink, serviceable and adequate. One had nothing at all and, critically, no basement and no crawl space to route drainage through: the building engineer mentioned that the neighbouring tenant had connected to the main building interceptor at significant cost, which is the single most useful thing anyone said that day.",
+      "And one had no interceptor but three possible routes - a stub to the rear with tanker pump-out, an above-ground automatic grease removal unit inside the demise, or a basement grease room the landlord was willing to build. Three options, three costs, three programmes, three sets of lease implications.",
+    ],
+    points: [
+      ["Is there an interceptor, and does it serve this demise?", "Serving the building is not the same as serving your unit."],
+      ["If not, is there a physical route to one?", "Basement, crawl space, service corridor or trenchable slab. No route is the answer that changes the deal."],
+      ["Who owns it and who maintains it?", "A lease question, and the one that produces arguments in year two."],
+      ["What did the neighbours pay?", "Ask the building engineer. Adjacent tenants have already solved this problem and the number is usually freely given."],
+    ],
+    note: "<span class=\"text-navy font-medium\">No basement, no crawl space, no trenchable slab</span> is not a detail to resolve in design. It is a reason to price the unit differently or walk away from it.",
+  },
+  {
+    h2: "Power: the useful numbers are spare ways and switchgear age",
+    p: [
+      "Incoming service across these units ran from 100 amps to 800 amps against a 400-amp preference. That range tells you how little a category label like \"mall unit\" or \"high street unit\" predicts.",
+      "But headline amperage was rarely the operative constraint. Three other things were.",
+    ],
+    subs: [
+      {
+        h3: "Spare ways in the panel",
+        body: "One unit had correct voltage, correct phase, and a 42-circuit panel with three spare ways. An equipment-heavy concept adds a lot of individual circuits; a nearly full panel stops you before the incoming service does. Record the panel schedule, count the spares.",
+      },
+      {
+        h3: "Whether the gear is still supported",
+        body: "One unit ran through a legacy fusible switch of a make long out of production, with limited parts availability. That is a replacement, not a modification, and it changes both cost and programme.",
+      },
+      {
+        h3: "Whether the feeder is shared",
+        body: "The same unit shared its feeder with the adjacent suite, with a transformer setting the real ceiling on load. A shared feeder means an upgrade involves a neighbour and the landlord, not just an electrician.",
+      },
+      {
+        h3: "Where the step-down transformer is",
+        body: "On one site it sat above the back-of-house ceiling - which matters for access, for ceiling works and for anything you intend to route through that void.",
+      },
+    ],
+  },
+  {
+    h2: "Water: small pipes, hidden meters, utility timescales",
+    p: [
+      "Against a 1&frac12;-inch requirement, incoming water ranged from a 5/8-inch class meter on three-quarter-inch connections to a building fed by a 3-inch main with parallel backflow preventers.",
+      "The nuance that catches people is that the building main and the tap serving your unit are different questions. One site had 3/4-inch incoming lines at both suites, but a 2-inch main confirmed running underneath them - so the upgrade route existed, it just had not been taken. Another had a 3-inch building main comfortably exceeding the requirement, with the individual suite tap size still to be confirmed. The building being well served tells you the upgrade is possible, not that it is done.",
+      "Two practical points. Meters are frequently not where you would look - one was a ceiling-mounted unit in a service corridor, unreadable from the floor; another sat above the ceiling in a congested void. And upsizing an incoming domestic service is a utility and landlord programme with its own lead time, which means it belongs on the programme before the lease is signed, not in the fit-out package.",
+    ],
+  },
+  {
+    h2: "The pattern worth internalising",
+    p: [
+      "Looking at these units together, the useful generalisation is not about food service at all.",
+      "Every one of these constraints sits <em>outside the demise</em>. The interceptor is in a service yard or a basement. The feeder and transformer are in a riser or a corridor. The water meter is above a ceiling that is not yours, fed from a main under a floor that is not yours. Which means every one of them is a negotiation with a landlord or a utility, on their timescale - and none of them can be resolved by the fit-out contractor once the programme has started.",
+      "That is why the sequence matters so much more than the survey depth. A thorough survey after lease signature produces a better-informed schedule of problems. The same survey before signature produces leverage: a rent-free adjustment, a landlord works package, a delivery condition written to match the building, or a decision not to take the unit.",
+    ],
+  },
+  {
+    h2: "The check, in order",
+    points: [
+      ["Grease route", "interceptor present and serving the demise; if not, is there a physical route; who owns and maintains it; what the neighbours paid."],
+      ["Panel schedule", "incoming service and voltage, switchgear make and whether parts are obtainable, shared feeder or dedicated, transformer location, and the count of spare ways."],
+      ["Water", "meter class and connection size at the demise, the building main size and whether it is tappable, meter location, and pressure."],
+      ["Mechanical ownership", "self-contained plant or house system, observed performance rather than nameplate, and how energy is billed."],
+      ["Penetration rights", "roof, slab and demising walls - who approves, who executes, whose warranty."],
+    ],
+  },
+  {
+    h2: "Why this cannot be averaged",
+    p: [
+      "The temptation on a rollout is a per-square-foot allowance for MEP. These units show why it fails: the variation is categorical, not proportional. A unit with an existing interceptor and 800 amps and a unit with no grease route and a shared 100-amp feeder are not the same job at different prices. One has trades in it that the other does not.",
+      "What does transfer across a programme is the brief. The same fields, recorded the same way, at every location, so the sites that are actually constrained surface in one table before the capital plan is fixed rather than after the first two are built.",
+    ],
+  },
+];
+
+const faqs = [
+  {
+    q: "What determines whether a unit can take a food and beverage fit-out?",
+    a: "Overwhelmingly three services: whether grease waste has a physical route to an interceptor, whether the electrical service and panel can take the equipment load, and whether the incoming water service meets the required size. All three typically sit outside the demise - in a service yard, a riser, or above a ceiling you do not control - which makes each one a landlord or utility negotiation with its own lead time rather than a fit-out package item."
+  },
+  {
+    q: "What if there is no grease interceptor in the unit?",
+    a: "The cost depends entirely on whether there is a physical route to one. With a basement, crawl space or trenchable slab, options include connecting to the main building interceptor, an above-ground automatic grease removal unit inside the demise, or a stub to the rear with tanker pump-out. With no route at all, it is a reason to price the unit differently or decline it. Ask the building engineer what neighbouring tenants paid - they have usually solved it already."
+  },
+  {
+    q: "Is electrical service size the right thing to check?",
+    a: "It is the headline, not usually the constraint. Check the count of spare ways in the panel, whether the switchgear make is still supported with obtainable parts, whether the feeder is shared with an adjacent suite, and where any step-down transformer sits. A correct-voltage 42-circuit panel with three spare ways will stop an equipment-heavy fit-out long before the incoming amperage does."
+  },
+  {
+    q: "How much does incoming water size vary between units?",
+    a: "Substantially. Against a typical 1½-inch requirement we have recorded everything from a 5/8-inch class meter on three-quarter-inch connections to buildings fed by 3-inch mains. Note that the building main and your demise tap are separate questions: a 2-inch main running beneath a suite with 3/4-inch incoming lines means the upgrade is possible, not that it is done. Meters are often in ceiling voids or service corridors rather than anywhere obvious."
+  },
+  {
+    q: "When should these checks happen?",
+    a: "Before the lease is signed. The same survey done afterwards produces a better-informed list of problems; done beforehand it produces leverage - a rent-free adjustment, a landlord works package, a delivery condition written to match the building, or a decision not to take the unit at all. None of these constraints can be resolved by the fit-out contractor once the programme has started."
+  },
+];
+---
+<InsightArticle
+  title="Grease, Power and Water: What Decides a Food Unit Fit-Out"
+  description="Across one operator's units, three services decided nearly every outcome - and all three sit outside the demise, which makes each one a landlord negotiation."
+  slug="grease-power-water-food-unit-fit-out"
+  h1="Grease, Power and Water: What Actually Decides a Food Unit Fit-Out"
+  datePublished="2026-09-02"
+  heroImage="/commercial-kitchen-work.webp"
+  heroAlt="A commercial kitchen line documented during an existing conditions survey"
+  eyebrow="Insights &middot; QSR &amp; Restaurant"
+  blocks={blocks}
+  faqs={faqs}
+  estimatingLead="With the three services established, the fit-out can be priced as the job it actually is instead of as an allowance per square foot."
+  internalLinks={[
+    { text: "Restaurant & QSR conditions surveys", href: "/services/qsr-restaurant-survey/" },
+    { text: "Commercial kitchen surveys", href: "/services/commercial-kitchen-survey/" },
+    { text: "What a mall landlord controls", href: "/insights/what-a-mall-landlord-controls-in-a-fit-out/" },
+    { text: "Second-generation space: what to verify", href: "/insights/second-generation-space-what-to-verify-before-you-sign/" },
+    { text: "Fitting out inside a transit terminal", href: "/insights/retail-fit-out-inside-a-transit-terminal/" },
+  ]}
+/>

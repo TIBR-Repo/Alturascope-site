@@ -1,0 +1,147 @@
+---
+import InsightArticle from "../../components/InsightArticle.astro";
+
+const blocks = [
+  {
+    p: [
+      "Almost every construction business has now used AI. Almost none of them have put it into the work. It drafts the email, tidies the meeting note, rewrites the tender covering letter - and the actual business, the thing that makes and loses money, runs exactly as it did in 2019.",
+      "That gap is the whole story. AI at the periphery saves an hour a week and changes nothing. AI inside a process changes what the business is capable of taking on. The difference is not the model. It is whether anyone did the unglamorous work of restructuring the process around it.",
+      "We have done that on our own estimating and survey work, and the result is not a percentage improvement. A tender that took three days takes two hours of skilled attention plus machine time, and the constraint on how much work we can bid has effectively gone. Here is how that actually happened, because the mechanism transfers.",
+    ],
+  },
+  {
+    h2: "Why the periphery feels productive and isn't",
+    p: [
+      "Peripheral AI use has an obvious appeal: no change management, no risk, immediate small wins. It is also structurally incapable of moving the number that matters, for a simple reason.",
+      "Every business has one binding constraint. In a contracting business it is usually estimating hours: the invitations you decline, the tenders you rush, the jobs you price on a feeling because there was no time to price them properly. Writing emails faster does not touch that. You can save an hour a day on correspondence and still turn down the same number of bids.",
+      "So the question is never <em>where could we use AI</em>. It is <em>what is the constraint, and can any part of it be moved</em>.",
+    ],
+    note: "<span class=\"text-navy font-medium\">The test:</span> if the AI stopped working tomorrow, would your capacity change? If the honest answer is no, it is a convenience, not a capability.",
+  },
+  {
+    h2: "Break the process into judgement and clerical work",
+    p: [
+      "Every professional process is a braid of two things: decisions that need experience and accountability, and transcription, structuring, cross-checking and formatting that need only care and time. People conflate them because one person does both, in sequence, in the same afternoon.",
+      "Pull them apart and the picture changes. In a typical tender, the judgement is: which rates apply, what the drawings do not show, which risks to price and which to qualify, how the work will actually be built, what to say in the basis of estimate. That is maybe two hours of genuine thinking on a mid-sized job.",
+      "The rest - measuring quantities off drawings, building the schedule, reconciling the take-off to the bill, checking units, chasing which trade is present in the drawings and absent from the pricing, formatting a document a client can read - is clerical. It is also, on most tenders, eighty per cent of the elapsed time.",
+      "Automate the clerical eighty per cent and the judgement twenty per cent becomes the whole job. That is the entire trick, and it is why the effect is not incremental.",
+    ],
+  },
+  {
+    h2: "What that looks like in practice",
+    subs: [
+      {
+        h3: "Capture in the form that is natural, convert afterwards",
+        body: "A surveyor narrating while walking records far more than a surveyor typing, because talking is free and typing is not. A model turns the narration into structured text afterwards. The same principle applies to a site photograph of a data plate: photograph everything, extract make, model, capacity, voltage and date into a schedule later. The expensive human act becomes looking, not recording.",
+      },
+      {
+        h3: "Impose one schema and never deviate",
+        body: "The value of automation collapses if every job is shaped differently. One survey template, one estimate structure, one set of field names. Then a portfolio of forty buildings is a table you can sort, not forty documents someone has to read.",
+      },
+      {
+        h3: "Let the machine be the second reader",
+        body: "Machines do not get bored on page 40. Automated checks across a priced schedule - units that changed mid-document, quantities that do not reconcile, a trade measured but not priced, a rate outside the plausible range - catch the omissions that cost money. Estimates fail through omission, not arithmetic.",
+      },
+      {
+        h3: "Assemble the draft, do not write it",
+        body: "The deliverable is generated from the structured record, so the human edits a draft rather than facing a blank page. This is where the elapsed-time saving actually lives, and it is the step most people skip because it requires the two steps above to have been done properly.",
+      },
+      {
+        h3: "Keep a named person on the output",
+        body: "Every number and every finding is signed by someone who can explain it. Not as a courtesy - it is the thing that makes the speed sellable. A fast answer nobody will stand behind is worth nothing to a client.",
+      },
+    ],
+  },
+  {
+    h2: "The four failure modes",
+    p: [
+      "Businesses that try this and get nothing back usually fail in one of four recognisable ways.",
+    ],
+    points: [
+      ["Automating the judgement instead of the clerical work", "the appealing mistake, because judgement is the visible skill. It is also the part with the accountability attached, and no model should be setting a contingency or deciding what to qualify."],
+      ["Leaving the process shape untouched", "bolting a tool onto a workflow designed around a human doing everything sequentially. The tool then produces output nobody can use without redoing it."],
+      ["Tolerating silent degradation", "a system that fails loudly - flags the sheet it could not read, marks the quantity it could not resolve - is useful. One that returns a confident answer from a bad input is worse than nothing, because the error now carries the authority of a document."],
+      ["Taking the saving as a shorter day rather than more capacity", "if a process gets four times faster and the output stays the same, nothing has been gained commercially. The point is the fifth tender, the fortieth site, the client you could not previously serve."],
+    ],
+  },
+  {
+    h2: "What it changed for us",
+    p: [
+      "Two concrete effects, both of which surprised us.",
+      "The first is on the estimating side. Pricing a tender to a defensible standard - measured take-off, preliminaries separated, provisional sums identified, a written basis stating what was priced and what was assumed - used to be days of work, which is exactly why most contractors do not do it on every bid. It is now fast enough to do properly on every bid. The quality floor rose because the cost of the floor fell.",
+      "The second is on the survey side, and it is subtler. When writing a survey up was expensive, the rational thing was to record only what you expected to need. Now that reporting is cheap, the rational thing is to record everything and decide later. So the surveys got more thorough, not less - which is the opposite of what people assume automation does to a professional service.",
+      "Neither of those is a productivity gain in the usual sense. Both are changes in what the business can offer.",
+    ],
+  },
+  {
+    h2: "Where to start, if you run a construction business",
+    p: [
+      "Not with a tool selection. Start with three questions, in order.",
+    ],
+    subs: [
+      {
+        h3: "What did we say no to last quarter, and why?",
+        body: "The declined tenders, the site visits nobody had time for, the client who wanted every location surveyed. That list is your constraint, written down.",
+      },
+      {
+        h3: "In the process behind it, what is judgement and what is clerical?",
+        body: "Be honest and be specific, step by step. Most people are surprised how little of the elapsed time is genuine decision-making.",
+      },
+      {
+        h3: "What would have to be true for the clerical part to be machine work?",
+        body: "Usually: consistent inputs, one schema, and a defined point where a human signs. Those are process changes, not purchases - which is why this is harder than buying software and why it is worth more.",
+      },
+    ],
+  },
+  {
+    h2: "The uncomfortable part",
+    p: [
+      "The reason most firms stay at the periphery is not ignorance about AI. It is that moving it into the work means admitting how much of the work was never skilled to begin with, and rebuilding a process that currently functions. That is a management problem, not a technology one, and no vendor will solve it for you.",
+      "The firms that do it will not look four per cent more efficient. They will be bidding work their competitors cannot afford to bid, and surveying portfolios their competitors would have to sample.",
+    ],
+  },
+];
+
+const faqs = [
+  {
+    q: "How can a construction business actually use AI, beyond writing emails?",
+    a: "Find the binding constraint - usually estimating hours or reporting time - and split the process behind it into judgement and clerical work. Automate the clerical part: measurement from drawings, structuring the schedule, cross-checking the take-off against the bill, extracting equipment data from photographs, assembling the deliverable. Leave rates, risk, qualifications and sign-off with a named person. Peripheral use saves an hour a week; process use changes what you can bid on."
+  },
+  {
+    q: "Is AI accurate enough for construction estimating?",
+    a: "For first-pass quantities off a clean drawing set, yes, with review - published error rates on complex commercial sets run around 8 to 12 per cent and rise sharply with scan quality. For judgement it is not a question of accuracy: allocating risk, setting contingency, deciding what to qualify and pricing the way work will actually be built are commercial decisions that need a name attached. The reliable pattern is machine measures and checks, human decides and signs."
+  },
+  {
+    q: "What is the most common mistake firms make with AI?",
+    a: "Automating the judgement rather than the clerical work, because judgement is the visible skill. The second most common is bolting a tool onto a process still shaped around one person doing everything sequentially, so the output needs redoing. The third is taking the time saving as a shorter day instead of extra capacity, which produces no commercial gain at all."
+  },
+  {
+    q: "Does using AI make survey and estimating work less thorough?",
+    a: "Done properly it does the opposite. When writing up is expensive, the rational choice is to record only what you expect to need. When reporting is cheap, the rational choice is to record everything and decide later - so surveys get more thorough, not less. The risk is a supplier who takes the same saving as a shorter site visit instead."
+  },
+  {
+    q: "How do you know whether an AI-assisted supplier is trustworthy?",
+    a: "Ask what happens when the input is bad. A trustworthy system fails loudly - it flags the drawing it could not read and marks the quantity it could not resolve, and its deliverable separates what was verified on site from what was taken from a document. Silent confidence across a whole deliverable is the warning sign. Then ask who signs it, and whether that person was in the building."
+  },
+];
+---
+<InsightArticle
+  title="How to Put AI Into a Construction Workflow"
+  description="Most firms use AI at the edges and change nothing. Moving it into the work means splitting judgement from clerical effort - it changes capacity, not efficiency."
+  slug="how-to-put-ai-into-a-construction-workflow"
+  h1="How to Put AI Into a Construction Workflow, Not Around the Edges"
+  datePublished="2026-09-02"
+  heroImage="/Images/plan-1.webp"
+  heroAlt="A construction drawing set - the input to an automated take-off"
+  eyebrow="Insights &middot; Method"
+  blocks={blocks}
+  faqs={faqs}
+  estimatingLead="This is the reason the estimating desk can price a tender properly in two working days rather than sampling which bids deserve the effort."
+  internalLinks={[
+    { text: "What AI does in a site survey workflow", href: "/insights/ai-in-site-survey-and-estimating-workflows/" },
+    { text: "The Estimating Desk", href: "/estimating/" },
+    { text: "How estimating capacity caps revenue", href: "/insights/estimating-capacity-limits-contractor-growth/" },
+    { text: "How to check a construction estimate", href: "/insights/how-to-check-a-construction-estimate/" },
+    { text: "See a complete estimate pack", href: "/estimating/sample-quote-pack/" },
+  ]}
+/>

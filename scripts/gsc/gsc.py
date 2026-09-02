@@ -70,6 +70,12 @@ WATCHED = [
     "/insights/how-to-compare-fit-out-firms-multi-site-rollout/",
     "/insights/how-to-level-subcontractor-bids/",
     "/insights/veterinary-clinic-conversion-existing-building-risks/",
+    # Articles published 2026-09-02, several built on real ScopeWalk survey data
+    "/insights/how-to-put-ai-into-a-construction-workflow/",
+    "/insights/retail-fit-out-inside-a-transit-terminal/",
+    "/insights/what-a-mall-landlord-controls-in-a-fit-out/",
+    "/insights/grease-power-water-food-unit-fit-out/",
+    "/insights/converting-an-office-suite-into-an-aba-clinic/",
 ]
 
 # Terms the overhaul was aimed at. `queries` groups against these.

@@ -1,0 +1,142 @@
+---
+import InsightArticle from "../../components/InsightArticle.astro";
+
+const blocks = [
+  {
+    p: [
+      "A small food and beverage unit off the main concourse at Grand Central Terminal looks, on a plan, like the easiest job in a rollout. A few hundred square feet, already fitted out, already trading, turnkey.",
+      "It is one of the most constrained fit-outs you can take on, and almost none of the constraints are visible in the demise. They are in the building around it - a landmarked, operating transit terminal that never closes, run by a transit authority, with services that belong to the base building and a fire alarm that is not yours.",
+      "We surveyed exactly that unit. Here is what a transit-terminal fit-out actually turns on, drawn from what was found rather than from a checklist.",
+    ],
+  },
+  {
+    h2: "There is no roof, so there is no rooftop plant",
+    p: [
+      "The single largest assumption a fit-out team brings from suburban retail is that heating and cooling means a rooftop unit. Inside a terminal there is no accessible roof above your demise, and no route to one.",
+      "What you get instead is base-building infrastructure. In this unit: a water-cooled DX system with two ceiling-concealed fan coils and electric resistance heat, inherited from the previous occupier. No RTU, no curb, no possibility of one.",
+      "That changes three things at once. Your capacity is whatever the landlord's condenser water loop and your fan coils will deliver. Your energy is billed on BTU terms written into the lease rather than a meter you read. And any capacity increase is a negotiation with the landlord's engineering department, not a purchase order.",
+    ],
+    note: "<span class=\"text-navy font-medium\">Verify capacity by observation, not by nameplate.</span> On this survey the space was sitting at 82&deg;F with the thermostat calling for cooling at a 60&deg;F setpoint - one thermostat working, one broken. A nameplate would have said the system was adequate.",
+  },
+  {
+    h2: "The incoming water was a quarter of what was needed",
+    p: [
+      "The brand standard for this operator is a 1&frac12;-inch water service. What was actually there was a 5/8-inch class meter on roughly three-quarter-inch brass connections - and the meter set was above the ceiling, in a congested service void, invisible from the floor.",
+      "That is not a plumbing item. Upsizing an incoming domestic service inside a terminal means the utility, the landlord and the transit authority, on their timescales, with access windows that are not yours. It is the sort of thing that decides whether a location opens in the spring or the autumn, and it is discoverable in about twenty minutes by someone who thinks to lift the right ceiling tile.",
+      "The grease side, by contrast, was fine: a low-profile 20 GPM interceptor under the three-compartment sink, serviceable, meeting the requirement. That asymmetry is typical. One service is a non-issue and another is a programme risk, and nothing on the lease plan tells you which is which.",
+    ],
+  },
+  {
+    h2: "Spare ways, not amperage",
+    p: [
+      "The electrical service was 208Y/120V three-phase - correct voltage, correct phase - at 125 amps, against a brand preference of 400. But the number that actually mattered was smaller and easier to miss: a 42-circuit panel with <em>three spare ways</em>.",
+      "Amperage is a headline. Spare ways are the constraint you hit first. A blender-heavy food concept adds a lot of individual circuits, and a nearly full panel means load consolidation or a service uplift before a single new piece of equipment is connected - again involving the landlord and possibly the utility.",
+      "The lesson generalises well beyond terminals: record the panel schedule and count the spares. A survey that reports service size and stops has answered the easy half of the question.",
+    ],
+  },
+  {
+    h2: "The fire alarm is not yours",
+    p: [
+      "In a standalone unit, fire alarm is a line item. In a transit terminal it is a coordination exercise with the operator, because your devices sit on a terminal-wide base-building system.",
+      "Practically that means: any device change is submitted, scheduled and witnessed by the operator's people; testing happens in windows that suit the terminal rather than your programme; and an impairment during works has consequences well outside your demise. None of it is difficult. All of it takes elapsed time, and it should be in the programme from day one rather than discovered at fit-out.",
+      "The same applies to sprinkler work, to anything crossing a demising line, and to any penetration at all.",
+    ],
+  },
+  {
+    h2: "What the demise does not contain",
+    p: [
+      "Two absences shaped this unit more than anything present in it.",
+    ],
+    points: [
+      ["No restroom within the demise", "so no toilet exhaust, no associated ducting, and a staff welfare arrangement that lives in the lease rather than the drawings."],
+      ["No outside air connection of its own", "outside air appears to arrive via a perforated transom grille above the storefront, with an air curtain at the entrance. That is a base-building air-transfer arrangement, not a system you control, and it caps what you can do about kitchen odour and pressure."],
+    ],
+  },
+  {
+    h2: "Working in a building that never closes",
+    p: [
+      "Everything above is physical. The commercial constraints are procedural, and they are what actually sets the programme.",
+      "Deliveries and waste move through the operator's loading arrangements, in booked windows, often overnight. Noisy or dusty work happens outside passenger hours. Hoarding, protection and egress are the operator's standards, not yours. Trades need clearance, escorts and inductions. Historic and landmarked fabric restricts what can be fixed to what. And every one of those has a lead time attached that has nothing to do with construction.",
+      "The result is a programme where the elapsed duration is set by access and approvals rather than by the work itself. A fit-out that would take five weeks in a retail park takes considerably longer, and the difference is entirely predictable if the constraints are documented before the programme is written - and entirely unpredictable if they are not.",
+    ],
+  },
+  {
+    h2: "What to document before you commit",
+    p: [
+      "For any unit inside a terminal, a station, an airport or a covered transport hub, the survey should come back with these specifics rather than a general description.",
+    ],
+    subs: [
+      {
+        h3: "The incoming services, measured",
+        body: "Meter class and connection sizes for water, the panel schedule with spare ways counted, and where each service enters. Meter sets in ceiling voids are normal here and are the reason a floor-level walk-through is not a survey.",
+      },
+      {
+        h3: "The heating and cooling arrangement, and how it is billed",
+        body: "What plant serves the demise, whether it is base-building, its observed performance rather than its rating, and the BTU or service-charge terms attached.",
+      },
+      {
+        h3: "The fire alarm and sprinkler ownership boundary",
+        body: "Which devices are on the base-building system, who approves changes, and what the witnessing and impairment procedure is.",
+      },
+      {
+        h3: "The access and working-hours regime",
+        body: "Loading, waste routes, permitted working hours, escort and induction requirements, and the approval lead times for each.",
+      },
+      {
+        h3: "What is above the ceiling",
+        body: "Service voids in terminals are dense and shared. A photographic and 360&deg; record of the void is the difference between a coordinated design and a redesign.",
+      },
+    ],
+  },
+  {
+    h2: "The point",
+    p: [
+      "A trophy location is worth having. It is not worth having on the same assumptions as an out-of-town unit, and the difference in outcome is not the construction - it is whether the constraints were known before the lease and the programme were signed.",
+      "A survey of a unit like this takes a few hours. What it establishes - that the water service is a utility job, that the panel has three spare ways, that the fire alarm belongs to the terminal, that the cooling is not keeping up today - is the difference between a considered programme and an optimistic one.",
+    ],
+  },
+];
+
+const faqs = [
+  {
+    q: "What makes a fit-out inside a transit terminal different?",
+    a: "There is no accessible roof, so heating and cooling comes from base-building plant on landlord terms, often billed on BTU rather than a meter you read. Incoming services are frequently undersized and hard to reach - meter sets above ceilings in congested voids. The fire alarm is part of a terminal-wide system belonging to the operator. And access, working hours, deliveries, waste and trade clearances are all governed by an operating building that never closes, which sets the programme more than the construction does."
+  },
+  {
+    q: "Why does spare panel capacity matter more than service size?",
+    a: "Service amperage is the headline, but a nearly full panel is the constraint you hit first. A 42-circuit panel with three spare ways cannot take the individual circuits a food-service or equipment-heavy fit-out needs, regardless of the incoming amperage. Any survey that reports the service size without the panel schedule and a count of spare ways has answered the easy half of the question."
+  },
+  {
+    q: "Can you install a rooftop unit in a terminal retail unit?",
+    a: "Generally no - there is no accessible roof above the demise and no route to one. You inherit base-building infrastructure such as a water-cooled DX system with ceiling-concealed fan coils. Capacity increases become a negotiation with the landlord's engineering team rather than an equipment purchase, which is why observed performance on the day of survey matters more than the nameplate rating."
+  },
+  {
+    q: "How long does a transit-terminal fit-out take compared with a normal unit?",
+    a: "Materially longer, and the difference is access and approvals rather than construction. Overnight or out-of-hours working, booked loading windows, operator inductions and escorts, witnessed fire alarm changes, and landmark or historic fabric restrictions each carry lead times. The duration is predictable if those constraints are documented before the programme is set, and unpredictable if they are not."
+  },
+  {
+    q: "What should be surveyed before signing a lease in a station or airport?",
+    a: "Incoming water meter class and connection sizes, the electrical panel schedule with spare ways counted, what plant serves the demise and how it is billed, the fire alarm and sprinkler ownership boundary and change procedure, the access and working-hours regime with approval lead times, and a full photographic and 360-degree record of the ceiling void, which in terminals is dense and shared."
+  },
+];
+---
+<InsightArticle
+  title="Fitting Out a Retail Unit Inside a Live Transit Terminal"
+  description="A unit off the Grand Central concourse looks like the easiest job in a rollout. No roof, no plant, a fire alarm you do not own, a water service far too small."
+  slug="retail-fit-out-inside-a-transit-terminal"
+  h1="Fitting Out a Retail Unit Inside a Live Transit Terminal"
+  datePublished="2026-09-02"
+  heroImage="/Images/manhattan1.webp"
+  heroAlt="Manhattan - retail and food units inside a major transit terminal"
+  eyebrow="Insights &middot; Multi-Site"
+  blocks={blocks}
+  faqs={faqs}
+  estimatingLead="A unit like this cannot be priced from a rate per square foot. Once the constraints are documented, it can be priced from the building."
+  internalLinks={[
+    { text: "Pre-lease due diligence surveys", href: "/services/pre-construction-site-intelligence/" },
+    { text: "Restaurant & QSR conditions surveys", href: "/services/qsr-restaurant-survey/" },
+    { text: "Above-ceiling MEP surveys", href: "/insights/above-ceiling-mep-survey-fit-out/" },
+    { text: "Second-generation space: what to verify", href: "/insights/second-generation-space-what-to-verify-before-you-sign/" },
+    { text: "Surveyed locations", href: "/work/locations/" },
+  ]}
+/>
