@@ -73,10 +73,12 @@ const faqSchema = JSON.stringify({
   <div data-hero-page>
 
     <!-- Hero -->
-    <section class="relative min-h-screen flex items-center justify-center pt-24">
+    <section class="relative min-h-[78svh] md:min-h-screen flex items-center justify-center pt-24">
       <div class="absolute inset-0 bg-navy">
         <img
           src="/Images/hvac.webp"
+          srcset="/Images/hvac-640w.webp 640w, /Images/hvac-1024w.webp 1024w, /Images/hvac.webp 1600w"
+          sizes="100vw"
           width="1920"
           height="1440"
           alt="Exposed services and structure in a commercial floor plate stripped for fit-out, documented on a UK pre-construction survey"
@@ -321,7 +323,7 @@ const faqSchema = JSON.stringify({
         <div class="flex flex-wrap gap-6 text-midgrey">
           <a href="/uk/above-ceiling-mep-survey/" class="text-navy font-medium hover:opacity-80 transition-opacity">Above-ceiling MEP survey UK &rarr;</a>
           <a href="/uk/measured-building-survey/" class="text-navy font-medium hover:opacity-80 transition-opacity">Measured building survey UK &rarr;</a>
-          <a href="/uk/heritage-building-survey/" class="text-navy font-medium hover:opacity-80 transition-opacity">Heritage building survey UK &rarr;</a>
+          <a href="/uk/estimating/" class="text-navy font-medium hover:opacity-80 transition-opacity">Construction estimating UK &rarr;</a>
         </div>
       </div>
     </section>

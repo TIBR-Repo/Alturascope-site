@@ -1,5 +1,6 @@
 ---
 import Layout from "../layouts/Layout.astro";
+import { heroSrcset } from "../lib/srcset";
 import EstimatingBand from "./EstimatingBand.astro";
 
 interface FaqItem {
@@ -100,6 +101,8 @@ const faqSchema = JSON.stringify({
       <div class="absolute inset-0 bg-navy">
         <img
           src={heroImage}
+          srcset={heroSrcset(heroImage)}
+          sizes="100vw"
           alt={heroAlt}
           class="w-full h-full object-cover opacity-30"
           loading="eager"

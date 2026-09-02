@@ -1,0 +1,226 @@
+{
+  "/Images/attic.webp": {
+    "variants": [
+      640,
+      1024
+    ],
+    "width": 1600
+  },
+  "/Images/construction.webp": {
+    "variants": [
+      640,
+      1024
+    ],
+    "width": 1600
+  },
+  "/Images/drone-shot-1.webp": {
+    "variants": [
+      640,
+      1024
+    ],
+    "width": 1600
+  },
+  "/Images/hvac.webp": {
+    "variants": [
+      640,
+      1024
+    ],
+    "width": 1600
+  },
+  "/Images/locations/digital-twin-mesh.webp": {
+    "variants": [
+      640,
+      1024
+    ],
+    "width": 1280
+  },
+  "/Images/london2.webp": {
+    "variants": [
+      640,
+      1024
+    ],
+    "width": 1400
+  },
+  "/Images/manhattan1.webp": {
+    "variants": [
+      640,
+      1024
+    ],
+    "width": 1400
+  },
+  "/Images/pack/us-01.webp": {
+    "variants": [
+      640,
+      1024
+    ],
+    "width": 1348
+  },
+  "/Images/pack/us-03.webp": {
+    "variants": [
+      640,
+      1024
+    ],
+    "width": 1348
+  },
+  "/Images/plan-1.webp": {
+    "variants": [
+      640,
+      1024
+    ],
+    "width": 1600
+  },
+  "/Images/site-inside.webp": {
+    "variants": [
+      640,
+      1024
+    ],
+    "width": 1600
+  },
+  "/Images/site-interior-1.webp": {
+    "variants": [
+      640,
+      1024
+    ],
+    "width": 1600
+  },
+  "/Images/site-interior-2.webp": {
+    "variants": [
+      640,
+      1024
+    ],
+    "width": 1600
+  },
+  "/Images/stock/1441986300917-64674bd600d8.webp": {
+    "variants": [
+      640,
+      1024
+    ],
+    "width": 1600
+  },
+  "/Images/stock/1454165804606-c3d57bc86b40.webp": {
+    "variants": [
+      640,
+      1024
+    ],
+    "width": 1600
+  },
+  "/Images/stock/1486406146926-c627a92ad1ab.webp": {
+    "variants": [
+      640,
+      1024
+    ],
+    "width": 1600
+  },
+  "/Images/stock/1497032628192-86f99bcd76bc.webp": {
+    "variants": [
+      640,
+      1024
+    ],
+    "width": 1600
+  },
+  "/Images/stock/1497366216548-37526070297c.webp": {
+    "variants": [
+      640,
+      1024
+    ],
+    "width": 1600
+  },
+  "/Images/stock/1503387762-592deb58ef4e.webp": {
+    "variants": [
+      640,
+      1024
+    ],
+    "width": 1600
+  },
+  "/Images/stock/1504307651254-35680f356dfd.webp": {
+    "variants": [
+      640,
+      1024
+    ],
+    "width": 1600
+  },
+  "/Images/stock/1504328345606-18bbc8c9d7d1.webp": {
+    "variants": [
+      640,
+      1024
+    ],
+    "width": 1600
+  },
+  "/Images/stock/1504384308090-c894fdcc538d.webp": {
+    "variants": [
+      640,
+      1024
+    ],
+    "width": 1600
+  },
+  "/Images/stock/1519494026892-80bbd2d6fd0d.webp": {
+    "variants": [
+      640,
+      1024
+    ],
+    "width": 1600
+  },
+  "/Images/stock/1541888946425-d81bb19240f5.webp": {
+    "variants": [
+      640,
+      1024
+    ],
+    "width": 1600
+  },
+  "/Images/stock/1558494949-ef010cbdcc31.webp": {
+    "variants": [
+      640,
+      1024
+    ],
+    "width": 1600
+  },
+  "/Images/stock/1581092160607-ee22621dd758.webp": {
+    "variants": [
+      640,
+      1024
+    ],
+    "width": 1600
+  },
+  "/Images/stock/1621905252507-b35492cc74b4.webp": {
+    "variants": [
+      640,
+      1024
+    ],
+    "width": 1600
+  },
+  "/above-ceiling-survey.webp": {
+    "variants": [
+      640,
+      1024
+    ],
+    "width": 1600
+  },
+  "/commercial-kitchen-work.webp": {
+    "variants": [
+      640,
+      1024
+    ],
+    "width": 1280
+  },
+  "/dan-stephens-gDP_HYXfUwM-unsplash.webp": {
+    "variants": [
+      640,
+      1024
+    ],
+    "width": 1600
+  },
+  "/dan-stephens-iGISAfmahC4-unsplash.webp": {
+    "variants": [
+      640,
+      1024
+    ],
+    "width": 1600
+  },
+  "/pre-construction-survey.webp": {
+    "variants": [
+      640,
+      1024
+    ],
+    "width": 1600
+  }
+}

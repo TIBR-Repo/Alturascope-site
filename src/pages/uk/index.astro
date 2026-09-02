@@ -16,7 +16,6 @@ const schema = JSON.stringify({
 
 const ukServices = [
   { title: "Construction Estimating & Tender Pricing", href: "/uk/estimating/", description: "Send us the drawings and get back a priced, client-ready quotation under your own name — usually inside two working days. Bills of quantities, schedules of works, preliminaries and provisional sums, machine-audited and white-labelled, for main contractors and specialist subcontractors across the UK." },
-  { title: "Heritage Building Survey", href: "/uk/heritage-building-survey/", description: "Pre-intervention documentation for Grade I and Grade II listed buildings, scheduled monuments, conservation areas, and significant private estates. Survey-grade point cloud data and structured records for English Heritage, Historic Scotland, Cadw, and conservation architects." },
   { title: "Pre-Construction Survey", href: "/uk/pre-construction-survey/", description: "Existing conditions documentation before fit-out, refurbishment, or change of use begins. Navigable digital twin, conditions report, above-ceiling MEP capture, and asset schedule — delivered before a design decision is made." },
   { title: "Measured Building Survey", href: "/uk/measured-building-survey/", description: "Survey-grade point cloud data for architects and engineers requiring dimensional accuracy for CAD and Revit workflows. Accurate to 5–12mm across full building footprints. Exports in .e57 and .rcp format." },
   { title: "Above-Ceiling MEP Survey", href: "/uk/above-ceiling-mep-survey/", description: "Thermal imaging, 360° pole-mounted capture, and borescope inspection to document what's above the ceiling tile before fit-out begins. Non-invasive. Integrated into the full documentation package." },
@@ -39,10 +38,12 @@ const ukServices = [
   <div data-hero-page>
 
     <!-- Hero -->
-    <section class="relative min-h-screen flex items-center justify-center pt-24 pb-36">
+    <section class="relative min-h-[78svh] md:min-h-screen flex items-center justify-center pt-24 pb-36">
       <div class="absolute inset-0 bg-navy">
         <img
           src="/Images/london2.webp"
+          srcset="/Images/london2-640w.webp 640w, /Images/london2-1024w.webp 1024w, /Images/london2.webp 1400w"
+          sizes="100vw"
           alt="The City of London at night from the Thames - Alturascope UK covers site surveys and construction estimating across England, Scotland, Wales and Northern Ireland"
           width="1400"
           height="934"
@@ -193,26 +194,6 @@ const ukServices = [
       </div>
     </section>
 
-    <!-- Heritage Strength -->
-    <section class="bg-offwhite section-padding">
-      <div class="max-w-[760px] mx-auto px-6">
-        <p class="label text-gold mb-4">Heritage &amp; Listed Buildings</p>
-        <h2 class="text-[2rem] font-light text-navy leading-tight">
-          Particular Strength in Heritage and Listed Building Work
-        </h2>
-        <div class="mt-6 space-y-4 text-midgrey leading-body">
-          <p>
-            In the UK, our most distinctive capability is heritage documentation. Our principal's background includes hands-on construction and conservation experience on some of Britain's most significant historic properties &mdash; Grade I and Grade II listed buildings, scheduled monuments, and properties under the stewardship of English Heritage, Historic Scotland, and Cadw.
-          </p>
-          <p>
-            We know how to work carefully in and around historic fabric, and we know what conservation architects and heritage bodies actually need from the documentation record. We produce records that serve the planning process, not just the project team.
-          </p>
-        </div>
-        <a href="/uk/heritage-building-survey/" class="inline-block mt-8 text-navy font-medium hover:opacity-80 transition-opacity">
-          Heritage building survey UK &rarr;
-        </a>
-      </div>
-    </section>
 
     <!-- Deliverables -->
     <section class="bg-navy section-padding">

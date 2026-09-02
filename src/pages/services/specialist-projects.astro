@@ -34,11 +34,13 @@ const breadcrumbSchema = JSON.stringify({
   <div data-hero-page>
 
     <!-- Hero -->
-    <section class="relative min-h-screen flex items-center justify-center pt-24">
+    <section class="relative min-h-[78svh] md:min-h-screen flex items-center justify-center pt-24">
       <!-- REPLACE: Significant heritage interior, private estate space, or dramatically atmospheric architectural photograph. Must read as extraordinary, not commercial. -->
       <div class="absolute inset-0 bg-navy">
         <img
           src="/Images/attic.webp"
+          srcset="/Images/attic-640w.webp 640w, /Images/attic-1024w.webp 1024w, /Images/attic.webp 1600w"
+          sizes="100vw"
           width="1920"
           height="1440"
           alt="Roof void and structural timbers documented by Alturascope on a specialist survey"
@@ -173,7 +175,7 @@ const breadcrumbSchema = JSON.stringify({
         <a href="/" class="text-navy font-medium hover:opacity-80 transition-opacity">Home &rarr;</a>
         <a href="/services/construction-documentation/" class="text-navy font-medium hover:opacity-80 transition-opacity">Construction documentation &rarr;</a>
         <a href="/services/multi-site-rollout-documentation/" class="text-navy font-medium hover:opacity-80 transition-opacity">Multi-site rollout documentation &rarr;</a>
-        <a href="/services/heritage-building-documentation/" class="text-navy font-medium hover:opacity-80 transition-opacity">Heritage building documentation &rarr;</a>
+        <a href="/insights/site-documentation-heritage-complex-specialist-buildings/" class="text-navy font-medium hover:opacity-80 transition-opacity">Heritage &amp; specialist buildings &rarr;</a>
         <a href="/services/" class="text-navy font-medium hover:opacity-80 transition-opacity">All services &rarr;</a>
       </div>
     </section>

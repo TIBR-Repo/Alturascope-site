@@ -16,7 +16,9 @@ server config is ever reset by Forge.
 
 | From | To | Reason |
 |---|---|---|
-| `/uk/heritage-building-documentation/` | `/uk/heritage-building-survey/` | Duplicate page with zero inbound links, competing with the survey page for the same query. Consolidated 2026-08-26. |
+| `/uk/heritage-building-survey/` | `/uk/` | **Heritage retired 2026-09-02.** 682 impressions - 36% of the whole site - at average position 69.8, never clicked. National head terms the site cannot win, distorting every site-wide average. UK leads with estimating. |
+| `/uk/heritage-building-documentation/` | `/uk/` | Was pointing at the page above; repointed rather than left as a redirect chain. |
+| `/services/heritage-building-documentation/` | `/services/specialist-projects/` | Same retirement, US side. |
 
 ## Adding the nginx rule
 
@@ -29,8 +31,8 @@ drop it — the same pattern the Cache-Control headers use (see `caching.md`):
 
 ```nginx
 # /etc/nginx/forge-conf/2978903/server/redirects.conf
-location = /uk/heritage-building-documentation/ {
-    return 301 https://alturascope.com/uk/heritage-building-survey/;
+location = /uk/heritage-building-survey/ {
+    return 301 https://alturascope.com/uk/;
 }
 ```
 
