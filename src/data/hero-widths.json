@@ -27,6 +27,90 @@
     ],
     "width": 1600
   },
+  "/Images/insights/backflow-nameplate.webp": {
+    "variants": [
+      640
+    ],
+    "width": 1400
+  },
+  "/Images/insights/base-building-fire-alarm.webp": {
+    "variants": [
+      640
+    ],
+    "width": 1400
+  },
+  "/Images/insights/ceiling-access-point.webp": {
+    "variants": [
+      640
+    ],
+    "width": 1400
+  },
+  "/Images/insights/chiller-nameplate.webp": {
+    "variants": [
+      640
+    ],
+    "width": 1400
+  },
+  "/Images/insights/duct-insulation-damaged.webp": {
+    "variants": [
+      640
+    ],
+    "width": 1400
+  },
+  "/Images/insights/grease-receptor.webp": {
+    "variants": [
+      640
+    ],
+    "width": 1400
+  },
+  "/Images/insights/hood-underside-filters.webp": {
+    "variants": [
+      640
+    ],
+    "width": 1400
+  },
+  "/Images/insights/panel-l-enclosure.webp": {
+    "variants": [
+      640
+    ],
+    "width": 1400
+  },
+  "/Images/insights/panel-l-schedule.webp": {
+    "variants": [
+      640
+    ],
+    "width": 1400
+  },
+  "/Images/insights/panel-schedule.webp": {
+    "variants": [
+      640
+    ],
+    "width": 1400
+  },
+  "/Images/insights/transformer-approach.webp": {
+    "variants": [
+      640
+    ],
+    "width": 1400
+  },
+  "/Images/insights/void-service-congestion.webp": {
+    "variants": [
+      640
+    ],
+    "width": 1400
+  },
+  "/Images/insights/void-services.webp": {
+    "variants": [
+      640
+    ],
+    "width": 1400
+  },
+  "/Images/insights/water-meter-outside-demise.webp": {
+    "variants": [
+      640
+    ],
+    "width": 1400
+  },
   "/Images/locations/digital-twin-mesh.webp": {
     "variants": [
       640,

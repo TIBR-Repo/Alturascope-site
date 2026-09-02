@@ -20,6 +20,8 @@ interface Block {
   subs?: { h3: string; body: string }[];
   /** A pulled-out note. */
   note?: string;
+  /** An evidence photograph from a real survey. */
+  figure?: { src: string; alt: string; caption: string };
 }
 
 interface Props {
@@ -154,6 +156,22 @@ const readable = new Date(datePublished).toLocaleDateString(
                   </div>
                 ))}
               </div>
+            )}
+            {b.figure && (
+              <figure class="mt-9 -mx-6 md:mx-0">
+                <img
+                  src={b.figure.src}
+                  srcset={heroSrcset(b.figure.src)}
+                  sizes="(min-width: 760px) 760px, 100vw"
+                  alt={b.figure.alt}
+                  class="w-full md:rounded-sm"
+                  loading="lazy"
+                  decoding="async"
+                />
+                <figcaption class="mt-3 px-6 md:px-0 text-[0.85rem] text-midgrey leading-relaxed border-l-2 border-gold pl-4">
+                  {b.figure.caption}
+                </figcaption>
+              </figure>
             )}
             {b.note && (
               <div class="mt-8 border-l-2 border-gold bg-offwhite py-5 px-7">
