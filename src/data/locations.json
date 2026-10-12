@@ -299,5 +299,47 @@
   "kind": "Office campus",
   "w": 1200,
   "h": 675
+ },
+ {
+  "slug": "matley-lane-reno",
+  "label": "Matley Lane, Reno, Nevada",
+  "kind": "Office and light industrial",
+  "w": 1200,
+  "h": 675
+ },
+ {
+  "slug": "south-willow-avenue-cookeville",
+  "label": "South Willow Avenue, Cookeville, Tennessee",
+  "kind": "Office and clinical suite",
+  "w": 1200,
+  "h": 675
+ },
+ {
+  "slug": "maryland-avenue-hagerstown",
+  "label": "Maryland Avenue, Hagerstown, Maryland",
+  "kind": "Office suite",
+  "w": 1200,
+  "h": 675
+ },
+ {
+  "slug": "northeastern-boulevard-salem",
+  "label": "Northeastern Boulevard, Salem, New Hampshire",
+  "kind": "Office building, drone survey",
+  "w": 1200,
+  "h": 675
+ },
+ {
+  "slug": "broadway-lincoln-square-new-york",
+  "label": "Broadway, Lincoln Square, New York",
+  "kind": "Ground-floor retail shell",
+  "w": 1200,
+  "h": 675
+ },
+ {
+  "slug": "crossroads-park-drive-houston",
+  "label": "Crossroads Park Drive, Houston, Texas",
+  "kind": "Single-story building, drone survey",
+  "w": 1200,
+  "h": 675
  }
 ]
