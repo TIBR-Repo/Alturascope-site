@@ -250,5 +250,54 @@
   "kind": "Open-air retail",
   "w": 1200,
   "h": 675
+ },
+ {
+  "slug": "route-59-naperville",
+  "label": "Route 59, Naperville, Illinois",
+  "kind": "Retail shell, mid strip-out",
+  "w": 1200,
+  "h": 675
+ },
+ {
+  "slug": "peachtree-road-atlanta",
+  "label": "Peachtree Road, Atlanta, Georgia",
+  "kind": "High-rise office",
+  "w": 1200,
+  "h": 675
+ },
+ {
+  "slug": "industrial-avenue-lowell",
+  "label": "Industrial Avenue, Lowell, Massachusetts",
+  "kind": "Warehouse and light industrial",
+  "w": 1200,
+  "h": 675
+ },
+ {
+  "slug": "gateway-oaks-drive-sacramento",
+  "label": "Gateway Oaks Drive, Sacramento, California",
+  "kind": "Office suite",
+  "w": 1200,
+  "h": 675
+ },
+ {
+  "slug": "ohio-street-commons-joliet",
+  "label": "Ohio Street Commons, Joliet, Illinois",
+  "kind": "Stripped retail unit",
+  "w": 1200,
+  "h": 675
+ },
+ {
+  "slug": "thousand-oaks-boulevard-thousand-oaks",
+  "label": "Thousand Oaks Boulevard, Thousand Oaks, California",
+  "kind": "Office suite",
+  "w": 1200,
+  "h": 675
+ },
+ {
+  "slug": "madera-road-simi-valley",
+  "label": "Madera Road, Simi Valley, California",
+  "kind": "Office campus",
+  "w": 1200,
+  "h": 675
  }
 ]
