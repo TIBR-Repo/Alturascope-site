@@ -2,7 +2,7 @@
 /**
  * A four-image strip pointing at /work/locations/.
  *
- * Audit finding: the gallery of 25 surveyed buildings had four inbound links
+ * Audit finding: the gallery of surveyed buildings had four inbound links
  * across 83 pages and no place in the navigation, while the contact form had
  * seventy-one. It is the most immediately convincing thing on the site and it
  * was the hardest thing to find.
@@ -25,9 +25,13 @@ const {
     "apollo-drive-chelmsford",
   ],
   heading = "A sample of the buildings we&rsquo;ve been inside.",
-  lead = "Hundreds of commercial locations documented across the United States. Twenty-five of them are shown here - retail, office, mall and transport - named by centre or street, never by occupier.",
+  lead = "Hundreds of commercial locations documented across the United States. {count} of them are shown here - retail, office, mall and transport - named by centre or street, never by occupier.",
   tone = "light",
 } = Astro.props;
+
+// {count} in a lead is filled from the gallery itself, so the number can never go
+// stale when sites are added.
+const leadText = lead.replace("{count}", String(locations.length));
 
 const bySlug = new Map(locations.map((l) => [l.slug, l]));
 const picks = featured.map((s) => bySlug.get(s)).filter(Boolean);
@@ -41,7 +45,7 @@ const dark = tone === "dark";
       <div class="max-w-[54ch]">
         <p class="label text-gold mb-4">Surveyed Locations</p>
         <h2 class={`text-[1.7rem] md:text-[2rem] font-light leading-tight ${dark ? "text-offwhite" : "text-navy"}`} set:html={heading} />
-        <p class={`mt-5 leading-body ${dark ? "text-offwhite/70" : "text-midgrey"}`}>{lead}</p>
+        <p class={`mt-5 leading-body ${dark ? "text-offwhite/70" : "text-midgrey"}`}>{leadText}</p>
       </div>
       <a
         href="/work/locations/"

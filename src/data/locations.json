@@ -173,5 +173,82 @@
   "kind": "Vacant retail unit",
   "w": 1200,
   "h": 675
+ },
+ {
+  "slug": "fifth-avenue-new-york",
+  "label": "Fifth Avenue, New York",
+  "kind": "Cold shell, stripped to structure",
+  "w": 1200,
+  "h": 675
+ },
+ {
+  "slug": "westfield-topanga-canoga-park",
+  "label": "Westfield Topanga, Canoga Park, California",
+  "kind": "Enclosed mall",
+  "w": 1200,
+  "h": 675
+ },
+ {
+  "slug": "grand-avenue-san-marcos",
+  "label": "Grand Avenue, San Marcos, California",
+  "kind": "Food-service unit",
+  "w": 1200,
+  "h": 675
+ },
+ {
+  "slug": "new-york-avenue-washington-dc",
+  "label": "New York Avenue, Washington, DC",
+  "kind": "Office",
+  "w": 1200,
+  "h": 675
+ },
+ {
+  "slug": "los-gatos-village-square",
+  "label": "Los Gatos Village Square, Los Gatos, California",
+  "kind": "Vacant restaurant unit",
+  "w": 1200,
+  "h": 675
+ },
+ {
+  "slug": "jericho-turnpike-commack",
+  "label": "Jericho Turnpike, Commack, New York",
+  "kind": "Strip-centre retail",
+  "w": 1200,
+  "h": 675
+ },
+ {
+  "slug": "west-diversey-parkway-chicago",
+  "label": "West Diversey Parkway, Chicago, Illinois",
+  "kind": "Shell unit",
+  "w": 1200,
+  "h": 675
+ },
+ {
+  "slug": "manhattan-avenue-greenpoint-brooklyn",
+  "label": "Manhattan Avenue, Greenpoint, Brooklyn",
+  "kind": "Stripped retail unit",
+  "w": 1200,
+  "h": 675
+ },
+ {
+  "slug": "broadway-upper-west-side-new-york",
+  "label": "Broadway, Upper West Side, New York",
+  "kind": "Residential over retail",
+  "w": 1200,
+  "h": 675
+ },
+ {
+  "slug": "cactus-road-phoenix",
+  "label": "Cactus Road, Phoenix, Arizona",
+  "kind": "New-build shell",
+  "w": 1200,
+  "h": 675
+ },
+ {
+  "slug": "la-centerra-katy",
+  "label": "La Centerra, Katy, Texas",
+  "kind": "Open-air retail",
+  "w": 1200,
+  "h": 675
  }
 ]

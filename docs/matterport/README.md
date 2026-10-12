@@ -1,7 +1,11 @@
 # Matterport covers — how the gallery gets its images
 
 `models.json` holds every Alturascope Matterport scan: model id, project name, place.
-As of 2026-08-25 there are 27.
+As of 2026-10-12 there are 38 (36 shown in the website gallery).
+
+The ScopeWalk `visits.tour_3d_url` column is the fastest source: one query on prod lists every
+linked tour. Urgent Vets (`rzzz3PB93UU`) returned 404 from the thumb endpoint on 2026-10-12 —
+the model is no longer public, so it is not in the gallery.
 
 ## The key fact
 
@@ -42,3 +46,11 @@ Scans not linked on their ScopeWalk project won't be found this way — Urgent V
 - Check every cover for identifiable faces before it goes public.
 - A scan's cover is one image but the model holds hundreds; interior stills can be pulled
   from inside a scan and used alongside a different cover.
+
+## Additions (2026-10-12)
+
+Eleven scans surveyed Aug–Oct 2026 added, taking the gallery from 25 to 36. Three covers were
+not publishable as-is (a passer-by facing camera, a third-party branded van, the outgoing
+occupier's sign), so those three images are frames taken from inside the scan instead:
+Fifth Avenue (sweep 35), Greenpoint (sweep 20), La Centerra (sweep 8), cropped to remove the
+player UI. Set clean covers in Matterport and they can be swapped back to the thumb endpoint.
