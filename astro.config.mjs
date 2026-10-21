@@ -42,6 +42,8 @@ export default defineConfig({
     tailwind(),
     sitemap({
       filter: (page) => !page.includes('/thank-you/'),
+      // Static exhibit in public/, outside Astro's routes.
+      customPages: ['https://alturascope.com/work/walkthrough/'],
       // Give crawlers a change signal. Without lastmod, a recrawl of an updated
       // page can lag by weeks - which is why new services were slow to surface.
       serialize(item) {
