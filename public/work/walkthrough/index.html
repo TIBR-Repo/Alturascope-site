@@ -3,11 +3,11 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-<title>Restaurant Walkthrough | Alturascope</title>
-<meta name="description" content="Scroll from a measured floor plan into the 3D scan of a trading restaurant, and walk the findings of an Alturascope pre-lease survey in place.">
+<title>Restaurant to Juice Bar | Alturascope</title>
+<meta name="description" content="Scroll from a measured floor plan into the 3D scan of a trading restaurant, walk the findings of an Alturascope pre-lease survey, then watch it become a juice bar test fit.">
 <link rel="canonical" href="https://alturascope.com/work/walkthrough/">
-<meta property="og:title" content="Restaurant Walkthrough | Alturascope">
-<meta property="og:description" content="A measured plan becomes the scanned building, then walks you to every finding.">
+<meta property="og:title" content="Restaurant to Juice Bar | Alturascope">
+<meta property="og:description" content="A measured plan becomes the scanned building, walks you to every finding, then becomes a juice bar.">
 <meta property="og:image" content="https://alturascope.com/work/walkthrough/og.jpg">
 <meta property="og:url" content="https://alturascope.com/work/walkthrough/">
 <link rel="icon" href="/favicon.svg" type="image/svg+xml">
@@ -19,7 +19,7 @@
 /* Layout: the 3D drawing sheet fixed behind a column of survey notes; alturascope.com palette, light only by design. */
 :root{
   --paper:#F7F5F1; --ink:#0B1F3A; --ink-soft:#5E6673; --grid:#E9E4DA; --rule:#E5E0D8;
-  --redline:#A8862F; --mark:#C9A84C; --panel:#FFFFFF; --panel-edge:#E5E0D8; --tint:#EFEBE3;
+  --redline:#A8862F; --mark:#C9A84C; --concept:#C98A1E; --panel:#FFFFFF; --panel-edge:#E5E0D8; --tint:#EFEBE3;
   --f-display:"DM Sans",ui-sans-serif,system-ui,-apple-system,"Segoe UI",sans-serif;
   --f-body:"DM Sans",ui-sans-serif,system-ui,-apple-system,"Segoe UI",sans-serif;
   --f-mono:"JetBrains Mono",ui-monospace,"Cascadia Mono",Consolas,monospace;
@@ -104,10 +104,12 @@ body.freelook #stage{touch-action:none}
 .dimlbl,.roomlbl,.north,.pin{left:0;top:0}
 .eyebrow{letter-spacing:.15em}
 section:first-child{padding-top:64px}
-@media (max-width:760px){#back{top:auto;bottom:calc(env(safe-area-inset-bottom,0px) + 10px)} section:first-child{padding-top:0}}
+@media (max-width:760px){#back{top:calc(env(safe-area-inset-top,0px) + 58px);font-size:11px;padding:6px 8px} section:first-child{padding-top:0} .roomlbl.concept span{display:none} .roomlbl.concept b{font-size:11px;letter-spacing:.08em}}
+.roomlbl.concept b{color:#8A5A10;font-size:16px}
+.roomlbl.concept span{color:#8A5A10}
 
 </style>
-<script>window.SITE = {"base": "", "scene": {"title": "Restaurant walkthrough", "brand": "Alturascope", "scanLabel": "Matterport", "titleBlock": [["Exhibit", "Pre-lease survey"], ["Space", "Restaurant · Texas"], ["Area", "2,265 SF"]], "plan": "plan.json", "tiles": ["scan/t00.json", "scan/t01.json", "scan/t02.json", "scan/t03.json", "scan/t04.json", "scan/t05.json", "scan/t06.json", "scan/t07.json", "scan/t08.json", "scan/t09.json", "scan/t10.json", "scan/t11.json", "scan/t12.json", "scan/t13.json", "scan/t14.json", "scan/t15.json", "scan/t16.json", "scan/t17.json", "scan/t18.json", "scan/t19.json", "scan/t20.json", "scan/t21.json", "scan/t22.json", "scan/t23.json", "scan/t24.json", "scan/t25.json", "scan/t26.json", "scan/t27.json", "scan/t28.json", "scan/t29.json", "scan/t30.json", "scan/t31.json", "scan/t32.json", "scan/t33.json", "scan/t34.json", "scan/t35.json", "scan/t36.json", "scan/t37.json", "scan/t38.json", "scan/t39.json", "scan/t40.json", "scan/t41.json", "scan/t42.json", "scan/t43.json", "scan/t44.json", "scan/t45.json", "scan/t46.json", "scan/t47.json", "scan/t48.json", "scan/t49.json", "scan/t50.json", "scan/t51.json", "scan/t52.json", "scan/t53.json", "scan/t54.json", "scan/t55.json", "scan/t56.json", "scan/t57.json", "scan/t58.json", "scan/t59.json", "scan/t60.json", "scan/t61.json", "scan/t62.json", "scan/t63.json", "scan/t64.json"], "frame": {"centre": [-8.9, 7.9], "crop": {"x0": -15.95, "x1": -1.85, "z0": -0.85, "z1": 16.4}, "wide": {"up": [0, 0, -1], "span": [17.5, 21.5]}, "narrow": {"up": [0, 0, -1], "span": [16.8, 21]}, "north": [-0.2, 0.6], "rooms": [{"at": [-9.7, 11.6], "title": "DINING", "sub": "bar to the right"}, {"at": [-9.6, 4.0], "sub": "KITCHEN 1"}, {"at": [-8.6, 1.1], "sub": "KITCHEN 2 · REAR"}, {"at": [-14.4, 2.6], "sub": "WALK-IN"}, {"at": [-3.6, 3.0], "sub": "WC"}, {"at": [-3.6, 4.8], "sub": "WC"}, {"at": [-3.6, 9.6], "sub": "BAR"}]}, "sections": [{"key": "plan", "label": "Plan", "h1": true, "hint": true, "eyebrow": "Exhibit · pre-lease due diligence", "title": "A trading restaurant, read before the lease", "lead": "A 2,265 SF full-service restaurant in an open-air centre in Texas, surveyed for a national brand deciding whether to take the space.", "body": ["This is our measured floor plan. Scroll, and it becomes the scanned building, then walks you to each finding that shaped the decision."], "rows": [["Inside", "43'-1\" × 52'-7\""], ["Surveyed", "October 2026, before service"], ["Delivered", "Report, measured drawings, scan, 360° video"]], "view": {"top": true, "fov": 6, "cut": 1.2, "mesh": 0, "ink": 1}}, {"key": "scan", "label": "The scan", "eyebrow": "Plan + scan", "title": "The drawing sits on the scan it was measured from", "body": ["Under the linework is the 3D scan of the restaurant, sliced 4 ft above the floor, the height every floor plan is cut at. Booths, bar, cook line and walk-in land on the drawn lines."], "fig": "Cut plane 4'-0\" above finished floor", "view": {"top": true, "fov": 6, "cut": 1.2, "mesh": 1, "ink": 1}}, {"key": "walls", "label": "Walls rise", "overview": true, "eyebrow": "Plan → space", "title": "A dining room, a bar and two kitchens", "body": ["The cut rises through the fit-out. The dining room is open to a 12 ft ceiling; the kitchens sit under an 8 ft ceiling with the services above it."], "rows": [["Dining", "12'-7\" to 12'-11\" ceiling"], ["Kitchens", "8'-2⅜\" ceiling"], ["Deck", "18'-9\" to 19'-4\" above the floor"]], "view": {"pos": [-23, 15, 25], "tgt": [-8.9, 0.6, 7.4], "fov": 34, "cut": 3.0, "ink": 0.5}}, {"key": "s1", "label": "Power", "tag": 1, "eyebrow": "Power · the headline", "title": "The record said no transformer. There is one, and it sets the budget", "body": ["A desk record of the space listed no step-down transformer. Above the kitchen ceiling we found a 75 kVA unit feeding every 208 V panel. It caps the restaurant's 208 V supply at about half of what the incoming brand specifies."], "fig": "75 kVA ÷ (208 V × √3) ≈ 208 A, against 400 A specified", "photos": [{"src": "img/xfmr_plate.jpg", "alt": "Square D transformer nameplate above the kitchen ceiling", "caption": "75 kVA, 480 V to 208Y/120 V, read above the ceiling"}], "next": {"label": "What it meant", "text": "A 112.5 kVA transformer fits the existing 200 A, 480 V service. The full specification needs a utility service increase, so the application went in early."}, "pin": [-6.3, 2.8, 3.4], "view": {"pos": [-10.6, 1.65, 3.9], "tgt": [-6.0, 1.9, 3.4], "fov": 66}}, {"key": "s2", "label": "Kitchen", "tag": 2, "eyebrow": "Kitchen and hoods", "title": "A 16 ft Type I hood the new tenant does not need", "body": ["A full cook line under a CaptiveAire hood with suppression and make-up air, plus a second hood over the dish machine. A juice bar cooks nothing, so both are removal items, or the landlord keeps them."], "rows": [["Hood 1", "16'-0 13/16\" × 4'-0 3/4\", suppression, make-up air"], ["Hood 2", "3'-11 13/16\" × 3'-6 3/16\", dish machine"], ["Gas", "1,231 MBH designed, mostly cooking"]], "photos": [{"src": "img/hood.jpg", "alt": "Stainless Type I hood over the cook line", "caption": "Hood 1 over the cook line"}], "next": {"label": "What it meant", "text": "Removing the cook line releases most of the gas load and much of the 208 V demand, which eases the power gap."}, "pin": [-9.4, 2.1, 2.7], "view": {"pos": [-6.4, 1.6, 4.2], "tgt": [-10.2, 1.9, 2.3], "fov": 64}}, {"key": "s3", "label": "Walk-in", "tag": 3, "eyebrow": "Refrigeration", "title": "A walk-in cooler with a freezer built inside it", "body": ["Box-in-box at the rear left, with remote condensing units on the roof. The incoming layout uses reach-in refrigeration, so the walk-in is evaluated or removed."], "photos": [{"src": "img/walkin.jpg", "alt": "Walk-in cooler interior with shelving and the freezer door", "caption": "Inside the cooler, freezer door ahead"}], "next": {"label": "What it meant", "text": "A refrigeration contractor inspects the boxes and condensing units before anyone counts them as an asset."}, "pin": [-13.9, 1.4, 2.3], "view": {"pos": [-9.4, 7.2, 9.0], "tgt": [-13.6, 0.8, 2.4], "fov": 40, "cut": 2.3}}, {"key": "s4", "label": "Water", "tag": 4, "eyebrow": "Water and hot water", "title": "Three water heaters above one ceiling, one at the end of its life", "rows": [["Main", "1½\" Type L copper with its own 1½\" sub-meter"], ["Tank", "100 gal gas, built March 2006"], ["Also", "Gas tankless + 40 gal electric"]], "photos": [{"src": "img/water_heaters.jpg", "alt": "A.O. Smith 100 gallon gas water heater"}, {"src": "img/pipe.jpg", "alt": "Copper water main printed 1 1/2 inch Type L"}], "next": {"label": "What it meant", "text": "The water service already meets the brand standard. The 2006 tank is replaced; the tankless venting can be reused."}, "pin": [-8.6, 2.6, 0.7], "view": {"pos": [-4.2, 1.7, 1.1], "tgt": [-10.5, 2.3, 0.7], "fov": 64}}, {"key": "s5", "label": "Restrooms", "tag": 5, "eyebrow": "Restrooms", "title": "Two single-user restrooms, recently refinished", "rows": [["Restroom 1", "6'-6 7/16\" × 6'-2 7/8\""], ["Restroom 2", "6'-6\" × 6'-1½\""], ["Hallway", "3'-6 3/8\" wide"]], "photos": [{"src": "img/restroom.jpg", "alt": "Single-user restroom with subway tile and grab bars", "caption": "Hex mosaic floor, grab bars, exhaust fan"}], "next": {"label": "What it meant", "text": "Refit to the brand standard, checking turning space and pull-side door clearance against current accessibility rules."}, "pin": [-3.6, 1.2, 3.8], "view": {"pos": [-4.6, 8.4, 8.6], "tgt": [-4.2, 0.4, 3.6], "fov": 38, "cut": 2.4}}, {"key": "s6", "label": "Dining", "tag": 6, "eyebrow": "Dining room and HVAC", "title": "20 tons on the roof, and room for an open ceiling", "body": ["Two packaged rooftop units, 15 tons from 2021 and 5 tons from 2019, already give two-zone control. Above the 12 ft dining ceiling there are 6 to 7 ft to the deck."], "fig": "2,265 SF ÷ 20 tons ≈ 113 SF per ton", "photos": [{"src": "img/dining.jpg", "alt": "Dining room with roll-up glass door to the patio"}, {"src": "img/above_ceiling.jpg", "alt": "Flex duct and services above the ceiling"}], "next": {"label": "What it meant", "text": "Keep both units after a service inspection and rebalance the duct. An exposed ceiling is achievable once the plenum is tidied."}, "pin": [-8.8, 3.6, 10.6], "view": {"pos": [-13.6, 1.7, 15.4], "tgt": [-6.4, 2.6, 8.6], "fov": 66}}, {"key": "s7", "label": "Life safety", "tag": 7, "eyebrow": "Life safety", "title": "No sprinklers, but a capped 6\" supply next door", "body": ["There are no heads or sprinkler piping anywhere in the unit. In the building's shared meter room a 6\" fire-protection stub rises through the floor, capped with a blind flange: a supply point if the new design needs one."], "photos": [{"src": "img/ceiling.jpg", "alt": "Acoustic dining ceiling with diffusers and no sprinkler heads", "caption": "Dining ceiling: diffusers, lights, no heads"}], "next": {"label": "What it meant", "text": "The architect confirms the occupancy limits with the fire marshal at design stage, with the stub as the fallback."}, "pin": [-6.0, 3.8, 12.5], "view": {"pos": [-11.0, 1.5, 15.0], "tgt": [-7.0, 3.7, 11.0], "fov": 66}}, {"key": "end", "label": "Explore", "overview": true, "eyebrow": "The deliverable", "title": "Every finding has a place in the building", "body": ["This walkthrough sits beside the written report, the measured drawings, the scan and the 360° video. Tap a marker to jump to it, or explore the scan yourself."], "links": [{"label": "What a survey delivers", "url": "/work/"}, {"label": "Start a project", "url": "/contact/"}], "note": "Client, occupier and address are withheld. Figures are from the survey report.", "view": {"pos": [-24, 17, 24], "tgt": [-8.9, 0.4, 7.4], "fov": 34, "ink": 0.25, "cut": 4.3}}]}, "back": "/work/", "backLabel": "alturascope.com"};</script>
+<script>window.SITE = {"base": "", "scene": {"title": "Restaurant walkthrough", "brand": "Alturascope", "scanLabel": "Matterport", "titleBlock": [["Exhibit", "Pre-lease survey"], ["Space", "Restaurant · Texas"], ["Area", "2,265 SF"]], "plan": "plan.json", "tiles": ["scan/t00.json", "scan/t01.json", "scan/t02.json", "scan/t03.json", "scan/t04.json", "scan/t05.json", "scan/t06.json", "scan/t07.json", "scan/t08.json", "scan/t09.json", "scan/t10.json", "scan/t11.json", "scan/t12.json", "scan/t13.json", "scan/t14.json", "scan/t15.json", "scan/t16.json", "scan/t17.json", "scan/t18.json", "scan/t19.json", "scan/t20.json", "scan/t21.json", "scan/t22.json", "scan/t23.json", "scan/t24.json", "scan/t25.json", "scan/t26.json", "scan/t27.json", "scan/t28.json", "scan/t29.json", "scan/t30.json", "scan/t31.json", "scan/t32.json", "scan/t33.json", "scan/t34.json", "scan/t35.json", "scan/t36.json", "scan/t37.json", "scan/t38.json", "scan/t39.json", "scan/t40.json", "scan/t41.json", "scan/t42.json", "scan/t43.json", "scan/t44.json", "scan/t45.json", "scan/t46.json", "scan/t47.json", "scan/t48.json", "scan/t49.json", "scan/t50.json", "scan/t51.json", "scan/t52.json", "scan/t53.json", "scan/t54.json", "scan/t55.json", "scan/t56.json", "scan/t57.json", "scan/t58.json", "scan/t59.json", "scan/t60.json", "scan/t61.json", "scan/t62.json", "scan/t63.json", "scan/t64.json"], "strip": {"boxes": [[-15.44, 0.055, -0.19, -6.25, 2.43, 5.95], [-15.44, 0.055, 5.95, -6.25, 3.9, 7.35], [-15.44, 0.055, 7.35, -2.47, 3.62, 15.44], [-6.25, 0.055, 5.9, -2.47, 3.62, 7.35]]}, "concept": {"segs": {"wall": [-15.46, 5.69, -7.4, 5.69, -7.4, 5.69, -7.4, 5.81, -7.4, 5.81, -15.46, 5.81, -15.46, 5.81, -15.46, 5.69], "furn": [-15.4, -0.18, -13.4, -0.18, -13.4, -0.18, -13.4, 0.57, -13.4, 0.57, -15.4, 0.57, -15.4, 0.57, -15.4, -0.18, -13.0, -0.18, -8.6, -0.18, -8.6, -0.18, -8.6, 0.52, -8.6, 0.52, -13.0, 0.52, -13.0, 0.52, -13.0, -0.18, -15.42, 1.4, -14.87, 1.4, -14.87, 1.4, -14.87, 5.0, -14.87, 5.0, -15.42, 5.0, -15.42, 5.0, -15.42, 1.4, -8.3, 4.6, -6.8, 4.6, -6.8, 4.6, -6.8, 5.5, -6.8, 5.5, -8.3, 5.5, -8.3, 5.5, -8.3, 4.6, -6.85, 2.6, -6.3, 2.6, -6.3, 2.6, -6.3, 3.4, -6.3, 3.4, -6.85, 3.4, -6.85, 3.4, -6.85, 2.6, -12.4, 5.84, -6.9, 5.84, -6.9, 5.84, -6.9, 6.44, -6.9, 6.44, -12.4, 6.44, -12.4, 6.44, -12.4, 5.84, -12.6, 7.0, -6.6, 7.0, -6.6, 7.0, -6.6, 7.75, -6.6, 7.75, -12.6, 7.75, -12.6, 7.75, -12.6, 7.0, -15.46, 8.0, -14.96, 8.0, -14.96, 8.0, -14.96, 15.2, -14.96, 15.2, -15.46, 15.2, -15.46, 15.2, -15.46, 8.0, -15.46, 8.0, -15.31, 8.0, -15.31, 8.0, -15.31, 15.2, -15.31, 15.2, -15.46, 15.2, -15.46, 15.2, -15.46, 8.0, -14.6, 8.399999999999999, -14.0, 8.399999999999999, -14.0, 8.399999999999999, -14.0, 9.0, -14.0, 9.0, -14.6, 9.0, -14.6, 9.0, -14.6, 8.399999999999999, -13.75, 8.5, -13.35, 8.5, -13.35, 8.5, -13.35, 8.899999999999999, -13.35, 8.899999999999999, -13.75, 8.899999999999999, -13.75, 8.899999999999999, -13.75, 8.5, -14.6, 9.799999999999999, -14.0, 9.799999999999999, -14.0, 9.799999999999999, -14.0, 10.4, -14.0, 10.4, -14.6, 10.4, -14.6, 10.4, -14.6, 9.799999999999999, -13.75, 9.9, -13.35, 9.9, -13.35, 9.9, -13.35, 10.299999999999999, -13.35, 10.299999999999999, -13.75, 10.299999999999999, -13.75, 10.299999999999999, -13.75, 9.9, -14.6, 11.2, -14.0, 11.2, -14.0, 11.2, -14.0, 11.8, -14.0, 11.8, -14.6, 11.8, -14.6, 11.8, -14.6, 11.2, -13.75, 11.3, -13.35, 11.3, -13.35, 11.3, -13.35, 11.7, -13.35, 11.7, -13.75, 11.7, -13.75, 11.7, -13.75, 11.3, -14.6, 12.6, -14.0, 12.6, -14.0, 12.6, -14.0, 13.200000000000001, -14.0, 13.200000000000001, -14.6, 13.200000000000001, -14.6, 13.200000000000001, -14.6, 12.6, -13.75, 12.700000000000001, -13.35, 12.700000000000001, -13.35, 12.700000000000001, -13.35, 13.1, -13.35, 13.1, -13.75, 13.1, -13.75, 13.1, -13.75, 12.700000000000001, -14.6, 14.0, -14.0, 14.0, -14.0, 14.0, -14.0, 14.600000000000001, -14.0, 14.600000000000001, -14.6, 14.600000000000001, -14.6, 14.600000000000001, -14.6, 14.0, -13.75, 14.100000000000001, -13.35, 14.100000000000001, -13.35, 14.100000000000001, -13.35, 14.5, -13.35, 14.5, -13.75, 14.5, -13.75, 14.5, -13.75, 14.100000000000001, -11.4, 10.4, -8.2, 10.4, -8.2, 10.4, -8.2, 11.4, -8.2, 11.4, -11.4, 11.4, -11.4, 11.4, -11.4, 10.4, -11.17, 9.83, -10.83, 9.83, -10.83, 9.83, -10.83, 10.17, -10.83, 10.17, -11.17, 10.17, -11.17, 10.17, -11.17, 9.83, -11.17, 11.63, -10.83, 11.63, -10.83, 11.63, -10.83, 11.97, -10.83, 11.97, -11.17, 11.97, -11.17, 11.97, -11.17, 11.63, -10.37, 9.83, -10.03, 9.83, -10.03, 9.83, -10.03, 10.17, -10.03, 10.17, -10.37, 10.17, -10.37, 10.17, -10.37, 9.83, -10.37, 11.63, -10.03, 11.63, -10.03, 11.63, -10.03, 11.97, -10.03, 11.97, -10.37, 11.97, -10.37, 11.97, -10.37, 11.63, -9.57, 9.83, -9.23, 9.83, -9.23, 9.83, -9.23, 10.17, -9.23, 10.17, -9.57, 10.17, -9.57, 10.17, -9.57, 9.83, -9.57, 11.63, -9.23, 11.63, -9.23, 11.63, -9.23, 11.97, -9.23, 11.97, -9.57, 11.97, -9.57, 11.97, -9.57, 11.63, -8.77, 9.83, -8.43, 9.83, -8.43, 9.83, -8.43, 10.17, -8.43, 10.17, -8.77, 10.17, -8.77, 10.17, -8.77, 9.83, -8.77, 11.63, -8.43, 11.63, -8.43, 11.63, -8.43, 11.97, -8.43, 11.97, -8.77, 11.97, -8.77, 11.97, -8.77, 11.63, -13.8, 15.0, -7.2, 15.0, -7.2, 15.0, -7.2, 15.42, -7.2, 15.42, -13.8, 15.42, -13.8, 15.42, -13.8, 15.0, -13.47, 14.45, -13.13, 14.45, -13.13, 14.45, -13.13, 14.79, -13.13, 14.79, -13.47, 14.79, -13.47, 14.79, -13.47, 14.45, -12.47, 14.45, -12.13, 14.45, -12.13, 14.45, -12.13, 14.79, -12.13, 14.79, -12.47, 14.79, -12.47, 14.79, -12.47, 14.45, -11.47, 14.45, -11.13, 14.45, -11.13, 14.45, -11.13, 14.79, -11.13, 14.79, -11.47, 14.79, -11.47, 14.79, -11.47, 14.45, -10.47, 14.45, -10.13, 14.45, -10.13, 14.45, -10.13, 14.79, -10.13, 14.79, -10.47, 14.79, -10.47, 14.79, -10.47, 14.45, -9.47, 14.45, -9.13, 14.45, -9.13, 14.45, -9.13, 14.79, -9.13, 14.79, -9.47, 14.79, -9.47, 14.79, -9.47, 14.45, -8.47, 14.45, -8.13, 14.45, -8.13, 14.45, -8.13, 14.79, -8.13, 14.79, -8.47, 14.79, -8.47, 14.79, -8.47, 14.45, -7.77, 14.45, -7.43, 14.45, -7.43, 14.45, -7.43, 14.79, -7.43, 14.79, -7.77, 14.79, -7.77, 14.79, -7.77, 14.45, -3.4, 9.2, -2.6, 9.2, -2.6, 9.2, -2.6, 13.2, -2.6, 13.2, -3.4, 13.2, -3.4, 13.2, -3.4, 9.2, -5.0, 9.6, -4.4, 9.6, -4.4, 9.6, -4.4, 10.2, -4.4, 10.2, -5.0, 10.2, -5.0, 10.2, -5.0, 9.6, -5.0, 11.8, -4.4, 11.8, -4.4, 11.8, -4.4, 12.4, -4.4, 12.4, -5.0, 12.4, -5.0, 12.4, -5.0, 11.8, -4.2, 10.5, -3.6, 10.5, -3.6, 10.5, -3.6, 11.5, -3.6, 11.5, -4.2, 11.5, -4.2, 11.5, -4.2, 10.5]}, "labels": [{"at": [-9.6, 8.6], "title": "JUICE BAR", "sub": "19'-8\" counter facing the door"}, {"at": [-11.4, 2.8], "title": "BACK OF HOUSE", "sub": "prep · storage · office ≈550 SF"}, {"at": [-9.8, 13.2], "title": "SEATING", "sub": "≈30 seats"}, {"at": [-3.8, 8.4], "sub": "LOUNGE"}, {"at": [-4.0, 3.7], "sub": "WC · KEPT"}, {"at": [-7.6, 0.9], "sub": "NEW 112.5 kVA + 400 A"}, {"at": [-4.3, 14.9], "sub": "ENTRY"}], "blocks": [{"b": [-15.46, 0, 5.69, -7.4, 2.43, 5.81], "c": "#ECE9E2", "o": 0.0}, {"b": [-15.4, 0, -0.18, -13.4, 2.0, 0.57], "c": "#B7BDC2", "o": 0.021}, {"b": [-13.0, 0, -0.18, -8.6, 0.9, 0.52], "c": "#B7BDC2", "o": 0.042}, {"b": [-15.42, 0, 1.4, -14.87, 2.0, 5.0], "c": "#D6D1C7", "o": 0.062}, {"b": [-8.3, 0, 4.6, -6.8, 0.75, 5.5], "c": "#C49A6C", "o": 0.083}, {"b": [-6.85, 0, 2.6, -6.3, 1.5, 3.4], "c": "#6F7C88", "o": 0.104}, {"b": [-6.45, 1.0, 3.6, -6.3, 2.0, 4.3], "c": "#3B4652", "o": 0.125}, {"b": [-12.4, 0, 5.84, -6.9, 0.92, 6.44], "c": "#B7BDC2", "o": 0.146}, {"b": [-12.2, 1.45, 5.82, -7.6, 2.35, 5.86], "c": "#1F4D3A", "o": 0.167}, {"b": [-11.7, 0.92, 6.0, -11.379999999999999, 1.32, 6.3], "c": "#E8A33D", "o": 0.188}, {"b": [-10.9, 0.92, 6.0, -10.58, 1.32, 6.3], "c": "#E8A33D", "o": 0.208}, {"b": [-10.1, 0.92, 6.0, -9.78, 1.32, 6.3], "c": "#E8A33D", "o": 0.229}, {"b": [-9.3, 0.92, 6.0, -8.98, 1.32, 6.3], "c": "#E8A33D", "o": 0.25}, {"b": [-12.6, 0, 7.0, -6.6, 1.02, 7.75], "c": "#C49A6C", "o": 0.271}, {"b": [-12.65, 1.02, 6.95, -6.55, 1.08, 7.8], "c": "#ECE9E2", "o": 0.292}, {"b": [-15.46, 0, 8.0, -14.96, 0.46, 15.2], "c": "#1F4D3A", "o": 0.312}, {"b": [-15.46, 0.46, 8.0, -15.31, 1.05, 15.2], "c": "#1F4D3A", "o": 0.333}, {"b": [-14.6, 0, 8.399999999999999, -14.0, 0.74, 9.0], "c": "#C49A6C", "o": 0.354}, {"b": [-13.75, 0, 8.5, -13.35, 0.46, 8.899999999999999], "c": "#E8A33D", "o": 0.375, "s": "cyl"}, {"b": [-14.6, 0, 9.799999999999999, -14.0, 0.74, 10.4], "c": "#C49A6C", "o": 0.396}, {"b": [-13.75, 0, 9.9, -13.35, 0.46, 10.299999999999999], "c": "#E8A33D", "o": 0.417, "s": "cyl"}, {"b": [-14.6, 0, 11.2, -14.0, 0.74, 11.8], "c": "#C49A6C", "o": 0.438}, {"b": [-13.75, 0, 11.3, -13.35, 0.46, 11.7], "c": "#E8A33D", "o": 0.458, "s": "cyl"}, {"b": [-14.6, 0, 12.6, -14.0, 0.74, 13.200000000000001], "c": "#C49A6C", "o": 0.479}, {"b": [-13.75, 0, 12.700000000000001, -13.35, 0.46, 13.1], "c": "#E8A33D", "o": 0.5, "s": "cyl"}, {"b": [-14.6, 0, 14.0, -14.0, 0.74, 14.600000000000001], "c": "#C49A6C", "o": 0.521}, {"b": [-13.75, 0, 14.100000000000001, -13.35, 0.46, 14.5], "c": "#E8A33D", "o": 0.542, "s": "cyl"}, {"b": [-11.4, 0, 10.4, -8.2, 1.0, 11.4], "c": "#C49A6C", "o": 0.562}, {"b": [-11.17, 0, 9.83, -10.83, 0.75, 10.17], "c": "#E8A33D", "o": 0.583, "s": "cyl"}, {"b": [-11.17, 0, 11.63, -10.83, 0.75, 11.97], "c": "#E8A33D", "o": 0.604, "s": "cyl"}, {"b": [-10.37, 0, 9.83, -10.03, 0.75, 10.17], "c": "#E8A33D", "o": 0.625, "s": "cyl"}, {"b": [-10.37, 0, 11.63, -10.03, 0.75, 11.97], "c": "#E8A33D", "o": 0.646, "s": "cyl"}, {"b": [-9.57, 0, 9.83, -9.23, 0.75, 10.17], "c": "#E8A33D", "o": 0.667, "s": "cyl"}, {"b": [-9.57, 0, 11.63, -9.23, 0.75, 11.97], "c": "#E8A33D", "o": 0.688, "s": "cyl"}, {"b": [-8.77, 0, 9.83, -8.43, 0.75, 10.17], "c": "#E8A33D", "o": 0.708, "s": "cyl"}, {"b": [-8.77, 0, 11.63, -8.43, 0.75, 11.97], "c": "#E8A33D", "o": 0.729, "s": "cyl"}, {"b": [-13.8, 0, 15.0, -7.2, 1.05, 15.42], "c": "#C49A6C", "o": 0.75}, {"b": [-13.47, 0, 14.45, -13.13, 0.75, 14.79], "c": "#E8A33D", "o": 0.771, "s": "cyl"}, {"b": [-12.47, 0, 14.45, -12.13, 0.75, 14.79], "c": "#E8A33D", "o": 0.792, "s": "cyl"}, {"b": [-11.47, 0, 14.45, -11.13, 0.75, 14.79], "c": "#E8A33D", "o": 0.812, "s": "cyl"}, {"b": [-10.47, 0, 14.45, -10.13, 0.75, 14.79], "c": "#E8A33D", "o": 0.833, "s": "cyl"}, {"b": [-9.47, 0, 14.45, -9.13, 0.75, 14.79], "c": "#E8A33D", "o": 0.854, "s": "cyl"}, {"b": [-8.47, 0, 14.45, -8.13, 0.75, 14.79], "c": "#E8A33D", "o": 0.875, "s": "cyl"}, {"b": [-7.77, 0, 14.45, -7.43, 0.75, 14.79], "c": "#E8A33D", "o": 0.896, "s": "cyl"}, {"b": [-3.4, 0, 9.2, -2.6, 0.75, 13.2], "c": "#1F4D3A", "o": 0.917}, {"b": [-5.0, 0, 9.6, -4.4, 0.7, 10.2], "c": "#E8A33D", "o": 0.938}, {"b": [-5.0, 0, 11.8, -4.4, 0.7, 12.4], "c": "#E8A33D", "o": 0.958}, {"b": [-4.2, 0, 10.5, -3.6, 0.42, 11.5], "c": "#C49A6C", "o": 0.979}]}, "frame": {"centre": [-8.9, 7.9], "crop": {"x0": -15.95, "x1": -1.85, "z0": -0.85, "z1": 16.4}, "wide": {"up": [0, 0, -1], "span": [17.5, 21.5]}, "narrow": {"up": [0, 0, -1], "span": [16.8, 21]}, "north": [-0.2, 0.6], "rooms": [{"at": [-9.7, 11.6], "title": "DINING", "sub": "bar to the right"}, {"at": [-9.6, 4.0], "sub": "KITCHEN 1"}, {"at": [-8.6, 1.1], "sub": "KITCHEN 2 · REAR"}, {"at": [-14.4, 2.6], "sub": "WALK-IN"}, {"at": [-3.6, 3.0], "sub": "WC"}, {"at": [-3.6, 4.8], "sub": "WC"}, {"at": [-3.6, 9.6], "sub": "BAR"}]}, "sections": [{"key": "plan", "label": "Plan", "h1": true, "hint": true, "eyebrow": "Exhibit · pre-lease due diligence", "title": "A trading restaurant, read before the lease", "lead": "A 2,265 SF full-service restaurant in an open-air centre in Texas, surveyed for a national brand deciding whether to take the space.", "body": ["This is our measured floor plan. Scroll, and it becomes the scanned building, then walks you to each finding that shaped the decision."], "rows": [["Inside", "43'-1\" × 52'-7\""], ["Surveyed", "October 2026, before service"], ["Delivered", "Report, measured drawings, scan, 360° video"]], "view": {"top": true, "fov": 6, "cut": 1.2, "mesh": 0, "ink": 1}}, {"key": "scan", "label": "The scan", "eyebrow": "Plan + scan", "title": "The drawing sits on the scan it was measured from", "body": ["Under the linework is the 3D scan of the restaurant, sliced 4 ft above the floor, the height every floor plan is cut at. Booths, bar, cook line and walk-in land on the drawn lines."], "fig": "Cut plane 4'-0\" above finished floor", "view": {"top": true, "fov": 6, "cut": 1.2, "mesh": 1, "ink": 1}}, {"key": "walls", "label": "Walls rise", "overview": true, "eyebrow": "Plan → space", "title": "A dining room, a bar and two kitchens", "body": ["The cut rises through the fit-out. The dining room is open to a 12 ft ceiling; the kitchens sit under an 8 ft ceiling with the services above it."], "rows": [["Dining", "12'-7\" to 12'-11\" ceiling"], ["Kitchens", "8'-2⅜\" ceiling"], ["Deck", "18'-9\" to 19'-4\" above the floor"]], "view": {"pos": [-23, 15, 25], "tgt": [-8.9, 0.6, 7.4], "fov": 34, "cut": 3.0, "ink": 0.5}}, {"key": "s1", "label": "Power", "tag": 1, "eyebrow": "Power · the headline", "title": "The record said no transformer. There is one, and it sets the budget", "body": ["A desk record listed no step-down transformer. Above the kitchen ceiling, beside these panels, we found a 75 kVA unit. It caps the 208 V supply at about half of what the incoming brand specifies."], "fig": "75 kVA ÷ (208 V × √3) ≈ 208 A, against 400 A specified", "photos": [{"src": "img/xfmr_plate.jpg", "alt": "Square D transformer nameplate above the kitchen ceiling", "caption": "75 kVA, 480 V to 208Y/120 V, read above the ceiling"}], "next": {"label": "What it meant", "text": "A 112.5 kVA transformer fits the existing 200 A, 480 V service. The full specification needs a utility service increase, so the application went in early."}, "pin": [-6.3, 2.8, 3.4], "view": {"pos": [-10.6, 1.65, 3.9], "tgt": [-6.0, 1.9, 3.4], "fov": 66}}, {"key": "s2", "label": "Kitchen", "tag": 2, "eyebrow": "Kitchen and hoods", "title": "A 16 ft Type I hood the new tenant does not need", "body": ["A full cook line under a CaptiveAire hood with suppression and make-up air, plus a second hood over the dish machine. A juice bar cooks nothing, so both are removal items, or the landlord keeps them."], "rows": [["Hood 1", "16'-0 13/16\" × 4'-0 3/4\", suppression, make-up air"], ["Hood 2", "3'-11 13/16\" × 3'-6 3/16\", dish machine"], ["Gas", "1,231 MBH designed, mostly cooking"]], "photos": [{"src": "img/hood.jpg", "alt": "Stainless Type I hood over the cook line", "caption": "Hood 1 over the cook line"}], "next": {"label": "What it meant", "text": "Removing the cook line releases most of the gas load and much of the 208 V demand, which eases the power gap."}, "pin": [-9.4, 2.1, 2.7], "view": {"pos": [-6.4, 1.6, 4.2], "tgt": [-10.2, 1.9, 2.3], "fov": 64}}, {"key": "s3", "label": "Walk-in", "tag": 3, "eyebrow": "Refrigeration", "title": "A walk-in cooler with a freezer built inside it", "body": ["Box-in-box at the rear left, with remote condensing units on the roof. The incoming layout uses reach-in refrigeration, so the walk-in is evaluated or removed."], "photos": [{"src": "img/walkin.jpg", "alt": "Walk-in cooler interior with shelving and the freezer door", "caption": "Inside the cooler, freezer door ahead"}], "next": {"label": "What it meant", "text": "A refrigeration contractor inspects the boxes and condensing units before anyone counts them as an asset."}, "pin": [-13.9, 1.4, 2.3], "view": {"pos": [-9.4, 7.2, 9.0], "tgt": [-13.6, 0.8, 2.4], "fov": 40, "cut": 2.3}}, {"key": "s4", "label": "Water", "tag": 4, "eyebrow": "Water and hot water", "title": "Three water heaters above one ceiling, one at the end of its life", "rows": [["Main", "1½\" Type L copper with its own 1½\" sub-meter"], ["Tank", "100 gal gas, built March 2006"], ["Also", "Gas tankless + 40 gal electric"]], "photos": [{"src": "img/water_heaters.jpg", "alt": "A.O. Smith 100 gallon gas water heater"}, {"src": "img/pipe.jpg", "alt": "Copper water main printed 1 1/2 inch Type L"}], "next": {"label": "What it meant", "text": "The water service already meets the brand standard. The 2006 tank is replaced; the tankless venting can be reused."}, "pin": [-8.6, 2.6, 0.7], "view": {"pos": [-4.2, 1.7, 1.1], "tgt": [-10.5, 2.3, 0.7], "fov": 64}}, {"key": "s5", "label": "Restrooms", "tag": 5, "eyebrow": "Restrooms", "title": "Two single-user restrooms, recently refinished", "rows": [["Restroom 1", "6'-6 7/16\" × 6'-2 7/8\""], ["Restroom 2", "6'-6\" × 6'-1½\""], ["Hallway", "3'-6 3/8\" wide"]], "photos": [{"src": "img/restroom.jpg", "alt": "Single-user restroom with subway tile and grab bars", "caption": "Hex mosaic floor, grab bars, exhaust fan"}], "next": {"label": "What it meant", "text": "Refit to the brand standard, checking turning space and pull-side door clearance against current accessibility rules."}, "pin": [-3.6, 1.2, 3.8], "view": {"pos": [-4.6, 8.4, 8.6], "tgt": [-4.2, 0.4, 3.6], "fov": 38, "cut": 2.4}}, {"key": "s6", "label": "Dining", "tag": 6, "eyebrow": "Dining room and HVAC", "title": "20 tons on the roof, and room for an open ceiling", "body": ["Two packaged rooftop units, 15 tons from 2021 and 5 tons from 2019, already give two-zone control. Above the 12 ft dining ceiling there are 6 to 7 ft to the deck."], "fig": "2,265 SF ÷ 20 tons ≈ 113 SF per ton", "photos": [{"src": "img/dining.jpg", "alt": "Dining room with roll-up glass door to the patio"}, {"src": "img/above_ceiling.jpg", "alt": "Flex duct and services above the ceiling"}], "next": {"label": "What it meant", "text": "Keep both units after a service inspection and rebalance the duct. An exposed ceiling is achievable once the plenum is tidied."}, "pin": [-8.8, 3.6, 10.6], "view": {"pos": [-13.6, 1.7, 15.4], "tgt": [-6.4, 2.6, 8.6], "fov": 66}}, {"key": "s7", "label": "Life safety", "tag": 7, "eyebrow": "Life safety", "title": "No sprinklers, but a capped 6\" supply next door", "body": ["There are no heads or sprinkler piping anywhere in the unit. In the building's shared meter room a 6\" fire-protection stub rises through the floor, capped with a blind flange: a supply point if the new design needs one."], "photos": [{"src": "img/ceiling.jpg", "alt": "Acoustic dining ceiling with diffusers and no sprinkler heads", "caption": "Dining ceiling: diffusers, lights, no heads"}], "next": {"label": "What it meant", "text": "The architect confirms the occupancy limits with the fire marshal at design stage, with the stub as the fallback."}, "pin": [-6.0, 3.8, 12.5], "view": {"pos": [-11.0, 1.5, 15.0], "tgt": [-7.0, 3.7, 11.0], "fov": 66}}, {"key": "x1", "label": "Strip-out", "eyebrow": "What it could become", "title": "First, everything a juice bar doesn't need comes out", "body": ["The survey already sorted the fit-out into what stays and what goes. Here the cook line, both hoods, the walk-in, the dish area, the bar and the booths dissolve out of the scan."], "rows": [["Kept", "Shell, restrooms, two rooftop units, 1½\" water, grease connection"], ["Removed", "Hoods, cook line, walk-in, dish area, bar, booths"]], "view": {"pos": [-23, 15, 25], "tgt": [-8.9, 0.6, 7.4], "fov": 34, "cut": 2.45, "ink": 0.2, "strip": 1}}, {"key": "x2", "label": "Test fit", "eyebrow": "Concept test fit", "title": "A layout for Press & Peel, drawn on the measured shell", "body": ["Press & Peel is a juice bar brand invented for this exhibit. Its plan is drawn straight onto the surveyed shell, so every dimension it depends on has already been measured."], "rows": [["Counter", "19'-8\" juice bar facing the door"], ["Seats", "≈30: bench, communal table, window bar, lounge"], ["Back of house", "≈550 SF prep, storage and office"], ["Power", "New 112.5 kVA transformer and 400 A panel"]], "view": {"top": true, "fov": 6, "cut": 1.2, "mesh": 1, "ink": 0, "strip": 1, "concept": 1}}, {"key": "x3", "label": "Fit-out", "eyebrow": "Concept test fit", "title": "The fit-out goes up inside the real room", "body": ["Counter, back bar, menu wall and seating at their real sizes, standing inside the scanned walls and under the scanned ceilings."], "view": {"pos": [-22, 13, 26], "tgt": [-8.9, 0.5, 7.6], "fov": 34, "cut": 2.45, "ink": 0, "strip": 1, "concept": 0.35, "build": 1}}, {"key": "x4", "label": "Walk in", "eyebrow": "Concept test fit", "title": "From the front door, with the survey behind every line", "body": ["What a customer sees walking in, and what the survey had already settled before anyone drew it."], "rows": [["Power", "112.5 kVA fits the existing service; the full spec needs a utility increase"], ["HVAC", "Both rooftop units kept, two zones"], ["Water", "1½\" meets the standard"], ["Sprinklers", "Capped 6\" supply next door if needed"], ["Hood", "None needed: the hoods go"]], "next": {"label": "Why it matters", "text": "A test fit on measured conditions tells a brand, before it signs, whether the space works and what it costs to make it work."}, "view": {"pos": [-4.3, 1.7, 15.0], "tgt": [-9.8, 1.15, 7.0], "fov": 66, "strip": 1, "build": 1}}, {"key": "end", "label": "Explore", "overview": true, "eyebrow": "Survey + test fit", "title": "From survey to test fit, in one model", "body": ["We measure the space, record what is there and what it means, then show what it could become. Brands see the decision; landlords show tenants the possibility. Tap a marker to revisit a finding, or explore the scan yourself."], "links": [{"label": "What a survey delivers", "url": "/work/"}, {"label": "Start a project", "url": "/contact/"}], "note": "Press & Peel is fictional. The test fit is a concept prepared from the survey for illustration; design, code and accessibility review sit with the tenant's architect. Client, occupier and address are withheld.", "view": {"pos": [-24, 17, 24], "tgt": [-8.9, 0.4, 7.4], "fov": 34, "ink": 0, "cut": 2.45, "strip": 1, "build": 1, "concept": 0.2}}]}, "back": "/work/", "backLabel": "alturascope.com"};</script>
 </head>
 <body>
 <a id="back" class="ctl" href="#">Back</a>
@@ -179,6 +181,46 @@ const cutPlane = new THREE.Plane(new THREE.Vector3(0, -1, 0), 1.2);
 const cropPlanes = [new THREE.Plane(new THREE.Vector3(1, 0, 0), 0), new THREE.Plane(new THREE.Vector3(-1, 0, 0), 0), new THREE.Plane(new THREE.Vector3(0, 0, 1), 0), new THREE.Plane(new THREE.Vector3(0, 0, -1), 0)];
 const clip = [cutPlane, ...cropPlanes];
 const meshMats = [];
+const sharpParts = [];
+const MAX_ANISO = renderer.capabilities.getMaxAnisotropy();
+// Strip-out: scan surfaces inside scene.strip boxes dissolve as `strip` goes 0 → 1 (the shell stays).
+const STRIP = {uStrip: {value: 0}, uBoxN: {value: 0}, uBoxMin: {value: []}, uBoxMax: {value: []}};
+for (let i = 0; i < 8; i++) {
+  const b = S.strip?.boxes?.[i];
+  STRIP.uBoxMin.value.push(new THREE.Vector3(...(b ? b.slice(0, 3) : [0, 0, 0])));
+  STRIP.uBoxMax.value.push(new THREE.Vector3(...(b ? b.slice(3, 6) : [0, 0, 0])));
+}
+STRIP.uBoxN.value = Math.min(8, S.strip?.boxes?.length || 0);
+function stripShader(m) {
+  if (!STRIP.uBoxN.value) return;
+  m.onBeforeCompile = sh => {
+    Object.assign(sh.uniforms, STRIP);
+    sh.vertexShader = 'varying vec3 vWPos;\n' + sh.vertexShader.replace('#include <project_vertex>', '#include <project_vertex>\n  vWPos = (modelMatrix * vec4(transformed, 1.0)).xyz;');
+    sh.fragmentShader = 'varying vec3 vWPos;\nuniform float uStrip; uniform int uBoxN; uniform vec3 uBoxMin[8]; uniform vec3 uBoxMax[8];\n' +
+      sh.fragmentShader.replace('#include <clipping_planes_fragment>', `#include <clipping_planes_fragment>
+  if (uStrip > 0.0) {
+    for (int i = 0; i < 8; i++) {
+      if (i >= uBoxN) break;
+      if (all(greaterThan(vWPos, uBoxMin[i] + vec3(0.0, 0.1, 0.0))) && all(lessThan(vWPos, uBoxMax[i]))) {
+        float n = fract(sin(dot(floor(vWPos * 12.0), vec3(12.9898, 78.233, 37.719))) * 43758.5453);
+        float h = (vWPos.y - uBoxMin[i].y) / max(uBoxMax[i].y - uBoxMin[i].y, 0.01);
+        if (n * 0.7 + (1.0 - h) * 0.3 < uStrip * 1.02) discard;
+      }
+    }
+  }`).replace('#include <dithering_fragment>', `#include <dithering_fragment>
+  // Stripped floor reads as a clean prepared slab: the scan bakes old furniture shadows into it.
+  if (uStrip > 0.0) {
+    for (int i = 0; i < 8; i++) {
+      if (i >= uBoxN) break;
+      if (vWPos.x > uBoxMin[i].x && vWPos.x < uBoxMax[i].x && vWPos.z > uBoxMin[i].z && vWPos.z < uBoxMax[i].z && vWPos.y <= uBoxMin[i].y + 0.1) {
+        float g = dot(gl_FragColor.rgb, vec3(0.299, 0.587, 0.114));
+        gl_FragColor.rgb = mix(gl_FragColor.rgb, vec3(0.80, 0.785, 0.76) + (g - 0.5) * 0.06, 0.9 * uStrip);
+      }
+    }
+  }`);
+  };
+  m.customProgramCacheKey = () => 'strip';
+}
 const model = new THREE.Group(); model.visible = false; scene.add(model);
 const ink = new THREE.Group(); scene.add(ink);
 const inkMats = [];
@@ -239,15 +281,88 @@ async function loadTile(path) {
     }
     g.setIndex(new THREE.BufferAttribute(b64(p.idx, p.i16 ? Uint16Array : Uint32Array), 1));
     const m = new THREE.MeshBasicMaterial({clippingPlanes: clip, transparent: true, side: THREE.FrontSide});
-    if (p.tex) { const t = texLoader.load(BASE + dir + p.tex); t.flipY = false; t.colorSpace = THREE.SRGBColorSpace; t.anisotropy = 4; m.map = t; }
+    if (p.tex) { const t = texLoader.load(BASE + dir + p.tex); t.flipY = false; t.colorSpace = THREE.SRGBColorSpace; t.anisotropy = MAX_ANISO; m.map = t; }
+    stripShader(m);
     meshMats.push(m); model.add(new THREE.Mesh(g, m));
+    if (p.sharp) {
+      g.computeBoundingBox();
+      sharpParts.push({m, base: m.map, url: BASE + dir + p.sharp, box: g.boundingBox, state: 0, tex: null});
+    }
   }
 }
 for (const t of tiles) loadTile(t).catch(() => {}).finally(() => { loaded++; loadtxt.textContent = loaded < tiles.length ? `${loaded}/${tiles.length}` : (S.scanLabel || 'Loaded'); });
 
+// Sharp textures: the parts nearest the camera and in view swap to their full-resolution texture.
+const frustum = new THREE.Frustum(), projView = new THREE.Matrix4();
+let sharpBusy = 0, sharpTick = 0;
+function updateSharp(now) {
+  if (now - sharpTick < 400 || !sharpParts.length) return;
+  sharpTick = now;
+  const budget = narrow ? 10 : 40, reach = narrow ? 7 : 26;
+  projView.multiplyMatrices(camera.projectionMatrix, camera.matrixWorldInverse); frustum.setFromProjectionMatrix(projView);
+  const want = sharpParts.map(sp => ({sp, d: sp.box.distanceToPoint(camera.position)}))
+    .filter(o => o.d < reach && frustum.intersectsBox(o.sp.box)).sort((a, b) => a.d - b.d).slice(0, budget).map(o => o.sp);
+  const keep = new Set(want);
+  let live = sharpParts.filter(x => x.state === 2).length;
+  for (const sp of sharpParts) if (sp.state === 2 && !keep.has(sp) && live > budget) {
+    sp.m.map = sp.base; sp.m.needsUpdate = true; sp.tex.dispose(); sp.tex = null; sp.state = 0; live--;
+  }
+  for (const sp of want) if (sp.state === 0 && sharpBusy < 4) {
+    sp.state = 1; sharpBusy++;
+    texLoader.load(sp.url, t => {
+      t.flipY = false; t.colorSpace = THREE.SRGBColorSpace; t.anisotropy = MAX_ANISO;
+      sp.tex = t; sp.m.map = t; sp.m.needsUpdate = true; sp.state = 2; sharpBusy--;
+    }, undefined, () => { sp.state = 0; sharpBusy--; });
+  }
+}
+
+// Under counters and booths the scanner never saw the floor; a plain slab fills those gaps once stripped.
+const slabs = [];
+for (const bx of (S.strip?.boxes || [])) {
+  const mat = new THREE.MeshBasicMaterial({transparent: true, opacity: 0, clippingPlanes: clip, depthWrite: false});
+  mat.color.setRGB(0.80, 0.785, 0.76, THREE.SRGBColorSpace);
+  const sl = new THREE.Mesh(new THREE.PlaneGeometry(bx[3] - bx[0], bx[5] - bx[2]), mat);
+  sl.rotation.x = -Math.PI / 2; sl.position.set((bx[0] + bx[3]) / 2, 0.012, (bx[2] + bx[5]) / 2); sl.renderOrder = -1;
+  scene.add(sl); slabs.push(sl);
+}
+
+// Concept test fit: plan linework, labels, and fit-out blocks that rise into the scan.
+const conceptInk = new THREE.Group(); scene.add(conceptInk);
+const build = new THREE.Group(); scene.add(build);
+const blocks = [];
+if (S.concept) {
+  const K = S.concept;
+  for (const [role, flat] of Object.entries(K.segs || {})) {
+    const pos = [];
+    for (let i = 0; i < flat.length; i += 4) pos.push(flat[i], 0.04, flat[i + 1], flat[i + 2], 0.04, flat[i + 3]);
+    const mm = new LineMaterial({linewidth: role === 'wall' ? 4 : 2, transparent: true, depthWrite: false, depthTest: false});
+    inkMats.push({m: mm, role: 'concept'});
+    const l = new LineSegments2(new LineSegmentsGeometry().setPositions(pos), mm); l.renderOrder = 3; conceptInk.add(l);
+  }
+  for (const r of (K.labels || [])) {
+    const d = el('div', 'roomlbl concept'); if (r.title) d.appendChild(el('b', null, r.title)); if (r.sub) d.appendChild(el('span', null, r.sub));
+    addLabel(d, new THREE.Vector3(r.at[0], 0, r.at[1]), 'concept');
+  }
+  scene.add(new THREE.HemisphereLight(0xffffff, 0x8a8f99, 2.2));
+  const sun = new THREE.DirectionalLight(0xffffff, 1.5); sun.position.set(-6, 14, 10); scene.add(sun);
+  const edgeMat = new THREE.LineBasicMaterial({color: 0x0b1f3a, transparent: true, opacity: 0.5, clippingPlanes: [cutPlane]});
+  const n = (K.blocks || []).length;
+  (K.blocks || []).forEach((bk, i) => {
+    const [x0, y0, z0, x1, y1, z1] = bk.b;
+    const geo = bk.s === 'cyl'
+      ? new THREE.CylinderGeometry((x1 - x0) / 2, (x1 - x0) / 2, y1 - y0, 24)
+      : new THREE.BoxGeometry(x1 - x0, y1 - y0, z1 - z0);
+    geo.translate(0, (y1 - y0) / 2, 0);
+    const mesh = new THREE.Mesh(geo, new THREE.MeshLambertMaterial({color: bk.c, clippingPlanes: [cutPlane]}));
+    mesh.add(new THREE.LineSegments(new THREE.EdgesGeometry(geo, 30), edgeMat));
+    mesh.position.set((x0 + x1) / 2, y0, (z0 + z1) / 2); mesh.visible = false;
+    build.add(mesh); blocks.push({mesh, at: (bk.o ?? i / Math.max(1, n)) * 0.7});
+  });
+}
+
 function applyTheme() {
   scene.background = new THREE.Color(css('--paper'));
-  for (const {m, role} of inkMats) m.color.set(css(role === 'grid' ? '--grid' : role === 'ink' ? '--ink' : '--ink-soft'));
+  for (const {m, role} of inkMats) m.color.set(role === 'concept' ? (css('--concept') || '#C9A84C') : css(role === 'grid' ? '--grid' : role === 'ink' ? '--ink' : '--ink-soft'));
   north.style.color = css('--ink');
 }
 matchMedia('(prefers-color-scheme: dark)').addEventListener('change', applyTheme);
@@ -285,7 +400,9 @@ function topPose(v) {
 function pose(key) {
   const v = byKey[key].view;
   const base = v.top ? topPose(v) : {pos: V(v.pos), tgt: V(v.tgt), up: new THREE.Vector3(0, 1, 0)};
-  return {fov: v.fov, cut: v.cut ?? 99, mesh: v.mesh ?? 1, ink: v.ink ?? 0, crop: v.crop ?? 1, ...base};
+  // Phones are tall and narrow: widen the far, framed views so the whole model stays in shot.
+  const fov = narrow && !v.top && v.fov < 50 ? v.fov * 1.7 : v.fov;
+  return {fov, cut: v.cut ?? 99, mesh: v.mesh ?? 1, ink: v.ink ?? 0, crop: v.crop ?? 1, strip: v.strip ?? 0, concept: v.concept ?? 0, build: v.build ?? 0, ...base};
 }
 const ease = t => t * t * (3 - 2 * t);
 function desired() {
@@ -299,7 +416,7 @@ function desired() {
   const L = (p, q) => p + (q - p) * t;
   return {idx: t < 0.5 ? i : i + 1, s: {
     pos: a.pos.clone().lerp(b.pos, t), tgt: a.tgt.clone().lerp(b.tgt, t), up: a.up.clone().lerp(b.up, t).normalize(),
-    fov: Math.exp(L(Math.log(a.fov), Math.log(b.fov))), cut: L(a.cut, b.cut), mesh: L(a.mesh, b.mesh), ink: L(a.ink, b.ink), crop: L(a.crop, b.crop)}};
+    fov: Math.exp(L(Math.log(a.fov), Math.log(b.fov))), cut: L(a.cut, b.cut), mesh: L(a.mesh, b.mesh), ink: L(a.ink, b.ink), crop: L(a.crop, b.crop), strip: L(a.strip, b.strip), concept: L(a.concept, b.concept), build: L(a.build, b.build)}};
 }
 
 const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
@@ -327,9 +444,14 @@ function frame(now) {
   if (!free) {
     const k = reduce ? 1 : 1 - Math.exp(-dt * 7);
     cur.pos.lerp(d.pos, k); cur.tgt.lerp(d.tgt, k); cur.up.lerp(d.up, k).normalize();
-    for (const p of ['fov', 'cut', 'mesh', 'ink', 'crop']) cur[p] += (d[p] - cur[p]) * k;
+    for (const p of ['fov', 'cut', 'mesh', 'ink', 'crop', 'strip', 'concept', 'build']) cur[p] += (d[p] - cur[p]) * k;
     camera.position.copy(cur.pos); camera.up.copy(cur.up); camera.lookAt(cur.tgt); camera.fov = cur.fov;
-  } else { controls.update(); cur.mesh = 1; cur.ink = Math.max(0, cur.ink - dt); cur.crop = 1; }
+  } else { controls.update(); cur.mesh = 1; cur.ink = Math.max(0, cur.ink - dt); cur.concept = Math.max(0, cur.concept - dt); cur.crop = 1; }
+  if (narrow) {
+    // Plan views sit high above the note; 3D views need more room, so the lift eases off as the lens widens.
+    const t = THREE.MathUtils.clamp((cur.fov - 6) / 20, 0, 1);
+    camera.setViewOffset(W, H, 0, H * (0.3 - 0.14 * t), W, H);
+  }
   const dist = camera.position.distanceTo(free ? controls.target : cur.tgt);
   camera.near = Math.max(0.05, dist * 0.004); camera.far = dist * 6 + 80; camera.updateProjectionMatrix();
 
@@ -340,9 +462,17 @@ function frame(now) {
   cropPlanes[2].constant = -(CROP.z0 * c - far * (1 - c));
   cropPlanes[3].constant = CROP.z1 * c + far * (1 - c);
   model.visible = cur.mesh > 0.01 && loaded > 0;
+  STRIP.uStrip.value = cur.strip;
+  for (const sl of slabs) { sl.visible = cur.strip > 0.01 && cur.mesh > 0.01; sl.material.opacity = cur.strip * cur.mesh; }
+  conceptInk.visible = cur.concept > 0.01;
+  for (const b of blocks) {
+    const k = THREE.MathUtils.clamp((cur.build - b.at) / 0.3, 0, 1);
+    b.mesh.visible = k > 0.001; b.mesh.scale.y = Math.max(0.001, ease(k));
+  }
+  updateSharp(now);
   for (const m of meshMats) { m.opacity = cur.mesh; m.transparent = cur.mesh < 0.99; m.depthWrite = cur.mesh > 0.5; }
   ink.visible = cur.ink > 0.01;
-  for (const {m, role} of inkMats) m.opacity = cur.ink * (role === 'grid' ? 0.9 : 1);
+  for (const {m, role} of inkMats) m.opacity = role === 'concept' ? cur.concept : cur.ink * (role === 'grid' ? 0.9 : 1);
 
   const stopKey = sections[idx]?.dataset.k;
   for (const L of labels) {
@@ -351,6 +481,7 @@ function frame(now) {
     let o = 0;
     if (L.kind === 'dim' || L.kind === 'north') o = cur.ink > 0.9 && cur.fov < 10 ? 1 : 0;
     else if (L.kind === 'room') o = Math.max(0, (cur.ink - 0.5) * 2) * (cur.fov < 10 ? 1 : 0);
+    else if (L.kind === 'concept') o = Math.max(0, (cur.concept - 0.5) * 2) * (cur.fov < 10 ? 1 : 0);
     else if (L.kind === 'pin') {
       const own = L.el.dataset.k === stopKey;
       o = (own || OVERVIEW.has(stopKey) || free) && cur.mesh > 0.5 ? 1 : 0;
