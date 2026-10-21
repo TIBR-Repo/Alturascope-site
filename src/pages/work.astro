@@ -139,40 +139,43 @@ const schema = JSON.stringify({
       </div>
     </section>
 
-    <!-- SECTION 4: Matterport Embed -->
+    <!-- SECTION 4: Walkthrough embed (public/work/walkthrough/, an anonymised client survey) -->
     <section class="bg-navy py-20">
       <div class="max-w-[1100px] mx-auto px-6">
         <div class="text-center mb-10">
           <p class="label text-gold mb-4">THE DELIVERABLE</p>
-          <h2 class="text-[1.8rem] font-light text-offwhite max-w-[600px] mx-auto leading-snug">
-            Navigate a documented space yourself.
+          <h2 class="text-[1.8rem] font-light text-offwhite max-w-[640px] mx-auto leading-snug">
+            Walk a surveyed space, finding by finding.
           </h2>
-          <p class="mt-4 text-offwhite/70 max-w-[580px] mx-auto leading-body">
-            This is what your project team accesses from day one. Every room. Every surface. Every measurement. Explorable on any device, shared with anyone on your team, permanently accessible through ScopeWalk.
+          <p class="mt-4 text-offwhite/70 max-w-[640px] mx-auto leading-body">
+            This is a real Alturascope survey of a trading restaurant in Texas, carried out for a national brand
+            deciding whether to take the lease. Start it and scroll inside the frame: our measured floor plan lifts
+            into the 3D scan of the building, then the camera takes you to each finding that shaped the decision,
+            from the transformer nobody had recorded to the sprinkler supply hiding next door.
           </p>
         </div>
 
-        <!-- Live client scans are confidential. This is the measured mesh underlying one of
-        them, which discloses no occupier, interior detail or person. A live embed can replace
-        it here once a client has given written permission to publish their model. -->
-        <div class="max-w-[1100px] mx-auto">
-          <figure class="m-0">
-            <img
-              src="/Images/locations/digital-twin-mesh.webp"
-              alt="Measured mesh of a surveyed office floor plate, showing every wall, column and riser in its true position"
-              width="1280"
-              height="720"
-              loading="lazy"
-              decoding="async"
-              class="w-full h-auto"
-            />
-          </figure>
+        <div class="relative w-full overflow-hidden bg-[#F7F5F1]" style="height: min(720px, 82vh)" data-walkthrough>
+          <img
+            src="/work/walkthrough/og.jpg"
+            alt="3D scan of a surveyed restaurant, cut away to show the dining room, bar, kitchens and restrooms"
+            width="1200"
+            height="630"
+            loading="lazy"
+            decoding="async"
+            class="absolute inset-0 w-full h-full object-cover"
+          />
+          <div class="absolute inset-0 bg-navy/45"></div>
+          <div class="absolute inset-0 flex flex-col items-center justify-center gap-3 px-6 text-center">
+            <button type="button" class="btn-primary" data-walkthrough-start>Start the walkthrough</button>
+            <p class="text-offwhite/80 text-[0.85rem]">Loads a 3D scan of about 35 MB</p>
+          </div>
         </div>
 
-        <p class="text-offwhite/60 text-[0.9rem] text-center mt-6 max-w-[620px] mx-auto leading-relaxed">
-          The model your team navigates is built on this &mdash; a measured mesh of the floor
-          plate rather than a photograph of it. Client models stay private to the client, so what
-          we can show publicly is the geometry and the buildings themselves.
+        <p class="text-offwhite/60 text-[0.9rem] text-center mt-6 max-w-[640px] mx-auto leading-relaxed">
+          Built from our measured drawing, the 3D scan and the written survey report, and delivered alongside them.
+          Client, occupier and address are withheld.
+          <a href="/work/walkthrough/" class="text-gold border-b border-gold/40 hover:border-gold transition-colors whitespace-nowrap">Open full screen &rarr;</a>
         </p>
 
         <p class="text-center mt-8">
@@ -181,25 +184,31 @@ const schema = JSON.stringify({
           </a>
         </p>
       </div>
-    </section>
-
-    <!-- SECTION 4b: Walkthrough exhibit -->
-    <section class="bg-offwhite section-padding">
-      <div class="max-w-[800px] mx-auto px-6">
-        <p class="label text-gold mb-4">SEE ONE IN 3D</p>
-        <h2 class="text-[2rem] font-light text-navy leading-snug">
-          From the measured plan into the building, finding by finding.
-        </h2>
-        <div class="mt-8 space-y-6 text-midgrey leading-body">
-          <p>
-            A trading restaurant in Texas, surveyed before a national brand committed to the lease. Scroll, and our
-            measured floor plan becomes the scanned building, then takes you to each finding that shaped the decision:
-            the transformer nobody had recorded, the hood the new tenant did not need, the missing sprinklers and the
-            supply that solves them.
-          </p>
-        </div>
-        <a href="/work/walkthrough/" class="inline-block mt-8 text-navy font-medium hover:opacity-80 transition-opacity">Open the walkthrough &rarr;</a>
-      </div>
+      <script is:inline>
+        // Load the walkthrough only when asked: it streams a large scan. On phones the frame would fill the
+        // screen and trap scrolling, so it opens full screen instead.
+        (() => {
+          const box = document.querySelector('[data-walkthrough]');
+          if (!box) return;
+          const poster = [...box.childNodes];
+          const start = () => {
+            if (window.innerWidth < 768) { location.href = '/work/walkthrough/'; return; }
+            const f = document.createElement('iframe');
+            f.src = '/work/walkthrough/';
+            f.title = 'Restaurant walkthrough: measured plan, 3D scan and survey findings';
+            f.allow = 'fullscreen';
+            f.className = 'absolute inset-0 w-full h-full border-0';
+            const close = document.createElement('button');
+            close.type = 'button';
+            close.textContent = 'Close';
+            close.className = 'absolute top-3 left-1/2 -translate-x-1/2 z-10 bg-navy text-offwhite text-[0.8rem] tracking-label uppercase px-4 py-2 hover:bg-navy-light';
+            close.addEventListener('click', () => { box.replaceChildren(...poster); });
+            box.replaceChildren(f, close);
+            f.focus();
+          };
+          box.querySelector('[data-walkthrough-start]').addEventListener('click', start);
+        })();
+      </script>
     </section>
 
     <!-- SECTION 5: The Deliverable Stack -->
