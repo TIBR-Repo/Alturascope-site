@@ -1,0 +1,370 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Restaurant Walkthrough | Alturascope</title>
+<meta name="description" content="Scroll from a measured floor plan into the 3D scan of a trading restaurant, and walk the findings of an Alturascope pre-lease survey in place.">
+<link rel="canonical" href="https://alturascope.com/work/walkthrough/">
+<meta property="og:title" content="Restaurant Walkthrough | Alturascope">
+<meta property="og:description" content="A measured plan becomes the scanned building, then walks you to every finding.">
+<meta property="og:image" content="https://alturascope.com/work/walkthrough/og.jpg">
+<meta property="og:url" content="https://alturascope.com/work/walkthrough/">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,600&family=JetBrains+Mono:wght@400;500&display=swap">
+<style>
+
+/* Layout: a fixed 3D drawing sheet behind a scrolling column of survey notes; title block and sheet index pinned like a drawing border. */
+/* Layout: the 3D drawing sheet fixed behind a column of survey notes; alturascope.com palette, light only by design. */
+:root{
+  --paper:#F7F5F1; --ink:#0B1F3A; --ink-soft:#5E6673; --grid:#E9E4DA; --rule:#E5E0D8;
+  --redline:#A8862F; --mark:#C9A84C; --panel:#FFFFFF; --panel-edge:#E5E0D8; --tint:#EFEBE3;
+  --f-display:"DM Sans",ui-sans-serif,system-ui,-apple-system,"Segoe UI",sans-serif;
+  --f-body:"DM Sans",ui-sans-serif,system-ui,-apple-system,"Segoe UI",sans-serif;
+  --f-mono:"JetBrains Mono",ui-monospace,"Cascadia Mono",Consolas,monospace;
+  color-scheme:light;
+}
+html,body{background:var(--paper);color:var(--ink);margin:0}
+body{font:15px/1.55 var(--f-body);overflow-x:hidden}
+#stage{position:fixed;inset:0;z-index:0;display:block;width:100%;height:100%;touch-action:pan-y}
+#overlay{position:fixed;inset:0;z-index:1;pointer-events:none;overflow:hidden}
+.dimlbl{position:absolute;transform:translate(-50%,-50%);font:500 11px/1 var(--f-mono);color:var(--ink-soft);background:var(--paper);padding:1px 3px;white-space:nowrap}
+.roomlbl{position:absolute;transform:translate(-50%,-50%);text-align:center;font-family:var(--f-display);color:var(--ink);white-space:nowrap}
+.roomlbl b{display:block;font-size:20px;font-weight:500;letter-spacing:.15em}
+.roomlbl span{font:500 11px/1.4 var(--f-mono);color:var(--ink-soft)}
+.north{position:absolute;width:44px;height:44px;transform:translate(-50%,-50%)}
+.pin{position:absolute;transform:translate(-50%,-50%);pointer-events:auto;width:30px;height:30px;border-radius:50%;
+  border:2px solid var(--mark);background:var(--ink);color:var(--mark);font:600 13px/26px var(--f-mono);text-align:center;cursor:pointer;padding:0;transition:opacity .25s}
+.pin:hover,.pin:focus-visible{background:var(--mark);color:var(--ink);outline:none}
+.pin.on{background:var(--mark);color:var(--ink);box-shadow:0 0 0 6px color-mix(in srgb,var(--mark) 35%,transparent)}
+
+main{position:relative;z-index:2;pointer-events:none;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+section{min-height:150vh;display:flex;align-items:center}
+section:first-child{min-height:100vh;align-items:flex-start;padding-block:28px 0}
+section:last-child{min-height:120vh}
+.note{pointer-events:auto;width:min(420px,100%);background:var(--panel);border:1px solid var(--panel-edge);padding:22px 22px 20px;display:grid;gap:12px;
+  box-shadow:0 1px 0 var(--panel-edge),0 18px 40px -24px rgba(10,20,30,.35)}
+.eyebrow{font:500 11px/1.3 var(--f-mono);letter-spacing:.08em;text-transform:uppercase;color:var(--ink-soft);display:flex;gap:10px;align-items:center}
+.tag{flex:none;width:26px;height:26px;border-radius:50%;border:2px solid var(--mark);background:var(--ink);color:var(--mark);font:600 12px/22px var(--f-mono);text-align:center;letter-spacing:0}
+h1,h2{font-family:var(--f-display);font-weight:300;line-height:1.12;margin:0;text-wrap:balance;letter-spacing:-.01em}
+h1{font-size:clamp(40px,6vw,64px)}
+h2{font-size:28px}
+.lead{font-size:16px;margin:0;color:var(--ink)}
+p{margin:0;max-width:62ch}
+.fig{font:500 15px/1.35 var(--f-mono);color:var(--ink);border-top:1px solid var(--rule);border-bottom:1px solid var(--rule);padding:8px 0}
+dl{margin:0;display:grid;grid-template-columns:auto 1fr;gap:4px 14px;font-size:13.5px}
+dt{color:var(--ink-soft);font:500 11.5px/1.7 var(--f-mono);text-transform:uppercase;letter-spacing:.05em}
+dd{margin:0;font-variant-numeric:tabular-nums;min-width:0}
+figure{margin:0}
+figure img{display:block;width:100%;height:auto;max-height:240px;object-fit:cover;border:1px solid var(--panel-edge)}
+figure.duo{display:grid;grid-template-columns:1fr 1fr;gap:6px}
+figure.duo img{height:150px}
+figcaption{font:400 11.5px/1.4 var(--f-mono);color:var(--ink-soft);margin-top:5px}
+.next{font-size:13.5px;border-left:3px solid var(--redline);padding:2px 0 2px 10px}
+.next b{font:600 11px/1 var(--f-mono);letter-spacing:.08em;text-transform:uppercase;color:var(--redline);display:block;margin-bottom:3px}
+.hint{font:500 12px/1.4 var(--f-mono);color:var(--ink-soft);display:flex;gap:8px;align-items:center}
+.hint i{display:inline-block;width:10px;height:16px;border:1.5px solid var(--ink-soft);border-radius:6px;position:relative}
+.hint i::after{content:"";position:absolute;left:50%;top:3px;width:2px;height:4px;margin-left:-1px;background:var(--ink-soft);border-radius:1px;animation:wheel 1.6s infinite}
+@keyframes wheel{0%{opacity:1;transform:translateY(0)}100%{opacity:0;transform:translateY(5px)}}
+a{color:inherit;text-decoration-color:var(--redline);text-underline-offset:3px}
+.links{display:flex;flex-wrap:wrap;gap:8px 16px;font:500 13px/1.4 var(--f-mono)}
+button.ctl{pointer-events:auto;font:600 12px/1 var(--f-mono);letter-spacing:.06em;text-transform:uppercase;color:var(--ink);background:var(--panel);border:1px solid var(--panel-edge);padding:10px 12px;cursor:pointer}
+button.ctl:hover,button.ctl:focus-visible{border-color:var(--redline);outline:none}
+button.ctl[aria-pressed="true"]{background:var(--ink);color:var(--paper);border-color:var(--ink)}
+
+#index{position:fixed;z-index:3;right:max(16px,env(safe-area-inset-right,0px));top:calc(env(safe-area-inset-top,0px) + 18px);display:grid;gap:2px;justify-items:end}
+#index a{font:500 11px/1.5 var(--f-mono);letter-spacing:.06em;text-transform:uppercase;color:var(--ink-soft);text-decoration:none;padding:2px 6px;background:color-mix(in srgb,var(--paper) 80%,transparent)}
+#index a.on{color:var(--redline)}
+#index a:focus-visible{outline:1px solid var(--redline)}
+#tblock{position:fixed;z-index:3;right:max(16px,env(safe-area-inset-right,0px));bottom:calc(env(safe-area-inset-bottom,0px) + 16px);display:grid;grid-template-columns:auto auto;border:1.5px solid var(--ink);background:var(--panel);font:500 10.5px/1.3 var(--f-mono);text-transform:uppercase;letter-spacing:.05em}
+#tblock div{padding:5px 9px;border-right:1px solid var(--rule);border-bottom:1px solid var(--rule)}
+#tblock div:nth-child(2n){border-right:0}
+#tblock div:nth-last-child(-n+2){border-bottom:0}
+#tblock small{display:block;color:var(--ink-soft);font-size:9px}
+#tblock .brand{grid-column:1/-1;font:500 12px/1 var(--f-display);letter-spacing:.2em;text-transform:uppercase;border-right:0;background:var(--ink);color:var(--paper)}
+#free{position:fixed;z-index:3;left:max(16px,env(safe-area-inset-left,0px));bottom:calc(env(safe-area-inset-bottom,0px) + 16px)}
+body.freelook main{visibility:hidden}
+body.freelook #stage{touch-action:none}
+@media (max-width:760px){
+  section{align-items:flex-end;min-height:160svh;padding-bottom:18px}
+  section:first-child{align-items:flex-end;min-height:100svh;padding-block:0 76px}
+  .note{padding:16px;gap:10px;max-height:58svh;overflow:auto}
+  h1{font-size:40px} h2{font-size:25px}
+  figure img{max-height:150px} figure.duo img{height:110px}
+  #index{display:none}
+  #tblock{top:calc(env(safe-area-inset-top,0px) + 10px);bottom:auto}
+  #tblock div:not(.brand):not(.load){display:none}
+  #free{bottom:auto;top:calc(env(safe-area-inset-top,0px) + 10px)}
+}
+@media (prefers-reduced-motion:reduce){.hint i::after{animation:none}}
+
+#back{position:fixed;z-index:3;left:max(16px,env(safe-area-inset-left,0px));top:calc(env(safe-area-inset-top,0px) + 16px);text-decoration:none}
+.small{font-size:13px;color:var(--ink-soft)}
+.dimlbl,.roomlbl,.north,.pin{left:0;top:0}
+.eyebrow{letter-spacing:.15em}
+section:first-child{padding-top:64px}
+@media (max-width:760px){#back{top:auto;bottom:calc(env(safe-area-inset-bottom,0px) + 10px)} section:first-child{padding-top:0}}
+
+</style>
+<script>window.SITE = {"base": "", "scene": {"title": "Restaurant walkthrough", "brand": "Alturascope", "scanLabel": "Matterport", "titleBlock": [["Exhibit", "Pre-lease survey"], ["Space", "Restaurant · Texas"], ["Area", "2,265 SF"]], "plan": "plan.json", "tiles": ["scan/t00.json", "scan/t01.json", "scan/t02.json", "scan/t03.json", "scan/t04.json", "scan/t05.json", "scan/t06.json", "scan/t07.json", "scan/t08.json", "scan/t09.json", "scan/t10.json", "scan/t11.json", "scan/t12.json", "scan/t13.json", "scan/t14.json", "scan/t15.json", "scan/t16.json", "scan/t17.json", "scan/t18.json", "scan/t19.json", "scan/t20.json", "scan/t21.json", "scan/t22.json", "scan/t23.json", "scan/t24.json", "scan/t25.json", "scan/t26.json", "scan/t27.json", "scan/t28.json", "scan/t29.json", "scan/t30.json", "scan/t31.json", "scan/t32.json", "scan/t33.json", "scan/t34.json", "scan/t35.json", "scan/t36.json", "scan/t37.json", "scan/t38.json", "scan/t39.json", "scan/t40.json", "scan/t41.json", "scan/t42.json", "scan/t43.json", "scan/t44.json", "scan/t45.json", "scan/t46.json", "scan/t47.json", "scan/t48.json", "scan/t49.json", "scan/t50.json", "scan/t51.json", "scan/t52.json", "scan/t53.json", "scan/t54.json", "scan/t55.json", "scan/t56.json", "scan/t57.json", "scan/t58.json", "scan/t59.json", "scan/t60.json", "scan/t61.json", "scan/t62.json", "scan/t63.json", "scan/t64.json"], "frame": {"centre": [-8.9, 7.9], "crop": {"x0": -15.95, "x1": -1.85, "z0": -0.85, "z1": 16.4}, "wide": {"up": [0, 0, -1], "span": [17.5, 21.5]}, "narrow": {"up": [0, 0, -1], "span": [16.8, 21]}, "north": [-0.2, 0.6], "rooms": [{"at": [-9.7, 11.6], "title": "DINING", "sub": "bar to the right"}, {"at": [-9.6, 4.0], "sub": "KITCHEN 1"}, {"at": [-8.6, 1.1], "sub": "KITCHEN 2 · REAR"}, {"at": [-14.4, 2.6], "sub": "WALK-IN"}, {"at": [-3.6, 3.0], "sub": "WC"}, {"at": [-3.6, 4.8], "sub": "WC"}, {"at": [-3.6, 9.6], "sub": "BAR"}]}, "sections": [{"key": "plan", "label": "Plan", "h1": true, "hint": true, "eyebrow": "Exhibit · pre-lease due diligence", "title": "A trading restaurant, read before the lease", "lead": "A 2,265 SF full-service restaurant in an open-air centre in Texas, surveyed for a national brand deciding whether to take the space.", "body": ["This is our measured floor plan. Scroll, and it becomes the scanned building, then walks you to each finding that shaped the decision."], "rows": [["Inside", "43'-1\" × 52'-7\""], ["Surveyed", "October 2026, before service"], ["Delivered", "Report, measured drawings, scan, 360° video"]], "view": {"top": true, "fov": 6, "cut": 1.2, "mesh": 0, "ink": 1}}, {"key": "scan", "label": "The scan", "eyebrow": "Plan + scan", "title": "The drawing sits on the scan it was measured from", "body": ["Under the linework is the 3D scan of the restaurant, sliced 4 ft above the floor, the height every floor plan is cut at. Booths, bar, cook line and walk-in land on the drawn lines."], "fig": "Cut plane 4'-0\" above finished floor", "view": {"top": true, "fov": 6, "cut": 1.2, "mesh": 1, "ink": 1}}, {"key": "walls", "label": "Walls rise", "overview": true, "eyebrow": "Plan → space", "title": "A dining room, a bar and two kitchens", "body": ["The cut rises through the fit-out. The dining room is open to a 12 ft ceiling; the kitchens sit under an 8 ft ceiling with the services above it."], "rows": [["Dining", "12'-7\" to 12'-11\" ceiling"], ["Kitchens", "8'-2⅜\" ceiling"], ["Deck", "18'-9\" to 19'-4\" above the floor"]], "view": {"pos": [-23, 15, 25], "tgt": [-8.9, 0.6, 7.4], "fov": 34, "cut": 3.0, "ink": 0.5}}, {"key": "s1", "label": "Power", "tag": 1, "eyebrow": "Power · the headline", "title": "The record said no transformer. There is one, and it sets the budget", "body": ["A desk record of the space listed no step-down transformer. Above the kitchen ceiling we found a 75 kVA unit feeding every 208 V panel. It caps the restaurant's 208 V supply at about half of what the incoming brand specifies."], "fig": "75 kVA ÷ (208 V × √3) ≈ 208 A, against 400 A specified", "photos": [{"src": "img/xfmr_plate.jpg", "alt": "Square D transformer nameplate above the kitchen ceiling", "caption": "75 kVA, 480 V to 208Y/120 V, read above the ceiling"}], "next": {"label": "What it meant", "text": "A 112.5 kVA transformer fits the existing 200 A, 480 V service. The full specification needs a utility service increase, so the application went in early."}, "pin": [-6.3, 2.8, 3.4], "view": {"pos": [-10.6, 1.65, 3.9], "tgt": [-6.0, 1.9, 3.4], "fov": 66}}, {"key": "s2", "label": "Kitchen", "tag": 2, "eyebrow": "Kitchen and hoods", "title": "A 16 ft Type I hood the new tenant does not need", "body": ["A full cook line under a CaptiveAire hood with suppression and make-up air, plus a second hood over the dish machine. A juice bar cooks nothing, so both are removal items, or the landlord keeps them."], "rows": [["Hood 1", "16'-0 13/16\" × 4'-0 3/4\", suppression, make-up air"], ["Hood 2", "3'-11 13/16\" × 3'-6 3/16\", dish machine"], ["Gas", "1,231 MBH designed, mostly cooking"]], "photos": [{"src": "img/hood.jpg", "alt": "Stainless Type I hood over the cook line", "caption": "Hood 1 over the cook line"}], "next": {"label": "What it meant", "text": "Removing the cook line releases most of the gas load and much of the 208 V demand, which eases the power gap."}, "pin": [-9.4, 2.1, 2.7], "view": {"pos": [-6.4, 1.6, 4.2], "tgt": [-10.2, 1.9, 2.3], "fov": 64}}, {"key": "s3", "label": "Walk-in", "tag": 3, "eyebrow": "Refrigeration", "title": "A walk-in cooler with a freezer built inside it", "body": ["Box-in-box at the rear left, with remote condensing units on the roof. The incoming layout uses reach-in refrigeration, so the walk-in is evaluated or removed."], "photos": [{"src": "img/walkin.jpg", "alt": "Walk-in cooler interior with shelving and the freezer door", "caption": "Inside the cooler, freezer door ahead"}], "next": {"label": "What it meant", "text": "A refrigeration contractor inspects the boxes and condensing units before anyone counts them as an asset."}, "pin": [-13.9, 1.4, 2.3], "view": {"pos": [-9.4, 7.2, 9.0], "tgt": [-13.6, 0.8, 2.4], "fov": 40, "cut": 2.3}}, {"key": "s4", "label": "Water", "tag": 4, "eyebrow": "Water and hot water", "title": "Three water heaters above one ceiling, one at the end of its life", "rows": [["Main", "1½\" Type L copper with its own 1½\" sub-meter"], ["Tank", "100 gal gas, built March 2006"], ["Also", "Gas tankless + 40 gal electric"]], "photos": [{"src": "img/water_heaters.jpg", "alt": "A.O. Smith 100 gallon gas water heater"}, {"src": "img/pipe.jpg", "alt": "Copper water main printed 1 1/2 inch Type L"}], "next": {"label": "What it meant", "text": "The water service already meets the brand standard. The 2006 tank is replaced; the tankless venting can be reused."}, "pin": [-8.6, 2.6, 0.7], "view": {"pos": [-4.2, 1.7, 1.1], "tgt": [-10.5, 2.3, 0.7], "fov": 64}}, {"key": "s5", "label": "Restrooms", "tag": 5, "eyebrow": "Restrooms", "title": "Two single-user restrooms, recently refinished", "rows": [["Restroom 1", "6'-6 7/16\" × 6'-2 7/8\""], ["Restroom 2", "6'-6\" × 6'-1½\""], ["Hallway", "3'-6 3/8\" wide"]], "photos": [{"src": "img/restroom.jpg", "alt": "Single-user restroom with subway tile and grab bars", "caption": "Hex mosaic floor, grab bars, exhaust fan"}], "next": {"label": "What it meant", "text": "Refit to the brand standard, checking turning space and pull-side door clearance against current accessibility rules."}, "pin": [-3.6, 1.2, 3.8], "view": {"pos": [-4.6, 8.4, 8.6], "tgt": [-4.2, 0.4, 3.6], "fov": 38, "cut": 2.4}}, {"key": "s6", "label": "Dining", "tag": 6, "eyebrow": "Dining room and HVAC", "title": "20 tons on the roof, and room for an open ceiling", "body": ["Two packaged rooftop units, 15 tons from 2021 and 5 tons from 2019, already give two-zone control. Above the 12 ft dining ceiling there are 6 to 7 ft to the deck."], "fig": "2,265 SF ÷ 20 tons ≈ 113 SF per ton", "photos": [{"src": "img/dining.jpg", "alt": "Dining room with roll-up glass door to the patio"}, {"src": "img/above_ceiling.jpg", "alt": "Flex duct and services above the ceiling"}], "next": {"label": "What it meant", "text": "Keep both units after a service inspection and rebalance the duct. An exposed ceiling is achievable once the plenum is tidied."}, "pin": [-8.8, 3.6, 10.6], "view": {"pos": [-13.6, 1.7, 15.4], "tgt": [-6.4, 2.6, 8.6], "fov": 66}}, {"key": "s7", "label": "Life safety", "tag": 7, "eyebrow": "Life safety", "title": "No sprinklers, but a capped 6\" supply next door", "body": ["There are no heads or sprinkler piping anywhere in the unit. In the building's shared meter room a 6\" fire-protection stub rises through the floor, capped with a blind flange: a supply point if the new design needs one."], "photos": [{"src": "img/ceiling.jpg", "alt": "Acoustic dining ceiling with diffusers and no sprinkler heads", "caption": "Dining ceiling: diffusers, lights, no heads"}], "next": {"label": "What it meant", "text": "The architect confirms the occupancy limits with the fire marshal at design stage, with the stub as the fallback."}, "pin": [-6.0, 3.8, 12.5], "view": {"pos": [-11.0, 1.5, 15.0], "tgt": [-7.0, 3.7, 11.0], "fov": 66}}, {"key": "end", "label": "Explore", "overview": true, "eyebrow": "The deliverable", "title": "Every finding has a place in the building", "body": ["This walkthrough sits beside the written report, the measured drawings, the scan and the 360° video. Tap a marker to jump to it, or explore the scan yourself."], "links": [{"label": "What a survey delivers", "url": "/work/"}, {"label": "Start a project", "url": "/contact/"}], "note": "Client, occupier and address are withheld. Figures are from the survey report.", "view": {"pos": [-24, 17, 24], "tgt": [-8.9, 0.4, 7.4], "fov": 34, "ink": 0.25, "cut": 4.3}}]}, "back": "/work/", "backLabel": "alturascope.com"};</script>
+</head>
+<body>
+<a id="back" class="ctl" href="#">Back</a>
+<canvas id="stage" aria-label="3D model built from the site scan, drawn over the measured plan"></canvas>
+<div id="overlay" aria-hidden="true"></div>
+<nav id="index" aria-label="Walkthrough stops"></nav>
+<button id="free" class="ctl" aria-pressed="false">Explore freely</button>
+<div id="tblock" role="note" aria-label="Drawing title block"></div>
+<main id="notes"></main>
+<script type="importmap">{"imports":{"three":"https://cdn.jsdelivr.net/npm/three@0.169.0/build/three.module.js","three/addons/":"https://cdn.jsdelivr.net/npm/three@0.169.0/examples/jsm/"}}</script>
+<script type="module">
+import * as THREE from 'three';
+import {OrbitControls} from 'three/addons/controls/OrbitControls.js';
+import {LineSegments2} from 'three/addons/lines/LineSegments2.js';
+import {LineSegmentsGeometry} from 'three/addons/lines/LineSegmentsGeometry.js';
+import {LineMaterial} from 'three/addons/lines/LineMaterial.js';
+
+// Scene frame: metres, y up, the scan's own axes. Everything site-specific comes from scene.json.
+const CFG = window.SITE, S = CFG.scene, BASE = CFG.base;
+const V = a => new THREE.Vector3(a[0], a[1], a[2]);
+const C = new THREE.Vector3(S.frame.centre[0], 0, S.frame.centre[1]);
+const CROP = S.frame.crop;
+const el = (tag, cls, text) => { const e = document.createElement(tag); if (cls) e.className = cls; if (text != null) e.textContent = text; return e; };
+
+// ---- Page chrome built from the scene --------------------------------------------------------
+const back = document.getElementById('back'); back.href = CFG.back; back.textContent = '← ' + CFG.backLabel;
+const tb = document.getElementById('tblock');
+tb.appendChild(el('div', 'brand', S.brand || ''));
+for (const [k, v] of (S.titleBlock || [])) { const d = el('div'); d.appendChild(el('small', null, k)); d.appendChild(document.createTextNode(v)); tb.appendChild(d); }
+const ld = el('div', 'load'); ld.appendChild(el('small', null, 'Scan')); const loadtxt = el('span', null, 'Loading…'); loadtxt.id = 'loadtxt'; ld.appendChild(loadtxt); tb.appendChild(ld);
+
+const notes = document.getElementById('notes');
+for (const s of S.sections) {
+  const sec = el('section'); sec.dataset.k = s.key; sec.dataset.label = s.label; sec.id = s.key;
+  const n = el('div', 'note');
+  const eb = el('div', 'eyebrow');
+  if (s.tag) eb.appendChild(el('span', 'tag', String(s.tag)));
+  eb.appendChild(document.createTextNode(s.eyebrow || ''));
+  n.appendChild(eb);
+  n.appendChild(el(s.h1 ? 'h1' : 'h2', null, s.title));
+  if (s.lead) n.appendChild(el('p', 'lead', s.lead));
+  for (const p of (s.body || [])) n.appendChild(el('p', null, p));
+  if (s.fig) n.appendChild(el('div', 'fig', s.fig));
+  if (s.rows?.length) { const dl = el('dl'); for (const [k, v] of s.rows) { dl.appendChild(el('dt', null, k)); dl.appendChild(el('dd', null, v)); } n.appendChild(dl); }
+  if (s.photos?.length) {
+    const f = el('figure', s.photos.length > 1 ? 'duo' : null);
+    for (const p of s.photos) { const i = el('img'); i.src = BASE + p.src; i.alt = p.alt || ''; i.loading = 'lazy'; f.appendChild(i); }
+    if (s.photos.length === 1 && s.photos[0].caption) f.appendChild(el('figcaption', null, s.photos[0].caption));
+    n.appendChild(f);
+  }
+  if (s.next) { const d = el('div', 'next'); d.appendChild(el('b', null, s.next.label || 'Next step')); d.appendChild(document.createTextNode(s.next.text)); n.appendChild(d); }
+  if (s.links?.length) { const d = el('div', 'links'); for (const l of s.links) { const a = el('a', null, l.label + ' ↗'); a.href = l.url; a.target = '_blank'; a.rel = 'noopener'; d.appendChild(a); } n.appendChild(d); }
+  if (s.note) n.appendChild(el('p', 'small', s.note));
+  if (s.hint) { const h = el('div', 'hint'); h.appendChild(el('i')); h.appendChild(document.createTextNode('Scroll to walk the survey')); n.appendChild(h); }
+  sec.appendChild(n); notes.appendChild(sec);
+}
+
+// ---- Three.js scene --------------------------------------------------------------------------
+const css = n => getComputedStyle(document.documentElement).getPropertyValue(n).trim();
+const canvas = document.getElementById('stage');
+const renderer = new THREE.WebGLRenderer({canvas, antialias: true});
+renderer.setPixelRatio(Math.min(devicePixelRatio, 2));
+renderer.localClippingEnabled = true;
+renderer.outputColorSpace = THREE.SRGBColorSpace;
+const scene = new THREE.Scene();
+const camera = new THREE.PerspectiveCamera(6, 1, 0.05, 600);
+
+const cutPlane = new THREE.Plane(new THREE.Vector3(0, -1, 0), 1.2);
+const cropPlanes = [new THREE.Plane(new THREE.Vector3(1, 0, 0), 0), new THREE.Plane(new THREE.Vector3(-1, 0, 0), 0), new THREE.Plane(new THREE.Vector3(0, 0, 1), 0), new THREE.Plane(new THREE.Vector3(0, 0, -1), 0)];
+const clip = [cutPlane, ...cropPlanes];
+const meshMats = [];
+const model = new THREE.Group(); model.visible = false; scene.add(model);
+const ink = new THREE.Group(); scene.add(ink);
+const inkMats = [];
+const overlay = document.getElementById('overlay');
+const labels = [];
+const addLabel = (e, p, kind) => { overlay.appendChild(e); labels.push({el: e, p, kind}); return e; };
+
+function lineSet(flat, width, y, role) {
+  if (!flat?.length) return;
+  const pos = [];
+  for (let i = 0; i < flat.length; i += 4) pos.push(flat[i], y, flat[i + 1], flat[i + 2], y, flat[i + 3]);
+  const m = new LineMaterial({linewidth: width, transparent: true, depthWrite: false});
+  inkMats.push({m, role});
+  const l = new LineSegments2(new LineSegmentsGeometry().setPositions(pos), m); l.renderOrder = 2; ink.add(l);
+}
+(function grid() {
+  const pos = [], s = 0.3048 * 2, x0 = CROP.x0 - 3, x1 = CROP.x1 + 3, z0 = CROP.z0 - 3, z1 = CROP.z1 + 3;
+  for (let x = x0; x <= x1; x += s) pos.push(x, -0.01, z0, x, -0.01, z1);
+  for (let z = z0; z <= z1; z += s) pos.push(x0, -0.01, z, x1, -0.01, z);
+  const m = new LineMaterial({linewidth: 1, transparent: true, depthWrite: false});
+  inkMats.push({m, role: 'grid'}); const l = new LineSegments2(new LineSegmentsGeometry().setPositions(pos), m); l.renderOrder = 1; ink.add(l);
+})();
+if (S.plan) fetch(BASE + S.plan).then(r => r.json()).then(P => {
+  lineSet(P.segs.wall, 2.6, 0.02, 'ink'); lineSet(P.segs.door, 1.1, 0.02, 'soft');
+  lineSet(P.segs.mep, 1.0, 0.02, 'soft'); lineSet(P.segs.dim, 1.0, 0.02, 'soft');
+  for (const [x, z, t] of (P.texts || [])) addLabel(el('div', 'dimlbl', t.replace(/ - /, '-').replace(/ /g, '')), new THREE.Vector3(x, 0, z), 'dim');
+  applyTheme(); resize();
+});
+for (const r of (S.frame.rooms || [])) {
+  const d = el('div', 'roomlbl'); if (r.title) d.appendChild(el('b', null, r.title)); if (r.sub) d.appendChild(el('span', null, r.sub));
+  addLabel(d, new THREE.Vector3(r.at[0], 0, r.at[1]), 'room');
+}
+const north = el('div', 'north');
+north.innerHTML = '<svg viewBox="0 0 44 44" width="44" height="44"><circle cx="22" cy="22" r="16" fill="none" stroke="currentColor" stroke-width="1.2"/><path d="M22 4 L27 24 L22 20 L17 24 Z" fill="currentColor"/><text x="22" y="41" text-anchor="middle" font-family="JetBrains Mono,monospace" font-size="9" fill="currentColor">N</text></svg>';
+if (S.frame.north) addLabel(north, new THREE.Vector3(S.frame.north[0], 0, S.frame.north[1]), 'north');
+for (const s of S.sections) if (s.pin) {
+  const b = el('button', 'pin', String(s.tag || '•')); b.setAttribute('aria-label', 'Go to ' + s.label);
+  b.addEventListener('click', () => goTo(s.key)); b.dataset.k = s.key; addLabel(b, V(s.pin), 'pin');
+}
+
+// Scan tiles: base64 float32 positions/uvs + indices per part, one JPEG texture each.
+const texLoader = new THREE.TextureLoader(); let loaded = 0; const tiles = S.tiles || [];
+const b64 = (s, T) => { const bin = atob(s), u = new Uint8Array(bin.length); for (let i = 0; i < bin.length; i++) u[i] = bin.charCodeAt(i); return new T(u.buffer); };
+async function loadTile(path) {
+  const tile = await (await fetch(BASE + path)).json();
+  const dir = path.includes('/') ? path.slice(0, path.lastIndexOf('/') + 1) : '';
+  for (const p of tile.parts) {
+    const g = new THREE.BufferGeometry();
+    if (p.q) {
+      // 16-bit package: positions scaled into the part's box, uvs into 0..1.
+      const qp = b64(p.pos, Uint16Array), pos = new Float32Array(qp.length);
+      for (let i = 0; i < qp.length; i++) { const a = i % 3; pos[i] = p.lo[a] + qp[i] / 65535 * (p.hi[a] - p.lo[a]); }
+      g.setAttribute('position', new THREE.BufferAttribute(pos, 3));
+      g.setAttribute('uv', new THREE.BufferAttribute(b64(p.uv, Uint16Array), 2, true));
+    } else {
+      g.setAttribute('position', new THREE.BufferAttribute(b64(p.pos, Float32Array), 3));
+      g.setAttribute('uv', new THREE.BufferAttribute(b64(p.uv, Float32Array), 2));
+    }
+    g.setIndex(new THREE.BufferAttribute(b64(p.idx, p.i16 ? Uint16Array : Uint32Array), 1));
+    const m = new THREE.MeshBasicMaterial({clippingPlanes: clip, transparent: true, side: THREE.FrontSide});
+    if (p.tex) { const t = texLoader.load(BASE + dir + p.tex); t.flipY = false; t.colorSpace = THREE.SRGBColorSpace; t.anisotropy = 4; m.map = t; }
+    meshMats.push(m); model.add(new THREE.Mesh(g, m));
+  }
+}
+for (const t of tiles) loadTile(t).catch(() => {}).finally(() => { loaded++; loadtxt.textContent = loaded < tiles.length ? `${loaded}/${tiles.length}` : (S.scanLabel || 'Loaded'); });
+
+function applyTheme() {
+  scene.background = new THREE.Color(css('--paper'));
+  for (const {m, role} of inkMats) m.color.set(css(role === 'grid' ? '--grid' : role === 'ink' ? '--ink' : '--ink-soft'));
+  north.style.color = css('--ink');
+}
+matchMedia('(prefers-color-scheme: dark)').addEventListener('change', applyTheme);
+applyTheme();
+
+// ---- Scroll → keyframes ----------------------------------------------------------------------
+const sections = [...document.querySelectorAll('#notes section')];
+const byKey = Object.fromEntries(S.sections.map(s => [s.key, s]));
+const nav = document.getElementById('index');
+for (const s of sections) { const a = el('a', null, s.dataset.label); a.href = '#' + s.dataset.k; a.addEventListener('click', e => { e.preventDefault(); goTo(s.dataset.k); }); nav.appendChild(a); s._nav = a; }
+let W = 1, H = 1, narrow = false, centres = [], shift = {x: 0, y: 0};
+function resize() {
+  W = innerWidth; H = innerHeight; narrow = W <= 760;
+  renderer.setSize(W, H, false); camera.aspect = W / H;
+  shift = narrow ? {x: 0, y: -H * 0.3} : {x: Math.min(240, W * 0.2), y: 0};
+  camera.setViewOffset(W, H, -shift.x, -shift.y, W, H); camera.updateProjectionMatrix();
+  for (const {m} of inkMats) m.resolution.set(W, H);
+  centres = sections.map(s => { const r = s.getBoundingClientRect(); return r.top + scrollY + r.height / 2; });
+  centres[0] = Math.min(centres[0], H / 2);
+}
+addEventListener('resize', resize); resize();
+
+function topPose(v) {
+  // Landscape keeps the drawing sheet's orientation; portrait turns the plan to fit the phone.
+  // frame.wide / frame.narrow can set {up, span} per layout; otherwise a long plan turns for phones.
+  const fv = S.frame[narrow ? 'narrow' : 'wide'];
+  let up = narrow ? new THREE.Vector3(1, 0, 0) : new THREE.Vector3(0, 0, -1);
+  const [sw, sh] = S.frame.span || [20, 14]; let spanW = narrow ? sh * 0.93 : sw, spanH = narrow ? sw * 1.02 : sh;
+  if (fv) { up = V(fv.up); [spanW, spanH] = fv.span; }
+  const freeW = W - 2 * Math.abs(shift.x), freeH = narrow ? H * 0.3 : H;
+  const t = Math.tan(THREE.MathUtils.degToRad(v.fov / 2));
+  const d = Math.max(spanH / 2 / t * H / freeH, spanW / 2 / (t * (W / H)) * W / freeW);
+  return {pos: C.clone().add(new THREE.Vector3(0, d, 0)), tgt: C.clone(), up};
+}
+function pose(key) {
+  const v = byKey[key].view;
+  const base = v.top ? topPose(v) : {pos: V(v.pos), tgt: V(v.tgt), up: new THREE.Vector3(0, 1, 0)};
+  return {fov: v.fov, cut: v.cut ?? 99, mesh: v.mesh ?? 1, ink: v.ink ?? 0, crop: v.crop ?? 1, ...base};
+}
+const ease = t => t * t * (3 - 2 * t);
+function desired() {
+  const y = scrollY + H / 2;
+  let i = 0; while (i < centres.length - 1 && y > centres[i + 1]) i++;
+  const a = pose(sections[i].dataset.k);
+  if (i >= centres.length - 1 || y <= centres[0]) return {s: a, idx: y <= centres[0] ? 0 : i};
+  const b = pose(sections[i + 1].dataset.k);
+  let t = (y - centres[i]) / (centres[i + 1] - centres[i]);
+  t = ease(THREE.MathUtils.clamp((t - 0.18) / 0.64, 0, 1));
+  const L = (p, q) => p + (q - p) * t;
+  return {idx: t < 0.5 ? i : i + 1, s: {
+    pos: a.pos.clone().lerp(b.pos, t), tgt: a.tgt.clone().lerp(b.tgt, t), up: a.up.clone().lerp(b.up, t).normalize(),
+    fov: Math.exp(L(Math.log(a.fov), Math.log(b.fov))), cut: L(a.cut, b.cut), mesh: L(a.mesh, b.mesh), ink: L(a.ink, b.ink), crop: L(a.crop, b.crop)}};
+}
+
+const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
+let cur = null, active = -1, free = false;
+const controls = new OrbitControls(camera, canvas); controls.enabled = false; controls.enableDamping = true;
+function goTo(k) {
+  if (free) toggleFree();
+  const i = sections.findIndex(s => s.dataset.k === k); if (i < 0) return;
+  scrollTo({top: Math.max(0, centres[i] - H / 2), behavior: reduce ? 'auto' : 'smooth'});
+}
+const freeBtn = document.getElementById('free');
+function toggleFree() {
+  free = !free; document.body.classList.toggle('freelook', free); freeBtn.setAttribute('aria-pressed', free);
+  freeBtn.textContent = free ? 'Back to the tour' : 'Explore freely';
+  if (free) { controls.target.copy(cur.tgt); camera.up.set(0, 1, 0); cur.cut = 99; controls.enabled = true; } else controls.enabled = false;
+}
+freeBtn.addEventListener('click', toggleFree);
+
+const tmp = new THREE.Vector3(); let last = performance.now();
+const OVERVIEW = new Set(S.sections.filter(s => s.overview).map(s => s.key));
+function frame(now) {
+  const dt = Math.min(0.1, (now - last) / 1000); last = now;
+  const {s: d, idx} = desired();
+  if (!cur) cur = {...d, pos: d.pos.clone(), tgt: d.tgt.clone(), up: d.up.clone()};
+  if (!free) {
+    const k = reduce ? 1 : 1 - Math.exp(-dt * 7);
+    cur.pos.lerp(d.pos, k); cur.tgt.lerp(d.tgt, k); cur.up.lerp(d.up, k).normalize();
+    for (const p of ['fov', 'cut', 'mesh', 'ink', 'crop']) cur[p] += (d[p] - cur[p]) * k;
+    camera.position.copy(cur.pos); camera.up.copy(cur.up); camera.lookAt(cur.tgt); camera.fov = cur.fov;
+  } else { controls.update(); cur.mesh = 1; cur.ink = Math.max(0, cur.ink - dt); cur.crop = 1; }
+  const dist = camera.position.distanceTo(free ? controls.target : cur.tgt);
+  camera.near = Math.max(0.05, dist * 0.004); camera.far = dist * 6 + 80; camera.updateProjectionMatrix();
+
+  cutPlane.constant = cur.cut;
+  const far = 200, c = cur.crop;
+  cropPlanes[0].constant = -(CROP.x0 * c - far * (1 - c));
+  cropPlanes[1].constant = CROP.x1 * c + far * (1 - c);
+  cropPlanes[2].constant = -(CROP.z0 * c - far * (1 - c));
+  cropPlanes[3].constant = CROP.z1 * c + far * (1 - c);
+  model.visible = cur.mesh > 0.01 && loaded > 0;
+  for (const m of meshMats) { m.opacity = cur.mesh; m.transparent = cur.mesh < 0.99; m.depthWrite = cur.mesh > 0.5; }
+  ink.visible = cur.ink > 0.01;
+  for (const {m, role} of inkMats) m.opacity = cur.ink * (role === 'grid' ? 0.9 : 1);
+
+  const stopKey = sections[idx]?.dataset.k;
+  for (const L of labels) {
+    tmp.copy(L.p).project(camera);
+    const vis = tmp.z < 1 && tmp.z > -1;
+    let o = 0;
+    if (L.kind === 'dim' || L.kind === 'north') o = cur.ink > 0.9 && cur.fov < 10 ? 1 : 0;
+    else if (L.kind === 'room') o = Math.max(0, (cur.ink - 0.5) * 2) * (cur.fov < 10 ? 1 : 0);
+    else if (L.kind === 'pin') {
+      const own = L.el.dataset.k === stopKey;
+      o = (own || OVERVIEW.has(stopKey) || free) && cur.mesh > 0.5 ? 1 : 0;
+      L.el.classList.toggle('on', own); L.el.style.pointerEvents = o ? 'auto' : 'none'; L.el.tabIndex = o ? 0 : -1;
+    }
+    L.el.style.opacity = vis ? o : 0;
+    if (vis) L.el.style.transform = `translate(${((tmp.x * 0.5 + 0.5) * W).toFixed(1)}px,${((-tmp.y * 0.5 + 0.5) * H).toFixed(1)}px) translate(-50%,-50%)`;
+  }
+  if (idx !== active) { active = idx; sections.forEach((s, i) => s._nav.classList.toggle('on', i === idx)); }
+  renderer.render(scene, camera);
+  requestAnimationFrame(frame);
+}
+requestAnimationFrame(frame);
+if (location.hash) setTimeout(() => goTo(location.hash.slice(1)), 300);
+</script>
+</body>
+</html>
