@@ -1930,5 +1930,909 @@
         "label": "Central US site surveys"
       }
     ]
+  },
+  {
+    "slug": "henderson-avenue-dallas",
+    "published": "2026-10-26",
+    "title": "Bar-to-Café Survey, Henderson Ave, Dallas | Alturascope",
+    "description": "Pre-lease survey of a former bar in Dallas's Knox-Henderson district: glazed frontage, covered patio, 400 A service and rooftop units, read in one visit.",
+    "kicker": "Second-generation bar unit · Dallas, Texas · Surveyed June 2026",
+    "h1": "Garage-door glazing, a shaded patio, and more kitchen than a café needs.",
+    "summary": "A fast-casual café operator was looking at a single-storey brick unit in the Knox-Henderson district that had last traded as a bar. It came fully fitted, with a long bar, a back-of-house kitchen and a walk-in cooler. The operator's format is light on cooking and big on frontage, so the questions were what to keep, what to clear, and what the building already gave them. One visit sorted the inheritance from the strip-out.",
+    "stats": [
+      {
+        "value": "~400 A",
+        "label": "Electrical service"
+      },
+      {
+        "value": "2 × 5-ton",
+        "label": "Rooftop units for the unit"
+      },
+      {
+        "value": "~49 ft",
+        "label": "Covered patio width"
+      },
+      {
+        "value": "1",
+        "label": "Site visit"
+      }
+    ],
+    "findings": [
+      {
+        "title": "Three glazed openings onto a covered patio.",
+        "body": "The front is a glazed double door flanked by two black-aluminum up-and-over doors, the wider one almost 16 ft across. They open onto a deep covered overhang and a paved courtyard of about 49 by 39 ft under a timber pergola. Inside, most of the front of house is open to the metal deck at nearly 12 ft.",
+        "action": "Design the front of house around the open-up doors and plan the patio as seating from day one. Keep the exposed deck if the look suits the brand.",
+        "photos": [
+          {
+            "src": "covered-frontage",
+            "w": 1400,
+            "h": 917,
+            "alt": "Covered timber overhang beside a run of black-framed glazed up-and-over doors",
+            "caption": "The covered overhang along the glazed frontage."
+          },
+          {
+            "src": "glazed-doors",
+            "w": 1059,
+            "h": 1400,
+            "alt": "Glazed up-and-over door seen from inside, with exposed metal deck above",
+            "caption": "An up-and-over door from inside, under the open deck."
+          }
+        ]
+      },
+      {
+        "title": "A strong services backbone, on a service the designer needs to know about.",
+        "body": "For a unit this size the services are generous: about 400 A over two panels, a matched pair of 5-ton rooftop units, a walk-in cooler with its own rooftop condensing unit, a tankless water heater and an exterior grease interceptor. The supply is 120/240 V high-leg delta, while the brand's equipment is usually specified for 120/208 V wye. Reading the main panel label is what flagged it.",
+        "action": "Have the electrical designer plan for the high-leg service from the start, confirm the main breaker rating, and budget a service visit on the rooftop units at handover.",
+        "photos": [
+          {
+            "src": "walk-in-cooler",
+            "w": 1400,
+            "h": 959,
+            "alt": "Interior of a walk-in cooler with a ceiling evaporator and beverage lines on the wall",
+            "caption": "The walk-in cooler and its two-fan evaporator."
+          }
+        ]
+      },
+      {
+        "title": "A full bar kitchen the café format doesn't need.",
+        "body": "The back of house carries a large extraction hood with wet-chemical suppression and a make-up air unit on the roof, built for a full bar menu. The café format needs no hood at all. The existing grease interceptor, on the other hand, covers more than the concept requires and can simply stay.",
+        "action": "Plan the hood, suppression, bar and draft-beer system into the strip-out, keep the interceptor, and assess the copper bar top and the walk-in for reuse.",
+        "photos": [
+          {
+            "src": "kitchen-hood",
+            "w": 1400,
+            "h": 583,
+            "alt": "Stainless kitchen exhaust hood with baffle filters and suppression piping",
+            "caption": "The legacy hood, planned for removal."
+          }
+        ]
+      }
+    ],
+    "aboutHeading": "Pre-lease survey of a former bar in Dallas, Texas",
+    "about": "This was a pre-lease site survey and MEP due diligence visit to a second-generation bar unit in the Knox-Henderson district of Dallas, Texas, carried out for a café operator planning a conversion. In one visit we measured the frontage, patio and every room, read the electrical panels and utility meter, recorded the rooftop units and refrigeration by nameplate, traced the plumbing, drainage and grease provision, and captured the whole unit as a 3D scan. The result set out what the space already gives a café fit-out and what the strip-out should take away.",
+    "also": "The brick shell is sound and full of character, and the concrete floor shows traces of an old terracotta tile that would come up well with a clean. A labeled switch bank already controls the patio fans and lighting.",
+    "delivered": "The client received a narrative report with a brand-standards review, a nameplate-level equipment schedule, an equipment reuse assessment and a Matterport 3D scan of the unit and patio.",
+    "services": [
+      {
+        "href": "/services/qsr-restaurant-survey/",
+        "label": "Restaurant and QSR site surveys"
+      },
+      {
+        "href": "/services/pre-construction-site-intelligence/",
+        "label": "Pre-construction site intelligence"
+      },
+      {
+        "href": "/services/central-us-site-surveys/",
+        "label": "Central US site surveys"
+      }
+    ]
+  },
+  {
+    "slug": "grand-central-terminal-new-york",
+    "published": "2026-10-26",
+    "title": "Transit Kiosk Survey, Grand Central Terminal, NY | Alturascope",
+    "description": "Pre-lease survey of a food kiosk on the Grand Central Terminal concourse: inherited cooling, 208 V power, water and fire-alarm coordination mapped.",
+    "kicker": "Transit concourse kiosk · New York, NY · Surveyed June 2026",
+    "h1": "A small kiosk in a landmark. The answers were above the ceiling.",
+    "summary": "A grab-and-go café brand was looking at taking over a trading food kiosk on the main concourse of Grand Central Terminal. On the shop floor it looked turnkey. The real questions were about the services the brand would draw on, and how a unit inside a working terminal ties into the building around it. One visit, much of it spent above the ceiling and in a cupboard-sized service room, answered them.",
+    "stats": [
+      {
+        "value": "1",
+        "label": "Site visit"
+      },
+      {
+        "value": "208Y/120 V",
+        "label": "Three-phase power"
+      },
+      {
+        "value": "26",
+        "label": "Items in the equipment register"
+      },
+      {
+        "value": "3 days",
+        "label": "Visit to report"
+      }
+    ],
+    "findings": [
+      {
+        "title": "A heritage frontage that sets the rules for the storefront.",
+        "body": "The unit faces the concourse through a frameless structural-glass shopfront in angled bays, set between the terminal's marble piers under plaster coving, with a perforated transom grille above. Commuter footfall passes all day, with track wayfinding in sight of the door. Because the frame around it is landmark fabric, the storefront belongs to the building as much as to the tenancy.",
+        "action": "Design the brand's presence inside the glass, and bring any frontage changes to the landlord early, in the same workstream as the lease.",
+        "photos": [
+          {
+            "src": "heritage-frontage",
+            "w": 831,
+            "h": 1400,
+            "alt": "Marble pier with plaster coving and a perforated transom grille beside a glass shopfront",
+            "caption": "Marble pier, coving and transom grille at the shopfront."
+          }
+        ]
+      },
+      {
+        "title": "Cooling already in place, inside a tight envelope.",
+        "body": "The unit inherits a water-cooled system: two ceiling fan coils and a water-cooled condenser rejecting heat to the terminal's condenser-water loop, sub-metered by a BTU meter, with electric heat. There is no rooftop plant to buy or replace, no gas and no cooking hood, which suits a light-cooking format. Finished ceilings sit at about 8 ft 6 in, with a shallow, busy void above.",
+        "action": "Confirm the fan-coil capacity against the brand's equipment load and the BTU billing terms with building engineering, and lay out the servery with the ceiling height in mind.",
+        "photos": [
+          {
+            "src": "ceiling-void",
+            "w": 1400,
+            "h": 591,
+            "alt": "Drywall ceiling with a return grille, access hatch and downlights inside a concourse kiosk",
+            "caption": "Drywall ceiling with access hatch and return grille."
+          }
+        ]
+      },
+      {
+        "title": "The right voltage, and three services to line up with the landlord.",
+        "body": "Power is 208Y/120 V three-phase, exactly what the brand's equipment expects, from a 125 A panel with only a few spare ways. The water meter is sized for the current use, below the brand's preferred incoming size. The tenant fire-alarm panel is connected to the terminal's own system, so any alarm work is coordinated with the building rather than done by the tenant alone.",
+        "action": "Treat power headroom, a water upsize and fire-alarm coordination as three early landlord and utility workstreams, priced before commitment.",
+        "photos": [
+          {
+            "src": "fire-alarm-room",
+            "w": 1258,
+            "h": 1400,
+            "alt": "Red addressable fire alarm control panel and fused disconnect switch in a small service room",
+            "caption": "The tenant fire-alarm panel and its fused disconnect."
+          }
+        ]
+      }
+    ],
+    "aboutHeading": "Pre-lease survey of a food kiosk in Grand Central Terminal, New York",
+    "about": "This was a pre-lease site survey and MEP due diligence visit to a trading food and beverage kiosk on the concourse of Grand Central Terminal in New York, carried out for a café brand weighing a conversion. In one visit we recorded the electrical panel and its full circuit directory, the water-cooled fan coils and BTU metering, the water meter and hot water, the sprinklers and fire alarm, the ceiling heights and the plenum, and captured the unit as a 3D scan. Every item went into a nameplate-level equipment register, read against the brand's standards.",
+    "also": "The unit already has a wet sprinkler system, an addressable fire-alarm panel, a low-profile grease interceptor and a servery rough-in that can serve as the base for a new layout. Restrooms are provided by the terminal rather than inside the unit.",
+    "delivered": "Three days after the visit, the client had a narrative report with a brand-standards scorecard, a 26-item equipment register, an equipment reuse assessment and a Matterport 3D scan of the unit.",
+    "services": [
+      {
+        "href": "/services/qsr-restaurant-survey/",
+        "label": "Restaurant and QSR site surveys"
+      },
+      {
+        "href": "/services/retail-rollout-documentation/",
+        "label": "Retail rollout documentation"
+      },
+      {
+        "href": "/services/northeast-site-surveys/",
+        "label": "Northeast site surveys"
+      }
+    ]
+  },
+  {
+    "slug": "spectrum-center-irvine",
+    "published": "2026-10-26",
+    "title": "Restaurant Survey, Spectrum Center, Irvine, CA | Alturascope",
+    "aboutHeading": "Pre-lease survey of a second-generation restaurant in an Irvine open-air center",
+    "about": "This was a pre-lease site survey and MEP due diligence of a trading second-generation restaurant at Spectrum Center, an open-air retail center in Irvine, California, carried out for a counter-service café tenant. In one visit, with the restaurant open, we documented the 480 V and 208 V panels, the rooftop heat pump, kitchen exhaust and makeup air, walk-in refrigeration, gas and water services, hood suppression, the sprinkler riser and the covered patio, and captured every room in 3D. Each item was then measured against what the incoming café format would keep, remove or add.",
+    "services": [
+      {
+        "href": "/services/qsr-restaurant-survey/",
+        "label": "Restaurant and QSR site surveys"
+      },
+      {
+        "href": "/services/commercial-kitchen-survey/",
+        "label": "Commercial kitchen surveys"
+      },
+      {
+        "href": "/services/west-coast-site-surveys/",
+        "label": "West Coast site surveys"
+      }
+    ],
+    "kicker": "Second-generation restaurant · Irvine, California · Surveyed July 2026",
+    "h1": "The power the café needed was already on a breaker. A steam boiler was using it.",
+    "description": "A trading restaurant at Spectrum Center, Irvine, CA, surveyed for a café conversion: a power path without a service upgrade, found in one visit.",
+    "summary": "A counter-service café brand was weighing a restaurant unit with a covered patio on the promenade at Spectrum Center. Its format runs blenders, espresso, refrigeration and ice, and the unit's 208 V panel was already close to its design load. The real question was whether the café would need a service upgrade at the center's shared switchboard. One visit, made while the restaurant was open and trading, showed it would not.",
+    "stats": [
+      {
+        "value": "~1,900",
+        "label": "Square feet"
+      },
+      {
+        "value": "395",
+        "label": "Sq ft covered patio"
+      },
+      {
+        "value": "370+",
+        "label": "Photos taken"
+      },
+      {
+        "value": "1",
+        "label": "Site visit"
+      }
+    ],
+    "findings": [
+      {
+        "title": "The extra capacity was sitting behind the boiler breaker.",
+        "body": "The unit takes a 480 V supply through a 200 A switch, then steps down to a 208 V panel with a 125 A main and only about 10 A to spare. On the 480 V side, a 72 kW electric steam boiler the café has no use for sits on a 90 A breaker. A 75 kVA transformer draws almost exactly 90 A at 480 V and gives about 208 A at 208 V, and the existing 208 V panel already has a 225 A bus.",
+        "action": "Remove the boiler and reuse its breaker and feeder for a 75 kVA step-down transformer, with a larger main in the existing panel. That raises low-voltage capacity from about 125 A to about 200 A without touching the service. Confirm the feeder size and the existing transformer's plate during design.",
+        "photos": [
+          {
+            "src": "panels",
+            "w": 740,
+            "h": 520,
+            "alt": "Grey Eaton electrical panels and a small enclosure on a white back-of-house wall",
+            "caption": "The 208 V and 480 V panels in the back of house."
+          }
+        ]
+      },
+      {
+        "title": "Young plant that can stay.",
+        "body": "A 2022 Carrier packaged heat pump of about 10 tons serves the space, roughly 160 square feet per ton, which is more than a café's lighter cooking load needs. The walk-in cooler and freezer run on matched 2022 condensing units. The hood is protected by a UL-300 wet-chemical system tied into the center's fire alarm, the current standard and often a costly replacement in older restaurants.",
+        "action": "Keep the rooftop unit and both walk-ins as retained assets after a service visit, and take the grease line and second hood out. With less exhaust, the existing makeup air goes from tight to comfortable.",
+        "photos": [
+          {
+            "src": "hood-suppression",
+            "w": 700,
+            "h": 400,
+            "alt": "Red wet-chemical hood suppression cylinder with its release module and a stainless control panel",
+            "caption": "The UL-300 hood suppression system and its release."
+          }
+        ]
+      },
+      {
+        "title": "A covered patio that opens straight into the dining room.",
+        "body": "A six-panel folding door just over 15 feet tall opens the dining room onto a 395 square foot patio. The patio sits under a steel and timber canopy with radiant heaters and roller sunscreens on every bay. Inside, the dining ceiling is left open to the deck at about 15 and a half feet.",
+        "action": "Keep the folding doors, canopy, heaters and screens as the store's front, and confirm with the landlord whether the patio is part of the lease or licensed separately.",
+        "photos": [
+          {
+            "src": "patio-canopy",
+            "w": 960,
+            "h": 315,
+            "alt": "Timber joists and black steel beams of a patio canopy with pendant lights and hanging plants",
+            "caption": "The steel and timber patio canopy."
+          }
+        ]
+      }
+    ],
+    "also": "Water arrives through a 2-inch line, generous for a café of this size, and the gas meter is rated at 1,000 CFH, well beyond what the café would draw once the cook line goes. The center allows deliveries only before 10 AM, which we flagged for the operating plan.",
+    "delivered": "The client received a narrative site survey report with a nameplate-level equipment schedule and a 3D scan of the space."
+  },
+  {
+    "slug": "j-street-sacramento",
+    "published": "2026-10-26",
+    "title": "Restaurant Shell Survey, J Street, Sacramento | Alturascope",
+    "aboutHeading": "Pre-lease survey of a former restaurant shell in downtown Sacramento, California",
+    "about": "This was a pre-lease site survey and MEP due diligence of a former full-service restaurant on J Street in downtown Sacramento, California, stripped back to shell and about to be split into two tenancies. In one visit we documented the tenant switchboard, water and gas meters, hot-water plant, walk-ins, sprinkler riser and the roof, measured the frontage, ceiling heights and the provisional demise, and captured the ground floor in a 3D scan. The as-built drawings we found on site let us check every service against its original design.",
+    "services": [
+      {
+        "href": "/services/qsr-restaurant-survey/",
+        "label": "Restaurant and QSR site surveys"
+      },
+      {
+        "href": "/services/pre-construction-site-intelligence/",
+        "label": "Pre-construction site intelligence"
+      },
+      {
+        "href": "/services/west-coast-site-surveys/",
+        "label": "West Coast site surveys"
+      }
+    ],
+    "kicker": "Former restaurant shell · Sacramento, California · Surveyed July 2026",
+    "h1": "A third of a big restaurant, with the whole building's capacity still behind it.",
+    "description": "A former restaurant shell on J Street, Sacramento, surveyed for a café tenant: power, water, gas and ceiling heights confirmed in one pre-lease visit.",
+    "summary": "A beverage-led café operator was considering about a third of a former full-service restaurant on J Street, in an early-1900s brick building in downtown Sacramento. The space had been taken back to shell and was about to be split into two tenancies, with the dividing wall not yet built. The questions were how much of the old restaurant's infrastructure a much smaller café could draw on, and what the new store would need of its own. One visit answered both, helped by a full set of as-built drawings we found on site.",
+    "stats": [
+      {
+        "value": "1,200 A",
+        "label": "Tenant switchboard"
+      },
+      {
+        "value": "3-inch",
+        "label": "Water meter"
+      },
+      {
+        "value": "15'-10\"",
+        "label": "Front-of-house ceiling"
+      },
+      {
+        "value": "1",
+        "label": "Site visit"
+      }
+    ],
+    "findings": [
+      {
+        "title": "Utilities sized for a full restaurant, shared by two tenants.",
+        "body": "The tenant switchboard is a 1,200 A, 208 V board fed from a 2,000 A landlord board. The previous restaurant's calculated demand was about 990 A, so a café needing 400 A has plenty of room even after the split. A 3-inch water meter and a 7,000 CFH gas meter tell the same story. The original as-built drawings, which we found in the space, confirmed the capacities and filled in the panel schedules missing from the boards.",
+        "action": "Agree with the landlord how the switchboard, water and gas are divided between the two tenancies, and which basement services come with the café's demise. Keep the as-built drawing set with the project record.",
+        "photos": [
+          {
+            "src": "rear-shell",
+            "w": 1400,
+            "h": 735,
+            "alt": "Rear of an empty restaurant shell with board-formed concrete walls, columns and services under a steel deck",
+            "caption": "The rear of the shell, where services rise from the basement."
+          }
+        ]
+      },
+      {
+        "title": "Close to 16 feet at the front, and over 17 at the back.",
+        "body": "The front of house measures 15'-10\" to its ceiling, under dark steel beams with corbelled brackets and white panels between them. The rougher rear half runs about 17 feet floor to ceiling, and 14'-10\" to the underside of the concrete beams. There are no suspended ceilings anywhere, so the full height is usable for an open-ceiling concept.",
+        "action": "Plan the café's own new rooftop HVAC from the start, allowing for a crane lift on a building of this height, and keep the decorative front ceiling as part of the design.",
+        "photos": [
+          {
+            "src": "ceiling-transom",
+            "w": 1140,
+            "h": 440,
+            "alt": "Dark steel ceiling beams with corbelled brackets above tall divided-lite storefront windows",
+            "caption": "The decorative front-of-house ceiling and transom glazing."
+          }
+        ]
+      },
+      {
+        "title": "A period frontage with character worth keeping.",
+        "body": "The storefront is about 26'-9\" wide, with 13 feet of glass and a divided-lite transom band that suits the building's age. Inside, a fine cast-plaster arched surround sits on the side wall, and much of the floor is an attractive terracotta mosaic tile that may be original to the building.",
+        "action": "Bring the arch and the mosaic floor into the design conversation early. Patch and make good the floor where the old kitchen's drains and penetrations come out, and decide whether to keep or replace the frontage railing.",
+        "photos": [
+          {
+            "src": "arch-frontage",
+            "w": 1320,
+            "h": 740,
+            "alt": "Empty shell with a cast-plaster arched surround on a side wall, a mosaic tile floor and tall storefront glazing",
+            "caption": "The cast-plaster arch and the mosaic floor."
+          }
+        ]
+      }
+    ],
+    "also": "The building's sprinkler system is in an active maintenance program, and the basement holds hot-water plant from 2018 and 2019 and two walk-in boxes that could be reused if they come with the demise.",
+    "delivered": "The client received a narrative building survey report with a nameplate-level equipment schedule and a 3D scan of the ground floor."
+  },
+  {
+    "slug": "kierland-commons-scottsdale",
+    "published": "2026-10-26",
+    "title": "Café Unit Survey, Kierland Commons, Scottsdale | Alturascope",
+    "description": "Pre-lease survey of a corner café unit at Kierland Commons, Scottsdale, AZ: all-electric, 480 V power, four heat pumps and water treatment in place.",
+    "kicker": "Second-generation corner café unit · Scottsdale, Arizona · Surveyed June 2026",
+    "h1": "No gas, four modern heat pumps, and power to spare.",
+    "summary": "An expanding counter-service brand was looking at a trading corner café at Kierland Commons, with covered patio seating on three sides. Their format runs on electricity, water and refrigeration, so the question was how much of that was already in the building. We surveyed the unit while it was open for business, from the electrical room to the rooftop units. The answer was most of it, with a few things to confirm.",
+    "stats": [
+      {
+        "value": "~2,330",
+        "label": "Square feet"
+      },
+      {
+        "value": "112.5 kVA",
+        "label": "Step-down transformer"
+      },
+      {
+        "value": "~18 tons",
+        "label": "Cooling, four zones"
+      },
+      {
+        "value": "1",
+        "label": "Site visit"
+      }
+    ],
+    "findings": [
+      {
+        "title": "The electrical backbone was already in place, with room to grow.",
+        "body": "The unit has a 480 V, three-phase service. A 112.5 kVA transformer steps it down to 208/120 V for equipment and lighting, which gives roughly 312 A on that side. The 480 V board serving the four rooftop heat pumps was carrying about 61 A of its 200 A. Those units date from 2018 to 2023 and give about 18 nominal tons across four zones, generous cooling for a glazed unit in the desert. We found no gas-fired equipment anywhere, which suits an all-electric format.",
+        "action": "Keep the distribution and re-circuit it to the new equipment. Confirm the exact spare capacity against a full circuit count, and run a cooling load check against the new layout.",
+        "photos": [
+          {
+            "src": "open-ceiling",
+            "w": 1400,
+            "h": 648,
+            "alt": "Open-to-deck café ceiling with exposed spiral supply duct, round diffusers and pendant lights above tall storefront glazing",
+            "caption": "The open-to-deck dining room, with the supply ductwork on show."
+          }
+        ]
+      },
+      {
+        "title": "Water treatment, wet services and restrooms that carry over.",
+        "body": "The back of house holds a serviced treatment set: a twin-tank softener, a reverse-osmosis system and a booster pump, the kit a drinks bar needs. The bar position already has its supplies, drains, floor sinks and backflow devices. Two accessible restrooms are in good, recently styled condition. Grease is handled by a shared, building-scale interceptor in the rear service yard, so the brand may not need its own. The one gap is the water line, which is 1¼ inch against the brand's preferred 1½ inch, with the booster lifting the pressure.",
+        "action": "Check flow at peak demand before deciding on any upsize. Confirm the interceptor allocation with property management, and plan a light restroom refresh with an ADA check of mirror heights.",
+        "photos": [
+          {
+            "src": "restroom",
+            "w": 1400,
+            "h": 648,
+            "alt": "Accessible restroom with cream wall tile, a dark accent band, wall-hung basin, mirror and hand dryer",
+            "caption": "One of the two accessible restrooms."
+          }
+        ]
+      },
+      {
+        "title": "A shaded corner with a compact back room.",
+        "body": "A timber pergola with laser-cut metal screen panels wraps the frontage and both patio flanks, and the storefront is full-height glazing almost 16 feet wide in the main bay. Inside, the back of house is small and does a lot: warewashing, storage, refrigeration, the office and the IT rack share one L-shaped room of about 21 by 25 feet. Its lay-in tile ceiling makes services easy to rework. There is no walk-in cooler, but a rooftop condenser fed from the unit's own board could give a small cold room a head start.",
+        "action": "Treat back-of-house zoning as a real planning constraint from the first test-fit. Carry a refinish of the pergola timber in the exterior refresh.",
+        "photos": [
+          {
+            "src": "pergola",
+            "w": 1400,
+            "h": 646,
+            "alt": "Timber pergola with perforated metal screen panels against a blue sky, beside a stone pier",
+            "caption": "The pergola and screen panels over the patio."
+          }
+        ]
+      }
+    ],
+    "aboutHeading": "Pre-lease survey of a café unit at Kierland Commons, Scottsdale, Arizona",
+    "about": "This was a pre-lease site survey and MEP due diligence of a second-generation corner café unit at Kierland Commons, an open-air retail center in Scottsdale, Arizona. Working around a live, trading store, we recorded the electrical service, transformer and panel schedules, the four rooftop heat pumps by nameplate, the water treatment and hot water plant, the sprinkler and fire alarm systems, and every room in a 3D scan. The findings were set against the incoming brand's standards so the design team could see what the space already provides and what the fit-out has to add.",
+    "also": "The sprinkler system is hydraulically designed on two supervised risers and professionally serviced, and the unit has two exits plus a rear door to a shared service yard with delivery access.",
+    "delivered": "The client received a narrative feasibility report with an equipment schedule and reuse assessment, a Matterport 3D scan, and a measured floor plan, reflected ceiling plan and elevations in CAD and Revit.",
+    "services": [
+      {
+        "href": "/services/qsr-restaurant-survey/",
+        "label": "Restaurant and QSR site surveys"
+      },
+      {
+        "href": "/services/retail-rollout-documentation/",
+        "label": "Retail rollout documentation"
+      },
+      {
+        "href": "/services/west-coast-site-surveys/",
+        "label": "West Coast and Southwest site surveys"
+      }
+    ]
+  },
+  {
+    "slug": "scottsdale-fashion-square",
+    "published": "2026-10-26",
+    "title": "Mall Food Court Unit Survey, Scottsdale, AZ | Alturascope",
+    "description": "Pre-lease survey of a corner food-court unit at Scottsdale Fashion Square, AZ: 480 V power, fan-coils on the mall's water loop, walk-in and grease system.",
+    "kicker": "Corner restaurant unit in an enclosed mall · Scottsdale, Arizona · Surveyed June 2026",
+    "h1": "Two storefronts, no rooftop plant, and a building that does the cooling.",
+    "summary": "A fast-casual food and drink operator was weighing a busy corner restaurant on the ground floor of Scottsdale Fashion Square. One side faces an open-air walkway with a patio, the other opens straight onto the food court. Deep inside a three-storey mall, the services work very differently from a standalone store. Over two days, with the unit trading, we traced each one back to where it comes from.",
+    "stats": [
+      {
+        "value": "~1,100",
+        "label": "Sq ft of dining room"
+      },
+      {
+        "value": "2",
+        "label": "Public frontages"
+      },
+      {
+        "value": "15'-8\"",
+        "label": "Floor to deck at rear"
+      },
+      {
+        "value": "2 days",
+        "label": "On site"
+      }
+    ],
+    "findings": [
+      {
+        "title": "Power arrives at 480 V, with three 208 V boards behind it.",
+        "body": "A single 480/277 V, three-phase service feeds a lightly loaded 150 A panel that serves the fan-coil units and a step-down transformer. The transformer in turn feeds three 208/120 V panels on 250 A frames, installed in 2010. On paper that is generous power for the incoming format. The transformer's rating plate was no longer readable, and its kVA is the number that sets the real ceiling on the 208 V side.",
+        "action": "Get the transformer rating from the building's records before the equipment layout is fixed. Everything else on the electrical side can be planned around it.",
+        "photos": [
+          {
+            "src": "panels",
+            "w": 720,
+            "h": 740,
+            "alt": "Two grey electrical panels on a white wall with conduit runs rising above them",
+            "caption": "Two of the 208/120 V panels in the back of house."
+          }
+        ]
+      },
+      {
+        "title": "The kitchen infrastructure was all there.",
+        "body": "The back of house has a built-in walk-in cooler of about 80 square feet, a Type I hood with wet-chemical suppression, and a large in-floor grease interceptor by the rear exit. Domestic water comes in at 1½ inch, which meets the brand's standard. Hot water is from a 2024 gas-fired storage heater, so natural gas is already at the unit, unlike the all-electric sites in the brand's portfolio.",
+        "action": "Decide early which of the walk-in, hood and gas service the new menu will use. Open the interceptor during due diligence to confirm its size before counting on it.",
+        "photos": [
+          {
+            "src": "walk-in",
+            "w": 1160,
+            "h": 740,
+            "alt": "Stainless walk-in cooler with its door open, showing polymer shelving and a quarry tile floor",
+            "caption": "The walk-in cooler, off the rear of the kitchen."
+          }
+        ]
+      },
+      {
+        "title": "No rooftop units to inherit. The mall supplies the heating and cooling.",
+        "body": "As a ground-floor tenant under two more storeys, the unit has no rooftop plant of its own. Hydronic fan-coil units above the ceiling run off the mall's central water loop, so there is no packaged unit to replace at the end of its life. The ceiling void is about 5½ feet deep at the rear and well used by building services. Out front, the patio is about 610 square feet under a covered walkway, and the food-court side has an open servery about 8½ feet wide behind a roller shutter.",
+        "action": "Confirm the loop type and the capacity available to the unit with the landlord. Plan the ceiling routes early, because the void is shared with building services.",
+        "photos": [
+          {
+            "src": "atrium",
+            "w": 1050,
+            "h": 620,
+            "alt": "Looking up from the covered walkway at a glazed mall atrium and tan precast cladding against a blue sky",
+            "caption": "The open-air walkway on the patio side of the unit."
+          }
+        ]
+      }
+    ],
+    "aboutHeading": "Pre-lease survey of a food court restaurant unit in Scottsdale, Arizona",
+    "about": "This was a pre-lease site survey and MEP due diligence of a ground-floor corner restaurant unit at Scottsdale Fashion Square, an enclosed regional mall in Scottsdale, Arizona. Over two days we documented the electrical service and panel schedules, the hydronic fan-coil units tied to the mall's central loop, the make-up air and exhaust, the gas water heater, the walk-in cooler, the grease system and the fire protection, and captured the whole unit in a 3D scan. The record shows a design team exactly how a mall unit is serviced, which is often quite different from a standalone store.",
+    "also": "The unit is fully sprinklered with a monitored fire alarm system, and two accessible restrooms off the rear corridor are clean and in near-current condition.",
+    "delivered": "The client received a site survey report with an equipment schedule and a list of confirmation items for the landlord, a Matterport 3D scan, and a measured floor plan, reflected ceiling plan and elevations in CAD and Revit.",
+    "services": [
+      {
+        "href": "/services/qsr-restaurant-survey/",
+        "label": "Restaurant and QSR site surveys"
+      },
+      {
+        "href": "/services/commercial-kitchen-survey/",
+        "label": "Commercial kitchen surveys"
+      },
+      {
+        "href": "/services/west-coast-site-surveys/",
+        "label": "West Coast and Southwest site surveys"
+      }
+    ]
+  },
+  {
+    "slug": "mission-viejo",
+    "published": "2026-10-26",
+    "title": "Two-Unit Mall Survey, Mission Viejo, CA | Alturascope",
+    "description": "Two neighboring mall suites in Mission Viejo, CA surveyed for a combined café: power, cooling, water and shopfronts read from the plant itself.",
+    "kicker": "Two-suite enclosed mall unit · Mission Viejo, California · Surveyed July 2026",
+    "h1": "Two suites, two transformers, and a 480 V backbone already in place.",
+    "summary": "A healthy fast-casual brand wanted to join two neighboring first-level suites in an enclosed regional mall in Mission Viejo into one store. One is a glazed corner unit, the other its next-door neighbor, both still trading on the day. The brand needed to know what each suite would bring to a combined fit-out, and what the fit-out would have to add. One visit, with both stores open, answered that.",
+    "stats": [
+      {
+        "value": "2",
+        "label": "Suites combined"
+      },
+      {
+        "value": "75 kVA",
+        "label": "Existing step-down capacity"
+      },
+      {
+        "value": "16′ 7″",
+        "label": "Floor to deck"
+      },
+      {
+        "value": "1",
+        "label": "Site visit"
+      }
+    ],
+    "findings": [
+      {
+        "title": "The two suites mirror each other electrically. Together they bring 75 kVA.",
+        "body": "Each suite takes a 480 V three-phase house supply and steps it down to 208Y/120 V through its own transformer, one 30 kVA and one 45 kVA. Combined, the new store inherits a 480 V backbone, about 75 kVA of step-down capacity, 480 V circuits for mechanical plant and room in the panels at both ends. The corner suite's back of house also holds a chilled stock room left from an earlier retail fit-out, with its own unit cooler overhead.",
+        "action": "Check the combined 75 kVA against the brand's equipment schedule before designing any new service, and plan the old chilled-store plant into the strip-out, since it is unlikely to suit the brand's walk-in.",
+        "photos": [
+          {
+            "src": "back-of-house",
+            "w": 700,
+            "h": 315,
+            "alt": "Back-of-house store room with a ceiling-hung refrigeration unit cooler under a lay-in ceiling",
+            "caption": "The corner suite's store room, with the older chilled-store cooler overhead."
+          }
+        ]
+      },
+      {
+        "title": "A decorative corner front and a frameless glass one, joined by one wall.",
+        "body": "The corner suite has an ornate arched shopfront in painted timber frames, single-glazed behind the decoration. Its neighbor has a full-height frameless glass front with butt joints and a roller-shutter entrance. Between them is a short run of composite cladding that comes off easily. Behind the frontage, the wall between the suites runs full height to the deck, with about 14 feet clear to the underside of the steel.",
+        "action": "Treat the corner shopfront as part of the new storefront package and look at keeping the frameless glazing. Opening the dividing wall needs a fire-rated design and landlord approval, so start that conversation early.",
+        "photos": [
+          {
+            "src": "corner-shopfront",
+            "w": 740,
+            "h": 240,
+            "alt": "Arched white timber shopfront frames and recessed downlights seen from inside the corner suite",
+            "caption": "The corner suite's arched shopfront frames, from the inside."
+          }
+        ]
+      },
+      {
+        "title": "Cooling from two different decades, and a food court overhead for water.",
+        "body": "Comfort cooling is a matched split system in each suite. The corner suite's dates from 2007 and runs on an older refrigerant. The neighbor's is a 2015 system, mid-life and serviceable. Domestic water comes in at half an inch, which is small for a café. But the mall's food court and its main restrooms sit almost directly above, so bigger water and drain connections are close at hand.",
+        "action": "Budget to replace the 2007 split, check the 2015 split for reuse against the combined layout, and agree upsized water and drainage with the landlord early.",
+        "photos": [
+          {
+            "src": "frameless-glazing",
+            "w": 930,
+            "h": 265,
+            "alt": "Full-height frameless glass shopfront with track lighting and an entrance soffit",
+            "caption": "The neighboring suite: frameless glazing and the newer cooling system."
+          }
+        ]
+      }
+    ],
+    "aboutHeading": "Pre-lease survey of two mall suites in Mission Viejo, California",
+    "about": "This was a pre-lease site survey and MEP due diligence visit for two adjoining first-level suites in an enclosed regional mall in Mission Viejo, California, ahead of combining them into one café. In a single visit, with both stores trading, we documented the electrical services and both step-down transformers from their nameplates, the comfort cooling and refrigeration plant, water heating and domestic water, sprinkler coverage, shopfronts, ceiling heights and floor-to-deck datums, and captured the space as a 3D scan. The report set out what each suite gives a combined fit-out and what the fit-out needs to add.",
+    "also": "The corner suite already has a three-compartment sink, a hand sink and a floor drain, so the plumbing basics for a counter-service format are partly there. Its storage water heater dates from about 2019 and is a reuse candidate.",
+    "delivered": "The client received a narrative site survey report with an equipment schedule and reuse assessment, plus a 3D walkthrough of the space.",
+    "services": [
+      {
+        "href": "/services/qsr-restaurant-survey/",
+        "label": "Restaurant and QSR site surveys"
+      },
+      {
+        "href": "/services/retail-rollout-documentation/",
+        "label": "Retail rollout documentation"
+      },
+      {
+        "href": "/services/west-coast-site-surveys/",
+        "label": "West Coast site surveys"
+      }
+    ]
+  },
+  {
+    "slug": "old-orchard-skokie",
+    "published": "2026-10-26",
+    "title": "Open-Air Retail Unit Survey, Skokie, IL | Alturascope",
+    "description": "Two glazed units on an open-air concourse at Old Orchard, Skokie, surveyed to become one café: frontage, power, fire systems, water and storage.",
+    "kicker": "Two-unit open-air retail space · Skokie, Illinois · Surveyed July 2026",
+    "h1": "Two shopfronts, two ceiling heights, and a storage room bigger than the brief.",
+    "summary": "A counter-service food and drink operator planned to combine two side-by-side glazed units on the open-air concourse at Old Orchard into one store, with a storage room off the service corridor behind. Both units were trading, and neither had any food-service fit-out left in place. The operator needed a clear picture of what the pair would give a first-time café fit-out and where the new work would sit. One visit, including the service level below, set that out.",
+    "stats": [
+      {
+        "value": "~38 ft",
+        "label": "Continuous glazed frontage"
+      },
+      {
+        "value": "300 A",
+        "label": "Larger unit's service"
+      },
+      {
+        "value": "2 in",
+        "label": "Water main below the units"
+      },
+      {
+        "value": "1",
+        "label": "Site visit"
+      }
+    ],
+    "findings": [
+      {
+        "title": "Thirty-eight feet of glass, with a 19-inch step in the ceiling.",
+        "body": "Together the two frontages give about 38 feet of continuous glazing onto a double-loaded, brick-paved concourse, broken only by a single stone pilaster. The units are a similar size but not a similar height: one has a drywall ceiling at 10 ft 0¼ in, the other a lay-in grid at 11 ft 7¾ in. The wall between them is a gypsum partition, and the roof joists run straight across it.",
+        "action": "Design the combined store around the ceiling step rather than against it, and confirm the dividing wall, the pilaster and the services crossing the wall against the base-building drawings before layout is fixed.",
+        "photos": [
+          {
+            "src": "trading-floor",
+            "w": 960,
+            "h": 310,
+            "alt": "Clean white drywall ceiling with supply diffusers and flat panel lights in a retail unit",
+            "caption": "The lower of the two ceilings: clean drywall at just over 10 feet."
+          }
+        ]
+      },
+      {
+        "title": "Each unit has its own fire systems, so the fit-out doesn't wait on the neighbors.",
+        "body": "Each unit has its own fire alarm panel and its own sprinkler control valve inside its own space, both reporting back to the center. Nothing is shared with the unit next door. That means ceilings can be re-headed and alarm devices moved without arranging a shutdown of a system that serves other tenants. Power is split the same way: one unit has a 100 A service sized for small retail, the other 300 A.",
+        "action": "Build the electrical design around the 300 A unit, and confirm current inspection records for both units' fire systems at handover.",
+        "photos": [
+          {
+            "src": "sprinkler-valve",
+            "w": 580,
+            "h": 740,
+            "alt": "Red sprinkler control valve assembly with pressure gauge, tamper switch and drain on a block wall",
+            "caption": "A sprinkler control valve with tamper switch and drain, one of the center's distributed set."
+          }
+        ]
+      },
+      {
+        "title": "First-generation food service, with the big services already close by.",
+        "body": "Neither unit has a walk-in, a grease connection or a servery, so this is a first-generation food fit-out. The pieces it needs are nearby. A 2 in water main runs directly beneath the units, against a typical 1½ in requirement. Above-ground grease removal already operates elsewhere on the property, and the landlord was open to a grease room on the level below. The storage room off the rear corridor is far bigger than the roughly 300 sq ft asked for, with about 17 feet to the deck.",
+        "action": "Settle the grease route early, since it drives both cost and layout, and use the oversize storage room to take walk-in and dry storage off the trading floor.",
+        "photos": [
+          {
+            "src": "storage-room",
+            "w": 1040,
+            "h": 740,
+            "alt": "Open-to-structure storage room with electrical panels and a sprinkler branch on a block wall",
+            "caption": "The storage room off the service corridor, open to the structure."
+          },
+          {
+            "src": "service-corridor",
+            "w": 1140,
+            "h": 740,
+            "alt": "Block-walled rear service corridor with overhead piping and conduit",
+            "caption": "The rear service corridor that links the units to storage."
+          }
+        ]
+      }
+    ],
+    "aboutHeading": "Pre-lease survey of two open-air retail units in Skokie, Illinois",
+    "about": "This was a pre-lease site survey and MEP due diligence visit for two adjoining in-line retail units on the open-air concourse at Old Orchard in Skokie, Illinois, planned as a single café with remote storage. We documented the shopfronts and ceiling heights, both electrical services, the four-pipe fan coil heating and cooling fed from central plant, domestic water and water heating, each unit's fire alarm and sprinkler riser, the storage room and the service level below, and captured the space as a 3D scan. We also drew a measured floor plan of both units, the storage room and the rear corridor as the layout of record.",
+    "also": "Heating and cooling come from the center's central plant through fan coils, so there is no rooftop unit to replace. The concourse is double-loaded, with active storefronts directly opposite, which makes for steady footfall.",
+    "delivered": "The client received a narrative building survey report with an equipment schedule, a measured floor plan of both units and the storage room, and a 3D walkthrough of the space.",
+    "services": [
+      {
+        "href": "/services/qsr-restaurant-survey/",
+        "label": "Restaurant and QSR site surveys"
+      },
+      {
+        "href": "/services/pre-construction-site-intelligence/",
+        "label": "Pre-construction site intelligence"
+      },
+      {
+        "href": "/services/central-us-site-surveys/",
+        "label": "Central US site surveys"
+      }
+    ]
+  },
+  {
+    "slug": "santan-village-gilbert",
+    "published": "2026-10-26",
+    "title": "Retail Unit Survey, SanTan Village, Gilbert, AZ | Alturascope",
+    "aboutHeading": "Pre-lease survey of an open-air retail unit in Gilbert, Arizona",
+    "about": "This was a pre-lease site survey and MEP due diligence of a small in-line retail unit at SanTan Village, an open-air shopping center in Gilbert, Arizona, carried out for a counter-service food and drink operator. In one visit we documented the electrical supply from the building board to the suite panel, the HVAC terminal and its building-automation controls, the domestic water and hot water, the sprinkler and fire-alarm provision, the restroom and the storefront, and captured the unit in 3D. We then set each system against the operator's format so the design team could see what carries over and what the fit-out has to add.",
+    "services": [
+      {
+        "href": "/services/qsr-restaurant-survey/",
+        "label": "Restaurant and QSR site surveys"
+      },
+      {
+        "href": "/services/retail-rollout-documentation/",
+        "label": "Retail rollout documentation"
+      },
+      {
+        "href": "/services/west-coast-site-surveys/",
+        "label": "West Coast and Southwest site surveys"
+      }
+    ],
+    "kicker": "In-line retail unit · Gilbert, AZ · Surveyed June 2026",
+    "h1": "A compact unit on a 480-volt building. The power was one step upstream.",
+    "description": "A ~1,300 sq ft retail unit at SanTan Village, Gilbert, AZ, surveyed for a counter-service food operator: 480 V power, HVAC zoning and water.",
+    "summary": "A counter-service food and drink operator was considering a compact in-line unit under the shaded walkways of SanTan Village. Their format runs on blenders, espresso and refrigeration, so it needs far more power than a retail shop, plus a second cooling zone and a good water supply. The unit was between tenancies, with a short-term pop-up inside. One visit showed how much of that the building could already give.",
+    "stats": [
+      {
+        "value": "~1,300",
+        "label": "Square feet"
+      },
+      {
+        "value": "1",
+        "label": "Site visit"
+      },
+      {
+        "value": "480 V",
+        "label": "Three-phase building service"
+      },
+      {
+        "value": "4",
+        "label": "Capture passes"
+      }
+    ],
+    "findings": [
+      {
+        "title": "A strong building service, with a suite supply sized for a shop.",
+        "body": "The building takes a 480Y/277 V three-phase service, and each suite is fed on its own breaker from a shared distribution board. This one runs through a 50 A feeder and a 30 kVA step-down transformer to a 100 A panel whose circuits were set up for retail lighting. That suits a shop. A food format with blenders, espresso machines and refrigeration needs more, and the transformer is what sets the limit.",
+        "action": "Upsize the suite feeder from the building board, swap the step-down transformer and panel for larger ones, and design new food-service circuits. The capacity sits one step upstream, so no new utility service is needed.",
+        "photos": [
+          {
+            "src": "front-of-house",
+            "w": 1300,
+            "h": 730,
+            "alt": "Open retail floor with a suspended ceiling, light timber-look flooring and a glazed storefront",
+            "caption": "The open front of house, about 1,170 sq ft in one room."
+          }
+        ]
+      },
+      {
+        "title": "One cooling zone today, and a simple way to make two.",
+        "body": "Cooling comes from a packaged rooftop unit that serves the whole building, with a single fan-powered VAV terminal over this suite. The terminal already carries its own electric reheat and runs on the building's automation system. The operator prefers at least two zones, and the open plan makes a second terminal straightforward.",
+        "action": "Add a matching fan-powered VAV terminal on the existing building controls, and confirm the rooftop unit's spare capacity with the landlord during design.",
+        "photos": [
+          {
+            "src": "storefront",
+            "w": 630,
+            "h": 740,
+            "alt": "Aluminum storefront with double glass doors and stone-clad piers under a steel pergola",
+            "caption": "The recessed entry, shaded by the center's steel pergola."
+          }
+        ]
+      },
+      {
+        "title": "Water already sized for the format, and a clean deck overhead.",
+        "body": "A domestic cold-water line of at least 1½ inches, and possibly 2, runs the full width of the unit above the ceiling, which meets the operator's preference as it stands. The suite is sprinklered off the building's wet system, and an accessible restroom is already in place. Above the grid the structural deck is clean, so an open ceiling is an option.",
+        "action": "Confirm the water line size at fit-out, design new hot-water provision for the higher demand, and decide early whether to strip the ceiling back to the deck.",
+        "photos": [
+          {
+            "src": "restroom",
+            "w": 1280,
+            "h": 680,
+            "alt": "Restroom wall with a framed mirror, a stainless grab bar and an access panel for the water shut-off",
+            "caption": "The existing accessible restroom, with its own shut-off panel."
+          }
+        ]
+      }
+    ],
+    "also": "The storefront is about 17½ feet wide in two glazed bays around a recessed double door, with roughly 12 feet of height to work with inside. A misting system already serves the walkway outside, which could suit outdoor seating.",
+    "delivered": "The client received a narrative condition and feasibility report with a nameplate-level equipment schedule, a brand-standards check and a 3D scan of the unit."
+  },
+  {
+    "slug": "the-gardens-mall-palm-beach",
+    "published": "2026-10-26",
+    "title": "Restaurant Unit Survey, The Gardens Mall, FL | Alturascope",
+    "aboutHeading": "Pre-lease survey of a mall restaurant unit in Palm Beach Gardens, Florida",
+    "about": "This was a pre-lease documentation survey of a vacant second-generation restaurant unit at The Gardens Mall, an enclosed regional mall in Palm Beach Gardens, Florida, carried out for a fast-casual food and beverage brand. In one visit we documented the 800 A electrical service and five distribution panels, the rooftop HVAC and kitchen ventilation, water, filtration, gas and hot water, the walk-in refrigeration, the restrooms, life safety and both public frontages, and captured the space in 3D. From the scan we produced a measured floor plan, reflected ceiling plan, interior and exterior elevations and a Revit model.",
+    "services": [
+      {
+        "href": "/services/qsr-restaurant-survey/",
+        "label": "Restaurant and QSR site surveys"
+      },
+      {
+        "href": "/services/commercial-kitchen-survey/",
+        "label": "Commercial kitchen surveys"
+      },
+      {
+        "href": "/services/southeast-site-surveys/",
+        "label": "Southeast site surveys"
+      }
+    ],
+    "kicker": "Second-generation restaurant unit · Palm Beach Gardens, FL · Surveyed July 2026",
+    "h1": "Two frontages, three serving openings, and 800 amps already on the meter.",
+    "description": "A ~3,300 sq ft restaurant unit at The Gardens Mall, Palm Beach Gardens, FL, surveyed for a fast-casual brand: 800 A service, patio and two frontages.",
+    "summary": "A fast-casual brand growing in South Florida was weighing a vacant restaurant unit beside one of the main entrances to The Gardens Mall. It had been a full-service restaurant, with a cooking line the brand's counter format would never use. The real question was which parts of a well-built 2015 fit-out would carry over. One visit, and a drawing set from the scan, answered it.",
+    "stats": [
+      {
+        "value": "~3,300",
+        "label": "Square feet"
+      },
+      {
+        "value": "800 A",
+        "label": "Electrical service at 480 V"
+      },
+      {
+        "value": "16'8\"",
+        "label": "Floor to deck"
+      },
+      {
+        "value": "1",
+        "label": "Site visit"
+      }
+    ],
+    "findings": [
+      {
+        "title": "A front door on the mall and another on the forecourt.",
+        "body": "The unit faces two ways. Outside, a covered patio looks over the mall's landscaped forecourt and water feature, with a six-leaf bi-fold serving hatch onto a stone-topped counter, ceiling fans, festoon lighting and a gas fire pit. Inside, it fronts the main mall corridor with two bar-height glazed sectional doors and a pair of entrance doors. For a counter-service format, three ready-made serving openings across two frontages is a rare starting point.",
+        "action": "Plan the layout around the existing openings rather than new ones, and take up with the landlord the center-wide removal of the shopfront coving, which would raise the mall facade from 11 feet to over 13.",
+        "photos": [
+          {
+            "src": "patio",
+            "w": 970,
+            "h": 740,
+            "alt": "Covered patio with a steel-framed canopy, festoon lights and paved floor facing a landscaped forecourt with palm trees",
+            "caption": "The covered patio, looking out to the forecourt."
+          }
+        ]
+      },
+      {
+        "title": "More power and height than the format needs.",
+        "body": "The unit has a live 800 A service at 480/277 V three-phase, far more than a counter format draws. It feeds a main panel and two 208 V boards with plenty of spare ways, all scheduled and dated. Two 2015 rooftop units give about 23 tons of cooling across 3,300 square feet. The dining room is open to a metal deck at 16'8\", and the back of house has close to 8 feet of ceiling void for new services.",
+        "action": "Run a load schedule against the existing boards and plan the fit-out as reuse and re-circuiting, not a service upgrade. Have the mechanical engineer confirm the rooftop units' remaining life before they are counted on.",
+        "photos": [
+          {
+            "src": "dining-room",
+            "w": 1400,
+            "h": 648,
+            "alt": "Restaurant dining room open to an exposed metal deck, with booths and a glazed sectional serving door at the right",
+            "caption": "Open to the deck, with a glazed serving door onto the mall."
+          }
+        ]
+      },
+      {
+        "title": "The costly rooms are already built.",
+        "body": "Two restrooms from the 2014-15 fit-out, each with two stalls, are finished in large-format porcelain with stainless partitions and are fully accessible. A two-door walk-in cooler and freezer is structurally sound, and there is a commercial grease interceptor in the service yard. These are among the slowest and most expensive parts of a mall fit-out to build from scratch.",
+        "action": "Keep the restrooms and the walk-in boxes, fit new refrigeration to the boxes, and strip the previous cooking line, hoods and bar equipment the format doesn't use.",
+        "photos": [
+          {
+            "src": "restrooms",
+            "w": 1400,
+            "h": 682,
+            "alt": "Restroom with brushed stainless toilet partitions, white tile and an accessible stall with grab bars",
+            "caption": "One of two accessible restrooms from the last fit-out."
+          }
+        ]
+      }
+    ],
+    "also": "Water comes in at 1½ inches off a 2-inch metered line, with a commercial triple-cartridge filtration head already plumbed. The gas service is capped at the meter position, with the internal riser still in place, so reinstating it is a utility request rather than new pipework.",
+    "delivered": "The client received a narrative documentation report with a nameplate-level equipment schedule, a 3D scan, and a measured floor plan, reflected ceiling plan, interior and exterior elevations and Revit model drawn from it."
   }
 ]
