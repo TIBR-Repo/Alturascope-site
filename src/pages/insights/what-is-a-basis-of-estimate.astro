@@ -4,15 +4,16 @@ import InsightArticle from "../../components/InsightArticle.astro";
 const blocks = [
   {
     p: [
+      "<strong class=\"text-navy font-medium\">A basis of estimate is the written statement of what a cost estimate was built from and what it assumes: the documents priced (with revisions), the method and rate sources, what is included and excluded, the assumptions made where the documents were silent, the allowances carried for scope that could not be firmly priced, and the conditions attached to the price.</strong> It is sometimes called the estimate basis or estimating basis. Its job is to make the number checkable &mdash; so that anyone reading it later can tell exactly what was priced.",
       "Two estimators price the same package. One comes back at $1.42m, the other at $1.61m. Before you conclude that one of them is wrong, there is a question worth asking: were they pricing the same job?",
       "Most of the time, they were not. One allowed for temporary protection to the existing floor and the other did not. One read the specification note about acoustic sealant at every head detail; the other priced the partitions off the drawing alone. Neither of them is dishonest and neither of them is incompetent. They simply made different assumptions, and nobody wrote the assumptions down.",
       "A basis of estimate is the document that writes them down. It is the least glamorous page in an estimate pack and it is the one that decides whether you keep your margin.",
     ],
   },
   {
-    h2: "What a basis of estimate actually contains",
+    h2: "What a basis of estimate includes",
     p: [
-      "A basis of estimate states what the price was built from and what it takes for granted. At minimum that means six things:",
+      "A basis of estimate states what the price was built from and what it takes for granted. At minimum that means seven things:",
     ],
     points: [
       ["The documents priced", "every drawing and specification listed by number <em>and revision</em>. Not &ldquo;the tender drawings&rdquo; - the actual sheet list, so that when addendum three lands you can tell instantly whether it changed something you priced."],
@@ -20,7 +21,49 @@ const blocks = [
       ["Exclusions", "what is not, each with a stated reason. An exclusion without a reason is a gap waiting to be argued about."],
       ["Assumptions", "the judgement calls made where the documents were silent. Working hours. Access. Whether the existing slab is sound. Whether the riser is where the as-built says it is."],
       ["Allowances and provisional sums", "the items that could not be firmly priced, carried openly at a stated figure rather than buried in a rate."],
+      ["Method and rate sources", "how quantities were measured and where each rate came from &mdash; the contractor&rsquo;s own rate library, subcontract or supplier quotes obtained for the job, or published cost data &mdash; so a reader can tell which numbers are firm and which are indicative."],
       ["Qualifications", "the conditions attached to the price - validity period, the programme it assumes, what happens if the sequence changes."],
+    ],
+    note: "On large capital projects the same idea is formalized further. AACE International&rsquo;s Recommended Practice 34R-05, <em>Basis of Estimate</em>, sets out a fuller template that adds items such as the estimate&rsquo;s purpose, the execution plan it assumes, risks and contingency, and a reconciliation against earlier estimates. For building and fit-out bids, the seven items above are the working core.",
+  },
+  {
+    h2: "Example: a basis of estimate outline",
+    p: [
+      "What follows is an illustrative outline for a lump-sum bid on a small tenant fit-out. The project and documents are invented for the example; the structure is the point.",
+    ],
+    subs: [
+      {
+        h3: "1. Purpose and scope",
+        body: "Interior fit-out of a ground-floor retail unit of approximately 2,400 sq ft, priced as a lump-sum bid to the general contractor. Shell and base-building systems are by the landlord as described in the lease exhibit.",
+      },
+      {
+        h3: "2. Documents priced",
+        body: "A-101 Floor Plan, Rev C; A-201 Reflected Ceiling Plan, Rev B; A-501 Details, Rev A; M-101 Mechanical Plan, Rev A; E-101 Power Plan, Rev B; Specification, issue 1. Addendum 1 received and incorporated. Existing-conditions survey report dated as issued, used for existing services and ceiling void depth.",
+      },
+      {
+        h3: "3. Method and rate sources",
+        body: "Quantities measured from the drawings listed above. Drywall, ceilings and finishes priced from the contractor&rsquo;s own rates; HVAC and electrical from two subcontract quotes obtained for this bid; firestopping from published cost data, marked as such.",
+      },
+      {
+        h3: "4. Inclusions",
+        body: "Partitions, doors and hardware, acoustic ceilings, floor finishes, painting, restroom fit-out, HVAC distribution from the existing rooftop unit, power and lighting to the drawings, and general conditions for a six-week program.",
+      },
+      {
+        h3: "5. Exclusions, each with a reason",
+        body: "Roof penetrations and curb work - landlord&rsquo;s work under the lease exhibit. Furniture, fixtures and signage - owner-supplied. Utility service upgrade - not shown on the drawings; see allowances.",
+      },
+      {
+        h3: "6. Assumptions",
+        body: "Normal daytime working hours with unrestricted access to the unit. The existing rooftop unit is reused as recorded in the survey. The ceiling void is deep enough for the ductwork shown, per the survey&rsquo;s recorded plenum depth.",
+      },
+      {
+        h3: "7. Allowances and provisional sums",
+        body: "An allowance for electrical service work pending utility confirmation, and an allowance for floor leveling pending removal of the existing floor finish - each carried as its own visible line.",
+      },
+      {
+        h3: "8. Qualifications and validity",
+        body: "Price valid for 30 days and based on a start within 60 days of award. Any change to the drawing revisions listed above to be assessed as a change to the bid.",
+      },
     ],
   },
   {
@@ -64,13 +107,17 @@ const blocks = [
   {
     h2: "Where this sits in our own work",
     p: [
-      "We publish the standard we hold our own packs to as a named document - the <a href=\"/estimating/basis-of-estimate/\" class=\"text-navy font-medium hover:opacity-80 transition-opacity\">Basis of Estimate</a> - rather than burying it in engagement terms. It is issued with every estimate, and the platform we price in will not let a pack be marked complete while anything required by it is missing: nothing priced without a source, nothing excluded without a stated reason, and every document supplied either used or waived.",
+      "We publish the standard we hold our own packs to as a named document - <a href=\"/estimating/basis-of-estimate/\" class=\"text-navy font-medium hover:opacity-80 transition-opacity\">the basis of estimate issued with every Alturascope estimate pack</a> - rather than burying it in engagement terms. It is issued with every estimate, and the platform we price in will not let a pack be marked complete while anything required by it is missing: nothing priced without a source, nothing excluded without a stated reason, and every document supplied either used or waived.",
       "You can see what that produces in practice. Our <a href=\"/estimating/sample-quote-pack/\" class=\"text-navy font-medium hover:opacity-80 transition-opacity\">sample estimate pack</a> is published in full - all eleven pages of a real priced job, including the basis page and the audit report, with nothing held back for a sales call.",
     ],
   },
 ];
 
 const faqs = [
+  {
+    q: "What does basis of estimate mean?",
+    a: "A basis of estimate is the written record of what a cost estimate was built from and what it assumes - the documents and revisions priced, the method and rate sources, inclusions, exclusions, assumptions, allowances and qualifications. It is also called the estimate basis or estimating basis. It makes an estimate checkable and settles later questions about what was and was not priced."
+  },
   {
     q: "Is a basis of estimate the same as a scope of works?",
     a: "No. A scope of works describes what is to be built. A basis of estimate describes what the price was built from - which documents, which assumptions, which exclusions and which allowances. The two overlap but the basis is specifically about the price, and it is the document that settles disputes about what was and was not included."
@@ -94,18 +141,18 @@ const faqs = [
 ];
 ---
 <InsightArticle
-  title="What Is a Basis of Estimate? A Guide for Contractors"
-  description="A basis of estimate states what a price was built from and what it assumes. What belongs in one, why it protects margin, and how to hold an estimate to it."
+  title="What Is a Basis of Estimate? Meaning, Contents and Example"
+  description="A basis of estimate is the written record of what a price was built from and what it assumes. Its meaning, what it includes, and an example outline."
   slug="what-is-a-basis-of-estimate"
-  h1="What a Basis of Estimate Is, and Why You Should Insist on One"
+  h1="What Is a Basis of Estimate? Meaning, Contents and an Example"
   datePublished="2026-08-26"
+  dateModified="2026-10-26"
   heroImage="/Images/plan-1.webp"
   heroAlt="Construction bid drawings and a specification open on a desk during a quantity take-off"
   blocks={blocks}
   faqs={faqs}
   estimatingLead="Every pack we price states its basis in writing and is issued with the audit report that checked it."
   internalLinks={[
-    { text: "The Basis of Estimate standard", href: "/estimating/basis-of-estimate/" },
     { text: "See a complete estimate pack", href: "/estimating/sample-quote-pack/" },
     { text: "The Estimating Desk", href: "/estimating/" },
     { text: "How to check an estimate before you submit it", href: "/insights/how-to-check-a-construction-estimate/" },

@@ -3,8 +3,8 @@ import Layout from "../../layouts/Layout.astro";
 
 const faqs = [
   {
-    q: "What is a basis of estimate?",
-    a: "A basis of estimate is the written statement of what an estimate was built from and what it assumes. It records the drawings and specifications priced, listed by number and revision; the rates used and where they came from; what is included; what is excluded; the assumptions made where the documents were silent; the allowances carried where a firm price was not possible; and any qualifications attached to the price. Every competent estimate rests on a basis of this kind. The difference between a professional estimate and a number is whether that basis is written down and issued with it."
+    q: "What does the basis of estimate on an Alturascope pack include?",
+    a: "Seven statements, on every pack without exception: the documents priced, listed by number, title and revision; inclusions; exclusions, each with a stated reason; assumptions; allowances and provisional sums; the source of every rate; and qualifications with a validity period. Where one of them is empty it is stated as empty rather than omitted. The pack is checked by an automated audit before it is released, and the audit report is issued with it."
   },
   {
     q: "Why does the basis of estimate matter after the bid is submitted?",
@@ -27,8 +27,8 @@ const faqs = [
 const schema = JSON.stringify({
   "@context": "https://schema.org",
   "@type": "Article",
-  "headline": "The Basis of Estimate Standard",
-  "description": "What Alturascope states on every estimate: documents priced with revisions, inclusions, exclusions, assumptions, allowances, qualifications, and where responsibility sits.",
+  "headline": "The Basis of Estimate on Every Alturascope Estimate Pack",
+  "description": "The basis of estimate issued with every Alturascope estimate pack: documents and revisions priced, inclusions, exclusions, assumptions, allowances, rate sources and qualifications.",
   "author": { "@type": "Organization", "name": "Alturascope", "url": "https://alturascope.com/" },
   "publisher": {
     "@type": "Organization",
@@ -61,8 +61,8 @@ const faqSchema = JSON.stringify({
 });
 ---
 <Layout
-  title="The Basis of Estimate Standard | Alturascope Estimating"
-  description="What we state on every estimate: documents priced with revisions, inclusions, exclusions, assumptions and allowances — and where responsibility sits."
+  title="Our Basis of Estimate: What Every Estimate Pack States"
+  description="The basis of estimate issued with every Alturascope estimate pack: documents, revisions, inclusions, exclusions, assumptions, allowances, rate sources."
   canonical="https://alturascope.com/estimating/basis-of-estimate/"
   ogImage="https://alturascope.com/Images/plan-1.jpg"
   schema={schema}
@@ -90,7 +90,7 @@ const faqSchema = JSON.stringify({
         </nav>
         <p class="label text-gold mb-4">The Standard</p>
         <h1 class="text-[2rem] md:text-[3rem] font-light text-offwhite leading-tight">
-          The Basis of Estimate
+          The Basis of Estimate on Every Pack We Price
         </h1>
         <p class="mt-6 text-offwhite/75 leading-body max-w-[64ch]">
           Every estimate rests on a set of documents, rates, assumptions and exclusions. Most of the trade keeps that in somebody&rsquo;s head. We write it down and issue it with the price &mdash; on every pack, without exception.
@@ -111,6 +111,9 @@ const faqSchema = JSON.stringify({
           </p>
           <p>
             Every competent estimator works to a basis of this kind. The trade simply rarely writes it down, because writing it down takes time that a bid deadline does not allow. Producing it as a matter of routine is one of the practical advantages of estimating inside a system rather than a spreadsheet: the basis is assembled as the estimate is built, not reconstructed from memory afterwards.
+          </p>
+          <p>
+            If you are looking for the general idea rather than our deliverable, we have written up <a href="/insights/what-is-a-basis-of-estimate/" class="text-navy font-medium hover:opacity-80 transition-opacity">what a basis of estimate is, with an example outline</a>. This page sets out what ours contains and how it is enforced.
           </p>
           <p>
             It protects everybody. It protects you, because your submission carries its own scope definition instead of inheriting your client&rsquo;s. It protects your client, because they can see precisely what they are buying. And it protects us, because our work is legible and checkable rather than something you are asked to take on trust.

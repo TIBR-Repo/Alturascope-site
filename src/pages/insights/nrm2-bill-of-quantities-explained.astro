@@ -4,10 +4,22 @@ import InsightArticle from "../../components/InsightArticle.astro";
 const blocks = [
   {
     p: [
-      "Ask three UK subcontractors what a bill of quantities is and you will get three answers, all roughly right. Ask what makes one <em>compliant</em> and the room goes quieter.",
-      "NRM2 is the rule book. It is the second volume of the RICS New Rules of Measurement - <em>Detailed Measurement for Building Works</em> - and since 2013 it has been the standard method of measurement for UK construction. It replaced SMM7, and it governs how quantities are measured, how work is described, and what has to be shown separately rather than buried in a rate.",
+      "<strong class=\"text-navy font-medium\">NRM2 is Volume 2 of the RICS New Rules of Measurement, <em>Detailed measurement for building works</em>: the UK rule book for how building work is measured, described and set out in a bill of quantities or priced schedule of works.</strong> It replaced the Standard Method of Measurement, SMM7, from 1 January 2013. The current edition is the second, which took effect on 1 December 2021.",
+      "Ask three UK subcontractors what a bill of quantities is and you will get three answers, all roughly right. Ask what makes one <em>compliant</em> and the room goes quieter. NRM2 is the answer: it governs how quantities are measured, how work is described, and what has to be shown separately rather than buried in a rate.",
       "For a contractor pricing a tender, the practical value is simple: when everyone measures the same way, the returns can actually be compared.",
     ],
+  },
+  {
+    h2: "NRM1 vs NRM2 vs NRM3",
+    p: [
+      "NRM2 is one of three RICS volumes, and the three are easy to confuse because they share a name. They cover different stages of a project&rsquo;s cost life.",
+    ],
+    points: [
+      ["NRM1 &mdash; order of cost estimating and cost planning for capital building works", "used before and during design. It sets the rules for order of cost estimates and elemental cost plans, measured by element (substructure, frame, roof, services and so on) rather than by trade. Current edition: the third, effective 1 December 2021."],
+      ["NRM2 &mdash; detailed measurement for building works", "used at tender and post-contract. It sets the rules for measuring and describing work in a bill of quantities or schedule of works, so that contractors price the same thing and returns can be levelled."],
+      ["NRM3 &mdash; order of cost estimating and cost planning for building maintenance works", "used for maintenance and renewal budgets over a building&rsquo;s life, rather than for the capital works themselves. Current edition: the second, effective 1 December 2021."],
+    ],
+    note: "<span class=\"text-navy font-medium\">The volumes are designed to connect.</span> NRM2 allows a bill to be broken down by NRM1 element, by work section or by work package, which is what lets a priced bill be reconciled against the cost plan that came before it.",
   },
   {
     h2: "What NRM2 actually governs",
@@ -82,12 +94,16 @@ const blocks = [
 
 const faqs = [
   {
+    q: "What is NRM2?",
+    a: "NRM2 is Volume 2 of the RICS New Rules of Measurement, Detailed measurement for building works. It sets out how building work is measured and described in a bill of quantities or schedule of works, including how preliminaries, provisional sums, risk allowances and dayworks are shown. It replaced SMM7 from 1 January 2013."
+  },
+  {
     q: "Is NRM2 mandatory in the UK?",
     a: "Not by law. It is the RICS standard method of measurement and it applies where the contract or tender documents adopt it, which most UK building works do. Where the tender is silent, measuring to NRM2 anyway is the safer choice because it produces a submission that can be levelled against others on the same basis."
   },
   {
     q: "What replaced SMM7?",
-    a: "NRM2, published by the RICS as part of the New Rules of Measurement suite and effective from 2013. NRM1 covers order of cost estimating and elemental cost planning, NRM2 covers detailed measurement for building works, and NRM3 covers maintenance works."
+    a: "NRM2, published by the RICS as part of the New Rules of Measurement suite and in use from 1 January 2013. The current edition of NRM2 is the second, effective from 1 December 2021. NRM1 covers order of cost estimating and cost planning for capital building works, and NRM3 covers order of cost estimating and cost planning for building maintenance works."
   },
   {
     q: "What is the difference between a defined and an undefined provisional sum?",
@@ -104,11 +120,12 @@ const faqs = [
 ];
 ---
 <InsightArticle
-  title="NRM2 and the Bill of Quantities, Explained"
-  description="NRM2 governs how UK building work is measured and described. What it covers, why defined and undefined provisional sums matter, and where BCIS benchmarks fit."
+  title="What Is NRM2? Measurement Rules and the Bill of Quantities"
+  description="NRM2 is the RICS rule book for measuring UK building work in a bill of quantities. What it covers, NRM1 vs NRM2 vs NRM3, provisional sums and BCIS."
   slug="nrm2-bill-of-quantities-explained"
-  h1="NRM2 and the Bill of Quantities: What a Compliant UK Tender Contains"
+  h1="What Is NRM2? The Bill of Quantities and a Compliant UK Tender"
   datePublished="2026-08-26"
+  dateModified="2026-10-26"
   heroImage="/Images/london2.webp"
   heroAlt="The City of London at night - UK construction tendering and estimating"
   locale="uk"
