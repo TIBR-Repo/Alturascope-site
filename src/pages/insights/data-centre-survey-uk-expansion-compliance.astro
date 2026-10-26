@@ -1,284 +1,215 @@
 ---
-import Layout from "../../layouts/Layout.astro";
+import InsightArticle from "../../components/InsightArticle.astro";
 
-const schema = JSON.stringify({
-  "@context": "https://schema.org",
-  "@type": "Article",
-  "headline": "Documenting Data Centres in the UK: Survey Requirements for Expansion, Retrofit, and Compliance",
-  "author": { "@type": "Organization", "name": "Alturascope" },
-  "publisher": { "@type": "Organization", "name": "Alturascope", "url": "https://alturascope.com/" },
-  "datePublished": "2026-04-14",
-  "description": "The UK data centre market is expanding rapidly. Here's what facilities directors and design consultants need from a site survey before expansion, retrofit, or compliance documentation.",
-  "mainEntityOfPage": "https://alturascope.com/insights/data-centre-survey-uk-expansion-compliance/"
-});
+const link = "text-navy font-medium hover:opacity-80 transition-opacity";
 
-const breadcrumbSchema = JSON.stringify({
-  "@context": "https://schema.org",
-  "@type": "BreadcrumbList",
-  "itemListElement": [
-    { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://alturascope.com/" },
-    { "@type": "ListItem", "position": 2, "name": "Insights", "item": "https://alturascope.com/insights/" },
-    { "@type": "ListItem", "position": 3, "name": "Data Centre Survey UK", "item": "https://alturascope.com/insights/data-centre-survey-uk-expansion-compliance/" }
-  ]
-});
+const blocks = [
+  {
+    p: [
+      "<strong class=\"text-navy font-medium\">A data centre condition survey is a structured, dated record of a facility&rsquo;s existing physical infrastructure &mdash; the power chain, cooling plant, fire protection, floors, pathways and fabric &mdash; together with the age, labelling, visible condition and documented history of each.</strong> It is made before a design team commits to an expansion, a retrofit or a refresh, and it is the evidence the brief is written from. It is not a certificate of resilience and it is not an engineering assessment of capacity.",
+      "That distinction matters more in a data centre than almost anywhere else. A live data hall is the one building where nobody can switch things off to have a proper look, where the drawings are often several modifications out of date, and where a wrong assumption about spare capacity in the power chain or the cooling plant can sink a project that looked straightforward on paper.",
+      "This guide sets out what a condition survey of a UK data centre should capture, how the work is done safely inside a live facility, where it sits under CDM 2015, and &mdash; just as important &mdash; what a visual, photographic or 3D record can and cannot tell you.",
+    ],
+  },
+  {
+    h2: "Why the existing records are rarely enough",
+    p: [
+      "Most operators hold a respectable document set: single-line diagrams, O&amp;M manuals, commissioning records, maintenance logs. The problem is not the absence of records but the gap between the records and the room.",
+      "Data centres are modified continuously and incrementally. A UPS module added here, a temporary feed that became permanent there, a row of in-row coolers installed during a capacity crunch, cabling abandoned in the floor void when a customer left. Each change is small, each is often recorded somewhere, and very rarely does anybody fold them all back into one current picture.",
+      "A condition survey closes that gap. It walks the installation, records what is physically present, reconciles it against the documents the operator holds, and lists the differences. The list of differences is often the most valuable page in the whole record.",
+    ],
+  },
+  {
+    h2: "The power chain: from the DNO intake to the rack",
+    p: [
+      "Power is where expansion projects most often run out of road, so the record should follow the chain end to end rather than sampling the parts that are easy to reach.",
+    ],
+    subs: [
+      {
+        h3: "Incoming supply and HV equipment",
+        body: "The supply arrangement from the distribution network operator (DNO or IDNO): number of incoming feeds, the ownership boundary, ring main units and HV switchgear, and transformer nameplate data &mdash; rating, type, age and cooling medium. The agreed supply capacity in the connection agreement is a document question rather than a site question, but the survey should record what is installed so the two can be compared. HV rooms are entered only under the site&rsquo;s own authorisation and escort arrangements.",
+      },
+      {
+        h3: "LV switchboards and changeover",
+        body: "Main LV switchboards, automatic transfer or changeover arrangements between mains and generator, breaker ratings, spare and spaced ways, labelling, and visible condition. The date of the last periodic inspection and test under BS 7671 should be noted from the records, along with any observations still open.",
+      },
+      {
+        h3: "UPS systems and batteries",
+        body: "UPS make, model, module ratings and the configuration as labelled and as found. Battery chemistry (valve-regulated lead-acid or lithium-ion), installation date set against the manufacturer&rsquo;s stated design life, the date of the last test or discharge, and the battery room&rsquo;s ventilation, spill provision and access. Ageing strings are one of the commonest hidden liabilities in a retrofit budget.",
+      },
+      {
+        h3: "Generators and fuel",
+        body: "Generator ratings, run hours, the date and result of the last load-bank test, fuel storage capacity, bunding and tank condition, day tanks and fuel polishing. Above-ground oil storage at commercial premises falls under the oil storage regulations in each UK nation, and generator sets can carry environmental permit conditions; the survey records what is there and which records were seen.",
+      },
+      {
+        h3: "Distribution to the racks",
+        body: "Floor-standing PDUs, remote power panels and overhead busbar; whether racks are fed from separate A and B paths and where those paths converge; metering; and the labelling that lets an engineer trace a rack back to its source. Points where two supposedly independent paths share a single component are noted for the engineer to assess.",
+      },
+    ],
+    note: "<span class=\"text-navy font-medium\">The survey records configuration. The M&amp;E engineer determines capacity.</span> Headroom in a power chain depends on measured load, diversity, protection settings and the redundancy the operator has promised its customers. A condition record supplies the facts those calculations start from; it does not replace them.",
+  },
+  {
+    h2: "Cooling, containment and refrigerant",
+    subs: [
+      {
+        h3: "Room units",
+        body: "CRAC units (with their own direct-expansion refrigeration circuit) and CRAH units (air handlers served by chilled water) &mdash; positions, make and model, nominal capacity, age, visible condition, and how many are running versus standing by. In-row and rear-door coolers recorded the same way.",
+      },
+      {
+        h3: "Central plant",
+        body: "Chillers, dry coolers and any free-cooling arrangement, pumps and pump sets, pipework routes, valves, and the external plant space. Whether there is physical room on the roof or in the yard for more plant is often the deciding question for an expansion and costs nothing to record while you are there.",
+      },
+      {
+        h3: "Air management",
+        body: "Hot- or cold-aisle containment, blanking panels, floor grilles and their positions, cable cut-outs and brush seals, and obvious bypass or recirculation paths. Thermal imaging can show where warm air is going, but it is a snapshot under the load on the day, not a cooling capacity study.",
+      },
+      {
+        h3: "F-gas records",
+        body: "Refrigerant type and charge from the equipment labels, and the leak-check and service records the operator holds. Under the F-gas regulations, operators of equipment containing fluorinated refrigerants above set CO&#8322;-equivalent thresholds must have it leak-checked periodically by certified technicians and keep records. Refrigerant choice also matters for a retrofit: the HFC phase-down restricts the servicing of some higher-GWP systems, which can turn a planned reuse into a replacement.",
+      },
+    ],
+  },
+  {
+    h2: "Raised floor, structure and the delivery route",
+    p: [
+      "The floor is where expansion plans meet physics. The survey should record the raised floor system &mdash; void depth, pedestal and stringer arrangement, tile type and any load rating marked on it or in the records &mdash; along with obstructions in the void: pipework, cable trays, abandoned cabling and anything blocking an underfloor air path.",
+      "Higher-density racks raise the question of slab capacity. A condition survey can record the slab construction where it is visible, the loading data in the drawings or O&amp;M files, and any signs of distress. Whether the structure will carry a new load is a question for a structural engineer, and the record should say so plainly rather than imply an answer.",
+      "Finally, the route in. Door widths and heights, ramp gradients, lift capacities and the path from the loading bay to the data hall decide whether new plant and fully loaded racks can actually be delivered. It is surprisingly often the last thing anyone checks.",
+    ],
+  },
+  {
+    h2: "Cabling and pathways",
+    p: [
+      "Overhead and underfloor tray routes, visible fill, fibre routes and meet-me or carrier rooms, labelling standards, and the condition of fire-stopping where cables pass through compartment walls and floors. In mature facilities pathway congestion &mdash; much of it abandoned cable that nobody has authority to remove &mdash; is frequently the real constraint on adding capacity, and it is almost never on a drawing.",
+    ],
+  },
+  {
+    h2: "Fire detection and suppression",
+    p: [
+      "Data halls typically combine early-warning aspirating smoke detection, conventional detection designed to BS 5839-1, and either gaseous suppression or a sprinkler system (often pre-action). The record should note what is installed in each zone, the system labelling, cylinder and service dates, the emergency power-off arrangements, and the presence and date of any room integrity test certificate &mdash; gaseous systems designed to BS EN 15004 depend on the enclosure holding the agent, and every new penetration threatens that.",
+      "A survey records presence, arrangement and paperwork. It does not test detection, discharge or enclosure integrity; those remain with the specialist contractor who maintains the system.",
+    ],
+  },
+  {
+    h2: "BMS, DCIM and the paperwork worth gathering",
+    p: [
+      "Half of a good condition record is assembled from documents, not from walking the floor. Ask the operator for these in advance so the visit can be spent reconciling rather than discovering:",
+    ],
+    points: [
+      ["Single-line and schematic diagrams", "power, mechanical and fire &mdash; with their revision dates."],
+      ["O&amp;M manuals and commissioning records", "for the plant that is being retained or extended."],
+      ["Test and maintenance logs", "periodic electrical inspection reports, UPS and battery tests, generator and load-bank tests, F-gas leak-check records, suppression service certificates and room integrity tests."],
+      ["BMS and DCIM outputs", "point schedules, alarm histories and recorded loads, which tell the engineer what the plant is actually doing rather than what it is rated for."],
+      ["Certification and standards documents", "any Uptime Institute certification, ANSI/TIA-942 or BS EN 50600 design documentation the facility was built or assessed to."],
+    ],
+  },
+  {
+    h2: "Tier, Rated and EN 50600 classes: context, not a verdict",
+    p: [
+      "Three frameworks are commonly used to describe data centre resilience, and a condition survey brief usually refers to at least one of them.",
+    ],
+    points: [
+      ["Uptime Institute Tiers I&ndash;IV", "a topology classification, from basic capacity through concurrently maintainable (Tier III) to fault tolerant (Tier IV). Certification is awarded by the Uptime Institute itself, separately for design documents, the constructed facility and operational sustainability."],
+      ["ANSI/TIA-942 Rated-1 to Rated-4", "a US-originated telecommunications infrastructure standard for data centres covering cabling, site, architecture, electrical and mechanical systems, with four rating levels."],
+      ["BS EN 50600", "the European series for data centre facilities and infrastructures, with availability classes 1 to 4 and separate parts covering building construction, power distribution, environmental control, telecommunications cabling, security, management and operational information, and key performance indicators such as PUE."],
+    ],
+    note: "<span class=\"text-navy font-medium\">A condition survey does not award a Tier or a class.</span> What it can do is record the configuration as found &mdash; for example, a point where two power paths share a single panel, or cooling units with no evident standby &mdash; so that the engineer or assessor responsible for the rating can test it.",
+  },
+  {
+    h2: "Working inside a live facility",
+    p: [
+      "A survey of a live data hall is planned around the operator&rsquo;s change control, not the surveyor&rsquo;s diary. In practice that means:",
+    ],
+    points: [
+      ["Permits, RAMS and induction", "a method statement and risk assessment agreed in advance, site induction, and a permit or change ticket for each area visited."],
+      ["Escorted access", "an operator escort throughout, with HV rooms, battery rooms and customer cages entered only where the site authorises it."],
+      ["Non-intrusive by default", "no floor tiles lifted, no ceiling panels opened and no enclosures unlocked except by the operator&rsquo;s own staff, at their discretion."],
+      ["Airflow and floor discipline", "no equipment left in aisles, no doors propped, and nothing placed on perforated tiles or in containment."],
+      ["Photography rules", "agreed before the visit: which areas may be photographed, whether rack labels and customer equipment must be excluded or redacted, and how images are stored and shared. Security will usually want to see the camera settings and the file-handling route."],
+      ["Confidentiality", "a non-disclosure agreement in place, and a record delivered only to the parties the operator names."],
+    ],
+  },
+  {
+    h2: "Where the survey sits under CDM 2015",
+    p: [
+      "The Construction (Design and Management) Regulations 2015 apply to construction work in Great Britain, including refurbishment and fit-out inside an operating building. Under CDM the client must make suitable arrangements for managing the project and must provide <em>pre-construction information</em> to designers and contractors &mdash; the information already held, or reasonably obtainable, about the existing building and its hazards. A dated condition record, together with the drawings and test records gathered alongside it, is a core part of that information.",
+      "Where more than one contractor will work on the project, the client must appoint a principal designer and a principal contractor in writing. The project must also be notified to the HSE where the construction work will last longer than 30 working days with more than 20 workers on site at any one time, or will exceed 500 person-days.",
+      "One separate obligation is easy to miss. Where intrusive work is planned in a building constructed before 2000, a refurbishment and demolition asbestos survey of the affected areas is needed before work begins. That is a specialist survey in its own right; a condition survey does not replace it.",
+    ],
+  },
+  {
+    h2: "How the record supports the design team and the QS",
+    p: [
+      "For the M&amp;E designer, the record is the starting point for capacity calculations, the reconciled single-line diagram, and a list of plant that is end-of-life, unsupported or carrying open defects. For the architect and structural engineer, it frames floor, ceiling, plant space and delivery-route constraints before options are drawn.",
+      "For the quantity surveyor, it turns unknowns into stated assumptions. An early cost plan built to <a href=\"/insights/nrm2-bill-of-quantities-explained/\" class=\"" + link + "\">the RICS New Rules of Measurement</a> needs to know what is being reused and what is being replaced, and the enabling works that live facilities always carry &mdash; temporary power, temporary cooling, phased cut-overs, out-of-hours working &mdash; are only priceable once the existing arrangement is understood. Our <a href=\"/uk/estimating/\" class=\"" + link + "\">UK estimating desk</a> prices from records of exactly this kind and states every assumption it made where the record was silent.",
+    ],
+  },
+  {
+    h2: "What a visual, photographic or 3D record does &mdash; and does not &mdash; establish",
+    p: [
+      "Photographs, 360&deg; capture and navigable 3D models are an efficient way to record a complicated room and to let a design team revisit it without another escorted visit. Their limits should be stated in the record itself.",
+    ],
+    points: [
+      ["It does establish", "what is present and where; nameplate and label data; arrangement and routing where visible; visible condition on a stated date; and the differences between the installation and the documents provided."],
+      ["It does not establish", "electrical load or spare capacity, structural floor capacity, refrigerant leak-tightness, suppression or enclosure integrity, actual behaviour under a failure, or anything concealed behind closed panels, beneath unlifted tiles or inside energised equipment."],
+      ["It is not a measured survey", "a 360&deg; or Matterport-style model is a visual record and is not survey-grade. Where a design needs dimensions to a stated tolerance, commission a measured or laser-scan survey specified to that tolerance."],
+    ],
+    note: "<span class=\"text-navy font-medium\">A good record names its own gaps.</span> Every area not accessed, every panel not opened and every question that belongs to an engineer should be listed, so that nobody downstream mistakes a photograph for a test result.",
+  },
+  {
+    h2: "Scoping a condition record",
+    p: [
+      "Alturascope documents existing conditions for occupiers, operators and their design teams, and prices the resulting works through its estimating desk. For a live data hall we would scope the record against the headings above, agree access and photography rules with the operator before anyone arrives, and set out plainly which questions sit with the M&amp;E engineer, the structural engineer and the specialist testers. Our wider thinking on <a href=\"/insights/documenting-controlled-environments-precision-facilities/\" class=\"" + link + "\">documenting controlled environments</a> covers the same approach in other precision facilities.",
+    ],
+  },
+];
 
-const faqSchema = JSON.stringify({
-  "@context": "https://schema.org",
-  "@type": "FAQPage",
-  "mainEntity": [
-    {
-      "@type": "Question",
-      "name": "Can you survey a live data centre without disrupting operations?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Yes. Our capture methodology is entirely non-invasive. Matterport and LiDAR scanning are non-contact technologies. Thermal imaging is conducted without affecting airflow or power systems. We work within your security protocols, escorted access requirements, and operational windows." }
-    },
-    {
-      "@type": "Question",
-      "name": "Do you cover data centres across the UK?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Yes. Alturascope covers the full UK including all major data centre clusters: London Docklands, Slough and the Thames Valley corridor, Manchester, Edinburgh, Cardiff, and anywhere else. Travel is included in project pricing." }
-    },
-    {
-      "@type": "Question",
-      "name": "What does thermal imaging reveal in a UK data centre?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Thermal imaging in a data centre identifies equipment hotspots, cooling containment breaches, power distribution anomalies, and airflow patterns that diverge from the designed cooling strategy. In the UK context, this data also supports Building Regulations Part L compliance assessments and BREEAM energy efficiency documentation." }
-    },
-    {
-      "@type": "Question",
-      "name": "Can you provide survey data for BREEAM assessments?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Yes. Our survey deliverables include the existing conditions documentation that BREEAM assessors need for energy and materials credits. Thermal imaging data supports the energy performance assessment, and our structured conditions reports provide the as-built information that feeds into BREEAM evaluation." }
-    }
-  ]
-});
+const faqs = [
+  {
+    q: "What is a data centre condition survey?",
+    a: "A structured, dated record of a data centre's existing physical infrastructure - power chain, cooling, fire protection, floors, pathways and fabric - with the age, labelling, visible condition and documented history of each, reconciled against the operator's drawings and records. It is produced before an expansion, retrofit or refresh so that the design brief starts from what is actually installed."
+  },
+  {
+    q: "Can a condition survey confirm a data centre's Tier or EN 50600 class?",
+    a: "No. Uptime Institute Tier certification is awarded by the Uptime Institute, and BS EN 50600 classes and ANSI/TIA-942 ratings are assessed by engineers against the full design. A condition survey records the configuration as found and flags apparent single points of failure for that assessment, but it does not assign a rating."
+  },
+  {
+    q: "Can a live data hall be surveyed without disrupting operations?",
+    a: "Generally yes, provided the work is planned around the operator's change control: agreed method statements and risk assessments, escorted access, permits for each area, and a non-intrusive approach in which tiles, ceilings and enclosures are opened only by the operator's staff. Some areas, such as HV rooms, are entered only where the site authorises it."
+  },
+  {
+    q: "Is a Matterport or 360-degree scan a measured survey?",
+    a: "No. It is a visual record that lets a team revisit the space remotely, and it is not survey-grade. Where a design needs dimensions to a stated tolerance, a measured or laser-scan survey should be specified to that tolerance."
+  },
+  {
+    q: "Does CDM 2015 apply to work inside an operating data centre?",
+    a: "Yes. CDM 2015 applies to construction work in Great Britain, including refurbishment and fit-out in occupied buildings. The client must provide pre-construction information about the existing building, appoint a principal designer and principal contractor where there is more than one contractor, and notify the HSE where the work exceeds 30 working days with more than 20 workers at once, or 500 person-days."
+  },
+  {
+    q: "Who should be involved alongside the condition survey?",
+    a: "Typically the operator's facilities team, an M&E engineer to assess power and cooling capacity, a structural engineer where floor loading is in question, the specialist contractors who maintain fire suppression and UPS systems, and - for an occupier taking or expanding space - the occupier's own agent or project manager. The condition record gives all of them one agreed set of facts."
+  },
+];
 ---
-<Layout
-  title="Data Centre Survey UK: Documentation for Expansion & Compliance"
-  description="What UK facilities directors and design consultants need from a site survey before a data centre expansion, retrofit or compliance exercise begins."
-  canonical="https://alturascope.com/insights/data-centre-survey-uk-expansion-compliance/"
-  schema={schema}
-  breadcrumbSchema={breadcrumbSchema}
-  faqSchema={faqSchema}
-  fullWidth={true}
-  lang="en-GB"
->
-  <div data-hero-page>
-
-    <section class="relative h-[45vh] max-h-[450px] min-h-[300px] flex items-center justify-center">
-      <div class="absolute inset-0 bg-navy">
-        <img
-          src="/Images/hvac.webp"
-          srcset="/Images/hvac-640w.webp 640w, /Images/hvac-1024w.webp 1024w, /Images/hvac.webp 1600w"
-          sizes="100vw"
-          alt="Complex mechanical and electrical infrastructure in UK commercial facility requiring detailed documentation"
-          class="w-full h-full object-cover opacity-25"
-          loading="eager"
-          fetchpriority="high"
-          decoding="async"
-        />
-        <div class="absolute inset-0 bg-[rgba(11,31,58,0.82)]"></div>
-      </div>
-      <div class="relative z-10 text-center px-6 max-w-[760px] mx-auto">
-        <p class="label text-gold mb-4">INSIGHTS</p>
-        <h1 class="text-[1.8rem] md:text-[2.6rem] font-light text-offwhite leading-tight">
-          Documenting Data Centres in the UK: Survey Requirements for Expansion, Retrofit, and Compliance
-        </h1>
-      </div>
-    </section>
-
-    <article class="bg-white section-padding">
-      <div class="max-w-[760px] mx-auto px-6">
-
-        <div class="space-y-6 text-midgrey leading-body text-[1.05rem]">
-          <p>
-            The UK data centre market is growing faster than at any point in its history. London remains Europe's largest data centre hub, with significant expansion across the Thames Valley corridor, Manchester, and Edinburgh. Government policy &mdash; from the National Data Strategy to the AI Safety Institute's infrastructure requirements &mdash; is accelerating demand for both new capacity and the retrofit of existing facilities to accommodate higher-density workloads.
-          </p>
-          <p>
-            Whether you're a colocation provider expanding into new white space, an enterprise operator upgrading cooling infrastructure to support AI training workloads, or a facilities director preparing compliance documentation for a regulatory review, every project depends on the same starting point: accurate, comprehensive documentation of what currently exists in the facility.
-          </p>
-          <p>
-            The challenge is that data centres are among the most complex buildings to survey. The density of power, cooling, fire suppression, and cable management systems &mdash; combined with the operational criticality that makes downtime unacceptable &mdash; demands a survey approach built specifically for this environment.
-          </p>
-        </div>
-
-        <h2 class="text-[1.6rem] font-light text-navy mt-16 mb-6">UK-Specific Requirements</h2>
-        <div class="space-y-6 text-midgrey leading-body text-[1.05rem]">
-          <p>
-            UK data centre projects operate within a regulatory framework that creates specific documentation needs beyond those in other markets:
-          </p>
-        </div>
-
-        <div class="space-y-10 mt-8">
-          <div>
-            <h3 class="text-navy font-medium text-[1.1rem]">Building Regulations Part L</h3>
-            <p class="mt-3 text-midgrey leading-body text-[1.05rem]">
-              Energy performance requirements under Part L apply to data centre construction and major refurbishment. Survey documentation needs to capture the as-built thermal performance of the building envelope, the efficiency characteristics of cooling systems, and the power utilisation effectiveness (PUE) indicators that feed into compliance calculations. <a href="/insights/thermal-imaging-commercial-property-what-it-reveals/" class="text-navy font-medium hover:opacity-80 transition-opacity">Thermal imaging</a> is particularly valuable here &mdash; it provides empirical evidence of heat loss patterns, insulation effectiveness, and cooling system performance that supports Part L compliance documentation.
-            </p>
-          </div>
-
-          <div>
-            <h3 class="text-navy font-medium text-[1.1rem]">BREEAM Assessment</h3>
-            <p class="mt-3 text-midgrey leading-body text-[1.05rem]">
-              For new data centre construction or major refurbishment in the UK, BREEAM assessment is increasingly expected &mdash; and often required by planning conditions. The survey deliverables feed directly into multiple BREEAM credits: energy performance documentation for the Ene category, materials assessment data for the Mat category, and existing conditions evidence for the Management credits. A comprehensive survey package, including thermal data, reduces the assessment team's time on site and provides the verified baseline they need.
-            </p>
-          </div>
-
-          <div>
-            <h3 class="text-navy font-medium text-[1.1rem]">Fire Safety Documentation</h3>
-            <p class="mt-3 text-midgrey leading-body text-[1.05rem]">
-              Post-Grenfell regulatory changes have sharpened fire safety documentation requirements across all commercial buildings, including data centres. Survey documentation needs to capture fire compartmentation, clean agent suppression system configurations, VESDA detection zones, fire-rated penetration seals, and emergency power-off arrangements. For facilities that have been modified or expanded over time, the as-built fire strategy may diverge significantly from the original design &mdash; and identifying those divergences is critical before any further modification.
-            </p>
-          </div>
-
-          <div>
-            <h3 class="text-navy font-medium text-[1.1rem]">Tier Certification Requirements</h3>
-            <p class="mt-3 text-midgrey leading-body text-[1.05rem]">
-              UK colocation providers pursuing Uptime Institute Tier certification need detailed documentation of power and cooling redundancy, concurrent maintainability, and fault tolerance. The survey provides the as-built evidence that supports certification submissions, documenting the actual configuration of N+1 cooling paths, dual power feeds, and transfer switch arrangements rather than relying on design drawings that may not reflect current conditions.
-            </p>
-          </div>
-        </div>
-
-        <h2 class="text-[1.6rem] font-light text-navy mt-16 mb-6">What the Survey Needs to Capture</h2>
-        <div class="space-y-6 text-midgrey leading-body text-[1.05rem]">
-          <p>
-            A professional <a href="/services/industrial-facility-documentation/" class="text-navy font-medium hover:opacity-80 transition-opacity">data centre survey</a> for UK facilities captures systems-level detail that generic building surveys miss:
-          </p>
-        </div>
-
-        <div class="mt-8 space-y-6">
-          <div class="border-l-2 border-gold pl-6">
-            <h3 class="text-navy font-medium">Power distribution architecture</h3>
-            <p class="mt-1 text-midgrey text-[0.95rem] leading-relaxed">From the incoming HV/LV supply through transformers, switchgear, UPS systems, and generators to PDU positions at rack level. Capacity documentation is as important as spatial documentation &mdash; the design team needs to know what headroom exists in the existing power chain.</p>
-          </div>
-          <div class="border-l-2 border-gold pl-6">
-            <h3 class="text-navy font-medium">Cooling infrastructure</h3>
-            <p class="mt-1 text-midgrey text-[0.95rem] leading-relaxed">CRAC/CRAH unit positions, capacities, and condition. Chilled water piping routes and valve arrangements. Hot/cold aisle containment configuration. Raised floor plenum depth and perforated tile layout. Thermal imaging during operation to validate actual cooling performance against design intent.</p>
-          </div>
-          <div class="border-l-2 border-gold pl-6">
-            <h3 class="text-navy font-medium">Cable management</h3>
-            <p class="mt-1 text-midgrey text-[0.95rem] leading-relaxed">Cable tray routing, fill rates, and available pathway capacity. Fibre routes and patching locations. Conduit infrastructure and spare capacity. In retrofit projects, cable pathway congestion is frequently the constraint that limits expansion &mdash; and it's the one most often undocumented.</p>
-          </div>
-          <div class="border-l-2 border-gold pl-6">
-            <h3 class="text-navy font-medium">Fire suppression and detection</h3>
-            <p class="mt-1 text-midgrey text-[0.95rem] leading-relaxed">Clean agent system zones, VESDA sampling pipe routes, pre-action sprinkler coverage, fire compartmentation integrity, and EPO configuration. Any modification to the data hall volume or fire-rated boundaries triggers re-evaluation of the suppression design.</p>
-          </div>
-          <div class="border-l-2 border-gold pl-6">
-            <h3 class="text-navy font-medium">Structural and spatial</h3>
-            <p class="mt-1 text-midgrey text-[0.95rem] leading-relaxed">Millimetre-accurate point cloud data capturing the full geometry of the facility. Floor loading documentation for areas being considered for higher-density rack deployment. Ceiling clearances, column positions, and any structural modifications from previous fit-outs.</p>
-          </div>
-        </div>
-
-        <h2 class="text-[1.6rem] font-light text-navy mt-16 mb-6">Thermal Intelligence for UK Data Centres</h2>
-        <div class="space-y-6 text-midgrey leading-body text-[1.05rem]">
-          <p>
-            The thermal imaging component of a data centre survey carries particular weight in the UK context. Energy efficiency regulations are stricter than in many other markets, and the evidence from thermal capture directly supports compliance documentation.
-          </p>
-          <p>
-            During a survey, FLIR thermal imaging reveals the actual thermal profile of the facility under operational load. This means identifying equipment running hotter than specified, containment breaches where hot exhaust air is recirculating into cold aisles, cooling distribution imbalances across the data hall, and building envelope heat loss that affects overall facility PUE.
-          </p>
-          <p>
-            For facilities directors managing energy costs and for design consultants planning efficiency upgrades, this thermal data layer transforms the survey from a spatial exercise into an operational intelligence tool. Our guide to <a href="/insights/documenting-controlled-environments-precision-facilities/" class="text-navy font-medium hover:opacity-80 transition-opacity">documenting controlled environments</a> explores how this approach works across data centres and other precision facilities.
-          </p>
-        </div>
-
-        <h2 class="text-[1.6rem] font-light text-navy mt-16 mb-6">UK Data Centre Clusters We Cover</h2>
-        <div class="space-y-6 text-midgrey leading-body text-[1.05rem]">
-          <p>
-            Alturascope covers all major UK data centre clusters with travel included in project pricing:
-          </p>
-        </div>
-
-        <div class="mt-8 bg-offwhite rounded p-8 space-y-4 text-midgrey leading-body text-[1.05rem]">
-          <p><span class="text-navy font-medium">London and Docklands</span> &mdash; the UK's highest concentration of colocation and enterprise data centre facilities</p>
-          <p><span class="text-navy font-medium">Slough, Langley, and the Thames Valley corridor</span> &mdash; home to hyperscale operations from major cloud providers and the UK's most active data centre development pipeline</p>
-          <p><span class="text-navy font-medium">Manchester and the North West</span> &mdash; growing rapidly as operators diversify from the South East, with significant new capacity under construction</p>
-          <p><span class="text-navy font-medium">Edinburgh and central Scotland</span> &mdash; emerging hub for data sovereignty and edge computing facilities</p>
-          <p><span class="text-navy font-medium">Cardiff and Bristol</span> &mdash; developing clusters driven by connectivity infrastructure and lower operating costs</p>
-        </div>
-
-        <p class="mt-8 text-midgrey leading-body text-[1.05rem]">
-          We also operate across all 50 US states and every Canadian province. For operators with facilities in multiple countries, we deliver consistent documentation using the same methodology and platform regardless of location.
-        </p>
-
-        <!-- FAQ -->
-        <h2 class="text-[1.6rem] font-light text-navy mt-16 mb-8">Frequently Asked Questions</h2>
-
-        <div class="space-y-8">
-          <details class="group border-b border-border pb-6">
-            <summary class="cursor-pointer text-navy font-medium text-lg flex items-center justify-between">
-              Can you survey a live data centre without disrupting operations?
-              <span class="text-gold text-xl transition-transform group-open:rotate-45">+</span>
-            </summary>
-            <p class="mt-4 text-midgrey leading-body">
-              Yes. Our capture methodology is entirely non-invasive. Matterport and LiDAR scanning are non-contact technologies. Thermal imaging is conducted without affecting airflow or power systems. We work within your security protocols, escorted access requirements, and operational windows.
-            </p>
-          </details>
-
-          <details class="group border-b border-border pb-6">
-            <summary class="cursor-pointer text-navy font-medium text-lg flex items-center justify-between">
-              Do you cover data centres across the UK?
-              <span class="text-gold text-xl transition-transform group-open:rotate-45">+</span>
-            </summary>
-            <p class="mt-4 text-midgrey leading-body">
-              Yes. Alturascope covers the full UK including all major data centre clusters: London Docklands, Slough and the Thames Valley corridor, Manchester, Edinburgh, Cardiff, and beyond. Travel is included in project pricing.
-            </p>
-          </details>
-
-          <details class="group border-b border-border pb-6">
-            <summary class="cursor-pointer text-navy font-medium text-lg flex items-center justify-between">
-              What does thermal imaging reveal in a UK data centre?
-              <span class="text-gold text-xl transition-transform group-open:rotate-45">+</span>
-            </summary>
-            <p class="mt-4 text-midgrey leading-body">
-              Thermal imaging identifies equipment hotspots, cooling containment breaches, power distribution anomalies, and airflow patterns that diverge from the designed cooling strategy. In the UK context, this data also supports Building Regulations Part L compliance assessments and BREEAM energy efficiency documentation.
-            </p>
-          </details>
-
-          <details class="group border-b border-border pb-6">
-            <summary class="cursor-pointer text-navy font-medium text-lg flex items-center justify-between">
-              Can you provide survey data for BREEAM assessments?
-              <span class="text-gold text-xl transition-transform group-open:rotate-45">+</span>
-            </summary>
-            <p class="mt-4 text-midgrey leading-body">
-              Yes. Our survey deliverables include the existing conditions documentation that BREEAM assessors need for energy and materials credits. Thermal imaging data supports the energy performance assessment, and our structured conditions reports provide the as-built information that feeds into BREEAM evaluation.
-            </p>
-          </details>
-        </div>
-
-        <div class="mt-16 pt-16 border-t border-border">
-          <h2 class="text-[1.6rem] font-light text-navy mb-6">The Bottom Line</h2>
-          <div class="space-y-6 text-midgrey leading-body text-[1.05rem]">
-            <p>
-              UK data centre expansion and retrofit projects are high-value, high-complexity, and high-stakes. The documentation that supports them needs to match. A professional survey combining spatial accuracy, systems-level detail, thermal intelligence, and compliance-ready deliverables gives your design and facilities teams the verified foundation they need to plan with confidence.
-            </p>
-            <p>
-              <a href="/contact/" class="text-navy font-medium hover:opacity-80 transition-opacity">Talk to Alturascope</a> about documenting your UK data centre facility. We'll confirm methodology, timeline, and an all-in quote within one business day.
-            </p>
-          </div>
-        </div>
-
-        <p class="mt-12 text-[0.85rem] text-midgrey/60 italic">
-          Alturascope delivers <a href="/services/industrial-facility-documentation/" class="hover:opacity-80 transition-opacity">data centre documentation</a> across the United Kingdom, all 50 US states, and every Canadian province.
-        </p>
-
-        <div class="mt-12 pt-8 border-t border-border flex flex-wrap gap-6 text-sm">
-          <a href="/services/industrial-facility-documentation/" class="text-navy font-medium hover:opacity-80 transition-opacity">Data centre documentation &rarr;</a>
-          <a href="/uk/" class="text-navy font-medium hover:opacity-80 transition-opacity">Alturascope UK &rarr;</a>
-          <a href="/insights/documenting-controlled-environments-precision-facilities/" class="text-navy font-medium hover:opacity-80 transition-opacity">Controlled environments &rarr;</a>
-          <a href="/insights/" class="text-navy font-medium hover:opacity-80 transition-opacity">All insights &rarr;</a>
-        </div>
-
-      </div>
-    </article>
-
-    <section class="bg-navy py-20">
-      <div class="max-w-[600px] mx-auto px-6 text-center">
-        <h2 class="text-[1.8rem] font-light text-offwhite leading-snug">
-          Planning a data centre expansion or retrofit in the UK?
-        </h2>
-        <p class="mt-4 text-offwhite/70 leading-body">
-          Share the facility location, approximate size, and what the survey needs to support. We'll confirm methodology and return an all-in quote within one business day.
-        </p>
-        <a href="/contact/" class="btn-primary mt-8">Start a Project</a>
-      </div>
-    </section>
-
-  </div>
-</Layout>
+<InsightArticle
+  title="Data Centre Condition Survey: A UK Guide Before Expansion"
+  description="What a UK data centre condition survey should record before expansion or retrofit: power chain, UPS, generators, cooling, F-gas, floors, fire and CDM."
+  slug="data-centre-survey-uk-expansion-compliance"
+  h1="Data Centre Condition Surveys in the UK: What to Record Before Expansion or Retrofit"
+  datePublished="2026-04-14"
+  dateModified="2026-10-26"
+  heroImage="/Images/hvac.webp"
+  heroAlt="Mechanical and electrical plant in a commercial building, the kind of installation a condition survey records"
+  eyebrow="Insights &middot; UK"
+  locale="uk"
+  blocks={blocks}
+  faqs={faqs}
+  estimatingLead="Once the existing installation is recorded, the works - including the enabling works a live facility always needs - can be measured and priced from the same record."
+  internalLinks={[
+    { text: "Alturascope UK", href: "/uk/" },
+    { text: "UK estimating desk", href: "/uk/estimating/" },
+    { text: "UK pre-construction surveys", href: "/uk/pre-construction-survey/" },
+    { text: "Documenting controlled environments", href: "/insights/documenting-controlled-environments-precision-facilities/" },
+    { text: "NRM2 and the bill of quantities", href: "/insights/nrm2-bill-of-quantities-explained/" },
+  ]}
+/>

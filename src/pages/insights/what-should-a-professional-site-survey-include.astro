@@ -1,288 +1,236 @@
 ---
-import Layout from "../../layouts/Layout.astro";
+import InsightArticle from "../../components/InsightArticle.astro";
 
-const schema = JSON.stringify({
-  "@context": "https://schema.org",
-  "@type": "Article",
-  "headline": "What a Professional Site Survey Should Actually Include — A Buyer's Guide",
-  "author": { "@type": "Organization", "name": "Alturascope" },
-  "publisher": { "@type": "Organization", "name": "Alturascope", "url": "https://alturascope.com/" },
-  "datePublished": "2026-02-20",
-  "description": "Not all site surveys are equal. Before you commission one, here's what a professional survey package should actually deliver — and the questions worth asking any provider.",
-  "mainEntityOfPage": "https://alturascope.com/insights/what-should-a-professional-site-survey-include/"
-});
+const link = "text-navy font-medium hover:opacity-80 transition-opacity";
+const a = (href: string, text: string) => `<a href="${href}" class="${link}">${text}</a>`;
 
-const breadcrumbSchema = JSON.stringify({
-  "@context": "https://schema.org",
-  "@type": "BreadcrumbList",
-  "itemListElement": [
-    { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://alturascope.com/" },
-    { "@type": "ListItem", "position": 2, "name": "Insights", "item": "https://alturascope.com/insights/" },
-    { "@type": "ListItem", "position": 3, "name": "What Should a Professional Site Survey Include?", "item": "https://alturascope.com/insights/what-should-a-professional-site-survey-include/" }
-  ]
-});
-
-const faqSchema = JSON.stringify({
-  "@context": "https://schema.org",
-  "@type": "FAQPage",
-  "mainEntity": [
-    {
-      "@type": "Question",
-      "name": "How do I know if I need a digital twin, a point cloud, or both?",
-      "acceptedAnswer": { "@type": "Answer", "text": "It depends on what the survey output will be used for. If the primary need is team coordination, remote access, and conditions documentation, a navigable digital twin is typically sufficient. If the design team needs dimensional data for CAD or Revit modelling, survey-grade point cloud data is required. Many projects benefit from both. If you're unsure, describe your project scope and we'll give you an honest recommendation." }
+const blocks = [
+  {
+    p: [
+      "<strong class=\"text-navy font-medium\">A professional pre-lease site survey records what a commercial unit actually contains &mdash; its shell and dimensions, its electrical, mechanical, plumbing and gas services, its life-safety systems, what sits above the ceiling and on the roof, and which of those things the landlord controls &mdash; so that the lease, the design and the budget start from fact rather than from the listing.</strong>",
+      "This is a buyer&rsquo;s checklist for that survey, written for operators taking small commercial units &mdash; typically 1,000 to 8,000 square feet &mdash; for restaurants and caf&eacute;s, clinics, studios and retail. Use it to brief a surveyor, to check a quote, or to judge a report somebody has already sent you.",
+      "One boundary first. An existing-conditions survey <em>records</em>. It does not certify code compliance, it does not engineer capacity, and it does not assess structure. A good report says exactly that, and tells you which questions belong to your architect, engineer or the landlord.",
+    ],
+  },
+  {
+    h2: "1. Shell and dimensions",
+    points: [
+      ["Overall dimensions and area", "frontage width, depth and a usable-area check against the area in the lease or marketing plan. Leased area is often quoted on a rentable basis that includes a share of common areas, so a difference is normal &mdash; but it should be known."],
+      ["Clear heights", "to the underside of the deck or structure, and to the lowest obstruction (duct, beam, sprinkler main). The second number is the one your ceiling design has to live with."],
+      ["Structure you have to plan around", "column positions, load-bearing or rated walls, bulkheads, and any changes in floor level."],
+      ["Floor slab", "level, cracks, previous trenching or patching, and whether earlier tenants cut the slab for drainage &mdash; useful evidence of where services can run."],
+      ["Storefront and doors", "glazing type and condition, entrance door width and hardware, rear or service door, and the delivery route."],
+      ["Demising walls", "whether they run to the deck, their apparent construction, and any openings or penetrations into neighbors."],
+    ],
+  },
+  {
+    h2: "2. Electrical service and panels",
+    p: [
+      "Electrical capacity is the item most likely to turn a cheap-looking unit into an expensive one, and the item most often reported badly. A one-line &ldquo;200 amp service&rdquo; is not enough.",
+    ],
+    points: [
+      ["Service size, voltage and phase", "amperage of the main breaker or disconnect, voltage (for example 120/208 V or 277/480 V) and single- or three-phase."],
+      ["Meter location", "inside the unit, in a shared meter bank, or in a landlord room &mdash; and whether the meter is clearly identified to this suite."],
+      ["Every panel, photographed with its schedule", "make, rating, approximate age, spare spaces, and the panel directory. Spare spaces matter as much as amperage: a full panel limits equipment regardless of the service size."],
+      ["Transformers and feeders", "where any step-down transformer sits, and whether the feeder is shared with another suite."],
+      ["Obsolete or unsupported equipment", "older switchgear for which replacement breakers are hard to obtain is a replacement item, not a modification."],
+    ],
+    figure: {
+      src: "/Images/insights/panel-schedule.webp",
+      alt: "A tenant electrical panel with its handwritten circuit schedule, photographed during a site survey",
+      caption: "The panel and its schedule, photographed together. Spare spaces, breaker sizes and the age of the gear tell you more than the service rating alone.",
     },
-    {
-      "@type": "Question",
-      "name": "How long does a professional site survey take?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Most commercial sites are fully documented in a single day. Larger or more complex properties — multi-floor buildings, above-ceiling access requirements, extensive asset schedules — may require two visits. You'll receive a clear timeline with your scope recommendation before we mobilise." }
+  },
+  {
+    h2: "3. HVAC and ventilation",
+    points: [
+      ["Every unit by nameplate", "rooftop units (RTUs), split systems or water-source heat pumps: make, model, serial and the manufacture date where shown. Nominal tonnage can usually be read from the model number or the plate; record it rather than estimating from the box size."],
+      ["Age and refrigerant", "units still charged with R-22 deserve a replacement budget: US production and import of R-22 ended in 2020, so servicing them depends on recovered or reclaimed refrigerant."],
+      ["Heat source and zoning", "gas heat, electric heat or heat pump; how many zones; where the thermostats are and whether they work."],
+      ["Ductwork and exhaust", "main supply and return routes above the ceiling, restroom exhaust, and any existing kitchen exhaust or make-up air."],
+      ["Who owns it", "whether the units are the tenant&rsquo;s to maintain and replace, or base-building plant serving several tenants &mdash; a lease question the survey should flag."],
+    ],
+  },
+  {
+    h2: "4. Plumbing, water and grease",
+    p: [
+      "For food and many medical uses this section decides the budget. " + a("/insights/grease-power-water-food-unit-fit-out/", "Grease, power and water in a food unit fit-out") + " covers the food-service side in depth.",
+    ],
+    points: [
+      ["Water service", "line size and material where visible, meter location (inside the unit, shared, or outside the demise), and the backflow preventer."],
+      ["Water heater", "type, fuel, capacity and age from the plate."],
+      ["Sanitary and venting", "where existing waste lines and floor drains are, their sizes where visible, cleanouts, and the likely route to the building sewer."],
+      ["Grease", "whether there is an in-ground interceptor, an under-sink trap, or nothing &mdash; and where an interceptor could realistically go."],
+      ["Restrooms", "number, fixture count and visible condition."],
+    ],
+    figure: {
+      src: "/Images/insights/water-meter-outside-demise.webp",
+      alt: "A water meter located outside the tenant demise in a shared service area",
+      caption: "A water meter outside the demise. Whether a service is inside your unit, shared, or in a landlord area changes who you need to talk to before anything changes.",
     },
-    {
-      "@type": "Question",
-      "name": "Can I commission a survey for a site I haven't acquired yet?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Yes. Pre-acquisition surveys are a common use case — documenting existing conditions, services, and any concerns before a purchase or lease commitment is made. This is particularly common for developers, asset managers, and retail operators assessing multiple potential locations simultaneously." }
-    }
-  ]
-});
+  },
+  {
+    h2: "5. Gas",
+    points: [
+      ["Presence and meter", "whether gas is brought to the unit at all, the meter location and any tags identifying it to the suite."],
+      ["Visible piping", "the route and approximate pipe size to the suite and to existing equipment, and any capped stubs."],
+      ["Capacity", "the meter rating and pressure as labeled. Whether the supply will carry your equipment load is a question for your engineer and the gas utility, and the report should say so."],
+    ],
+  },
+  {
+    h2: "6. Fire and life safety",
+    points: [
+      ["Sprinklers", "whether the unit is sprinklered, where the riser and control valves are, and whether the system is fed from a landlord riser."],
+      ["Fire alarm", "whether devices tie into a base-building panel or a tenant panel, and where that panel is."],
+      ["Egress", "exit doors and their hardware, exit signs and emergency lighting, and the travel route to them."],
+      ["Service tags", "extinguishers, sprinkler and alarm inspection tags with dates."],
+      ["Change of use", "a new use can change the occupancy classification, and with it the exit, separation and sometimes sprinkler requirements. The survey records the existing arrangement; your architect makes the code call."],
+    ],
+    figure: {
+      src: "/Images/insights/base-building-fire-alarm.webp",
+      alt: "A base-building fire alarm control panel in a shared service room",
+      caption: "A base-building fire alarm panel. If your devices report to the landlord's panel, every alteration involves the landlord's fire alarm contractor.",
+    },
+  },
+  {
+    h2: "7. Ceilings and the space above them",
+    p: [
+      "What is above the ceiling decides whether a new layout is straightforward. A survey that stays at floor level is only half a survey &mdash; see " + a("/insights/above-ceiling-mep-survey-fit-out/", "why above-ceiling MEP surveys matter") + ".",
+    ],
+    points: [
+      ["Ceiling type and condition", "grid, hard lid or open to deck; tile condition and staining."],
+      ["Plenum depth", "from ceiling to the lowest obstruction and to the deck."],
+      ["Contents of the void", "ductwork, sprinkler mains and branch lines, conduit, abandoned cabling, junction boxes, and insulation."],
+      ["Signs of trouble", "water staining on the deck or tiles, damaged insulation, or services hung from the ceiling grid rather than the structure."],
+    ],
+    figure: {
+      src: "/Images/insights/ceiling-access-point.webp",
+      alt: "An opened ceiling tile giving a view of the services in the void above a commercial unit",
+      caption: "One lifted tile at each zone of the unit is usually enough to show what the ceiling design will have to work around.",
+    },
+  },
+  {
+    h2: "8. Roof",
+    points: [
+      ["Access", "how the roof is reached and whether access needs the landlord."],
+      ["Membrane and drainage", "membrane type and visible condition, ponding, drains and scuppers."],
+      ["Curbs and penetrations", "RTU curbs, exhaust fans, flues and any redundant penetrations."],
+      ["Warranty", "whether a roof warranty exists and who holds it &mdash; usually the landlord, which affects who may cut new penetrations."],
+    ],
+  },
+  {
+    h2: "9. Accessibility",
+    points: [
+      ["Entrance", "level or ramped approach, threshold height, door width and hardware."],
+      ["Path of travel", "from parking or the sidewalk to the entrance, and through the unit."],
+      ["Restrooms", "whether existing restrooms appear to have accessible layouts and fixtures."],
+    ],
+    note: "<span class=\"text-navy font-medium\">Observations, not a compliance determination.</span> The survey records what is there. A formal ADA review belongs to your architect or an accessibility specialist &mdash; in California, often a Certified Access Specialist (CASp).",
+  },
+  {
+    h2: "10. Landlord-controlled items",
+    p: [
+      "On almost every small-unit deal, part of the scope belongs to somebody else. The survey should list what it found that the landlord appears to control, so those items go into the lease negotiation rather than the change-order log. " + a("/insights/second-generation-space-what-to-verify-before-you-sign/", "Second-generation space: what to verify before you sign") + " covers the negotiation side.",
+    ],
+    points: [
+      ["Shared or base-building systems", "meters in shared rooms, central plant, sprinkler and fire alarm systems, and any grease interceptor serving several tenants."],
+      ["The roof and the structure", "penetrations, new curbs and slab cuts usually need landlord approval."],
+      ["Areas not accessed", "risers, landlord rooms and roof areas the survey could not reach, listed explicitly with the question each one leaves open."],
+    ],
+  },
+  {
+    h2: "What you should receive",
+    points: [
+      ["A written report", "findings organized by system, each with a photo reference and, where relevant, a recommended next step or question."],
+      ["A nameplate-level equipment schedule", "every item of plant and equipment with make, model, serial, age and condition."],
+      ["A complete, labeled photo set", "every room, every panel with its schedule, every nameplate, the roof and the above-ceiling views &mdash; named so that each image can be traced to its location."],
+      ["A 3D or 360&deg; walkthrough", "so people who were not on site can see the space. It is a visual record, not a measured survey."],
+      ["Key dimensions", "frontage, depth, clear heights and critical clearances, with the method stated. If you need a dimensioned drawing set, ask for a measured survey and the tolerance it will be produced to."],
+      ["A list of what was not established", "areas not accessed, questions for the landlord, and items that need an engineer or specialist."],
+    ],
+  },
+  {
+    h2: "Red flags in a survey you have been sent",
+    points: [
+      ["Service size stated without panel photos", "nobody can check it, and spare capacity is unknown."],
+      ["HVAC described as &ldquo;working&rdquo; with no nameplate data", "age and refrigerant are the cost drivers, and they are missing."],
+      ["Nothing above the ceiling", "the most expensive surprises in a fit-out live there."],
+      ["No list of inaccessible areas", "a report that claims to have seen everything usually has not."],
+      ["Words like &ldquo;compliant&rdquo; or &ldquo;certified&rdquo;", "an existing-conditions survey cannot certify code compliance, and a report that implies it is overreaching."],
+      ["&ldquo;Survey-grade&rdquo; accuracy claimed from a 360&deg; scan", "a visual capture is not a measured survey."],
+      ["No date, no author, no photos tied to locations", "a record you cannot date or trace is not evidence of anything."],
+      ["No distinction between tenant and landlord items", "the single most useful thing a pre-lease survey can tell you is which problems are yours."],
+    ],
+  },
+  {
+    h2: "What to add for your sector",
+    p: [
+      "The checklist above is the common core. Each use adds its own priorities:",
+    ],
+    points: [
+      ["Restaurants and caf&eacute;s", "grease, hood and make-up air, gas, and walk-in cooler space &mdash; see " + a("/services/qsr-restaurant-survey/", "restaurant and QSR site surveys") + " and " + a("/services/commercial-kitchen-survey/", "commercial kitchen surveys") + "."],
+      ["ABA and therapy clinics", "room module, observation glazing, acoustics and HVAC zoning &mdash; see " + a("/services/aba-autism-clinic-documentation/", "ABA clinic surveys") + "."],
+      ["Dental practices", "plumbing and drainage to the operatories, space for compressor and vacuum plant, and electrical capacity &mdash; see " + a("/services/dental-practice-survey/", "dental practice surveys") + "."],
+      ["Veterinary clinics", "drainage, ventilation and odor control, and room for imaging &mdash; see " + a("/services/veterinary-clinic-survey/", "veterinary clinic surveys") + "."],
+      ["Med spas and aesthetics clinics", "treatment-room electrical, plumbing at each room, and HVAC for equipment heat &mdash; see " + a("/services/medical-aesthetics-clinic-survey/", "med spa surveys") + "."],
+      ["Fitness studios", "slab and floor build-up, ceiling height, acoustics toward neighbors, and showers &mdash; see " + a("/services/fitness-studio-survey/", "fitness studio surveys") + "."],
+      ["Dispensaries and cultivation", "electrical service against a much heavier load, dehumidification and odor discharge &mdash; see " + a("/services/cannabis-facility-documentation/", "cannabis dispensary and cultivation surveys") + "."],
+    ],
+  },
+  {
+    h2: "What this looks like on real sites",
+    p: [
+      "Some of the pre-lease surveys published in our location stories show the checklist doing its job:",
+    ],
+    points: [
+      [a("/work/locations/west-diversey-parkway-chicago/", "A vacant shell in Chicago"), "reading the transformer and tenant panel nameplates showed the power the brand needed was already in place, with almost every panel space free."],
+      [a("/work/locations/cactus-road-phoenix/", "A new-build shell in Phoenix"), "tracing the switchboard positions, conduits and gas, water and grease stubs showed what the base building had already brought to the suite."],
+      [a("/work/locations/henderson-avenue-dallas/", "A former bar in Dallas"), "a nameplate-level equipment schedule sorted what a lighter caf&eacute; format should keep, clear or reuse."],
+      [a("/work/locations/ohio-street-commons-joliet/", "Stripped retail units in Joliet"), "measuring from inside found a fourth bay in the demise that was not obvious from the street, and the landlord-only questions went out in one request."],
+    ],
+  },
+];
+
+const faqs = [
+  {
+    q: "What should a pre-lease site survey include?",
+    a: "At a minimum: shell dimensions and clear heights; the electrical service, meter and every panel with its schedule; HVAC equipment by nameplate, with age and refrigerant; water, sanitary, grease and gas provisions; sprinklers, fire alarm and egress; ceilings and the space above them; the roof; accessibility observations; and a list of landlord-controlled items and areas not accessed. Deliverables should include a written report, an equipment schedule, a labeled photo set and a 3D or 360-degree walkthrough."
+  },
+  {
+    q: "Is a site survey the same as a building inspection or code review?",
+    a: "No. An existing-conditions survey records what is there and its visible condition. It does not certify code or ADA compliance, calculate electrical or structural capacity, or replace inspections by licensed professionals. A good report states those limits and lists the questions for your architect, engineer or landlord."
+  },
+  {
+    q: "How long does a survey of a small commercial unit take?",
+    a: "Most units under about 8,000 square feet can be recorded in a single site visit, provided access to the roof, meters and any landlord rooms is arranged in advance. Report turnaround varies by provider; ask for it in writing before you commission."
+  },
+  {
+    q: "Is a Matterport or 360-degree scan enough on its own?",
+    a: "No. A 3D walkthrough is an excellent visual record, but it is not a measured survey and it does not capture nameplate data, panel schedules, above-ceiling conditions or landlord-controlled items unless someone deliberately records them. It should be one part of the package, alongside the written report and equipment schedule."
+  },
+  {
+    q: "Can I commission a survey before I sign the lease?",
+    a: "Yes, and that is when it is most useful. A pre-lease survey identifies the costly items - insufficient power, end-of-life HVAC, no grease route, landlord-controlled systems - while you can still negotiate the lease, ask for landlord work, or walk away."
+  },
+];
 ---
-<Layout
-  title="What Should a Professional Site Survey Include? A Buyer's Guide"
-  description="Before you commission a survey, here is what a professional package should deliver and the questions worth asking any provider."
-  canonical="https://alturascope.com/insights/what-should-a-professional-site-survey-include/"
-  schema={schema}
-  breadcrumbSchema={breadcrumbSchema}
-  faqSchema={faqSchema}
-  fullWidth={true}
->
-  <div data-hero-page>
-
-    <!-- Hero -->
-    <section class="relative h-[45vh] max-h-[450px] min-h-[300px] flex items-center justify-center">
-      <div class="absolute inset-0 bg-navy">
-        <img
-          src="/Images/stock/1454165804606-c3d57bc86b40.webp"
-          srcset="/Images/stock/1454165804606-c3d57bc86b40-640w.webp 640w, /Images/stock/1454165804606-c3d57bc86b40-1024w.webp 1024w, /Images/stock/1454165804606-c3d57bc86b40.webp 1600w"
-          sizes="100vw"
-          alt="Professional reviewing documentation and project plans at a desk"
-          class="w-full h-full object-cover opacity-25"
-          loading="eager"
-          fetchpriority="high"
-          decoding="async"
-        />
-        <div class="absolute inset-0 bg-[rgba(11,31,58,0.82)]"></div>
-      </div>
-      <div class="relative z-10 text-center px-6 max-w-[760px] mx-auto">
-        <p class="label text-gold mb-4">INSIGHTS</p>
-        <h1 class="text-[1.8rem] md:text-[2.6rem] font-light text-offwhite leading-tight">
-          What a Professional Site Survey Should Actually Include &mdash; A Buyer's Guide
-        </h1>
-      </div>
-    </section>
-
-    <!-- Article Body -->
-    <article class="bg-white section-padding">
-      <div class="max-w-[760px] mx-auto px-6">
-
-        <!-- Introduction -->
-        <div class="space-y-6 text-midgrey leading-body text-[1.05rem]">
-          <p>
-            The market for site survey and documentation services has expanded significantly in recent years. Better scanning technology is more accessible, which means more providers &mdash; and a wider range in the quality, completeness, and usefulness of what they actually deliver.
-          </p>
-          <p>
-            If you're commissioning a site survey for a construction, fit-out, or asset management project, the question isn't just who to use &mdash; it's what you should actually expect to receive, and how to evaluate whether what's being offered is genuinely useful to your project or just technically impressive and practically limited.
-          </p>
-          <p>
-            This post is a buyer's guide. It covers what a complete professional survey package should include, what questions are worth asking before you commission, and what distinguishes a documentation partner from a scanning service.
-          </p>
-        </div>
-
-        <!-- The Difference Between a Scan and a Survey -->
-        <h2 class="text-[1.6rem] font-light text-navy mt-16 mb-6">The Difference Between a Scan and a Survey</h2>
-        <div class="space-y-6 text-midgrey leading-body text-[1.05rem]">
-          <p>
-            This distinction matters more than it might appear.
-          </p>
-        </div>
-
-        <div class="mt-8 space-y-6">
-          <div class="bg-offwhite rounded p-8">
-            <h3 class="text-navy font-medium text-[1.1rem]">A scan</h3>
-            <p class="mt-3 text-midgrey leading-body text-[1.05rem]">
-              A technical capture &mdash; a device moved through a space to collect spatial data or imagery. Many providers offer this. The output is a file, a model, or a link. It reflects what the technology captured.
-            </p>
-          </div>
-
-          <div class="bg-offwhite rounded p-8">
-            <h3 class="text-navy font-medium text-[1.1rem]">A survey</h3>
-            <p class="mt-3 text-midgrey leading-body text-[1.05rem]">
-              A structured, comprehensive record of a space and its conditions &mdash; produced by someone who understands construction, understands what the client needs to know, and has made informed decisions about what to document, how to prioritise findings, and what to flag for the project team's attention. The output is a package of usable information.
-            </p>
-          </div>
-        </div>
-
-        <p class="mt-8 text-midgrey leading-body text-[1.05rem]">
-          The technology is a tool. The survey is the deliverable. These are not the same thing, and the difference shows up in how useful the output actually is to your team.
-        </p>
-
-        <!-- What a Complete Package Should Include -->
-        <h2 class="text-[1.6rem] font-light text-navy mt-16 mb-6">What a Complete Site Survey Package Should Include</h2>
-
-        <div class="mt-8 space-y-10">
-          <div class="border-l-2 border-gold pl-6">
-            <h3 class="text-navy font-medium text-[1.1rem]">A Navigable 3D Model</h3>
-            <p class="mt-3 text-midgrey leading-body text-[1.05rem]">
-              The spatial record of the site &mdash; dimensionally accurate, explorable remotely by any team member. This is the foundation of the package. It should be cloud-hosted, shareable by link, and accessible without specialist software. It should be accurate enough for spatial planning and general measurement, and it should be structured so that different areas of the building are clearly navigable rather than a single undifferentiated model.
-            </p>
-          </div>
-
-          <div class="border-l-2 border-gold pl-6">
-            <h3 class="text-navy font-medium text-[1.1rem]">A Written Conditions Report</h3>
-            <p class="mt-3 text-midgrey leading-body text-[1.05rem]">
-              This is often the most underdelivered element of commercial site surveys. A proper conditions report provides a written assessment of existing conditions &mdash; structural, services, finishes, access, anything relevant to the project scope &mdash; prioritised so the reader knows what needs to be acted on immediately, what needs monitoring, and what is noted for awareness. It should be structured consistently so that findings from multiple sites are comparable.
-            </p>
-          </div>
-
-          <div class="border-l-2 border-gold pl-6">
-            <h3 class="text-navy font-medium text-[1.1rem]">An Equipment and Asset Schedule</h3>
-            <p class="mt-3 text-midgrey leading-body text-[1.05rem]">
-              For most commercial properties, the survey should capture a structured record of installed equipment &mdash; HVAC units, electrical panels, fixture types and quantities, services connections, kitchen equipment, fire suppression, access control &mdash; with makes, models, and locations. This information has direct value for procurement, maintenance planning, and fit-out coordination, and it's rarely captured systematically outside of a professional documentation package.
-            </p>
-          </div>
-
-          <div class="border-l-2 border-gold pl-6">
-            <h3 class="text-navy font-medium text-[1.1rem]">A Labelled Photo Storyboard</h3>
-            <p class="mt-3 text-midgrey leading-body text-[1.05rem]">
-              A structured, area-by-area photographic record with consistent labelling. Not a folder of images with auto-generated filenames &mdash; a properly sequenced visual document that any team member can navigate to understand the condition of each area of the building. Useful throughout the project and permanently valuable as a baseline record.
-            </p>
-          </div>
-
-          <div class="border-l-2 border-gold pl-6">
-            <h3 class="text-navy font-medium text-[1.1rem]">A Narrated Video Walkthrough</h3>
-            <p class="mt-3 text-midgrey leading-body text-[1.05rem]">
-              One of the most practically useful deliverables in a site survey package and one of the least commonly provided. A narrated walkthrough &mdash; with spoken commentary from the surveyor on conditions, concerns, and notable findings &mdash; allows consultants, project managers, and decision-makers who weren't present on site to understand not just what the space looks like but what it means for the project. The human context that accompanies the visual record is often what drives the right decisions.
-            </p>
-          </div>
-
-          <div class="border-l-2 border-gold pl-6">
-            <h3 class="text-navy font-medium text-[1.1rem]">Permanent Structured Access</h3>
-            <p class="mt-3 text-midgrey leading-body text-[1.05rem]">
-              Deliverables emailed as file transfer links that expire in 14 days are not a documentation package. A properly delivered survey should be permanently accessible &mdash; structured, searchable, and available to the full project team at any point during the project and beyond. For multi-site programmes and long-term asset management, this matters enormously.
-            </p>
-          </div>
-        </div>
-
-        <!-- Questions Worth Asking -->
-        <h2 class="text-[1.6rem] font-light text-navy mt-16 mb-6">Questions Worth Asking Before You Commission</h2>
-
-        <div class="mt-8 space-y-8">
-          <div>
-            <h3 class="text-navy font-medium text-[1.05rem]">What does the conditions report look like?</h3>
-            <p class="mt-3 text-midgrey leading-body text-[1.05rem]">
-              Ask to see an example. If the answer is that there isn't one &mdash; that the deliverable is the model &mdash; that tells you something important about the service you're being offered.
-            </p>
-          </div>
-
-          <div>
-            <h3 class="text-navy font-medium text-[1.05rem]">Who is conducting the survey?</h3>
-            <p class="mt-3 text-midgrey leading-body text-[1.05rem]">
-              Understanding the surveyor's background matters. Construction experience, familiarity with MEP systems, knowledge of what creates downstream design problems &mdash; these inform what gets documented and how it's prioritised. A technically skilled scan operator and an experienced construction professional conducting a survey are different things.
-            </p>
-          </div>
-
-          <div>
-            <h3 class="text-navy font-medium text-[1.05rem]">How are deliverables stored and accessed?</h3>
-            <p class="mt-3 text-midgrey leading-body text-[1.05rem]">
-              Ask specifically about permanence. File transfer links, Dropbox folders, and emailed ZIPs are not structured documentation platforms. If the answer doesn't involve a dedicated portal with structured access and no expiry, ask what happens to the deliverables in two years when someone needs to reference them.
-            </p>
-          </div>
-
-          <div>
-            <h3 class="text-navy font-medium text-[1.05rem]">Is above-ceiling access included?</h3>
-            <p class="mt-3 text-midgrey leading-body text-[1.05rem]">
-              Many standard surveys document the visible space only. If the project involves any fit-out, refurbishment, or services work, what's above the ceiling is often more relevant than what's visible from the floor. Ask whether above-ceiling documentation is included or available as an addition.
-            </p>
-          </div>
-
-          <div>
-            <h3 class="text-navy font-medium text-[1.05rem]">What is included in the price?</h3>
-            <p class="mt-3 text-midgrey leading-body text-[1.05rem]">
-              Specifically: is travel included? Many providers quote a base rate and add travel separately. For multi-site programmes or locations outside a local catchment area, this creates budgeting uncertainty. An all-in quote &mdash; travel included &mdash; is the standard you should expect from a professional documentation service.
-            </p>
-          </div>
-        </div>
-
-        <!-- FAQ -->
-        <h2 class="text-[1.6rem] font-light text-navy mt-16 mb-8">Frequently Asked Questions</h2>
-
-        <div class="space-y-8">
-          <div>
-            <h3 class="text-navy font-medium text-[1.05rem]">How do I know if I need a digital twin, a point cloud, or both?</h3>
-            <p class="mt-3 text-midgrey leading-body text-[1.05rem]">
-              It depends on what the survey output will be used for. If the primary need is team coordination, remote access, and conditions documentation, a navigable digital twin is typically sufficient. If the design team needs dimensional data for CAD or Revit modelling, survey-grade point cloud data is required. Many projects benefit from both. If you're unsure, describe your project scope and we'll give you an honest recommendation.
-            </p>
-          </div>
-
-          <div>
-            <h3 class="text-navy font-medium text-[1.05rem]">How long does a professional site survey take?</h3>
-            <p class="mt-3 text-midgrey leading-body text-[1.05rem]">
-              Most commercial sites are fully documented in a single day. Larger or more complex properties &mdash; multi-floor buildings, above-ceiling access requirements, extensive asset schedules &mdash; may require two visits. You'll receive a clear timeline with your scope recommendation before we mobilise.
-            </p>
-          </div>
-
-          <div>
-            <h3 class="text-navy font-medium text-[1.05rem]">Can I commission a survey for a site I haven't acquired yet?</h3>
-            <p class="mt-3 text-midgrey leading-body text-[1.05rem]">
-              Yes. <a href="/services/pre-construction-site-intelligence/" class="text-navy font-medium hover:opacity-80 transition-opacity">Pre-acquisition surveys</a> are a common use case &mdash; documenting existing conditions, services, and any concerns before a purchase or lease commitment is made. This is particularly common for developers, asset managers, and <a href="/services/retail-rollout-documentation/" class="text-navy font-medium hover:opacity-80 transition-opacity">retail operators</a> assessing multiple potential locations simultaneously.
-            </p>
-          </div>
-        </div>
-
-        <!-- Bottom Line -->
-        <div class="mt-16 pt-16 border-t border-border">
-          <h2 class="text-[1.6rem] font-light text-navy mb-6">The Bottom Line</h2>
-          <div class="space-y-6 text-midgrey leading-body text-[1.05rem]">
-            <p>
-              A professional site survey is an investment in decision-making quality. The return is measured in change orders avoided, return visits eliminated, and design errors caught before they become construction problems.
-            </p>
-            <p>
-              The right provider isn't necessarily the one with the most impressive technology. It's the one who delivers a complete, well-structured record of your site that your entire team can use &mdash; and access &mdash; throughout the life of the project.
-            </p>
-            <p>
-              Ready to commission a site survey properly? <a href="/contact/" class="text-navy font-medium hover:opacity-80 transition-opacity">Talk to Alturascope.</a> We'll come back within one business day with a scope recommendation and an all-in quote.
-            </p>
-          </div>
-        </div>
-
-        <!-- Footer note -->
-        <p class="mt-12 text-[0.85rem] text-midgrey/60 italic">
-          Alturascope delivers professional site surveys and structured documentation packages across all 50 US states, every Canadian province, and the United Kingdom.
-        </p>
-
-        <!-- Internal Links -->
-        <div class="mt-12 pt-8 border-t border-border flex flex-wrap gap-6 text-sm">
-          <a href="/" class="text-navy font-medium hover:opacity-80 transition-opacity">Home &rarr;</a>
-          <a href="/work/" class="text-navy font-medium hover:opacity-80 transition-opacity">The Standard &rarr;</a>
-          <a href="/services/construction-documentation/" class="text-navy font-medium hover:opacity-80 transition-opacity">Construction documentation &rarr;</a>
-          <a href="/services/specialist-projects/" class="text-navy font-medium hover:opacity-80 transition-opacity">Specialist projects &rarr;</a>
-          <a href="/insights/what-is-a-matterport-digital-twin/" class="text-navy font-medium hover:opacity-80 transition-opacity">What is a Matterport digital twin? &rarr;</a>
-          <a href="/insights/above-ceiling-mep-survey-fit-out/" class="text-navy font-medium hover:opacity-80 transition-opacity">Above-ceiling MEP surveys &rarr;</a>
-          <a href="/insights/" class="text-navy font-medium hover:opacity-80 transition-opacity">All insights &rarr;</a>
-        </div>
-
-      </div>
-    </article>
-
-    <!-- CTA -->
-    <section class="bg-navy py-20">
-      <div class="max-w-[600px] mx-auto px-6 text-center">
-        <h2 class="text-[1.8rem] font-light text-offwhite leading-snug">
-          Ready to commission a site survey properly?
-        </h2>
-        <p class="mt-4 text-offwhite/70 leading-body">
-          Tell us about the project and we'll come back within one business day with a scope recommendation and an all-in quote &mdash; travel included.
-        </p>
-        <a href="/contact/" class="btn-primary mt-8">Start a Project</a>
-      </div>
-    </section>
-
-  </div>
-</Layout>
+<InsightArticle
+  title="Site Survey Checklist: What a Pre-Lease Survey Should Include"
+  description="A buyer's checklist for a pre-lease survey of a small commercial unit: shell, electrical, HVAC, plumbing, gas, life safety, roof, deliverables and red flags."
+  slug="what-should-a-professional-site-survey-include"
+  h1="What a Professional Site Survey Should Include: A Buyer's Checklist"
+  datePublished="2026-02-20"
+  dateModified="2026-10-26"
+  heroImage="/Images/stock/1454165804606-c3d57bc86b40.webp"
+  heroAlt="Reviewing survey documentation and plans for a commercial unit"
+  eyebrow="Insights &middot; Buyer&rsquo;s Guide"
+  blocks={blocks}
+  faqs={faqs}
+  estimatingLead="Once the unit is recorded to this checklist, the fit-out can be priced from the same record rather than from an allowance."
+  internalLinks={[
+    { text: "Pre-lease due diligence surveys", href: "/services/pre-construction-site-intelligence/" },
+    { text: "Retail fit-out & remodel surveys", href: "/services/retail-rollout-documentation/" },
+    { text: "What is a Matterport digital twin?", href: "/insights/what-is-a-matterport-digital-twin/" },
+    { text: "Surveyed locations", href: "/work/locations/" },
+  ]}
+/>

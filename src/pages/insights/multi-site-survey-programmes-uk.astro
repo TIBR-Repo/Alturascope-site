@@ -1,292 +1,182 @@
 ---
-import Layout from "../../layouts/Layout.astro";
+import InsightArticle from "../../components/InsightArticle.astro";
 
-const schema = JSON.stringify({
-  "@context": "https://schema.org",
-  "@type": "Article",
-  "headline": "Multi-Site Survey Programmes in the UK: Why Nationwide Coverage Still Means Local Expertise",
-  "author": { "@type": "Organization", "name": "Alturascope" },
-  "publisher": { "@type": "Organization", "name": "Alturascope", "url": "https://alturascope.com/" },
-  "datePublished": "2026-04-07",
-  "description": "UK retailers, QSR chains, and estates teams running multi-site refurbishment programmes need consistent survey data across every location. Here's why a single-source approach works better.",
-  "mainEntityOfPage": "https://alturascope.com/insights/multi-site-survey-programmes-uk/"
-});
+const link = "text-navy font-medium hover:opacity-80 transition-opacity";
 
-const breadcrumbSchema = JSON.stringify({
-  "@context": "https://schema.org",
-  "@type": "BreadcrumbList",
-  "itemListElement": [
-    { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://alturascope.com/" },
-    { "@type": "ListItem", "position": 2, "name": "Insights", "item": "https://alturascope.com/insights/" },
-    { "@type": "ListItem", "position": 3, "name": "Multi-Site Survey Programmes UK", "item": "https://alturascope.com/insights/multi-site-survey-programmes-uk/" }
-  ]
-});
+const blocks = [
+  {
+    p: [
+      "A survey programme is not twenty surveys. It is one exercise that happens to take place in twenty buildings, and it succeeds or fails on whether the twentieth site comes back in a form that can sit in the same table as the first.",
+      "Most UK estates teams have lived the alternative. Each site is commissioned separately, often from a different local firm, and the results arrive in different formats, at different levels of detail, with different ideas about what &ldquo;condition&rdquo; means. The surveys may be individually good. Collectively they cannot answer the questions the programme exists to answer: which sites need what, in what order, at what cost.",
+      "This guide sets out how to run a survey programme across a UK multi-site estate &mdash; retail, food and beverage, leisure, clinics or offices &mdash; so that it produces decisions rather than a shelf of PDFs: the brief, the standard deliverable, sequencing, access in trading premises, landlord consents, compliance records, data consistency, and how the output feeds a cost plan.",
+    ],
+  },
+  {
+    h2: "1. Start with the decisions, then write the brief",
+    p: [
+      "Every field in a programme brief should exist because somebody needs it to make a decision. Before anyone is booked to visit a site, list the decisions the programme feeds and work backwards:",
+    ],
+    points: [
+      ["Capital planning", "which sites need investment, roughly how much, and in what year."],
+      ["Refurbishment or reimage scope", "whether the standard concept fits each building, and what has to change to make it fit."],
+      ["Lease events", "dilapidations exposure, break options and renewals, where the condition you are handing back matters."],
+      ["Maintenance", "an asset register that a facilities provider can turn into planned preventive maintenance (PPM) schedules &mdash; many UK providers map assets to the SFG20 maintenance specification."],
+      ["Compliance", "where the statutory records are, how current they are, and which sites have gaps that need closing before a deadline."],
+    ],
+    note: "<span class=\"text-navy font-medium\">If nobody can name the decision a field supports, leave it out.</span> Over-specified briefs slow every visit and bury the answers that matter. Under-specified briefs send people back to site.",
+  },
+  {
+    h2: "2. Fix the standard deliverable before the first visit",
+    p: [
+      "The deliverable should be defined in writing, down to the column headings, before the programme starts. At a minimum that means:",
+    ],
+    subs: [
+      {
+        h3: "One report structure",
+        body: "The same sections in the same order at every site &mdash; shell and fabric, roof, electrical, mechanical, plumbing and drainage, fire and life safety, accessibility, landlord-controlled items, and a summary of findings &mdash; so that a reader who knows one report can navigate all of them.",
+      },
+      {
+        h3: "One condition scale and one priority scale",
+        body: "Defined in words, not just letters. &ldquo;Poor&rdquo; at one site must mean the same thing as &ldquo;poor&rdquo; at another, and a priority rating should say whether something needs action now, within the planning period, or only monitoring.",
+      },
+      {
+        h3: "One asset register schema",
+        body: "Asset type, location, make, model, serial number where readable, approximate age, visible condition, and a photo reference &mdash; in a spreadsheet layout that will import into the CAFM system or the cost plan without retyping.",
+      },
+      {
+        h3: "One photo and naming convention",
+        body: "A required photo set for every site (frontage, each room, every distribution board and its schedule, every item of plant and its nameplate, roof, risers, meters) and file names that carry the site ID, so that an image can never become orphaned from its location.",
+      },
+      {
+        h3: "A clear statement of what is visual and what is measured",
+        body: "A photographic and 360&deg; record shows what is there and its visible condition. It is not a measured survey. Where a design team needs dimensioned drawings or a Revit model of a particular site, that is a measured or laser-scan survey specified to a stated tolerance, and it should be commissioned as such for the sites that need it rather than assumed from the visual record.",
+      },
+    ],
+  },
+  {
+    h2: "3. Pilot, then sequence the estate",
+    p: [
+      "Run the brief at two or three representative sites first &mdash; ideally one easy, one awkward, and one in a shopping centre or managed building &mdash; and have the people who will use the output review it before the rest of the programme is booked. It is far cheaper to change a column heading after three sites than after thirty.",
+      "Then sequence the remainder by decision date rather than geography alone. Sites with a lease event, a planned refurbishment or a compliance deadline go first; the rest are clustered by region so that each trip covers several sites. Delivering in tranches lets the design and cost teams start work on the first batch while the survey team moves on to the next.",
+    ],
+  },
+  {
+    h2: "4. Access windows in trading premises",
+    p: [
+      "Most programme sites are trading, and the survey has to fit around the business rather than the other way round.",
+    ],
+    points: [
+      ["Book the right window", "before opening or after close for sales floors and anything involving ladders or ceiling tiles; quieter trading periods for back-of-house, plant and stockrooms."],
+      ["Brief the site team", "the store or branch manager should know who is coming, when, and which areas they need: plant rooms, roof access, risers, meter cupboards, distribution boards and the alarm or keyholding arrangements."],
+      ["Shopping centres and managed buildings", "centre management will usually want risk assessments and method statements, insurance details and a contractor induction, and may restrict out-of-hours access to escorted periods. Allow lead time for this in the programme."],
+      ["Keep it non-intrusive", "a condition survey looks and records; it does not open sealed enclosures, lift fixed finishes or disrupt services. Anything that needs intrusive investigation is listed as a gap for a follow-up visit by the right specialist."],
+    ],
+  },
+  {
+    h2: "5. Landlord and centre consents",
+    p: [
+      "On leasehold estates a surprising share of what matters belongs to somebody else: the roof, the risers, the incoming services, the landlord&rsquo;s plant and anything serving more than one demise. Access to those areas needs the landlord&rsquo;s or managing agent&rsquo;s agreement, and it is worth requesting it once at programme level rather than site by site.",
+      "The survey should record where the demise boundary appears to fall against the lease plan, which plant and services are shared or landlord-owned, and what the tenant could not access. Those are the items that turn into negotiations rather than purchases &mdash; a point made in detail in <a href=\"/insights/what-a-mall-landlord-controls-in-a-fit-out/\" class=\"" + link + "\">what a landlord controls in a fit-out</a>.",
+    ],
+  },
+  {
+    h2: "6. Compliance records: log them, do not pretend to perform them",
+    p: [
+      "Programmes with compliance deadlines often hope the survey will settle compliance. It cannot, but it can make the gaps visible across the whole estate in one pass. The survey should record, for each site, whether the following exist on site or in the records provided, and their dates:",
+    ],
+    points: [
+      ["Fire risk assessment", "required for non-domestic premises under the Regulatory Reform (Fire Safety) Order 2005 in England and Wales, with equivalent duties in Scotland and Northern Ireland."],
+      ["Electrical installation condition report", "the periodic inspection and test of the fixed installation under BS 7671."],
+      ["Asbestos register and management plan", "the duty to manage asbestos in non-domestic premises under the Control of Asbestos Regulations 2012."],
+      ["Legionella risk assessment", "for water systems, under the HSE&rsquo;s L8 Approved Code of Practice."],
+      ["Gas safety and F-gas records", "service records for gas appliances, and leak-check records for refrigeration and air-conditioning plant above the F-gas thresholds."],
+      ["Fire alarm, emergency lighting and extinguisher service labels", "visible on site, with the date of the last service."],
+    ],
+    note: "<span class=\"text-navy font-medium\">A survey records the evidence; the competent person still does the assessment.</span> What the programme gains is a single table showing which sites are missing what &mdash; which is exactly what a tight compliance deadline needs.",
+  },
+  {
+    h2: "7. Keep the data consistent",
+    p: [
+      "Consistency is the whole point, and it erodes quietly. Use one site ID everywhere &mdash; in file names, the asset register, the report and the cost plan. Use metric units throughout. Record &ldquo;not accessed&rdquo; and &ldquo;not present&rdquo; as different answers, because they mean very different things. And have one person review every report against the brief before it is issued, so that drift is caught at site five rather than site fifty.",
+      "The result should be a programme dataset that can be filtered: every site with a distribution board at capacity, every rooftop unit over fifteen years old, every site without a current fire risk assessment on file. That is what the estate team actually needed when it commissioned the programme. More on the method in <a href=\"/insights/standardising-site-surveys-multi-site-operators/\" class=\"" + link + "\">standardising site surveys across multi-site operators</a>.",
+    ],
+  },
+  {
+    h2: "8. How the programme feeds the cost plan",
+    p: [
+      "A consistent programme is what makes estate-level costing credible. At the early stage, the RICS NRM1 framework for order of cost estimates and elemental cost planning gives the programme a common structure: each site&rsquo;s condition findings and asset ages translate into elemental allowances that can be compared and totalled. As individual sites move towards tender, works are measured to NRM2, the detailed measurement rules for building works, and the survey record supplies the existing-conditions assumptions the bill relies on.",
+      "The discipline that matters is visibility. Where the survey could not establish something &mdash; an inaccessible roof, a riser behind a locked landlord door &mdash; the estimate should carry a stated allowance and say so, rather than averaging the unknown into a rate. Our <a href=\"/uk/estimating/\" class=\"" + link + "\">UK estimating desk</a> prices from programme records in exactly this way, and <a href=\"/insights/nrm2-bill-of-quantities-explained/\" class=\"" + link + "\">NRM2 and the bill of quantities</a> explains the measurement side in more depth.",
+    ],
+  },
+  {
+    h2: "A programme checklist",
+    points: [
+      ["Decisions listed", "and every brief field traced to one of them."],
+      ["Deliverable fixed", "report structure, condition and priority scales, asset register schema, photo set and naming convention, all in writing."],
+      ["Visual versus measured", "stated, with measured surveys commissioned only for the sites that need them."],
+      ["Pilot run", "at two or three contrasting sites and reviewed by the people who will use the output."],
+      ["Sequence set", "by decision date first, then by regional cluster, delivered in tranches."],
+      ["Access arranged", "trading-hours windows, site manager briefings, centre management RAMS and inductions."],
+      ["Consents requested", "once, at programme level, for roofs, risers and landlord plant."],
+      ["Compliance evidence logged", "for every site, with dates and gaps."],
+      ["Data reviewed", "against the brief before issue, with one site ID used everywhere."],
+      ["Costing structure agreed", "NRM1 for the programme cost plan, NRM2 for measured works, unknowns carried as stated allowances."],
+    ],
+  },
+  {
+    h2: "Where Alturascope fits",
+    p: [
+      "We run <a href=\"/uk/multi-site-rollout-survey/\" class=\"" + link + "\">multi-site survey programmes</a> to a single written brief, with one deliverable format and one point of contact across the estate, and we can price the resulting works from the same record. If you are planning a programme, the most useful first conversation is about the decisions it needs to support &mdash; the brief follows from that.",
+    ],
+  },
+];
 
-const faqSchema = JSON.stringify({
-  "@context": "https://schema.org",
-  "@type": "FAQPage",
-  "mainEntity": [
-    {
-      "@type": "Question",
-      "name": "Do you survey across the whole of the UK?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Yes. Alturascope covers England, Scotland, Wales, and Northern Ireland. Travel is included in all project pricing. For programmes spanning multiple regions, we optimise routing to minimise cost and maximise throughput." }
-    },
-    {
-      "@type": "Question",
-      "name": "Can you work within listed building and conservation area constraints?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Yes. Our capture methodology is non-invasive and designed for sensitive environments. We have experience documenting Grade I and Grade II listed buildings, scheduled monuments, and properties within conservation areas. Our deliverables support submissions to Historic England, Historic Environment Scotland, and Cadw." }
-    },
-    {
-      "@type": "Question",
-      "name": "What deliverables do UK design teams typically need?",
-      "acceptedAnswer": { "@type": "Answer", "text": "UK design teams typically require measured floor plans and sections for RIBA Stage 1 and 2 design development, point cloud data in .e57 or .rcp format for Revit integration, a Matterport digital twin for remote site access, and a conditions report covering Building Regulations compliance, fire safety, and any listed building constraints. We deliver all of these as a standard package." }
-    },
-    {
-      "@type": "Question",
-      "name": "How does your approach differ from a traditional measured building survey?",
-      "acceptedAnswer": { "@type": "Answer", "text": "A traditional measured building survey produces 2D drawings from spatial measurement. Our approach delivers that plus a navigable digital twin, a structured conditions assessment, thermal imaging data, and above-ceiling MEP documentation. More importantly, for multi-site programmes, every location is surveyed using an identical methodology and delivered through a single platform, giving programme managers comparable data across the entire portfolio." }
-    }
-  ]
-});
+const faqs = [
+  {
+    q: "How many sites should a multi-site survey programme pilot?",
+    a: "Two or three, chosen to be different from each other - for example one straightforward site, one awkward one, and one in a shopping centre or managed building. Have the design, cost and facilities teams review the pilot output before the rest of the estate is booked, so that the brief is corrected once rather than thirty times."
+  },
+  {
+    q: "Can stores keep trading while they are surveyed?",
+    a: "Yes. Back-of-house, plant and stockrooms can usually be recorded during quieter trading periods, while sales floors and anything involving ladders or ceiling tiles are done before opening or after close. Shopping centres and managed buildings may need risk assessments, method statements and an induction arranged in advance."
+  },
+  {
+    q: "Does a condition survey cover fire risk assessments, EICRs and other compliance checks?",
+    a: "No. Those are carried out by competent persons in their own right. A programme survey records whether the documents exist, how current they are and what is visible on site, such as service labels, so that the gaps across the estate are visible in one table."
+  },
+  {
+    q: "Can a survey programme build an asset register for PPM?",
+    a: "Yes. Recording each asset's type, location, make, model, serial number where readable, approximate age and condition, in one consistent schema, produces a register a facilities provider can map to planned preventive maintenance schedules. Setting the maintenance tasks and frequencies remains the provider's job."
+  },
+  {
+    q: "Does every site need a measured survey or a Revit model?",
+    a: "Usually not. A photographic and 360-degree condition record answers most programme questions. Where a site is going into detailed design and the team needs dimensioned drawings or a Revit model, a measured or laser-scan survey should be specified to a stated tolerance for that site."
+  },
+  {
+    q: "How does a survey programme feed NRM1 and NRM2 costing?",
+    a: "The condition findings and asset ages give each site elemental allowances that fit an NRM1 cost plan, so the estate can be compared and totalled on one basis. When a site moves to tender, the works are measured to NRM2 and the survey record supplies the existing-conditions assumptions. Anything the survey could not establish should be carried as a stated allowance."
+  },
+];
 ---
-<Layout
-  title="Multi-Site Survey Programmes UK: Nationwide Building Surveys"
-  description="UK retailers, QSR chains, and estates teams running multi-site refurbishment programmes need consistent survey data across every location."
-  canonical="https://alturascope.com/insights/multi-site-survey-programmes-uk/"
-  schema={schema}
-  breadcrumbSchema={breadcrumbSchema}
-  faqSchema={faqSchema}
-  fullWidth={true}
-  lang="en-GB"
->
-  <div data-hero-page>
-
-    <section class="relative h-[45vh] max-h-[450px] min-h-[300px] flex items-center justify-center">
-      <div class="absolute inset-0 bg-navy">
-        <img
-          src="/Images/london2.webp"
-          srcset="/Images/london2-640w.webp 640w, /Images/london2-1024w.webp 1024w, /Images/london2.webp 1400w"
-          sizes="100vw"
-          alt="UK commercial streetscape representing multi-site survey programme coverage across England, Scotland, and Wales"
-          class="w-full h-full object-cover opacity-25"
-          loading="eager"
-          fetchpriority="high"
-          decoding="async"
-        />
-        <div class="absolute inset-0 bg-[rgba(11,31,58,0.82)]"></div>
-      </div>
-      <div class="relative z-10 text-center px-6 max-w-[760px] mx-auto">
-        <p class="label text-gold mb-4">INSIGHTS</p>
-        <h1 class="text-[1.8rem] md:text-[2.6rem] font-light text-offwhite leading-tight">
-          Multi-Site Survey Programmes in the UK: Why Nationwide Coverage Still Means Local Expertise
-        </h1>
-      </div>
-    </section>
-
-    <article class="bg-white section-padding">
-      <div class="max-w-[760px] mx-auto px-6">
-
-        <div class="space-y-6 text-midgrey leading-body text-[1.05rem]">
-          <p>
-            If you're managing a refurbishment programme across 20, 50, or 100 UK locations, you already know the problem: every site gets surveyed by a different local firm, using a different methodology, delivering a different format. The data arrives piecemeal. Some surveys are comprehensive, some are barely adequate. Your design team spends as much time reconciling inconsistent information as they do designing.
-          </p>
-          <p>
-            The UK has excellent surveying firms. The issue isn't competence &mdash; it's consistency. When a high-street retailer, a QSR chain, or an NHS estates team needs to compare conditions across dozens of properties and make portfolio-level capital decisions, the data has to be structured identically at every location. That requires a programme approach, not a collection of individual commissions.
-          </p>
-        </div>
-
-        <h2 class="text-[1.6rem] font-light text-navy mt-16 mb-6">The Consistency Problem in UK Multi-Site Programmes</h2>
-        <div class="space-y-6 text-midgrey leading-body text-[1.05rem]">
-          <p>
-            The UK commercial property market has specific characteristics that make multi-site survey programmes more challenging than they might appear:
-          </p>
-        </div>
-
-        <div class="space-y-10 mt-8">
-          <div>
-            <h3 class="text-navy font-medium text-[1.1rem]">Building Stock Diversity</h3>
-            <p class="mt-3 text-midgrey leading-body text-[1.05rem]">
-              A UK retail or hospitality portfolio might include properties ranging from Georgian town houses to 1960s concrete-frame buildings to modern steel-clad units. Each presents different survey challenges &mdash; different structural systems, different ceiling configurations, different MEP installations. A survey methodology that works for a modern retail unit in a business park may be entirely inadequate for a Grade II listed property in a market town conservation area.
-            </p>
-          </div>
-
-          <div>
-            <h3 class="text-navy font-medium text-[1.1rem]">Regulatory Complexity</h3>
-            <p class="mt-3 text-midgrey leading-body text-[1.05rem]">
-              Building Regulations compliance requirements, fire safety documentation obligations under the Building Safety Act, EPC requirements, and conservation area planning constraints all vary by location and building type. A survey programme that doesn't capture the right regulatory data at each site creates downstream problems during the design and permitting phase. Post-Grenfell fire safety documentation requirements have made this particularly acute for multi-storey commercial properties.
-            </p>
-          </div>
-
-          <div>
-            <h3 class="text-navy font-medium text-[1.1rem]">Fragmented Survey Market</h3>
-            <p class="mt-3 text-midgrey leading-body text-[1.05rem]">
-              The UK measured building survey market is dominated by regional firms. Excellent firms, many of them &mdash; but most operate within a geographic radius. For a programme spanning London to Edinburgh, Manchester to Cardiff, the typical approach is to commission different surveyors in each region. The result is 10 different formats, 10 different levels of detail, and a programme manager trying to stitch them together into something their design team can use.
-            </p>
-          </div>
-        </div>
-
-        <h2 class="text-[1.6rem] font-light text-navy mt-16 mb-6">The Single-Source Alternative</h2>
-        <div class="space-y-6 text-midgrey leading-body text-[1.05rem]">
-          <p>
-            A <a href="/uk/multi-site-rollout-survey/" class="text-navy font-medium hover:opacity-80 transition-opacity">single-source survey programme</a> applies one methodology across every location. One brief, one deliverable format, one quality standard, one platform. The programme manager deals with one point of contact instead of managing relationships with 10 regional firms.
-          </p>
-          <p>
-            This doesn't mean ignoring local knowledge. It means building a methodology that's robust enough to handle the full diversity of UK building stock while delivering consistent, comparable data. A <a href="/uk/measured-building-survey/" class="text-navy font-medium hover:opacity-80 transition-opacity">heritage building</a> in Bath gets the same quality of documentation as a modern unit in Milton Keynes &mdash; adapted for the property type but structured identically for the programme team.
-          </p>
-          <p>
-            The practical benefits are immediate:
-          </p>
-        </div>
-
-        <div class="mt-8 space-y-6">
-          <div class="border-l-2 border-gold pl-6">
-            <h3 class="text-navy font-medium">Comparable data across every location</h3>
-            <p class="mt-1 text-midgrey text-[0.95rem] leading-relaxed">Design teams can compare conditions site-to-site using identically structured reports. Programme managers can track progress across the portfolio. Capital planners can prioritise spending based on consistent condition scoring.</p>
-          </div>
-          <div class="border-l-2 border-gold pl-6">
-            <h3 class="text-navy font-medium">Single point of accountability</h3>
-            <p class="mt-1 text-midgrey text-[0.95rem] leading-relaxed">One relationship to manage, one invoice, one escalation path. If something needs clarifying at a site in Aberdeen, you're not chasing a local surveyor you've never spoken to.</p>
-          </div>
-          <div class="border-l-2 border-gold pl-6">
-            <h3 class="text-navy font-medium">All deliverables in one platform</h3>
-            <p class="mt-1 text-midgrey text-[0.95rem] leading-relaxed">Every location's documentation &mdash; digital twin, conditions report, photo storyboard, point cloud data &mdash; is accessible through a single ScopeWalk portal with permissions-based access for different team members.</p>
-          </div>
-          <div class="border-l-2 border-gold pl-6">
-            <h3 class="text-navy font-medium">Predictable programme cost</h3>
-            <p class="mt-1 text-midgrey text-[0.95rem] leading-relaxed">A fixed per-site rate agreed at programme level, with travel included. No surprise invoices, no regional price variations, no scope creep.</p>
-          </div>
-        </div>
-
-        <h2 class="text-[1.6rem] font-light text-navy mt-16 mb-6">Who This Approach Serves</h2>
-        <div class="space-y-6 text-midgrey leading-body text-[1.05rem]">
-          <p>
-            The organisations that benefit most from a single-source multi-site survey programme are those managing ongoing refurbishment, rebranding, or capital works across a dispersed UK portfolio:
-          </p>
-        </div>
-
-        <div class="space-y-4 mt-8 pl-6 border-l-2 border-gold text-midgrey leading-body text-[1.05rem]">
-          <p><span class="text-navy font-medium">QSR and restaurant chains</span> &mdash; reimage programmes, kitchen refurbishment, brand refresh across dozens of high-street and drive-through locations</p>
-          <p><span class="text-navy font-medium">Retail operators</span> &mdash; store refresh, format change, or portfolio rationalisation across multiple regions</p>
-          <p><span class="text-navy font-medium">Pub and hospitality groups</span> &mdash; managed estate refurbishment programmes where condition assessment drives capital allocation</p>
-          <p><span class="text-navy font-medium">NHS and public sector estates</span> &mdash; condition surveys across hospital trusts, school estates, or government property portfolios where standardised data supports RAAC assessments, fire safety reviews, or accessibility audits</p>
-          <p><span class="text-navy font-medium">PE-backed operators</span> &mdash; post-acquisition condition documentation for <a href="/insights/due-diligence-documentation-portfolio-acquisitions/" class="text-navy font-medium hover:opacity-80 transition-opacity">portfolio due diligence</a> or capital planning across a newly acquired UK portfolio</p>
-        </div>
-
-        <h2 class="text-[1.6rem] font-light text-navy mt-16 mb-6">What UK Design Teams Actually Need</h2>
-        <div class="space-y-6 text-midgrey leading-body text-[1.05rem]">
-          <p>
-            UK design teams working at RIBA Stage 1 and 2 need existing conditions data they can trust. Our standard <a href="/uk/pre-construction-survey/" class="text-navy font-medium hover:opacity-80 transition-opacity">pre-construction survey</a> delivers:
-          </p>
-        </div>
-
-        <div class="mt-8 space-y-6">
-          <div class="border-l-2 border-gold pl-6">
-            <h3 class="text-navy font-medium">Measured floor plans, sections, and elevations</h3>
-            <p class="mt-1 text-midgrey text-[0.95rem] leading-relaxed">From <a href="/uk/measured-building-survey/" class="text-navy font-medium hover:opacity-80 transition-opacity">survey-grade point cloud data</a>, accurate to 5&ndash;12mm, exportable as .e57 and .rcp for Revit and AutoCAD integration</p>
-          </div>
-          <div class="border-l-2 border-gold pl-6">
-            <h3 class="text-navy font-medium">Navigable Matterport digital twin</h3>
-            <p class="mt-1 text-midgrey text-[0.95rem] leading-relaxed">The entire design team can explore the site remotely &mdash; reducing the need for multiple site visits during the design phase</p>
-          </div>
-          <div class="border-l-2 border-gold pl-6">
-            <h3 class="text-navy font-medium">Structured conditions assessment</h3>
-            <p class="mt-1 text-midgrey text-[0.95rem] leading-relaxed">Prioritised findings covering structural, MEP, fire safety, accessibility, and building fabric condition &mdash; giving the design team a clear picture of what they're designing into</p>
-          </div>
-          <div class="border-l-2 border-gold pl-6">
-            <h3 class="text-navy font-medium">Above-ceiling MEP documentation</h3>
-            <p class="mt-1 text-midgrey text-[0.95rem] leading-relaxed">360&deg; capture of existing services <a href="/uk/above-ceiling-mep-survey/" class="text-navy font-medium hover:opacity-80 transition-opacity">above the ceiling grid</a>, where the most expensive surprises in commercial fit-out projects typically hide</p>
-          </div>
-          <div class="border-l-2 border-gold pl-6">
-            <h3 class="text-navy font-medium">Thermal imaging overlay</h3>
-            <p class="mt-1 text-midgrey text-[0.95rem] leading-relaxed">FLIR capture identifying moisture ingress, insulation failures, and <a href="/insights/thermal-imaging-commercial-property-what-it-reveals/" class="text-navy font-medium hover:opacity-80 transition-opacity">hidden thermal anomalies</a> that affect both design decisions and EPC performance</p>
-          </div>
-        </div>
-
-        <!-- FAQ -->
-        <h2 class="text-[1.6rem] font-light text-navy mt-16 mb-8">Frequently Asked Questions</h2>
-
-        <div class="space-y-8">
-          <details class="group border-b border-border pb-6">
-            <summary class="cursor-pointer text-navy font-medium text-lg flex items-center justify-between">
-              Do you survey across the whole of the UK?
-              <span class="text-gold text-xl transition-transform group-open:rotate-45">+</span>
-            </summary>
-            <p class="mt-4 text-midgrey leading-body">
-              Yes. Alturascope covers England, Scotland, Wales, and Northern Ireland. Travel is included in all project pricing. For programmes spanning multiple regions, we optimise routing to minimise cost and maximise throughput.
-            </p>
-          </details>
-
-          <details class="group border-b border-border pb-6">
-            <summary class="cursor-pointer text-navy font-medium text-lg flex items-center justify-between">
-              Can you work within listed building and conservation area constraints?
-              <span class="text-gold text-xl transition-transform group-open:rotate-45">+</span>
-            </summary>
-            <p class="mt-4 text-midgrey leading-body">
-              Yes. Our capture methodology is non-invasive and designed for sensitive environments. We have experience documenting Grade I and Grade II listed buildings, scheduled monuments, and properties within conservation areas. Our deliverables support submissions to Historic England, Historic Environment Scotland, and Cadw.
-            </p>
-          </details>
-
-          <details class="group border-b border-border pb-6">
-            <summary class="cursor-pointer text-navy font-medium text-lg flex items-center justify-between">
-              What deliverables do UK design teams typically need?
-              <span class="text-gold text-xl transition-transform group-open:rotate-45">+</span>
-            </summary>
-            <p class="mt-4 text-midgrey leading-body">
-              UK design teams typically require measured floor plans and sections for RIBA Stage 1 and 2 design development, point cloud data in .e57 or .rcp format for Revit integration, a Matterport digital twin for remote site access, and a conditions report covering Building Regulations compliance, fire safety, and any listed building constraints. We deliver all of these as a standard package.
-            </p>
-          </details>
-
-          <details class="group border-b border-border pb-6">
-            <summary class="cursor-pointer text-navy font-medium text-lg flex items-center justify-between">
-              How does your approach differ from a traditional measured building survey?
-              <span class="text-gold text-xl transition-transform group-open:rotate-45">+</span>
-            </summary>
-            <p class="mt-4 text-midgrey leading-body">
-              A traditional measured building survey produces 2D drawings from spatial measurement. Our approach delivers that plus a navigable digital twin, a structured conditions assessment, thermal imaging data, and above-ceiling MEP documentation. More importantly, for multi-site programmes, every location is surveyed using an identical methodology and delivered through a single platform, giving programme managers comparable data across the entire portfolio.
-            </p>
-          </details>
-        </div>
-
-        <div class="mt-16 pt-16 border-t border-border">
-          <h2 class="text-[1.6rem] font-light text-navy mb-6">The Bottom Line</h2>
-          <div class="space-y-6 text-midgrey leading-body text-[1.05rem]">
-            <p>
-              UK multi-site survey programmes don't fail because of bad surveyors. They fail because of fragmented data from too many providers with too many formats. A single-source approach &mdash; one methodology, one format, one platform, one point of contact &mdash; gives programme teams the consistency they need to make portfolio-level decisions with confidence.
-            </p>
-            <p>
-              <a href="/contact/" class="text-navy font-medium hover:opacity-80 transition-opacity">Talk to Alturascope</a> about your UK programme. We'll scope the methodology and return a per-site quote &mdash; travel included &mdash; within one business day.
-            </p>
-          </div>
-        </div>
-
-        <p class="mt-12 text-[0.85rem] text-midgrey/60 italic">
-          Alturascope delivers <a href="/uk/multi-site-rollout-survey/" class="hover:opacity-80 transition-opacity">multi-site survey programmes</a> across England, Scotland, Wales, and Northern Ireland, as well as all 50 US states and every Canadian province.
-        </p>
-
-        <div class="mt-12 pt-8 border-t border-border flex flex-wrap gap-6 text-sm">
-          <a href="/uk/multi-site-rollout-survey/" class="text-navy font-medium hover:opacity-80 transition-opacity">UK multi-site surveys &rarr;</a>
-          <a href="/uk/" class="text-navy font-medium hover:opacity-80 transition-opacity">Alturascope UK &rarr;</a>
-          <a href="/uk/pre-construction-survey/" class="text-navy font-medium hover:opacity-80 transition-opacity">UK pre-construction surveys &rarr;</a>
-          <a href="/insights/standardising-site-surveys-multi-site-operators/" class="text-navy font-medium hover:opacity-80 transition-opacity">Standardising multi-site surveys &rarr;</a>
-          <a href="/uk/estimating/" class="text-navy font-medium hover:opacity-80 transition-opacity">Construction estimating UK &rarr;</a>
-          <a href="/insights/nrm2-bill-of-quantities-explained/" class="text-navy font-medium hover:opacity-80 transition-opacity">NRM2 and the bill of quantities &rarr;</a>
-          <a href="/insights/" class="text-navy font-medium hover:opacity-80 transition-opacity">All insights &rarr;</a>
-        </div>
-
-      </div>
-    </article>
-
-    <section class="bg-navy py-20">
-      <div class="max-w-[600px] mx-auto px-6 text-center">
-        <h2 class="text-[1.8rem] font-light text-offwhite leading-snug">
-          Running a multi-site programme across the UK?
-        </h2>
-        <p class="mt-4 text-offwhite/70 leading-body">
-          Share the number of locations, the regions, and the programme timeline. We'll design the survey approach and quote the programme end-to-end.
-        </p>
-        <a href="/contact/" class="btn-primary mt-8">Start a Project</a>
-      </div>
-    </section>
-
-  </div>
-</Layout>
+<InsightArticle
+  title="Multi-Site Survey Programmes UK: How to Run One Well"
+  description="How to run a survey programme across a UK multi-site estate: the brief, a standard deliverable, trading-store access, landlord consents and NRM costing."
+  slug="multi-site-survey-programmes-uk"
+  h1="Running a Multi-Site Survey Programme Across a UK Estate"
+  datePublished="2026-04-07"
+  dateModified="2026-10-26"
+  heroImage="/Images/london2.webp"
+  heroAlt="UK commercial streetscape representing a multi-site estate"
+  eyebrow="Insights &middot; UK Multi-Site"
+  locale="uk"
+  blocks={blocks}
+  faqs={faqs}
+  estimatingLead="A programme recorded to one brief can be priced to one basis - site by site, with every unknown carried as a stated allowance."
+  internalLinks={[
+    { text: "UK multi-site survey programmes", href: "/uk/multi-site-rollout-survey/" },
+    { text: "UK estimating desk", href: "/uk/estimating/" },
+    { text: "UK pre-construction surveys", href: "/uk/pre-construction-survey/" },
+    { text: "Standardising multi-site surveys", href: "/insights/standardising-site-surveys-multi-site-operators/" },
+    { text: "NRM2 and the bill of quantities", href: "/insights/nrm2-bill-of-quantities-explained/" },
+  ]}
+/>

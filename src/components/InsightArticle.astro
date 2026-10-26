@@ -142,7 +142,7 @@ const readable = new Date(datePublished).toLocaleDateString(
               <div class="mt-7 space-y-4 pl-6 border-l-2 border-gold">
                 {b.points.map(([term, desc]) => (
                   <p class="text-midgrey leading-body text-[1.02rem]">
-                    <span class="text-navy font-medium">{term}</span> &mdash; <Fragment set:html={desc} />
+                    <span class="text-navy font-medium" set:html={term} /> &mdash; <Fragment set:html={desc} />
                   </p>
                 ))}
               </div>
