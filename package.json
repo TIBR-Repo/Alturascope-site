@@ -5,6 +5,7 @@
   "scripts": {
     "dev": "astro dev",
     "build": "astro build",
+    "lastmod": "node scripts/lastmod.mjs",
     "preview": "astro preview",
     "astro": "astro",
     "verify": "astro build && python scripts/seo-audit.py && python scripts/verify-build.py"

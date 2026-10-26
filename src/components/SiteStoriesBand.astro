@@ -1,0 +1,71 @@
+---
+/**
+ * Site stories that list the current page among their services.
+ *
+ * Audit 2026-10-26: the 31 location stories are the most specific, least
+ * fakeable pages on the site, and each had exactly one inbound link (its
+ * gallery card). Every service page a story names now links back to it, so
+ * the stories get crawled and the service pages get real proof beside them.
+ * Renders nothing on pages no story names.
+ */
+import stories from "../data/location-stories.json";
+import locations from "../data/locations.json";
+
+interface Props {
+  /** Most cards to show. */
+  limit?: number;
+}
+const { limit = 6 } = Astro.props;
+
+const path = Astro.url.pathname.endsWith("/") ? Astro.url.pathname : Astro.url.pathname + "/";
+const gallery = new Map(locations.map((l) => [l.slug, l]));
+
+// Newest first, so a page's band picks up new stories as they are published.
+const picks = stories
+  .filter((s) => s.services?.some((x) => x.href === path) && gallery.has(s.slug))
+  .sort((a, b) => (b.published ?? "").localeCompare(a.published ?? ""))
+  .slice(0, limit);
+
+const parts = (k: string) => k.split(/\s*[·•|]\s*/);
+---
+
+{picks.length > 0 && (
+  <section class="section-padding-tight bg-offwhite border-t border-border">
+    <div class="max-w-[1400px] mx-auto px-6 lg:px-10">
+      <div class="flex flex-wrap items-end justify-between gap-6">
+        <div class="max-w-[58ch]">
+          <p class="label text-gold mb-4">Site Stories</p>
+          <h2 class="text-[1.7rem] md:text-[2rem] font-light leading-tight text-navy">Buildings we have surveyed for this kind of work.</h2>
+          <p class="mt-5 leading-body text-midgrey">What we found on real visits, named by street or centre, never by occupier.</p>
+        </div>
+        <a href="/work/locations/" class="font-medium border-b pb-1 text-navy border-gold transition-opacity hover:opacity-70">
+          All surveyed locations &rarr;
+        </a>
+      </div>
+      <div class="mt-10 grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
+        {picks.map((s) => {
+          const loc = gallery.get(s.slug)!;
+          const [kind, place] = parts(s.kicker ?? "");
+          return (
+            <a href={`/work/locations/${s.slug}/`} class="group block bg-white border border-border rounded overflow-hidden transition-all duration-300 hover:border-gold hover:shadow-md">
+              <img
+                src={`/Images/locations/${s.slug}.webp`}
+                alt={`${loc.label} - ${kind ?? "commercial site"} surveyed by Alturascope`}
+                width={loc.w}
+                height={loc.h}
+                loading="lazy"
+                decoding="async"
+                class="w-full h-[170px] object-cover"
+              />
+              <div class="p-5">
+                <p class="text-xs uppercase tracking-wider text-midgrey">{place ?? loc.label}</p>
+                <p class="mt-2 text-navy font-medium leading-snug">{s.h1}</p>
+                <p class="mt-3 text-sm text-navy border-b border-gold inline-block pb-0.5 group-hover:opacity-70">What we found &rarr;</p>
+              </div>
+            </a>
+          );
+        })}
+      </div>
+    </div>
+  </section>
+)}

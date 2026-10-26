@@ -19,6 +19,9 @@ server config is ever reset by Forge.
 | `/uk/heritage-building-survey/` | `/uk/` | **Heritage retired 2026-09-02.** 682 impressions - 36% of the whole site - at average position 69.8, never clicked. National head terms the site cannot win, distorting every site-wide average. UK leads with estimating. |
 | `/uk/heritage-building-documentation/` | `/uk/` | Was pointing at the page above; repointed rather than left as a redirect chain. |
 | `/services/heritage-building-documentation/` | `/services/specialist-projects/` | Same retirement, US side. |
+| The eight service pages pruned 2026-08-27 (superyacht, private aircraft, private collection, private estate, film/TV, solar farm, aviation, resort/hotel) | `/services/specialist-projects/` | Fantasy sectors, pruned. nginx 301s added 2026-10-26 (they had only the Astro stub until then). |
+| `/services/data-centre-documentation/` | `/services/industrial-facility-documentation/` | Sector dropped 2026-08-27. nginx 301 added 2026-10-26; the stub was still collecting impressions at position 14. |
+| 15 articles + the self-storage service page (full list in `astro.config.mjs`) | closest indexed page | **Pruned 2026-10-26.** Google had crawled each and declined to index it ("Crawled - currently not indexed"): generic, overlapping first-batch content. Script: `scripts/migrations/prune-unindexed-2026-10.py`. |
 
 ## Adding the nginx rule
 

@@ -1,6 +1,7 @@
 ---
 import "../styles/global.css";
 import ukEntity from "../data/uk-entity.json";
+import SiteStoriesBand from "../components/SiteStoriesBand.astro";
 
 interface Props {
   title: string;
@@ -338,6 +339,8 @@ const switchTitle = isUK
     <main class={fullWidth ? "" : "mx-auto max-w-[1400px] px-6 lg:px-10"}>
       <slot />
     </main>
+
+    {!minimalChrome && <SiteStoriesBand />}
 
     {minimalChrome && (
     <footer class="bg-[#F5EFE4] border-t border-[#E9E0CD]">
