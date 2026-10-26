@@ -991,5 +991,944 @@
     ],
     "also": "A dedicated 2-inch gas stub is already in the rear meter bank, and the building's sprinkler riser sits in a room in the corner of the suite with its own exterior door.",
     "delivered": "The next day, the client had a narrative report, a 3D scan and a 360 walkthrough video, followed within the week by a measured drawing set."
+  },
+  {
+    "slug": "route-59-naperville",
+    "published": "2026-10-26",
+    "title": "Office-Warehouse Survey, Route 59, Naperville | Alturascope",
+    "description": "An office and warehouse flex suite on Route 59, Naperville, surveyed room by room: a 400 A service, four rooftop units and two very different halves.",
+    "kicker": "Office and warehouse flex suite · Naperville, Illinois · Surveyed September 2026",
+    "h1": "One suite, two very different halves, and a tape measure in every room.",
+    "summary": "A design-build contractor was pricing a change of use for its client in a single-storey flex suite on Route 59. The suite was still in use as a working office and training center, with a large warehouse behind it. Before anyone could put numbers on a fit-out, they needed to know what the power, plant and floor area really were. One visit answered that.",
+    "stats": [
+      {
+        "value": "~10,600",
+        "label": "Square feet measured"
+      },
+      {
+        "value": "210+",
+        "label": "Photos and drone stills"
+      },
+      {
+        "value": "400 A",
+        "label": "Dedicated service"
+      },
+      {
+        "value": "1 day",
+        "label": "Visit to report"
+      }
+    ],
+    "findings": [
+      {
+        "title": "A dedicated 400 A service, read from the equipment itself.",
+        "body": "The suite has its own 400 A, 208/120 V three-phase service, separately metered, with a 400 A service disconnect inside and three 42-circuit panels behind it. That is roughly 144 kVA of connected service. Every panel schedule was legible, so we could show exactly which loads are committed today, including a server room that would leave with the current occupier.",
+        "action": "Start the electrical design from the 400 A service, net off the loads that leave with the occupier, and ask the installing contractor for the as-built one-line.",
+        "photos": [
+          {
+            "src": "service-disconnect",
+            "w": 1279,
+            "h": 1400,
+            "alt": "Square D 400 A service disconnect handle below a service disconnect label",
+            "caption": "The 400 A service disconnect inside the suite."
+          }
+        ]
+      },
+      {
+        "title": "A finished office front, and a warehouse open to the deck.",
+        "body": "The front half is a sound, recent office fit-out: a 2×4 ceiling grid with tiles good enough to reuse, wood-look vinyl plank, sprinklers throughout and a thermostat in almost every room. Behind it, two large rooms are open to the deck at nearly 18 feet, on a concrete slab, with two 12-foot electric roller-shutter doors to a rear service road. They are very different propositions, and the fit-out cost turns on how much of the warehouse the new use needs to condition.",
+        "action": "Decide early what the warehouse half is for. Keeping it as back-of-house is the economical route; conditioning and ceilinging it is new work across about half the floor plate. Protect the reusable ceiling tile in the specification.",
+        "photos": [
+          {
+            "src": "office-corridor",
+            "w": 647,
+            "h": 1400,
+            "alt": "Long office corridor with wood-look vinyl plank floor and a lay-in ceiling grid",
+            "caption": "The office half: a ceilinged, zoned fit-out in good order."
+          },
+          {
+            "src": "warehouse-deck",
+            "w": 1400,
+            "h": 647,
+            "alt": "Warehouse room open to a metal roof deck with steel joists, ductwork and LED strip lights",
+            "caption": "The warehouse half, open to the deck at almost 18 feet."
+          }
+        ]
+      },
+      {
+        "title": "Four rooftop units, read from their nameplates by drone.",
+        "body": "Four Lennox gas-fired packaged rooftop units serve the suite, each matched to its own circuit on the mechanical panel. Two plates were read in full: a 7.5-ton and a 5-ton unit, both 208/230 V three-phase. Ductless splits serve the server room and a vacant office area. The warehouse is heated by a ceiling-mounted space heater.",
+        "action": "Carry the four units into the mechanical design as existing plant, confirm which gas meter serves the suite, and add heating and cooling to the warehouse only if the program needs it.",
+        "photos": [
+          {
+            "src": "rooftop-unit-plate",
+            "w": 1400,
+            "h": 1181,
+            "alt": "Lennox rooftop unit data plate showing model number and heating and cooling data",
+            "caption": "A rooftop unit's data plate, read by drone."
+          }
+        ]
+      }
+    ],
+    "aboutHeading": "Existing-conditions survey of an office and warehouse suite in Naperville, Illinois",
+    "about": "This was a pre-lease existing-conditions survey of an occupied office, training and warehouse flex suite on Route 59 in Naperville, Illinois, carried out for a design-build contractor and its client. In one visit we hand-measured every room and corridor, read the electrical service, disconnect and all three panel schedules, recorded the rooftop units by drone, filmed above the ceilings with a 360 camera, and logged the fire protection and life-safety systems. The result was a clear as-built record of what the suite offers, ready before any fit-out was priced.",
+    "also": "The electric water heater sits on a platform above the janitor's closet, and we read it from 360 footage taken through the ceiling. Fourteen exposed steel columns, left exposed by design, were counted and sized so the layout can plan around them.",
+    "delivered": "The next day, the client had a 29-page narrative report with a room-by-room measured schedule and equipment register, along with four 360 walkthrough videos.",
+    "services": [
+      {
+        "href": "/services/pre-construction-site-intelligence/",
+        "label": "Pre-construction site intelligence"
+      },
+      {
+        "href": "/services/construction-documentation/",
+        "label": "Existing-conditions documentation"
+      },
+      {
+        "href": "/services/central-us-site-surveys/",
+        "label": "Central US site surveys"
+      }
+    ]
+  },
+  {
+    "slug": "gateway-oaks-drive-sacramento",
+    "published": "2026-10-26",
+    "title": "Office-to-Clinic Suite Survey, Sacramento, CA | Alturascope",
+    "description": "A ground-floor office suite on Gateway Oaks Drive, Sacramento, checked for a therapy clinic: room sizes, glazing, ceilings and base-building services.",
+    "kicker": "Office suite · Sacramento, California · Surveyed September 2026",
+    "h1": "An office suite that was already laid out like a clinic.",
+    "summary": "A design-build contractor and its therapy-clinic client were considering a ground-floor office suite on Gateway Oaks Drive. The program called for treatment rooms with observation glazing, a gym and a calm arrival for clients. The question was how much of that the existing layout already gave them. One visit, with a tape in every room, showed it gave them a lot.",
+    "stats": [
+      {
+        "value": "~7,900",
+        "label": "Square feet"
+      },
+      {
+        "value": "1",
+        "label": "Site visit"
+      },
+      {
+        "value": "170",
+        "label": "Photos and drone stills"
+      },
+      {
+        "value": "1 day",
+        "label": "Visit to report"
+      }
+    ],
+    "findings": [
+      {
+        "title": "Eleven near-identical rooms, each with a full-height vision panel.",
+        "body": "A run of eleven perimeter offices sits on a regular module of about 9'-7\" to 10'-5\" by 12'-6\", and each has a full-height glazed sidelite or vision panel at its door. That is the observation sightline therapists look for, already built in. A 34-by-24-foot room and a 22-by-24-foot back room are natural candidates for the gym.",
+        "action": "Keep the perimeter rooms as treatment rooms, add vision kits only where a door lacks glazing, and plan the gym into the larger room. New carpet and paint would be part of the refresh.",
+        "photos": [
+          {
+            "src": "office-sidelite",
+            "w": 647,
+            "h": 1400,
+            "alt": "Empty office with a full-height glazed sidelite in an aluminum frame beside the door",
+            "caption": "A perimeter room with its full-height sidelite."
+          },
+          {
+            "src": "open-circulation",
+            "w": 1400,
+            "h": 500,
+            "alt": "Long open circulation zone lined with glass-fronted offices under a lay-in ceiling",
+            "caption": "The open circulation zone, lined with glass-fronted rooms."
+          }
+        ]
+      },
+      {
+        "title": "Walls that stop at the grid, and air to every room.",
+        "body": "Most interior partitions stop at the ceiling grid instead of running to the deck, so moving a wall is light work. The suite is zoned by VAV terminals with Automated Logic controls, and every room has its own supply diffuser and return grille. Ceilings sit at about 9 feet under a metal deck at 11'-9½\", which leaves a workable plenum for new services.",
+        "action": "Use the existing VAV zones as the starting point for the treatment-room layout, and rebalance rather than replace where rooms keep their size.",
+        "photos": [
+          {
+            "src": "vav-terminal",
+            "w": 647,
+            "h": 1400,
+            "alt": "VAV terminal box with an orange damper actuator and controls, seen through an open ceiling tile",
+            "caption": "A VAV terminal, photographed through an open ceiling tile."
+          }
+        ]
+      },
+      {
+        "title": "A second door for a quieter arrival, and services that sit with the building.",
+        "body": "A side entrance with a card reader opens from the landscaped walk into the building's rear corridor, a possible quieter way in for clients. Electrical distribution, the telecom closet and the fire alarm panel sit in the building's own service rooms, and restrooms are shared in the building core. The rooftop plant runs at 460 V, so 480/277 V is present in the building.",
+        "action": "Ask the landlord for the panel schedules serving the suite and confirm the roughly 200 A, with some 277 V, the program typically needs. Decide at design stage whether in-suite restrooms are wanted, using the record drawings to find the nearest sanitary connection.",
+        "photos": [
+          {
+            "src": "side-entrance",
+            "w": 1015,
+            "h": 1400,
+            "alt": "Glazed double doors at a side entrance of a stucco-clad office building, leading into a corridor",
+            "caption": "A side entrance into the building's rear corridor."
+          }
+        ]
+      }
+    ],
+    "aboutHeading": "Pre-lease survey of an office suite for a therapy clinic in Sacramento, California",
+    "about": "This was a pre-lease site survey of a ground-floor office suite on Gateway Oaks Drive in Sacramento, California, carried out for a design-build contractor and its therapy-clinic client. In one visit we hand-measured every room, recorded ceiling heights, the plenum and deck, the VAV zoning and controls, sprinkler and fire alarm devices, entrances, accessible parking and the site fire service, and photographed the rooftop plant by drone. The suite was also captured as a 3D model, so the design team can check layouts and dimensions without another visit.",
+    "also": "Every window has working blinds, four accessible stalls sit at the front walk, and the landscaped grounds include lawns and a picnic area.",
+    "delivered": "The day after the visit, the client had a narrative report, a 3D model of the suite and a 360 walkthrough video.",
+    "services": [
+      {
+        "href": "/services/healthcare-facility-survey/",
+        "label": "Healthcare facility surveys"
+      },
+      {
+        "href": "/services/pre-construction-site-intelligence/",
+        "label": "Pre-construction site intelligence"
+      },
+      {
+        "href": "/services/west-coast-site-surveys/",
+        "label": "West Coast site surveys"
+      }
+    ]
+  },
+  {
+    "slug": "thousand-oaks-boulevard-thousand-oaks",
+    "published": "2026-10-26",
+    "title": "Clinic Fit-Out Survey, Thousand Oaks Blvd, CA | Alturascope",
+    "description": "Two buildings on Thousand Oaks Boulevard surveyed for a pediatric clinic fit-out: layout, structure, power and permit history in one visit.",
+    "kicker": "Two-building office and clinic site · Thousand Oaks, California · Surveyed September 2026",
+    "h1": "Two buildings, one program. Half the plan was already in the walls.",
+    "summary": "A design-build contractor and its pediatric healthcare client were weighing two vacant spaces on Thousand Oaks Boulevard: a two-story building at the back of the lot for treatment rooms, and a ground-floor suite in the front building for staff. They needed to know how much of each space their program could use as found, and what would have to change. Two days on site, and a report the next day, answered that.",
+    "stats": [
+      {
+        "value": "~8,900",
+        "label": "Square feet, two buildings"
+      },
+      {
+        "value": "2",
+        "label": "Days on site"
+      },
+      {
+        "value": "1,340+",
+        "label": "Photos taken"
+      },
+      {
+        "value": "Next day",
+        "label": "Visit to report"
+      }
+    ],
+    "findings": [
+      {
+        "title": "The rear building was already laid out as small rooms around a central space.",
+        "body": "The ground floor is a large central room ringed by smaller rooms with relite windows, with restrooms, a shower room and a kitchen off it. Upstairs is a suite of offices around a vaulted room with four skylights. That is close to the shape a treatment program needs. What sets the grid is the structure: a post-and-beam floor on steel pipe columns, with a 2008 steel beam on two tube-steel columns in the central room.",
+        "action": "Plan the treatment rooms to the existing column grid rather than against it, and get the full 1997 and 2008 structural sets from the landlord, who keeps the originals on site.",
+        "photos": [
+          {
+            "src": "central-room",
+            "w": 1400,
+            "h": 944,
+            "alt": "Open central room with exposed red-painted joists, a dark beam and posts, and doors to smaller rooms",
+            "caption": "The central room, with its beam and posts left exposed."
+          }
+        ]
+      },
+      {
+        "title": "The front suite's 2017 fit-out can largely stay as it is.",
+        "body": "The ground-floor suite in the front building, about 2,900 square feet, was refitted in 2017 and is in good order: a reception counter with an accessible section, glass-fronted offices, a break room, two accessible-type single-occupant restrooms and LED lighting on occupancy sensors. Ceilings sit at about 8'-7\", with 10'-2\" to the joists above. For staff space, most of the work is already done.",
+        "action": "Use the suite as staff space close to as found, and carry a short punch list of small items into the fit-out instead of a full refit.",
+        "photos": [
+          {
+            "src": "staff-suite",
+            "w": 917,
+            "h": 1400,
+            "alt": "Bright open office area with LED ceiling panels, a cased column, a relite window and a reception counter",
+            "caption": "Reception and open office in the front suite."
+          }
+        ]
+      },
+      {
+        "title": "Forty-five years of permits, read against the buildings.",
+        "body": "We pulled the city permit file from the 1979 original drawings through each later remodel and matched it to what is there today. Each building has its own 208/120 V service, 600 A at the rear and 800 A at the front, and both are all-electric. Heating and cooling are split systems, with the outdoor units set in roof wells behind the tile mansard, which we recorded from the drone.",
+        "action": "Ask the landlord for a service-capacity letter for each building and a roof walk to read the unit plates, so the mechanical and electrical engineers start from confirmed figures.",
+        "photos": [
+          {
+            "src": "aerial",
+            "w": 1400,
+            "h": 964,
+            "alt": "Aerial view of a two-story building with a red clay-tile mansard roof around two flat roof wells holding outdoor units",
+            "caption": "The front building from above, with its plant in the roof wells."
+          }
+        ]
+      }
+    ],
+    "aboutHeading": "Pre-lease survey of office and clinic space in Thousand Oaks, California",
+    "about": "This was a pre-lease site survey and MEP due diligence of two buildings on Thousand Oaks Boulevard in Thousand Oaks, California, carried out for a design-build contractor and its pediatric healthcare client. Over two days we documented both electrical services and their panels, the split-system heating and cooling, water heating and plumbing, the restrooms, the structural grid and every room on both floors, with drone coverage of the roofs and 360-degree video above the ceilings. We then read the city's permit history back to 1979 against what we found, giving the design team an existing-conditions record for a clinic fit-out.",
+    "also": "The front suite has three exits and a ceiling grid and lighting less than ten years old, and the landlord holds the original drawing sets on site, which shortens the records hunt for the design team.",
+    "delivered": "The next day the client had a narrative report covering both buildings, with ranked key findings, an equipment schedule, a permit chronology and 360-degree video of both buildings.",
+    "services": [
+      {
+        "href": "/services/healthcare-facility-survey/",
+        "label": "Healthcare facility surveys"
+      },
+      {
+        "href": "/services/behavioral-health-clinic-survey/",
+        "label": "Behavioral health clinic surveys"
+      },
+      {
+        "href": "/services/west-coast-site-surveys/",
+        "label": "West Coast site surveys"
+      }
+    ]
+  },
+  {
+    "slug": "madera-road-simi-valley",
+    "published": "2026-10-26",
+    "title": "Office-to-Clinic Survey, Madera Rd, Simi Valley | Alturascope",
+    "description": "A ground-floor office suite on Madera Road, Simi Valley, surveyed for a clinic fit-out: columns, ceiling void, plant and entry, measured in one visit.",
+    "kicker": "Ground-floor office suite · Simi Valley, California · Surveyed September 2026",
+    "h1": "The listing said 11 feet to the deck. The tape said 13'-5\".",
+    "summary": "A pediatric therapy operator, working through a design-build contractor, was looking at turning a vacant ground-floor office suite on Madera Road into a treatment center with around two dozen small rooms. The plan depended on what sat above the ceiling, where the columns fell and how the building's heating and cooling reached the suite. One morning on site, and a report the next day, gave the designers those answers.",
+    "stats": [
+      {
+        "value": "~6,000",
+        "label": "Square feet"
+      },
+      {
+        "value": "1",
+        "label": "Site visit"
+      },
+      {
+        "value": "530+",
+        "label": "Photos taken"
+      },
+      {
+        "value": "13'-5\"",
+        "label": "Floor to deck, measured"
+      }
+    ],
+    "findings": [
+      {
+        "title": "More room above the ceiling than the listing suggested.",
+        "body": "The marketing said 11 feet. We measured 13'-5\" to the underside of the metal deck, with the ceiling at about 8'-11\". That leaves roughly four and a half feet of ceiling void for new ductwork, terminals and plumbing vents. It is already a busy void, so sixteen tile lifts on 360-degree video show exactly what runs where.",
+        "action": "Route new services from the above-ceiling record, and confirm the deck build-up from the landlord's structural drawings before fixing anchors and penetrations.",
+        "photos": [
+          {
+            "src": "open-floor",
+            "w": 1400,
+            "h": 830,
+            "alt": "Empty open office floor with a long run of floor-to-ceiling windows and a suspended ceiling",
+            "caption": "The open floor along the glazed face."
+          }
+        ]
+      },
+      {
+        "title": "Four columns, measured, so the room layout can start from them.",
+        "body": "The suite runs about 128 feet along a glazed face. Inside it stand four 2-foot-square columns on roughly 22-foot centers, about 19'-6\" off the window wall. The landlord confirmed they are structural and stay, and the one column head we looked at showed steel beams framing in from two directions.",
+        "action": "Lay out the treatment rooms with the columns inside walls or at room corners, using the measured offsets, rather than planning on their removal.",
+        "photos": [
+          {
+            "src": "column-grid",
+            "w": 1400,
+            "h": 788,
+            "alt": "Open office floor with a row of square cased columns beside a long glazed wall",
+            "caption": "The column line and the long glazed face."
+          }
+        ]
+      },
+      {
+        "title": "Base-building plant, and an entry that already controls access.",
+        "body": "Heating and cooling come from the building's central plant: Daikin rooftop units with hot-water coils on a boiler loop, feeding VAV reheat boxes above the suite's ceiling. The suite is reached from a glazed barrel-vault atrium, through doors with a keypad, intercom and powered operator that a controlled-entry clinic could reuse. There is also an existing exit door in the glazed face with a level stoop.",
+        "action": "Get the zone maps and a landlord letter on which units serve the suite, then design the rezoning for many small rooms off the existing trunks. Decide early which entry hardware stays.",
+        "photos": [
+          {
+            "src": "rooftop-unit",
+            "w": 1400,
+            "h": 788,
+            "alt": "Tan Daikin packaged rooftop unit on a curb adapter inside a screened roof plant enclosure",
+            "caption": "One of the rooftop units serving the wing."
+          },
+          {
+            "src": "atrium",
+            "w": 1400,
+            "h": 1293,
+            "alt": "Glazed barrel-vault atrium roof with a suspended light fitting above an upper-level walkway",
+            "caption": "The barrel-vault atrium the suite opens off."
+          }
+        ]
+      }
+    ],
+    "aboutHeading": "Pre-lease survey of an office suite for a clinic fit-out in Simi Valley, California",
+    "about": "This was a pre-lease site survey and MEP due diligence of a ground-floor office suite on Madera Road in Simi Valley, California, carried out ahead of its conversion to a pediatric treatment clinic. In one visit we documented the suite's panels and circuits, the rooftop units and boiler that serve it, the VAV terminals and services above the ceiling, the sprinkler and fire alarm devices, the columns and every room, and recorded the space on 360-degree video. The result was an existing-conditions record the design team could lay a 24-room clinic onto with confidence.",
+    "also": "The building sits on a landscaped campus with surface parking and a bus stop at the drive, and the suite's long glazed face brings daylight deep into the floor.",
+    "delivered": "The next day the client had a narrative report with ranked key findings, an equipment schedule read from the nameplates, a control-measurement table and 360-degree video of the suite and its ceiling void.",
+    "services": [
+      {
+        "href": "/services/healthcare-facility-survey/",
+        "label": "Healthcare facility surveys"
+      },
+      {
+        "href": "/services/pre-construction-site-intelligence/",
+        "label": "Pre-construction site intelligence"
+      },
+      {
+        "href": "/services/west-coast-site-surveys/",
+        "label": "West Coast site surveys"
+      }
+    ]
+  },
+  {
+    "slug": "ohio-street-commons-joliet",
+    "published": "2026-10-26",
+    "title": "Retail-to-Clinic Site Survey, Joliet, IL | Alturascope",
+    "description": "Pre-lease survey of a stripped retail unit at Ohio Street Commons, Joliet, IL, for an outpatient clinic: layout, structure, services and parking.",
+    "kicker": "Stripped retail unit · Joliet, Illinois · Surveyed September 2026",
+    "h1": "Four shopfronts behind the paper. One open floor ready for a clinic.",
+    "summary": "An outpatient behavioral health provider, working through its design-build contractor, was looking at a run of vacant shopfronts at Ohio Street Commons. The format needed a controlled front door, a plate it could divide into reception, consult and staff rooms, and easy parking for visitors. The space had been a restaurant and grocery, and everything from those years would come out. One visit showed what would be left to build on.",
+    "stats": [
+      {
+        "value": "~4,800",
+        "label": "Square feet"
+      },
+      {
+        "value": "1",
+        "label": "Site visit"
+      },
+      {
+        "value": "260+",
+        "label": "Photos taken"
+      },
+      {
+        "value": "~65",
+        "label": "Parking spaces"
+      }
+    ],
+    "findings": [
+      {
+        "title": "Four bays already open into one wide, shallow floor.",
+        "body": "Behind the papered glass, the bays run as a single volume about 100 ft wide and 49 ft deep, with one steel column carrying the roof beam. The demise also turned out to include a fourth bay that wasn't obvious from the street. We found it from inside and confirmed it with the client the next day. A plate this shape divides easily into a waiting area at the front and clinical rooms behind.",
+        "action": "Plan the layout around one controlled entry, convert the other front doors to egress, and fix the demising line against the landlord's suite plan.",
+        "photos": [
+          {
+            "src": "open-plate",
+            "w": 1400,
+            "h": 1078,
+            "alt": "Empty open-plan retail interior with papered storefront glazing and a single steel column",
+            "caption": "The open floor, looking toward the storefront."
+          }
+        ]
+      },
+      {
+        "title": "Generous height above the old ceiling, and sprinklers already in place.",
+        "body": "Above the old lay-in ceiling is a timber-truss roof with a plywood deck, about 18 ft at the front falling to about 16 ft at the back. The space is sprinklered, with heads on branch lines through the truss zone. The previous restaurant and grocery fit-out has run its course, so this is a strip-out and rebuild. The structure and the sprinkler mains are what the new fit-out builds on.",
+        "action": "Budget a full strip-out of finishes and old services, reconfigure the existing sprinklers to the new rooms, and get the riser location and last inspection report from the landlord.",
+        "photos": [
+          {
+            "src": "roof-trusses",
+            "w": 1400,
+            "h": 647,
+            "alt": "Timber roof trusses and plywood deck with a sprinkler branch line and pendent head",
+            "caption": "Timber trusses with a sprinkler branch line through them."
+          }
+        ]
+      },
+      {
+        "title": "A private lot right outside the door.",
+        "body": "The suites face a private surface lot with about 65 marked spaces. Cars come in from two streets, and the lot was close to empty at eight in the morning. A covered walkway runs along the frontage, and each bay has its own rear door onto the service lane for staff and deliveries.",
+        "action": "Design a defined drop-off point near the entrance, and check peak parking demand against the other businesses that share the lot.",
+        "photos": [
+          {
+            "src": "parking-lot",
+            "w": 1400,
+            "h": 687,
+            "alt": "Aerial view of a striped surface parking lot with landscaped islands",
+            "caption": "The shared front lot, from the drone."
+          }
+        ]
+      }
+    ],
+    "aboutHeading": "Pre-lease survey of a retail unit for clinic use in Joliet, Illinois",
+    "about": "This was a pre-lease site survey and existing-conditions survey of a stripped multi-bay retail unit in a strip center in Joliet, Illinois, carried out for a design-build contractor and its outpatient healthcare client. In one visit we measured every wall and opening, recorded the structure, ceiling and deck heights, the electrical panels, utility metering, rooftop units, sprinklers and fire alarm devices, and captured the space in 3D. We then checked the tape measurements against the point-cloud model and set out what the space gives a clinic fit-out and what the fit-out has to add.",
+    "also": "We checked the 3D point-cloud model against the tape, and it agreed to within about 3%. We also listed the questions only the landlord could answer, such as which meters serve the suites, so they could go to the landlord in one request.",
+    "delivered": "The day after the visit, the client had a narrative report with a point-cloud floor plan, the 3D capture and two 360-degree walkthrough videos.",
+    "services": [
+      {
+        "href": "/services/behavioral-health-clinic-survey/",
+        "label": "Behavioral health clinic surveys"
+      },
+      {
+        "href": "/services/healthcare-facility-survey/",
+        "label": "Healthcare facility surveys"
+      },
+      {
+        "href": "/services/central-us-site-surveys/",
+        "label": "Central US site surveys"
+      }
+    ]
+  },
+  {
+    "slug": "industrial-avenue-lowell",
+    "published": "2026-10-26",
+    "title": "Flex Industrial Suite Survey, Lowell, MA | Alturascope",
+    "description": "Pre-lease survey of a 5,330 sq ft flex industrial suite on Industrial Avenue, Lowell, MA, for a clinic fit-out: plant, power and layout.",
+    "kicker": "Flex industrial suite · Lowell, Massachusetts · Surveyed August 2026",
+    "h1": "A warehouse suite with nearly new rooftop units on top.",
+    "summary": "A design-build contractor was weighing a first-floor flex suite on Industrial Avenue for a healthcare client that runs outpatient programs. Its format needs a secure indoor waiting area, rooms it can lay out freely, and plant that won't need replacing on day one. The suite had last been fitted out for storage. One visit showed how much of that would carry over.",
+    "stats": [
+      {
+        "value": "5,330",
+        "label": "Square feet"
+      },
+      {
+        "value": "540+",
+        "label": "Photos taken"
+      },
+      {
+        "value": "2024",
+        "label": "Rooftop units built"
+      },
+      {
+        "value": "2 days",
+        "label": "Visit to report"
+      }
+    ],
+    "findings": [
+      {
+        "title": "The rooftop units were built in 2024.",
+        "body": "Two 5-ton gas and electric packaged units serve the suite. Both sit on new curbs, and their labels show they were built in March 2024. Reading the plates turned the HVAC from an open question into the strongest asset in the space, with a full service life ahead.",
+        "action": "Keep both units, lay out the new zones and ductwork around them, and have them serviced and checked as part of handover.",
+        "photos": [
+          {
+            "src": "rooftop-unit",
+            "w": 1331,
+            "h": 1400,
+            "alt": "Packaged rooftop HVAC unit on a new galvanized curb",
+            "caption": "One of the two suite rooftop units on its new curb."
+          },
+          {
+            "src": "rtu-label",
+            "w": 1400,
+            "h": 788,
+            "alt": "Rooftop unit model and serial label showing a March 2024 build date",
+            "caption": "The frame label, with its 2024 build date."
+          }
+        ]
+      },
+      {
+        "title": "An open floor with a lobby already in front of it.",
+        "body": "The main hall is about 57 by 99 ft, with two interior columns and nearly 14 ft clear to the deck. Visitors come in through a two-door vestibule and a lobby before they reach the suite door, which is the sequence a secure waiting area needs. The existing restrooms already have grab bars and braille signage.",
+        "action": "Build the waiting room behind one controlled door, and recalculate occupant load, fixture count and egress for clinic use, because the last fit-out was designed for storage.",
+        "photos": [
+          {
+            "src": "open-plate",
+            "w": 1400,
+            "h": 709,
+            "alt": "Open warehouse suite with exposed bar joists, ductwork and a white-walled office block",
+            "caption": "Open joists above the suite's office and restroom block."
+          }
+        ]
+      },
+      {
+        "title": "Power runs overhead on a busway. Its rating was the one number to chase.",
+        "body": "The suite takes the building's 480 V supply through a 15 kVA transformer to its 120/240 V panels. An overhead plug-in busway runs the length of the floor, with tap switches hung from it, which makes it easy to feed power into a divided plan. The busway's rating plate couldn't be read from the floor, so the capacity it offers stayed open.",
+        "action": "Get the busway and tap-switch ratings from the landlord's records, or read them up close, before electrical design is priced.",
+        "photos": [
+          {
+            "src": "busway",
+            "w": 1400,
+            "h": 788,
+            "alt": "Overhead electrical busway running along painted steel beams under a metal roof deck",
+            "caption": "The overhead busway along the beam line."
+          }
+        ]
+      }
+    ],
+    "aboutHeading": "Pre-lease survey of a flex industrial suite in Lowell, Massachusetts",
+    "about": "This was a pre-lease site survey and MEP due diligence of a first-floor flex industrial suite in Lowell, Massachusetts, carried out for a design-build contractor and its healthcare client. In one visit we measured the suite and recorded the rooftop units and their nameplates, the transformer, panels and overhead busway, the sprinkler riser, the domestic water service, the restrooms, and the entrances and parking. We then reconciled it all with the suite's last fit-out drawing to show what a clinic fit-out could keep and what it would need to add.",
+    "also": "We found the suite's 2023 fit-out drawing, which gave the design team a code review and a base plan. We also recorded a wet sprinkler system with an inspection tag from June 2026.",
+    "delivered": "Two days after the visit, the client had a 19-page narrative report with a nameplate-level equipment schedule and the site evidence for its permit application.",
+    "services": [
+      {
+        "href": "/services/behavioral-health-clinic-survey/",
+        "label": "Behavioral health clinic surveys"
+      },
+      {
+        "href": "/services/industrial-facility-documentation/",
+        "label": "Industrial facility documentation"
+      },
+      {
+        "href": "/services/northeast-site-surveys/",
+        "label": "Northeast site surveys"
+      }
+    ]
+  },
+  {
+    "slug": "peachtree-road-atlanta",
+    "published": "2026-10-26",
+    "title": "Clinic Suite Survey, Peachtree Road, Atlanta | Alturascope",
+    "description": "An Atlanta office suite on Peachtree Road surveyed for an autism therapy clinic: room sizes, lighting, power and plant read in one visit.",
+    "kicker": "High-rise office suite · Atlanta, Georgia · Surveyed August 2026",
+    "h1": "Ten glass-fronted offices. Ten therapy rooms waiting to happen.",
+    "summary": "A design-build contractor and its client, a provider of autism therapy services, were weighing a vacant office suite in a Buckhead office building on Peachtree Road. A therapy clinic needs small, private, calm rooms, controlled entry and modest power, not big plant. The question was how much of the existing office fit-out could carry over. One visit, with every room measured and every system traced back to its source, answered it.",
+    "stats": [
+      {
+        "value": "10",
+        "label": "Glass-fronted rooms"
+      },
+      {
+        "value": "1",
+        "label": "Site visit"
+      },
+      {
+        "value": "315",
+        "label": "Photos taken"
+      },
+      {
+        "value": "Next day",
+        "label": "Visit to report"
+      }
+    ],
+    "findings": [
+      {
+        "title": "The office layout was already most of a clinic.",
+        "body": "Ten perimeter offices, typically about 9'-6\" to 10'-6\" wide by 12' deep with 8'-5\" ceilings, sit around a continuous hallway, each behind a glass front. Several fronts already carry frosted privacy film. For therapy rooms, the work is privacy, acoustics, finishes and lighting. The walls can stay where they are.",
+        "action": "Keep the cellular layout and the glass fronts, and budget for privacy film and acoustic treatment rather than new partitions.",
+        "photos": [
+          {
+            "src": "hallway",
+            "w": 788,
+            "h": 1400,
+            "alt": "Carpeted office hallway lined with glass-fronted rooms under a lay-in ceiling",
+            "caption": "The perimeter hallway, with rooms off both sides."
+          },
+          {
+            "src": "glass-fronts",
+            "w": 1400,
+            "h": 788,
+            "alt": "Office interior with a glass partition carrying a frosted privacy band",
+            "caption": "Glass fronts with frosted film already in place."
+          }
+        ]
+      },
+      {
+        "title": "Daylight in almost every room. The lighting was the thing to change.",
+        "body": "Most rooms have full-width curtain-wall windows, which suits a calm therapy setting. The ceiling fixtures are three-lamp fluorescent troffers, and we read the lamps themselves to confirm it rather than guess. Fluorescent flicker is a known sensory trigger for the people this clinic serves, so lighting moved from an energy line item to a design priority.",
+        "action": "An LED retrofit with flicker-free, dimmable drivers and one consistent color temperature through the suite.",
+        "photos": [
+          {
+            "src": "perimeter-room",
+            "w": 788,
+            "h": 1400,
+            "alt": "Empty perimeter office with a two-panel curtain-wall window looking onto trees",
+            "caption": "A typical perimeter room, with a treetop outlook."
+          }
+        ]
+      },
+      {
+        "title": "Building plant does the heavy lifting, and the suite's circuits were already named.",
+        "body": "Heating and cooling come from the floor's base-building air handler, a 2012 modular unit with hot and chilled water coils, so the suite has no rooftop equipment of its own to maintain. In the shared floor panels we found the suite's circuits labeled by name, with spare positions alongside. Clinic loads are ordinary office grade, so the existing power suits therapy rooms as they are.",
+        "action": "A landlord letter confirming the suite's share of power and cooling and the after-hours arrangements, and an early list of any dedicated circuits the clinic needs.",
+        "photos": [
+          {
+            "src": "air-handler",
+            "w": 634,
+            "h": 1400,
+            "alt": "Modular indoor air handling unit with insulated hot and chilled water piping, gauges and valve actuators",
+            "caption": "The floor's air handler, read from its nameplate."
+          }
+        ]
+      }
+    ],
+    "aboutHeading": "Pre-lease survey of an office suite for a therapy clinic in Atlanta, Georgia",
+    "about": "This was a pre-lease site survey and existing-conditions survey of a vacant office suite on Peachtree Road in Buckhead, Atlanta, carried out for a design-build contractor planning an autism therapy clinic. In one visit we measured every room, documented the lighting, power, HVAC distribution, sprinklers, fire alarm devices and above-ceiling services, and traced the base-building electrical, air handling and fire protection plant that serves the floor. The result was a room-by-room record of what the office fit-out already gives a clinic and what the conversion needs to add.",
+    "also": "The previous occupant's controlled-entry hardware, including a fingerprint reader, electric strike and door contact, is still in place at the suite entrance, a useful starting point for a clinic that needs a secure front door. The break room's dedicated appliance circuits can also be reused for a new staff room.",
+    "delivered": "The next day, the client had a narrative survey report with room-by-room dimensions, a nameplate-level equipment register and a short list of landlord confirmations to request.",
+    "services": [
+      {
+        "href": "/services/aba-autism-clinic-documentation/",
+        "label": "ABA and autism clinic surveys"
+      },
+      {
+        "href": "/services/behavioral-health-clinic-survey/",
+        "label": "Behavioral health clinic surveys"
+      },
+      {
+        "href": "/services/healthcare-facility-survey/",
+        "label": "Healthcare facility surveys"
+      }
+    ]
+  },
+  {
+    "slug": "broadway-lincoln-square-new-york",
+    "published": "2026-10-26",
+    "title": "Animal Hospital Site Survey, Broadway, New York | Alturascope",
+    "description": "A ground-floor retail shell on Broadway near Lincoln Square, surveyed for an animal hospital fit-out: power, ceiling void and below-slab work.",
+    "kicker": "Ground-floor retail shell · New York, NY · Surveyed August 2026",
+    "h1": "The shell needed little. The questions were above and below it.",
+    "summary": "A design-build contractor was pricing an animal hospital for a veterinary group in a vacant ground-floor retail unit on Broadway, just below Lincoln Square. An animal hospital needs far more plumbing, power and ventilation than a store, so the question was what the space could carry and where the cost really sat. We walked it during the bid walk, then read the issued permit set against what we had seen.",
+    "stats": [
+      {
+        "value": "~2,500",
+        "label": "Square feet"
+      },
+      {
+        "value": "71",
+        "label": "Photos taken"
+      },
+      {
+        "value": "57",
+        "label": "Drawing sheets reconciled"
+      },
+      {
+        "value": "18'-5\"",
+        "label": "Slab to slab, back of house"
+      }
+    ],
+    "findings": [
+      {
+        "title": "A 400 A panel was already on the wall. The fusing was the question.",
+        "body": "The unit has a 400 A, 208Y/120 V, 54-position panel in good order, and the new design keeps it. Reading the drawings against the nameplate showed the switch feeding it is fused at 300 A, while the design's own calculated demand comes to about 287 A. Workable, but close enough that it needed an answer before anyone put a number on the electrical package.",
+        "action": "Ask the engineer whether the intent is to re-fuse the existing switch to its full 400 A, and confirm the feeder route and length with the landlord before pricing.",
+        "photos": [
+          {
+            "src": "panel-nameplate",
+            "w": 1400,
+            "h": 495,
+            "alt": "Panelboard nameplate showing a 400 amp, 208/120 volt, three-phase rating beside a row of breakers",
+            "caption": "The panel's nameplate: 400 A at 208Y/120 V."
+          }
+        ]
+      },
+      {
+        "title": "More than eight feet of room above the ceiling.",
+        "body": "We laser-measured the back of house at 18'-5\" slab to slab. Under the new 10' ceiling that still leaves roughly 8'-5\" of void, plenty for the new ductwork, the relocated water-source heat pumps, an energy recovery unit, medical gas piping and the hot water return. The heat pumps run on the building's condenser water loop, which we traced from labeled mains on the level below.",
+        "action": "Put the new plant in the back-of-house ceiling, where the room is, and confirm the condenser water capacity and billing with the landlord.",
+        "photos": [
+          {
+            "src": "back-of-house",
+            "w": 1400,
+            "h": 1164,
+            "alt": "Clean back-of-house room with vinyl tile floor, gray doors and a red sprinkler riser",
+            "caption": "The back of house, where the new plant will sit."
+          }
+        ]
+      },
+      {
+        "title": "Inside, an easy box. The planning was in the slab.",
+        "body": "The previous fit-out was handed back clean, with a square grid, LED fixtures and no staining. The real scope was in the floor. The unit sits on an elevated slab over another occupied business, with homes above, so the new drainage for the hospital's sinks and fixtures runs below the slab in someone else's ceiling. That is normal for a ground-floor Manhattan unit, but it sets the program.",
+        "action": "Price the below-slab drainage and out-of-hours access as their own items, and build the landlord's coring approvals, scanning and notice periods into the program before the first core.",
+        "photos": [
+          {
+            "src": "ceiling",
+            "w": 1400,
+            "h": 647,
+            "alt": "Lay-in ceiling grid with LED troffers, speakers and smoke detectors around a square column",
+            "caption": "Front of house, handed back in good order."
+          }
+        ]
+      }
+    ],
+    "aboutHeading": "Pre-construction survey of a retail shell for an animal hospital in New York City",
+    "about": "This was a pre-construction site survey and MEP due diligence visit to a ground-floor retail shell on Broadway near Lincoln Square in Manhattan, carried out for a design-build contractor pricing a veterinary hospital fit-out. We documented the electrical service and panel, the water-source heat pumps and condenser water, plumbing, fire alarm and sprinklers, ceiling heights and slab-to-slab clearances, and the services in the level below. We then reconciled the survey against the full issued permit set so the bid could rest on what is actually built.",
+    "also": "The fire alarm panel and annunciator were reporting normal, the existing staff restroom and fire hose cabinet are kept in the new design, and a water leak detection system is already installed for the new plant to tie into.",
+    "delivered": "The client received a survey record reconciled against the 57-sheet permit set, a nameplate-level equipment schedule and a pre-bid list of questions for the design team.",
+    "services": [
+      {
+        "href": "/services/veterinary-clinic-survey/",
+        "label": "Veterinary clinic surveys"
+      },
+      {
+        "href": "/services/pre-construction-site-intelligence/",
+        "label": "Pre-construction site intelligence"
+      },
+      {
+        "href": "/services/northeast-site-surveys/",
+        "label": "Northeast site surveys"
+      }
+    ]
+  },
+  {
+    "slug": "pennsylvania-avenue-washington-dc",
+    "published": "2026-10-26",
+    "title": "Café Space Survey, Pennsylvania Ave, DC | Alturascope",
+    "description": "Pre-lease survey of a ground-floor café unit on Pennsylvania Avenue, DC: frontage, cooling, fire protection and power checked against a brand standard.",
+    "kicker": "Ground-floor café unit · Washington, DC · Surveyed June 2026",
+    "h1": "The frontage sold itself. The power took some detective work.",
+    "summary": "A café brand was looking at a former café at the foot of an office building on Pennsylvania Avenue. The space looked right from the sidewalk. What they needed to know was how much of what sat behind the glass would carry over to their format, and what would still have to be added. One visit answered that.",
+    "stats": [
+      {
+        "value": "~2,400",
+        "label": "Square feet"
+      },
+      {
+        "value": "230+",
+        "label": "Photos taken"
+      },
+      {
+        "value": "12 tons",
+        "label": "Cooling in place"
+      },
+      {
+        "value": "2 days",
+        "label": "Visit to report"
+      }
+    ],
+    "findings": [
+      {
+        "title": "A double-height glass front on one of the city's best-known avenues.",
+        "body": "The unit sits in a fully glazed, double-height bay under a stainless entrance canopy, with double glazing throughout. Two upper windows, each about 9'9\" wide by 8' high, give an elevated signage zone that reads from across the street. Inside, the trading area is roughly 41' by 35' and rises past 15', enough to set out a full bar layout without touching the structure.",
+        "action": "Make the two upper windows the primary branding zone, and plan the layout around the open trading floor as it stands.",
+        "photos": [
+          {
+            "src": "glazed-frontage",
+            "w": 1400,
+            "h": 603,
+            "alt": "Double-height aluminum curtain-wall storefront with a stainless entrance canopy",
+            "caption": "The double-height glazed bay and entrance canopy."
+          }
+        ]
+      },
+      {
+        "title": "Most of the costly infrastructure was already in place.",
+        "body": "The space is fully sprinklered, has two accessible restrooms, and is all-electric. Cooling comes from two water-source heat pumps on the building's condenser-water loop, twelve tons between them, and we matched both against the previous tenant's mechanical drawings. A grease interceptor installed in 2023 already covers a light-cooking menu. What is specific to the last café is its look: timber coffers, wallpaper and banquettes.",
+        "action": "Treat the work as mostly subtractive. Strip the previous café's finishes and servery, and keep the serviceable plant, including the walk-in cooler and the grease interceptor.",
+        "photos": [
+          {
+            "src": "double-height-window",
+            "w": 1400,
+            "h": 693,
+            "alt": "Tall window bay inside the café unit with pendant lights",
+            "caption": "Inside the double-height window bay."
+          },
+          {
+            "src": "coffered-ceiling",
+            "w": 1400,
+            "h": 647,
+            "alt": "Timber-framed coffered ceiling with recessed lights and a supply diffuser",
+            "caption": "The previous café's coffered ceiling, part of the strip-out."
+          }
+        ]
+      },
+      {
+        "title": "The one number the building couldn't show us.",
+        "body": "The service size couldn't be read on site. The step-down transformer's rating plate is no longer legible and the service main is unmarked. So we worked it out from what we could see: a 480 V three-phase supply stepped down to 208Y/120V, with panel mains and the tallied kitchen load putting the 208 V side at roughly 125 to 200 A. The brand's standard is 400 A, but its format draws far less than the hot-kitchen café the panels were sized for.",
+        "action": "Confirm the incoming figure from the building's electrical drawings or a clamp-meter reading before design, and check whether a 1½\" water supply is available building-side (1\" today).",
+        "photos": [
+          {
+            "src": "panelboards",
+            "w": 1400,
+            "h": 819,
+            "alt": "Three panelboards on the electrical landing",
+            "caption": "The three panelboards on the electrical landing."
+          }
+        ]
+      }
+    ],
+    "aboutHeading": "Pre-lease survey of a café space in Washington, DC",
+    "about": "This was a pre-lease site survey of a second-generation café unit at the base of an office building on Pennsylvania Avenue in Washington, DC. In one visit we documented the storefront and glazing, the electrical distribution and step-down transformer, the water-source heat pumps and their condenser-water piping, plumbing, grease and water service, fire protection and restrooms, along with a 3D capture of the space. Each item was checked against the incoming brand's prototype standard, so the result was a clear MEP due diligence picture of what the fit-out could keep and what it had to add.",
+    "also": "The unit has two means of egress and a modern fire alarm system, and its 1920s-style interior was in very good overall condition.",
+    "delivered": "Two days after the visit, the client had a narrative report with a brand-standards scorecard, equipment and lighting schedules, an equipment reuse assessment and a short list of items to confirm, backed by a 3D capture of the space.",
+    "services": [
+      {
+        "href": "/services/qsr-restaurant-survey/",
+        "label": "Restaurant and QSR site surveys"
+      },
+      {
+        "href": "/services/retail-rollout-documentation/",
+        "label": "Retail rollout documentation"
+      },
+      {
+        "href": "/services/northeast-site-surveys/",
+        "label": "Northeast site surveys"
+      }
+    ]
+  },
+  {
+    "slug": "clearfork-fort-worth",
+    "published": "2026-10-26",
+    "title": "Retail Café Unit Survey, Clearfork, Fort Worth | Alturascope",
+    "description": "Pre-lease survey of a second-generation café unit at Clearfork, Fort Worth: 400 A electrical, rooftop plant and water treatment ready for reuse.",
+    "kicker": "Second-generation café unit · Fort Worth, Texas · Surveyed June 2026",
+    "h1": "The expensive parts were already in. Our job was to prove it.",
+    "summary": "A quick-service beverage concept was weighing a unit of about 1,600 sq ft in the Clearfork development, built out as a café and used for retail since. The question was how much of the existing infrastructure would carry straight over to their format. One visit, from the panel room to the roof, showed that most of it would.",
+    "stats": [
+      {
+        "value": "~1,580",
+        "label": "Square feet"
+      },
+      {
+        "value": "150+",
+        "label": "Photos taken"
+      },
+      {
+        "value": "400 A",
+        "label": "208 V panel in place"
+      },
+      {
+        "value": "4 days",
+        "label": "Visit to report"
+      }
+    ],
+    "findings": [
+      {
+        "title": "The electrical was already what the brand specifies.",
+        "body": "A 480 V three-phase service is stepped down through a 112.5 kVA transformer to a 208Y/120V, 400 A panel, the brand's preferred arrangement, with about a dozen spare circuits. A separate 480/277V panel carries the rooftop units and lighting. We read the full 84-circuit panel map, which also confirmed there is no walk-in cooler to deal with.",
+        "action": "Have the MEP engineer check the brand's connected load against the transformer's limit of about 312 A at 208 V. The previous café drew more, so we expected it to fit.",
+        "photos": [
+          {
+            "src": "panelboards",
+            "w": 995,
+            "h": 1400,
+            "alt": "Row of three Eaton panelboards in the back-of-house electrical area",
+            "caption": "The tenant panelboards in the back of house."
+          }
+        ]
+      },
+      {
+        "title": "A water-treatment setup most beverage fit-outs have to buy.",
+        "body": "The back of house already has a full treatment train: a metered softener, a media tank, a high-efficiency reverse-osmosis unit and a booster pump, all under a service contract. For a drinks-led menu that depends on clean water and ice, that is exactly what the fit-out would otherwise have to install. A 50-gallon electric water heater from about 2021 sits alongside.",
+        "action": "Keep the whole train and service it at handover. Confirm the incoming water size at the meter, where our on-site read was about 1½\".",
+        "photos": [
+          {
+            "src": "water-treatment",
+            "w": 1400,
+            "h": 1011,
+            "alt": "Water softener tanks, prefilter and backflow assembly on a back-of-house wall",
+            "caption": "The softener and prefilter end of the treatment train."
+          }
+        ]
+      },
+      {
+        "title": "Two-zone rooftop plant and 26 feet to the deck.",
+        "body": "Two 2017 Trane packaged units serve the space in two zones, a 12.5-ton heat pump for the front and a second unit for the back, with a matching roof exhaust fan. The front of house is open to the steel deck at 26'2\", so new services can route freely. A supervised wet sprinkler system and an addressable fire alarm are complete, so there is no life-safety build-out.",
+        "action": "Service both rooftop units and reuse them, and plan lighting and branding around the open ceiling rather than adding a new one.",
+        "photos": [
+          {
+            "src": "open-to-deck",
+            "w": 1400,
+            "h": 647,
+            "alt": "Open-to-deck ceiling with steel bar joists, supply duct and track lighting",
+            "caption": "The front of house, open to the deck at 26'2\"."
+          },
+          {
+            "src": "rooftop-unit",
+            "w": 1400,
+            "h": 735,
+            "alt": "Trane packaged rooftop unit on the roof",
+            "caption": "One of the two 2017 rooftop units."
+          }
+        ]
+      }
+    ],
+    "aboutHeading": "Pre-lease survey of a retail café unit in Fort Worth, Texas",
+    "about": "This was a pre-lease site survey of a second-generation café unit in the Clearfork development in Fort Worth, Texas. In one visit we documented the storefront, the electrical service, transformer and panel schedules, the rooftop HVAC and exhaust plant, water treatment and plumbing, fire protection and restrooms, and read each nameplate into an equipment register. Every system was checked against the incoming concept's prototype standards, turning MEP due diligence into a clear list of what to keep, what to service and what to confirm.",
+    "also": "The unit has a level entry from the plaza, two accessible restrooms already in place, and a gas service at the rear if a future menu calls for it.",
+    "delivered": "Four days after the visit, the client had a narrative report with a brand-standards check, decoded nameplate schedules, an equipment reuse assessment and a costed list of confirmation items.",
+    "services": [
+      {
+        "href": "/services/qsr-restaurant-survey/",
+        "label": "Restaurant and QSR site surveys"
+      },
+      {
+        "href": "/services/retail-rollout-documentation/",
+        "label": "Retail rollout documentation"
+      },
+      {
+        "href": "/services/central-us-site-surveys/",
+        "label": "Central US site surveys"
+      }
+    ]
   }
 ]
