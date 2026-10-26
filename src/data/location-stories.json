@@ -3,43 +3,42 @@
     "slug": "new-york-avenue-washington-dc",
     "published": "2026-10-26",
     "kicker": "Second-generation restaurant unit · Washington, DC · Surveyed August 2026",
-    "h1": "The open ceiling the design wanted sat under failing fireproofing.",
-    "description": "A restaurant unit on New York Avenue, DC: failing fireproofing above the ceiling, a power gap smaller than it looked, and a storefront to price pre-lease.",
-    "summary": "A national food and beverage brand was weighing a corner restaurant unit in an Art-Deco office building on New York Avenue. Their format calls for an exposed ceiling and plenty of 208 V power. The listing looked like a good second-generation space. One visit showed what it would actually take.",
+    "h1": "On paper the power fell short. The nameplates said otherwise.",
+    "description": "A corner restaurant unit on New York Avenue, DC, matched to a national brand's format: power, plant and access read from the building itself.",
+    "summary": "A national food and beverage brand was considering a corner restaurant unit in an Art-Deco office building on New York Avenue. The question wasn't whether the space was good. It was what their format would need from it, and what the space already had to give. One visit answered that.",
     "stats": [
       { "value": "~2,500", "label": "Square feet" },
       { "value": "1", "label": "Site visit" },
       { "value": "490+", "label": "Photos taken" },
-      { "value": "6", "label": "Cost items flagged" }
+      { "value": "1 week", "label": "Visit to report" }
     ],
     "findings": [
       {
-        "title": "Above the tiles, the fireproofing was falling off the steel.",
-        "body": "The deck and beams carry a sprayed fire-resistive coating. It was cracked, spalled and hanging off in chunks, with hanger rods and cables driven straight through it. On this type of construction that is a code matter, not a cosmetic one, and it sits exactly where an open ceiling would expose it.",
-        "action": "A specialist fireproofing survey and a remediation price before the ceiling design is fixed.",
+        "title": "The service was bigger than the brand needed. One transformer was the only gap.",
+        "body": "The unit has a 400 A service at 480 V, which is more capacity than the brand's standard asks for, and the panel directory showed plenty of spare ways. Everything at 208 V passes through a single step-down transformer sized for the previous use, and reading its rating plate is what pinned that down.",
+        "action": "A larger step-down transformer and a new 208 V board, fed from the spare capacity already there. A far smaller job than a new utility service.",
         "photos": [
-          { "src": "fireproofing-detached", "w": 788, "h": 1400, "alt": "Sprayed fireproofing broken away from a steel beam above the ceiling, with hanger rods passing through it", "caption": "Coating detached from the beam, hanger rods driven through it." },
-          { "src": "fireproofing-plenum", "w": 1400, "h": 788, "alt": "Ceiling void showing cracked sprayed fireproofing on the deck above ductwork and cable", "caption": "The same condition across the plenum, above the ductwork." }
+          { "src": "transformer", "w": 1176, "h": 1400, "alt": "Dry-type step-down transformer in the electrical room with its rating plate", "caption": "The step-down transformer, read from its plate." }
         ]
       },
       {
-        "title": "The power looked short. It wasn't, once we read the nameplates.",
-        "body": "The unit has a 400 A service at 480 V, which is more capacity than the brand's standard asks for. Everything at 208 V passes through a single 30 kVA transformer, though, and that is roughly a fifth of what the format needs. The panel directory showed plenty of spare ways.",
-        "action": "A bigger step-down transformer and a new 208 V board, not a new utility service. That is a much smaller and faster job.",
+        "title": "A full kitchen exhaust system the new format doesn't need.",
+        "body": "The space carries a complete, ducted, roof-discharging kitchen hood with fire suppression and a dedicated plant room, all maintained and in service. The brand's format needs none of it. Taking it out frees floor area and a plant room on a compact unit, and clears the gas load entirely.",
+        "action": "Plan the decommissioning into the fit-out, and confirm which items belong to the outgoing tenant or an equipment lessor before anything is removed.",
         "photos": [
-          { "src": "transformer", "w": 1176, "h": 1400, "alt": "Dry-type step-down transformer in the electrical room with its rating plate", "caption": "The 30 kVA step-down transformer: the real constraint, read from its plate." }
+          { "src": "hood", "w": 1400, "h": 403, "alt": "Stainless steel kitchen hood canopy with fire suppression nozzles", "caption": "Hood canopy with its suppression nozzles." }
         ]
       },
       {
-        "title": "The storefront needed money too.",
-        "body": "The full corner storefront is single-pane glazing. The coating at the curved corner had flaked away, the caulk at the pavement had failed, earlier patch repairs had failed in turn and the granite base was drilled and spalled.",
-        "action": "Price the envelope repairs and the glazing decision alongside the fit-out, not after it.",
+        "title": "A door straight into a manned office lobby, and the building's own heating and cooling.",
+        "body": "The unit opens directly into the building's lobby, so it draws office footfall as well as street trade. It is also served by the base building's heating and chilled water, so there is no rooftop equipment to replace and no roof access to negotiate.",
+        "action": "Treat the lobby door as a second frontage in the layout, and confirm the terminal unit's duty with the building engineer during design.",
         "photos": [
-          { "src": "storefront-base", "w": 1400, "h": 607, "alt": "Granite storefront base at a curved corner with drilled holes and failed sealant at the pavement", "caption": "Granite base at the corner: drilled holes, failed sealant at the pavement line." }
+          { "src": "lobby", "w": 788, "h": 1400, "alt": "Art-Deco office building lobby corridor with terrazzo floor", "caption": "The building lobby the unit opens onto." }
         ]
       }
     ],
-    "also": "Also on the list: water damage under the bar, restrooms that fall short of current accessibility standards, and a full kitchen exhaust system the new format doesn't need. Removing it frees up floor space, but some of that equipment is leased, so ownership has to be checked first. We also identified the 2007 permit set as this space and traced the fourteen missing mechanical, electrical and plumbing sheets to a records request rather than another visit.",
-    "delivered": "Within the week, the client had a narrative report, a 3D walkthrough, a nameplate-level equipment register and a prioritised list of six cost items to price before signing."
+    "also": "We also identified the original 2007 permit set as this space, which gave the design team a reliable base drawing from day one, and traced the mechanical, electrical and plumbing sheets that weren't in the pack to a simple records request.",
+    "delivered": "Within the week, the client had a narrative report, a 3D walkthrough, a nameplate-level equipment register and a fit-out plan matched to their brand standards."
   }
 ]
