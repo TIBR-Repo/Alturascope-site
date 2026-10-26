@@ -1,6 +1,9 @@
 ---
 import Layout from "../../layouts/Layout.astro";
 import locations from "../../data/locations.json";
+import stories from "../../data/location-stories.json";
+
+const storySlugs = new Set(stories.map((s) => s.slug));
 
 const schema = JSON.stringify({
   "@context": "https://schema.org",
@@ -90,8 +93,9 @@ const breadcrumbSchema = JSON.stringify({
           names; those don&rsquo;t appear here and never will.
         </p>
         <p class="mt-4 text-midgrey text-[0.95rem] leading-relaxed">
-          Locations are identified by centre or street only. Occupiers, suite numbers, lease
-          details and survey findings stay confidential to the client who commissioned them.
+          Locations are identified by centre or street only. Occupiers, suite numbers and lease
+          details stay confidential to the client who commissioned them. Where a card opens a
+          site story, the findings have been anonymised first.
         </p>
       </div>
     </div>
@@ -152,23 +156,37 @@ const breadcrumbSchema = JSON.stringify({
       </div>
 
       <ul class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 list-none p-0 m-0">
-        {locations.map((loc) => (
-          <li class="card overflow-hidden">
-            <img
-              src={"/Images/locations/" + loc.slug + ".webp"}
-              alt={loc.label + " - commercial site surveyed by Alturascope"}
-              width={loc.w}
-              height={loc.h}
-              loading="lazy"
-              decoding="async"
-              class="w-full h-[220px] object-cover"
-            />
-            <div class="p-5">
-              <h3 class="text-navy font-medium leading-snug">{loc.label}</h3>
-              <p class="mt-1.5 text-midgrey text-[0.85rem]">{loc.kind}</p>
-            </div>
-          </li>
-        ))}
+        {locations.map((loc) => {
+          const card = (
+            <>
+              <img
+                src={"/Images/locations/" + loc.slug + ".webp"}
+                alt={loc.label + " - commercial site surveyed by Alturascope"}
+                width={loc.w}
+                height={loc.h}
+                loading="lazy"
+                decoding="async"
+                class="w-full h-[220px] object-cover"
+              />
+              <div class="p-5">
+                <h3 class="text-navy font-medium leading-snug">{loc.label}</h3>
+                <p class="mt-1.5 text-midgrey text-[0.85rem]">{loc.kind}</p>
+                {storySlugs.has(loc.slug) && (
+                  <p class="mt-3 text-navy text-[0.85rem] font-medium">
+                    <span class="border-b border-gold pb-0.5">What we found &rarr;</span>
+                  </p>
+                )}
+              </div>
+            </>
+          );
+          return storySlugs.has(loc.slug) ? (
+            <li class="card overflow-hidden ring-1 ring-gold/60 hover:shadow-lg transition-shadow">
+              <a href={`/work/locations/${loc.slug}/`} class="block">{card}</a>
+            </li>
+          ) : (
+            <li class="card overflow-hidden">{card}</li>
+          );
+        })}
       </ul>
     </div>
   </section>

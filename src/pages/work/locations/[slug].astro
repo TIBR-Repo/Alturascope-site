@@ -1,0 +1,166 @@
+---
+/**
+ * A site story behind a card on /work/locations/.
+ *
+ * Same naming rule as the gallery: centre or street plus state only. Never the
+ * occupier, the suite or the client. Photos are vetted for signage, branding
+ * and people before they go in, and cropped where a window shows the tenant.
+ */
+import Layout from "../../../layouts/Layout.astro";
+import locations from "../../../data/locations.json";
+import stories from "../../../data/location-stories.json";
+
+export function getStaticPaths() {
+  return stories.map((story) => ({ params: { slug: story.slug }, props: { story } }));
+}
+
+const { story } = Astro.props;
+const loc = locations.find((l) => l.slug === story.slug)!;
+const url = `https://alturascope.com/work/locations/${story.slug}/`;
+const img = (name: string) => `/Images/locations/stories/${story.slug}/${name}`;
+
+const schema = JSON.stringify({
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": story.h1,
+  "description": story.description,
+  "image": `https://alturascope.com/Images/locations/${story.slug}.webp`,
+  "author": { "@id": "https://alturascope.com/#organization" },
+  "publisher": { "@id": "https://alturascope.com/#organization" },
+  "datePublished": story.published,
+  "dateModified": story.published,
+  "mainEntityOfPage": url,
+  "contentLocation": { "@type": "Place", "name": loc.label },
+});
+
+const breadcrumbSchema = JSON.stringify({
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", position: 1, name: "Home", item: "https://alturascope.com/" },
+    { "@type": "ListItem", position: 2, name: "The Standard", item: "https://alturascope.com/work/" },
+    { "@type": "ListItem", position: 3, name: "Locations", item: "https://alturascope.com/work/locations/" },
+    { "@type": "ListItem", position: 4, name: loc.label, item: url },
+  ],
+});
+---
+
+<Layout
+  title={`${loc.label} | Site Survey | Alturascope`}
+  description={story.description}
+  canonical={url}
+  ogImage={`/Images/locations/${story.slug}.webp`}
+  schema={schema}
+  breadcrumbSchema={breadcrumbSchema}
+>
+  <section class="bg-navy pt-32 pb-16 md:pt-40 md:pb-20">
+    <div class="max-w-[1100px] mx-auto px-6">
+      <p class="text-[0.9rem] mb-6">
+        <a href="/work/locations/" class="text-offwhite/60 hover:text-offwhite transition-colors">&larr; All locations</a>
+      </p>
+      <p class="label mb-5">{loc.label}</p>
+      <h1 class="text-[1.9rem] md:text-[2.6rem] font-light text-offwhite leading-tight max-w-[24ch]">
+        {story.h1}
+      </h1>
+      <p class="mt-6 text-offwhite/70 leading-relaxed max-w-2xl">{story.summary}</p>
+
+      <div class="mt-12 grid grid-cols-2 md:grid-cols-4 gap-8 md:gap-4">
+        {story.stats.map((s) => (
+          <div>
+            <p class="text-[1.6rem] md:text-[1.85rem] font-light text-offwhite leading-tight">{s.value}</p>
+            <p class="text-[0.68rem] font-medium uppercase tracking-[0.12em] text-gold mt-2 leading-snug">{s.label}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="bg-offwhite">
+    <div class="max-w-[1100px] mx-auto px-6 -mt-px">
+      <img
+        src={`/Images/locations/${story.slug}.webp`}
+        alt={`${loc.label} - commercial site surveyed by Alturascope`}
+        width={loc.w}
+        height={loc.h}
+        loading="eager"
+        fetchpriority="high"
+        decoding="async"
+        class="w-full h-auto"
+      />
+      <p class="mt-3 pb-2 text-midgrey text-[0.8rem]">{story.kicker}</p>
+    </div>
+  </section>
+
+  <section class="bg-offwhite section-padding">
+    <div class="max-w-[1100px] mx-auto px-6">
+      <p class="label mb-4">What We Found</p>
+      <h2 class="text-[1.8rem] md:text-[2.1rem] font-light text-navy leading-tight">
+        The things a listing doesn&rsquo;t tell you.
+      </h2>
+
+      <div class="mt-12 space-y-16 md:space-y-20">
+        {story.findings.map((f, i) => (
+          <article class="grid lg:grid-cols-[1fr_1.15fr] gap-8 lg:gap-14 items-start">
+            <div class={i % 2 === 1 ? "lg:order-2" : ""}>
+              <p class="text-gold text-[0.95rem] tabular-nums">{String(i + 1).padStart(2, "0")}</p>
+              <h3 class="mt-2 text-[1.3rem] md:text-[1.45rem] font-light text-navy leading-snug">{f.title}</h3>
+              <p class="mt-4 text-midgrey leading-relaxed">{f.body}</p>
+              <div class="mt-6 border-l-2 border-gold pl-5">
+                <p class="label mb-1.5">What we recommended</p>
+                <p class="text-navy leading-relaxed">{f.action}</p>
+              </div>
+            </div>
+            <div class={`grid gap-4 ${f.photos.length > 1 ? "sm:grid-cols-[0.6fr_1fr] items-end" : ""}`}>
+              {f.photos.map((p) => (
+                <figure class="m-0">
+                  <img
+                    src={img(`${p.src}.webp`)}
+                    srcset={`${img(`${p.src}-700w.webp`)} 700w, ${img(`${p.src}.webp`)} 1400w`}
+                    sizes="(min-width: 1024px) 560px, 100vw"
+                    alt={p.alt}
+                    width={p.w}
+                    height={p.h}
+                    loading="lazy"
+                    decoding="async"
+                    class="w-full h-auto max-h-[560px] object-cover bg-navy"
+                  />
+                  <figcaption class="mt-2.5 text-midgrey text-[0.8rem] leading-relaxed">{p.caption}</figcaption>
+                </figure>
+              ))}
+            </div>
+          </article>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="bg-white section-padding">
+    <div class="max-w-[900px] mx-auto px-6">
+      <p class="text-midgrey leading-relaxed">{story.also}</p>
+      <div class="mt-10 bg-navy p-8 md:p-10">
+        <p class="label mb-3">Delivered</p>
+        <p class="text-offwhite text-[1.15rem] md:text-[1.3rem] font-light leading-snug">{story.delivered}</p>
+      </div>
+      <p class="mt-8 text-midgrey/80 text-[0.85rem] leading-relaxed">
+        Anonymised by design. The street is named and nothing else: no occupier, suite, client or
+        lease details. Photographs are cropped to keep tenants&rsquo; branding out of frame.
+      </p>
+    </div>
+  </section>
+
+  <section class="bg-offwhite section-padding">
+    <div class="max-w-[760px] mx-auto px-6 text-center">
+      <h2 class="text-[1.8rem] md:text-[2.1rem] font-light text-navy leading-tight">
+        Know what you&rsquo;re signing.
+      </h2>
+      <p class="mt-6 text-midgrey leading-relaxed">
+        One visit, before the lease, and the costs a listing leaves out are on the table while
+        they can still be negotiated.
+      </p>
+      <div class="mt-10 flex flex-wrap gap-4 justify-center">
+        <a href="/contact/" class="btn-primary">Discuss a survey</a>
+        <a href="/work/locations/" class="btn-secondary">Back to all locations</a>
+      </div>
+    </div>
+  </section>
+</Layout>
