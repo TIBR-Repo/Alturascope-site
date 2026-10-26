@@ -8,6 +8,17 @@ interface FaqItem {
   answer: string;
 }
 
+interface ExtraSection {
+  label?: string;
+  h2: string;
+  /** Paragraphs, as HTML strings. */
+  p?: string[];
+  /** Gold-ruled list: [term, description as HTML]. */
+  points?: [string, string][];
+  /** Paragraphs after the list, as HTML strings. */
+  after?: string[];
+}
+
 interface Props {
   title: string;
   description: string;
@@ -21,6 +32,8 @@ interface Props {
   whatWeDocumentBody: string;
   whatYouReceiveBody: string;
   whoThisIsForBody: string;
+  /** Optional sections rendered after "Who this is for". */
+  extraSections?: ExtraSection[];
   faqs: FaqItem[];
   internalLinks: { text: string; href: string }[];
   /** One sentence tying this page's subject to pricing. */
@@ -42,6 +55,7 @@ const {
   whatWeDocumentBody,
   whatYouReceiveBody,
   whoThisIsForBody,
+  extraSections = [],
   faqs,
   internalLinks,
   estimatingLead = "Once the building is documented, the next question is what the work costs.",
@@ -149,6 +163,34 @@ const faqSchema = JSON.stringify({
         <p class="mt-6 text-midgrey leading-body" set:html={whoThisIsForBody} />
       </div>
     </section>
+
+    {extraSections.map((x, i) => (
+      <section class={i % 2 === 0 ? "bg-white section-padding" : "bg-offwhite section-padding"}>
+        <div class="max-w-[900px] mx-auto px-6">
+          {x.label && <p class="label text-gold mb-4">{x.label}</p>}
+          <h2 class="text-[2rem] font-light text-navy leading-tight" set:html={x.h2} />
+          {x.p && (
+            <div class="mt-6 space-y-4 text-midgrey leading-body">
+              {x.p.map((para) => <p set:html={para} />)}
+            </div>
+          )}
+          {x.points && (
+            <div class="mt-8 space-y-4 pl-6 border-l-2 border-gold">
+              {x.points.map(([term, desc]) => (
+                <p class="text-midgrey leading-body">
+                  <span class="text-navy font-medium" set:html={term} /> &mdash; <Fragment set:html={desc} />
+                </p>
+              ))}
+            </div>
+          )}
+          {x.after && (
+            <div class="mt-8 space-y-4 text-midgrey leading-body">
+              {x.after.map((para) => <p set:html={para} />)}
+            </div>
+          )}
+        </div>
+      </section>
+    ))}
 
     <!-- How it works -->
     <section class="bg-white section-padding">
