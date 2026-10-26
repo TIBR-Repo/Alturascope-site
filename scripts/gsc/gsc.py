@@ -76,6 +76,10 @@ WATCHED = [
     "/insights/what-a-mall-landlord-controls-in-a-fit-out/",
     "/insights/grease-power-water-food-unit-fit-out/",
     "/insights/converting-an-office-suite-into-an-aba-clinic/",
+    # Rewritten 2026-10-26 after Google crawled and declined to index them
+    "/insights/data-centre-survey-uk-expansion-compliance/",
+    "/insights/multi-site-survey-programmes-uk/",
+    "/insights/what-should-a-professional-site-survey-include/",
 ]
 
 # Terms the overhaul was aimed at. `queries` groups against these.

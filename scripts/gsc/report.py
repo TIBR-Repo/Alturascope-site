@@ -106,6 +106,46 @@ def delta(now, was, key, better_when_lower=False):
     return f"  ({d:+,.1f} {arrow})"
 
 
+VYNTWORKS = "https://vyntworks.com/"
+
+
+def vyntworks_section(svc, state: dict) -> list[str]:
+    """Headline numbers for vyntworks.com, which the same service account can
+    read since 2026-10-26. Kept short: totals against the last run, the queries
+    that matter, and any sitemap URL Google has not indexed."""
+    start, end = gsc.daterange(28)
+    q = lambda dims, n=25: svc.searchanalytics().query(siteUrl=VYNTWORKS, body={
+        "startDate": start, "endDate": end, "dimensions": dims, "rowLimit": n}).execute().get("rows", [])
+    tot = (q([]) or [{"clicks": 0, "impressions": 0, "ctr": 0, "position": 0}])[0]
+    was = state.get("vyntworks", {})
+    L = [f"## Vyntworks, 28 days to {end}\n", "| metric | value | vs last run |", "| --- | --- | --- |"]
+    L.append(f"| clicks | {tot['clicks']:.0f} |{delta(tot['clicks'], was.get('clicks'), 'clicks') or ' -'} |")
+    L.append(f"| impressions | {tot['impressions']:.0f} |{delta(tot['impressions'], was.get('impressions'), 'impressions') or ' -'} |")
+    L.append(f"| avg position | {tot['position']:.1f} |{delta(tot['position'], was.get('position'), 'pos', better_when_lower=True) or ' -'} |")
+    L.append("")
+    rows = sorted(q(["query"], 200), key=lambda r: -r["impressions"])[:12]
+    if rows:
+        L += ["| query | clicks | impressions | position |", "| --- | --- | --- | --- |"]
+        L += [f"| {r['keys'][0]} | {r['clicks']:.0f} | {r['impressions']:.0f} | {r['position']:.1f} |" for r in rows]
+        L.append("")
+    import re, urllib.request
+    try:
+        sm = urllib.request.urlopen(urllib.request.Request(VYNTWORKS + "sitemap.xml", headers={"User-Agent": "Mozilla/5.0 (alturascope-seo-report)"}), timeout=60).read().decode()
+        missing = []
+        for u in re.findall(r"<loc>([^<]+)</loc>", sm):
+            r = svc.urlInspection().index().inspect(body={"inspectionUrl": u, "siteUrl": VYNTWORKS}).execute()
+            s = r["inspectionResult"]["indexStatusResult"]
+            if s.get("verdict") != "PASS":
+                missing.append(f"- {u} - {s.get('coverageState')}")
+        L.append(f"**Not indexed: {len(missing)}**\n")
+        L += missing
+        L.append("")
+    except Exception as e:  # inspection quota or network - the totals still stand
+        L.append(f"_Index check skipped: {e}_\n")
+    state["vyntworks"] = {k: tot[k] for k in ("clicks", "impressions", "position")}
+    return L
+
+
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--quick", action="store_true", help="index status only")
@@ -187,6 +227,8 @@ def main():
             L.append("```\n")
         else:
             L.append(f"_Not available yet: {reason}_\n")
+
+        L += vyntworks_section(svc, state)
 
         state["totals"] = {k: t[k] for k in ("clicks", "impressions", "ctr", "position")}
         state["themes"] = th
