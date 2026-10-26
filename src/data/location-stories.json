@@ -2,15 +2,44 @@
   {
     "slug": "new-york-avenue-washington-dc",
     "published": "2026-10-26",
+    "title": "Restaurant Space Survey, New York Ave, DC | Alturascope",
+    "aboutHeading": "Pre-lease survey of a restaurant space in downtown Washington, DC",
+    "about": "This was a pre-lease site survey of a second-generation restaurant space in a downtown Washington, DC office building, carried out for a national food and beverage brand. In one visit we documented the electrical service, step-down transformer and panel schedules, the kitchen exhaust and fire suppression, the base-building heating and chilled water, plumbing and grease routes, and every room in 3D, then measured it all against the brand's prototype standards. The result was a clear picture of what the space already gives a restaurant fit-out and what the fit-out has to add.",
+    "services": [
+      {
+        "href": "/services/qsr-restaurant-survey/",
+        "label": "Restaurant and QSR site surveys"
+      },
+      {
+        "href": "/services/commercial-kitchen-survey/",
+        "label": "Commercial kitchen surveys"
+      },
+      {
+        "href": "/services/northeast-site-surveys/",
+        "label": "Northeast site surveys"
+      }
+    ],
     "kicker": "Second-generation restaurant unit · Washington, DC · Surveyed August 2026",
     "h1": "On paper the power fell short. The nameplates said otherwise.",
     "description": "A corner restaurant unit on New York Avenue, DC, matched to a national brand's format: power, plant and access read from the building itself.",
     "summary": "A national food and beverage brand was considering a corner restaurant unit in an Art-Deco office building on New York Avenue. The question wasn't whether the space was good. It was what their format would need from it, and what the space already had to give. One visit answered that.",
     "stats": [
-      { "value": "~2,500", "label": "Square feet" },
-      { "value": "1", "label": "Site visit" },
-      { "value": "490+", "label": "Photos taken" },
-      { "value": "1 week", "label": "Visit to report" }
+      {
+        "value": "~2,500",
+        "label": "Square feet"
+      },
+      {
+        "value": "1",
+        "label": "Site visit"
+      },
+      {
+        "value": "490+",
+        "label": "Photos taken"
+      },
+      {
+        "value": "1 week",
+        "label": "Visit to report"
+      }
     ],
     "findings": [
       {
@@ -18,7 +47,13 @@
         "body": "The unit has a 400 A service at 480 V, which is more capacity than the brand's standard asks for, and the panel directory showed plenty of spare ways. Everything at 208 V passes through a single step-down transformer sized for the previous use, and reading its rating plate is what pinned that down.",
         "action": "A larger step-down transformer and a new 208 V board, fed from the spare capacity already there. A far smaller job than a new utility service.",
         "photos": [
-          { "src": "transformer", "w": 1176, "h": 1400, "alt": "Dry-type step-down transformer in the electrical room with its rating plate", "caption": "The step-down transformer, read from its plate." }
+          {
+            "src": "transformer",
+            "w": 1176,
+            "h": 1400,
+            "alt": "Dry-type step-down transformer in the electrical room with its rating plate",
+            "caption": "The step-down transformer, read from its plate."
+          }
         ]
       },
       {
@@ -26,7 +61,13 @@
         "body": "The space carries a complete, ducted, roof-discharging kitchen hood with fire suppression and a dedicated plant room, all maintained and in service. The brand's format needs none of it. Taking it out frees floor area and a plant room on a compact unit, and clears the gas load entirely.",
         "action": "Plan the decommissioning into the fit-out, and confirm which items belong to the outgoing tenant or an equipment lessor before anything is removed.",
         "photos": [
-          { "src": "hood", "w": 1400, "h": 403, "alt": "Stainless steel kitchen hood canopy with fire suppression nozzles", "caption": "Hood canopy with its suppression nozzles." }
+          {
+            "src": "hood",
+            "w": 1400,
+            "h": 403,
+            "alt": "Stainless steel kitchen hood canopy with fire suppression nozzles",
+            "caption": "Hood canopy with its suppression nozzles."
+          }
         ]
       },
       {
@@ -34,11 +75,921 @@
         "body": "The unit opens directly into the building's lobby, so it draws office footfall as well as street trade. It is also served by the base building's heating and chilled water, so there is no rooftop equipment to replace and no roof access to negotiate.",
         "action": "Treat the lobby door as a second frontage in the layout, and confirm the terminal unit's duty with the building engineer during design.",
         "photos": [
-          { "src": "lobby", "w": 788, "h": 1400, "alt": "Art-Deco office building lobby corridor with terrazzo floor", "caption": "The building lobby the unit opens onto." }
+          {
+            "src": "lobby",
+            "w": 788,
+            "h": 1400,
+            "alt": "Art-Deco office building lobby corridor with terrazzo floor",
+            "caption": "The building lobby the unit opens onto."
+          }
         ]
       }
     ],
     "also": "We also identified the original 2007 permit set as this space, which gave the design team a reliable base drawing from day one, and traced the mechanical, electrical and plumbing sheets that weren't in the pack to a simple records request.",
     "delivered": "Within the week, the client had a narrative report, a 3D walkthrough, a nameplate-level equipment register and a fit-out plan matched to their brand standards."
+  },
+  {
+    "slug": "fifth-avenue-new-york",
+    "published": "2026-10-26",
+    "title": "Cold Shell Retail Survey, Fifth Avenue, NYC | Alturascope",
+    "aboutHeading": "Pre-lease survey of a cold shell retail space on Fifth Avenue, New York",
+    "about": "This was a pre-lease site survey and MEP due diligence of a ground-floor cold shell retail space in a Midtown Manhattan office tower, carried out for a national café operator. In one visit we traced the electrical allocation back to the base-building switchboard in the cellar, read every pipe label and nameplate in the space, opened the wall chases, followed the planned utility routes on the level below and captured the whole shell in 360. The result was an existing-conditions record that showed exactly where a first fit-out would start from, measured against the brand's prototype standards.",
+    "services": [
+      {
+        "href": "/services/qsr-restaurant-survey/",
+        "label": "Restaurant and QSR site surveys"
+      },
+      {
+        "href": "/services/pre-construction-site-intelligence/",
+        "label": "Pre-construction site intelligence"
+      },
+      {
+        "href": "/services/northeast-site-surveys/",
+        "label": "Northeast site surveys"
+      }
+    ],
+    "kicker": "Cold shell, stripped to structure · New York, NY · Surveyed September 2026",
+    "h1": "An empty shell on Fifth Avenue, with more already in it than the brief said.",
+    "description": "A cold shell retail space on Fifth Avenue, New York, surveyed for a national brand: spare power, labeled pipework and a waste stack found in one visit.",
+    "summary": "A growing café chain was looking at a ground-floor cold shell in a Midtown office tower, a few steps from Fifth Avenue. The leasing brief said there was no MEP at all, with utilities to be brought up from the level below. The brand needed to know what a first fit-out would really involve. One visit showed the starting point was a good deal further along than the paperwork suggested.",
+    "stats": [
+      {
+        "value": "3,264",
+        "label": "Rentable square feet"
+      },
+      {
+        "value": "1",
+        "label": "Site visit"
+      },
+      {
+        "value": "260",
+        "label": "Photos taken"
+      },
+      {
+        "value": "2 × 200 A",
+        "label": "Spare switches at 480 V"
+      }
+    ],
+    "findings": [
+      {
+        "title": "The power was already waiting in the cellar. Twice over.",
+        "body": "Two spare 200 A, 480 V fused switches on the building's main switchboard are allocated to the space. The brand's standard of 400 A at 208 V works out to about 173 A at 480 V, so one switch covers the whole requirement and the second is headroom. Reading the switchboard labels in the cellar is what turned a line in a leasing email into a number the design team could use.",
+        "action": "Two 75 kVA step-down transformers, one on each switch, and a 480 V feeder up from the cellar. Agree where the transformers sit early, before the layout is fixed.",
+        "photos": [
+          {
+            "src": "spare-switch",
+            "w": 1215,
+            "h": 1400,
+            "alt": "Blue base-building switchboard with a 200 A, 480 V fused switch and its feeder label",
+            "caption": "One of the two spare 200 A switches, read at the switchboard."
+          }
+        ]
+      },
+      {
+        "title": "The brief said condenser water. The pipe labels said there was more.",
+        "body": "At high level inside the space, a five-pipe bank carries the building's own markers: drain, condenser water supply and return, and a dual-temperature supply and return. That second pair is the building's changeover heating and cooling loop, and it was not in the brief. For a format that wants two zones of heating and cooling, it is a better starting point than condenser water alone.",
+        "action": "Ask the landlord which loops the tenant may use, and at what capacity, before the HVAC design starts. The space has one street elevation, so agree the outside-air and exhaust routes at the same time.",
+        "photos": [
+          {
+            "src": "services-bank",
+            "w": 1400,
+            "h": 876,
+            "alt": "Five insulated pipes at high level with green markers reading drain, condenser water and dual temp supply and return",
+            "caption": "The labeled five-pipe services bank."
+          },
+          {
+            "src": "cold-shell",
+            "w": 1400,
+            "h": 1112,
+            "alt": "Stripped retail shell with exposed concrete beams and ductwork, looking toward the glazed storefront",
+            "caption": "The shell, looking toward the storefront."
+          }
+        ]
+      },
+      {
+        "title": "A waste stack inside the wall, not two floors of coring away.",
+        "body": "A built-out section of the demising wall looked like it was hiding pipework. Behind a hinged access door we found a cast-iron stack with cleanouts, plus domestic-size piping, rising through the floor. The planned water and waste route from the level below is also there and documented, so the plumbing design now has two options to choose from.",
+        "action": "Ask the landlord to confirm the stack's size and service and whether the tenant may connect to it. Get the slab thickness at any core locations before pricing the plumbing.",
+        "photos": [
+          {
+            "src": "riser-stack",
+            "w": 1400,
+            "h": 927,
+            "alt": "Open access panel showing a cast-iron stack with round cleanouts and smaller pipes and conduit",
+            "caption": "Behind the access door: the stack and its cleanouts."
+          }
+        ]
+      }
+    ],
+    "also": "A sprinkler main with heads already runs through the space, and the cellar riser carries a valved feed tagged for future first-floor retail. The brand's format needs no hood, no gas and no grease interceptor, which suits a cold shell that has none of them.",
+    "delivered": "The client received a narrative report with a brand-standards gap analysis, two 360 walkthrough videos of the shell and the utility route below it, and a nameplate-level equipment register."
+  },
+  {
+    "slug": "berkeley-way",
+    "published": "2026-10-26",
+    "title": "Retail Shell Survey, Berkeley Way, Berkeley, CA | Alturascope",
+    "aboutHeading": "Pre-lease survey of a first-generation retail shell in Berkeley, California",
+    "about": "This was a pre-lease site survey and MEP due diligence of a never-occupied, first-generation retail shell on the ground floor of a 2018 building on Berkeley Way, carried out for a hospitality brand. In one visit we measured the space, documented every capped service stub and label, opened the tenant panel, followed the water service back to the building entry and read the base-building record drawings on site. The result was an existing-conditions record that tied what is physically in the shell to what the building was designed to give it.",
+    "services": [
+      {
+        "href": "/services/qsr-restaurant-survey/",
+        "label": "Restaurant and QSR site surveys"
+      },
+      {
+        "href": "/services/retail-rollout-documentation/",
+        "label": "Retail rollout documentation"
+      },
+      {
+        "href": "/services/west-coast-site-surveys/",
+        "label": "West Coast site surveys"
+      }
+    ],
+    "kicker": "First-generation retail shell in an office building · Berkeley, CA · Surveyed August 2026",
+    "h1": "Never occupied, but built with a food tenant in mind.",
+    "description": "A never-occupied retail shell on Berkeley Way, Berkeley, CA, surveyed for a national brand: capped water, vent and air provisions traced to the drawings.",
+    "summary": "An expanding food and beverage operator was considering a ground-floor retail suite beside a building's main entrance on Berkeley Way. The space had never been occupied, and at first glance there was nothing in it: no lighting, no power, no restrooms. The brand needed to know how far a fit-out would have to start from zero. One visit, and the record drawings read on site, showed the shell had been planned for a food tenant from the start.",
+    "stats": [
+      {
+        "value": "~1,500",
+        "label": "Square feet"
+      },
+      {
+        "value": "17'-9\"",
+        "label": "Floor to deck"
+      },
+      {
+        "value": "126",
+        "label": "Photos taken"
+      },
+      {
+        "value": "1",
+        "label": "Site visit"
+      }
+    ],
+    "findings": [
+      {
+        "title": "A tall, bright, empty room with glass on two sides.",
+        "body": "The suite is about 45 by 37 feet under an exposed concrete waffle deck nearly 18 feet up, with tall double-glazed windows to the street, clerestory glazing above, and a glazed wall onto the building lobby. The polished concrete floor is flat and good enough to keep as a finished floor. Nothing has to be stripped out before work starts.",
+        "action": "Use the height and the lobby glazing in the layout, and treat the polished slab as a finish rather than something to cover.",
+        "photos": [
+          {
+            "src": "storefront",
+            "w": 1400,
+            "h": 647,
+            "alt": "Empty retail shell with tall storefront windows, clerestory glazing and a polished concrete floor",
+            "caption": "The storefront wall from inside the shell."
+          }
+        ]
+      },
+      {
+        "title": "Water, waste, air and heat were all capped and waiting.",
+        "body": "Labeled heating hot water and domestic cold water run through the space, with valved copper stubs and a capped supply-air trunk. The record drawings, photographed on site, show a 2-inch cold water stub for future retail, which beats the brand's 1½-inch standard, a capped 3-inch vent and waste provision, supply air balanced to 600 CFM, and make-up air and exhaust louver provisions in the envelope.",
+        "action": "Design the plumbing and ventilation around the provisions already there, and confirm stub locations and sizes on site as the first step of design.",
+        "photos": [
+          {
+            "src": "capped-services",
+            "w": 1400,
+            "h": 647,
+            "alt": "Insulated pipes labeled heating hot return, heating hot supply and domestic cold water beside a capped supply-air duct",
+            "caption": "Labeled heating and cold water runs beside the capped supply-air trunk."
+          }
+        ]
+      },
+      {
+        "title": "A clean tenant panel on the wall. The allocation behind it was the one question left.",
+        "body": "In the rear service area sits a 150 A, 208 V tenant panel with all 42 spaces still blanked off. What the panel lacked was paperwork: how much of the building's capacity is set aside for this suite was not recorded on site. The suite next door gave a clear template, with a 480 V feed through a 112.5 kVA transformer to a 400 A board.",
+        "action": "Ask the landlord to confirm the feed to the panel and the capacity reserved for the suite, using the neighboring setup as the reference, before sizing any equipment.",
+        "photos": [
+          {
+            "src": "tenant-panel",
+            "w": 740,
+            "h": 1400,
+            "alt": "Open grey tenant electrical panel with all branch spaces blanked and a 150 A main breaker",
+            "caption": "The unused 150 A tenant panel."
+          }
+        ]
+      }
+    ],
+    "also": "The record drawings also show a 3-inch gas provision to the future retail spaces, which the brand does not need but which adds to the suite's value. Building restrooms and showers sit directly behind the rear wall, so drainage runs are short.",
+    "delivered": "The client received a narrative report, a register of every service provision found in the shell, and the full photo record organized by system."
+  },
+  {
+    "slug": "bellevue-square",
+    "published": "2026-10-26",
+    "title": "Mall Cafe Unit Survey, Bellevue Square, WA | Alturascope",
+    "description": "Two mall suites at Bellevue Square, Bellevue WA, surveyed overnight to become one ~3,330 SF cafe: power, cooling and frontage read from the building.",
+    "kicker": "Two in-line mall suites · Bellevue, WA · Surveyed August 2026",
+    "h1": "Two suites, two meters, one flagship. The plates showed how they fit.",
+    "summary": "A national café brand wanted to join two neighboring suites at Bellevue Square into a single flagship of about 3,330 square feet. One suite was still trading, so we surveyed overnight. The brand needed to know how two separate sets of power, cooling and plumbing would add up to one store. One visit gave them that answer, plate by plate.",
+    "stats": [
+      {
+        "value": "~3,330",
+        "label": "Square feet combined"
+      },
+      {
+        "value": "1",
+        "label": "Overnight site visit"
+      },
+      {
+        "value": "300+",
+        "label": "Photos taken"
+      },
+      {
+        "value": "~18.5 t",
+        "label": "Cooling across three systems"
+      }
+    ],
+    "findings": [
+      {
+        "title": "Two services metered two different ways, both with room to spare.",
+        "body": "The suites don't share a meter. One buys power on its own utility meter from a 600 A feeder. The other is fed from the house system and settled by a submeter. Reading the switchboard, the panel directories and the transformer plates showed real headroom in both services on paper.",
+        "action": "Build the combined load model from the field data, and settle the metering approach with the landlord early, because it shapes the whole one-line diagram.",
+        "photos": [
+          {
+            "src": "transformer",
+            "w": 1400,
+            "h": 937,
+            "alt": "Eaton dry-type step-down transformer above the ceiling with its rating plate",
+            "caption": "A 2016 step-down transformer, read from its plate."
+          }
+        ]
+      },
+      {
+        "title": "About 18.5 tons of cooling for 3,330 square feet.",
+        "body": "Between them the suites run three systems: a packaged rooftop unit, a split system for the back of house, and a 2017 heat pump with a ceiling fan coil. On the roof, the packaged unit looked like mall plant. The 2016 record drawings traced it to the suite, which changed the cooling picture for the better.",
+        "action": "Confirm the rooftop unit's plate through the landlord's mechanical contractor, then plan the combined store's zoning around equipment already in place.",
+        "photos": [
+          {
+            "src": "roof-plant",
+            "w": 1400,
+            "h": 647,
+            "alt": "Rooftop HVAC plant with heat pump, condenser and exhaust fan on a mall roof",
+            "caption": "Tenant plant on the mall roof."
+          }
+        ]
+      },
+      {
+        "title": "Already half-joined, with a frontage on the street and one on the mall.",
+        "body": "The two suites already share a back of house, so the merge follows lines the building has drawn. The combined store gets a street arcade frontage and a mall concourse frontage. The vacant suite is a clean, bright box, and its 2016 walk-in cooler is a matched pair with its condensing unit.",
+        "action": "Treat both frontages as entrances in the layout, and service and reuse the walk-in cooler rather than buy new.",
+        "photos": [
+          {
+            "src": "vacant-suite",
+            "w": 1400,
+            "h": 1011,
+            "alt": "Vacant in-line mall suite with lit ceiling and full-height storefront glazing",
+            "caption": "The vacant suite, looking toward the street glazing."
+          }
+        ]
+      }
+    ],
+    "aboutHeading": "Pre-lease survey of two mall suites in Bellevue, Washington",
+    "about": "This was a pre-lease site survey and MEP due diligence of two in-line suites at Bellevue Square, an enclosed mall in Bellevue, Washington, for a restaurant client planning to combine them. Working overnight, we documented the electrical services, panel directories and transformers, the rooftop and above-ceiling HVAC plant, water meters, water heaters, grease interceptors, life safety and both storefronts. We checked the field findings against the 2016 record drawings, so the existing conditions were tied to paper as well as photos.",
+    "also": "Both suites have metered water services and in-slab grease interceptors, and the sprinkler and fire alarm systems carried current 2026 inspection tags.",
+    "delivered": "The client received a narrative site survey report, a pricing considerations note for the cost plan and a nameplate-level equipment register.",
+    "services": [
+      {
+        "href": "/services/qsr-restaurant-survey/",
+        "label": "Restaurant and QSR site surveys"
+      },
+      {
+        "href": "/services/retail-rollout-documentation/",
+        "label": "Retail rollout documentation"
+      },
+      {
+        "href": "/services/west-coast-site-surveys/",
+        "label": "West Coast site surveys"
+      }
+    ]
+  },
+  {
+    "slug": "jericho-turnpike-commack",
+    "published": "2026-10-26",
+    "title": "Retail Unit Survey, Jericho Turnpike, Commack NY | Alturascope",
+    "description": "Strip center retail unit on Jericho Turnpike, Commack NY, surveyed for a food and beverage fit-out: height, power and HVAC read in one visit.",
+    "kicker": "Strip-center retail unit · Commack, NY · Surveyed September 2026",
+    "h1": "Fifteen feet to the deck, and a power upgrade that stays on the switchboard.",
+    "summary": "A fast-growing quick-service brand was looking at a trading retail unit in a busy, well-parked strip center on Jericho Turnpike. Their format needs more power, more water and more zones of cooling than a typical shop. The question was how far this unit already went toward that. One morning visit answered it, with the report in hand the same evening.",
+    "stats": [
+      {
+        "value": "~2,030",
+        "label": "Square feet"
+      },
+      {
+        "value": "1",
+        "label": "Site visit"
+      },
+      {
+        "value": "230+",
+        "label": "Photos taken"
+      },
+      {
+        "value": "Same day",
+        "label": "Visit to report"
+      }
+    ],
+    "findings": [
+      {
+        "title": "A clean, regular box with plenty of height.",
+        "body": "The unit is about 24 by 83 feet, with a full-glazed storefront and a rear door to the service drive. Above the ceiling are open-web steel joists and a metal deck. It measures 15'-1\" to the deck, 12'-2\" to the beams and 10'-0\" to the ceiling, which leaves a clear service zone for new ductwork and plumbing.",
+        "action": "Use the height. There is room for a taller feature ceiling at the front, and new services can run above the ceiling without fighting the structure.",
+        "photos": [
+          {
+            "src": "roof-structure",
+            "w": 1194,
+            "h": 1400,
+            "alt": "Open-web steel joists and metal roof deck above a lay-in ceiling",
+            "caption": "Open-web joists and deck above the ceiling."
+          }
+        ]
+      },
+      {
+        "title": "200 A today, fed from a 2,000 A switchboard.",
+        "body": "The unit runs on a 200 A, 120/208 V three-phase service from the center's 2,000 A main switchboard, and its panel is about 60 percent empty. The brand's standard is 400 A. So the gap is a doubling of the tenant feed, not a new utility service.",
+        "action": "Request a 400 A tenant switch and metered position on the same switchboard, subject to the utility and the landlord's load allocation, and keep the existing panel as a sub-panel.",
+        "photos": [
+          {
+            "src": "switchboard",
+            "w": 1400,
+            "h": 963,
+            "alt": "Main switchboard section nameplate rated 2000 amps at 120/208 volts",
+            "caption": "The center's 2,000 A switchboard plate."
+          },
+          {
+            "src": "tenant-panel",
+            "w": 988,
+            "h": 1400,
+            "alt": "Tenant electrical panel with most breaker spaces empty",
+            "caption": "The tenant panel, mostly spare ways."
+          }
+        ]
+      },
+      {
+        "title": "A mid-life rooftop unit that can carry one of the two zones.",
+        "body": "The unit is served by a 7.5-ton gas-fired rooftop unit built in December 2014, matched to its own breaker in the tenant panel. It has years of life left and suits a single zone. The brand's format asks for two.",
+        "action": "Keep the rooftop unit after a service inspection, and add a second unit or a zoning solution to give the format its two zones.",
+        "photos": [
+          {
+            "src": "rooftop-unit",
+            "w": 1400,
+            "h": 575,
+            "alt": "Gas-fired packaged rooftop HVAC unit on a flat roof",
+            "caption": "The 7.5-ton rooftop unit."
+          }
+        ]
+      }
+    ],
+    "aboutHeading": "Pre-lease survey of a strip center retail unit in Commack, New York",
+    "about": "This was a pre-lease site survey of an in-line retail unit in a strip shopping center on Jericho Turnpike in Commack, Long Island, New York, for a multi-site food and beverage client. In one visit we measured the shell and clear heights, traced the electrical service from the main switchboard to the tenant panel, read the rooftop unit's data plate, followed the water, waste and gas services, and captured the space in a 3D scan and 360 video. Every finding was set against the brand's standards, so the existing-conditions survey doubled as a fit-out gap list.",
+    "also": "Gas is already on site at the rear meter bank. The incoming water is about 1 inch against the format's 1½ inch, and as a retail unit it has no grease interceptor yet, so both went into the fit-out plan as standard items.",
+    "delivered": "The same evening, the client had a narrative report, a 3D walkthrough, three 360 videos and a nameplate-level equipment register.",
+    "services": [
+      {
+        "href": "/services/retail-rollout-documentation/",
+        "label": "Retail rollout documentation"
+      },
+      {
+        "href": "/services/qsr-restaurant-survey/",
+        "label": "Restaurant and QSR site surveys"
+      },
+      {
+        "href": "/services/northeast-site-surveys/",
+        "label": "Northeast site surveys"
+      }
+    ]
+  },
+  {
+    "slug": "west-diversey-parkway-chicago",
+    "published": "2026-10-26",
+    "title": "Shell Unit Survey, West Diversey Pkwy, Chicago | Alturascope",
+    "aboutHeading": "Pre-lease survey of a vacant retail shell in Lincoln Park, Chicago",
+    "about": "This was a pre-lease site survey of a vacant ground-floor retail shell in a residential tower on West Diversey Parkway, Chicago, carried out for a national café chain. In one visit we documented the electrical service, step-down transformer and tenant panel, the rooftop HVAC unit, domestic water, the basement drainage route, the frontage and every room in 3D, then measured it all against the brand's prototype standards. The client got a clear MEP due diligence picture of what the shell already provides and what the fit-out has to add.",
+    "services": [
+      {
+        "href": "/services/qsr-restaurant-survey/",
+        "label": "Restaurant and QSR site surveys"
+      },
+      {
+        "href": "/services/retail-rollout-documentation/",
+        "label": "Retail rollout documentation"
+      },
+      {
+        "href": "/services/central-us-site-surveys/",
+        "label": "Central US site surveys"
+      }
+    ],
+    "kicker": "Vacant shell unit · Chicago, Illinois · Surveyed September 2026",
+    "h1": "An empty shell that already had the two most expensive services.",
+    "description": "A vacant retail shell on West Diversey Parkway, Chicago, surveyed for a national brand: 400 A power and a 2021 rooftop unit already in place.",
+    "summary": "A national restaurant group was looking at a vacant retail shell on a busy, walkable corner in Lincoln Park. Empty shells usually mean big bills for power and air conditioning, so the real question was how much of that work was already done. One visit read the plates on every piece of plant and answered it the same day.",
+    "stats": [
+      {
+        "value": "~3,100",
+        "label": "Square feet"
+      },
+      {
+        "value": "1",
+        "label": "Site visit"
+      },
+      {
+        "value": "176",
+        "label": "Photos taken"
+      },
+      {
+        "value": "Same day",
+        "label": "Visit to report"
+      }
+    ],
+    "findings": [
+      {
+        "title": "Power was already at the brand's standard.",
+        "body": "The unit has its own 500 kVA step-down transformer feeding a 400 A, 208 V tenant panel with 40 of its 42 spaces free. That is exactly the brand's 400 A standard, with the transformer holding well over three times the capacity the tenancy needs.",
+        "action": "Adopt the existing panel as the tenant service and add a submeter or dedicated utility meter, with the landlord confirming the transformer's other connected load.",
+        "photos": [
+          {
+            "src": "main-breaker",
+            "w": 1287,
+            "h": 1400,
+            "alt": "Eaton 400 A three-pole main breaker in the tenant distribution panel",
+            "caption": "The 400 A main breaker in the tenant panel."
+          }
+        ]
+      },
+      {
+        "title": "A 20-ton rooftop unit from 2021, sitting right over the space.",
+        "body": "The roof carries a 20-ton gas/electric Carrier unit built in 2021, on its own 150 A breaker in the tenant panel. That works out to roughly 155 square feet per ton, comfortably more than the landlord's committed one ton per 250 square feet, and the flat roof around it has room for anything else the design needs.",
+        "action": "Keep the unit after a service inspection, and add zoning or a second small unit on the roof to give the brand its two-zone control.",
+        "photos": [
+          {
+            "src": "rooftop-unit",
+            "w": 1400,
+            "h": 768,
+            "alt": "Carrier packaged rooftop HVAC unit on a flat roof",
+            "caption": "The 2021 rooftop unit over the shell."
+          }
+        ]
+      },
+      {
+        "title": "A tall, open shell ready for a high-ceiling concept.",
+        "body": "Inside is a clean, dry shell with about 15 and a half feet to the deck and 13 and a half feet to the beams, so an exposed or high-ceiling design fits easily. The basement directly below has nearly 10 feet of clear height, which gives a straightforward route for new drainage and the grease line.",
+        "action": "Reopen the three blocked-up storefront bays, design the entry around the small step up from the sidewalk, and route the new drainage and grease interceptor through the basement.",
+        "photos": [
+          {
+            "src": "shell",
+            "w": 1400,
+            "h": 1047,
+            "alt": "Empty retail shell with exposed steel deck, steel column and new gypsum walls",
+            "caption": "The open shell, looking toward the new gypsum walls."
+          }
+        ]
+      }
+    ],
+    "also": "The domestic water line is already 1½-inch copper, which matches the brand's standard, and the space sits on a CTA bus route with a wide sidewalk in front.",
+    "delivered": "The same day, the client had a narrative report, a 3D walkthrough, a walkthrough video and a nameplate-level equipment register measured against their brand standards."
+  },
+  {
+    "slug": "la-centerra-katy",
+    "published": "2026-10-26",
+    "title": "Restaurant Space Survey, La Centerra, Katy, TX | Alturascope",
+    "aboutHeading": "Pre-lease survey of a restaurant space in an open-air center in Katy, Texas",
+    "about": "This was a pre-lease site survey of a second-generation restaurant space at La Centerra, an open-air retail center in Katy, Texas, carried out for a quick-service client. In one visit we documented the electrical service, step-down transformer and panels, both rooftop HVAC units, water, grease and gas, the kitchen exhaust, the space above the ceilings and every room in 3D, then measured it against the brand's prototype standards. The result was an existing-conditions picture that showed what to keep, what to remove and where the power needed to grow.",
+    "services": [
+      {
+        "href": "/services/qsr-restaurant-survey/",
+        "label": "Restaurant and QSR site surveys"
+      },
+      {
+        "href": "/services/commercial-kitchen-survey/",
+        "label": "Commercial kitchen surveys"
+      },
+      {
+        "href": "/services/central-us-site-surveys/",
+        "label": "Central US site surveys"
+      }
+    ],
+    "kicker": "Second-generation restaurant unit · Katy, Texas · Surveyed October 2026",
+    "h1": "The service was fine. The transformer set the limit.",
+    "description": "A restaurant end unit at La Centerra, Katy, TX, matched to a national brand's format: power, HVAC and ceiling height read from the building itself.",
+    "summary": "An expanding café concept was considering an end unit on the central lawn at La Centerra, with covered patios on three sides. The space was built out as a full-service restaurant, so the questions were what the brand could keep, what it could take out, and what its power standard would cost. One visit answered all three.",
+    "stats": [
+      {
+        "value": "~2,300",
+        "label": "Square feet"
+      },
+      {
+        "value": "1",
+        "label": "Site visit"
+      },
+      {
+        "value": "380+",
+        "label": "Photos taken"
+      },
+      {
+        "value": "2 days",
+        "label": "Visit to report"
+      }
+    ],
+    "findings": [
+      {
+        "title": "A 480 V service with headroom, behind a 75 kVA transformer.",
+        "body": "The unit has a 200 A, 480 V service, and the two rooftop units take only about a quarter of it. Everything at 208 V passes through a 75 kVA step-down transformer sized for the previous use, which gives about half the brand's 400 A standard. Reading the plate above the kitchen ceiling is what pinned that down.",
+        "action": "A larger transformer fits within the existing service for most layouts. If the design needs the full 400 A standard, apply to the utility and the landlord early for a service increase.",
+        "photos": [
+          {
+            "src": "transformer-plate",
+            "w": 1400,
+            "h": 1105,
+            "alt": "Square D 75 kVA step-down transformer rating plate",
+            "caption": "The step-down transformer, read from its plate."
+          }
+        ]
+      },
+      {
+        "title": "Two newer rooftop units that already give two zones.",
+        "body": "Two gas/electric rooftop units, a 15-ton unit from 2021 and a 5-ton unit from 2019, serve the space on their own breakers. That is about 113 square feet per ton, generous for the brand's format, and two units already provide the two-zone control its standard asks for.",
+        "action": "Keep both units after a service inspection and rebalance the ductwork to the new layout. Remove the kitchen exhaust fans and make-up air along with the hoods.",
+        "photos": [
+          {
+            "src": "ceiling-void",
+            "w": 1400,
+            "h": 788,
+            "alt": "Ceiling void above a restaurant with steel joists, ductwork and copper piping",
+            "caption": "Supply ductwork from the rooftop units, above the ceiling."
+          }
+        ]
+      },
+      {
+        "title": "Room for an open ceiling, and patios on three sides.",
+        "body": "The dining ceiling sits at about 12 and a half feet under a steel deck at roughly 19 feet, so the brand's exposed or high-ceiling concept is achievable once the plenum services are tidied. Outside, a steel and timber canopy covers patio seating on the front and both sides, facing the center's central lawn.",
+        "action": "Plan the heavy kitchen, both hoods and the walk-in as removal or landlord-retained items, and use the freed space and ceiling height for the new layout.",
+        "photos": [
+          {
+            "src": "patio-canopy",
+            "w": 1400,
+            "h": 788,
+            "alt": "Underside of a timber patio canopy with white steel beams and a wall fan",
+            "caption": "The timber canopy over the patios."
+          }
+        ]
+      }
+    ],
+    "also": "The water service is already 1½-inch copper with its own sub-meter, matching the brand's standard, and the kitchen's grease waste already runs to in-ground traps outside, which gives a ready grease strategy.",
+    "delivered": "Two days after the visit, the client had a narrative report, a 3D walkthrough, a 360° walkthrough video and a nameplate-level equipment register measured against their brand standards."
+  },
+  {
+    "slug": "los-gatos-village-square",
+    "published": "2026-10-26",
+    "title": "Restaurant Unit Survey, Los Gatos, California | Alturascope",
+    "aboutHeading": "Pre-lease survey of a vacant restaurant unit in Los Gatos, California",
+    "about": "This was a pre-lease site survey of a vacant second-generation restaurant unit at Los Gatos Village Square in Los Gatos, California, carried out for a café operator. In one visit we documented the switchgear and panel ratings, the rooftop and interior HVAC plant, the kitchen hood and its exhaust risers, the walk-in cooler, the water, gas and grease services, and the structure above the ceiling, with 360 video of the whole unit and its ceiling voids. Every finding was then measured against the brand's prototype standards, so the client could see what the space already gives a fit-out and what the fit-out has to add.",
+    "services": [
+      {
+        "href": "/services/qsr-restaurant-survey/",
+        "label": "Restaurant and QSR site surveys"
+      },
+      {
+        "href": "/services/commercial-kitchen-survey/",
+        "label": "Commercial kitchen surveys"
+      },
+      {
+        "href": "/services/west-coast-site-surveys/",
+        "label": "West Coast site surveys"
+      }
+    ],
+    "kicker": "Vacant restaurant unit · Los Gatos, CA · Surveyed September 2026",
+    "h1": "The switch was small. The building behind it was not.",
+    "description": "A vacant restaurant unit at Los Gatos Village Square, matched to a national brand's format: power, plant, services and patio read in one visit.",
+    "summary": "A national quick-service operator was looking at a vacant restaurant unit at the front of a busy neighborhood center in Los Gatos. Their format needs plenty of power and good water, and no cooking hood at all. The question was how close the space already came. One visit, and a report the next day, answered it.",
+    "stats": [
+      {
+        "value": "~2,000",
+        "label": "Square feet"
+      },
+      {
+        "value": "520+",
+        "label": "Photos taken"
+      },
+      {
+        "value": "1,600 A",
+        "label": "Building service"
+      },
+      {
+        "value": "Next day",
+        "label": "Visit to report"
+      }
+    ],
+    "findings": [
+      {
+        "title": "The right voltage, a 400 A panel, and a 1,600 A building service behind it.",
+        "body": "The unit is already at 120/208 V three-phase, so there is no transformer to design around, and its main panel already has a 400 A bus. The one gap is the unit's own service switch, sized for the previous tenant at around half the brand's standard. That switch sits in the landlord's 1,600 A switchboard, and reading the switchboard's nameplates is what showed the headroom is in the building.",
+        "action": "Ask the utility for the unit's 12-month demand history before pricing anything, then size the upgrade as a switchboard-section and feeder change inside the existing gear, not a new utility service.",
+        "photos": [
+          {
+            "src": "switchgear-nameplate",
+            "w": 1400,
+            "h": 654,
+            "alt": "Sylvania switchboard nameplate showing a 120/208 V three-phase four-wire rating",
+            "caption": "Switchboard nameplate: 120/208 V, three-phase, four-wire."
+          }
+        ]
+      },
+      {
+        "title": "A restaurant's worth of services already in the walls.",
+        "body": "The space comes with a walk-in cooler, a grease interceptor in place, a 2-inch water service and backflow that beat the brand's 1½-inch standard, and a gas service with plenty to spare. It also has a 15-foot kitchen hood the new format doesn't need. Taking the hood out sheds its fan, make-up air unit and electrical load, which helps the power sum too.",
+        "action": "Keep the water, gas and grease services. Decide early on the hood, because its exhaust risers run up the patio wall and that choice shapes how the outdoor seating side will look.",
+        "photos": [
+          {
+            "src": "hood",
+            "w": 788,
+            "h": 1400,
+            "alt": "Stainless steel kitchen hood canopy with fire suppression nozzles over a stainless wall",
+            "caption": "The 15-foot hood the new format can do without."
+          }
+        ]
+      },
+      {
+        "title": "Three doors, a paved patio, and two-zone HVAC already in place.",
+        "body": "The unit has its own entry from the parking lot, a second door along the front and a third straight onto a tree-shaded paver patio with seating. Heating and cooling are already split into two independent systems, one for the kitchen side and one for dining, which is what the brand asks for. The newer of the two rooftop systems, installed in 2010–11, is a sound candidate to keep.",
+        "action": "Plan the layout with the patio as part of the store, and assess the newer rooftop system for reuse before specifying new plant.",
+        "photos": [
+          {
+            "src": "patio",
+            "w": 652,
+            "h": 1400,
+            "alt": "Paved courtyard patio with Adirondack chairs under mature trees",
+            "caption": "The patio the unit opens onto."
+          }
+        ]
+      }
+    ],
+    "also": "The front of the unit sits under a heavy timber frame with offices above and 11 feet 4 inches clear to the beam, while the rear is single-story. We mapped that line so the design team knows exactly where new roof plant and ductwork can go.",
+    "delivered": "The day after the visit, the client had a narrative report, three 360 video walkthroughs including the ceiling voids, a nameplate-level equipment register and a gap analysis against their brand standards."
+  },
+  {
+    "slug": "lincoln-road-miami-beach",
+    "published": "2026-10-26",
+    "title": "Retail Unit Survey, Lincoln Road, Miami Beach | Alturascope",
+    "aboutHeading": "Pre-lease survey of a high-street retail unit on Lincoln Road, Miami Beach",
+    "about": "This was a pre-lease site survey and MEP due diligence of a vacant ground-floor retail unit with a mezzanine on the Lincoln Road pedestrian mall in Miami Beach, Florida, carried out for a food and beverage tenant. In one visit we documented the electrical service and panel schedules, the rooftop HVAC, the water heater and treated-water provision, drainage and grease routes, restrooms, life safety and the rear service yard, and captured the space in 3D. We then read the city permit set against what we found on site, and turned the 3D scan into a measured floor plan, reflected ceiling plan and elevations.",
+    "services": [
+      {
+        "href": "/services/retail-rollout-documentation/",
+        "label": "Retail rollout documentation"
+      },
+      {
+        "href": "/services/qsr-restaurant-survey/",
+        "label": "Restaurant and QSR site surveys"
+      },
+      {
+        "href": "/services/southeast-site-surveys/",
+        "label": "Southeast site surveys"
+      }
+    ],
+    "kicker": "High-street retail unit · Miami Beach, FL · Surveyed August 2026",
+    "h1": "On site the panels looked full. The directories told a better story.",
+    "description": "A vacant retail unit on Lincoln Road, Miami Beach, checked against a national brand's format: 400 A power, treated water and a double-height room.",
+    "summary": "A café brand expanding in Florida was considering a vacant unit on the Lincoln Road pedestrian mall. Their café format runs on blenders and espresso equipment, so power and water quality mattered most. The space had been stripped back to its building services, and the question was how much of them a new operator could use. One visit answered that.",
+    "stats": [
+      {
+        "value": "~2,300",
+        "label": "Square feet"
+      },
+      {
+        "value": "1",
+        "label": "Site visit"
+      },
+      {
+        "value": "500+",
+        "label": "Photos taken"
+      },
+      {
+        "value": "400 A",
+        "label": "Electrical service"
+      }
+    ],
+    "findings": [
+      {
+        "title": "Every breaker slot was filled. About twenty of them were spares.",
+        "body": "The unit has its own 400 A service at 208Y/120 V three-phase, feeding two 2019 Siemens panels. Through the deadfront both panels looked full. The directories showed roughly twenty spare ways in the main panel and more in the second, and the permit set put the engineered shell demand at about 145 A of the 400 A available.",
+        "action": "Have the electrical engineer run a load schedule against the 400 A service and plan the fit-out as a reuse-and-reterminate job, not a service upgrade.",
+        "photos": [
+          {
+            "src": "panel-nameplate",
+            "w": 946,
+            "h": 1040,
+            "alt": "Siemens panelboard nameplate rated 208Y/120 V three-phase four-wire, 400 A",
+            "caption": "The main panel's nameplate: 400 A, dated April 2019."
+          }
+        ]
+      },
+      {
+        "title": "A mezzanine already plumbed for treated water.",
+        "body": "The mezzanine was designed as a water-treatment room. The filter vessels have gone, but the supply riser, the bypass manifold, the treated cold and hot water drops to the counter line, the water heater and a dedicated circuit are all still there. For a café format, that is the plant room most units don't have.",
+        "action": "Trace and pressure-test the treated-water drops during design, then fit new treatment vessels to the existing manifold.",
+        "photos": [
+          {
+            "src": "water-manifold",
+            "w": 1047,
+            "h": 1400,
+            "alt": "Copper water-treatment bypass manifold with labeled ball valves on a white wall",
+            "caption": "The treated-water bypass manifold, ready for new vessels."
+          }
+        ]
+      },
+      {
+        "title": "A double-height room on a pedestrian mall, served from the back.",
+        "body": "The front of house rises to almost 16 feet, with structural beams at just over 14 feet, behind a full glazed frontage onto the mall. Deliveries and waste come in from a private rear lot, and a 500 lb dumbwaiter links the back of house to the mezzanine. There is no walk-in cooler today, though the record drawings show one fitted this footprint before.",
+        "action": "Use the height in the design, keep customer and service traffic on their own sides, and look at the earlier cooler's capped routes first if the format needs a walk-in.",
+        "photos": [
+          {
+            "src": "front-of-house",
+            "w": 788,
+            "h": 1400,
+            "alt": "Empty double-height retail space with a concrete slab and recessed ceiling lights",
+            "caption": "The front of house, stripped back to its shell."
+          }
+        ]
+      }
+    ],
+    "also": "The unit's two 2019 rooftop units were running and holding temperature on the day, and both restrooms are complete and accessible, which saves a rebuild on a prime-rent pitch.",
+    "delivered": "Within the week, the client had a narrative report and a nameplate-level equipment register, with a measured floor plan, reflected ceiling plan and elevations drawn from the 3D scan."
+  },
+  {
+    "slug": "westfield-topanga-canoga-park",
+    "published": "2026-10-26",
+    "title": "Mall Shell Survey, Westfield Topanga, CA | Alturascope",
+    "aboutHeading": "Pre-lease survey of an enclosed mall unit in Canoga Park, California",
+    "about": "This was a pre-lease site survey and MEP due diligence visit for two adjoining Level 1 units at Westfield Topanga in Canoga Park, Los Angeles, being combined into one space of about 3,200 square feet. In one visit we traced the electrical service back to the mall's 480 V switchboard, read the transformer, panel and fan coil nameplates, recorded the four-pipe hot and chilled water branch, the domestic water, the sprinkler mains and the drainage stub-outs, and captured both units in a 3D scan and 360 video. We then checked every finding against the landlord's drawings and the brand's prototype standards.",
+    "services": [
+      {
+        "href": "/services/qsr-restaurant-survey/",
+        "label": "Restaurant and QSR site surveys"
+      },
+      {
+        "href": "/services/retail-rollout-documentation/",
+        "label": "Retail rollout documentation"
+      },
+      {
+        "href": "/services/west-coast-site-surveys/",
+        "label": "West Coast site surveys"
+      }
+    ],
+    "kicker": "Enclosed mall unit · Canoga Park, California · Surveyed September 2026",
+    "h1": "Two units, one future store, and the hookups already waiting in the shell.",
+    "description": "Two mall units at Westfield Topanga, Canoga Park, combined for a national food and beverage brand: power, hot and chilled water and drainage confirmed.",
+    "summary": "A national food and beverage brand was looking at two adjoining Level 1 units at Westfield Topanga, to be combined into one store of about 3,200 square feet. One unit was a former small retail shop, the other a bare landlord shell. The brand needed to know what arrives at the boundary: how much power, what heating and cooling, and where the drains connect. One visit answered all three.",
+    "stats": [
+      {
+        "value": "~3,200",
+        "label": "Square feet combined"
+      },
+      {
+        "value": "1",
+        "label": "Site visit"
+      },
+      {
+        "value": "160+",
+        "label": "Photos taken"
+      },
+      {
+        "value": "2 days",
+        "label": "Visit to report"
+      }
+    ],
+    "findings": [
+      {
+        "title": "The existing service was sized for a small shop. The mall's switchboard has the room for more.",
+        "body": "The smaller unit runs on a 45 kVA transformer and a 100 A panel, which suited its last use but sits well short of the brand's 400 A standard. The larger unit had no service of its own yet. So we followed the feed back to the mall's main switchboard, where a 2,500 A-frame main breaker set at 2,000 A was carrying 165 A on a weekday afternoon. The capacity is there. The question is only the feeder.",
+        "action": "Ask the landlord for a 200 A feeder at 480 V and a 150 kVA step-down transformer in a new tenant electrical room. That delivers the brand's 400 A at 208 V and retires the old equipment.",
+        "photos": [
+          {
+            "src": "main-breaker",
+            "w": 1400,
+            "h": 700,
+            "alt": "Main service breaker in the mall switchboard with its ammeter display reading 165 amps",
+            "caption": "The mall's main breaker: 165 A on a 2,000 A setting."
+          }
+        ]
+      },
+      {
+        "title": "Hot and chilled water, already valved off for the next tenant.",
+        "body": "The mall runs on a central plant, so there are no rooftop units to inherit or replace. Inside the bare shell we found the building's four-pipe heating and chilled water mains, labeled, with a capped branch take-off, valves, a strainer and an energy meter kit already hanging on it for the future tenant. That gives the brand simultaneous heating and cooling without a single piece of new plant on a roof.",
+        "action": "Design four-pipe fan coils on the existing branch, to the landlord's chilled water criteria, and confirm the outside air and exhaust routes with the mall's engineering team.",
+        "photos": [
+          {
+            "src": "hydronic-take-off",
+            "w": 1400,
+            "h": 863,
+            "alt": "Insulated hot and chilled water pipes with a capped branch take-off and blue-handled ball valves",
+            "caption": "The valved, capped branch left for the future tenant."
+          }
+        ]
+      },
+      {
+        "title": "A 16-foot concrete shell with drainage stubbed in the floor.",
+        "body": "Both units share a concrete pan-joist deck about 16 feet up, with the sprinkler mains already in place and slab floors level with the concourse. The landlord's 2021 underground plumbing sheet showed 4-inch waste and grease-waste stub-outs left for this space, and we matched them to a capped stub in the slab. On the landlord's own levels, gravity drainage can reach the far side of the combined store.",
+        "action": "Run the bar and dish area to the 4-inch grease-waste stub by gravity, keep the existing 1½-inch water service, and design the sprinklers off the mains as found.",
+        "photos": [
+          {
+            "src": "shell-deck",
+            "w": 1400,
+            "h": 420,
+            "alt": "Exposed concrete pan-joist deck over a mall shell unit with insulated water mains along the wall",
+            "caption": "The bare shell: concrete deck, sprinkler mains and the hydronic run."
+          }
+        ]
+      }
+    ],
+    "also": "The smaller unit's 1½-inch water service already meets the brand's standard, and the units have a rear exit into the mall's service corridor as well as frontage onto the lobby and the outdoor dining terrace.",
+    "delivered": "Two days after the visit the client had a narrative report, a 3D scan, 360 walkthrough videos of both units and a nameplate-level equipment register, followed by a measured drawing set and Revit model."
+  },
+  {
+    "slug": "cactus-road-phoenix",
+    "published": "2026-10-26",
+    "title": "New-Build Shell Survey, Cactus Rd, Phoenix | Alturascope",
+    "aboutHeading": "Pre-lease survey of a new-build retail shell in Phoenix, Arizona",
+    "about": "This was a pre-lease site survey of a new-build cold shell retail unit on Cactus Road in Phoenix, Arizona, carried out for a multi-unit tenant while the building was still being completed. In one visit we documented the new service entrance switchboard and tenant meter positions, the conduits, water, vent, gas and grease-waste provisions, the sprinkler riser, the roof and the clear heights, and captured the shell in a 3D scan and 360 video. Every service was then checked against the landlord's permit drawings and the brand's prototype standards.",
+    "services": [
+      {
+        "href": "/services/qsr-restaurant-survey/",
+        "label": "Restaurant and QSR site surveys"
+      },
+      {
+        "href": "/services/pre-construction-site-intelligence/",
+        "label": "Pre-construction site intelligence"
+      },
+      {
+        "href": "/services/west-coast-site-surveys/",
+        "label": "West Coast and Southwest site surveys"
+      }
+    ],
+    "kicker": "New-build shell · Phoenix, Arizona · Surveyed October 2026",
+    "h1": "A brand-new shell, with every service the brand needed already brought to it.",
+    "description": "A new-build corner retail shell on Cactus Road, Phoenix, checked against a national brand's format: power, water, grease and height confirmed in one visit.",
+    "summary": "A multi-unit café operator was considering the corner unit of a new single-storey retail building on Cactus Road, still in the final stages of construction. With nothing installed yet, the question was what the base building had brought to the suite and what the fit-out would add. We read the switchboard, traced the stubs and measured the shell in one visit, and the report went out the next day.",
+    "stats": [
+      {
+        "value": "~2,080",
+        "label": "Square feet"
+      },
+      {
+        "value": "1",
+        "label": "Site visit"
+      },
+      {
+        "value": "240+",
+        "label": "Photos taken"
+      },
+      {
+        "value": "1 day",
+        "label": "Visit to report"
+      }
+    ],
+    "findings": [
+      {
+        "title": "200 A at 480 V reserved at a brand-new switchboard.",
+        "body": "The building's new 1,200 A service entrance switchboard has ten 200 A tenant positions waiting under the utility's blanking plates, and two empty conduits already run into the suite for its feeder. A 200 A position at 480 V is about 166 kVA, which covers the brand's 400 A at 208 V standard with margin once it is stepped down.",
+        "action": "Have the landlord assign and label the suite's position, then design a 200 A feeder to a 150 kVA step-down transformer and a 400 A panel inside the store.",
+        "photos": [
+          {
+            "src": "switchboard",
+            "w": 1078,
+            "h": 1400,
+            "alt": "New service entrance switchboard with meter sockets under orange utility blanking plates",
+            "caption": "The new switchboard, with tenant positions under blanking plates."
+          }
+        ]
+      },
+      {
+        "title": "Water, waste and grease were all in place before the slab was finished.",
+        "body": "A 2-inch copper water line with a valve and cap runs into the suite, larger than the brand's 1½-inch standard. The slab along the rear wall was deliberately left open over the capped sanitary and grease-waste lines, and the landlord's 2,000-gallon grease interceptor sits in the street directly in front of the unit.",
+        "action": "Locate the stubs from the landlord's plumbing plans before excavating, connect the grease waste to the shared interceptor, and agree its maintenance arrangement with the landlord.",
+        "photos": [
+          {
+            "src": "water-stub",
+            "w": 788,
+            "h": 1400,
+            "alt": "Copper cold water line with a tee, yellow-handled ball valve and capped outlet under wood roof trusses",
+            "caption": "The 2-inch water line with its valved, capped outlet."
+          }
+        ]
+      },
+      {
+        "title": "Nearly 17 feet of clear height, on a corner with frontage on two sides.",
+        "body": "The suite is the end unit, with storefront openings on the front and the side and a patio frontage of its own. Inside, it is a clean, dry shell with 16'-8\" clear to the sprinkler piping and almost 20 feet to the roof deck. That leaves plenty of room for an open-ceiling concept or a high finished ceiling. The building provides no HVAC, which is normal for a cold shell.",
+        "action": "Design rooftop HVAC for the suite's allocated roof zone, with curbs and framing designed by the truss manufacturer, and coordinate the storefront design with the landlord's glazing package.",
+        "photos": [
+          {
+            "src": "shell-interior",
+            "w": 1400,
+            "h": 788,
+            "alt": "Empty new-build retail shell with drywall-lined walls, concrete floor and exposed wood roof trusses",
+            "caption": "The shell from the rear, under its open wood truss roof."
+          }
+        ]
+      }
+    ],
+    "also": "A dedicated 2-inch gas stub is already in the rear meter bank, and the building's sprinkler riser sits in a room in the corner of the suite with its own exterior door.",
+    "delivered": "The next day, the client had a narrative report, a 3D scan and a 360 walkthrough video, followed within the week by a measured drawing set."
   }
 ]

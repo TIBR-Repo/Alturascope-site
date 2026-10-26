@@ -17,6 +17,12 @@ export function getStaticPaths() {
 const { story } = Astro.props;
 const loc = locations.find((l) => l.slug === story.slug)!;
 const url = `https://alturascope.com/work/locations/${story.slug}/`;
+// Up to three other stories, preferring the same kind of space, for internal linking.
+const related = stories
+  .filter((s) => s.slug !== story.slug)
+  .map((s) => ({ s, loc: locations.find((l) => l.slug === s.slug)! }))
+  .sort((a, b) => Number(b.loc.kind === loc.kind) - Number(a.loc.kind === loc.kind))
+  .slice(0, 3);
 const img = (name: string) => `/Images/locations/stories/${story.slug}/${name}`;
 
 const schema = JSON.stringify({
@@ -46,7 +52,7 @@ const breadcrumbSchema = JSON.stringify({
 ---
 
 <Layout
-  title={`${loc.label} | Site Survey | Alturascope`}
+  title={story.title ?? `${loc.label} | Site Survey | Alturascope`}
   description={story.description}
   canonical={url}
   ogImage={`/Images/locations/${story.slug}.webp`}
@@ -136,17 +142,54 @@ const breadcrumbSchema = JSON.stringify({
 
   <section class="bg-white section-padding">
     <div class="max-w-[900px] mx-auto px-6">
+      {story.about && (
+        <div class="mb-10">
+          <h2 class="text-[1.4rem] md:text-[1.6rem] font-light text-navy leading-tight">{story.aboutHeading}</h2>
+          <p class="mt-4 text-midgrey leading-relaxed">{story.about}</p>
+        </div>
+      )}
       <p class="text-midgrey leading-relaxed">{story.also}</p>
       <div class="mt-10 bg-navy p-8 md:p-10">
         <p class="label mb-3">Delivered</p>
         <p class="text-offwhite text-[1.15rem] md:text-[1.3rem] font-light leading-snug">{story.delivered}</p>
       </div>
+      {story.services && story.services.length > 0 && (
+        <div class="mt-10">
+          <p class="label mb-3">Related services</p>
+          <ul class="flex flex-wrap gap-x-8 gap-y-3 list-none p-0 m-0">
+            {story.services.map((sv) => (
+              <li><a href={sv.href} class="text-navy font-medium border-b border-gold pb-0.5 hover:opacity-80 transition-opacity">{sv.label} &rarr;</a></li>
+            ))}
+          </ul>
+        </div>
+      )}
       <p class="mt-8 text-midgrey/80 text-[0.85rem] leading-relaxed">
         Anonymised by design. The street is named and nothing else: no occupier, suite, client or
         lease details. Photographs are cropped to keep tenants&rsquo; branding out of frame.
       </p>
     </div>
   </section>
+
+  {related.length > 0 && (
+    <section class="bg-white pb-16 md:pb-20">
+      <div class="max-w-[1100px] mx-auto px-6">
+        <p class="label mb-6">More site stories</p>
+        <ul class="grid grid-cols-1 sm:grid-cols-3 gap-6 list-none p-0 m-0">
+          {related.map(({ s, loc: rl }) => (
+            <li class="card overflow-hidden">
+              <a href={`/work/locations/${s.slug}/`} class="block">
+                <img src={`/Images/locations/${s.slug}.webp`} alt={`${rl.label} - commercial site surveyed by Alturascope`} width={rl.w} height={rl.h} loading="lazy" decoding="async" class="w-full h-[180px] object-cover" />
+                <div class="p-5">
+                  <h3 class="text-navy font-medium leading-snug">{rl.label}</h3>
+                  <p class="mt-1.5 text-midgrey text-[0.85rem]">{rl.kind}</p>
+                </div>
+              </a>
+            </li>
+          ))}
+        </ul>
+      </div>
+    </section>
+  )}
 
   <section class="bg-offwhite section-padding">
     <div class="max-w-[760px] mx-auto px-6 text-center">
