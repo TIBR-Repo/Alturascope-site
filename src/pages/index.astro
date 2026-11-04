@@ -1,6 +1,7 @@
 ---
 import Layout from "../layouts/Layout.astro";
-import GalleryBand from "../components/GalleryBand.astro";
+import FeaturedProjects from "../components/FeaturedProjects.astro";
+import HeroSlides from "../components/HeroSlides.astro";
 
 const professionalServiceSchema = {
   "@type": "ProfessionalService",
@@ -66,66 +67,35 @@ const schema = JSON.stringify({
 >
   <div data-hero-page>
 
-    <!-- SECTION 1: Hero -->
-    <section class="relative min-h-[78svh] md:min-h-screen flex items-center justify-center py-20 md:py-28 lg:py-32">
-      <div class="absolute inset-0 bg-navy">
-        <img
-          src="/Images/construction.webp"
-          srcset="/Images/construction-640w.webp 640w, /Images/construction-1024w.webp 1024w, /Images/construction.webp 1600w"
-          sizes="100vw"
-          alt="Commercial building interior documented for pre-construction site survey and renovation planning"
-          class="w-full h-full object-cover opacity-35"
-          loading="eager"
-          fetchpriority="high"
-        />
-        <div class="absolute inset-0 bg-black/60"></div>
-      </div>
-
-      <div class="relative z-10 text-center flex flex-col items-center px-4 md:px-6">
-        <h1 class="text-2xl md:text-3xl lg:text-4xl font-light text-offwhite leading-tight max-w-3xl mx-auto">Know the building before you price the work.</h1>
-        <h2 class="mt-4 text-[1.1rem] md:text-[1.3rem] font-light text-offwhite/90 leading-[1.3]">
-          Know the building. Price the work.
-        </h2>
-        <p class="mt-8 text-base md:text-lg text-gray-300 font-normal leading-relaxed max-w-2xl mx-auto">
-          Alturascope delivers Matterport digital twins, measured surveys and structured conditions reports for construction teams &mdash; and runs an estimating desk that turns a bid package into a priced, white-labeled quote under your own name, usually inside two working days.
-        </p>
-        <div class="mt-10 flex flex-wrap items-center justify-center gap-4">
-          <a href="/contact/" class="btn-primary">Tell Us About Your Project</a>
-          <a href="/estimating/" class="btn-secondary-light">See the Estimating Desk</a>
-        </div>
-      </div>
-
-      <div class="absolute bottom-12 left-1/2 -translate-x-1/2 flex flex-col items-center gap-4">
-        <div class="w-[60px] h-[1px] bg-gold"></div>
-        <svg class="w-5 h-5 text-white animate-pulse" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M19 14l-7 7m0 0l-7-7m7 7V3" />
-        </svg>
-      </div>
-    </section>
+    <!-- SECTION 1: Hero - the work itself, captioned with where it is -->
+    <HeroSlides />
 
     <!-- SECTION 2: Credibility Bar -->
-    <section class="bg-offwhite py-12 md:py-[48px]">
+    <section class="bg-navy border-t border-white/10 py-10 md:py-12">
       <div class="max-w-[1100px] mx-auto px-6">
         <div class="grid grid-cols-2 md:grid-cols-4 gap-8 md:gap-4 text-center">
           <div>
-            <p class="text-[2.4rem] font-light text-navy">50</p>
-            <p class="text-[0.7rem] font-medium uppercase tracking-[0.12em] text-midgrey mt-1">US States Covered</p>
+            <p class="text-[2.4rem] font-light text-offwhite">500+</p>
+            <p class="text-[0.7rem] font-medium uppercase tracking-[0.12em] text-offwhite/60 mt-1">Commercial Sites Surveyed</p>
           </div>
           <div>
-            <p class="text-[2.4rem] font-light text-navy">All</p>
-            <p class="text-[0.7rem] font-medium uppercase tracking-[0.12em] text-midgrey mt-1">Canadian Provinces</p>
+            <p class="text-[2.4rem] font-light text-offwhite">38</p>
+            <p class="text-[0.7rem] font-medium uppercase tracking-[0.12em] text-offwhite/60 mt-1">States, plus Puerto Rico</p>
           </div>
           <div>
-            <p class="text-[2.4rem] font-light text-navy">500+</p>
-            <p class="text-[0.7rem] font-medium uppercase tracking-[0.12em] text-midgrey mt-1">Commercial Sites</p>
+            <p class="text-[2.4rem] font-light text-offwhite">3 days</p>
+            <p class="text-[0.7rem] font-medium uppercase tracking-[0.12em] text-offwhite/60 mt-1">Typical Visit to Report</p>
           </div>
           <div>
-            <p class="text-[2.4rem] font-light text-navy">18</p>
-            <p class="text-[0.7rem] font-medium uppercase tracking-[0.12em] text-midgrey mt-1">Years Construction Experience</p>
+            <p class="text-[2.4rem] font-light text-offwhite">18</p>
+            <p class="text-[0.7rem] font-medium uppercase tracking-[0.12em] text-offwhite/60 mt-1">Years Construction Experience</p>
           </div>
         </div>
       </div>
     </section>
+
+    <!-- SECTION 2a: Featured projects, straight after the numbers -->
+    <FeaturedProjects />
 
     <!-- SECTION 2b: Two Services -->
     <section class="bg-white section-padding">
@@ -170,57 +140,6 @@ const schema = JSON.stringify({
       </div>
     </section>
 
-    <!-- SECTION 3: What We Do -->
-    <section id="how-it-works" class="bg-white section-padding">
-      <div class="max-w-[1200px] mx-auto px-6">
-        <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-          <div>
-            <p class="label text-gold mb-4">The Service</p>
-            <h2 class="text-[2rem] md:text-[2.2rem] font-light text-navy leading-tight">
-              Exact site reality. Structured for decisions.
-            </h2>
-            <div class="mt-6 space-y-4 text-midgrey leading-body">
-              <p>
-                Most project teams make expensive decisions based on incomplete site information. Alturascope changes that. We arrive, we document everything — structure, services, equipment, conditions, access — and we deliver a structured package your whole team can use immediately.
-              </p>
-              <p>
-                Every visit produces the same deliverable architecture: a navigable digital twin, a narrated video walkthrough, a detailed conditions report, and a platform your team can return to at any point. Built around the decision you're trying to make, not a generic survey checklist.
-              </p>
-              <p>
-                Where the project demands survey-grade accuracy — heritage structures, complex M&E environments, or facilities where dimensional precision is non-negotiable — we capture using professional LiDAR and photogrammetry instruments that produce millimetre-accurate point cloud data. The Matterport twin is built on top of that foundation, not instead of it.
-              </p>
-              <p>
-                We operate across the United States, Canada, and the United Kingdom under a single-vendor model. One brief. One standard. Consistent deliverables regardless of location.
-              </p>
-            </div>
-            <a href="/services/" class="btn-secondary mt-8">See the Full Service</a>
-          </div>
-
-          <div>
-            <a href="/work/sample-project/" class="group block bg-offwhite rounded shadow-lg p-3 relative transition-shadow hover:shadow-xl" aria-label="Explore an interactive sample ScopeWalk project">
-              <div class="flex items-center gap-1.5 mb-3">
-                <div class="w-2.5 h-2.5 rounded-full bg-red-400"></div>
-                <div class="w-2.5 h-2.5 rounded-full bg-yellow-400"></div>
-                <div class="w-2.5 h-2.5 rounded-full bg-green-400"></div>
-              </div>
-              <img
-                src="/scopewalk-platform.webp"
-                alt="ScopeWalk site documentation platform showing structured project deliverables with labelled room photographs and conditions reports"
-                class="w-full"
-                loading="lazy"
-              />
-              <div class="absolute inset-0 flex items-end justify-center p-6 bg-gradient-to-t from-navy/80 via-navy/0 to-transparent opacity-0 group-hover:opacity-100 transition-opacity">
-                <span class="btn-primary text-sm">Explore the sample project &rarr;</span>
-              </div>
-            </a>
-            <p class="mt-3 text-xs text-midgrey text-center">
-              <a href="/work/sample-project/" class="text-navy font-medium hover:opacity-80 transition-opacity">Explore an interactive sample project &rarr;</a>
-            </p>
-          </div>
-        </div>
-      </div>
-    </section>
-
     <!-- SECTION 4: Matterport Embed -->
     <section class="bg-navy py-20 md:py-[100px]">
       <div class="max-w-[1100px] mx-auto px-6">
@@ -256,7 +175,7 @@ const schema = JSON.stringify({
 
         <p class="mt-8 text-center">
           <a href="/work/locations/" class="text-gold border-b border-gold/40 hover:border-gold transition-colors text-[0.95rem]">
-            See a sample of the buildings we have documented &rarr;
+            See all our projects &rarr;
           </a>
         </p>
       </div>
@@ -308,7 +227,6 @@ const schema = JSON.stringify({
       </div>
     </section>
 
-    <GalleryBand />
 
     <!-- SECTION 6: Who We Work With -->
     <section class="bg-offwhite section-padding">

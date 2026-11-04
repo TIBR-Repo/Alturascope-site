@@ -102,3 +102,17 @@
     outline-offset: 3px;
   }
 }
+
+/* Projects page filter chips (Nov 2026) */
+.project-filter {
+  font-size: 0.85rem;
+  border: 1px solid #E5E0D8;
+  background: #fff;
+  color: #374151;
+  padding: 0.5rem 0.95rem;
+  transition: background-color 0.15s, color 0.15s, border-color 0.15s;
+}
+.project-filter span { color: #9CA3AF; margin-left: 0.25rem; font-size: 0.78rem; }
+.project-filter:hover { border-color: #0B1F3A; }
+.project-filter.is-on { background: #0B1F3A; border-color: #0B1F3A; color: #fff; }
+.project-filter.is-on span { color: #C9A84C; }

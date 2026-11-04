@@ -4,342 +4,756 @@
   "label": "Apollo Drive, Chelmsford, Massachusetts",
   "kind": "Office",
   "w": 1200,
-  "h": 675
+  "h": 675,
+  "lat": 42.6,
+  "lng": -71.37,
+  "state": "MA",
+  "sectors": [
+   "healthcare",
+   "office"
+  ],
+  "mx": 843.3,
+  "my": 141.6
  },
  {
   "slug": "pavilions-lane-sacramento",
   "label": "Pavilions Lane, Sacramento, California",
   "kind": "Open-air retail",
   "w": 1200,
-  "h": 675
+  "h": 675,
+  "lat": 38.58,
+  "lng": -121.43,
+  "state": "CA",
+  "sectors": [
+   "retail"
+  ],
+  "mx": 102.1,
+  "my": 216.4
  },
  {
   "slug": "galleria-roseville",
   "label": "Galleria, Roseville, California",
   "kind": "Enclosed mall",
   "w": 1200,
-  "h": 675
+  "h": 675,
+  "lat": 38.77,
+  "lng": -121.27,
+  "state": "CA",
+  "sectors": [
+   "retail"
+  ],
+  "mx": 105.5,
+  "my": 213.3
  },
  {
   "slug": "corte-madera",
   "label": "Corte Madera, California",
   "kind": "Open-air retail",
   "w": 1200,
-  "h": 674
+  "h": 674,
+  "lat": 37.93,
+  "lng": -122.51,
+  "state": "CA",
+  "sectors": [
+   "retail"
+  ],
+  "mx": 82.5,
+  "my": 224.4
  },
  {
   "slug": "town-and-country-houston",
   "label": "Town & Country, Houston, Texas",
   "kind": "New-build shell",
   "w": 1200,
-  "h": 675
+  "h": 675,
+  "lat": 29.78,
+  "lng": -95.56,
+  "state": "TX",
+  "sectors": [
+   "shell",
+   "retail"
+  ],
+  "mx": 496.6,
+  "my": 444.6
  },
  {
   "slug": "pennsylvania-avenue-washington-dc",
   "label": "Pennsylvania Avenue, Washington, DC",
   "kind": "Office",
   "w": 1200,
-  "h": 675
+  "h": 675,
+  "lat": 38.9,
+  "lng": -77.05,
+  "state": "DC",
+  "sectors": [
+   "office"
+  ],
+  "mx": 777.6,
+  "my": 233.1
  },
  {
   "slug": "henderson-avenue-dallas",
   "label": "Henderson Avenue, Dallas, Texas",
   "kind": "Mixed-use retail",
   "w": 1200,
-  "h": 675
+  "h": 675,
+  "lat": 32.81,
+  "lng": -96.79,
+  "state": "TX",
+  "sectors": [
+   "retail"
+  ],
+  "mx": 475.9,
+  "my": 384.1
  },
  {
   "slug": "clearfork-fort-worth",
   "label": "Clearfork, Fort Worth, Texas",
   "kind": "Retail interior",
   "w": 1200,
-  "h": 675
+  "h": 675,
+  "lat": 32.7,
+  "lng": -97.4,
+  "state": "TX",
+  "sectors": [
+   "retail"
+  ],
+  "mx": 465.7,
+  "my": 386.2
  },
  {
   "slug": "santan-village-gilbert",
   "label": "SanTan Village, Gilbert, Arizona",
   "kind": "Open-air retail",
   "w": 1200,
-  "h": 675
+  "h": 675,
+  "lat": 33.3,
+  "lng": -111.74,
+  "state": "AZ",
+  "sectors": [
+   "retail"
+  ],
+  "mx": 230.3,
+  "my": 352.9
  },
  {
   "slug": "scottsdale-fashion-square",
   "label": "Scottsdale Fashion Square, Arizona",
   "kind": "Enclosed mall",
   "w": 1200,
-  "h": 675
+  "h": 675,
+  "lat": 33.5,
+  "lng": -111.93,
+  "state": "AZ",
+  "sectors": [
+   "retail"
+  ],
+  "mx": 227.8,
+  "my": 348.4
  },
  {
   "slug": "kierland-commons-scottsdale",
   "label": "Kierland Commons, Scottsdale, Arizona",
   "kind": "Open-air retail",
   "w": 1200,
-  "h": 675
+  "h": 675,
+  "lat": 33.62,
+  "lng": -111.93,
+  "state": "AZ",
+  "sectors": [
+   "retail"
+  ],
+  "mx": 228.2,
+  "my": 346.1
  },
  {
   "slug": "grand-central-terminal-new-york",
   "label": "Grand Central Terminal, New York",
   "kind": "Transport hub",
   "w": 1200,
-  "h": 675
+  "h": 675,
+  "lat": 40.753,
+  "lng": -73.977,
+  "state": "NY",
+  "sectors": [
+   "landmark",
+   "retail"
+  ],
+  "mx": 815,
+  "my": 186.9
  },
  {
   "slug": "queen-anne-seattle",
   "label": "Queen Anne, Seattle, Washington",
   "kind": "Residential over retail",
   "w": 1200,
-  "h": 675
+  "h": 675,
+  "lat": 47.64,
+  "lng": -122.36,
+  "state": "WA",
+  "sectors": [
+   "retail"
+  ],
+  "mx": 137.8,
+  "my": 38.5
  },
  {
   "slug": "bellevue-square",
   "label": "Bellevue Square, Bellevue, Washington",
   "kind": "Enclosed mall",
   "w": 1200,
-  "h": 674
+  "h": 674,
+  "lat": 47.62,
+  "lng": -122.2,
+  "state": "WA",
+  "sectors": [
+   "retail"
+  ],
+  "mx": 139.8,
+  "my": 39.5
  },
  {
   "slug": "brea-mall",
   "label": "Brea Mall, Brea, California",
   "kind": "Enclosed mall",
   "w": 1200,
-  "h": 675
+  "h": 675,
+  "lat": 33.92,
+  "lng": -117.89,
+  "state": "CA",
+  "sectors": [
+   "retail"
+  ],
+  "mx": 133.6,
+  "my": 320.8
  },
  {
   "slug": "mission-viejo",
   "label": "Mission Viejo, California",
   "kind": "Enclosed mall",
   "w": 1200,
-  "h": 675
+  "h": 675,
+  "lat": 33.56,
+  "lng": -117.67,
+  "state": "CA",
+  "sectors": [
+   "retail"
+  ],
+  "mx": 135.4,
+  "my": 328.7
  },
  {
   "slug": "j-street-sacramento",
   "label": "J Street, Sacramento, California",
   "kind": "Vacant unit",
   "w": 1200,
-  "h": 675
+  "h": 675,
+  "lat": 38.58,
+  "lng": -121.49,
+  "state": "CA",
+  "sectors": [
+   "shell",
+   "retail"
+  ],
+  "mx": 101.2,
+  "my": 216.1
  },
  {
   "slug": "the-gardens-mall-palm-beach",
   "label": "The Gardens Mall, Palm Beach Gardens, Florida",
   "kind": "Enclosed mall",
   "w": 1200,
-  "h": 675
+  "h": 675,
+  "lat": 26.85,
+  "lng": -80.08,
+  "state": "FL",
+  "sectors": [
+   "retail"
+  ],
+  "mx": 772,
+  "my": 479
  },
  {
   "slug": "old-orchard-skokie",
   "label": "Old Orchard, Skokie, Illinois",
   "kind": "Open-air retail",
   "w": 1200,
-  "h": 675
+  "h": 675,
+  "lat": 42.06,
+  "lng": -87.75,
+  "state": "IL",
+  "sectors": [
+   "retail"
+  ],
+  "mx": 609.8,
+  "my": 193.4
  },
  {
   "slug": "spectrum-center-irvine",
   "label": "Spectrum Center, Irvine, California",
   "kind": "Open-air retail",
   "w": 1200,
-  "h": 675
+  "h": 675,
+  "lat": 33.65,
+  "lng": -117.74,
+  "state": "CA",
+  "sectors": [
+   "retail"
+  ],
+  "mx": 134.7,
+  "my": 326.7
  },
  {
   "slug": "berkeley-way",
   "label": "Berkeley Way, Berkeley, California",
   "kind": "Office",
   "w": 1200,
-  "h": 675
+  "h": 675,
+  "lat": 37.87,
+  "lng": -122.27,
+  "state": "CA",
+  "sectors": [
+   "office",
+   "retail"
+  ],
+  "mx": 85.7,
+  "my": 226.6
  },
  {
   "slug": "lincoln-road-miami-beach",
   "label": "Lincoln Road, Miami Beach, Florida",
   "kind": "High-street retail",
   "w": 1200,
-  "h": 675
+  "h": 675,
+  "lat": 25.79,
+  "lng": -80.14,
+  "state": "FL",
+  "sectors": [
+   "retail",
+   "landmark"
+  ],
+  "mx": 774.5,
+  "my": 499.8
  },
  {
   "slug": "culebra-road-san-antonio",
   "label": "Culebra Road, San Antonio, Texas",
   "kind": "Shell unit, mid fit-out",
   "w": 1200,
-  "h": 675
+  "h": 675,
+  "lat": 29.47,
+  "lng": -98.62,
+  "state": "TX",
+  "sectors": [
+   "shell",
+   "retail"
+  ],
+  "mx": 443.6,
+  "my": 450.2
  },
  {
   "slug": "inwood-village-dallas",
   "label": "Inwood Village, Dallas, Texas",
   "kind": "Retail parade",
   "w": 1200,
-  "h": 675
+  "h": 675,
+  "lat": 32.84,
+  "lng": -96.82,
+  "state": "TX",
+  "sectors": [
+   "retail"
+  ],
+  "mx": 475.4,
+  "my": 383.5
  },
  {
   "slug": "mckinney-avenue-dallas",
   "label": "McKinney Avenue, Dallas, Texas",
   "kind": "Vacant retail unit",
   "w": 1200,
-  "h": 675
+  "h": 675,
+  "lat": 32.8,
+  "lng": -96.8,
+  "state": "TX",
+  "sectors": [
+   "shell",
+   "retail"
+  ],
+  "mx": 475.7,
+  "my": 384.3
  },
  {
   "slug": "fifth-avenue-new-york",
   "label": "Fifth Avenue, New York",
   "kind": "Cold shell, stripped to structure",
   "w": 1200,
-  "h": 675
+  "h": 675,
+  "lat": 40.76,
+  "lng": -73.977,
+  "state": "NY",
+  "sectors": [
+   "shell",
+   "landmark",
+   "retail"
+  ],
+  "mx": 815,
+  "my": 186.7
  },
  {
   "slug": "westfield-topanga-canoga-park",
   "label": "Westfield Topanga, Canoga Park, California",
   "kind": "Enclosed mall",
   "w": 1200,
-  "h": 675
+  "h": 675,
+  "lat": 34.19,
+  "lng": -118.6,
+  "state": "CA",
+  "sectors": [
+   "retail"
+  ],
+  "mx": 123.5,
+  "my": 312.9
  },
  {
   "slug": "grand-avenue-san-marcos",
   "label": "Grand Avenue, San Marcos, California",
   "kind": "Food-service unit",
   "w": 1200,
-  "h": 675
+  "h": 675,
+  "lat": 33.14,
+  "lng": -117.17,
+  "state": "CA",
+  "sectors": [
+   "retail"
+  ],
+  "mx": 141.6,
+  "my": 338.7
  },
  {
   "slug": "new-york-avenue-washington-dc",
   "label": "New York Avenue, Washington, DC",
   "kind": "Office",
   "w": 1200,
-  "h": 675
+  "h": 675,
+  "lat": 38.9,
+  "lng": -77.03,
+  "state": "DC",
+  "sectors": [
+   "office"
+  ],
+  "mx": 777.9,
+  "my": 233.1
  },
  {
   "slug": "los-gatos-village-square",
   "label": "Los Gatos Village Square, Los Gatos, California",
   "kind": "Vacant restaurant unit",
   "w": 1200,
-  "h": 675
+  "h": 675,
+  "lat": 37.24,
+  "lng": -121.96,
+  "state": "CA",
+  "sectors": [
+   "shell",
+   "retail"
+  ],
+  "mx": 87,
+  "my": 240.1
  },
  {
   "slug": "jericho-turnpike-commack",
   "label": "Jericho Turnpike, Commack, New York",
   "kind": "Strip-centre retail",
   "w": 1200,
-  "h": 675
+  "h": 675,
+  "lat": 40.84,
+  "lng": -73.29,
+  "state": "NY",
+  "sectors": [
+   "retail"
+  ],
+  "mx": 824.6,
+  "my": 182.8
  },
  {
   "slug": "west-diversey-parkway-chicago",
   "label": "West Diversey Parkway, Chicago, Illinois",
   "kind": "Shell unit",
   "w": 1200,
-  "h": 675
+  "h": 675,
+  "lat": 41.93,
+  "lng": -87.64,
+  "state": "IL",
+  "sectors": [
+   "shell",
+   "retail"
+  ],
+  "mx": 611.6,
+  "my": 195.8
  },
  {
   "slug": "manhattan-avenue-greenpoint-brooklyn",
   "label": "Manhattan Avenue, Greenpoint, Brooklyn",
   "kind": "Stripped retail unit",
   "w": 1200,
-  "h": 675
+  "h": 675,
+  "lat": 40.73,
+  "lng": -73.95,
+  "state": "NY",
+  "sectors": [
+   "shell",
+   "retail"
+  ],
+  "mx": 815.5,
+  "my": 187.2
  },
  {
   "slug": "broadway-upper-west-side-new-york",
   "label": "Broadway, Upper West Side, New York",
   "kind": "Residential over retail",
   "w": 1200,
-  "h": 675
+  "h": 675,
+  "lat": 40.8,
+  "lng": -73.97,
+  "state": "NY",
+  "sectors": [
+   "retail"
+  ],
+  "mx": 814.9,
+  "my": 185.9
  },
  {
   "slug": "cactus-road-phoenix",
   "label": "Cactus Road, Phoenix, Arizona",
   "kind": "New-build shell",
   "w": 1200,
-  "h": 675
+  "h": 675,
+  "lat": 33.6,
+  "lng": -111.98,
+  "state": "AZ",
+  "sectors": [
+   "shell",
+   "retail"
+  ],
+  "mx": 227.4,
+  "my": 346.3
  },
  {
   "slug": "la-centerra-katy",
   "label": "La Centerra, Katy, Texas",
   "kind": "Open-air retail",
   "w": 1200,
-  "h": 675
+  "h": 675,
+  "lat": 29.78,
+  "lng": -95.82,
+  "state": "TX",
+  "sectors": [
+   "retail"
+  ],
+  "mx": 492.1,
+  "my": 444.7
  },
  {
   "slug": "route-59-naperville",
   "label": "Route 59, Naperville, Illinois",
   "kind": "Office and warehouse flex suite",
   "w": 1200,
-  "h": 675
+  "h": 675,
+  "lat": 41.75,
+  "lng": -88.2,
+  "state": "IL",
+  "sectors": [
+   "office"
+  ],
+  "mx": 603.7,
+  "my": 200.1
  },
  {
   "slug": "peachtree-road-atlanta",
   "label": "Peachtree Road, Atlanta, Georgia",
   "kind": "High-rise office",
   "w": 1200,
-  "h": 675
+  "h": 675,
+  "lat": 33.85,
+  "lng": -84.36,
+  "state": "GA",
+  "sectors": [
+   "office",
+   "healthcare"
+  ],
+  "mx": 679.4,
+  "my": 351.7
  },
  {
   "slug": "industrial-avenue-lowell",
   "label": "Industrial Avenue, Lowell, Massachusetts",
   "kind": "Warehouse and light industrial",
   "w": 1200,
-  "h": 675
+  "h": 675,
+  "lat": 42.62,
+  "lng": -71.32,
+  "state": "MA",
+  "sectors": [
+   "healthcare",
+   "office"
+  ],
+  "mx": 843.9,
+  "my": 141
  },
  {
   "slug": "gateway-oaks-drive-sacramento",
   "label": "Gateway Oaks Drive, Sacramento, California",
   "kind": "Office suite",
   "w": 1200,
-  "h": 675
+  "h": 675,
+  "lat": 38.6,
+  "lng": -121.52,
+  "state": "CA",
+  "sectors": [
+   "healthcare",
+   "office"
+  ],
+  "mx": 100.8,
+  "my": 215.6
  },
  {
   "slug": "ohio-street-commons-joliet",
   "label": "Ohio Street Commons, Joliet, Illinois",
   "kind": "Stripped retail unit",
   "w": 1200,
-  "h": 675
+  "h": 675,
+  "lat": 41.53,
+  "lng": -88.08,
+  "state": "IL",
+  "sectors": [
+   "healthcare",
+   "shell"
+  ],
+  "mx": 605.9,
+  "my": 204.4
  },
  {
   "slug": "thousand-oaks-boulevard-thousand-oaks",
   "label": "Thousand Oaks Boulevard, Thousand Oaks, California",
   "kind": "Office suite",
   "w": 1200,
-  "h": 675
+  "h": 675,
+  "lat": 34.18,
+  "lng": -118.88,
+  "state": "CA",
+  "sectors": [
+   "healthcare",
+   "office"
+  ],
+  "mx": 119,
+  "my": 312
  },
  {
   "slug": "madera-road-simi-valley",
   "label": "Madera Road, Simi Valley, California",
   "kind": "Office campus",
   "w": 1200,
-  "h": 675
+  "h": 675,
+  "lat": 34.28,
+  "lng": -118.75,
+  "state": "CA",
+  "sectors": [
+   "healthcare",
+   "office"
+  ],
+  "mx": 121.6,
+  "my": 310.6
  },
  {
   "slug": "matley-lane-reno",
   "label": "Matley Lane, Reno, Nevada",
   "kind": "Office and light industrial",
   "w": 1200,
-  "h": 675
+  "h": 675,
+  "lat": 39.52,
+  "lng": -119.79,
+  "state": "NV",
+  "sectors": [
+   "office"
+  ],
+  "mx": 131.2,
+  "my": 204.5
  },
  {
   "slug": "south-willow-avenue-cookeville",
   "label": "South Willow Avenue, Cookeville, Tennessee",
   "kind": "Office and clinical suite",
   "w": 1200,
-  "h": 675
+  "h": 675,
+  "lat": 36.14,
+  "lng": -85.5,
+  "state": "TN",
+  "sectors": [
+   "healthcare"
+  ],
+  "mx": 655.7,
+  "my": 308.2
  },
  {
   "slug": "maryland-avenue-hagerstown",
   "label": "Maryland Avenue, Hagerstown, Maryland",
   "kind": "Office suite",
   "w": 1200,
-  "h": 675
+  "h": 675,
+  "lat": 39.64,
+  "lng": -77.72,
+  "state": "MD",
+  "sectors": [
+   "office"
+  ],
+  "mx": 764.7,
+  "my": 220.5
  },
  {
   "slug": "northeastern-boulevard-salem",
   "label": "Northeastern Boulevard, Salem, New Hampshire",
   "kind": "Office building, drone survey",
   "w": 1200,
-  "h": 675
+  "h": 675,
+  "lat": 42.77,
+  "lng": -71.22,
+  "state": "NH",
+  "sectors": [
+   "healthcare",
+   "office"
+  ],
+  "mx": 844.6,
+  "my": 137.8
  },
  {
   "slug": "broadway-lincoln-square-new-york",
   "label": "Broadway, Lincoln Square, New York",
   "kind": "Ground-floor retail shell",
   "w": 1200,
-  "h": 675
+  "h": 675,
+  "lat": 40.77,
+  "lng": -73.98,
+  "state": "NY",
+  "sectors": [
+   "shell",
+   "retail"
+  ],
+  "mx": 814.9,
+  "my": 186.5
  },
  {
   "slug": "crossroads-park-drive-houston",
   "label": "Crossroads Park Drive, Houston, Texas",
   "kind": "Single-story building, drone survey",
   "w": 1200,
-  "h": 675
+  "h": 675,
+  "lat": 29.83,
+  "lng": -95.62,
+  "state": "TX",
+  "sectors": [
+   "healthcare"
+  ],
+  "mx": 495.5,
+  "my": 443.7
  }
 ]

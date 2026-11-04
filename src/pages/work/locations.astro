@@ -2,13 +2,33 @@
 import Layout from "../../layouts/Layout.astro";
 import locations from "../../data/locations.json";
 import stories from "../../data/location-stories.json";
+import ProjectMap from "../../components/ProjectMap.astro";
+
+// Filter groups. A location can sit in several (a clinic fit-out in an office
+// building is both healthcare and office), so each card carries a list.
+const sectors = [
+  { key: "retail", label: "Retail & malls" },
+  { key: "healthcare", label: "Healthcare & clinics" },
+  { key: "office", label: "Office & industrial" },
+  { key: "landmark", label: "Landmark & transit" },
+  { key: "shell", label: "Shells & vacant units" },
+];
+const countFor = (k) => locations.filter((l) => (l.sectors || []).includes(k)).length;
+// Strongest sites first; everything else keeps its order in locations.json.
+const lead = [
+  "grand-central-terminal-new-york", "westfield-topanga-canoga-park", "the-gardens-mall-palm-beach",
+  "lincoln-road-miami-beach", "fifth-avenue-new-york", "scottsdale-fashion-square", "bellevue-square",
+  "spectrum-center-irvine", "kierland-commons-scottsdale", "new-york-avenue-washington-dc",
+];
+const rank = (slug) => (lead.indexOf(slug) === -1 ? 999 : lead.indexOf(slug));
+const ordered = [...locations].sort((a, b) => rank(a.slug) - rank(b.slug));
 
 const storySlugs = new Set(stories.map((s) => s.slug));
 
 const schema = JSON.stringify({
   "@context": "https://schema.org",
   "@type": "CollectionPage",
-  "name": "Surveyed Locations",
+  "name": "Projects",
   "description":
     "A sample of commercial locations documented by Alturascope across the United States - retail, office, mall, industrial and transport sites surveyed on site.",
   "url": "https://alturascope.com/work/locations/",
@@ -55,49 +75,106 @@ const breadcrumbSchema = JSON.stringify({
   "itemListElement": [
     { "@type": "ListItem", position: 1, name: "Home", item: "https://alturascope.com/" },
     { "@type": "ListItem", position: 2, name: "The Standard", item: "https://alturascope.com/work/" },
-    { "@type": "ListItem", position: 3, name: "Locations", item: "https://alturascope.com/work/locations/" },
+    { "@type": "ListItem", position: 3, name: "Projects", item: "https://alturascope.com/work/locations/" },
   ],
 });
 ---
 
 <Layout
-  title="Surveyed Locations | Site Survey Portfolio | Alturascope"
+  title="Projects | Site Survey Portfolio | Alturascope"
   description="A sample of commercial sites documented by Alturascope - retail, office, mall, industrial and transport locations we have surveyed recently."
   canonical="https://alturascope.com/work/locations/"
   schema={schema}
   breadcrumbSchema={breadcrumbSchema}
   extraSchema={itemListSchema}
+  fullWidth={true}
 >
-  <section class="bg-navy pt-32 pb-20 md:pt-40 md:pb-24">
+  <section class="bg-navy pt-32 pb-16 md:pt-40 md:pb-20">
     <div class="max-w-[1100px] mx-auto px-6">
-      <p class="label mb-5">Selected Work</p>
-      <h1 class="text-[2rem] md:text-[2.6rem] font-light text-offwhite leading-tight max-w-3xl">
-        A sample of the buildings we&rsquo;ve been inside.
+      <p class="label mb-5">Projects</p>
+      <h1 class="text-[2.2rem] md:text-[3rem] font-light text-offwhite leading-[1.1] max-w-3xl">
+        Inside 500+ commercial spaces across 38 states.
       </h1>
       <p class="mt-6 text-offwhite/70 leading-relaxed max-w-2xl">
-        Every image below comes from a real Alturascope site visit &mdash; not stock
-        photography, and not a render. Shopping centres, office
-        floors, high-street units, a transport terminus, and a fair number of empty shells
-        halfway through their next life.
+        A landmark terminal concourse, luxury malls, high streets, clinics, offices and a fair
+        number of empty shells halfway through their next life. Every image here comes from a real
+        Alturascope site visit &mdash; not stock photography, and not a render.
       </p>
     </div>
   </section>
 
-  <section class="bg-offwhite py-12 md:py-16 border-b border-border">
-    <div class="max-w-[1100px] mx-auto px-6">
-      <div class="border-l-2 border-gold pl-6 max-w-3xl">
-        <p class="text-navy leading-relaxed">
-          <span class="font-medium">This is a sample, not a client list.</span> It shows the
-          kind of building we work in and the standard of capture, nothing more. Several hundred
-          further surveys have been delivered under contract and issued under other firms&rsquo;
-          names; those don&rsquo;t appear here and never will.
+  <section class="bg-offwhite py-14 md:py-20 border-b border-border">
+    <div class="max-w-[1200px] mx-auto px-6 grid lg:grid-cols-[1fr_2fr] gap-10 lg:gap-14 items-center">
+      <div>
+        <p class="label mb-4">Where we&rsquo;ve worked</p>
+        <h2 class="text-[1.7rem] md:text-[2rem] font-light text-navy leading-tight">
+          Coast to coast, and Puerto Rico.
+        </h2>
+        <p class="mt-5 text-midgrey leading-relaxed">
+          Each pin is one of the {locations.length} sites on this page &mdash; a sample of the 500+ we
+          have surveyed. Most of our work is delivered under contract and issued under other
+          firms&rsquo; names, so it never appears here.
         </p>
-        <p class="mt-4 text-midgrey text-[0.95rem] leading-relaxed">
+        <p class="mt-4 text-midgrey text-[0.9rem] leading-relaxed">
           Locations are identified by centre or street only. Occupiers, suite numbers and lease
-          details stay confidential to the client who commissioned them. Where a card opens a
-          site story, the findings have been anonymised first.
+          details stay confidential. Where a site opens a story, the findings have been anonymised first.
         </p>
       </div>
+      <ProjectMap />
+    </div>
+  </section>
+
+  <section class="bg-white section-padding" id="projects">
+    <div class="max-w-[1400px] mx-auto px-6 lg:px-10">
+      <div class="flex flex-wrap items-end justify-between gap-6 mb-8">
+        <div>
+          <p class="label mb-4">Locations</p>
+          <h2 class="text-[1.8rem] md:text-[2.1rem] font-light text-navy leading-tight">
+            Some of the locations we&rsquo;ve visited recently.
+          </h2>
+        </div>
+        <p class="text-midgrey text-[0.9rem]" aria-live="polite"><span id="project-count">{locations.length}</span> sites shown</p>
+      </div>
+
+      <div class="flex flex-wrap gap-2 mb-10" role="group" aria-label="Filter projects by type">
+        <button type="button" class="project-filter is-on" data-filter="all">All projects <span>{locations.length}</span></button>
+        {sectors.map((sec) => (
+          <button type="button" class="project-filter" data-filter={sec.key}>{sec.label} <span>{countFor(sec.key)}</span></button>
+        ))}
+      </div>
+
+      <ul class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-x-6 gap-y-10 list-none p-0 m-0">
+        {ordered.map((loc) => {
+          const story = storySlugs.has(loc.slug);
+          const card = (
+            <>
+              <div class="relative overflow-hidden aspect-[16/10] bg-offwhite">
+                <img
+                  src={"/Images/locations/" + loc.slug + ".webp"}
+                  alt={loc.label + " - commercial site surveyed by Alturascope"}
+                  width={loc.w}
+                  height={loc.h}
+                  loading="lazy"
+                  decoding="async"
+                  class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-[1.04]"
+                />
+                <span class="absolute top-3 left-3 bg-navy/85 text-white text-[0.65rem] font-medium uppercase tracking-[0.12em] px-2.5 py-1">{loc.kind}</span>
+              </div>
+              <h3 class="mt-4 text-navy font-medium leading-snug">{loc.label}</h3>
+              {story && (
+                <p class="mt-1.5 text-navy text-[0.85rem] font-medium">
+                  <span class="border-b border-gold pb-0.5">Read the site story &rarr;</span>
+                </p>
+              )}
+            </>
+          );
+          return (
+            <li id={`site-${loc.slug}`} class="project-card scroll-mt-28" data-sectors={(loc.sectors || []).join(" ")}>
+              {story ? <a href={`/work/locations/${loc.slug}/`} class="group block">{card}</a> : <div class="group">{card}</div>}
+            </li>
+          );
+        })}
+      </ul>
     </div>
   </section>
 
@@ -132,8 +209,7 @@ const breadcrumbSchema = JSON.stringify({
             alt="Measured mesh view of a surveyed office floor plate, showing wall and column positions extracted from a Matterport digital twin"
             width="1280"
             height="720"
-            loading="eager"
-            fetchpriority="high"
+            loading="lazy"
             decoding="async"
             class="w-full h-auto"
           />
@@ -143,51 +219,6 @@ const breadcrumbSchema = JSON.stringify({
           </figcaption>
         </figure>
       </div>
-    </div>
-  </section>
-
-  <section class="bg-offwhite section-padding">
-    <div class="max-w-[1400px] mx-auto px-6 lg:px-10">
-      <div class="mb-12">
-        <p class="label mb-4">Locations</p>
-        <h2 class="text-[1.8rem] md:text-[2.1rem] font-light text-navy leading-tight">
-          Some of the locations we&rsquo;ve visited recently.
-        </h2>
-      </div>
-
-      <ul class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 list-none p-0 m-0">
-        {locations.map((loc) => {
-          const card = (
-            <>
-              <img
-                src={"/Images/locations/" + loc.slug + ".webp"}
-                alt={loc.label + " - commercial site surveyed by Alturascope"}
-                width={loc.w}
-                height={loc.h}
-                loading="lazy"
-                decoding="async"
-                class="w-full h-[220px] object-cover"
-              />
-              <div class="p-5">
-                <h3 class="text-navy font-medium leading-snug">{loc.label}</h3>
-                <p class="mt-1.5 text-midgrey text-[0.85rem]">{loc.kind}</p>
-                {storySlugs.has(loc.slug) && (
-                  <p class="mt-3 text-navy text-[0.85rem] font-medium">
-                    <span class="border-b border-gold pb-0.5">What we found &rarr;</span>
-                  </p>
-                )}
-              </div>
-            </>
-          );
-          return storySlugs.has(loc.slug) ? (
-            <li class="card overflow-hidden ring-1 ring-gold/60 hover:shadow-lg transition-shadow">
-              <a href={`/work/locations/${loc.slug}/`} class="block">{card}</a>
-            </li>
-          ) : (
-            <li class="card overflow-hidden">{card}</li>
-          );
-        })}
-      </ul>
     </div>
   </section>
 
@@ -223,5 +254,26 @@ const breadcrumbSchema = JSON.stringify({
       </div>
     </div>
   </section>
+  <script>
+    const buttons = document.querySelectorAll<HTMLButtonElement>(".project-filter");
+    const cards = document.querySelectorAll<HTMLElement>(".project-card");
+    const pins = document.querySelectorAll<SVGAElement>(".map-pin");
+    const count = document.getElementById("project-count");
+    const apply = (key: string) => {
+      let shown = 0;
+      cards.forEach((c) => {
+        const on = key === "all" || (c.dataset.sectors || "").split(" ").includes(key);
+        c.hidden = !on;
+        if (on) shown++;
+      });
+      pins.forEach((p) => {
+        const on = key === "all" || (p.dataset.sectors || "").split(" ").includes(key);
+        p.classList.toggle("is-dim", !on);
+      });
+      buttons.forEach((b) => b.classList.toggle("is-on", b.dataset.filter === key));
+      if (count) count.textContent = String(shown);
+    };
+    buttons.forEach((b) => b.addEventListener("click", () => apply(b.dataset.filter || "all")));
+  </script>
 </Layout>
 

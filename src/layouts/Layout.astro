@@ -82,8 +82,8 @@ const homeHref = isUK ? "/uk/" : "/";
 // Proof pages (the gallery, the sample pack, the sample deliverable) are shared
 // between both locales - they are the same buildings and the same documents.
 const workChildren = [
+  { href: "/work/locations/", label: "All Projects", note: "Map and gallery of surveyed sites" },
   { href: "/work/", label: "The Standard", note: "How a survey runs" },
-  { href: "/work/locations/", label: "Surveyed Locations", note: "A sample of hundreds surveyed" },
   { href: "/work/sample-project/", label: "Sample Project", note: "A complete deliverable" },
 ];
 
@@ -115,7 +115,7 @@ const usServiceChildren = [
 ];
 
 const navLinks = [
-  { href: "/work/", label: "Work", children: workChildren },
+  { href: "/work/locations/", label: "Projects", children: workChildren },
   {
     href: isUK ? "/uk/" : "/services/",
     label: "Services",
@@ -434,7 +434,7 @@ const switchTitle = isUK
               <h4 class="text-xs font-medium uppercase tracking-label text-white/50 mb-6">Company</h4>
               <nav class="flex flex-col gap-3">
                 <a href="/work/" class="text-sm text-white/70 hover:text-white transition-colors">The Standard</a>
-                <a href="/work/locations/" class="text-sm text-white/70 hover:text-white transition-colors">Surveyed Locations</a>
+                <a href="/work/locations/" class="text-sm text-white/70 hover:text-white transition-colors">Projects</a>
                 <a href="/about/" class="text-sm text-white/70 hover:text-white transition-colors">About</a>
                 <a href="/insights/" class="text-sm text-white/70 hover:text-white transition-colors">Insights</a>
                 <a href="/contact/" class="text-sm text-white/70 hover:text-white transition-colors">Contact</a>
