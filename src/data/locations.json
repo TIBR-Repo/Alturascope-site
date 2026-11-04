@@ -2704,5 +2704,55 @@
   ],
   "mx": 775.5,
   "my": 238.5
+ },
+ {
+  "slug": "fry-road-katy",
+  "label": "Fry Road, Katy, Texas",
+  "kind": "Therapy clinic, new-build shell",
+  "w": 1200,
+  "h": 675,
+  "lat": 29.8,
+  "lng": -95.72,
+  "state": "TX",
+  "sectors": [
+   "healthcare",
+   "shell",
+   "retail"
+  ],
+  "mx": 493.8,
+  "my": 444.3
+ },
+ {
+  "slug": "grand-parkway-katy",
+  "label": "Grand Parkway, Katy, Texas",
+  "kind": "Therapy clinic, new retail building",
+  "w": 1200,
+  "h": 675,
+  "lat": 29.76,
+  "lng": -95.79,
+  "state": "TX",
+  "sectors": [
+   "healthcare",
+   "shell",
+   "retail"
+  ],
+  "mx": 492.6,
+  "my": 445.1
+ },
+ {
+  "slug": "peoria-illinois",
+  "label": "Peoria, Illinois",
+  "kind": "Therapy clinic, office building",
+  "w": 1200,
+  "h": 675,
+  "lat": 40.75,
+  "lng": -89.6,
+  "state": "IL",
+  "sectors": [
+   "healthcare",
+   "office"
+  ],
+  "mx": 584.5,
+  "my": 221.6
  }
 ]
