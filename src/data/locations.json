@@ -1266,5 +1266,1046 @@
   ],
   "mx": 89.9,
   "my": 231.3
+ },
+ {
+  "slug": "ashburn-virginia",
+  "label": "Ashburn, Virginia",
+  "kind": "Therapy clinic, office building",
+  "w": 1200,
+  "h": 675,
+  "lat": 39.04,
+  "lng": -77.49,
+  "state": "VA",
+  "sectors": [
+   "healthcare",
+   "office"
+  ],
+  "mx": 770.4,
+  "my": 231.7
+ },
+ {
+  "slug": "fort-worth-therapy-clinic",
+  "label": "Fort Worth, Texas",
+  "kind": "Therapy clinic, standalone building",
+  "w": 1200,
+  "h": 675,
+  "lat": 32.8,
+  "lng": -97.35,
+  "state": "TX",
+  "sectors": [
+   "healthcare"
+  ],
+  "mx": 466.6,
+  "my": 384.2
+ },
+ {
+  "slug": "keller-texas",
+  "label": "Keller, Texas",
+  "kind": "Therapy clinic, standalone building",
+  "w": 1200,
+  "h": 675,
+  "lat": 32.93,
+  "lng": -97.23,
+  "state": "TX",
+  "sectors": [
+   "healthcare"
+  ],
+  "mx": 468.6,
+  "my": 381.7
+ },
+ {
+  "slug": "lynnwood-washington",
+  "label": "Lynnwood, Washington",
+  "kind": "Therapy clinic, office shell",
+  "w": 1200,
+  "h": 675,
+  "lat": 47.82,
+  "lng": -122.31,
+  "state": "WA",
+  "sectors": [
+   "healthcare",
+   "office",
+   "shell"
+  ],
+  "mx": 139.4,
+  "my": 35.3
+ },
+ {
+  "slug": "woodinville-washington",
+  "label": "Woodinville, Washington",
+  "kind": "Therapy clinic, office park",
+  "w": 1200,
+  "h": 675,
+  "lat": 47.75,
+  "lng": -122.16,
+  "state": "WA",
+  "sectors": [
+   "healthcare",
+   "office"
+  ],
+  "mx": 141,
+  "my": 37.1
+ },
+ {
+  "slug": "bellevue-washington-office",
+  "label": "114th Avenue, Bellevue, Washington",
+  "kind": "Therapy clinic, office building",
+  "w": 1200,
+  "h": 675,
+  "lat": 47.62,
+  "lng": -122.19,
+  "state": "WA",
+  "sectors": [
+   "healthcare",
+   "office"
+  ],
+  "mx": 139.9,
+  "my": 39.5
+ },
+ {
+  "slug": "renton-washington",
+  "label": "Renton, Washington",
+  "kind": "Therapy clinic, office building",
+  "w": 1200,
+  "h": 675,
+  "lat": 47.48,
+  "lng": -122.21,
+  "state": "WA",
+  "sectors": [
+   "healthcare",
+   "office"
+  ],
+  "mx": 138.9,
+  "my": 42.1
+ },
+ {
+  "slug": "linthicum-maryland",
+  "label": "Linthicum, Maryland",
+  "kind": "Therapy clinic, office building",
+  "w": 1200,
+  "h": 675,
+  "lat": 39.2,
+  "lng": -76.65,
+  "state": "MD",
+  "sectors": [
+   "healthcare",
+   "office"
+  ],
+  "mx": 782.4,
+  "my": 226
+ },
+ {
+  "slug": "frederick-maryland",
+  "label": "Frederick, Maryland",
+  "kind": "Therapy clinic, office building",
+  "w": 1200,
+  "h": 675,
+  "lat": 39.41,
+  "lng": -77.41,
+  "state": "MD",
+  "sectors": [
+   "healthcare",
+   "office"
+  ],
+  "mx": 770.2,
+  "my": 224.2
+ },
+ {
+  "slug": "suburban-maryland-clinic",
+  "label": "Suburban Maryland",
+  "kind": "Therapy clinic, flex building",
+  "w": 1200,
+  "h": 675,
+  "lat": 39.08,
+  "lng": -77.15,
+  "state": "MD",
+  "sectors": [
+   "healthcare",
+   "office"
+  ],
+  "mx": 775.4,
+  "my": 229.9
+ },
+ {
+  "slug": "gaithersburg-maryland",
+  "label": "Gaithersburg, Maryland",
+  "kind": "Therapy clinic, office suite",
+  "w": 1200,
+  "h": 675,
+  "lat": 39.14,
+  "lng": -77.2,
+  "state": "MD",
+  "sectors": [
+   "healthcare",
+   "office"
+  ],
+  "mx": 774.4,
+  "my": 228.9
+ },
+ {
+  "slug": "germantown-maryland",
+  "label": "Germantown, Maryland",
+  "kind": "Therapy clinic, former restaurant",
+  "w": 1200,
+  "h": 675,
+  "lat": 39.17,
+  "lng": -77.27,
+  "state": "MD",
+  "sectors": [
+   "healthcare",
+   "retail",
+   "shell"
+  ],
+  "mx": 773.2,
+  "my": 228.5
+ },
+ {
+  "slug": "peabody-massachusetts",
+  "label": "Peabody, Massachusetts",
+  "kind": "Therapy clinic, office building",
+  "w": 1200,
+  "h": 675,
+  "lat": 42.53,
+  "lng": -70.93,
+  "state": "MA",
+  "sectors": [
+   "healthcare",
+   "office"
+  ],
+  "mx": 849.9,
+  "my": 141.3
+ },
+ {
+  "slug": "trumbull-connecticut",
+  "label": "Trumbull, Connecticut",
+  "kind": "Therapy clinic, office building",
+  "w": 1200,
+  "h": 675,
+  "lat": 41.24,
+  "lng": -73.2,
+  "state": "CT",
+  "sectors": [
+   "healthcare",
+   "office"
+  ],
+  "mx": 824,
+  "my": 174.7
+ },
+ {
+  "slug": "clybourn-avenue-chicago",
+  "label": "Clybourn Avenue, Chicago, Illinois",
+  "kind": "Therapy clinic, urban retail",
+  "w": 1200,
+  "h": 675,
+  "lat": 41.91,
+  "lng": -87.66,
+  "state": "IL",
+  "sectors": [
+   "healthcare",
+   "retail"
+  ],
+  "mx": 611.4,
+  "my": 196.2
+ },
+ {
+  "slug": "fullerton-avenue-chicago",
+  "label": "Fullerton Avenue, Chicago, Illinois",
+  "kind": "Therapy clinic, former retail",
+  "w": 1200,
+  "h": 675,
+  "lat": 41.92,
+  "lng": -87.7,
+  "state": "IL",
+  "sectors": [
+   "healthcare",
+   "retail",
+   "shell"
+  ],
+  "mx": 610.8,
+  "my": 196.1
+ },
+ {
+  "slug": "north-western-avenue-chicago",
+  "label": "North Western Avenue, Chicago, Illinois",
+  "kind": "Therapy clinic, street retail",
+  "w": 1200,
+  "h": 675,
+  "lat": 41.97,
+  "lng": -87.69,
+  "state": "IL",
+  "sectors": [
+   "healthcare",
+   "retail"
+  ],
+  "mx": 610.8,
+  "my": 195.1
+ },
+ {
+  "slug": "deerfield-illinois",
+  "label": "Deerfield, Illinois",
+  "kind": "Therapy clinic, office building",
+  "w": 1200,
+  "h": 675,
+  "lat": 42.17,
+  "lng": -87.85,
+  "state": "IL",
+  "sectors": [
+   "healthcare",
+   "office"
+  ],
+  "mx": 608.2,
+  "my": 191.3
+ },
+ {
+  "slug": "second-avenue-needham",
+  "label": "Second Avenue, Needham, Massachusetts",
+  "kind": "Therapy clinic, office building",
+  "w": 1200,
+  "h": 675,
+  "lat": 42.3,
+  "lng": -71.22,
+  "state": "MA",
+  "sectors": [
+   "healthcare",
+   "office"
+  ],
+  "mx": 847,
+  "my": 146.9
+ },
+ {
+  "slug": "greater-houston-colonial",
+  "label": "Greater Houston, Texas",
+  "kind": "Therapy clinic, new-build shell",
+  "w": 1200,
+  "h": 675,
+  "lat": 29.78,
+  "lng": -95.75,
+  "state": "TX",
+  "sectors": [
+   "healthcare",
+   "shell"
+  ],
+  "mx": 493.3,
+  "my": 444.7
+ },
+ {
+  "slug": "louetta-road-spring",
+  "label": "Louetta Road, Spring, Texas",
+  "kind": "Therapy clinic, standalone building",
+  "w": 1200,
+  "h": 675,
+  "lat": 30.03,
+  "lng": -95.53,
+  "state": "TX",
+  "sectors": [
+   "healthcare"
+  ],
+  "mx": 497.1,
+  "my": 439.7
+ },
+ {
+  "slug": "stuebner-airline-houston",
+  "label": "Stuebner Airline Road, Houston, Texas",
+  "kind": "Therapy clinic, retail shell",
+  "w": 1200,
+  "h": 675,
+  "lat": 30.02,
+  "lng": -95.55,
+  "state": "TX",
+  "sectors": [
+   "healthcare",
+   "retail",
+   "shell"
+  ],
+  "mx": 496.7,
+  "my": 439.9
+ },
+ {
+  "slug": "elgin-illinois",
+  "label": "Elgin, Illinois",
+  "kind": "Therapy clinic, office building",
+  "w": 1200,
+  "h": 675,
+  "lat": 42.04,
+  "lng": -88.28,
+  "state": "IL",
+  "sectors": [
+   "healthcare",
+   "office"
+  ],
+  "mx": 602.1,
+  "my": 194.4
+ },
+ {
+  "slug": "needham-massachusetts",
+  "label": "Needham, Massachusetts",
+  "kind": "Therapy clinic, office building",
+  "w": 1200,
+  "h": 675,
+  "lat": 42.28,
+  "lng": -71.24,
+  "state": "MA",
+  "sectors": [
+   "healthcare",
+   "office"
+  ],
+  "mx": 846.8,
+  "my": 147.3
+ },
+ {
+  "slug": "whittier-california",
+  "label": "Whittier, California",
+  "kind": "Therapy clinic, office building",
+  "w": 1200,
+  "h": 675,
+  "lat": 33.97,
+  "lng": -118.03,
+  "state": "CA",
+  "sectors": [
+   "healthcare",
+   "office"
+  ],
+  "mx": 131.5,
+  "my": 319.3
+ },
+ {
+  "slug": "murrieta-california",
+  "label": "Village Walk, Murrieta, California",
+  "kind": "Therapy clinic, retail suite",
+  "w": 1200,
+  "h": 675,
+  "lat": 33.55,
+  "lng": -117.21,
+  "state": "CA",
+  "sectors": [
+   "healthcare",
+   "retail",
+   "shell"
+  ],
+  "mx": 142.8,
+  "my": 330.6
+ },
+ {
+  "slug": "merced-california",
+  "label": "Merced, California",
+  "kind": "Therapy clinic, retail shell",
+  "w": 1200,
+  "h": 675,
+  "lat": 37.3,
+  "lng": -120.48,
+  "state": "CA",
+  "sectors": [
+   "healthcare",
+   "retail",
+   "shell"
+  ],
+  "mx": 109.7,
+  "my": 245
+ },
+ {
+  "slug": "holyoke-massachusetts",
+  "label": "Holyoke, Massachusetts",
+  "kind": "Therapy clinic, office building",
+  "w": 1200,
+  "h": 675,
+  "lat": 42.2,
+  "lng": -72.62,
+  "state": "MA",
+  "sectors": [
+   "healthcare",
+   "office"
+  ],
+  "mx": 827.7,
+  "my": 153.9
+ },
+ {
+  "slug": "rochester-new-york",
+  "label": "Rochester, New York",
+  "kind": "Therapy clinic, office suite",
+  "w": 1200,
+  "h": 675,
+  "lat": 43.16,
+  "lng": -77.61,
+  "state": "NY",
+  "sectors": [
+   "healthcare",
+   "office"
+  ],
+  "mx": 752.7,
+  "my": 151
+ },
+ {
+  "slug": "orlando-florida",
+  "label": "Orlando, Florida",
+  "kind": "Therapy clinic, office building",
+  "w": 1200,
+  "h": 675,
+  "lat": 28.54,
+  "lng": -81.38,
+  "state": "FL",
+  "sectors": [
+   "healthcare",
+   "office"
+  ],
+  "mx": 744,
+  "my": 449.7
+ },
+ {
+  "slug": "hertel-avenue-buffalo",
+  "label": "Buffalo, New York",
+  "kind": "Therapy clinic, office building",
+  "w": 1200,
+  "h": 675,
+  "lat": 42.95,
+  "lng": -78.85,
+  "state": "NY",
+  "sectors": [
+   "healthcare",
+   "office"
+  ],
+  "mx": 735.9,
+  "my": 158.5
+ },
+ {
+  "slug": "san-diego-california",
+  "label": "San Diego, California",
+  "kind": "Therapy clinic, courtyard office building",
+  "w": 1200,
+  "h": 675,
+  "lat": 32.83,
+  "lng": -117.15,
+  "state": "CA",
+  "sectors": [
+   "healthcare",
+   "office"
+  ],
+  "mx": 140.5,
+  "my": 344.9
+ },
+ {
+  "slug": "fresno-therapy-clinic",
+  "label": "Fresno, California",
+  "kind": "Therapy clinic, office building",
+  "w": 1200,
+  "h": 675,
+  "lat": 36.8,
+  "lng": -119.77,
+  "state": "CA",
+  "sectors": [
+   "healthcare",
+   "office"
+  ],
+  "mx": 117.9,
+  "my": 257.5
+ },
+ {
+  "slug": "downey-california",
+  "label": "Downey, California",
+  "kind": "Therapy clinic, office building",
+  "w": 1200,
+  "h": 675,
+  "lat": 33.94,
+  "lng": -118.13,
+  "state": "CA",
+  "sectors": [
+   "healthcare",
+   "office"
+  ],
+  "mx": 129.8,
+  "my": 319.6
+ },
+ {
+  "slug": "south-jordan-utah",
+  "label": "South Jordan, Utah",
+  "kind": "Therapy clinic, office building",
+  "w": 1200,
+  "h": 675,
+  "lat": 40.56,
+  "lng": -111.93,
+  "state": "UT",
+  "sectors": [
+   "healthcare",
+   "office"
+  ],
+  "mx": 251.5,
+  "my": 208.7
+ },
+ {
+  "slug": "yardley-pennsylvania",
+  "label": "Yardley, Pennsylvania",
+  "kind": "Clinic campus",
+  "w": 1200,
+  "h": 675,
+  "lat": 40.24,
+  "lng": -74.84,
+  "state": "PA",
+  "sectors": [
+   "healthcare"
+  ],
+  "mx": 804.8,
+  "my": 199.8
+ },
+ {
+  "slug": "chesterfield-missouri",
+  "label": "Chesterfield, Missouri",
+  "kind": "Pediatric therapy clinic",
+  "w": 1200,
+  "h": 675,
+  "lat": 38.66,
+  "lng": -90.58,
+  "state": "MO",
+  "sectors": [
+   "healthcare"
+  ],
+  "mx": 572.3,
+  "my": 264.4
+ },
+ {
+  "slug": "shawnee-kansas",
+  "label": "Hilltop Road, Shawnee, Kansas",
+  "kind": "Pediatric therapy clinic",
+  "w": 1200,
+  "h": 675,
+  "lat": 39.02,
+  "lng": -94.72,
+  "state": "KS",
+  "sectors": [
+   "healthcare",
+   "office"
+  ],
+  "mx": 508.6,
+  "my": 259.5
+ },
+ {
+  "slug": "eatontown-new-jersey",
+  "label": "Eatontown, New Jersey",
+  "kind": "Therapy clinic, office building",
+  "w": 1200,
+  "h": 675,
+  "lat": 40.29,
+  "lng": -74.05,
+  "state": "NJ",
+  "sectors": [
+   "healthcare",
+   "office"
+  ],
+  "mx": 816.1,
+  "my": 196.2
+ },
+ {
+  "slug": "owings-mills-maryland",
+  "label": "Owings Mills, Maryland",
+  "kind": "Therapy clinic, office building",
+  "w": 1200,
+  "h": 675,
+  "lat": 39.42,
+  "lng": -76.78,
+  "state": "MD",
+  "sectors": [
+   "healthcare",
+   "office"
+  ],
+  "mx": 779.5,
+  "my": 222.1
+ },
+ {
+  "slug": "hackensack-new-jersey",
+  "label": "Hackensack, New Jersey",
+  "kind": "Therapy clinic, office building",
+  "w": 1200,
+  "h": 675,
+  "lat": 40.89,
+  "lng": -74.04,
+  "state": "NJ",
+  "sectors": [
+   "healthcare",
+   "office"
+  ],
+  "mx": 813.5,
+  "my": 184.4
+ },
+ {
+  "slug": "crest-hill-illinois",
+  "label": "Crest Hill, Illinois",
+  "kind": "Outpatient clinic suite",
+  "w": 1200,
+  "h": 675,
+  "lat": 41.55,
+  "lng": -88.1,
+  "state": "IL",
+  "sectors": [
+   "healthcare",
+   "office"
+  ],
+  "mx": 605.5,
+  "my": 204
+ },
+ {
+  "slug": "smithfield-north-carolina",
+  "label": "Smithfield, North Carolina",
+  "kind": "Therapy clinic, standalone building",
+  "w": 1200,
+  "h": 675,
+  "lat": 35.51,
+  "lng": -78.34,
+  "state": "NC",
+  "sectors": [
+   "healthcare"
+  ],
+  "mx": 770.7,
+  "my": 303.8
+ },
+ {
+  "slug": "north-figueroa-highland-park",
+  "label": "North Figueroa Street, Los Angeles, California",
+  "kind": "Street-front retail to clinic",
+  "w": 1200,
+  "h": 675,
+  "lat": 34.11,
+  "lng": -118.19,
+  "state": "CA",
+  "sectors": [
+   "healthcare",
+   "retail"
+  ],
+  "mx": 129.7,
+  "my": 316
+ },
+ {
+  "slug": "st-louis-missouri",
+  "label": "St. Louis, Missouri",
+  "kind": "Pediatric therapy clinic",
+  "w": 1200,
+  "h": 675,
+  "lat": 38.63,
+  "lng": -90.35,
+  "state": "MO",
+  "sectors": [
+   "healthcare"
+  ],
+  "mx": 575.9,
+  "my": 264.8
+ },
+ {
+  "slug": "clark-new-jersey",
+  "label": "Clark, New Jersey",
+  "kind": "Therapy clinic, office building",
+  "w": 1200,
+  "h": 675,
+  "lat": 40.62,
+  "lng": -74.31,
+  "state": "NJ",
+  "sectors": [
+   "healthcare",
+   "office"
+  ],
+  "mx": 810.8,
+  "my": 190.6
+ },
+ {
+  "slug": "hanford-california",
+  "label": "Hanford, California",
+  "kind": "Therapy clinic, new retail building",
+  "w": 1200,
+  "h": 675,
+  "lat": 36.33,
+  "lng": -119.65,
+  "state": "CA",
+  "sectors": [
+   "healthcare",
+   "retail",
+   "shell"
+  ],
+  "mx": 117.5,
+  "my": 267.1
+ },
+ {
+  "slug": "monmouth-junction-new-jersey",
+  "label": "Monmouth Junction, New Jersey",
+  "kind": "Therapy clinic, flex building",
+  "w": 1200,
+  "h": 675,
+  "lat": 40.38,
+  "lng": -74.55,
+  "state": "NJ",
+  "sectors": [
+   "healthcare",
+   "office"
+  ],
+  "mx": 808.4,
+  "my": 196.1
+ },
+ {
+  "slug": "itasca-illinois",
+  "label": "Itasca, Illinois",
+  "kind": "Therapy clinic, office suite",
+  "w": 1200,
+  "h": 675,
+  "lat": 41.98,
+  "lng": -88.02,
+  "state": "IL",
+  "sectors": [
+   "healthcare",
+   "office"
+  ],
+  "mx": 606,
+  "my": 195.3
+ },
+ {
+  "slug": "denver-colorado",
+  "label": "Denver, Colorado",
+  "kind": "Therapy clinic, office floor",
+  "w": 1200,
+  "h": 675,
+  "lat": 39.7,
+  "lng": -104.95,
+  "state": "CO",
+  "sectors": [
+   "healthcare",
+   "office"
+  ],
+  "mx": 353.5,
+  "my": 239.6
+ },
+ {
+  "slug": "ballwin-missouri",
+  "label": "Ballwin, Missouri",
+  "kind": "Pediatric therapy clinic",
+  "w": 1200,
+  "h": 675,
+  "lat": 38.59,
+  "lng": -90.55,
+  "state": "MO",
+  "sectors": [
+   "healthcare",
+   "office"
+  ],
+  "mx": 572.8,
+  "my": 265.8
+ },
+ {
+  "slug": "washington-dc-clinic",
+  "label": "Washington, DC",
+  "kind": "Therapy clinic, new-build",
+  "w": 1200,
+  "h": 675,
+  "lat": 38.91,
+  "lng": -76.99,
+  "state": "DC",
+  "sectors": [
+   "healthcare",
+   "shell"
+  ],
+  "mx": 778.4,
+  "my": 232.8
+ },
+ {
+  "slug": "mendota-heights-minnesota",
+  "label": "Mendota Heights, Minnesota",
+  "kind": "Clinic, retail centre suite",
+  "w": 1200,
+  "h": 675,
+  "lat": 44.88,
+  "lng": -93.14,
+  "state": "MN",
+  "sectors": [
+   "healthcare",
+   "retail"
+  ],
+  "mx": 529.2,
+  "my": 141.7
+ },
+ {
+  "slug": "shakopee-minnesota",
+  "label": "Shakopee, Minnesota",
+  "kind": "Pediatric clinic, office building",
+  "w": 1200,
+  "h": 675,
+  "lat": 44.78,
+  "lng": -93.48,
+  "state": "MN",
+  "sectors": [
+   "healthcare",
+   "office"
+  ],
+  "mx": 524.5,
+  "my": 143.8
+ },
+ {
+  "slug": "burien-washington",
+  "label": "Burien, Washington",
+  "kind": "Clinic, office building",
+  "w": 1200,
+  "h": 675,
+  "lat": 47.47,
+  "lng": -122.35,
+  "state": "WA",
+  "sectors": [
+   "healthcare",
+   "office"
+  ],
+  "mx": 137,
+  "my": 41.8
+ },
+ {
+  "slug": "aurora-colorado",
+  "label": "Aurora, Colorado",
+  "kind": "Therapy clinic, office building",
+  "w": 1200,
+  "h": 675,
+  "lat": 39.7,
+  "lng": -104.82,
+  "state": "CO",
+  "sectors": [
+   "healthcare",
+   "office"
+  ],
+  "mx": 355.5,
+  "my": 239.7
+ },
+ {
+  "slug": "dunlap-illinois",
+  "label": "Dunlap, Illinois",
+  "kind": "Therapy clinic, office shell",
+  "w": 1200,
+  "h": 675,
+  "lat": 40.86,
+  "lng": -89.67,
+  "state": "IL",
+  "sectors": [
+   "healthcare",
+   "office",
+   "shell"
+  ],
+  "mx": 583.3,
+  "my": 219.5
+ },
+ {
+  "slug": "gilbert-arizona",
+  "label": "Gilbert, Arizona",
+  "kind": "Therapy clinic, office building",
+  "w": 1200,
+  "h": 675,
+  "lat": 33.33,
+  "lng": -111.79,
+  "state": "AZ",
+  "sectors": [
+   "healthcare",
+   "office"
+  ],
+  "mx": 229.6,
+  "my": 352.2
+ },
+ {
+  "slug": "northglenn-colorado",
+  "label": "Northglenn, Colorado",
+  "kind": "Therapy clinic, office building",
+  "w": 1200,
+  "h": 675,
+  "lat": 39.9,
+  "lng": -104.98,
+  "state": "CO",
+  "sectors": [
+   "healthcare",
+   "office"
+  ],
+  "mx": 353.4,
+  "my": 235.5
+ },
+ {
+  "slug": "val-vista-drive-arizona",
+  "label": "Val Vista Drive, Mesa, Arizona",
+  "kind": "Therapy clinic, office campus",
+  "w": 1200,
+  "h": 675,
+  "lat": 33.39,
+  "lng": -111.76,
+  "state": "AZ",
+  "sectors": [
+   "healthcare",
+   "office"
+  ],
+  "mx": 230.2,
+  "my": 351.1
+ },
+ {
+  "slug": "dry-creek-road-colorado",
+  "label": "Dry Creek Road, Centennial, Colorado",
+  "kind": "Therapy clinic, office floor",
+  "w": 1200,
+  "h": 675,
+  "lat": 39.58,
+  "lng": -104.88,
+  "state": "CO",
+  "sectors": [
+   "healthcare",
+   "office"
+  ],
+  "mx": 354.3,
+  "my": 242.1
+ },
+ {
+  "slug": "mineral-avenue-littleton",
+  "label": "Mineral Avenue, Littleton, Colorado",
+  "kind": "Therapy clinic, office suite",
+  "w": 1200,
+  "h": 675,
+  "lat": 39.58,
+  "lng": -105.02,
+  "state": "CO",
+  "sectors": [
+   "healthcare",
+   "office"
+  ],
+  "mx": 352.2,
+  "my": 241.9
+ },
+ {
+  "slug": "pasadena-california",
+  "label": "Pasadena, California",
+  "kind": "Clinic suite, office building",
+  "w": 1200,
+  "h": 675,
+  "lat": 34.15,
+  "lng": -118.14,
+  "state": "CA",
+  "sectors": [
+   "healthcare",
+   "office"
+  ],
+  "mx": 130.6,
+  "my": 315.4
+ },
+ {
+  "slug": "fitchburg-massachusetts",
+  "label": "Fitchburg, Massachusetts",
+  "kind": "Therapy clinic, former retail",
+  "w": 1200,
+  "h": 675,
+  "lat": 42.58,
+  "lng": -71.8,
+  "state": "MA",
+  "sectors": [
+   "healthcare",
+   "retail"
+  ],
+  "mx": 837.4,
+  "my": 143.6
+ },
+ {
+  "slug": "cheshire-connecticut",
+  "label": "Cheshire, Connecticut",
+  "kind": "Clinic, colonial office building",
+  "w": 1200,
+  "h": 675,
+  "lat": 41.5,
+  "lng": -72.9,
+  "state": "CT",
+  "sectors": [
+   "healthcare",
+   "office"
+  ],
+  "mx": 827.1,
+  "my": 168.5
  }
 ]

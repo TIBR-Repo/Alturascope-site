@@ -8,14 +8,14 @@
 import locations from "../data/locations.json";
 import stories from "../data/location-stories.json";
 
-interface Tile { slug: string; img?: string; kicker: string; title: string }
+interface Tile { slug: string; img?: string; kicker: string; title: string; cta?: string }
 
 const tiles: Tile[] = [
   { slug: "westfield-topanga-canoga-park", img: "/Images/hero/westfield-topanga-1600.webp", kicker: "Enclosed mall", title: "Westfield Topanga, Los Angeles" },
   { slug: "grand-central-terminal-new-york", img: "/Images/hero/grand-central-dining-concourse-1024.webp", kicker: "Landmark & transit", title: "Grand Central Terminal, New York" },
   { slug: "lincoln-road-miami-beach", kicker: "Street retail", title: "Lincoln Road, Miami Beach" },
   { slug: "the-gardens-mall-palm-beach", img: "/Images/hero/the-gardens-mall-1024.webp", kicker: "Luxury mall", title: "The Gardens Mall, Palm Beach Gardens" },
-  { slug: "fifth-avenue-new-york", kicker: "Cold shell", title: "Fifth Avenue, New York" },
+  { slug: "buchanan-business-center-guaynabo", img: "/Images/hero/guaynabo-puerto-rico-aerial-1024.webp", kicker: "Healthcare", title: "Pediatric clinic, Guaynabo, Puerto Rico", cta: "See it on the map" },
 ];
 
 const storySlugs = new Set(stories.map((s) => s.slug));
@@ -39,7 +39,7 @@ const bySlug = new Map(locations.map((l) => [l.slug, l]));
     <div class="featured-grid grid gap-1.5">
       {tiles.map((t, i) => {
         const loc = bySlug.get(t.slug);
-        const href = storySlugs.has(t.slug) ? `/work/locations/${t.slug}/` : "/work/locations/";
+        const href = storySlugs.has(t.slug) ? `/work/locations/${t.slug}/` : `/work/locations/#site-${t.slug}`;
         const src = t.img || `/Images/locations/${t.slug}.webp`;
         return (
           <a href={href} class={`group relative block overflow-hidden bg-navy-light ${i === 0 ? "featured-lead" : ""}`}>
@@ -56,7 +56,7 @@ const bySlug = new Map(locations.map((l) => [l.slug, l]));
             <div class="absolute left-5 right-5 bottom-5 md:left-6 md:bottom-6">
               <p class="text-gold text-[0.68rem] font-medium uppercase tracking-[0.14em]">{t.kicker}</p>
               <p class={`text-white font-light leading-snug mt-1 ${i === 0 ? "text-[1.5rem] md:text-[2rem]" : "text-[1.1rem] md:text-[1.25rem]"}`}>{t.title}</p>
-              <p class="text-white/70 text-[0.8rem] mt-1.5 group-hover:text-white transition-colors">Read the site story &rarr;</p>
+              <p class="text-white/70 text-[0.8rem] mt-1.5 group-hover:text-white transition-colors">{t.cta || "Read the site story"} &rarr;</p>
             </div>
           </a>
         );
