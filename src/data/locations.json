@@ -2514,5 +2514,195 @@
   ],
   "mx": 156.8,
   "my": 330.2
+ },
+ {
+  "slug": "oakwood-georgia",
+  "label": "Oakwood, Georgia",
+  "kind": "Therapy clinic, standalone building",
+  "w": 1200,
+  "h": 675,
+  "lat": 34.23,
+  "lng": -83.88,
+  "state": "GA",
+  "sectors": [
+   "healthcare"
+  ],
+  "mx": 686.2,
+  "my": 343.2
+ },
+ {
+  "slug": "braintree-massachusetts",
+  "label": "Braintree, Massachusetts",
+  "kind": "Medical office building",
+  "w": 1200,
+  "h": 675,
+  "lat": 42.21,
+  "lng": -71,
+  "state": "MA",
+  "sectors": [
+   "healthcare",
+   "office"
+  ],
+  "mx": 850.6,
+  "my": 147.8
+ },
+ {
+  "slug": "santa-monica-california",
+  "label": "Santa Monica, California",
+  "kind": "Street-front clinic conversion",
+  "w": 1200,
+  "h": 675,
+  "lat": 34.02,
+  "lng": -118.48,
+  "state": "CA",
+  "sectors": [
+   "healthcare",
+   "retail"
+  ],
+  "mx": 124.6,
+  "my": 316.7
+ },
+ {
+  "slug": "north-haven-connecticut",
+  "label": "North Haven, Connecticut",
+  "kind": "Industrial shell",
+  "w": 1200,
+  "h": 675,
+  "lat": 41.39,
+  "lng": -72.86,
+  "state": "CT",
+  "sectors": [
+   "office",
+   "shell"
+  ],
+  "mx": 828.2,
+  "my": 170.5
+ },
+ {
+  "slug": "granite-bay-california",
+  "label": "Granite Bay, California",
+  "kind": "Neuro-rehabilitation residence",
+  "w": 1200,
+  "h": 675,
+  "lat": 38.76,
+  "lng": -121.16,
+  "state": "CA",
+  "sectors": [
+   "healthcare"
+  ],
+  "mx": 107,
+  "my": 214
+ },
+ {
+  "slug": "fort-lauderdale-florida",
+  "label": "Fort Lauderdale, Florida",
+  "kind": "Fitness club, flex building",
+  "w": 1200,
+  "h": 675,
+  "lat": 26.15,
+  "lng": -80.17,
+  "state": "FL",
+  "sectors": [
+   "office",
+   "retail"
+  ],
+  "mx": 772.7,
+  "my": 492.9
+ },
+ {
+  "slug": "palm-beach-florida",
+  "label": "West Palm Beach, Florida",
+  "kind": "Veterinary clinic",
+  "w": 1200,
+  "h": 675,
+  "lat": 26.7,
+  "lng": -80.09,
+  "state": "FL",
+  "sectors": [
+   "healthcare"
+  ],
+  "mx": 772.4,
+  "my": 482
+ },
+ {
+  "slug": "la-habra-california",
+  "label": "La Habra, California",
+  "kind": "Therapy clinic, office building",
+  "w": 1200,
+  "h": 675,
+  "lat": 33.93,
+  "lng": -117.95,
+  "state": "CA",
+  "sectors": [
+   "healthcare",
+   "office"
+  ],
+  "mx": 132.6,
+  "my": 320.4
+ },
+ {
+  "slug": "southwick-massachusetts",
+  "label": "Southwick, Massachusetts",
+  "kind": "Therapy clinic, office suite",
+  "w": 1200,
+  "h": 675,
+  "lat": 42.05,
+  "lng": -72.77,
+  "state": "MA",
+  "sectors": [
+   "healthcare",
+   "office"
+  ],
+  "mx": 826.3,
+  "my": 157.4
+ },
+ {
+  "slug": "springfield-massachusetts",
+  "label": "Springfield, Massachusetts",
+  "kind": "Therapy clinic, office suite",
+  "w": 1200,
+  "h": 675,
+  "lat": 42.1,
+  "lng": -72.59,
+  "state": "MA",
+  "sectors": [
+   "healthcare",
+   "office"
+  ],
+  "mx": 828.6,
+  "my": 155.8
+ },
+ {
+  "slug": "west-broadway-oviedo",
+  "label": "West Broadway Street, Oviedo, Florida",
+  "kind": "Therapy clinic, new-build shell",
+  "w": 1200,
+  "h": 675,
+  "lat": 28.67,
+  "lng": -81.21,
+  "state": "FL",
+  "sectors": [
+   "healthcare",
+   "shell",
+   "retail"
+  ],
+  "mx": 746.5,
+  "my": 446.6
+ },
+ {
+  "slug": "woodbridge-virginia",
+  "label": "Woodbridge, Virginia",
+  "kind": "Therapy clinic, retail building",
+  "w": 1200,
+  "h": 675,
+  "lat": 38.66,
+  "lng": -77.25,
+  "state": "VA",
+  "sectors": [
+   "healthcare",
+   "retail"
+  ],
+  "mx": 775.5,
+  "my": 238.5
  }
 ]
