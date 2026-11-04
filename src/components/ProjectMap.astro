@@ -57,6 +57,6 @@ const pins = locations.filter((l) => typeof l.mx === "number");
 <style>
   .pin-dot { fill: #C9A84C; stroke: #0B1F3A; stroke-width: 1.2; transition: r 0.15s, opacity 0.2s; }
   .map-pin:hover .pin-dot, .map-pin:focus .pin-dot { r: 8; fill: #0B1F3A; stroke: #C9A84C; }
-  .map-pin.is-dim { pointer-events: none; }
-  .map-pin.is-dim .pin-dot { opacity: 0.12; }
+  /* Filtering hides other pins outright - faded pins read as a rendering fault. */
+  .map-pin.is-dim { display: none; }
 </style>

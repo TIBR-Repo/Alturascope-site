@@ -2307,5 +2307,212 @@
   ],
   "mx": 827.1,
   "my": 168.5
+ },
+ {
+  "slug": "hapeville-georgia",
+  "label": "Hapeville, Georgia",
+  "kind": "Clinic, second-floor office",
+  "w": 1200,
+  "h": 675,
+  "lat": 33.66,
+  "lng": -84.41,
+  "state": "GA",
+  "sectors": [
+   "healthcare",
+   "office"
+  ],
+  "mx": 679,
+  "my": 355.6
+ },
+ {
+  "slug": "startown-road-hickory",
+  "label": "Startown Road, Hickory, North Carolina",
+  "kind": "Therapy clinic, retail shell",
+  "w": 1200,
+  "h": 675,
+  "lat": 35.7,
+  "lng": -81.29,
+  "state": "NC",
+  "sectors": [
+   "healthcare",
+   "shell",
+   "retail"
+  ],
+  "mx": 723.5,
+  "my": 308.1
+ },
+ {
+  "slug": "catawba-valley-boulevard-hickory",
+  "label": "Catawba Valley Boulevard, Hickory, North Carolina",
+  "kind": "Therapy clinic, former retail",
+  "w": 1200,
+  "h": 675,
+  "lat": 35.72,
+  "lng": -81.3,
+  "state": "NC",
+  "sectors": [
+   "healthcare",
+   "retail",
+   "shell"
+  ],
+  "mx": 723.3,
+  "my": 307.7
+ },
+ {
+  "slug": "hanahan-south-carolina",
+  "label": "Remount Road, Hanahan, South Carolina",
+  "kind": "Therapy clinic, former retail box",
+  "w": 1200,
+  "h": 675,
+  "lat": 32.92,
+  "lng": -80.01,
+  "state": "SC",
+  "sectors": [
+   "healthcare",
+   "retail",
+   "shell"
+  ],
+  "mx": 753.1,
+  "my": 359.7
+ },
+ {
+  "slug": "washington-street-taunton",
+  "label": "Washington Street, Taunton, Massachusetts",
+  "kind": "Former bakery to therapy clinic",
+  "w": 1200,
+  "h": 675,
+  "lat": 41.9,
+  "lng": -71.1,
+  "state": "MA",
+  "sectors": [
+   "healthcare",
+   "retail"
+  ],
+  "mx": 850.8,
+  "my": 154.1
+ },
+ {
+  "slug": "41st-street-doral",
+  "label": "41st Street, Doral, Florida",
+  "kind": "Veterinary hospital shell",
+  "w": 1200,
+  "h": 675,
+  "lat": 25.81,
+  "lng": -80.33,
+  "state": "FL",
+  "sectors": [
+   "healthcare",
+   "shell"
+  ],
+  "mx": 771,
+  "my": 500
+ },
+ {
+  "slug": "goni-road-carson-city",
+  "label": "Goni Road, Carson City, Nevada",
+  "kind": "Pediatric therapy clinic",
+  "w": 1200,
+  "h": 675,
+  "lat": 39.24,
+  "lng": -119.72,
+  "state": "NV",
+  "sectors": [
+   "healthcare",
+   "office"
+  ],
+  "mx": 130.8,
+  "my": 210.2
+ },
+ {
+  "slug": "broadway-plaza-walnut-creek",
+  "label": "Broadway Plaza, Walnut Creek, California",
+  "kind": "Open-air retail",
+  "w": 1200,
+  "h": 675,
+  "lat": 37.9,
+  "lng": -122.06,
+  "state": "CA",
+  "sectors": [
+   "retail"
+  ],
+  "mx": 89,
+  "my": 226.9
+ },
+ {
+  "slug": "ottley-drive-atlanta",
+  "label": "Ottley Drive, Atlanta, Georgia",
+  "kind": "Clinic, new office building",
+  "w": 1200,
+  "h": 675,
+  "lat": 33.83,
+  "lng": -84.38,
+  "state": "GA",
+  "sectors": [
+   "healthcare",
+   "office"
+  ],
+  "mx": 679.1,
+  "my": 352.1
+ },
+ {
+  "slug": "tacoma-mall",
+  "label": "Tacoma Mall, Tacoma, Washington",
+  "kind": "Enclosed mall",
+  "w": 1200,
+  "h": 675,
+  "lat": 47.22,
+  "lng": -122.47,
+  "state": "WA",
+  "sectors": [
+   "retail"
+  ],
+  "mx": 134.1,
+  "my": 46.1
+ },
+ {
+  "slug": "victoria-gardens-rancho-cucamonga",
+  "label": "Victoria Gardens, Rancho Cucamonga, California",
+  "kind": "Open-air retail",
+  "w": 1200,
+  "h": 675,
+  "lat": 34.11,
+  "lng": -117.53,
+  "state": "CA",
+  "sectors": [
+   "retail"
+  ],
+  "mx": 140.2,
+  "my": 318.5
+ },
+ {
+  "slug": "union-market-washington-dc",
+  "label": "Union Market, Washington, DC",
+  "kind": "Historic warehouse retail",
+  "w": 1200,
+  "h": 675,
+  "lat": 38.91,
+  "lng": -77,
+  "state": "DC",
+  "sectors": [
+   "retail",
+   "shell"
+  ],
+  "mx": 778.3,
+  "my": 232.8
+ },
+ {
+  "slug": "el-paseo-palm-desert",
+  "label": "The Gardens on El Paseo, Palm Desert, California",
+  "kind": "Open-air retail",
+  "w": 1200,
+  "h": 675,
+  "lat": 33.72,
+  "lng": -116.38,
+  "state": "CA",
+  "sectors": [
+   "retail"
+  ],
+  "mx": 156.8,
+  "my": 330.2
  }
 ]
