@@ -116,3 +116,7 @@
 .project-filter:hover { border-color: #0B1F3A; }
 .project-filter.is-on { background: #0B1F3A; border-color: #0B1F3A; color: #fff; }
 .project-filter.is-on span { color: #C9A84C; }
+
+.project-filter { white-space: nowrap; flex-shrink: 0; }
+.filter-row { scrollbar-width: none; -webkit-overflow-scrolling: touch; }
+.filter-row::-webkit-scrollbar { display: none; }

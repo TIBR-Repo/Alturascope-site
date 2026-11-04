@@ -116,7 +116,7 @@ const breadcrumbSchema = JSON.stringify({
           firms&rsquo; names, so it never appears here. We cover all 50 states and Canada.
         </p>
         <p class="mt-4 text-midgrey text-[0.9rem] leading-relaxed">
-          Locations are identified by centre or street only. Occupiers, suite numbers and lease
+          Locations are identified by town or centre only. Occupiers, suite numbers and lease
           details stay confidential. Where a site opens a story, the findings have been anonymised first.
         </p>
       </div>
@@ -135,14 +135,14 @@ const breadcrumbSchema = JSON.stringify({
         </div>
       </div>
 
-      <div class="flex flex-wrap gap-2 mb-10" role="group" aria-label="Filter projects by type">
+      <div class="filter-row flex flex-nowrap md:flex-wrap gap-2 mb-8 md:mb-10 -mx-6 px-6 md:mx-0 md:px-0 overflow-x-auto" role="group" aria-label="Filter projects by type">
         <button type="button" class="project-filter is-on" data-filter="all">All projects</button>
         {sectors.map((sec) => (
           <button type="button" class="project-filter" data-filter={sec.key}>{sec.label} <span>{countFor(sec.key)}</span></button>
         ))}
       </div>
 
-      <ul class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-x-6 gap-y-10 list-none p-0 m-0">
+      <ul class="grid grid-cols-2 lg:grid-cols-3 gap-x-3 sm:gap-x-6 gap-y-6 sm:gap-y-10 list-none p-0 m-0">
         {ordered.map((loc) => {
           const story = storySlugs.has(loc.slug);
           const card = (
@@ -157,11 +157,12 @@ const breadcrumbSchema = JSON.stringify({
                   decoding="async"
                   class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-[1.04]"
                 />
-                <span class="absolute top-3 left-3 bg-navy/85 text-white text-[0.65rem] font-medium uppercase tracking-[0.12em] px-2.5 py-1">{loc.kind}</span>
+                <span class="hidden sm:inline-block absolute top-3 left-3 bg-navy/85 text-white text-[0.65rem] font-medium uppercase tracking-[0.12em] px-2.5 py-1">{loc.kind}</span>
               </div>
-              <h3 class="mt-4 text-navy font-medium leading-snug">{loc.label}</h3>
+              <h3 class="mt-2.5 sm:mt-4 text-navy font-medium leading-snug text-[0.85rem] sm:text-base">{loc.label}</h3>
+              <p class="sm:hidden mt-0.5 text-midgrey text-[0.75rem] leading-snug">{loc.kind}</p>
               {story && (
-                <p class="mt-1.5 text-navy text-[0.85rem] font-medium">
+                <p class="mt-1.5 text-navy text-[0.75rem] sm:text-[0.85rem] font-medium">
                   <span class="border-b border-gold pb-0.5">Read the site story &rarr;</span>
                 </p>
               )}
@@ -174,6 +175,9 @@ const breadcrumbSchema = JSON.stringify({
           );
         })}
       </ul>
+      <div class="mt-10 text-center">
+        <button type="button" id="show-more" class="btn-secondary">Show more projects</button>
+      </div>
     </div>
   </section>
 
@@ -254,25 +258,43 @@ const breadcrumbSchema = JSON.stringify({
     </div>
   </section>
   <script>
+    // Filters, plus a "Show more" so the page is not 70 screens long on a phone.
+    // Every card stays in the HTML (crawlers see them all); only the first
+    // batch is displayed until the visitor asks for more or picks a filter.
+    const LIMIT = 24;
     const buttons = document.querySelectorAll<HTMLButtonElement>(".project-filter");
-    const cards = document.querySelectorAll<HTMLElement>(".project-card");
+    const cards = Array.from(document.querySelectorAll<HTMLElement>(".project-card"));
     const pins = document.querySelectorAll<SVGAElement>(".map-pin");
-    const count = document.getElementById("project-count");
+    const more = document.getElementById("show-more");
+    let current = "all";
+    let expanded = false;
+    const matches = (el: HTMLElement | SVGElement, key: string) =>
+      key === "all" || ((el as HTMLElement).dataset.sectors || "").split(" ").includes(key);
     const apply = (key: string) => {
-      let shown = 0;
+      current = key;
+      let n = 0;
       cards.forEach((c) => {
-        const on = key === "all" || (c.dataset.sectors || "").split(" ").includes(key);
-        c.hidden = !on;
-        if (on) shown++;
+        const on = matches(c, key);
+        if (on) n++;
+        c.hidden = !on || (key === "all" && !expanded && n > LIMIT);
       });
-      pins.forEach((p) => {
-        const on = key === "all" || (p.dataset.sectors || "").split(" ").includes(key);
-        p.classList.toggle("is-dim", !on);
-      });
+      pins.forEach((p) => p.classList.toggle("is-dim", !matches(p, key)));
       buttons.forEach((b) => b.classList.toggle("is-on", b.dataset.filter === key));
-      if (count) count.textContent = String(shown);
+      if (more) more.style.display = expanded || key !== "all" || n <= LIMIT ? "none" : "";
     };
     buttons.forEach((b) => b.addEventListener("click", () => apply(b.dataset.filter || "all")));
+    more?.addEventListener("click", () => { expanded = true; apply(current); });
+    // A link to #site-<slug> (map pin, homepage tile) must land on a visible card.
+    const reveal = () => {
+      const id = decodeURIComponent(location.hash.slice(1));
+      const el = id && document.getElementById(id);
+      if (el && el.classList.contains("project-card") && el.hidden) {
+        expanded = true; apply("all"); el.scrollIntoView();
+      }
+    };
+    apply("all");
+    reveal();
+    window.addEventListener("hashchange", reveal);
   </script>
 </Layout>
 
