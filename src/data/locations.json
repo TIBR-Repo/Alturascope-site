@@ -1,7 +1,7 @@
 [
  {
   "slug": "apollo-drive-chelmsford",
-  "label": "Apollo Drive, Chelmsford, Massachusetts",
+  "label": "Chelmsford, Massachusetts",
   "kind": "Office",
   "w": 1200,
   "h": 675,
@@ -17,7 +17,7 @@
  },
  {
   "slug": "pavilions-lane-sacramento",
-  "label": "Pavilions Lane, Sacramento, California",
+  "label": "Sacramento, California",
   "kind": "Open-air retail",
   "w": 1200,
   "h": 675,
@@ -78,7 +78,7 @@
  },
  {
   "slug": "pennsylvania-avenue-washington-dc",
-  "label": "Pennsylvania Avenue, Washington, DC",
+  "label": "Washington, DC",
   "kind": "Office",
   "w": 1200,
   "h": 675,
@@ -93,7 +93,7 @@
  },
  {
   "slug": "henderson-avenue-dallas",
-  "label": "Henderson Avenue, Dallas, Texas",
+  "label": "Dallas, Texas",
   "kind": "Mixed-use retail",
   "w": 1200,
   "h": 675,
@@ -244,7 +244,7 @@
  },
  {
   "slug": "j-street-sacramento",
-  "label": "J Street, Sacramento, California",
+  "label": "Sacramento, California",
   "kind": "Vacant unit",
   "w": 1200,
   "h": 675,
@@ -305,7 +305,7 @@
  },
  {
   "slug": "berkeley-way",
-  "label": "Berkeley Way, Berkeley, California",
+  "label": "Berkeley, California",
   "kind": "Office",
   "w": 1200,
   "h": 675,
@@ -337,7 +337,7 @@
  },
  {
   "slug": "culebra-road-san-antonio",
-  "label": "Culebra Road, San Antonio, Texas",
+  "label": "San Antonio, Texas",
   "kind": "Shell unit, mid fit-out",
   "w": 1200,
   "h": 675,
@@ -368,7 +368,7 @@
  },
  {
   "slug": "mckinney-avenue-dallas",
-  "label": "McKinney Avenue, Dallas, Texas",
+  "label": "Dallas, Texas",
   "kind": "Vacant retail unit",
   "w": 1200,
   "h": 675,
@@ -416,7 +416,7 @@
  },
  {
   "slug": "grand-avenue-san-marcos",
-  "label": "Grand Avenue, San Marcos, California",
+  "label": "San Marcos, California",
   "kind": "Food-service unit",
   "w": 1200,
   "h": 675,
@@ -431,7 +431,7 @@
  },
  {
   "slug": "new-york-avenue-washington-dc",
-  "label": "New York Avenue, Washington, DC",
+  "label": "Washington, DC",
   "kind": "Office",
   "w": 1200,
   "h": 675,
@@ -462,7 +462,7 @@
  },
  {
   "slug": "jericho-turnpike-commack",
-  "label": "Jericho Turnpike, Commack, New York",
+  "label": "Commack, New York",
   "kind": "Strip-centre retail",
   "w": 1200,
   "h": 675,
@@ -477,7 +477,7 @@
  },
  {
   "slug": "west-diversey-parkway-chicago",
-  "label": "West Diversey Parkway, Chicago, Illinois",
+  "label": "Chicago, Illinois",
   "kind": "Shell unit",
   "w": 1200,
   "h": 675,
@@ -493,7 +493,7 @@
  },
  {
   "slug": "manhattan-avenue-greenpoint-brooklyn",
-  "label": "Manhattan Avenue, Greenpoint, Brooklyn",
+  "label": "Greenpoint, Brooklyn",
   "kind": "Stripped retail unit",
   "w": 1200,
   "h": 675,
@@ -509,7 +509,7 @@
  },
  {
   "slug": "broadway-upper-west-side-new-york",
-  "label": "Broadway, Upper West Side, New York",
+  "label": "Upper West Side, New York",
   "kind": "Residential over retail",
   "w": 1200,
   "h": 675,
@@ -524,7 +524,7 @@
  },
  {
   "slug": "cactus-road-phoenix",
-  "label": "Cactus Road, Phoenix, Arizona",
+  "label": "Phoenix, Arizona",
   "kind": "New-build shell",
   "w": 1200,
   "h": 675,
@@ -555,7 +555,7 @@
  },
  {
   "slug": "route-59-naperville",
-  "label": "Route 59, Naperville, Illinois",
+  "label": "Naperville, Illinois",
   "kind": "Office and warehouse flex suite",
   "w": 1200,
   "h": 675,
@@ -570,7 +570,7 @@
  },
  {
   "slug": "peachtree-road-atlanta",
-  "label": "Peachtree Road, Atlanta, Georgia",
+  "label": "Atlanta, Georgia",
   "kind": "High-rise office",
   "w": 1200,
   "h": 675,
@@ -586,7 +586,7 @@
  },
  {
   "slug": "industrial-avenue-lowell",
-  "label": "Industrial Avenue, Lowell, Massachusetts",
+  "label": "Lowell, Massachusetts",
   "kind": "Warehouse and light industrial",
   "w": 1200,
   "h": 675,
@@ -602,7 +602,7 @@
  },
  {
   "slug": "gateway-oaks-drive-sacramento",
-  "label": "Gateway Oaks Drive, Sacramento, California",
+  "label": "Sacramento, California",
   "kind": "Office suite",
   "w": 1200,
   "h": 675,
@@ -618,7 +618,7 @@
  },
  {
   "slug": "ohio-street-commons-joliet",
-  "label": "Ohio Street Commons, Joliet, Illinois",
+  "label": "Joliet, Illinois",
   "kind": "Stripped retail unit",
   "w": 1200,
   "h": 675,
@@ -634,7 +634,7 @@
  },
  {
   "slug": "thousand-oaks-boulevard-thousand-oaks",
-  "label": "Thousand Oaks Boulevard, Thousand Oaks, California",
+  "label": "Thousand Oaks, California",
   "kind": "Office suite",
   "w": 1200,
   "h": 675,
@@ -650,7 +650,7 @@
  },
  {
   "slug": "madera-road-simi-valley",
-  "label": "Madera Road, Simi Valley, California",
+  "label": "Simi Valley, California",
   "kind": "Office campus",
   "w": 1200,
   "h": 675,
@@ -666,7 +666,7 @@
  },
  {
   "slug": "matley-lane-reno",
-  "label": "Matley Lane, Reno, Nevada",
+  "label": "Reno, Nevada",
   "kind": "Office and light industrial",
   "w": 1200,
   "h": 675,
@@ -681,7 +681,7 @@
  },
  {
   "slug": "south-willow-avenue-cookeville",
-  "label": "South Willow Avenue, Cookeville, Tennessee",
+  "label": "Cookeville, Tennessee",
   "kind": "Office and clinical suite",
   "w": 1200,
   "h": 675,
@@ -696,7 +696,7 @@
  },
  {
   "slug": "maryland-avenue-hagerstown",
-  "label": "Maryland Avenue, Hagerstown, Maryland",
+  "label": "Hagerstown, Maryland",
   "kind": "Office suite",
   "w": 1200,
   "h": 675,
@@ -711,7 +711,7 @@
  },
  {
   "slug": "northeastern-boulevard-salem",
-  "label": "Northeastern Boulevard, Salem, New Hampshire",
+  "label": "Salem, New Hampshire",
   "kind": "Office building, drone survey",
   "w": 1200,
   "h": 675,
@@ -727,7 +727,7 @@
  },
  {
   "slug": "broadway-lincoln-square-new-york",
-  "label": "Broadway, Lincoln Square, New York",
+  "label": "Lincoln Square, New York",
   "kind": "Ground-floor retail shell",
   "w": 1200,
   "h": 675,
@@ -743,7 +743,7 @@
  },
  {
   "slug": "crossroads-park-drive-houston",
-  "label": "Crossroads Park Drive, Houston, Texas",
+  "label": "Houston, Texas",
   "kind": "Single-story building, drone survey",
   "w": 1200,
   "h": 675,
@@ -758,7 +758,7 @@
  },
  {
   "slug": "west-watkins-mill-gaithersburg",
-  "label": "West Watkins Mill Road, Gaithersburg, Maryland",
+  "label": "Gaithersburg, Maryland",
   "kind": "Therapy clinic, office park",
   "w": 1200,
   "h": 675,
@@ -774,7 +774,7 @@
  },
  {
   "slug": "watkins-mill-road-gaithersburg",
-  "label": "Watkins Mill Road, Gaithersburg, Maryland",
+  "label": "Gaithersburg, Maryland",
   "kind": "New-build office shell",
   "w": 1200,
   "h": 675,
@@ -807,7 +807,7 @@
  },
  {
   "slug": "buchanan-business-center-guaynabo",
-  "label": "Buchanan Business Center, Guaynabo, Puerto Rico",
+  "label": "Guaynabo, Puerto Rico",
   "kind": "Pediatric therapy clinic, office tower",
   "w": 1200,
   "h": 675,
@@ -823,7 +823,7 @@
  },
  {
   "slug": "riverneck-road-chelmsford",
-  "label": "Riverneck Road, Chelmsford, Massachusetts",
+  "label": "Chelmsford, Massachusetts",
   "kind": "Therapy clinic, office building",
   "w": 1200,
   "h": 675,
@@ -839,7 +839,7 @@
  },
  {
   "slug": "newbury-street-danvers",
-  "label": "Newbury Street, Danvers, Massachusetts",
+  "label": "Danvers, Massachusetts",
   "kind": "Former retail box to clinic",
   "w": 1200,
   "h": 675,
@@ -856,7 +856,7 @@
  },
  {
   "slug": "pelham-road-salem",
-  "label": "Pelham Road, Salem, New Hampshire",
+  "label": "Salem, New Hampshire",
   "kind": "Therapy clinic, office building",
   "w": 1200,
   "h": 675,
@@ -919,7 +919,7 @@
  },
  {
   "slug": "washington-road-evans",
-  "label": "Washington Road, Evans, Georgia",
+  "label": "Evans, Georgia",
   "kind": "Veterinary hospital shell",
   "w": 1200,
   "h": 675,
@@ -967,7 +967,7 @@
  },
  {
   "slug": "copper-basin-ducktown",
-  "label": "Copper Basin, Ducktown, Tennessee",
+  "label": "Ducktown, Tennessee",
   "kind": "Senior-care facility",
   "w": 1200,
   "h": 675,
@@ -1013,7 +1013,7 @@
  },
  {
   "slug": "north-marks-avenue-fresno",
-  "label": "North Marks Avenue, Fresno, California",
+  "label": "Fresno, California",
   "kind": "Neuro-rehabilitation campus",
   "w": 1200,
   "h": 675,
@@ -1028,7 +1028,7 @@
  },
  {
   "slug": "jacinto-road-elk-grove",
-  "label": "Jacinto Road, Elk Grove, California",
+  "label": "Elk Grove, California",
   "kind": "Neuro-rehabilitation residence",
   "w": 1200,
   "h": 675,
@@ -1043,7 +1043,7 @@
  },
  {
   "slug": "remount-road-north-charleston",
-  "label": "Remount Road, North Charleston, South Carolina",
+  "label": "North Charleston, South Carolina",
   "kind": "Outpatient clinic, former retail",
   "w": 1200,
   "h": 675,
@@ -1076,7 +1076,7 @@
  },
  {
   "slug": "military-road-tukwila",
-  "label": "Military Road South, Tukwila, Washington",
+  "label": "Tukwila, Washington",
   "kind": "Outpatient clinic",
   "w": 1200,
   "h": 675,
@@ -1091,7 +1091,7 @@
  },
  {
   "slug": "pontchartrain-drive-slidell",
-  "label": "Pontchartrain Drive, Slidell, Louisiana",
+  "label": "Slidell, Louisiana",
   "kind": "Outpatient clinic, former retail",
   "w": 1200,
   "h": 675,
@@ -1108,7 +1108,7 @@
  },
  {
   "slug": "hooper-road-baton-rouge",
-  "label": "Hooper Road, Baton Rouge, Louisiana",
+  "label": "Baton Rouge, Louisiana",
   "kind": "Outpatient clinic, former retail",
   "w": 1200,
   "h": 675,
@@ -1124,7 +1124,7 @@
  },
  {
   "slug": "plank-road-baton-rouge",
-  "label": "Plank Road, Baton Rouge, Louisiana",
+  "label": "Baton Rouge, Louisiana",
   "kind": "Outpatient clinic, former retail",
   "w": 1200,
   "h": 675,
@@ -1140,7 +1140,7 @@
  },
  {
   "slug": "jarvis-drive-morgan-hill",
-  "label": "Jarvis Drive, Morgan Hill, California",
+  "label": "Morgan Hill, California",
   "kind": "Clinic suite, office building",
   "w": 1200,
   "h": 675,
@@ -1156,7 +1156,7 @@
  },
  {
   "slug": "truxel-road-sacramento",
-  "label": "Truxel Road, Sacramento, California",
+  "label": "Sacramento, California",
   "kind": "Clinic suite, office building",
   "w": 1200,
   "h": 675,
@@ -1172,7 +1172,7 @@
  },
  {
   "slug": "blue-ravine-road-folsom",
-  "label": "Blue Ravine Road, Folsom, California",
+  "label": "Folsom, California",
   "kind": "Clinic suite, office park",
   "w": 1200,
   "h": 675,
@@ -1188,7 +1188,7 @@
  },
  {
   "slug": "sepulveda-boulevard-west-los-angeles",
-  "label": "Sepulveda Boulevard, Los Angeles, California",
+  "label": "Los Angeles, California",
   "kind": "Clinic suites, office complex",
   "w": 1200,
   "h": 675,
@@ -1204,7 +1204,7 @@
  },
  {
   "slug": "market-street-wheeling",
-  "label": "Market Street, Wheeling, West Virginia",
+  "label": "Wheeling, West Virginia",
   "kind": "Gray-shell clinic space",
   "w": 1200,
   "h": 675,
@@ -1220,7 +1220,7 @@
  },
  {
   "slug": "east-colorado-street-glendale",
-  "label": "East Colorado Street, Glendale, California",
+  "label": "Glendale, California",
   "kind": "New-build medical office",
   "w": 1200,
   "h": 675,
@@ -1237,7 +1237,7 @@
  },
  {
   "slug": "calle-de-luna-santa-clara",
-  "label": "Calle de Luna, Santa Clara, California",
+  "label": "Santa Clara, California",
   "kind": "Second-floor shell over parking",
   "w": 1200,
   "h": 675,
@@ -1348,7 +1348,7 @@
  },
  {
   "slug": "bellevue-washington-office",
-  "label": "114th Avenue, Bellevue, Washington",
+  "label": "Bellevue, Washington",
   "kind": "Therapy clinic, office building",
   "w": 1200,
   "h": 675,
@@ -1493,7 +1493,7 @@
  },
  {
   "slug": "clybourn-avenue-chicago",
-  "label": "Clybourn Avenue, Chicago, Illinois",
+  "label": "Chicago, Illinois",
   "kind": "Therapy clinic, urban retail",
   "w": 1200,
   "h": 675,
@@ -1509,7 +1509,7 @@
  },
  {
   "slug": "fullerton-avenue-chicago",
-  "label": "Fullerton Avenue, Chicago, Illinois",
+  "label": "Chicago, Illinois",
   "kind": "Therapy clinic, former retail",
   "w": 1200,
   "h": 675,
@@ -1526,7 +1526,7 @@
  },
  {
   "slug": "north-western-avenue-chicago",
-  "label": "North Western Avenue, Chicago, Illinois",
+  "label": "Chicago, Illinois",
   "kind": "Therapy clinic, street retail",
   "w": 1200,
   "h": 675,
@@ -1558,7 +1558,7 @@
  },
  {
   "slug": "second-avenue-needham",
-  "label": "Second Avenue, Needham, Massachusetts",
+  "label": "Needham, Massachusetts",
   "kind": "Therapy clinic, office building",
   "w": 1200,
   "h": 675,
@@ -1590,7 +1590,7 @@
  },
  {
   "slug": "louetta-road-spring",
-  "label": "Louetta Road, Spring, Texas",
+  "label": "Spring, Texas",
   "kind": "Therapy clinic, standalone building",
   "w": 1200,
   "h": 675,
@@ -1605,7 +1605,7 @@
  },
  {
   "slug": "stuebner-airline-houston",
-  "label": "Stuebner Airline Road, Houston, Texas",
+  "label": "Houston, Texas",
   "kind": "Therapy clinic, retail shell",
   "w": 1200,
   "h": 675,
@@ -1862,7 +1862,7 @@
  },
  {
   "slug": "shawnee-kansas",
-  "label": "Hilltop Road, Shawnee, Kansas",
+  "label": "Shawnee, Kansas",
   "kind": "Pediatric therapy clinic",
   "w": 1200,
   "h": 675,
@@ -1957,7 +1957,7 @@
  },
  {
   "slug": "north-figueroa-highland-park",
-  "label": "North Figueroa Street, Los Angeles, California",
+  "label": "Los Angeles, California",
   "kind": "Street-front retail to clinic",
   "w": 1200,
   "h": 675,
@@ -2214,7 +2214,7 @@
  },
  {
   "slug": "val-vista-drive-arizona",
-  "label": "Val Vista Drive, Mesa, Arizona",
+  "label": "Mesa, Arizona",
   "kind": "Therapy clinic, office campus",
   "w": 1200,
   "h": 675,
@@ -2230,7 +2230,7 @@
  },
  {
   "slug": "dry-creek-road-colorado",
-  "label": "Dry Creek Road, Centennial, Colorado",
+  "label": "Centennial, Colorado",
   "kind": "Therapy clinic, office floor",
   "w": 1200,
   "h": 675,
@@ -2246,7 +2246,7 @@
  },
  {
   "slug": "mineral-avenue-littleton",
-  "label": "Mineral Avenue, Littleton, Colorado",
+  "label": "Littleton, Colorado",
   "kind": "Therapy clinic, office suite",
   "w": 1200,
   "h": 675,
@@ -2326,7 +2326,7 @@
  },
  {
   "slug": "startown-road-hickory",
-  "label": "Startown Road, Hickory, North Carolina",
+  "label": "Hickory, North Carolina",
   "kind": "Therapy clinic, retail shell",
   "w": 1200,
   "h": 675,
@@ -2343,7 +2343,7 @@
  },
  {
   "slug": "catawba-valley-boulevard-hickory",
-  "label": "Catawba Valley Boulevard, Hickory, North Carolina",
+  "label": "Hickory, North Carolina",
   "kind": "Therapy clinic, former retail",
   "w": 1200,
   "h": 675,
@@ -2360,7 +2360,7 @@
  },
  {
   "slug": "hanahan-south-carolina",
-  "label": "Remount Road, Hanahan, South Carolina",
+  "label": "Hanahan, South Carolina",
   "kind": "Therapy clinic, former retail box",
   "w": 1200,
   "h": 675,
@@ -2377,7 +2377,7 @@
  },
  {
   "slug": "washington-street-taunton",
-  "label": "Washington Street, Taunton, Massachusetts",
+  "label": "Taunton, Massachusetts",
   "kind": "Former bakery to therapy clinic",
   "w": 1200,
   "h": 675,
@@ -2393,7 +2393,7 @@
  },
  {
   "slug": "41st-street-doral",
-  "label": "41st Street, Doral, Florida",
+  "label": "Doral, Florida",
   "kind": "Veterinary hospital shell",
   "w": 1200,
   "h": 675,
@@ -2409,7 +2409,7 @@
  },
  {
   "slug": "goni-road-carson-city",
-  "label": "Goni Road, Carson City, Nevada",
+  "label": "Carson City, Nevada",
   "kind": "Pediatric therapy clinic",
   "w": 1200,
   "h": 675,
@@ -2440,7 +2440,7 @@
  },
  {
   "slug": "ottley-drive-atlanta",
-  "label": "Ottley Drive, Atlanta, Georgia",
+  "label": "Atlanta, Georgia",
   "kind": "Clinic, new office building",
   "w": 1200,
   "h": 675,
@@ -2674,7 +2674,7 @@
  },
  {
   "slug": "west-broadway-oviedo",
-  "label": "West Broadway Street, Oviedo, Florida",
+  "label": "Oviedo, Florida",
   "kind": "Therapy clinic, new-build shell",
   "w": 1200,
   "h": 675,
@@ -2707,7 +2707,7 @@
  },
  {
   "slug": "fry-road-katy",
-  "label": "Fry Road, Katy, Texas",
+  "label": "Katy, Texas",
   "kind": "Therapy clinic, new-build shell",
   "w": 1200,
   "h": 675,
@@ -2724,7 +2724,7 @@
  },
  {
   "slug": "grand-parkway-katy",
-  "label": "Grand Parkway, Katy, Texas",
+  "label": "Katy, Texas",
   "kind": "Therapy clinic, new retail building",
   "w": 1200,
   "h": 675,
