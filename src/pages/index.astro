@@ -1,6 +1,7 @@
 ---
 import Layout from "../layouts/Layout.astro";
-import GalleryBand from "../components/GalleryBand.astro";
+import FeaturedProjects from "../components/FeaturedProjects.astro";
+import HeroSlides from "../components/HeroSlides.astro";
 
 const professionalServiceSchema = {
   "@type": "ProfessionalService",
@@ -66,69 +67,52 @@ const schema = JSON.stringify({
 >
   <div data-hero-page>
 
-    <!-- SECTION 1: Hero -->
-    <section class="relative min-h-[78svh] md:min-h-screen flex items-center justify-center py-20 md:py-28 lg:py-32">
-      <div class="absolute inset-0 bg-navy">
-        <img
-          src="/Images/construction.webp"
-          srcset="/Images/construction-640w.webp 640w, /Images/construction-1024w.webp 1024w, /Images/construction.webp 1600w"
-          sizes="100vw"
-          alt="Commercial building interior documented for pre-construction site survey and renovation planning"
-          class="w-full h-full object-cover opacity-35"
-          loading="eager"
-          fetchpriority="high"
-        />
-        <div class="absolute inset-0 bg-black/60"></div>
-      </div>
-
-      <div class="relative z-10 text-center flex flex-col items-center px-4 md:px-6">
-        <h1 class="text-2xl md:text-3xl lg:text-4xl font-light text-offwhite leading-tight max-w-3xl mx-auto">Know the building before you price the work.</h1>
-        <h2 class="mt-4 text-[1.1rem] md:text-[1.3rem] font-light text-offwhite/90 leading-[1.3]">
-          Know the building. Price the work.
-        </h2>
-        <p class="mt-8 text-base md:text-lg text-gray-300 font-normal leading-relaxed max-w-2xl mx-auto">
-          Alturascope delivers Matterport digital twins, measured surveys and structured conditions reports for construction teams &mdash; and runs an estimating desk that turns a bid package into a priced, white-labeled quote under your own name, usually inside two working days.
-        </p>
-        <div class="mt-10 flex flex-wrap items-center justify-center gap-4">
-          <a href="/contact/" class="btn-primary">Tell Us About Your Project</a>
-          <a href="/estimating/" class="btn-secondary-light">See the Estimating Desk</a>
-        </div>
-      </div>
-
-      <div class="absolute bottom-12 left-1/2 -translate-x-1/2 flex flex-col items-center gap-4">
-        <div class="w-[60px] h-[1px] bg-gold"></div>
-        <svg class="w-5 h-5 text-white animate-pulse" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M19 14l-7 7m0 0l-7-7m7 7V3" />
-        </svg>
-      </div>
-    </section>
+    <!-- SECTION 1: Hero - the work itself, captioned with where it is -->
+    <HeroSlides />
 
     <!-- SECTION 2: Credibility Bar -->
-    <section class="bg-offwhite py-12 md:py-[48px]">
+    <section class="bg-navy border-t border-white/10 py-10 md:py-12">
       <div class="max-w-[1100px] mx-auto px-6">
         <div class="grid grid-cols-2 md:grid-cols-4 gap-8 md:gap-4 text-center">
           <div>
-            <p class="text-[2.4rem] font-light text-navy">50</p>
-            <p class="text-[0.7rem] font-medium uppercase tracking-[0.12em] text-midgrey mt-1">US States Covered</p>
+            <p class="text-[2.4rem] font-light text-offwhite">500+</p>
+            <p class="text-[0.7rem] font-medium uppercase tracking-[0.12em] text-offwhite/60 mt-1">Commercial Sites Surveyed</p>
           </div>
           <div>
-            <p class="text-[2.4rem] font-light text-navy">All</p>
-            <p class="text-[0.7rem] font-medium uppercase tracking-[0.12em] text-midgrey mt-1">Canadian Provinces</p>
+            <p class="text-[2.4rem] font-light text-offwhite">All 50</p>
+            <p class="text-[0.7rem] font-medium uppercase tracking-[0.12em] text-offwhite/60 mt-1">States &amp; Canada</p>
           </div>
           <div>
-            <p class="text-[2.4rem] font-light text-navy">500+</p>
-            <p class="text-[0.7rem] font-medium uppercase tracking-[0.12em] text-midgrey mt-1">Commercial Sites</p>
+            <p class="text-[2.4rem] font-light text-offwhite">3 days</p>
+            <p class="text-[0.7rem] font-medium uppercase tracking-[0.12em] text-offwhite/60 mt-1">Typical Visit to Report</p>
           </div>
           <div>
-            <p class="text-[2.4rem] font-light text-navy">18</p>
-            <p class="text-[0.7rem] font-medium uppercase tracking-[0.12em] text-midgrey mt-1">Years Construction Experience</p>
+            <p class="text-[2.4rem] font-light text-offwhite">18</p>
+            <p class="text-[0.7rem] font-medium uppercase tracking-[0.12em] text-offwhite/60 mt-1">Years Construction Experience</p>
           </div>
         </div>
+      </div>
+    </section>
+
+    <!-- SECTION 2a: Featured projects, straight after the numbers -->
+    <FeaturedProjects />
+
+    <!-- SECTION 2a-i: Client reference, straight after the work it refers to -->
+    <section class="bg-white py-16 md:py-20">
+      <div class="max-w-[900px] mx-auto px-6 text-center">
+        <p class="label text-gold mb-6">Client Reference</p>
+        <blockquote class="text-[1.25rem] md:text-[1.6rem] font-light text-navy leading-relaxed">
+          &ldquo;You have been great so far, and deliver exceptional quality reports and data,
+          miles ahead of our previous reports. Your response time is on par as well, and the
+          urgency in your scope is never overlooked. Here&rsquo;s to 22 more locations!&rdquo;
+        </blockquote>
+        <p class="mt-6 text-midgrey text-[0.9rem]">Nathaniel Lindley &mdash; Construction Manager, West Coast</p>
+        <p class="mt-1 text-midgrey/70 text-[0.8rem]">National retail rollout programme</p>
       </div>
     </section>
 
     <!-- SECTION 2b: Two Services -->
-    <section class="bg-white section-padding">
+    <section class="bg-offwhite section-padding">
       <div class="max-w-[1200px] mx-auto px-6">
         <div class="text-center max-w-[60ch] mx-auto mb-14">
           <p class="label text-gold mb-4">Two Services</p>
@@ -163,82 +147,41 @@ const schema = JSON.stringify({
             </p>
           </div>
         </div>
-
-        <p class="mt-12 text-center text-midgrey leading-body max-w-[68ch] mx-auto">
-          On a renovation or a build-out, the two run together: we capture the building, then price the work from the same record &mdash; so the estimate is built on the site as it stands, not the drawing as it was drawn.
-        </p>
       </div>
     </section>
 
-    <!-- SECTION 3: What We Do -->
-    <section id="how-it-works" class="bg-white section-padding">
+    <!-- SECTION 4: What you receive - twin, deliverables and ScopeWalk in one band -->
+    <section id="scopewalk" class="bg-navy section-padding">
       <div class="max-w-[1200px] mx-auto px-6">
-        <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
           <div>
-            <p class="label text-gold mb-4">The Service</p>
-            <h2 class="text-[2rem] md:text-[2.2rem] font-light text-navy leading-tight">
-              Exact site reality. Structured for decisions.
+            <p class="label text-gold mb-4">What You Receive</p>
+            <h2 class="text-[2rem] font-light text-offwhite leading-tight">
+              The same structure. Every site. Every time.
             </h2>
-            <div class="mt-6 space-y-4 text-midgrey leading-body">
-              <p>
-                Most project teams make expensive decisions based on incomplete site information. Alturascope changes that. We arrive, we document everything — structure, services, equipment, conditions, access — and we deliver a structured package your whole team can use immediately.
-              </p>
-              <p>
-                Every visit produces the same deliverable architecture: a navigable digital twin, a narrated video walkthrough, a detailed conditions report, and a platform your team can return to at any point. Built around the decision you're trying to make, not a generic survey checklist.
-              </p>
-              <p>
-                Where the project demands survey-grade accuracy — heritage structures, complex M&E environments, or facilities where dimensional precision is non-negotiable — we capture using professional LiDAR and photogrammetry instruments that produce millimetre-accurate point cloud data. The Matterport twin is built on top of that foundation, not instead of it.
-              </p>
-              <p>
-                We operate across the United States, Canada, and the United Kingdom under a single-vendor model. One brief. One standard. Consistent deliverables regardless of location.
-              </p>
-            </div>
-            <a href="/services/" class="btn-secondary mt-8">See the Full Service</a>
-          </div>
-
-          <div>
-            <a href="/work/sample-project/" class="group block bg-offwhite rounded shadow-lg p-3 relative transition-shadow hover:shadow-xl" aria-label="Explore an interactive sample ScopeWalk project">
-              <div class="flex items-center gap-1.5 mb-3">
-                <div class="w-2.5 h-2.5 rounded-full bg-red-400"></div>
-                <div class="w-2.5 h-2.5 rounded-full bg-yellow-400"></div>
-                <div class="w-2.5 h-2.5 rounded-full bg-green-400"></div>
-              </div>
-              <img
-                src="/scopewalk-platform.webp"
-                alt="ScopeWalk site documentation platform showing structured project deliverables with labelled room photographs and conditions reports"
-                class="w-full"
-                loading="lazy"
-              />
-              <div class="absolute inset-0 flex items-end justify-center p-6 bg-gradient-to-t from-navy/80 via-navy/0 to-transparent opacity-0 group-hover:opacity-100 transition-opacity">
-                <span class="btn-primary text-sm">Explore the sample project &rarr;</span>
-              </div>
-            </a>
-            <p class="mt-3 text-xs text-midgrey text-center">
-              <a href="/work/sample-project/" class="text-navy font-medium hover:opacity-80 transition-opacity">Explore an interactive sample project &rarr;</a>
+            <p class="mt-5 text-offwhite/70 leading-body">
+              A navigable digital twin, measured to the wall and column, plus everything your team
+              needs to decide on the space &mdash; delivered through ScopeWalk&trade;, our project
+              portal, so every site lives in one permanent, comparable record.
             </p>
+            <ul class="mt-8 grid grid-cols-1 sm:grid-cols-2 gap-x-8 gap-y-4 text-offwhite/85 text-[0.95rem] list-none p-0">
+              <li class="border-l-2 border-gold pl-3">Navigable digital twin</li>
+              <li class="border-l-2 border-gold pl-3">Narrated video walkthrough</li>
+              <li class="border-l-2 border-gold pl-3">Conditions report, P1&ndash;P3</li>
+              <li class="border-l-2 border-gold pl-3">Equipment &amp; asset schedule</li>
+              <li class="border-l-2 border-gold pl-3">Labeled photo storyboard</li>
+              <li class="border-l-2 border-gold pl-3">ScopeWalk portal access</li>
+            </ul>
+            <div class="mt-10 flex flex-wrap items-center gap-6">
+              <a href="/work/sample-project/" class="btn-primary">Explore a sample project</a>
+              <a href="/services/" class="text-offwhite font-medium border-b border-gold pb-0.5 hover:opacity-80 transition-opacity">How a survey works &rarr;</a>
+            </div>
           </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- SECTION 4: Matterport Embed -->
-    <section class="bg-navy py-20 md:py-[100px]">
-      <div class="max-w-[1100px] mx-auto px-6">
-        <p class="label text-gold text-center mb-4">What You Receive</p>
-        <h2 class="text-2xl md:text-[2rem] font-light text-offwhite text-center max-w-[600px] mx-auto">
-          This is the deliverable. Navigate it yourself.
-        </h2>
-        <p class="mt-4 text-offwhite/70 text-center max-w-[560px] mx-auto">
-          Every Alturascope visit produces a navigable digital twin of the space — not a video, not a photograph. A dimensionally accurate, explorable model your entire team can access before setting foot on site.
-        </p>
-
-        <div class="mt-12" id="matterport-container">
-          <!-- Client scans are confidential; this is the measured mesh from a surveyed office
-          floor plate, which discloses no occupier, interior detail or person. Swap in a live
-          Matterport embed here once a client has given written permission to publish one. -->
           <figure class="m-0">
             <img
               src="/Images/locations/digital-twin-mesh.webp"
+              srcset="/Images/locations/digital-twin-mesh-640w.webp 640w, /Images/locations/digital-twin-mesh-1024w.webp 1024w, /Images/locations/digital-twin-mesh.webp 1280w"
+              sizes="(min-width: 1024px) 560px, 100vw"
               alt="Measured mesh of a surveyed office floor plate, showing every wall, column and riser in its true position"
               width="1280"
               height="720"
@@ -246,201 +189,64 @@ const schema = JSON.stringify({
               decoding="async"
               class="w-full h-auto"
             />
-            <figcaption class="mt-6 text-offwhite/60 text-center text-[0.9rem] max-w-[620px] mx-auto leading-relaxed">
-              Beneath the walkthrough imagery sits this: a measured mesh of the floor plate, every
-              wall and column in its true position. It is why a dimension taken from a twin still
-              holds months later — and why the same record can be priced.
+            <figcaption class="mt-4 text-offwhite/55 text-[0.85rem] leading-relaxed">
+              Beneath the walkthrough imagery: a measured mesh of the floor plate. It is why a
+              dimension taken from a twin still holds months later &mdash; and why the same record can be priced.
             </figcaption>
           </figure>
         </div>
-
-        <p class="mt-8 text-center">
-          <a href="/work/locations/" class="text-gold border-b border-gold/40 hover:border-gold transition-colors text-[0.95rem]">
-            See a sample of the buildings we have documented &rarr;
-          </a>
-        </p>
       </div>
     </section>
 
-    <!-- SECTION 5: Deliverables -->
-    <section class="bg-navy section-padding">
-      <div class="max-w-[1200px] mx-auto px-6">
-        <p class="label text-gold text-center mb-4">What You Receive</p>
-        <h2 class="text-[2rem] font-light text-offwhite text-center">
-          The same structure. Every site. Every time.
-        </h2>
-        <p class="mt-4 text-offwhite/70 text-center max-w-[580px] mx-auto">
-          Consistent deliverables mean your team can compare sites, brief consultants, and make decisions without re-learning a new format on every project.
-        </p>
-
-        <div class="mt-16 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
-          <div>
-            <svg class="w-8 h-8 text-gold mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M21 7.5l-9-5.25L3 7.5m18 0l-9 5.25m9-5.25v9l-9 5.25M3 7.5l9 5.25M3 7.5v9l9 5.25m0-9v9" /></svg>
-            <h3 class="text-offwhite font-medium mb-2">Navigable Digital Twin</h3>
-            <p class="text-offwhite/65 text-[0.9rem] leading-relaxed">A navigable, accessible model of the space built from our site capture. Your team can explore every room and every surface without returning to site.</p>
-          </div>
-          <div>
-            <svg class="w-8 h-8 text-gold mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M15.75 10.5l4.72-4.72a.75.75 0 011.28.53v11.38a.75.75 0 01-1.28.53l-4.72-4.72M4.5 18.75h9a2.25 2.25 0 002.25-2.25v-9a2.25 2.25 0 00-2.25-2.25h-9A2.25 2.25 0 002.25 7.5v9a2.25 2.25 0 002.25 2.25z" /></svg>
-            <h3 class="text-offwhite font-medium mb-2">Narrated Video Walkthrough</h3>
-            <p class="text-offwhite/65 text-[0.9rem] leading-relaxed">A structured tour of the space with spoken commentary on conditions, concerns, and context.</p>
-          </div>
-          <div>
-            <svg class="w-8 h-8 text-gold mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M19.5 14.25v-2.625a3.375 3.375 0 00-3.375-3.375h-1.5A1.125 1.125 0 0113.5 7.125v-1.5a3.375 3.375 0 00-3.375-3.375H8.25m0 12.75h7.5m-7.5 3H12M10.5 2.25H5.625c-.621 0-1.125.504-1.125 1.125v17.25c0 .621.504 1.125 1.125 1.125h12.75c.621 0 1.125-.504 1.125-1.125V11.25a9 9 0 00-9-9z" /></svg>
-            <h3 class="text-offwhite font-medium mb-2">Conditions Report</h3>
-            <p class="text-offwhite/65 text-[0.9rem] leading-relaxed">Written assessment with findings prioritised into P1, P2, and P3 so your team knows what to act on first.</p>
-          </div>
-          <div>
-            <svg class="w-8 h-8 text-gold mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M3.75 6A2.25 2.25 0 016 3.75h2.25A2.25 2.25 0 0110.5 6v2.25a2.25 2.25 0 01-2.25 2.25H6a2.25 2.25 0 01-2.25-2.25V6zM3.75 15.75A2.25 2.25 0 016 13.5h2.25a2.25 2.25 0 012.25 2.25V18a2.25 2.25 0 01-2.25 2.25H6A2.25 2.25 0 013.75 18v-2.25zM13.5 6a2.25 2.25 0 012.25-2.25H18A2.25 2.25 0 0120.25 6v2.25A2.25 2.25 0 0118 10.5h-2.25a2.25 2.25 0 01-2.25-2.25V6zM13.5 15.75a2.25 2.25 0 012.25-2.25H18a2.25 2.25 0 012.25 2.25V18A2.25 2.25 0 0118 20.25h-2.25A2.25 2.25 0 0113.5 18v-2.25z" /></svg>
-            <h3 class="text-offwhite font-medium mb-2">Equipment &amp; Asset Schedule</h3>
-            <p class="text-offwhite/65 text-[0.9rem] leading-relaxed">Fixture counts, equipment make and model, services connections — formatted for your procurement or fitout team.</p>
-          </div>
-          <div>
-            <svg class="w-8 h-8 text-gold mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M2.25 15.75l5.159-5.159a2.25 2.25 0 013.182 0l5.159 5.159m-1.5-1.5l1.409-1.409a2.25 2.25 0 013.182 0l2.909 2.909M3.75 21h16.5A2.25 2.25 0 0022.5 18.75V5.25A2.25 2.25 0 0020.25 3H3.75A2.25 2.25 0 001.5 5.25v13.5A2.25 2.25 0 003.75 21z" /></svg>
-            <h3 class="text-offwhite font-medium mb-2">Labeled Photo Storyboard</h3>
-            <p class="text-offwhite/65 text-[0.9rem] leading-relaxed">Every area documented with consistent labeling, accessible through our ScopeWalk platform.</p>
-          </div>
-          <div>
-            <svg class="w-8 h-8 text-gold mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 17.25v1.007a3 3 0 01-.879 2.122L7.5 21h9l-.621-.621A3 3 0 0115 18.257V17.25m6-12V15a2.25 2.25 0 01-2.25 2.25H5.25A2.25 2.25 0 013 15V5.25m18 0A2.25 2.25 0 0018.75 3H5.25A2.25 2.25 0 003 5.25m18 0V12a2.25 2.25 0 01-2.25 2.25H5.25A2.25 2.25 0 013 12V5.25" /></svg>
-            <h3 class="text-offwhite font-medium mb-2">ScopeWalk Platform Access</h3>
-            <p class="text-offwhite/65 text-[0.9rem] leading-relaxed">All deliverables structured and accessible through our proprietary portal. Not a folder of files — a usable project record.</p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <GalleryBand />
-
-    <!-- SECTION 6: Who We Work With -->
+    <!-- SECTION 6: Who We Work With (coverage folded in) -->
     <section class="bg-offwhite section-padding">
       <div class="max-w-[1200px] mx-auto px-6">
         <p class="label text-gold text-center mb-4">Who We Work With</p>
         <h2 class="text-[2rem] font-light text-navy text-center">
           Built for teams making decisions on space.
         </h2>
-
-        <div class="mt-16 grid grid-cols-1 md:grid-cols-2 gap-10">
-          <!-- Multi-Site — larger, top row, full width on mobile -->
-          <div class="md:col-span-2 bg-white rounded border border-border p-10">
-            <h3 class="text-navy font-medium text-[1.2rem] mb-4">
-              <a href="/services/multi-site-rollout-documentation/" class="hover:opacity-80 transition-opacity">Rollout &amp; Multi-Site Programmes</a>
+        <div class="mt-14 grid grid-cols-1 md:grid-cols-3 gap-8">
+          <div class="bg-white rounded border border-border p-8">
+            <h3 class="text-navy font-medium text-[1.1rem] mb-3">
+              <a href="/services/multi-site-rollout-documentation/" class="hover:opacity-80 transition-opacity">Rollout &amp; multi-site programmes</a>
             </h3>
-            <p class="text-midgrey text-[0.95rem] leading-relaxed max-w-[700px]">
-              PE-backed operators, franchise groups, healthcare networks, and national brands running programmes across dozens or hundreds of locations. One brief, one standard, every site &mdash; managed centrally through ScopeWalk.
-            </p>
-            <div class="mt-6 flex flex-wrap gap-x-8 gap-y-3">
-              <a href="/services/qsr-restaurant-survey/" class="text-navy text-sm font-medium hover:opacity-80 transition-opacity">QSR &amp; Restaurant &rarr;</a>
-              <a href="/services/aba-autism-clinic-documentation/" class="text-navy text-sm font-medium hover:opacity-80 transition-opacity">ABA &amp; Autism Therapy &rarr;</a>
-              <a href="/services/retail-rollout-documentation/" class="text-navy text-sm font-medium hover:opacity-80 transition-opacity">Retail &amp; Franchise &rarr;</a>
-              <a href="/services/healthcare-facility-survey/" class="text-navy text-sm font-medium hover:opacity-80 transition-opacity">Healthcare &rarr;</a>
-            </div>
-          </div>
-
-          <!-- GCs -->
-          <div>
-            <h3 class="text-navy font-medium mb-3">General Contractors &amp; Design-Build</h3>
             <p class="text-midgrey text-[0.9rem] leading-relaxed">
-              <a href="/services/pre-construction-site-intelligence/" class="text-navy underline underline-offset-2 hover:opacity-80">Pre-construction site intelligence</a>, above-ceiling capture, and conditions surveys that get your team off site faster and into design sooner.
+              PE-backed operators, franchise groups, healthcare networks and national brands. One brief, one standard, every site.
+            </p>
+            <p class="mt-4 flex flex-wrap gap-x-5 gap-y-2 text-[0.85rem]">
+              <a href="/services/qsr-restaurant-survey/" class="text-navy font-medium hover:opacity-80">QSR &amp; Restaurant &rarr;</a>
+              <a href="/services/aba-autism-clinic-documentation/" class="text-navy font-medium hover:opacity-80">ABA &amp; Autism Therapy &rarr;</a>
+              <a href="/services/retail-rollout-documentation/" class="text-navy font-medium hover:opacity-80">Retail &amp; Franchise &rarr;</a>
+              <a href="/services/healthcare-facility-survey/" class="text-navy font-medium hover:opacity-80">Healthcare &rarr;</a>
             </p>
           </div>
-
-          <!-- Developers -->
-          <div>
-            <h3 class="text-navy font-medium mb-3">Developers &amp; Asset Managers</h3>
+          <div class="bg-white rounded border border-border p-8">
+            <h3 class="text-navy font-medium text-[1.1rem] mb-3">General contractors &amp; design-build</h3>
             <p class="text-midgrey text-[0.9rem] leading-relaxed">
-              <a href="/services/construction-documentation/" class="text-navy underline underline-offset-2 hover:opacity-80">Pre-lease diligence</a>, renew-versus-relocate analysis, and <a href="/services/multi-site-rollout-documentation/" class="text-navy underline underline-offset-2 hover:opacity-80">multi-site capex programmes</a>. One vendor, consistent deliverables, nationwide coverage.
+              <a href="/services/pre-construction-site-intelligence/" class="text-navy underline underline-offset-2 hover:opacity-80">Pre-construction site intelligence</a>, above-ceiling capture and conditions surveys that get your team off site faster and into design sooner.
+            </p>
+          </div>
+          <div class="bg-white rounded border border-border p-8">
+            <h3 class="text-navy font-medium text-[1.1rem] mb-3">Developers &amp; asset managers</h3>
+            <p class="text-midgrey text-[0.9rem] leading-relaxed">
+              <a href="/services/construction-documentation/" class="text-navy underline underline-offset-2 hover:opacity-80">Pre-lease diligence</a>, renew-versus-relocate analysis and <a href="/services/multi-site-rollout-documentation/" class="text-navy underline underline-offset-2 hover:opacity-80">multi-site capex programmes</a>.
             </p>
           </div>
         </div>
-
-        <!-- Specialist note -->
-        <div class="mt-10 text-center">
-          <p class="text-midgrey text-[0.9rem]">
-            Some projects require a different kind of attention &mdash; heritage buildings, aviation, marine, resorts, private estates. <a href="/services/specialist-projects/" class="text-navy font-medium hover:opacity-80 transition-opacity">Tell us about yours &rarr;</a>
-          </p>
-        </div>
-      </div>
-    </section>
-
-    <!-- SECTION 7: Coverage -->
-    <section class="bg-white section-padding">
-      <div class="max-w-[1200px] mx-auto px-6">
-        <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-          <div>
-            <p class="label text-gold mb-4">Coverage</p>
-            <h2 class="text-[2rem] font-light text-navy leading-tight">
-              One vendor. Any location.
-            </h2>
-            <div class="mt-6 space-y-4 text-midgrey leading-body">
-              <p>
-                Alturascope operates across all fifty US states and every Canadian province under a national travel model — travel costs are included in project pricing, not added as a surprise line item.
-              </p>
-              <p>
-                For projects in the United Kingdom, our dedicated UK operation covers England, Scotland, Wales, and Northern Ireland.
-              </p>
-              <p>
-                <a href="/uk/" class="text-navy font-medium hover:opacity-80 transition-opacity">Visit Alturascope UK &rarr;</a>
-              </p>
-              <p>
-                Whether you have one site or fifty, you brief us once and receive the same standard of work regardless of where the building is.
-              </p>
-              <p>
-                See our regional coverage: <a href="/services/northeast-site-surveys/" class="text-navy font-medium hover:opacity-80 transition-opacity">Northeast US</a>, <a href="/services/southeast-site-surveys/" class="text-navy font-medium hover:opacity-80 transition-opacity">Southeast US</a>, <a href="/services/central-us-site-surveys/" class="text-navy font-medium hover:opacity-80 transition-opacity">Central US</a>, and <a href="/services/west-coast-site-surveys/" class="text-navy font-medium hover:opacity-80 transition-opacity">West Coast</a>.
-              </p>
-            </div>
-          </div>
-
-          <div>
-            <img
-              src="/coverage-map.webp"
-              alt="Alturascope site survey coverage map showing nationwide operations across all 50 US states, Canada, and the United Kingdom"
-              class="w-full"
-              loading="lazy"
-            />
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- SECTION 8: ScopeWalk -->
-    <section id="scopewalk" class="bg-navy-light section-padding">
-      <div class="max-w-[800px] mx-auto px-6 text-center">
-        <p class="label text-gold mb-4">ScopeWalk&trade;</p>
-        <h2 class="text-[2rem] font-light text-offwhite">
-          Every deliverable. One place. Permanently accessible.
-        </h2>
-        <div class="mt-6 space-y-4 text-offwhite/70 leading-body">
-          <p>
-            ScopeWalk is Alturascope's proprietary project portal. Not a file transfer link that expires — a structured, permanent record of every site we document. Your team can return to any project, any time, and find the same organised, labeled deliverables in the same place.
-          </p>
-          <p>
-            For multi-site and rollout programmes, ScopeWalk allows your team to compare properties side by side, track programme progress, and brief consultants directly from the portal without hunting through email chains for the right file.
-          </p>
-        </div>
-        <div class="mt-10 flex flex-wrap items-center justify-center gap-4">
-          <a href="/work/sample-project/" class="btn-primary">Explore a sample project</a>
-          <a href="/contact/" class="btn-secondary-light">Tell Us About Your Project</a>
-        </div>
-      </div>
-    </section>
-
-    <!-- SECTION 8b: Client reference -->
-    <section class="bg-white section-padding">
-      <div class="max-w-[900px] mx-auto px-6 text-center">
-        <p class="label text-gold mb-8">Client Reference</p>
-        <blockquote class="text-[1.2rem] md:text-[1.45rem] font-light text-navy leading-relaxed">
-          &ldquo;You have been great so far, and deliver exceptional quality reports and data,
-          miles ahead of our previous reports. Your response time is on par as well, and the
-          urgency in your scope is never overlooked. Here&rsquo;s to 22 more locations!&rdquo;
-        </blockquote>
-        <p class="mt-8 text-midgrey text-[0.9rem]">
-          Nathaniel Lindley &mdash; Construction Manager, West Coast
+        <p class="mt-10 text-center text-midgrey text-[0.9rem] leading-relaxed max-w-[80ch] mx-auto">
+          All 50 states and Canada, travel included:
+          <a href="/services/northeast-site-surveys/" class="text-navy font-medium hover:opacity-80">Northeast</a>,
+          <a href="/services/southeast-site-surveys/" class="text-navy font-medium hover:opacity-80">Southeast</a>,
+          <a href="/services/central-us-site-surveys/" class="text-navy font-medium hover:opacity-80">Central US</a> and
+          <a href="/services/west-coast-site-surveys/" class="text-navy font-medium hover:opacity-80">West Coast</a>.
+          Working in the UK? <a href="/uk/" class="text-navy font-medium hover:opacity-80">Visit Alturascope UK &rarr;</a>
+          Heritage and other specialist work: <a href="/services/specialist-projects/" class="text-navy font-medium hover:opacity-80">tell us about yours &rarr;</a>
         </p>
-        <p class="mt-1 text-midgrey/70 text-[0.8rem]">National retail rollout programme</p>
       </div>
     </section>
 
     <!-- SECTION 9: Closing CTA -->
-    <section class="bg-offwhite section-padding">
+    <section class="bg-white section-padding">
       <div class="max-w-[700px] mx-auto px-6 text-center">
         <h2 class="text-[2rem] md:text-[2.2rem] font-light text-navy">
           Ready to know exactly what you&rsquo;re working with?

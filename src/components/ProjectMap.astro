@@ -1,0 +1,61 @@
+---
+/**
+ * Static SVG map of every surveyed location (Nov 2026).
+ *
+ * The outline and each pin's x/y are precomputed by scripts/map/build-map.mjs,
+ * so the page ships no mapping library - just one inline SVG. Pins carry the
+ * same data-sectors as the project cards, so the page's filter dims them too.
+ */
+import map from "../data/us-map.json";
+import locations from "../data/locations.json";
+import stories from "../data/location-stories.json";
+
+const storySlugs = new Set(stories.map((s) => s.slug));
+const pins = locations.filter((l) => typeof l.mx === "number");
+---
+
+<figure class="project-map m-0 relative">
+  <svg viewBox={`0 0 ${map.width} ${map.height}`} class="w-full h-auto" role="img" aria-label="Map of a selection of locations surveyed by Alturascope across the United States">
+    <path d={map.states} fill="#E4E0D6" />
+    <path d={map.borders} fill="none" stroke="#fff" stroke-width="1" />
+    <path d={map.pr} fill="#E4E0D6" />
+    {pins.map((l) => {
+      const href = storySlugs.has(l.slug) ? `/work/locations/${l.slug}/` : `#site-${l.slug}`;
+      return (
+        <a href={href} class="map-pin" data-sectors={(l.sectors || []).join(" ")} data-label={l.label} aria-label={l.label}>
+          <circle cx={l.mx} cy={l.my} r="9" fill="transparent" />
+          <circle cx={l.mx} cy={l.my} r="5.5" class="pin-dot" />
+        </a>
+      );
+    })}
+  </svg>
+  <div id="map-tip" class="pointer-events-none absolute hidden bg-navy text-white text-[0.75rem] px-2.5 py-1.5 whitespace-nowrap -translate-x-1/2 -translate-y-full" role="presentation"></div>
+</figure>
+
+<script>
+  const fig = document.querySelector<HTMLElement>(".project-map");
+  const tip = document.getElementById("map-tip");
+  if (fig && tip) {
+    fig.querySelectorAll<SVGAElement>(".map-pin").forEach((pin) => {
+      const show = () => {
+        const dot = pin.querySelector(".pin-dot") as SVGGraphicsElement | null;
+        if (!dot) return;
+        const r = dot.getBoundingClientRect(), f = fig.getBoundingClientRect();
+        tip.textContent = pin.dataset.label || "";
+        tip.style.left = `${r.left - f.left + r.width / 2}px`;
+        tip.style.top = `${r.top - f.top - 6}px`;
+        tip.classList.remove("hidden");
+      };
+      const hide = () => tip.classList.add("hidden");
+      pin.addEventListener("mouseenter", show); pin.addEventListener("focus", show);
+      pin.addEventListener("mouseleave", hide); pin.addEventListener("blur", hide);
+    });
+  }
+</script>
+
+<style>
+  .pin-dot { fill: #C9A84C; stroke: #0B1F3A; stroke-width: 1.2; transition: r 0.15s, opacity 0.2s; }
+  .map-pin:hover .pin-dot, .map-pin:focus .pin-dot { r: 8; fill: #0B1F3A; stroke: #C9A84C; }
+  /* Filtering hides other pins outright - faded pins read as a rendering fault. */
+  .map-pin.is-dim { display: none; }
+</style>

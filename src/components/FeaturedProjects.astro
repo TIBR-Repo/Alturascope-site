@@ -1,0 +1,74 @@
+---
+/**
+ * Homepage "Selected projects" band (Nov 2026): five large image tiles,
+ * PGAL-style, so a visitor sees the work before reading about it. Each tile
+ * opens the site story. Replaces the four small GalleryBand cards that used to
+ * sit four screens down.
+ */
+import locations from "../data/locations.json";
+import stories from "../data/location-stories.json";
+
+interface Tile { slug: string; img?: string; kicker: string; title: string; cta?: string }
+
+const tiles: Tile[] = [
+  { slug: "westfield-topanga-canoga-park", img: "/Images/hero/westfield-topanga-1600.webp", kicker: "Enclosed mall", title: "Westfield Topanga, Los Angeles" },
+  { slug: "grand-central-terminal-new-york", img: "/Images/hero/grand-central-dining-concourse-1024.webp", kicker: "Landmark & transit", title: "Grand Central Terminal, New York" },
+  { slug: "lincoln-road-miami-beach", kicker: "Street retail", title: "Lincoln Road, Miami Beach" },
+  { slug: "the-gardens-mall-palm-beach", img: "/Images/hero/the-gardens-mall-1024.webp", kicker: "Luxury mall", title: "The Gardens Mall, Palm Beach Gardens" },
+  { slug: "fort-walton-beach", img: "/Images/hero/fort-walton-beach-aerial-1024.webp", kicker: "Healthcare", title: "Medical office, Fort Walton Beach, Florida", cta: "See it on the map" },
+];
+
+const storySlugs = new Set(stories.map((s) => s.slug));
+const bySlug = new Map(locations.map((l) => [l.slug, l]));
+---
+
+<section class="bg-navy pb-16 md:pb-24 pt-14 md:pt-20">
+  <div class="max-w-[1400px] mx-auto px-6 lg:px-10">
+    <div class="flex flex-wrap items-end justify-between gap-6 mb-8 md:mb-10">
+      <div>
+        <p class="label text-gold mb-3">Selected Projects</p>
+        <h2 class="text-[1.8rem] md:text-[2.3rem] font-light text-offwhite leading-tight">
+          Inside landmarks, malls, clinics and shells.
+        </h2>
+      </div>
+      <a href="/work/locations/" class="text-offwhite font-medium border-b border-gold pb-1 hover:opacity-80 transition-opacity">
+        Explore some of our projects on the map &rarr;
+      </a>
+    </div>
+
+    <div class="featured-grid grid gap-1.5">
+      {tiles.map((t, i) => {
+        const loc = bySlug.get(t.slug);
+        const href = storySlugs.has(t.slug) ? `/work/locations/${t.slug}/` : `/work/locations/#site-${t.slug}`;
+        const src = t.img || `/Images/locations/${t.slug}.webp`;
+        return (
+          <a href={href} class={`group relative block overflow-hidden bg-navy-light ${i === 0 ? "featured-lead" : ""}`}>
+            <img
+              src={src}
+              alt={`${t.title} - surveyed by Alturascope`}
+              width={loc?.w || 1200}
+              height={loc?.h || 675}
+              loading="lazy"
+              decoding="async"
+              class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-[1.04]"
+            />
+            <div class="absolute inset-0 bg-gradient-to-t from-black/75 via-black/10 to-transparent"></div>
+            <div class="absolute left-5 right-5 bottom-5 md:left-6 md:bottom-6">
+              <p class="text-gold text-[0.68rem] font-medium uppercase tracking-[0.14em]">{t.kicker}</p>
+              <p class={`text-white font-light leading-snug mt-1 ${i === 0 ? "text-[1.5rem] md:text-[2rem]" : "text-[1.1rem] md:text-[1.25rem]"}`}>{t.title}</p>
+              <p class="text-white/70 text-[0.8rem] mt-1.5 group-hover:text-white transition-colors">{t.cta || "Read the site story"} &rarr;</p>
+            </div>
+          </a>
+        );
+      })}
+    </div>
+  </div>
+</section>
+
+<style>
+  .featured-grid { grid-template-columns: 1fr; grid-auto-rows: 240px; }
+  @media (min-width: 768px) {
+    .featured-grid { grid-template-columns: 2fr 1fr 1fr; grid-auto-rows: 280px; }
+    .featured-lead { grid-row: span 2; }
+  }
+</style>

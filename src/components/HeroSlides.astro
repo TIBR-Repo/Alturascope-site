@@ -1,0 +1,157 @@
+---
+/**
+ * Homepage hero (Nov 2026): full-bleed photographs of real Alturascope sites,
+ * each captioned with where it is, instead of a stock construction shot.
+ *
+ * Only the first slide loads with the page (it is the LCP image, so it is
+ * eager + high priority). The rest are fetched after window load and then
+ * cross-faded, so the slideshow costs nothing on first paint.
+ */
+interface Slide {
+  img: string; // basename in /Images/hero/, available at -1024/-1600/-2400.webp
+  title: string;
+  place: string;
+  href?: string;
+  alt: string;
+}
+
+const slides: Slide[] = [
+  {
+    img: "grand-central-dining-concourse",
+    title: "Grand Central Terminal",
+    place: "New York · Transit concourse",
+    href: "/work/locations/grand-central-terminal-new-york/",
+    alt: "Grand Central Terminal dining concourse at night, a site surveyed by Alturascope",
+  },
+  {
+    img: "westfield-topanga",
+    title: "Westfield Topanga",
+    place: "Los Angeles · Enclosed mall",
+    href: "/work/locations/westfield-topanga-canoga-park/",
+    alt: "Westfield Topanga mall concourse, surveyed by Alturascope",
+  },
+  {
+    img: "grand-central-chandeliers",
+    title: "Grand Central Terminal",
+    place: "New York · Landmark interior",
+    href: "/work/locations/grand-central-terminal-new-york/",
+    alt: "Chandeliers above the Grand Central Terminal concourse balcony",
+  },
+  {
+    img: "fort-walton-beach-aerial",
+    title: "Fort Walton Beach",
+    place: "Florida · Medical office building",
+    href: "/work/locations/#site-fort-walton-beach",
+    alt: "Drone view of a four-storey medical office building in Fort Walton Beach, Florida, surveyed by Alturascope",
+  },
+  {
+    img: "the-gardens-mall",
+    title: "The Gardens Mall",
+    place: "Palm Beach Gardens · Luxury mall",
+    href: "/work/locations/the-gardens-mall-palm-beach/",
+    alt: "The Gardens Mall, Palm Beach Gardens, surveyed by Alturascope",
+  },
+  {
+    img: "morgan-hill-aerial",
+    title: "Morgan Hill",
+    place: "California · Clinic suite",
+    href: "/work/locations/#site-jarvis-drive-morgan-hill",
+    alt: "Aerial view over Morgan Hill, California, from an Alturascope drone survey",
+  },
+];
+---
+
+<section class="hero-slides relative min-h-[82svh] md:min-h-screen flex items-end overflow-hidden bg-navy" aria-label="Recent Alturascope projects">
+  <div class="absolute inset-0">
+    {slides.map((s, i) => (
+      <img
+        class={`hero-slide absolute inset-0 w-full h-full object-cover ${i === 0 ? "is-on" : ""}`}
+        {...(i === 0
+          ? {
+              src: `/Images/hero/${s.img}-1600.webp`,
+              srcset: `/Images/hero/${s.img}-1024.webp 1024w, /Images/hero/${s.img}-1600.webp 1600w, /Images/hero/${s.img}-2400.webp 2400w`,
+              loading: "eager",
+              fetchpriority: "high",
+            }
+          : {
+              "data-src": `/Images/hero/${s.img}-1600.webp`,
+              "data-srcset": `/Images/hero/${s.img}-1024.webp 1024w, /Images/hero/${s.img}-1600.webp 1600w, /Images/hero/${s.img}-2400.webp 2400w`,
+            })}
+        sizes="100vw"
+        alt={s.alt}
+        data-title={s.title}
+        data-place={s.place}
+        data-href={s.href || ""}
+        decoding="async"
+      />
+    ))}
+    <div class="absolute inset-0 bg-gradient-to-b from-navy/70 via-navy/10 to-navy/85"></div>
+    <div class="absolute inset-0 bg-navy/45 md:bg-navy/10"></div>
+  </div>
+
+  <div class="relative z-10 w-full max-w-[1400px] mx-auto px-6 md:px-8 lg:px-12 pb-24 md:pb-28 pt-40">
+    <div class="max-w-[46rem]">
+      <h1 class="text-[2.3rem] md:text-[3.4rem] lg:text-[3.9rem] font-light text-white leading-[1.05] tracking-[-0.01em]">
+        We survey the spaces national brands move into.
+      </h1>
+      <p class="mt-6 text-[1.05rem] md:text-[1.2rem] text-white/85 font-light leading-relaxed max-w-[38rem]">
+        Existing-conditions and pre-lease surveys anywhere in the US and Canada &mdash; and an
+        estimating desk that prices the work from the same record.
+      </p>
+      <div class="mt-9 flex flex-wrap items-center gap-4">
+        <a href="/work/locations/" class="btn-primary">See Our Projects</a>
+        <a href="/contact/" class="btn-secondary-light">Tell Us About Your Project</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="absolute z-10 bottom-8 left-0 right-0">
+    <div class="max-w-[1400px] mx-auto px-6 md:px-8 lg:px-12 flex items-end justify-between gap-6">
+      <div class="flex gap-2" aria-hidden="true">
+        {slides.map((_, i) => <span class={`hero-dot ${i === 0 ? "is-on" : ""}`}></span>)}
+      </div>
+      <a id="hero-caption" href={slides[0].href} class="hidden md:block text-right text-white/85 hover:text-white transition-colors">
+        <span class="block text-[0.95rem] font-medium" id="hero-caption-title">{slides[0].title}</span>
+        <span class="block text-[0.78rem] text-white/65" id="hero-caption-place">{slides[0].place}</span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<style>
+  .hero-slide { opacity: 0; transition: opacity 1.4s ease; }
+  .hero-slide.is-on { opacity: 1; }
+  .hero-dot { width: 28px; height: 2px; background: rgba(255, 255, 255, 0.35); transition: background 0.4s; }
+  .hero-dot.is-on { background: #c9a84c; }
+  @media (prefers-reduced-motion: reduce) { .hero-slide { transition: none; } }
+</style>
+
+<script>
+  const start = () => {
+    const slides = Array.from(document.querySelectorAll<HTMLImageElement>(".hero-slide"));
+    const dots = Array.from(document.querySelectorAll<HTMLElement>(".hero-dot"));
+    const cap = document.getElementById("hero-caption") as HTMLAnchorElement | null;
+    const t = document.getElementById("hero-caption-title");
+    const pl = document.getElementById("hero-caption-place");
+    if (slides.length < 2 || window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+    slides.slice(1).forEach((img) => {
+      if (img.dataset.srcset) img.srcset = img.dataset.srcset;
+      if (img.dataset.src) img.src = img.dataset.src;
+    });
+    let i = 0;
+    setInterval(() => {
+      const next = (i + 1) % slides.length;
+      if (!slides[next].complete) return; // wait for it rather than fade to a blank
+      slides[i].classList.remove("is-on");
+      dots[i]?.classList.remove("is-on");
+      i = next;
+      slides[i].classList.add("is-on");
+      dots[i]?.classList.add("is-on");
+      if (t) t.textContent = slides[i].dataset.title || "";
+      if (pl) pl.textContent = slides[i].dataset.place || "";
+      if (cap) cap.href = slides[i].dataset.href || "/work/locations/";
+    }, 5500);
+  };
+  if (document.readyState === "complete") start();
+  else window.addEventListener("load", start, { once: true });
+</script>

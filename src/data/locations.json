@@ -1,345 +1,2758 @@
 [
  {
   "slug": "apollo-drive-chelmsford",
-  "label": "Apollo Drive, Chelmsford, Massachusetts",
+  "label": "Chelmsford, Massachusetts",
   "kind": "Office",
   "w": 1200,
-  "h": 675
+  "h": 675,
+  "lat": 42.6,
+  "lng": -71.37,
+  "state": "MA",
+  "sectors": [
+   "healthcare",
+   "office"
+  ],
+  "mx": 843.3,
+  "my": 141.6
  },
  {
   "slug": "pavilions-lane-sacramento",
-  "label": "Pavilions Lane, Sacramento, California",
+  "label": "Sacramento, California",
   "kind": "Open-air retail",
   "w": 1200,
-  "h": 675
+  "h": 675,
+  "lat": 38.58,
+  "lng": -121.43,
+  "state": "CA",
+  "sectors": [
+   "retail"
+  ],
+  "mx": 102.1,
+  "my": 216.4
  },
  {
   "slug": "galleria-roseville",
   "label": "Galleria, Roseville, California",
   "kind": "Enclosed mall",
   "w": 1200,
-  "h": 675
+  "h": 675,
+  "lat": 38.77,
+  "lng": -121.27,
+  "state": "CA",
+  "sectors": [
+   "retail"
+  ],
+  "mx": 105.5,
+  "my": 213.3
  },
  {
   "slug": "corte-madera",
   "label": "Corte Madera, California",
   "kind": "Open-air retail",
   "w": 1200,
-  "h": 674
+  "h": 674,
+  "lat": 37.93,
+  "lng": -122.51,
+  "state": "CA",
+  "sectors": [
+   "retail"
+  ],
+  "mx": 82.5,
+  "my": 224.4
  },
  {
   "slug": "town-and-country-houston",
   "label": "Town & Country, Houston, Texas",
   "kind": "New-build shell",
   "w": 1200,
-  "h": 675
+  "h": 675,
+  "lat": 29.78,
+  "lng": -95.56,
+  "state": "TX",
+  "sectors": [
+   "shell",
+   "retail"
+  ],
+  "mx": 496.6,
+  "my": 444.6
  },
  {
   "slug": "pennsylvania-avenue-washington-dc",
-  "label": "Pennsylvania Avenue, Washington, DC",
+  "label": "Washington, DC",
   "kind": "Office",
   "w": 1200,
-  "h": 675
+  "h": 675,
+  "lat": 38.9,
+  "lng": -77.05,
+  "state": "DC",
+  "sectors": [
+   "office"
+  ],
+  "mx": 777.6,
+  "my": 233.1
  },
  {
   "slug": "henderson-avenue-dallas",
-  "label": "Henderson Avenue, Dallas, Texas",
+  "label": "Dallas, Texas",
   "kind": "Mixed-use retail",
   "w": 1200,
-  "h": 675
+  "h": 675,
+  "lat": 32.81,
+  "lng": -96.79,
+  "state": "TX",
+  "sectors": [
+   "retail"
+  ],
+  "mx": 475.9,
+  "my": 384.1
  },
  {
   "slug": "clearfork-fort-worth",
   "label": "Clearfork, Fort Worth, Texas",
   "kind": "Retail interior",
   "w": 1200,
-  "h": 675
+  "h": 675,
+  "lat": 32.7,
+  "lng": -97.4,
+  "state": "TX",
+  "sectors": [
+   "retail"
+  ],
+  "mx": 465.7,
+  "my": 386.2
  },
  {
   "slug": "santan-village-gilbert",
   "label": "SanTan Village, Gilbert, Arizona",
   "kind": "Open-air retail",
   "w": 1200,
-  "h": 675
+  "h": 675,
+  "lat": 33.3,
+  "lng": -111.74,
+  "state": "AZ",
+  "sectors": [
+   "retail"
+  ],
+  "mx": 230.3,
+  "my": 352.9
  },
  {
   "slug": "scottsdale-fashion-square",
   "label": "Scottsdale Fashion Square, Arizona",
   "kind": "Enclosed mall",
   "w": 1200,
-  "h": 675
+  "h": 675,
+  "lat": 33.5,
+  "lng": -111.93,
+  "state": "AZ",
+  "sectors": [
+   "retail"
+  ],
+  "mx": 227.8,
+  "my": 348.4
  },
  {
   "slug": "kierland-commons-scottsdale",
   "label": "Kierland Commons, Scottsdale, Arizona",
   "kind": "Open-air retail",
   "w": 1200,
-  "h": 675
+  "h": 675,
+  "lat": 33.62,
+  "lng": -111.93,
+  "state": "AZ",
+  "sectors": [
+   "retail"
+  ],
+  "mx": 228.2,
+  "my": 346.1
  },
  {
   "slug": "grand-central-terminal-new-york",
   "label": "Grand Central Terminal, New York",
   "kind": "Transport hub",
   "w": 1200,
-  "h": 675
+  "h": 675,
+  "lat": 40.753,
+  "lng": -73.977,
+  "state": "NY",
+  "sectors": [
+   "landmark",
+   "retail"
+  ],
+  "mx": 815,
+  "my": 186.9
  },
  {
   "slug": "queen-anne-seattle",
   "label": "Queen Anne, Seattle, Washington",
   "kind": "Residential over retail",
   "w": 1200,
-  "h": 675
+  "h": 675,
+  "lat": 47.64,
+  "lng": -122.36,
+  "state": "WA",
+  "sectors": [
+   "retail"
+  ],
+  "mx": 137.8,
+  "my": 38.5
  },
  {
   "slug": "bellevue-square",
   "label": "Bellevue Square, Bellevue, Washington",
   "kind": "Enclosed mall",
   "w": 1200,
-  "h": 674
+  "h": 674,
+  "lat": 47.62,
+  "lng": -122.2,
+  "state": "WA",
+  "sectors": [
+   "retail"
+  ],
+  "mx": 139.8,
+  "my": 39.5
  },
  {
   "slug": "brea-mall",
   "label": "Brea Mall, Brea, California",
   "kind": "Enclosed mall",
   "w": 1200,
-  "h": 675
+  "h": 675,
+  "lat": 33.92,
+  "lng": -117.89,
+  "state": "CA",
+  "sectors": [
+   "retail"
+  ],
+  "mx": 133.6,
+  "my": 320.8
  },
  {
   "slug": "mission-viejo",
   "label": "Mission Viejo, California",
   "kind": "Enclosed mall",
   "w": 1200,
-  "h": 675
+  "h": 675,
+  "lat": 33.56,
+  "lng": -117.67,
+  "state": "CA",
+  "sectors": [
+   "retail"
+  ],
+  "mx": 135.4,
+  "my": 328.7
  },
  {
   "slug": "j-street-sacramento",
-  "label": "J Street, Sacramento, California",
+  "label": "Sacramento, California",
   "kind": "Vacant unit",
   "w": 1200,
-  "h": 675
+  "h": 675,
+  "lat": 38.58,
+  "lng": -121.49,
+  "state": "CA",
+  "sectors": [
+   "shell",
+   "retail"
+  ],
+  "mx": 101.2,
+  "my": 216.1
  },
  {
   "slug": "the-gardens-mall-palm-beach",
   "label": "The Gardens Mall, Palm Beach Gardens, Florida",
   "kind": "Enclosed mall",
   "w": 1200,
-  "h": 675
+  "h": 675,
+  "lat": 26.85,
+  "lng": -80.08,
+  "state": "FL",
+  "sectors": [
+   "retail"
+  ],
+  "mx": 772,
+  "my": 479
  },
  {
   "slug": "old-orchard-skokie",
   "label": "Old Orchard, Skokie, Illinois",
   "kind": "Open-air retail",
   "w": 1200,
-  "h": 675
+  "h": 675,
+  "lat": 42.06,
+  "lng": -87.75,
+  "state": "IL",
+  "sectors": [
+   "retail"
+  ],
+  "mx": 609.8,
+  "my": 193.4
  },
  {
   "slug": "spectrum-center-irvine",
   "label": "Spectrum Center, Irvine, California",
   "kind": "Open-air retail",
   "w": 1200,
-  "h": 675
+  "h": 675,
+  "lat": 33.65,
+  "lng": -117.74,
+  "state": "CA",
+  "sectors": [
+   "retail"
+  ],
+  "mx": 134.7,
+  "my": 326.7
  },
  {
   "slug": "berkeley-way",
-  "label": "Berkeley Way, Berkeley, California",
+  "label": "Berkeley, California",
   "kind": "Office",
   "w": 1200,
-  "h": 675
+  "h": 675,
+  "lat": 37.87,
+  "lng": -122.27,
+  "state": "CA",
+  "sectors": [
+   "office",
+   "retail"
+  ],
+  "mx": 85.7,
+  "my": 226.6
  },
  {
   "slug": "lincoln-road-miami-beach",
   "label": "Lincoln Road, Miami Beach, Florida",
   "kind": "High-street retail",
   "w": 1200,
-  "h": 675
+  "h": 675,
+  "lat": 25.79,
+  "lng": -80.14,
+  "state": "FL",
+  "sectors": [
+   "retail",
+   "landmark"
+  ],
+  "mx": 774.5,
+  "my": 499.8
  },
  {
   "slug": "culebra-road-san-antonio",
-  "label": "Culebra Road, San Antonio, Texas",
+  "label": "San Antonio, Texas",
   "kind": "Shell unit, mid fit-out",
   "w": 1200,
-  "h": 675
+  "h": 675,
+  "lat": 29.47,
+  "lng": -98.62,
+  "state": "TX",
+  "sectors": [
+   "shell",
+   "retail"
+  ],
+  "mx": 443.6,
+  "my": 450.2
  },
  {
   "slug": "inwood-village-dallas",
   "label": "Inwood Village, Dallas, Texas",
   "kind": "Retail parade",
   "w": 1200,
-  "h": 675
+  "h": 675,
+  "lat": 32.84,
+  "lng": -96.82,
+  "state": "TX",
+  "sectors": [
+   "retail"
+  ],
+  "mx": 475.4,
+  "my": 383.5
  },
  {
   "slug": "mckinney-avenue-dallas",
-  "label": "McKinney Avenue, Dallas, Texas",
+  "label": "Dallas, Texas",
   "kind": "Vacant retail unit",
   "w": 1200,
-  "h": 675
+  "h": 675,
+  "lat": 32.8,
+  "lng": -96.8,
+  "state": "TX",
+  "sectors": [
+   "shell",
+   "retail"
+  ],
+  "mx": 475.7,
+  "my": 384.3
  },
  {
   "slug": "fifth-avenue-new-york",
   "label": "Fifth Avenue, New York",
   "kind": "Cold shell, stripped to structure",
   "w": 1200,
-  "h": 675
+  "h": 675,
+  "lat": 40.76,
+  "lng": -73.977,
+  "state": "NY",
+  "sectors": [
+   "shell",
+   "landmark",
+   "retail"
+  ],
+  "mx": 815,
+  "my": 186.7
  },
  {
   "slug": "westfield-topanga-canoga-park",
   "label": "Westfield Topanga, Canoga Park, California",
   "kind": "Enclosed mall",
   "w": 1200,
-  "h": 675
+  "h": 675,
+  "lat": 34.19,
+  "lng": -118.6,
+  "state": "CA",
+  "sectors": [
+   "retail"
+  ],
+  "mx": 123.5,
+  "my": 312.9
  },
  {
   "slug": "grand-avenue-san-marcos",
-  "label": "Grand Avenue, San Marcos, California",
+  "label": "San Marcos, California",
   "kind": "Food-service unit",
   "w": 1200,
-  "h": 675
+  "h": 675,
+  "lat": 33.14,
+  "lng": -117.17,
+  "state": "CA",
+  "sectors": [
+   "retail"
+  ],
+  "mx": 141.6,
+  "my": 338.7
  },
  {
   "slug": "new-york-avenue-washington-dc",
-  "label": "New York Avenue, Washington, DC",
+  "label": "Washington, DC",
   "kind": "Office",
   "w": 1200,
-  "h": 675
+  "h": 675,
+  "lat": 38.9,
+  "lng": -77.03,
+  "state": "DC",
+  "sectors": [
+   "office"
+  ],
+  "mx": 777.9,
+  "my": 233.1
  },
  {
   "slug": "los-gatos-village-square",
   "label": "Los Gatos Village Square, Los Gatos, California",
   "kind": "Vacant restaurant unit",
   "w": 1200,
-  "h": 675
+  "h": 675,
+  "lat": 37.24,
+  "lng": -121.96,
+  "state": "CA",
+  "sectors": [
+   "shell",
+   "retail"
+  ],
+  "mx": 87,
+  "my": 240.1
  },
  {
   "slug": "jericho-turnpike-commack",
-  "label": "Jericho Turnpike, Commack, New York",
+  "label": "Commack, New York",
   "kind": "Strip-centre retail",
   "w": 1200,
-  "h": 675
+  "h": 675,
+  "lat": 40.84,
+  "lng": -73.29,
+  "state": "NY",
+  "sectors": [
+   "retail"
+  ],
+  "mx": 824.6,
+  "my": 182.8
  },
  {
   "slug": "west-diversey-parkway-chicago",
-  "label": "West Diversey Parkway, Chicago, Illinois",
+  "label": "Chicago, Illinois",
   "kind": "Shell unit",
   "w": 1200,
-  "h": 675
+  "h": 675,
+  "lat": 41.93,
+  "lng": -87.64,
+  "state": "IL",
+  "sectors": [
+   "shell",
+   "retail"
+  ],
+  "mx": 611.6,
+  "my": 195.8
  },
  {
   "slug": "manhattan-avenue-greenpoint-brooklyn",
-  "label": "Manhattan Avenue, Greenpoint, Brooklyn",
+  "label": "Greenpoint, Brooklyn",
   "kind": "Stripped retail unit",
   "w": 1200,
-  "h": 675
+  "h": 675,
+  "lat": 40.73,
+  "lng": -73.95,
+  "state": "NY",
+  "sectors": [
+   "shell",
+   "retail"
+  ],
+  "mx": 815.5,
+  "my": 187.2
  },
  {
   "slug": "broadway-upper-west-side-new-york",
-  "label": "Broadway, Upper West Side, New York",
+  "label": "Upper West Side, New York",
   "kind": "Residential over retail",
   "w": 1200,
-  "h": 675
+  "h": 675,
+  "lat": 40.8,
+  "lng": -73.97,
+  "state": "NY",
+  "sectors": [
+   "retail"
+  ],
+  "mx": 814.9,
+  "my": 185.9
  },
  {
   "slug": "cactus-road-phoenix",
-  "label": "Cactus Road, Phoenix, Arizona",
+  "label": "Phoenix, Arizona",
   "kind": "New-build shell",
   "w": 1200,
-  "h": 675
+  "h": 675,
+  "lat": 33.6,
+  "lng": -111.98,
+  "state": "AZ",
+  "sectors": [
+   "shell",
+   "retail"
+  ],
+  "mx": 227.4,
+  "my": 346.3
  },
  {
   "slug": "la-centerra-katy",
   "label": "La Centerra, Katy, Texas",
   "kind": "Open-air retail",
   "w": 1200,
-  "h": 675
+  "h": 675,
+  "lat": 29.78,
+  "lng": -95.82,
+  "state": "TX",
+  "sectors": [
+   "retail"
+  ],
+  "mx": 492.1,
+  "my": 444.7
  },
  {
   "slug": "route-59-naperville",
-  "label": "Route 59, Naperville, Illinois",
+  "label": "Naperville, Illinois",
   "kind": "Office and warehouse flex suite",
   "w": 1200,
-  "h": 675
+  "h": 675,
+  "lat": 41.75,
+  "lng": -88.2,
+  "state": "IL",
+  "sectors": [
+   "office"
+  ],
+  "mx": 603.7,
+  "my": 200.1
  },
  {
   "slug": "peachtree-road-atlanta",
-  "label": "Peachtree Road, Atlanta, Georgia",
+  "label": "Atlanta, Georgia",
   "kind": "High-rise office",
   "w": 1200,
-  "h": 675
+  "h": 675,
+  "lat": 33.85,
+  "lng": -84.36,
+  "state": "GA",
+  "sectors": [
+   "office",
+   "healthcare"
+  ],
+  "mx": 679.4,
+  "my": 351.7
  },
  {
   "slug": "industrial-avenue-lowell",
-  "label": "Industrial Avenue, Lowell, Massachusetts",
+  "label": "Lowell, Massachusetts",
   "kind": "Warehouse and light industrial",
   "w": 1200,
-  "h": 675
+  "h": 675,
+  "lat": 42.62,
+  "lng": -71.32,
+  "state": "MA",
+  "sectors": [
+   "healthcare",
+   "office"
+  ],
+  "mx": 843.9,
+  "my": 141
  },
  {
   "slug": "gateway-oaks-drive-sacramento",
-  "label": "Gateway Oaks Drive, Sacramento, California",
+  "label": "Sacramento, California",
   "kind": "Office suite",
   "w": 1200,
-  "h": 675
+  "h": 675,
+  "lat": 38.6,
+  "lng": -121.52,
+  "state": "CA",
+  "sectors": [
+   "healthcare",
+   "office"
+  ],
+  "mx": 100.8,
+  "my": 215.6
  },
  {
   "slug": "ohio-street-commons-joliet",
-  "label": "Ohio Street Commons, Joliet, Illinois",
+  "label": "Joliet, Illinois",
   "kind": "Stripped retail unit",
   "w": 1200,
-  "h": 675
+  "h": 675,
+  "lat": 41.53,
+  "lng": -88.08,
+  "state": "IL",
+  "sectors": [
+   "healthcare",
+   "shell"
+  ],
+  "mx": 605.9,
+  "my": 204.4
  },
  {
   "slug": "thousand-oaks-boulevard-thousand-oaks",
-  "label": "Thousand Oaks Boulevard, Thousand Oaks, California",
+  "label": "Thousand Oaks, California",
   "kind": "Office suite",
   "w": 1200,
-  "h": 675
+  "h": 675,
+  "lat": 34.18,
+  "lng": -118.88,
+  "state": "CA",
+  "sectors": [
+   "healthcare",
+   "office"
+  ],
+  "mx": 119,
+  "my": 312
  },
  {
   "slug": "madera-road-simi-valley",
-  "label": "Madera Road, Simi Valley, California",
+  "label": "Simi Valley, California",
   "kind": "Office campus",
   "w": 1200,
-  "h": 675
+  "h": 675,
+  "lat": 34.28,
+  "lng": -118.75,
+  "state": "CA",
+  "sectors": [
+   "healthcare",
+   "office"
+  ],
+  "mx": 121.6,
+  "my": 310.6
  },
  {
   "slug": "matley-lane-reno",
-  "label": "Matley Lane, Reno, Nevada",
+  "label": "Reno, Nevada",
   "kind": "Office and light industrial",
   "w": 1200,
-  "h": 675
+  "h": 675,
+  "lat": 39.52,
+  "lng": -119.79,
+  "state": "NV",
+  "sectors": [
+   "office"
+  ],
+  "mx": 131.2,
+  "my": 204.5
  },
  {
   "slug": "south-willow-avenue-cookeville",
-  "label": "South Willow Avenue, Cookeville, Tennessee",
+  "label": "Cookeville, Tennessee",
   "kind": "Office and clinical suite",
   "w": 1200,
-  "h": 675
+  "h": 675,
+  "lat": 36.14,
+  "lng": -85.5,
+  "state": "TN",
+  "sectors": [
+   "healthcare"
+  ],
+  "mx": 655.7,
+  "my": 308.2
  },
  {
   "slug": "maryland-avenue-hagerstown",
-  "label": "Maryland Avenue, Hagerstown, Maryland",
+  "label": "Hagerstown, Maryland",
   "kind": "Office suite",
   "w": 1200,
-  "h": 675
+  "h": 675,
+  "lat": 39.64,
+  "lng": -77.72,
+  "state": "MD",
+  "sectors": [
+   "office"
+  ],
+  "mx": 764.7,
+  "my": 220.5
  },
  {
   "slug": "northeastern-boulevard-salem",
-  "label": "Northeastern Boulevard, Salem, New Hampshire",
+  "label": "Salem, New Hampshire",
   "kind": "Office building, drone survey",
   "w": 1200,
-  "h": 675
+  "h": 675,
+  "lat": 42.77,
+  "lng": -71.22,
+  "state": "NH",
+  "sectors": [
+   "healthcare",
+   "office"
+  ],
+  "mx": 844.6,
+  "my": 137.8
  },
  {
   "slug": "broadway-lincoln-square-new-york",
-  "label": "Broadway, Lincoln Square, New York",
+  "label": "Lincoln Square, New York",
   "kind": "Ground-floor retail shell",
   "w": 1200,
-  "h": 675
+  "h": 675,
+  "lat": 40.77,
+  "lng": -73.98,
+  "state": "NY",
+  "sectors": [
+   "shell",
+   "retail"
+  ],
+  "mx": 814.9,
+  "my": 186.5
  },
  {
   "slug": "crossroads-park-drive-houston",
-  "label": "Crossroads Park Drive, Houston, Texas",
+  "label": "Houston, Texas",
   "kind": "Single-story building, drone survey",
   "w": 1200,
-  "h": 675
+  "h": 675,
+  "lat": 29.83,
+  "lng": -95.62,
+  "state": "TX",
+  "sectors": [
+   "healthcare"
+  ],
+  "mx": 495.5,
+  "my": 443.7
+ },
+ {
+  "slug": "west-watkins-mill-gaithersburg",
+  "label": "Gaithersburg, Maryland",
+  "kind": "Therapy clinic, office park",
+  "w": 1200,
+  "h": 675,
+  "lat": 39.15,
+  "lng": -77.21,
+  "state": "MD",
+  "sectors": [
+   "healthcare",
+   "office"
+  ],
+  "mx": 774.2,
+  "my": 228.7
+ },
+ {
+  "slug": "watkins-mill-road-gaithersburg",
+  "label": "Gaithersburg, Maryland",
+  "kind": "New-build office shell",
+  "w": 1200,
+  "h": 675,
+  "lat": 39.16,
+  "lng": -77.22,
+  "state": "MD",
+  "sectors": [
+   "healthcare",
+   "shell",
+   "office"
+  ],
+  "mx": 774,
+  "my": 228.5
+ },
+ {
+  "slug": "columbia-maryland",
+  "label": "Columbia, Maryland",
+  "kind": "Therapy clinic, office building",
+  "w": 1200,
+  "h": 675,
+  "lat": 39.2,
+  "lng": -76.86,
+  "state": "MD",
+  "sectors": [
+   "healthcare",
+   "office"
+  ],
+  "mx": 779.2,
+  "my": 226.7
+ },
+ {
+  "slug": "buchanan-business-center-guaynabo",
+  "label": "Guaynabo, Puerto Rico",
+  "kind": "Pediatric therapy clinic, office tower",
+  "w": 1200,
+  "h": 675,
+  "lat": 18.42,
+  "lng": -66.1,
+  "state": "PR",
+  "sectors": [
+   "healthcare",
+   "office"
+  ],
+  "mx": 872.4,
+  "my": 543.4
+ },
+ {
+  "slug": "riverneck-road-chelmsford",
+  "label": "Chelmsford, Massachusetts",
+  "kind": "Therapy clinic, office building",
+  "w": 1200,
+  "h": 675,
+  "lat": 42.62,
+  "lng": -71.33,
+  "state": "MA",
+  "sectors": [
+   "healthcare",
+   "office"
+  ],
+  "mx": 843.8,
+  "my": 141.1
+ },
+ {
+  "slug": "newbury-street-danvers",
+  "label": "Danvers, Massachusetts",
+  "kind": "Former retail box to clinic",
+  "w": 1200,
+  "h": 675,
+  "lat": 42.57,
+  "lng": -70.95,
+  "state": "MA",
+  "sectors": [
+   "healthcare",
+   "retail",
+   "shell"
+  ],
+  "mx": 849.4,
+  "my": 140.6
+ },
+ {
+  "slug": "pelham-road-salem",
+  "label": "Salem, New Hampshire",
+  "kind": "Therapy clinic, office building",
+  "w": 1200,
+  "h": 675,
+  "lat": 42.76,
+  "lng": -71.23,
+  "state": "NH",
+  "sectors": [
+   "healthcare",
+   "office"
+  ],
+  "mx": 844.5,
+  "my": 138
+ },
+ {
+  "slug": "campbell-california",
+  "label": "Campbell, California",
+  "kind": "Therapy clinic, office campus",
+  "w": 1200,
+  "h": 675,
+  "lat": 37.28,
+  "lng": -121.95,
+  "state": "CA",
+  "sectors": [
+   "healthcare",
+   "office"
+  ],
+  "mx": 87.3,
+  "my": 239.4
+ },
+ {
+  "slug": "gainesville-georgia",
+  "label": "Gainesville, Georgia",
+  "kind": "Therapy clinic, standalone building",
+  "w": 1200,
+  "h": 675,
+  "lat": 34.3,
+  "lng": -83.82,
+  "state": "GA",
+  "sectors": [
+   "healthcare"
+  ],
+  "mx": 687,
+  "my": 341.6
+ },
+ {
+  "slug": "northwest-san-antonio-veterinary",
+  "label": "Northwest San Antonio, Texas",
+  "kind": "Veterinary hospital shell",
+  "w": 1200,
+  "h": 675,
+  "lat": 29.5,
+  "lng": -98.66,
+  "state": "TX",
+  "sectors": [
+   "healthcare",
+   "shell"
+  ],
+  "mx": 442.9,
+  "my": 449.6
+ },
+ {
+  "slug": "washington-road-evans",
+  "label": "Evans, Georgia",
+  "kind": "Veterinary hospital shell",
+  "w": 1200,
+  "h": 675,
+  "lat": 33.53,
+  "lng": -82.12,
+  "state": "GA",
+  "sectors": [
+   "healthcare",
+   "shell"
+  ],
+  "mx": 716.7,
+  "my": 353.1
+ },
+ {
+  "slug": "fort-walton-beach",
+  "label": "Fort Walton Beach, Florida",
+  "kind": "Women’s health clinic, fourth-floor shell",
+  "w": 1200,
+  "h": 675,
+  "lat": 30.42,
+  "lng": -86.62,
+  "state": "FL",
+  "sectors": [
+   "healthcare",
+   "shell",
+   "office"
+  ],
+  "mx": 649.3,
+  "my": 424
+ },
+ {
+  "slug": "huntsville-alabama",
+  "label": "Huntsville, Alabama",
+  "kind": "Senior-care campus",
+  "w": 1200,
+  "h": 675,
+  "lat": 34.73,
+  "lng": -86.59,
+  "state": "AL",
+  "sectors": [
+   "healthcare"
+  ],
+  "mx": 641.3,
+  "my": 338.2
+ },
+ {
+  "slug": "copper-basin-ducktown",
+  "label": "Ducktown, Tennessee",
+  "kind": "Senior-care facility",
+  "w": 1200,
+  "h": 675,
+  "lat": 35.03,
+  "lng": -84.38,
+  "state": "TN",
+  "sectors": [
+   "healthcare"
+  ],
+  "mx": 676.2,
+  "my": 328.2
+ },
+ {
+  "slug": "springfield-tennessee",
+  "label": "Springfield, Tennessee",
+  "kind": "Senior-care facility",
+  "w": 1200,
+  "h": 675,
+  "lat": 36.51,
+  "lng": -86.89,
+  "state": "TN",
+  "sectors": [
+   "healthcare"
+  ],
+  "mx": 633,
+  "my": 303.1
+ },
+ {
+  "slug": "tamarac-florida",
+  "label": "Tamarac, Florida",
+  "kind": "Former bank building",
+  "w": 1200,
+  "h": 675,
+  "lat": 26.21,
+  "lng": -80.25,
+  "state": "FL",
+  "sectors": [
+   "healthcare",
+   "shell"
+  ],
+  "mx": 771.1,
+  "my": 492
+ },
+ {
+  "slug": "north-marks-avenue-fresno",
+  "label": "Fresno, California",
+  "kind": "Neuro-rehabilitation campus",
+  "w": 1200,
+  "h": 675,
+  "lat": 36.83,
+  "lng": -119.84,
+  "state": "CA",
+  "sectors": [
+   "healthcare"
+  ],
+  "mx": 117,
+  "my": 256.7
+ },
+ {
+  "slug": "jacinto-road-elk-grove",
+  "label": "Elk Grove, California",
+  "kind": "Neuro-rehabilitation residence",
+  "w": 1200,
+  "h": 675,
+  "lat": 38.42,
+  "lng": -121.39,
+  "state": "CA",
+  "sectors": [
+   "healthcare"
+  ],
+  "mx": 101.8,
+  "my": 219.6
+ },
+ {
+  "slug": "remount-road-north-charleston",
+  "label": "North Charleston, South Carolina",
+  "kind": "Outpatient clinic, former retail",
+  "w": 1200,
+  "h": 675,
+  "lat": 32.88,
+  "lng": -80.02,
+  "state": "SC",
+  "sectors": [
+   "healthcare",
+   "retail"
+  ],
+  "mx": 753,
+  "my": 360.5
+ },
+ {
+  "slug": "san-antonio-outpatient-clinic",
+  "label": "San Antonio, Texas",
+  "kind": "Outpatient clinic, former retail",
+  "w": 1200,
+  "h": 675,
+  "lat": 29.44,
+  "lng": -98.5,
+  "state": "TX",
+  "sectors": [
+   "healthcare",
+   "retail",
+   "shell"
+  ],
+  "mx": 445.7,
+  "my": 450.9
+ },
+ {
+  "slug": "military-road-tukwila",
+  "label": "Tukwila, Washington",
+  "kind": "Outpatient clinic",
+  "w": 1200,
+  "h": 675,
+  "lat": 47.48,
+  "lng": -122.28,
+  "state": "WA",
+  "sectors": [
+   "healthcare"
+  ],
+  "mx": 138,
+  "my": 41.8
+ },
+ {
+  "slug": "pontchartrain-drive-slidell",
+  "label": "Slidell, Louisiana",
+  "kind": "Outpatient clinic, former retail",
+  "w": 1200,
+  "h": 675,
+  "lat": 30.28,
+  "lng": -89.78,
+  "state": "LA",
+  "sectors": [
+   "healthcare",
+   "retail",
+   "shell"
+  ],
+  "mx": 595.6,
+  "my": 431.2
+ },
+ {
+  "slug": "hooper-road-baton-rouge",
+  "label": "Baton Rouge, Louisiana",
+  "kind": "Outpatient clinic, former retail",
+  "w": 1200,
+  "h": 675,
+  "lat": 30.53,
+  "lng": -91.11,
+  "state": "LA",
+  "sectors": [
+   "healthcare",
+   "shell"
+  ],
+  "mx": 572.5,
+  "my": 427.6
+ },
+ {
+  "slug": "plank-road-baton-rouge",
+  "label": "Baton Rouge, Louisiana",
+  "kind": "Outpatient clinic, former retail",
+  "w": 1200,
+  "h": 675,
+  "lat": 30.5,
+  "lng": -91.15,
+  "state": "LA",
+  "sectors": [
+   "healthcare",
+   "retail"
+  ],
+  "mx": 571.9,
+  "my": 428.2
+ },
+ {
+  "slug": "jarvis-drive-morgan-hill",
+  "label": "Morgan Hill, California",
+  "kind": "Clinic suite, office building",
+  "w": 1200,
+  "h": 675,
+  "lat": 37.15,
+  "lng": -121.65,
+  "state": "CA",
+  "sectors": [
+   "healthcare",
+   "office"
+  ],
+  "mx": 91.2,
+  "my": 243.1
+ },
+ {
+  "slug": "truxel-road-sacramento",
+  "label": "Sacramento, California",
+  "kind": "Clinic suite, office building",
+  "w": 1200,
+  "h": 675,
+  "lat": 38.64,
+  "lng": -121.5,
+  "state": "CA",
+  "sectors": [
+   "healthcare",
+   "office"
+  ],
+  "mx": 101.4,
+  "my": 214.9
+ },
+ {
+  "slug": "blue-ravine-road-folsom",
+  "label": "Folsom, California",
+  "kind": "Clinic suite, office park",
+  "w": 1200,
+  "h": 675,
+  "lat": 38.68,
+  "lng": -121.15,
+  "state": "CA",
+  "sectors": [
+   "healthcare",
+   "office"
+  ],
+  "mx": 106.8,
+  "my": 215.6
+ },
+ {
+  "slug": "sepulveda-boulevard-west-los-angeles",
+  "label": "Los Angeles, California",
+  "kind": "Clinic suites, office complex",
+  "w": 1200,
+  "h": 675,
+  "lat": 33.95,
+  "lng": -118.39,
+  "state": "CA",
+  "sectors": [
+   "healthcare",
+   "office"
+  ],
+  "mx": 125.7,
+  "my": 318.4
+ },
+ {
+  "slug": "market-street-wheeling",
+  "label": "Wheeling, West Virginia",
+  "kind": "Gray-shell clinic space",
+  "w": 1200,
+  "h": 675,
+  "lat": 40.07,
+  "lng": -80.72,
+  "state": "WV",
+  "sectors": [
+   "healthcare",
+   "shell"
+  ],
+  "mx": 718.5,
+  "my": 220
+ },
+ {
+  "slug": "east-colorado-street-glendale",
+  "label": "Glendale, California",
+  "kind": "New-build medical office",
+  "w": 1200,
+  "h": 675,
+  "lat": 34.14,
+  "lng": -118.25,
+  "state": "CA",
+  "sectors": [
+   "healthcare",
+   "office",
+   "shell"
+  ],
+  "mx": 128.8,
+  "my": 315.2
+ },
+ {
+  "slug": "calle-de-luna-santa-clara",
+  "label": "Santa Clara, California",
+  "kind": "Second-floor shell over parking",
+  "w": 1200,
+  "h": 675,
+  "lat": 37.39,
+  "lng": -121.97,
+  "state": "CA",
+  "sectors": [
+   "office",
+   "shell"
+  ],
+  "mx": 87.6,
+  "my": 237.1
+ },
+ {
+  "slug": "dublin-california",
+  "label": "Dublin, California",
+  "kind": "Retail and commercial building",
+  "w": 1200,
+  "h": 675,
+  "lat": 37.7,
+  "lng": -121.93,
+  "state": "CA",
+  "sectors": [
+   "retail",
+   "office"
+  ],
+  "mx": 89.9,
+  "my": 231.3
+ },
+ {
+  "slug": "ashburn-virginia",
+  "label": "Ashburn, Virginia",
+  "kind": "Therapy clinic, office building",
+  "w": 1200,
+  "h": 675,
+  "lat": 39.04,
+  "lng": -77.49,
+  "state": "VA",
+  "sectors": [
+   "healthcare",
+   "office"
+  ],
+  "mx": 770.4,
+  "my": 231.7
+ },
+ {
+  "slug": "fort-worth-therapy-clinic",
+  "label": "Fort Worth, Texas",
+  "kind": "Therapy clinic, standalone building",
+  "w": 1200,
+  "h": 675,
+  "lat": 32.8,
+  "lng": -97.35,
+  "state": "TX",
+  "sectors": [
+   "healthcare"
+  ],
+  "mx": 466.6,
+  "my": 384.2
+ },
+ {
+  "slug": "keller-texas",
+  "label": "Keller, Texas",
+  "kind": "Therapy clinic, standalone building",
+  "w": 1200,
+  "h": 675,
+  "lat": 32.93,
+  "lng": -97.23,
+  "state": "TX",
+  "sectors": [
+   "healthcare"
+  ],
+  "mx": 468.6,
+  "my": 381.7
+ },
+ {
+  "slug": "lynnwood-washington",
+  "label": "Lynnwood, Washington",
+  "kind": "Therapy clinic, office shell",
+  "w": 1200,
+  "h": 675,
+  "lat": 47.82,
+  "lng": -122.31,
+  "state": "WA",
+  "sectors": [
+   "healthcare",
+   "office",
+   "shell"
+  ],
+  "mx": 139.4,
+  "my": 35.3
+ },
+ {
+  "slug": "woodinville-washington",
+  "label": "Woodinville, Washington",
+  "kind": "Therapy clinic, office park",
+  "w": 1200,
+  "h": 675,
+  "lat": 47.75,
+  "lng": -122.16,
+  "state": "WA",
+  "sectors": [
+   "healthcare",
+   "office"
+  ],
+  "mx": 141,
+  "my": 37.1
+ },
+ {
+  "slug": "bellevue-washington-office",
+  "label": "Bellevue, Washington",
+  "kind": "Therapy clinic, office building",
+  "w": 1200,
+  "h": 675,
+  "lat": 47.62,
+  "lng": -122.19,
+  "state": "WA",
+  "sectors": [
+   "healthcare",
+   "office"
+  ],
+  "mx": 139.9,
+  "my": 39.5
+ },
+ {
+  "slug": "renton-washington",
+  "label": "Renton, Washington",
+  "kind": "Therapy clinic, office building",
+  "w": 1200,
+  "h": 675,
+  "lat": 47.48,
+  "lng": -122.21,
+  "state": "WA",
+  "sectors": [
+   "healthcare",
+   "office"
+  ],
+  "mx": 138.9,
+  "my": 42.1
+ },
+ {
+  "slug": "linthicum-maryland",
+  "label": "Linthicum, Maryland",
+  "kind": "Therapy clinic, office building",
+  "w": 1200,
+  "h": 675,
+  "lat": 39.2,
+  "lng": -76.65,
+  "state": "MD",
+  "sectors": [
+   "healthcare",
+   "office"
+  ],
+  "mx": 782.4,
+  "my": 226
+ },
+ {
+  "slug": "frederick-maryland",
+  "label": "Frederick, Maryland",
+  "kind": "Therapy clinic, office building",
+  "w": 1200,
+  "h": 675,
+  "lat": 39.41,
+  "lng": -77.41,
+  "state": "MD",
+  "sectors": [
+   "healthcare",
+   "office"
+  ],
+  "mx": 770.2,
+  "my": 224.2
+ },
+ {
+  "slug": "suburban-maryland-clinic",
+  "label": "Suburban Maryland",
+  "kind": "Therapy clinic, flex building",
+  "w": 1200,
+  "h": 675,
+  "lat": 39.08,
+  "lng": -77.15,
+  "state": "MD",
+  "sectors": [
+   "healthcare",
+   "office"
+  ],
+  "mx": 775.4,
+  "my": 229.9
+ },
+ {
+  "slug": "gaithersburg-maryland",
+  "label": "Gaithersburg, Maryland",
+  "kind": "Therapy clinic, office suite",
+  "w": 1200,
+  "h": 675,
+  "lat": 39.14,
+  "lng": -77.2,
+  "state": "MD",
+  "sectors": [
+   "healthcare",
+   "office"
+  ],
+  "mx": 774.4,
+  "my": 228.9
+ },
+ {
+  "slug": "germantown-maryland",
+  "label": "Germantown, Maryland",
+  "kind": "Therapy clinic, former restaurant",
+  "w": 1200,
+  "h": 675,
+  "lat": 39.17,
+  "lng": -77.27,
+  "state": "MD",
+  "sectors": [
+   "healthcare",
+   "retail",
+   "shell"
+  ],
+  "mx": 773.2,
+  "my": 228.5
+ },
+ {
+  "slug": "peabody-massachusetts",
+  "label": "Peabody, Massachusetts",
+  "kind": "Therapy clinic, office building",
+  "w": 1200,
+  "h": 675,
+  "lat": 42.53,
+  "lng": -70.93,
+  "state": "MA",
+  "sectors": [
+   "healthcare",
+   "office"
+  ],
+  "mx": 849.9,
+  "my": 141.3
+ },
+ {
+  "slug": "trumbull-connecticut",
+  "label": "Trumbull, Connecticut",
+  "kind": "Therapy clinic, office building",
+  "w": 1200,
+  "h": 675,
+  "lat": 41.24,
+  "lng": -73.2,
+  "state": "CT",
+  "sectors": [
+   "healthcare",
+   "office"
+  ],
+  "mx": 824,
+  "my": 174.7
+ },
+ {
+  "slug": "clybourn-avenue-chicago",
+  "label": "Chicago, Illinois",
+  "kind": "Therapy clinic, urban retail",
+  "w": 1200,
+  "h": 675,
+  "lat": 41.91,
+  "lng": -87.66,
+  "state": "IL",
+  "sectors": [
+   "healthcare",
+   "retail"
+  ],
+  "mx": 611.4,
+  "my": 196.2
+ },
+ {
+  "slug": "fullerton-avenue-chicago",
+  "label": "Chicago, Illinois",
+  "kind": "Therapy clinic, former retail",
+  "w": 1200,
+  "h": 675,
+  "lat": 41.92,
+  "lng": -87.7,
+  "state": "IL",
+  "sectors": [
+   "healthcare",
+   "retail",
+   "shell"
+  ],
+  "mx": 610.8,
+  "my": 196.1
+ },
+ {
+  "slug": "north-western-avenue-chicago",
+  "label": "Chicago, Illinois",
+  "kind": "Therapy clinic, street retail",
+  "w": 1200,
+  "h": 675,
+  "lat": 41.97,
+  "lng": -87.69,
+  "state": "IL",
+  "sectors": [
+   "healthcare",
+   "retail"
+  ],
+  "mx": 610.8,
+  "my": 195.1
+ },
+ {
+  "slug": "deerfield-illinois",
+  "label": "Deerfield, Illinois",
+  "kind": "Therapy clinic, office building",
+  "w": 1200,
+  "h": 675,
+  "lat": 42.17,
+  "lng": -87.85,
+  "state": "IL",
+  "sectors": [
+   "healthcare",
+   "office"
+  ],
+  "mx": 608.2,
+  "my": 191.3
+ },
+ {
+  "slug": "second-avenue-needham",
+  "label": "Needham, Massachusetts",
+  "kind": "Therapy clinic, office building",
+  "w": 1200,
+  "h": 675,
+  "lat": 42.3,
+  "lng": -71.22,
+  "state": "MA",
+  "sectors": [
+   "healthcare",
+   "office"
+  ],
+  "mx": 847,
+  "my": 146.9
+ },
+ {
+  "slug": "greater-houston-colonial",
+  "label": "Greater Houston, Texas",
+  "kind": "Therapy clinic, new-build shell",
+  "w": 1200,
+  "h": 675,
+  "lat": 29.78,
+  "lng": -95.75,
+  "state": "TX",
+  "sectors": [
+   "healthcare",
+   "shell"
+  ],
+  "mx": 493.3,
+  "my": 444.7
+ },
+ {
+  "slug": "louetta-road-spring",
+  "label": "Spring, Texas",
+  "kind": "Therapy clinic, standalone building",
+  "w": 1200,
+  "h": 675,
+  "lat": 30.03,
+  "lng": -95.53,
+  "state": "TX",
+  "sectors": [
+   "healthcare"
+  ],
+  "mx": 497.1,
+  "my": 439.7
+ },
+ {
+  "slug": "stuebner-airline-houston",
+  "label": "Houston, Texas",
+  "kind": "Therapy clinic, retail shell",
+  "w": 1200,
+  "h": 675,
+  "lat": 30.02,
+  "lng": -95.55,
+  "state": "TX",
+  "sectors": [
+   "healthcare",
+   "retail",
+   "shell"
+  ],
+  "mx": 496.7,
+  "my": 439.9
+ },
+ {
+  "slug": "elgin-illinois",
+  "label": "Elgin, Illinois",
+  "kind": "Therapy clinic, office building",
+  "w": 1200,
+  "h": 675,
+  "lat": 42.04,
+  "lng": -88.28,
+  "state": "IL",
+  "sectors": [
+   "healthcare",
+   "office"
+  ],
+  "mx": 602.1,
+  "my": 194.4
+ },
+ {
+  "slug": "needham-massachusetts",
+  "label": "Needham, Massachusetts",
+  "kind": "Therapy clinic, office building",
+  "w": 1200,
+  "h": 675,
+  "lat": 42.28,
+  "lng": -71.24,
+  "state": "MA",
+  "sectors": [
+   "healthcare",
+   "office"
+  ],
+  "mx": 846.8,
+  "my": 147.3
+ },
+ {
+  "slug": "whittier-california",
+  "label": "Whittier, California",
+  "kind": "Therapy clinic, office building",
+  "w": 1200,
+  "h": 675,
+  "lat": 33.97,
+  "lng": -118.03,
+  "state": "CA",
+  "sectors": [
+   "healthcare",
+   "office"
+  ],
+  "mx": 131.5,
+  "my": 319.3
+ },
+ {
+  "slug": "murrieta-california",
+  "label": "Village Walk, Murrieta, California",
+  "kind": "Therapy clinic, retail suite",
+  "w": 1200,
+  "h": 675,
+  "lat": 33.55,
+  "lng": -117.21,
+  "state": "CA",
+  "sectors": [
+   "healthcare",
+   "retail",
+   "shell"
+  ],
+  "mx": 142.8,
+  "my": 330.6
+ },
+ {
+  "slug": "merced-california",
+  "label": "Merced, California",
+  "kind": "Therapy clinic, retail shell",
+  "w": 1200,
+  "h": 675,
+  "lat": 37.3,
+  "lng": -120.48,
+  "state": "CA",
+  "sectors": [
+   "healthcare",
+   "retail",
+   "shell"
+  ],
+  "mx": 109.7,
+  "my": 245
+ },
+ {
+  "slug": "holyoke-massachusetts",
+  "label": "Holyoke, Massachusetts",
+  "kind": "Therapy clinic, office building",
+  "w": 1200,
+  "h": 675,
+  "lat": 42.2,
+  "lng": -72.62,
+  "state": "MA",
+  "sectors": [
+   "healthcare",
+   "office"
+  ],
+  "mx": 827.7,
+  "my": 153.9
+ },
+ {
+  "slug": "rochester-new-york",
+  "label": "Rochester, New York",
+  "kind": "Therapy clinic, office suite",
+  "w": 1200,
+  "h": 675,
+  "lat": 43.16,
+  "lng": -77.61,
+  "state": "NY",
+  "sectors": [
+   "healthcare",
+   "office"
+  ],
+  "mx": 752.7,
+  "my": 151
+ },
+ {
+  "slug": "orlando-florida",
+  "label": "Orlando, Florida",
+  "kind": "Therapy clinic, office building",
+  "w": 1200,
+  "h": 675,
+  "lat": 28.54,
+  "lng": -81.38,
+  "state": "FL",
+  "sectors": [
+   "healthcare",
+   "office"
+  ],
+  "mx": 744,
+  "my": 449.7
+ },
+ {
+  "slug": "hertel-avenue-buffalo",
+  "label": "Buffalo, New York",
+  "kind": "Therapy clinic, office building",
+  "w": 1200,
+  "h": 675,
+  "lat": 42.95,
+  "lng": -78.85,
+  "state": "NY",
+  "sectors": [
+   "healthcare",
+   "office"
+  ],
+  "mx": 735.9,
+  "my": 158.5
+ },
+ {
+  "slug": "san-diego-california",
+  "label": "San Diego, California",
+  "kind": "Therapy clinic, courtyard office building",
+  "w": 1200,
+  "h": 675,
+  "lat": 32.83,
+  "lng": -117.15,
+  "state": "CA",
+  "sectors": [
+   "healthcare",
+   "office"
+  ],
+  "mx": 140.5,
+  "my": 344.9
+ },
+ {
+  "slug": "fresno-therapy-clinic",
+  "label": "Fresno, California",
+  "kind": "Therapy clinic, office building",
+  "w": 1200,
+  "h": 675,
+  "lat": 36.8,
+  "lng": -119.77,
+  "state": "CA",
+  "sectors": [
+   "healthcare",
+   "office"
+  ],
+  "mx": 117.9,
+  "my": 257.5
+ },
+ {
+  "slug": "downey-california",
+  "label": "Downey, California",
+  "kind": "Therapy clinic, office building",
+  "w": 1200,
+  "h": 675,
+  "lat": 33.94,
+  "lng": -118.13,
+  "state": "CA",
+  "sectors": [
+   "healthcare",
+   "office"
+  ],
+  "mx": 129.8,
+  "my": 319.6
+ },
+ {
+  "slug": "south-jordan-utah",
+  "label": "South Jordan, Utah",
+  "kind": "Therapy clinic, office building",
+  "w": 1200,
+  "h": 675,
+  "lat": 40.56,
+  "lng": -111.93,
+  "state": "UT",
+  "sectors": [
+   "healthcare",
+   "office"
+  ],
+  "mx": 251.5,
+  "my": 208.7
+ },
+ {
+  "slug": "yardley-pennsylvania",
+  "label": "Yardley, Pennsylvania",
+  "kind": "Clinic campus",
+  "w": 1200,
+  "h": 675,
+  "lat": 40.24,
+  "lng": -74.84,
+  "state": "PA",
+  "sectors": [
+   "healthcare"
+  ],
+  "mx": 804.8,
+  "my": 199.8
+ },
+ {
+  "slug": "chesterfield-missouri",
+  "label": "Chesterfield, Missouri",
+  "kind": "Pediatric therapy clinic",
+  "w": 1200,
+  "h": 675,
+  "lat": 38.66,
+  "lng": -90.58,
+  "state": "MO",
+  "sectors": [
+   "healthcare"
+  ],
+  "mx": 572.3,
+  "my": 264.4
+ },
+ {
+  "slug": "shawnee-kansas",
+  "label": "Shawnee, Kansas",
+  "kind": "Pediatric therapy clinic",
+  "w": 1200,
+  "h": 675,
+  "lat": 39.02,
+  "lng": -94.72,
+  "state": "KS",
+  "sectors": [
+   "healthcare",
+   "office"
+  ],
+  "mx": 508.6,
+  "my": 259.5
+ },
+ {
+  "slug": "eatontown-new-jersey",
+  "label": "Eatontown, New Jersey",
+  "kind": "Therapy clinic, office building",
+  "w": 1200,
+  "h": 675,
+  "lat": 40.29,
+  "lng": -74.05,
+  "state": "NJ",
+  "sectors": [
+   "healthcare",
+   "office"
+  ],
+  "mx": 816.1,
+  "my": 196.2
+ },
+ {
+  "slug": "owings-mills-maryland",
+  "label": "Owings Mills, Maryland",
+  "kind": "Therapy clinic, office building",
+  "w": 1200,
+  "h": 675,
+  "lat": 39.42,
+  "lng": -76.78,
+  "state": "MD",
+  "sectors": [
+   "healthcare",
+   "office"
+  ],
+  "mx": 779.5,
+  "my": 222.1
+ },
+ {
+  "slug": "hackensack-new-jersey",
+  "label": "Hackensack, New Jersey",
+  "kind": "Therapy clinic, office building",
+  "w": 1200,
+  "h": 675,
+  "lat": 40.89,
+  "lng": -74.04,
+  "state": "NJ",
+  "sectors": [
+   "healthcare",
+   "office"
+  ],
+  "mx": 813.5,
+  "my": 184.4
+ },
+ {
+  "slug": "crest-hill-illinois",
+  "label": "Crest Hill, Illinois",
+  "kind": "Outpatient clinic suite",
+  "w": 1200,
+  "h": 675,
+  "lat": 41.55,
+  "lng": -88.1,
+  "state": "IL",
+  "sectors": [
+   "healthcare",
+   "office"
+  ],
+  "mx": 605.5,
+  "my": 204
+ },
+ {
+  "slug": "smithfield-north-carolina",
+  "label": "Smithfield, North Carolina",
+  "kind": "Therapy clinic, standalone building",
+  "w": 1200,
+  "h": 675,
+  "lat": 35.51,
+  "lng": -78.34,
+  "state": "NC",
+  "sectors": [
+   "healthcare"
+  ],
+  "mx": 770.7,
+  "my": 303.8
+ },
+ {
+  "slug": "north-figueroa-highland-park",
+  "label": "Los Angeles, California",
+  "kind": "Street-front retail to clinic",
+  "w": 1200,
+  "h": 675,
+  "lat": 34.11,
+  "lng": -118.19,
+  "state": "CA",
+  "sectors": [
+   "healthcare",
+   "retail"
+  ],
+  "mx": 129.7,
+  "my": 316
+ },
+ {
+  "slug": "st-louis-missouri",
+  "label": "St. Louis, Missouri",
+  "kind": "Pediatric therapy clinic",
+  "w": 1200,
+  "h": 675,
+  "lat": 38.63,
+  "lng": -90.35,
+  "state": "MO",
+  "sectors": [
+   "healthcare"
+  ],
+  "mx": 575.9,
+  "my": 264.8
+ },
+ {
+  "slug": "clark-new-jersey",
+  "label": "Clark, New Jersey",
+  "kind": "Therapy clinic, office building",
+  "w": 1200,
+  "h": 675,
+  "lat": 40.62,
+  "lng": -74.31,
+  "state": "NJ",
+  "sectors": [
+   "healthcare",
+   "office"
+  ],
+  "mx": 810.8,
+  "my": 190.6
+ },
+ {
+  "slug": "hanford-california",
+  "label": "Hanford, California",
+  "kind": "Therapy clinic, new retail building",
+  "w": 1200,
+  "h": 675,
+  "lat": 36.33,
+  "lng": -119.65,
+  "state": "CA",
+  "sectors": [
+   "healthcare",
+   "retail",
+   "shell"
+  ],
+  "mx": 117.5,
+  "my": 267.1
+ },
+ {
+  "slug": "monmouth-junction-new-jersey",
+  "label": "Monmouth Junction, New Jersey",
+  "kind": "Therapy clinic, flex building",
+  "w": 1200,
+  "h": 675,
+  "lat": 40.38,
+  "lng": -74.55,
+  "state": "NJ",
+  "sectors": [
+   "healthcare",
+   "office"
+  ],
+  "mx": 808.4,
+  "my": 196.1
+ },
+ {
+  "slug": "itasca-illinois",
+  "label": "Itasca, Illinois",
+  "kind": "Therapy clinic, office suite",
+  "w": 1200,
+  "h": 675,
+  "lat": 41.98,
+  "lng": -88.02,
+  "state": "IL",
+  "sectors": [
+   "healthcare",
+   "office"
+  ],
+  "mx": 606,
+  "my": 195.3
+ },
+ {
+  "slug": "denver-colorado",
+  "label": "Denver, Colorado",
+  "kind": "Therapy clinic, office floor",
+  "w": 1200,
+  "h": 675,
+  "lat": 39.7,
+  "lng": -104.95,
+  "state": "CO",
+  "sectors": [
+   "healthcare",
+   "office"
+  ],
+  "mx": 353.5,
+  "my": 239.6
+ },
+ {
+  "slug": "ballwin-missouri",
+  "label": "Ballwin, Missouri",
+  "kind": "Pediatric therapy clinic",
+  "w": 1200,
+  "h": 675,
+  "lat": 38.59,
+  "lng": -90.55,
+  "state": "MO",
+  "sectors": [
+   "healthcare",
+   "office"
+  ],
+  "mx": 572.8,
+  "my": 265.8
+ },
+ {
+  "slug": "washington-dc-clinic",
+  "label": "Washington, DC",
+  "kind": "Therapy clinic, new-build",
+  "w": 1200,
+  "h": 675,
+  "lat": 38.91,
+  "lng": -76.99,
+  "state": "DC",
+  "sectors": [
+   "healthcare",
+   "shell"
+  ],
+  "mx": 778.4,
+  "my": 232.8
+ },
+ {
+  "slug": "mendota-heights-minnesota",
+  "label": "Mendota Heights, Minnesota",
+  "kind": "Clinic, retail centre suite",
+  "w": 1200,
+  "h": 675,
+  "lat": 44.88,
+  "lng": -93.14,
+  "state": "MN",
+  "sectors": [
+   "healthcare",
+   "retail"
+  ],
+  "mx": 529.2,
+  "my": 141.7
+ },
+ {
+  "slug": "shakopee-minnesota",
+  "label": "Shakopee, Minnesota",
+  "kind": "Pediatric clinic, office building",
+  "w": 1200,
+  "h": 675,
+  "lat": 44.78,
+  "lng": -93.48,
+  "state": "MN",
+  "sectors": [
+   "healthcare",
+   "office"
+  ],
+  "mx": 524.5,
+  "my": 143.8
+ },
+ {
+  "slug": "burien-washington",
+  "label": "Burien, Washington",
+  "kind": "Clinic, office building",
+  "w": 1200,
+  "h": 675,
+  "lat": 47.47,
+  "lng": -122.35,
+  "state": "WA",
+  "sectors": [
+   "healthcare",
+   "office"
+  ],
+  "mx": 137,
+  "my": 41.8
+ },
+ {
+  "slug": "aurora-colorado",
+  "label": "Aurora, Colorado",
+  "kind": "Therapy clinic, office building",
+  "w": 1200,
+  "h": 675,
+  "lat": 39.7,
+  "lng": -104.82,
+  "state": "CO",
+  "sectors": [
+   "healthcare",
+   "office"
+  ],
+  "mx": 355.5,
+  "my": 239.7
+ },
+ {
+  "slug": "dunlap-illinois",
+  "label": "Dunlap, Illinois",
+  "kind": "Therapy clinic, office shell",
+  "w": 1200,
+  "h": 675,
+  "lat": 40.86,
+  "lng": -89.67,
+  "state": "IL",
+  "sectors": [
+   "healthcare",
+   "office",
+   "shell"
+  ],
+  "mx": 583.3,
+  "my": 219.5
+ },
+ {
+  "slug": "gilbert-arizona",
+  "label": "Gilbert, Arizona",
+  "kind": "Therapy clinic, office building",
+  "w": 1200,
+  "h": 675,
+  "lat": 33.33,
+  "lng": -111.79,
+  "state": "AZ",
+  "sectors": [
+   "healthcare",
+   "office"
+  ],
+  "mx": 229.6,
+  "my": 352.2
+ },
+ {
+  "slug": "northglenn-colorado",
+  "label": "Northglenn, Colorado",
+  "kind": "Therapy clinic, office building",
+  "w": 1200,
+  "h": 675,
+  "lat": 39.9,
+  "lng": -104.98,
+  "state": "CO",
+  "sectors": [
+   "healthcare",
+   "office"
+  ],
+  "mx": 353.4,
+  "my": 235.5
+ },
+ {
+  "slug": "val-vista-drive-arizona",
+  "label": "Mesa, Arizona",
+  "kind": "Therapy clinic, office campus",
+  "w": 1200,
+  "h": 675,
+  "lat": 33.39,
+  "lng": -111.76,
+  "state": "AZ",
+  "sectors": [
+   "healthcare",
+   "office"
+  ],
+  "mx": 230.2,
+  "my": 351.1
+ },
+ {
+  "slug": "dry-creek-road-colorado",
+  "label": "Centennial, Colorado",
+  "kind": "Therapy clinic, office floor",
+  "w": 1200,
+  "h": 675,
+  "lat": 39.58,
+  "lng": -104.88,
+  "state": "CO",
+  "sectors": [
+   "healthcare",
+   "office"
+  ],
+  "mx": 354.3,
+  "my": 242.1
+ },
+ {
+  "slug": "mineral-avenue-littleton",
+  "label": "Littleton, Colorado",
+  "kind": "Therapy clinic, office suite",
+  "w": 1200,
+  "h": 675,
+  "lat": 39.58,
+  "lng": -105.02,
+  "state": "CO",
+  "sectors": [
+   "healthcare",
+   "office"
+  ],
+  "mx": 352.2,
+  "my": 241.9
+ },
+ {
+  "slug": "pasadena-california",
+  "label": "Pasadena, California",
+  "kind": "Clinic suite, office building",
+  "w": 1200,
+  "h": 675,
+  "lat": 34.15,
+  "lng": -118.14,
+  "state": "CA",
+  "sectors": [
+   "healthcare",
+   "office"
+  ],
+  "mx": 130.6,
+  "my": 315.4
+ },
+ {
+  "slug": "fitchburg-massachusetts",
+  "label": "Fitchburg, Massachusetts",
+  "kind": "Therapy clinic, former retail",
+  "w": 1200,
+  "h": 675,
+  "lat": 42.58,
+  "lng": -71.8,
+  "state": "MA",
+  "sectors": [
+   "healthcare",
+   "retail"
+  ],
+  "mx": 837.4,
+  "my": 143.6
+ },
+ {
+  "slug": "cheshire-connecticut",
+  "label": "Cheshire, Connecticut",
+  "kind": "Clinic, colonial office building",
+  "w": 1200,
+  "h": 675,
+  "lat": 41.5,
+  "lng": -72.9,
+  "state": "CT",
+  "sectors": [
+   "healthcare",
+   "office"
+  ],
+  "mx": 827.1,
+  "my": 168.5
+ },
+ {
+  "slug": "hapeville-georgia",
+  "label": "Hapeville, Georgia",
+  "kind": "Clinic, second-floor office",
+  "w": 1200,
+  "h": 675,
+  "lat": 33.66,
+  "lng": -84.41,
+  "state": "GA",
+  "sectors": [
+   "healthcare",
+   "office"
+  ],
+  "mx": 679,
+  "my": 355.6
+ },
+ {
+  "slug": "startown-road-hickory",
+  "label": "Hickory, North Carolina",
+  "kind": "Therapy clinic, retail shell",
+  "w": 1200,
+  "h": 675,
+  "lat": 35.7,
+  "lng": -81.29,
+  "state": "NC",
+  "sectors": [
+   "healthcare",
+   "shell",
+   "retail"
+  ],
+  "mx": 723.5,
+  "my": 308.1
+ },
+ {
+  "slug": "catawba-valley-boulevard-hickory",
+  "label": "Hickory, North Carolina",
+  "kind": "Therapy clinic, former retail",
+  "w": 1200,
+  "h": 675,
+  "lat": 35.72,
+  "lng": -81.3,
+  "state": "NC",
+  "sectors": [
+   "healthcare",
+   "retail",
+   "shell"
+  ],
+  "mx": 723.3,
+  "my": 307.7
+ },
+ {
+  "slug": "hanahan-south-carolina",
+  "label": "Hanahan, South Carolina",
+  "kind": "Therapy clinic, former retail box",
+  "w": 1200,
+  "h": 675,
+  "lat": 32.92,
+  "lng": -80.01,
+  "state": "SC",
+  "sectors": [
+   "healthcare",
+   "retail",
+   "shell"
+  ],
+  "mx": 753.1,
+  "my": 359.7
+ },
+ {
+  "slug": "washington-street-taunton",
+  "label": "Taunton, Massachusetts",
+  "kind": "Former bakery to therapy clinic",
+  "w": 1200,
+  "h": 675,
+  "lat": 41.9,
+  "lng": -71.1,
+  "state": "MA",
+  "sectors": [
+   "healthcare",
+   "retail"
+  ],
+  "mx": 850.8,
+  "my": 154.1
+ },
+ {
+  "slug": "41st-street-doral",
+  "label": "Doral, Florida",
+  "kind": "Veterinary hospital shell",
+  "w": 1200,
+  "h": 675,
+  "lat": 25.81,
+  "lng": -80.33,
+  "state": "FL",
+  "sectors": [
+   "healthcare",
+   "shell"
+  ],
+  "mx": 771,
+  "my": 500
+ },
+ {
+  "slug": "goni-road-carson-city",
+  "label": "Carson City, Nevada",
+  "kind": "Pediatric therapy clinic",
+  "w": 1200,
+  "h": 675,
+  "lat": 39.24,
+  "lng": -119.72,
+  "state": "NV",
+  "sectors": [
+   "healthcare",
+   "office"
+  ],
+  "mx": 130.8,
+  "my": 210.2
+ },
+ {
+  "slug": "broadway-plaza-walnut-creek",
+  "label": "Broadway Plaza, Walnut Creek, California",
+  "kind": "Open-air retail",
+  "w": 1200,
+  "h": 675,
+  "lat": 37.9,
+  "lng": -122.06,
+  "state": "CA",
+  "sectors": [
+   "retail"
+  ],
+  "mx": 89,
+  "my": 226.9
+ },
+ {
+  "slug": "ottley-drive-atlanta",
+  "label": "Atlanta, Georgia",
+  "kind": "Clinic, new office building",
+  "w": 1200,
+  "h": 675,
+  "lat": 33.83,
+  "lng": -84.38,
+  "state": "GA",
+  "sectors": [
+   "healthcare",
+   "office"
+  ],
+  "mx": 679.1,
+  "my": 352.1
+ },
+ {
+  "slug": "tacoma-mall",
+  "label": "Tacoma Mall, Tacoma, Washington",
+  "kind": "Enclosed mall",
+  "w": 1200,
+  "h": 675,
+  "lat": 47.22,
+  "lng": -122.47,
+  "state": "WA",
+  "sectors": [
+   "retail"
+  ],
+  "mx": 134.1,
+  "my": 46.1
+ },
+ {
+  "slug": "victoria-gardens-rancho-cucamonga",
+  "label": "Victoria Gardens, Rancho Cucamonga, California",
+  "kind": "Open-air retail",
+  "w": 1200,
+  "h": 675,
+  "lat": 34.11,
+  "lng": -117.53,
+  "state": "CA",
+  "sectors": [
+   "retail"
+  ],
+  "mx": 140.2,
+  "my": 318.5
+ },
+ {
+  "slug": "union-market-washington-dc",
+  "label": "Union Market, Washington, DC",
+  "kind": "Historic warehouse retail",
+  "w": 1200,
+  "h": 675,
+  "lat": 38.91,
+  "lng": -77,
+  "state": "DC",
+  "sectors": [
+   "retail",
+   "shell"
+  ],
+  "mx": 778.3,
+  "my": 232.8
+ },
+ {
+  "slug": "el-paseo-palm-desert",
+  "label": "The Gardens on El Paseo, Palm Desert, California",
+  "kind": "Open-air retail",
+  "w": 1200,
+  "h": 675,
+  "lat": 33.72,
+  "lng": -116.38,
+  "state": "CA",
+  "sectors": [
+   "retail"
+  ],
+  "mx": 156.8,
+  "my": 330.2
+ },
+ {
+  "slug": "oakwood-georgia",
+  "label": "Oakwood, Georgia",
+  "kind": "Therapy clinic, standalone building",
+  "w": 1200,
+  "h": 675,
+  "lat": 34.23,
+  "lng": -83.88,
+  "state": "GA",
+  "sectors": [
+   "healthcare"
+  ],
+  "mx": 686.2,
+  "my": 343.2
+ },
+ {
+  "slug": "braintree-massachusetts",
+  "label": "Braintree, Massachusetts",
+  "kind": "Medical office building",
+  "w": 1200,
+  "h": 675,
+  "lat": 42.21,
+  "lng": -71,
+  "state": "MA",
+  "sectors": [
+   "healthcare",
+   "office"
+  ],
+  "mx": 850.6,
+  "my": 147.8
+ },
+ {
+  "slug": "santa-monica-california",
+  "label": "Santa Monica, California",
+  "kind": "Street-front clinic conversion",
+  "w": 1200,
+  "h": 675,
+  "lat": 34.02,
+  "lng": -118.48,
+  "state": "CA",
+  "sectors": [
+   "healthcare",
+   "retail"
+  ],
+  "mx": 124.6,
+  "my": 316.7
+ },
+ {
+  "slug": "north-haven-connecticut",
+  "label": "North Haven, Connecticut",
+  "kind": "Industrial shell",
+  "w": 1200,
+  "h": 675,
+  "lat": 41.39,
+  "lng": -72.86,
+  "state": "CT",
+  "sectors": [
+   "office",
+   "shell"
+  ],
+  "mx": 828.2,
+  "my": 170.5
+ },
+ {
+  "slug": "granite-bay-california",
+  "label": "Granite Bay, California",
+  "kind": "Neuro-rehabilitation residence",
+  "w": 1200,
+  "h": 675,
+  "lat": 38.76,
+  "lng": -121.16,
+  "state": "CA",
+  "sectors": [
+   "healthcare"
+  ],
+  "mx": 107,
+  "my": 214
+ },
+ {
+  "slug": "fort-lauderdale-florida",
+  "label": "Fort Lauderdale, Florida",
+  "kind": "Fitness club, flex building",
+  "w": 1200,
+  "h": 675,
+  "lat": 26.15,
+  "lng": -80.17,
+  "state": "FL",
+  "sectors": [
+   "office",
+   "retail"
+  ],
+  "mx": 772.7,
+  "my": 492.9
+ },
+ {
+  "slug": "palm-beach-florida",
+  "label": "West Palm Beach, Florida",
+  "kind": "Veterinary clinic",
+  "w": 1200,
+  "h": 675,
+  "lat": 26.7,
+  "lng": -80.09,
+  "state": "FL",
+  "sectors": [
+   "healthcare"
+  ],
+  "mx": 772.4,
+  "my": 482
+ },
+ {
+  "slug": "la-habra-california",
+  "label": "La Habra, California",
+  "kind": "Therapy clinic, office building",
+  "w": 1200,
+  "h": 675,
+  "lat": 33.93,
+  "lng": -117.95,
+  "state": "CA",
+  "sectors": [
+   "healthcare",
+   "office"
+  ],
+  "mx": 132.6,
+  "my": 320.4
+ },
+ {
+  "slug": "southwick-massachusetts",
+  "label": "Southwick, Massachusetts",
+  "kind": "Therapy clinic, office suite",
+  "w": 1200,
+  "h": 675,
+  "lat": 42.05,
+  "lng": -72.77,
+  "state": "MA",
+  "sectors": [
+   "healthcare",
+   "office"
+  ],
+  "mx": 826.3,
+  "my": 157.4
+ },
+ {
+  "slug": "springfield-massachusetts",
+  "label": "Springfield, Massachusetts",
+  "kind": "Therapy clinic, office suite",
+  "w": 1200,
+  "h": 675,
+  "lat": 42.1,
+  "lng": -72.59,
+  "state": "MA",
+  "sectors": [
+   "healthcare",
+   "office"
+  ],
+  "mx": 828.6,
+  "my": 155.8
+ },
+ {
+  "slug": "west-broadway-oviedo",
+  "label": "Oviedo, Florida",
+  "kind": "Therapy clinic, new-build shell",
+  "w": 1200,
+  "h": 675,
+  "lat": 28.67,
+  "lng": -81.21,
+  "state": "FL",
+  "sectors": [
+   "healthcare",
+   "shell",
+   "retail"
+  ],
+  "mx": 746.5,
+  "my": 446.6
+ },
+ {
+  "slug": "woodbridge-virginia",
+  "label": "Woodbridge, Virginia",
+  "kind": "Therapy clinic, retail building",
+  "w": 1200,
+  "h": 675,
+  "lat": 38.66,
+  "lng": -77.25,
+  "state": "VA",
+  "sectors": [
+   "healthcare",
+   "retail"
+  ],
+  "mx": 775.5,
+  "my": 238.5
+ },
+ {
+  "slug": "fry-road-katy",
+  "label": "Katy, Texas",
+  "kind": "Therapy clinic, new-build shell",
+  "w": 1200,
+  "h": 675,
+  "lat": 29.8,
+  "lng": -95.72,
+  "state": "TX",
+  "sectors": [
+   "healthcare",
+   "shell",
+   "retail"
+  ],
+  "mx": 493.8,
+  "my": 444.3
+ },
+ {
+  "slug": "grand-parkway-katy",
+  "label": "Katy, Texas",
+  "kind": "Therapy clinic, new retail building",
+  "w": 1200,
+  "h": 675,
+  "lat": 29.76,
+  "lng": -95.79,
+  "state": "TX",
+  "sectors": [
+   "healthcare",
+   "shell",
+   "retail"
+  ],
+  "mx": 492.6,
+  "my": 445.1
+ },
+ {
+  "slug": "peoria-illinois",
+  "label": "Peoria, Illinois",
+  "kind": "Therapy clinic, office building",
+  "w": 1200,
+  "h": 675,
+  "lat": 40.75,
+  "lng": -89.6,
+  "state": "IL",
+  "sectors": [
+   "healthcare",
+   "office"
+  ],
+  "mx": 584.5,
+  "my": 221.6
  }
 ]
