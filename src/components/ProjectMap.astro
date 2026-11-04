@@ -23,15 +23,36 @@ const pins = locations.filter((l) => typeof l.mx === "number");
     {pins.map((l) => {
       const href = storySlugs.has(l.slug) ? `/work/locations/${l.slug}/` : `#site-${l.slug}`;
       return (
-        <a href={href} class="map-pin" data-sectors={(l.sectors || []).join(" ")} aria-label={l.label}>
-          <title>{l.label}</title>
+        <a href={href} class="map-pin" data-sectors={(l.sectors || []).join(" ")} data-label={l.label} aria-label={l.label}>
           <circle cx={l.mx} cy={l.my} r="9" fill="transparent" />
           <circle cx={l.mx} cy={l.my} r="5.5" class="pin-dot" />
         </a>
       );
     })}
   </svg>
+  <div id="map-tip" class="pointer-events-none absolute hidden bg-navy text-white text-[0.75rem] px-2.5 py-1.5 whitespace-nowrap -translate-x-1/2 -translate-y-full" role="presentation"></div>
 </figure>
+
+<script>
+  const fig = document.querySelector<HTMLElement>(".project-map");
+  const tip = document.getElementById("map-tip");
+  if (fig && tip) {
+    fig.querySelectorAll<SVGAElement>(".map-pin").forEach((pin) => {
+      const show = () => {
+        const dot = pin.querySelector(".pin-dot") as SVGGraphicsElement | null;
+        if (!dot) return;
+        const r = dot.getBoundingClientRect(), f = fig.getBoundingClientRect();
+        tip.textContent = pin.dataset.label || "";
+        tip.style.left = `${r.left - f.left + r.width / 2}px`;
+        tip.style.top = `${r.top - f.top - 6}px`;
+        tip.classList.remove("hidden");
+      };
+      const hide = () => tip.classList.add("hidden");
+      pin.addEventListener("mouseenter", show); pin.addEventListener("focus", show);
+      pin.addEventListener("mouseleave", hide); pin.addEventListener("blur", hide);
+    });
+  }
+</script>
 
 <style>
   .pin-dot { fill: #C9A84C; stroke: #0B1F3A; stroke-width: 1.2; transition: r 0.15s, opacity 0.2s; }

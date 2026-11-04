@@ -755,5 +755,516 @@
   ],
   "mx": 495.5,
   "my": 443.7
+ },
+ {
+  "slug": "west-watkins-mill-gaithersburg",
+  "label": "West Watkins Mill Road, Gaithersburg, Maryland",
+  "kind": "Therapy clinic, office park",
+  "w": 1200,
+  "h": 675,
+  "lat": 39.15,
+  "lng": -77.21,
+  "state": "MD",
+  "sectors": [
+   "healthcare",
+   "office"
+  ],
+  "mx": 774.2,
+  "my": 228.7
+ },
+ {
+  "slug": "watkins-mill-road-gaithersburg",
+  "label": "Watkins Mill Road, Gaithersburg, Maryland",
+  "kind": "New-build office shell",
+  "w": 1200,
+  "h": 675,
+  "lat": 39.16,
+  "lng": -77.22,
+  "state": "MD",
+  "sectors": [
+   "healthcare",
+   "shell",
+   "office"
+  ],
+  "mx": 774,
+  "my": 228.5
+ },
+ {
+  "slug": "columbia-maryland",
+  "label": "Columbia, Maryland",
+  "kind": "Therapy clinic, office building",
+  "w": 1200,
+  "h": 675,
+  "lat": 39.2,
+  "lng": -76.86,
+  "state": "MD",
+  "sectors": [
+   "healthcare",
+   "office"
+  ],
+  "mx": 779.2,
+  "my": 226.7
+ },
+ {
+  "slug": "buchanan-business-center-guaynabo",
+  "label": "Buchanan Business Center, Guaynabo, Puerto Rico",
+  "kind": "Pediatric therapy clinic, office tower",
+  "w": 1200,
+  "h": 675,
+  "lat": 18.42,
+  "lng": -66.1,
+  "state": "PR",
+  "sectors": [
+   "healthcare",
+   "office"
+  ],
+  "mx": 872.4,
+  "my": 543.4
+ },
+ {
+  "slug": "riverneck-road-chelmsford",
+  "label": "Riverneck Road, Chelmsford, Massachusetts",
+  "kind": "Therapy clinic, office building",
+  "w": 1200,
+  "h": 675,
+  "lat": 42.62,
+  "lng": -71.33,
+  "state": "MA",
+  "sectors": [
+   "healthcare",
+   "office"
+  ],
+  "mx": 843.8,
+  "my": 141.1
+ },
+ {
+  "slug": "newbury-street-danvers",
+  "label": "Newbury Street, Danvers, Massachusetts",
+  "kind": "Former retail box to clinic",
+  "w": 1200,
+  "h": 675,
+  "lat": 42.57,
+  "lng": -70.95,
+  "state": "MA",
+  "sectors": [
+   "healthcare",
+   "retail",
+   "shell"
+  ],
+  "mx": 849.4,
+  "my": 140.6
+ },
+ {
+  "slug": "pelham-road-salem",
+  "label": "Pelham Road, Salem, New Hampshire",
+  "kind": "Therapy clinic, office building",
+  "w": 1200,
+  "h": 675,
+  "lat": 42.76,
+  "lng": -71.23,
+  "state": "NH",
+  "sectors": [
+   "healthcare",
+   "office"
+  ],
+  "mx": 844.5,
+  "my": 138
+ },
+ {
+  "slug": "campbell-california",
+  "label": "Campbell, California",
+  "kind": "Therapy clinic, office campus",
+  "w": 1200,
+  "h": 675,
+  "lat": 37.28,
+  "lng": -121.95,
+  "state": "CA",
+  "sectors": [
+   "healthcare",
+   "office"
+  ],
+  "mx": 87.3,
+  "my": 239.4
+ },
+ {
+  "slug": "gainesville-georgia",
+  "label": "Gainesville, Georgia",
+  "kind": "Therapy clinic, standalone building",
+  "w": 1200,
+  "h": 675,
+  "lat": 34.3,
+  "lng": -83.82,
+  "state": "GA",
+  "sectors": [
+   "healthcare"
+  ],
+  "mx": 687,
+  "my": 341.6
+ },
+ {
+  "slug": "northwest-san-antonio-veterinary",
+  "label": "Northwest San Antonio, Texas",
+  "kind": "Veterinary hospital shell",
+  "w": 1200,
+  "h": 675,
+  "lat": 29.5,
+  "lng": -98.66,
+  "state": "TX",
+  "sectors": [
+   "healthcare",
+   "shell"
+  ],
+  "mx": 442.9,
+  "my": 449.6
+ },
+ {
+  "slug": "washington-road-evans",
+  "label": "Washington Road, Evans, Georgia",
+  "kind": "Veterinary hospital shell",
+  "w": 1200,
+  "h": 675,
+  "lat": 33.53,
+  "lng": -82.12,
+  "state": "GA",
+  "sectors": [
+   "healthcare",
+   "shell"
+  ],
+  "mx": 716.7,
+  "my": 353.1
+ },
+ {
+  "slug": "fort-walton-beach",
+  "label": "Fort Walton Beach, Florida",
+  "kind": "Women’s health clinic, fourth-floor shell",
+  "w": 1200,
+  "h": 675,
+  "lat": 30.42,
+  "lng": -86.62,
+  "state": "FL",
+  "sectors": [
+   "healthcare",
+   "shell",
+   "office"
+  ],
+  "mx": 649.3,
+  "my": 424
+ },
+ {
+  "slug": "huntsville-alabama",
+  "label": "Huntsville, Alabama",
+  "kind": "Senior-care campus",
+  "w": 1200,
+  "h": 675,
+  "lat": 34.73,
+  "lng": -86.59,
+  "state": "AL",
+  "sectors": [
+   "healthcare"
+  ],
+  "mx": 641.3,
+  "my": 338.2
+ },
+ {
+  "slug": "copper-basin-ducktown",
+  "label": "Copper Basin, Ducktown, Tennessee",
+  "kind": "Senior-care facility",
+  "w": 1200,
+  "h": 675,
+  "lat": 35.03,
+  "lng": -84.38,
+  "state": "TN",
+  "sectors": [
+   "healthcare"
+  ],
+  "mx": 676.2,
+  "my": 328.2
+ },
+ {
+  "slug": "springfield-tennessee",
+  "label": "Springfield, Tennessee",
+  "kind": "Senior-care facility",
+  "w": 1200,
+  "h": 675,
+  "lat": 36.51,
+  "lng": -86.89,
+  "state": "TN",
+  "sectors": [
+   "healthcare"
+  ],
+  "mx": 633,
+  "my": 303.1
+ },
+ {
+  "slug": "tamarac-florida",
+  "label": "Tamarac, Florida",
+  "kind": "Former bank building",
+  "w": 1200,
+  "h": 675,
+  "lat": 26.21,
+  "lng": -80.25,
+  "state": "FL",
+  "sectors": [
+   "healthcare",
+   "shell"
+  ],
+  "mx": 771.1,
+  "my": 492
+ },
+ {
+  "slug": "north-marks-avenue-fresno",
+  "label": "North Marks Avenue, Fresno, California",
+  "kind": "Neuro-rehabilitation campus",
+  "w": 1200,
+  "h": 675,
+  "lat": 36.83,
+  "lng": -119.84,
+  "state": "CA",
+  "sectors": [
+   "healthcare"
+  ],
+  "mx": 117,
+  "my": 256.7
+ },
+ {
+  "slug": "jacinto-road-elk-grove",
+  "label": "Jacinto Road, Elk Grove, California",
+  "kind": "Neuro-rehabilitation residence",
+  "w": 1200,
+  "h": 675,
+  "lat": 38.42,
+  "lng": -121.39,
+  "state": "CA",
+  "sectors": [
+   "healthcare"
+  ],
+  "mx": 101.8,
+  "my": 219.6
+ },
+ {
+  "slug": "remount-road-north-charleston",
+  "label": "Remount Road, North Charleston, South Carolina",
+  "kind": "Outpatient clinic, former retail",
+  "w": 1200,
+  "h": 675,
+  "lat": 32.88,
+  "lng": -80.02,
+  "state": "SC",
+  "sectors": [
+   "healthcare",
+   "retail"
+  ],
+  "mx": 753,
+  "my": 360.5
+ },
+ {
+  "slug": "san-antonio-outpatient-clinic",
+  "label": "San Antonio, Texas",
+  "kind": "Outpatient clinic, former retail",
+  "w": 1200,
+  "h": 675,
+  "lat": 29.44,
+  "lng": -98.5,
+  "state": "TX",
+  "sectors": [
+   "healthcare",
+   "retail",
+   "shell"
+  ],
+  "mx": 445.7,
+  "my": 450.9
+ },
+ {
+  "slug": "military-road-tukwila",
+  "label": "Military Road South, Tukwila, Washington",
+  "kind": "Outpatient clinic",
+  "w": 1200,
+  "h": 675,
+  "lat": 47.48,
+  "lng": -122.28,
+  "state": "WA",
+  "sectors": [
+   "healthcare"
+  ],
+  "mx": 138,
+  "my": 41.8
+ },
+ {
+  "slug": "pontchartrain-drive-slidell",
+  "label": "Pontchartrain Drive, Slidell, Louisiana",
+  "kind": "Outpatient clinic, former retail",
+  "w": 1200,
+  "h": 675,
+  "lat": 30.28,
+  "lng": -89.78,
+  "state": "LA",
+  "sectors": [
+   "healthcare",
+   "retail",
+   "shell"
+  ],
+  "mx": 595.6,
+  "my": 431.2
+ },
+ {
+  "slug": "hooper-road-baton-rouge",
+  "label": "Hooper Road, Baton Rouge, Louisiana",
+  "kind": "Outpatient clinic, former retail",
+  "w": 1200,
+  "h": 675,
+  "lat": 30.53,
+  "lng": -91.11,
+  "state": "LA",
+  "sectors": [
+   "healthcare",
+   "shell"
+  ],
+  "mx": 572.5,
+  "my": 427.6
+ },
+ {
+  "slug": "plank-road-baton-rouge",
+  "label": "Plank Road, Baton Rouge, Louisiana",
+  "kind": "Outpatient clinic, former retail",
+  "w": 1200,
+  "h": 675,
+  "lat": 30.5,
+  "lng": -91.15,
+  "state": "LA",
+  "sectors": [
+   "healthcare",
+   "retail"
+  ],
+  "mx": 571.9,
+  "my": 428.2
+ },
+ {
+  "slug": "jarvis-drive-morgan-hill",
+  "label": "Jarvis Drive, Morgan Hill, California",
+  "kind": "Clinic suite, office building",
+  "w": 1200,
+  "h": 675,
+  "lat": 37.15,
+  "lng": -121.65,
+  "state": "CA",
+  "sectors": [
+   "healthcare",
+   "office"
+  ],
+  "mx": 91.2,
+  "my": 243.1
+ },
+ {
+  "slug": "truxel-road-sacramento",
+  "label": "Truxel Road, Sacramento, California",
+  "kind": "Clinic suite, office building",
+  "w": 1200,
+  "h": 675,
+  "lat": 38.64,
+  "lng": -121.5,
+  "state": "CA",
+  "sectors": [
+   "healthcare",
+   "office"
+  ],
+  "mx": 101.4,
+  "my": 214.9
+ },
+ {
+  "slug": "blue-ravine-road-folsom",
+  "label": "Blue Ravine Road, Folsom, California",
+  "kind": "Clinic suite, office park",
+  "w": 1200,
+  "h": 675,
+  "lat": 38.68,
+  "lng": -121.15,
+  "state": "CA",
+  "sectors": [
+   "healthcare",
+   "office"
+  ],
+  "mx": 106.8,
+  "my": 215.6
+ },
+ {
+  "slug": "sepulveda-boulevard-west-los-angeles",
+  "label": "Sepulveda Boulevard, Los Angeles, California",
+  "kind": "Clinic suites, office complex",
+  "w": 1200,
+  "h": 675,
+  "lat": 33.95,
+  "lng": -118.39,
+  "state": "CA",
+  "sectors": [
+   "healthcare",
+   "office"
+  ],
+  "mx": 125.7,
+  "my": 318.4
+ },
+ {
+  "slug": "market-street-wheeling",
+  "label": "Market Street, Wheeling, West Virginia",
+  "kind": "Gray-shell clinic space",
+  "w": 1200,
+  "h": 675,
+  "lat": 40.07,
+  "lng": -80.72,
+  "state": "WV",
+  "sectors": [
+   "healthcare",
+   "shell"
+  ],
+  "mx": 718.5,
+  "my": 220
+ },
+ {
+  "slug": "east-colorado-street-glendale",
+  "label": "East Colorado Street, Glendale, California",
+  "kind": "New-build medical office",
+  "w": 1200,
+  "h": 675,
+  "lat": 34.14,
+  "lng": -118.25,
+  "state": "CA",
+  "sectors": [
+   "healthcare",
+   "office",
+   "shell"
+  ],
+  "mx": 128.8,
+  "my": 315.2
+ },
+ {
+  "slug": "calle-de-luna-santa-clara",
+  "label": "Calle de Luna, Santa Clara, California",
+  "kind": "Second-floor shell over parking",
+  "w": 1200,
+  "h": 675,
+  "lat": 37.39,
+  "lng": -121.97,
+  "state": "CA",
+  "sectors": [
+   "office",
+   "shell"
+  ],
+  "mx": 87.6,
+  "my": 237.1
+ },
+ {
+  "slug": "dublin-california",
+  "label": "Dublin, California",
+  "kind": "Retail and commercial building",
+  "w": 1200,
+  "h": 675,
+  "lat": 37.7,
+  "lng": -121.93,
+  "state": "CA",
+  "sectors": [
+   "retail",
+   "office"
+  ],
+  "mx": 89.9,
+  "my": 231.3
  }
 ]
