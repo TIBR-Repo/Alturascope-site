@@ -62,9 +62,7 @@ export default defineConfig({
   integrations: [
     tailwind(),
     sitemap({
-      // sample-project is a noindex demo; listing it in the sitemap sends Google
-      // a contradiction it reports as an error.
-      filter: (page) => !page.includes('/thank-you/') && !page.includes('/work/sample-project/'),
+      filter: (page) => !page.includes('/thank-you/'),
       // /work/walkthrough/ (static exhibit in public/) is deliberately not listed:
       // it is a full-screen viewer with no text for Google to index.
       // Give crawlers a change signal. Without lastmod, a recrawl of an updated
