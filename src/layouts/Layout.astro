@@ -209,6 +209,8 @@ const switchTitle = isUK
     <title>{title}</title>
     <meta name="description" content={description} />
     <meta name="robots" content={robots} />
+    {/* Reach first-party tag: which ads brought enquiries. UK pages wait for consent, so they send bare counts only. */}
+    <script is:inline src="https://tibr-signal.on-forge.com/t.js" data-site="alturascope" data-key="7c43479787be0c3c09adefde" data-consent={Astro.url.pathname.startsWith('/uk') ? 'required' : 'implied'} defer></script>
     <link rel="canonical" href={canonical} />
     <meta property="og:title" content={title} />
     <meta property="og:description" content={description} />

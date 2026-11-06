@@ -1,0 +1,88 @@
+---
+import Layout from "../layouts/Layout.astro";
+
+// Landing page for the ALT-PREL campaign. Kept out of search and the menus until the ads run.
+// Every product statement comes from the approved claims in Reach (C1, C2, C4, C5, C6, C10, C11, C12).
+const outputs = [
+  "A conditions report with findings ranked P1, P2 or P3",
+  "An equipment and asset schedule: make, model, services connections",
+  "A narrated video walkthrough",
+  "A labelled photo storyboard",
+  "A navigable 3D model",
+  "Access to the ScopeWalk platform",
+];
+const covers = ["Structure", "Envelope", "MEP across all disciplines", "Finishes", "ADA and accessibility observations", "Fire and life safety"];
+const field = "w-full px-4 py-3 border border-border bg-white text-navy focus:border-gold focus:outline-none transition-colors";
+---
+<Layout
+  title="Pre-Lease Site Survey | Alturascope"
+  description="Know the building before you price the work. Send an address and get a scope recommendation and an all-in quote within one business day."
+  canonical="https://alturascope.com/pre-lease-survey/"
+  robots="noindex, follow"
+>
+  <section class="max-w-5xl mx-auto px-6 py-16 md:py-20 grid md:grid-cols-2 gap-12">
+    <div>
+      <p class="text-sm font-medium text-gold">Pre-lease site survey</p>
+      <h1 class="mt-3 text-[2.4rem] md:text-[3rem] font-light text-navy leading-tight">Sign, renegotiate or walk away?</h1>
+      <p class="mt-4 text-[1.25rem] text-navy leading-body">Know the building before you price the work.</p>
+      <p class="mt-4 text-midgrey leading-body">
+        Surveys include above-ceiling MEP documentation and thermal analysis. Most existing-conditions surveys stop at ceiling height.
+      </p>
+
+      <h2 class="mt-10 text-xl font-light text-navy">Every visit delivers the same set of outputs</h2>
+      <ul class="mt-3 space-y-2 text-midgrey leading-body list-disc pl-5">
+        {outputs.map((o) => <li>{o}</li>)}
+      </ul>
+
+      <h2 class="mt-10 text-xl font-light text-navy">What the conditions report covers</h2>
+      <ul class="mt-3 space-y-2 text-midgrey leading-body list-disc pl-5">
+        {covers.map((c) => <li>{c}</li>)}
+      </ul>
+
+      <p class="mt-10 text-midgrey leading-body">
+        Reports are delivered within three to five business days through ScopeWalk. More than 500 commercial sites documented, with coverage across all 50 US states.
+      </p>
+    </div>
+
+    <div>
+      <div class="border border-border bg-offwhite p-6 md:p-8">
+        <h2 class="text-2xl font-light text-navy">Tell us the address</h2>
+        <p class="mt-2 text-midgrey leading-body">
+          We reply within one business day with a scope recommendation and an all-in quote. Travel is included, not added as a surprise line item.
+        </p>
+        <form class="mt-6 space-y-5" method="POST" action="https://api.web3forms.com/submit">
+          <input type="hidden" name="access_key" value="8c6ab3a1-43b4-4110-8b1b-4a8bb804b90c" />
+          <input type="hidden" name="subject" value="Pre-lease survey enquiry from Alturascope.com" />
+          <input type="hidden" name="from_name" value="Alturascope Website" />
+          <input type="hidden" name="redirect" value="https://alturascope.com/thank-you/" />
+          <input type="checkbox" name="botcheck" class="hidden" style="display:none" />
+          <div>
+            <label for="name" class="block text-sm font-medium text-navy mb-1.5">Name <span class="text-gold">*</span></label>
+            <input type="text" id="name" name="name" required class={field} />
+          </div>
+          <div>
+            <label for="email" class="block text-sm font-medium text-navy mb-1.5">Work email <span class="text-gold">*</span></label>
+            <input type="email" id="email" name="email" required class={field} />
+          </div>
+          <div>
+            <label for="location" class="block text-sm font-medium text-navy mb-1.5">Site address or programme <span class="text-gold">*</span></label>
+            <input type="text" id="location" name="location" required class={field} />
+          </div>
+          <div>
+            <label for="sign_by" class="block text-sm font-medium text-navy mb-1.5">When do you need to decide by?</label>
+            <input type="text" id="sign_by" name="sign_by" class={field} />
+          </div>
+          <div>
+            <label for="sector" class="block text-sm font-medium text-navy mb-1.5">Sector and your role</label>
+            <input type="text" id="sector" name="sector" class={field} />
+          </div>
+          <div class="hidden" aria-hidden="true">
+            <label for="website">Website</label>
+            <input type="text" id="website" name="website" tabindex="-1" autocomplete="off" />
+          </div>
+          <button type="submit" class="btn-primary">Get a scope and quote</button>
+        </form>
+      </div>
+    </div>
+  </section>
+</Layout>

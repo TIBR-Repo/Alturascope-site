@@ -62,7 +62,7 @@ export default defineConfig({
   integrations: [
     tailwind(),
     sitemap({
-      filter: (page) => !page.includes('/thank-you/'),
+      filter: (page) => !page.includes('/thank-you/') && !page.includes('/pre-lease-survey/'),
       // /work/walkthrough/ (static exhibit in public/) is deliberately not listed:
       // it is a full-screen viewer with no text for Google to index.
       // Give crawlers a change signal. Without lastmod, a recrawl of an updated
