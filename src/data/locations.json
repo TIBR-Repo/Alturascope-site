@@ -2754,5 +2754,159 @@
   ],
   "mx": 584.5,
   "my": 221.6
+ },
+ {
+  "slug": "tampa-florida",
+  "label": "Tampa, Florida",
+  "kind": "Women’s health clinic, medical office tower",
+  "w": 1200,
+  "h": 675,
+  "lat": 27.952,
+  "lng": -82.488,
+  "state": "FL",
+  "sectors": [
+   "healthcare",
+   "office"
+  ],
+  "mx": 726.5,
+  "my": 464.1
+ },
+ {
+  "slug": "canton-massachusetts",
+  "label": "Canton, Massachusetts",
+  "kind": "Therapy clinic, office building",
+  "w": 1200,
+  "h": 675,
+  "lat": 42.17,
+  "lng": -71.14,
+  "state": "MA",
+  "sectors": [
+   "healthcare",
+   "office"
+  ],
+  "mx": 848.8,
+  "my": 149.1
+ },
+ {
+  "slug": "waltham-massachusetts",
+  "label": "Waltham, Massachusetts",
+  "kind": "Therapy clinic, former R&D office",
+  "w": 1200,
+  "h": 675,
+  "lat": 42.37,
+  "lng": -71.24,
+  "state": "MA",
+  "sectors": [
+   "healthcare",
+   "office"
+  ],
+  "mx": 846.4,
+  "my": 145.6
+ },
+ {
+  "slug": "east-granby-connecticut",
+  "label": "East Granby, Connecticut",
+  "kind": "Corporate offices, industrial campus",
+  "w": 1200,
+  "h": 675,
+  "lat": 41.94,
+  "lng": -72.73,
+  "state": "CT",
+  "sectors": [
+   "office"
+  ],
+  "mx": 827.4,
+  "my": 159.4
+ },
+ {
+  "slug": "pembroke-pines-florida",
+  "label": "Pembroke Pines, Florida",
+  "kind": "Open-air retail",
+  "w": 1200,
+  "h": 675,
+  "lat": 26.01,
+  "lng": -80.3,
+  "state": "FL",
+  "sectors": [
+   "retail"
+  ],
+  "mx": 770.9,
+  "my": 496
+ },
+ {
+  "slug": "midtown-miami-florida",
+  "label": "Midtown Miami, Florida",
+  "kind": "Street-front retail, residential tower",
+  "w": 1200,
+  "h": 675,
+  "lat": 25.807,
+  "lng": -80.193,
+  "state": "FL",
+  "sectors": [
+   "retail"
+  ],
+  "mx": 773.5,
+  "my": 499.6
+ },
+ {
+  "slug": "florham-park-new-jersey",
+  "label": "Florham Park, New Jersey",
+  "kind": "Former veterinary clinic, retail plaza",
+  "w": 1200,
+  "h": 675,
+  "lat": 40.78,
+  "lng": -74.39,
+  "state": "NJ",
+  "sectors": [
+   "retail",
+   "healthcare"
+  ],
+  "mx": 808.9,
+  "my": 187.7
+ },
+ {
+  "slug": "jersey-city-new-jersey",
+  "label": "Jersey City, New Jersey",
+  "kind": "Street-front restaurant, office tower",
+  "w": 1200,
+  "h": 675,
+  "lat": 40.716,
+  "lng": -74.037,
+  "state": "NJ",
+  "sectors": [
+   "retail"
+  ],
+  "mx": 814.3,
+  "my": 187.8
+ },
+ {
+  "slug": "rosslyn-arlington-virginia",
+  "label": "Rosslyn, Arlington, Virginia",
+  "kind": "Street-front restaurant, office tower",
+  "w": 1200,
+  "h": 675,
+  "lat": 38.896,
+  "lng": -77.071,
+  "state": "VA",
+  "sectors": [
+   "retail"
+  ],
+  "mx": 777.3,
+  "my": 233.3
+ },
+ {
+  "slug": "soho-new-york",
+  "label": "SoHo, New York",
+  "kind": "Street-front retail, office tower",
+  "w": 1200,
+  "h": 675,
+  "lat": 40.7265,
+  "lng": -74.0055,
+  "state": "NY",
+  "sectors": [
+   "retail"
+  ],
+  "mx": 814.8,
+  "my": 187.5
  }
 ]
