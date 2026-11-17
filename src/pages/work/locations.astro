@@ -1,4 +1,5 @@
 ---
+import { locImg } from "../../lib/locimg";
 import Layout from "../../layouts/Layout.astro";
 import locations from "../../data/locations.json";
 import stories from "../../data/location-stories.json";
@@ -170,7 +171,7 @@ const breadcrumbSchema = JSON.stringify({
             <>
               <div class="relative overflow-hidden aspect-[16/10] bg-offwhite">
                 <img
-                  src={"/Images/locations/" + loc.slug + ".webp"}
+                  src={locImg(loc.slug)}
                   alt={loc.label + " - commercial site surveyed by Alturascope"}
                   width={loc.w}
                   height={loc.h}

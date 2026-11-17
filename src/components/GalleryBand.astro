@@ -1,4 +1,5 @@
 ---
+import { locImg } from "../lib/locimg";
 /**
  * A four-image strip pointing at /work/locations/.
  *
@@ -59,7 +60,7 @@ const dark = tone === "dark";
       {picks.map((loc) => (
         <a href="/work/locations/" class="group block relative overflow-hidden">
           <img
-            src={`/Images/locations/${loc.slug}.webp`}
+            src={locImg(loc.slug)}
             alt={`${loc.label} - commercial site surveyed by Alturascope`}
             width={loc.w}
             height={loc.h}

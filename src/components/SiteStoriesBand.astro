@@ -1,4 +1,5 @@
 ---
+import { locImg } from "../lib/locimg";
 /**
  * Site stories that list the current page among their services.
  *
@@ -49,7 +50,7 @@ const parts = (k: string) => k.split(/\s*[·•|]\s*/);
           return (
             <a href={`/work/locations/${s.slug}/`} class="group block bg-white border border-border rounded overflow-hidden transition-all duration-300 hover:border-gold hover:shadow-md">
               <img
-                src={`/Images/locations/${s.slug}.webp`}
+                src={locImg(s.slug)}
                 alt={`${loc.label} - ${kind ?? "commercial site"} surveyed by Alturascope`}
                 width={loc.w}
                 height={loc.h}
