@@ -22,7 +22,7 @@ const pins = locations.filter((l) => typeof l.mx === "number");
     {pins.map((l) => {
       const href = storySlugs.has(l.slug) ? `/work/locations/${l.slug}/` : `#site-${l.slug}`;
       return (
-        <a href={href} class="map-pin" data-sectors={(l.sectors || []).join(" ")} data-label={l.label} aria-label={l.label}>
+        <a href={href} class="map-pin" data-sectors={(l.sectors || []).join(" ")} data-state={l.state} data-label={l.label} aria-label={l.label}>
           <circle cx={l.mx} cy={l.my} r="9" fill="transparent" />
           <circle cx={l.mx} cy={l.my} r="5.5" class="pin-dot" />
         </a>

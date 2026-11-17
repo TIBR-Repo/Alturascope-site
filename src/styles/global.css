@@ -120,3 +120,13 @@
 .project-filter { white-space: nowrap; flex-shrink: 0; }
 .filter-row { scrollbar-width: none; -webkit-overflow-scrolling: touch; }
 .filter-row::-webkit-scrollbar { display: none; }
+
+/* Projects page: state dropdown, styled to sit with the filter chips */
+.state-filter {
+  appearance: none; -webkit-appearance: none;
+  border: 1px solid #E5E0D8; border-radius: 0; background-color: #fff;
+  color: #374151; font-size: 0.85rem; padding: 0.5rem 2.4rem 0.5rem 0.95rem; min-width: 12rem; cursor: pointer;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' fill='none' stroke='%230B1F3A' stroke-width='1.6'/%3E%3C/svg%3E");
+  background-repeat: no-repeat; background-position: right 1rem center;
+}
+.state-filter:hover, .state-filter:focus { border-color: #0B1F3A; outline: none; }

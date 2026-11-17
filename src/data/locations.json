@@ -78,7 +78,7 @@
  },
  {
   "slug": "pennsylvania-avenue-washington-dc",
-  "label": "Washington, DC",
+  "label": "Pennsylvania Avenue, Washington, DC",
   "kind": "Office",
   "w": 1200,
   "h": 675,
@@ -2881,7 +2881,7 @@
  },
  {
   "slug": "rosslyn-arlington-virginia",
-  "label": "Rosslyn, Arlington, Virginia",
+  "label": "Arlington, Virginia",
   "kind": "Street-front restaurant, office tower",
   "w": 1200,
   "h": 675,

@@ -13,6 +13,20 @@ const sectors = [
   { key: "landmark", label: "Landmark & transit" },
   { key: "shell", label: "Shells & vacant units" },
 ];
+const STATE_NAMES = {
+  AL: "Alabama", AK: "Alaska", AZ: "Arizona", AR: "Arkansas", CA: "California", CO: "Colorado", CT: "Connecticut",
+  DC: "Washington, DC", DE: "Delaware", FL: "Florida", GA: "Georgia", HI: "Hawaii", ID: "Idaho", IL: "Illinois",
+  IN: "Indiana", IA: "Iowa", KS: "Kansas", KY: "Kentucky", LA: "Louisiana", ME: "Maine", MD: "Maryland",
+  MA: "Massachusetts", MI: "Michigan", MN: "Minnesota", MS: "Mississippi", MO: "Missouri", MT: "Montana",
+  NE: "Nebraska", NV: "Nevada", NH: "New Hampshire", NJ: "New Jersey", NM: "New Mexico", NY: "New York",
+  NC: "North Carolina", ND: "North Dakota", OH: "Ohio", OK: "Oklahoma", OR: "Oregon", PA: "Pennsylvania",
+  PR: "Puerto Rico", RI: "Rhode Island", SC: "South Carolina", SD: "South Dakota", TN: "Tennessee", TX: "Texas",
+  UT: "Utah", VT: "Vermont", VA: "Virginia", WA: "Washington", WV: "West Virginia", WI: "Wisconsin", WY: "Wyoming",
+};
+// State dropdown: only states we have sites in, alphabetical by name. No counts (Andrew: no limiting numbers).
+const states = [...new Set(locations.map((l) => l.state).filter(Boolean))]
+  .map((code) => ({ code, name: STATE_NAMES[code] || code }))
+  .sort((a, b) => a.name.localeCompare(b.name));
 const countFor = (k) => locations.filter((l) => (l.sectors || []).includes(k)).length;
 // Strongest sites first; everything else keeps its order in locations.json.
 const lead = [
@@ -135,11 +149,18 @@ const breadcrumbSchema = JSON.stringify({
         </div>
       </div>
 
-      <div class="filter-row flex flex-nowrap md:flex-wrap gap-2 mb-8 md:mb-10 -mx-6 px-6 md:mx-0 md:px-0 overflow-x-auto" role="group" aria-label="Filter projects by type">
+      <div class="filter-row flex flex-nowrap md:flex-wrap gap-2 mb-3 -mx-6 px-6 md:mx-0 md:px-0 overflow-x-auto" role="group" aria-label="Filter projects by type">
         <button type="button" class="project-filter is-on" data-filter="all">All projects</button>
         {sectors.map((sec) => (
           <button type="button" class="project-filter" data-filter={sec.key}>{sec.label} <span>{countFor(sec.key)}</span></button>
         ))}
+      </div>
+      <div class="mb-8 md:mb-10">
+        <label for="state-filter" class="sr-only">Filter projects by state</label>
+        <select id="state-filter" class="state-filter">
+          <option value="all">All states</option>
+          {states.map((st) => <option value={st.code}>{st.name}</option>)}
+        </select>
       </div>
 
       <ul class="grid grid-cols-2 lg:grid-cols-3 gap-x-3 sm:gap-x-6 gap-y-6 sm:gap-y-10 list-none p-0 m-0">
@@ -169,7 +190,7 @@ const breadcrumbSchema = JSON.stringify({
             </>
           );
           return (
-            <li id={`site-${loc.slug}`} class="project-card scroll-mt-28" data-sectors={(loc.sectors || []).join(" ")}>
+            <li id={`site-${loc.slug}`} class="project-card scroll-mt-28" data-sectors={(loc.sectors || []).join(" ")} data-state={loc.state}>
               {story ? <a href={`/work/locations/${loc.slug}/`} class="group block">{card}</a> : <div class="group">{card}</div>}
             </li>
           );
@@ -266,30 +287,38 @@ const breadcrumbSchema = JSON.stringify({
     const cards = Array.from(document.querySelectorAll<HTMLElement>(".project-card"));
     const pins = document.querySelectorAll<SVGAElement>(".map-pin");
     const more = document.getElementById("show-more");
+    const stateSel = document.getElementById("state-filter") as HTMLSelectElement | null;
     let current = "all";
+    let state = "all";
     let expanded = false;
-    const matches = (el: HTMLElement | SVGElement, key: string) =>
-      key === "all" || ((el as HTMLElement).dataset.sectors || "").split(" ").includes(key);
+    const matches = (el: HTMLElement | SVGElement, key: string) => {
+      const d = (el as HTMLElement).dataset;
+      const okSector = key === "all" || (d.sectors || "").split(" ").includes(key);
+      const okState = state === "all" || d.state === state;
+      return okSector && okState;
+    };
     const apply = (key: string) => {
       current = key;
+      const filtered = key !== "all" || state !== "all";
       let n = 0;
       cards.forEach((c) => {
         const on = matches(c, key);
         if (on) n++;
-        c.hidden = !on || (key === "all" && !expanded && n > LIMIT);
+        c.hidden = !on || (!filtered && !expanded && n > LIMIT);
       });
       pins.forEach((p) => p.classList.toggle("is-dim", !matches(p, key)));
       buttons.forEach((b) => b.classList.toggle("is-on", b.dataset.filter === key));
-      if (more) more.style.display = expanded || key !== "all" || n <= LIMIT ? "none" : "";
+      if (more) more.style.display = expanded || filtered || n <= LIMIT ? "none" : "";
     };
     buttons.forEach((b) => b.addEventListener("click", () => apply(b.dataset.filter || "all")));
+    stateSel?.addEventListener("change", () => { state = stateSel.value; apply(current); });
     more?.addEventListener("click", () => { expanded = true; apply(current); });
     // A link to #site-<slug> (map pin, homepage tile) must land on a visible card.
     const reveal = () => {
       const id = decodeURIComponent(location.hash.slice(1));
       const el = id && document.getElementById(id);
       if (el && el.classList.contains("project-card") && el.hidden) {
-        expanded = true; apply("all"); el.scrollIntoView();
+        expanded = true; state = "all"; if (stateSel) stateSel.value = "all"; apply("all"); el.scrollIntoView();
       }
     };
     apply("all");
